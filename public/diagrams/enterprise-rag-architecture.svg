@@ -1,68 +1,76 @@
-﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG systems blueprint">
+﻿<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture premium diagram">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1f3a"/>
-      <stop offset="100%" stop-color="#123a6a"/>
+      <stop offset="0%" stop-color="#09182C"/>
+      <stop offset="55%" stop-color="#0B1F3A"/>
+      <stop offset="100%" stop-color="#12335A"/>
     </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#2F80ED" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2F80ED" stop-opacity="0"/>
+    </radialGradient>
     <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#9ad8ff"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#BFE8FF"/>
     </marker>
     <style>
-      .t{font:700 42px 'Segoe UI',Arial,sans-serif;fill:#ecf7ff}
-      .st{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#cbe6ff}
-      .h{font:700 20px 'Segoe UI',Arial,sans-serif;fill:#eff9ff}
-      .b{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#d8ecff}
-      .tag{font:700 12px 'Segoe UI',Arial,sans-serif;fill:#e7f6ff}
+      .title{font:700 52px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
+      .sub{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#BFD8F4}
+      .node{font:700 26px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
+      .meta{font:500 15px 'Segoe UI',Arial,sans-serif;fill:#CFE6FF}
+      .flow{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
     </style>
   </defs>
 
-  <rect width="1400" height="900" fill="url(#bg)"/>
-  <circle cx="170" cy="120" r="180" fill="#2f80ed" opacity="0.15"/>
-  <circle cx="1260" cy="760" r="220" fill="#56ccf2" opacity="0.12"/>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="720" cy="320" rx="620" ry="360" fill="url(#halo)"/>
 
-  <text class="t" x="70" y="78">Enterprise RAG: Systems Blueprint</text>
-  <text class="st" x="70" y="108">Original visual model for cross-industry AI knowledge operations</text>
+  <text class="title" x="80" y="86">Enterprise RAG Architecture</text>
+  <text class="sub" x="80" y="118">Finance, Healthcare, and NHS-grade retrieval, governance, and response integrity</text>
 
-  <rect x="70" y="150" width="1260" height="680" rx="28" fill="#0f2f56" stroke="#4ba3e8" stroke-width="2"/>
+  <rect x="80" y="170" width="1280" height="660" rx="30" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
 
-  <rect x="110" y="210" width="240" height="560" rx="18" fill="#143f6d" stroke="#67b5f0"/>
-  <text class="h" x="132" y="242">1. Source Plane</text>
-  <text class="b" x="132" y="270">- Internal docs</text>
-  <text class="b" x="132" y="292">- Policies and controls</text>
-  <text class="b" x="132" y="314">- Databases and events</text>
-  <text class="b" x="132" y="336">- Email/transcripts</text>
-  <rect x="132" y="365" width="195" height="34" rx="8" fill="#1b4d82"/><text class="tag" x="145" y="387">Ingestion + QC</text>
-  <rect x="132" y="410" width="195" height="34" rx="8" fill="#1b4d82"/><text class="tag" x="145" y="432">Metadata + ACL</text>
+  <circle cx="280" cy="390" r="112" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
+  <circle cx="280" cy="355" r="22" fill="#ECF7FF"/>
+  <rect x="238" y="388" width="84" height="42" rx="21" fill="#ECF7FF"/>
+  <text class="node" x="220" y="548">Business User</text>
+  <text class="meta" x="198" y="574">Question and intent</text>
 
-  <rect x="390" y="210" width="300" height="560" rx="18" fill="#124b5e" stroke="#5ac8cf"/>
-  <text class="h" x="412" y="242">2. Retrieval Brain</text>
-  <text class="b" x="412" y="270">- Query rewrite</text>
-  <text class="b" x="412" y="292">- Hybrid recall</text>
-  <text class="b" x="412" y="314">- Rerank + compress</text>
-  <text class="b" x="412" y="336">- Policy-aware filtering</text>
-  <rect x="412" y="365" width="255" height="34" rx="8" fill="#1a5f74"/><text class="tag" x="425" y="387">Vector + graph retrieval</text>
-  <rect x="412" y="410" width="255" height="34" rx="8" fill="#1a5f74"/><text class="tag" x="425" y="432">Context budget manager</text>
+  <circle cx="720" cy="390" r="122" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
+  <rect x="672" y="340" width="96" height="92" rx="14" fill="none" stroke="#ECF7FF" stroke-width="4"/>
+  <text x="707" y="397" font-size="44" font-family="Segoe UI" fill="#ECF7FF">AI</text>
+  <text class="node" x="640" y="548">RAG Framework</text>
+  <text class="meta" x="600" y="574">Orchestration + retrieval</text>
 
-  <rect x="730" y="210" width="280" height="560" rx="18" fill="#4f3f1c" stroke="#f0b56c"/>
-  <text class="h" x="752" y="242">3. Reasoning Fabric</text>
-  <text class="b" x="752" y="270">- Prompt assembly</text>
-  <text class="b" x="752" y="292">- LLM generation</text>
-  <text class="b" x="752" y="314">- Structured response</text>
-  <text class="b" x="752" y="336">- Citations + confidence</text>
-  <rect x="752" y="365" width="235" height="34" rx="8" fill="#725426"/><text class="tag" x="765" y="387">Output contract checks</text>
+  <circle cx="1160" cy="390" r="112" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
+  <path d="M1118 372 C1100 340,1160 326,1182 358 C1204 326,1248 344,1230 374 C1248 396,1237 420,1202 416 C1184 436,1142 436,1124 416 C1090 420,1078 396,1096 374 Z" fill="#ECF7FF"/>
+  <line x1="1160" y1="350" x2="1160" y2="420" stroke="#0B1F3A" stroke-width="3"/>
+  <line x1="1138" y1="378" x2="1160" y2="378" stroke="#0B1F3A" stroke-width="3"/>
+  <line x1="1160" y1="395" x2="1190" y2="395" stroke="#0B1F3A" stroke-width="3"/>
+  <text class="node" x="1120" y="548">LLM Layer</text>
+  <text class="meta" x="1090" y="574">Draft + post-process</text>
 
-  <rect x="1050" y="210" width="240" height="560" rx="18" fill="#4c2637" stroke="#ff8fb2"/>
-  <text class="h" x="1072" y="242">4. Trust Loop</text>
-  <text class="b" x="1072" y="270">- Groundedness eval</text>
-  <text class="b" x="1072" y="292">- Risk policy review</text>
-  <text class="b" x="1072" y="314">- Canary and release</text>
-  <text class="b" x="1072" y="336">- Cost/latency monitor</text>
-  <rect x="1072" y="365" width="195" height="34" rx="8" fill="#6c3149"/><text class="tag" x="1085" y="387">Feedback to routing</text>
+  <circle cx="720" cy="690" r="98" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
+  <ellipse cx="720" cy="666" rx="34" ry="11" fill="#ECF7FF"/>
+  <ellipse cx="720" cy="690" rx="34" ry="11" fill="#ECF7FF"/>
+  <ellipse cx="720" cy="714" rx="34" ry="11" fill="#ECF7FF"/>
+  <text class="node" x="606" y="818">Vector Knowledge Base</text>
 
-  <path d="M350 490 L385 490" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M690 490 L725 490" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M1010 490 L1045 490" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M1170 770 C1170 820, 420 820, 420 770" stroke="#59d7b7" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  <rect x="1010" y="640" width="290" height="120" rx="16" fill="#143A63" stroke="#5FA8E8"/>
+  <text class="meta" x="1034" y="678">Content Sources</text>
+  <text class="meta" x="1034" y="702">- Original enterprise data</text>
+  <text class="meta" x="1034" y="726">- New indexed knowledge</text>
 
-  <text class="b" x="560" y="810">Outcome: reliable answers, measurable governance, and adaptive retrieval quality</text>
+  <path d="M400 356 L590 356" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M590 458 L400 458" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M850 458 L1042 458" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M1042 356 L850 356" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M720 512 L720 588" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M818 690 L1000 690" stroke="#BFE8FF" stroke-width="4" marker-end="url(#arr)"/>
+
+  <text class="flow" x="486" y="342">Question</text>
+  <text class="flow" x="486" y="488">Response</text>
+  <text class="flow" x="914" y="342">Prompt</text>
+  <text class="flow" x="914" y="488">Post-processing</text>
+  <text class="flow" x="596" y="640">Semantic search</text>
+  <text class="flow" x="830" y="676">Context feed</text>
 </svg>

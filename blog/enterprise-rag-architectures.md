@@ -113,6 +113,46 @@ A production-grade Retrieval-Augmented Generation (RAG) stack is not just "LLM +
 
 ---
 
+## Vector Database Options and Comparison
+
+| Option | Best Fit | Strengths | Tradeoffs |
+| --- | --- | --- | --- |
+| Pinecone | Managed enterprise deployments | Fast setup, reliable managed scaling, strong ecosystem adoption | Higher managed cost at large scale |
+| Weaviate | Teams needing rich filtering + hybrid search | Strong schema/filter support and modular architecture | Requires careful tuning at high scale |
+| Qdrant | High-performance, cost-aware production | Excellent vector performance and payload filtering | Fewer fully managed enterprise features out of the box |
+| Milvus | Large-scale self-hosted workloads | Strong throughput and horizontal scaling | Operational complexity if self-managed |
+| pgvector (PostgreSQL) | Teams standardizing on Postgres | Simpler stack, transactional + vector together | Can become expensive for very large retrieval workloads |
+| OpenSearch / Azure AI Search (vector enabled) | Existing search platform users | Combines lexical + vector in familiar search stack | Feature depth and tuning vary by platform |
+
+### Selection Heuristics
+- Choose managed-first if your team is early and wants speed to production.
+- Choose self-hosted/high-control if data residency or cost control is dominant.
+- Validate with your own corpus: recall quality, filter performance, latency, and operational load.
+
+---
+
+## Embedding Model Strategy (OpenAI, Gemini, Claude Stacks)
+
+Yes, it is useful to mention model families in the article. The most durable approach is to explain **when** to use each pattern rather than hardcoding benchmark claims.
+
+### Practical Pattern
+- OpenAI-first stack: strong default for general enterprise semantic retrieval and multilingual business corpora.
+- Gemini-first stack: useful when your broader platform already uses Google-native workflows and tooling.
+- Claude-centric generation stack: commonly paired with dedicated embedding providers for retrieval while using Claude for reasoning/generation.
+
+### How to Decide
+- Corpus characteristics: domain language, multilingual needs, document length patterns.
+- Retrieval quality: recall at k, nDCG, and citation-grounded answer quality.
+- Runtime economics: embedding cost per document, re-index cadence, query volume.
+- Governance: data handling requirements, regional controls, auditability expectations.
+
+### Recommended Operating Model
+- Keep retrieval and generation loosely coupled.
+- Standardize an internal evaluation harness.
+- Run periodic A/B retrieval tests before changing embedding providers.
+
+---
+
 ## Common Failure Modes and Mitigations
 
 ### Failure Mode: Retrieval Misses

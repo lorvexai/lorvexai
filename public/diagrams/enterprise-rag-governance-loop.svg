@@ -1,42 +1,36 @@
-﻿<svg width="1400" height="760" viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG governance loop original">
+﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG governance flywheel premium diagram">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1f3a"/>
-      <stop offset="100%" stop-color="#163f70"/>
-    </linearGradient>
-    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#9ad8ff"/>
-    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#12355C"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#BFE8FF"/></marker>
     <style>
-      .t{font:700 36px 'Segoe UI',Arial,sans-serif;fill:#ecf7ff}
-      .n{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#eef9ff}
-      .s{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#d7ebff}
+      .title{font:700 44px 'Segoe UI';fill:#EAF4FF}
+      .n{font:700 16px 'Segoe UI';fill:#EFF8FF}
+      .s{font:500 13px 'Segoe UI';fill:#CFE6FF}
     </style>
   </defs>
-  <rect width="1400" height="760" fill="url(#bg)"/>
-  <text class="t" x="80" y="72">RAG Governance Flywheel</text>
+  <rect width="1440" height="860" fill="url(#bg)"/>
+  <text class="title" x="88" y="80">Governance and Evaluation Flywheel</text>
 
-  <g transform="translate(700 410)">
-    <ellipse cx="0" cy="0" rx="470" ry="250" fill="#0f2f56" stroke="#4ba3e8" stroke-width="2"/>
+  <g transform="translate(720 455)">
+    <circle cx="0" cy="0" r="290" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
+    <circle cx="0" cy="0" r="120" fill="#123A63" stroke="#69B8F2"/>
+    <text x="-38" y="-8" class="n">CONTROL</text>
+    <text x="-55" y="16" class="n">CENTER</text>
 
-    <g>
-      <circle cx="-340" cy="-40" r="78" fill="#143f6d" stroke="#67b5f0"/><text class="n" x="-373" y="-35">Log</text><text class="s" x="-394" y="-15">Prompt/answer traces</text>
-      <circle cx="-150" cy="-170" r="78" fill="#124b5e" stroke="#5ac8cf"/><text class="n" x="-185" y="-165">Score</text><text class="s" x="-206" y="-145">Quality + grounding</text>
-      <circle cx="90" cy="-170" r="78" fill="#4c2637" stroke="#ff8fb2"/><text class="n" x="52" y="-165">Review</text><text class="s" x="34" y="-145">Risk + policy checks</text>
-      <circle cx="280" cy="-40" r="78" fill="#4f3f1c" stroke="#f0b56c"/><text class="n" x="245" y="-35">Tune</text><text class="s" x="220" y="-15">Prompt/retriever</text>
-      <circle cx="280" cy="180" r="78" fill="#4f3f1c" stroke="#f0b56c"/><text class="n" x="240" y="185">Release</text><text class="s" x="216" y="205">Canary + rollout</text>
-      <circle cx="40" cy="220" r="78" fill="#124b5e" stroke="#5ac8cf"/><text class="n" x="3" y="225">Monitor</text><text class="s" x="-31" y="245">Latency, cost, drift</text>
-      <circle cx="-200" cy="170" r="78" fill="#143f6d" stroke="#67b5f0"/><text class="n" x="-237" y="175">Improve</text><text class="s" x="-273" y="195">Update policies</text>
-    </g>
+    <circle cx="0" cy="-230" r="64" fill="#153C64" stroke="#66B2F0"/><text x="-34" y="-224" class="n">Log</text>
+    <circle cx="198" cy="-116" r="64" fill="#14505D" stroke="#58C7CF"/><text x="160" y="-110" class="n">Evaluate</text>
+    <circle cx="198" cy="116" r="64" fill="#4D2938" stroke="#FF8FB2"/><text x="164" y="122" class="n">Review</text>
+    <circle cx="0" cy="230" r="64" fill="#58461F" stroke="#EDB472"/><text x="-28" y="236" class="n">Tune</text>
+    <circle cx="-198" cy="116" r="64" fill="#58461F" stroke="#EDB472"/><text x="-232" y="122" class="n">Release</text>
+    <circle cx="-198" cy="-116" r="64" fill="#153C64" stroke="#66B2F0"/><text x="-234" y="-110" class="n">Monitor</text>
 
-    <path d="M-285 -70 C-250 -130,-220 -145,-185 -165" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M-70 -170 L10 -170" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
-    <path d="M170 -145 C210 -120,230 -90,250 -60" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M300 40 L300 100" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
-    <path d="M230 210 C185 225,145 230,120 228" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M-40 220 C-85 220,-125 208,-150 196" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M-260 130 C-300 90,-318 40,-330 -5" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M55 -215 C110 -190,145 -165,165 -145" stroke="#BFE8FF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M230 -60 L230 60" stroke="#BFE8FF" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M165 145 C130 180,90 205,40 220" stroke="#BFE8FF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M-40 220 C-90 205,-130 180,-165 145" stroke="#BFE8FF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M-230 60 L-230 -60" stroke="#BFE8FF" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M-165 -145 C-130 -180,-90 -205,-40 -220" stroke="#BFE8FF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
   </g>
 
-  <text class="s" x="360" y="720">Continuous control loop: quality and safety increase as deployment speed stays predictable.</text>
+  <text class="s" x="420" y="812">Purpose: keep quality and safety rising while deployment velocity remains operationally stable.</text>
 </svg>
