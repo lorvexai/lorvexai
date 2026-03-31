@@ -1,0 +1,42 @@
+﻿<svg width="1440" height="780" viewBox="0 0 1440 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banking AI agents operating loop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#12355C"/></linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C9EBFF"/></marker>
+    <style>.title{font:700 44px 'Segoe UI';fill:#EAF4FF}.n{font:700 17px 'Segoe UI';fill:#EFF8FF}.s{font:500 14px 'Segoe UI';fill:#CFE6FF}</style>
+  </defs>
+  <rect width="1440" height="780" fill="url(#bg)"/>
+  <text class="title" x="90" y="80">Operating Loop: AI Agents for Financial Crime Decisions</text>
+
+  <rect x="90" y="140" width="1260" height="520" rx="24" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
+
+  <rect x="150" y="250" width="180" height="95" rx="12" fill="#153C64" stroke="#66B2F0"/>
+  <text class="n" x="240" y="286" text-anchor="middle">Detect</text>
+  <text class="s" x="240" y="308" text-anchor="middle">Signal anomaly</text>
+
+  <rect x="370" y="250" width="200" height="95" rx="12" fill="#14505D" stroke="#58C7CF"/>
+  <text class="n" x="470" y="286" text-anchor="middle">Investigate</text>
+  <text class="s" x="470" y="308" text-anchor="middle">Evidence assembly</text>
+
+  <rect x="610" y="250" width="220" height="95" rx="12" fill="#58461F" stroke="#EDB472"/>
+  <text class="n" x="720" y="286" text-anchor="middle">Decide</text>
+  <text class="s" x="720" y="308" text-anchor="middle">Policy-safe actions</text>
+
+  <rect x="870" y="250" width="200" height="95" rx="12" fill="#4D2938" stroke="#FF8FB2"/>
+  <text class="n" x="970" y="286" text-anchor="middle">Approve</text>
+  <text class="s" x="970" y="308" text-anchor="middle">Human gate</text>
+
+  <rect x="1110" y="250" width="180" height="95" rx="12" fill="#153C64" stroke="#66B2F0"/>
+  <text class="n" x="1200" y="286" text-anchor="middle">Learn</text>
+  <text class="s" x="1200" y="308" text-anchor="middle">Outcome feedback</text>
+
+  <path d="M330 298 L365 298" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M570 298 L605 298" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M830 298 L865 298" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M1070 298 L1105 298" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
+
+  <path d="M1200 345 C1235 430, 920 510, 470 510 C260 510, 180 460, 160 345" stroke="#59D7B7" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="250" y="450" width="940" height="150" rx="14" fill="#122F53" stroke="#4A95DA"/>
+  <text class="s" x="285" y="490">Control targets: false-positive reduction, faster case closure, stronger SAR evidence quality.</text>
+  <text class="s" x="285" y="518">Safety rule: high-impact actions route to human review with full decision rationale.</text>
+</svg>

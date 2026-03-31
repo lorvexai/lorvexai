@@ -1,0 +1,55 @@
+﻿<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI agents architecture for banking operations">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#12355C"/></linearGradient>
+    <radialGradient id="halo" cx="52%" cy="38%" r="60%"><stop offset="0%" stop-color="#2F80ED" stop-opacity="0.28"/><stop offset="100%" stop-color="#2F80ED" stop-opacity="0"/></radialGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C9EBFF"/></marker>
+    <style>
+      .title{font:700 50px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
+      .sub{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#C3DBF4}
+      .h{font:700 20px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
+      .b{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#D0E7FF}
+    </style>
+  </defs>
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="720" cy="320" rx="620" ry="340" fill="url(#halo)"/>
+
+  <text class="title" x="80" y="88">AI Agents in Banking: Production Architecture</text>
+  <text class="sub" x="80" y="118">From policy-safe decisions to audit-ready execution</text>
+
+  <rect x="80" y="170" width="1280" height="660" rx="28" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
+
+  <rect x="130" y="230" width="270" height="500" rx="18" fill="#153C64" stroke="#66B2F0"/>
+  <text class="h" x="155" y="265">Signal and Context Plane</text>
+  <text class="b" x="155" y="295">- Transactions and account events</text>
+  <text class="b" x="155" y="319">- KYC and customer risk profiles</text>
+  <text class="b" x="155" y="343">- Policy and regulatory rules</text>
+  <text class="b" x="155" y="367">- Case history and outcomes</text>
+
+  <rect x="430" y="230" width="320" height="500" rx="18" fill="#14505D" stroke="#58C7CF"/>
+  <text class="h" x="455" y="265">Agent Orchestration Plane</text>
+  <text class="b" x="455" y="295">- Triage agent: intent + risk class</text>
+  <text class="b" x="455" y="319">- Investigation agent: evidence graph</text>
+  <text class="b" x="455" y="343">- Decision agent: action proposals</text>
+  <text class="b" x="455" y="367">- Control agent: policy constraint checks</text>
+
+  <rect x="780" y="230" width="260" height="500" rx="18" fill="#58461F" stroke="#EDB472"/>
+  <text class="h" x="805" y="265">Action Plane</text>
+  <text class="b" x="805" y="295">- Hold/release payment</text>
+  <text class="b" x="805" y="319">- Escalate to analyst queue</text>
+  <text class="b" x="805" y="343">- Request additional KYC</text>
+  <text class="b" x="805" y="367">- Trigger SAR prep workflow</text>
+
+  <rect x="1070" y="230" width="240" height="500" rx="18" fill="#4D2938" stroke="#FF8FB2"/>
+  <text class="h" x="1095" y="265">Governance Plane</text>
+  <text class="b" x="1095" y="295">- Human approval gates</text>
+  <text class="b" x="1095" y="319">- Immutable decision logs</text>
+  <text class="b" x="1095" y="343">- Explainability artifacts</text>
+  <text class="b" x="1095" y="367">- Drift and quality monitors</text>
+
+  <path d="M400 480 L425 480" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M750 480 L775 480" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M1040 480 L1065 480" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M1190 730 C1190 790, 590 795, 590 730" stroke="#59D7B7" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+
+  <text class="b" x="500" y="795">Outcome: faster case handling, fewer false positives, and regulator-ready evidence for every decision.</text>
+</svg>
