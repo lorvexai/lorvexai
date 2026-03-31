@@ -21,7 +21,7 @@ const space = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Lorvex AI | AI Consulting & LLM Engineering",
+  title: "Lorvex AI | Enterprise AI Systems & Agentic Intelligence",
   description:
     "Lorvex AI delivers enterprise AI systems, LLM engineering, and agentic platforms for high-impact decision automation.",
   icons: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     apple: "/lorvex_icon.png"
   },
   openGraph: {
-    title: "Lorvex AI | AI Consulting & LLM Engineering",
+    title: "Lorvex AI | Enterprise AI Systems & Agentic Intelligence",
     description:
       "AI consulting, LLM engineering, and agentic AI systems for enterprise transformation.",
     url: siteUrl,
