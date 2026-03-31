@@ -39,18 +39,6 @@ Treasury teams are under pressure to make faster decisions with higher confidenc
 
 ---
 
-## Exactly Where AI Runs in the Stack
-
-| Treasury Function | AI Capability | Output to Team |
-| --- | --- | --- |
-| Intraday liquidity | Time-series forecasting + anomaly detection | 1h/4h/24h cash projections and shortfall alerts |
-| Funding optimization | Decision optimization model | Ranked funding options by cost, risk, and policy fit |
-| Hedging strategy | Scenario simulation + recommendation model | Suggested hedge actions with confidence and rationale |
-| Risk monitoring | Pattern detection + early warning model | Concentration/limit stress alerts before breach |
-| Decision governance | Explainability + policy reasoning | Evidence-backed recommendation trace for approvals |
-
----
-
 ## Reference Architecture
 
 ![AI-Native Treasury Control Tower Architecture](../../diagrams/treasury-control-tower-architecture.svg)
