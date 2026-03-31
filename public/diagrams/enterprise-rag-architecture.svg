@@ -17,6 +17,20 @@
       .node{font:700 26px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
       .meta{font:500 15px 'Segoe UI',Arial,sans-serif;fill:#CFE6FF}
       .flow{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .flow-base{stroke:#C9EBFF;stroke-width:4;fill:none}
+      .flow-anim{
+        stroke:#8FD8FF;
+        stroke-width:6;
+        fill:none;
+        stroke-linecap:round;
+        stroke-dasharray:22 160;
+        filter:drop-shadow(0 0 8px rgba(143,216,255,0.85));
+        animation:flowForward 3.2s linear infinite;
+      }
+      .flow-anim-slow{animation-duration:4.2s}
+      .flow-reverse{animation-name:flowReverse}
+      @keyframes flowForward{to{stroke-dashoffset:-182}}
+      @keyframes flowReverse{to{stroke-dashoffset:182}}
     </style>
   </defs>
 
@@ -70,12 +84,19 @@
     <text class="meta" x="1028" y="740">- Domain-specific updates</text>
   </g>
 
-  <path d="M402 356 L592 356" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
-  <path d="M592 458 L402 458" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
-  <path d="M848 458 L1040 458" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
-  <path d="M1040 356 L848 356" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
-  <path d="M720 514 L720 592" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
-  <path d="M818 690 L998 690" stroke="#C9EBFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M402 356 L592 356" class="flow-base" marker-end="url(#arr)"/>
+  <path d="M592 458 L402 458" class="flow-base" marker-end="url(#arr)"/>
+  <path d="M848 458 L1040 458" class="flow-base" marker-end="url(#arr)"/>
+  <path d="M1040 356 L848 356" class="flow-base" marker-end="url(#arr)"/>
+  <path d="M720 514 L720 592" class="flow-base" marker-end="url(#arr)"/>
+  <path d="M818 690 L998 690" class="flow-base" marker-end="url(#arr)"/>
+
+  <path d="M402 356 L592 356" class="flow-anim"/>
+  <path d="M592 458 L402 458" class="flow-anim flow-reverse"/>
+  <path d="M848 458 L1040 458" class="flow-anim"/>
+  <path d="M1040 356 L848 356" class="flow-anim flow-reverse"/>
+  <path d="M720 514 L720 592" class="flow-anim flow-anim-slow"/>
+  <path d="M818 690 L998 690" class="flow-anim flow-anim-slow"/>
 
   <text class="flow" x="488" y="342">Question</text>
   <text class="flow" x="488" y="488">Response</text>

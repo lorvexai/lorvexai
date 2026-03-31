@@ -67,7 +67,7 @@ A production-grade Retrieval-Augmented Generation (RAG) stack is not just "LLM +
 
 ## End-to-End Architecture Diagram
 
-![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture.svg?v=2)
+![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture.svg?v=3)
 
 ---
 
