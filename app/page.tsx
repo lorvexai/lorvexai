@@ -10,10 +10,30 @@ import DeliveryFrameworkDiagram from "@/components/DeliveryFrameworkDiagram";
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
+  const focusAreas = ["Finance", "Healthcare", "NHS", "Enterprise"];
 
   return (
     <>
       <Hero />
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="glass rounded-2xl p-5">
+            <p className="text-xs uppercase tracking-[0.32em] text-secondary/70">
+              Current Focus Areas
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              {focusAreas.map((area) => (
+                <span
+                  key={area}
+                  className="rounded-full border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-medium text-secondary"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <Section
         eyebrow="Services"
         title="Consulting built for complex AI systems"
