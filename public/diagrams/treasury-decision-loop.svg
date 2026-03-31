@@ -17,22 +17,22 @@
   <text class="title" x="70" y="72">Real-Time Treasury Decision Loop</text>
 
   <rect x="90" y="150" width="220" height="120" rx="18" fill="#12385F" stroke="#6EC6FF" stroke-width="2"/>
-  <text class="node" x="125" y="196">Sense</text>
+  <text class="node" x="125" y="196">Sense (AI Inference)</text>
   <text class="sub" x="125" y="224">Cash, flows, rates,</text>
   <text class="sub" x="125" y="244">counterparty changes</text>
 
   <rect x="390" y="150" width="220" height="120" rx="18" fill="#164238" stroke="#59D7B7" stroke-width="2"/>
-  <text class="node" x="430" y="196">Predict</text>
+  <text class="node" x="430" y="196">Predict (AI Models)</text>
   <text class="sub" x="430" y="224">Liquidity horizon,</text>
   <text class="sub" x="430" y="244">stress outcomes</text>
 
   <rect x="690" y="150" width="220" height="120" rx="18" fill="#5A3B16" stroke="#F3B367" stroke-width="2"/>
-  <text class="node" x="728" y="196">Decide</text>
+  <text class="node" x="728" y="196">Decide (AI Recommendations)</text>
   <text class="sub" x="728" y="224">Funding, hedging,</text>
   <text class="sub" x="728" y="244">limit actions</text>
 
   <rect x="990" y="150" width="220" height="120" rx="18" fill="#5E2238" stroke="#FF8EB2" stroke-width="2"/>
-  <text class="node" x="1035" y="196">Govern</text>
+  <text class="node" x="1035" y="196">Govern (Human + Policy)</text>
   <text class="sub" x="1035" y="224">Approvals, policy,</text>
   <text class="sub" x="1035" y="244">audit evidence</text>
 
@@ -41,7 +41,7 @@
   <path d="M910 210 L988 210" stroke="#7EC7FF" stroke-width="3" marker-end="url(#arrow2)"/>
 
   <rect x="350" y="390" width="700" height="220" rx="22" fill="#0D2A47" stroke="#2B5D93" stroke-width="2"/>
-  <text class="node" x="390" y="438">Closed-Loop Learning</text>
+  <text class="node" x="390" y="438">Closed-Loop AI Learning</text>
   <text class="sub" x="390" y="472">- Compare forecast vs actual cash positions</text>
   <text class="sub" x="390" y="500">- Track decision outcomes and override reasons</text>
   <text class="sub" x="390" y="528">- Retrain models with governance-approved change control</text>

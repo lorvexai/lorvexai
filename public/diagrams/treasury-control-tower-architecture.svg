@@ -44,20 +44,20 @@
 
   <rect x="395" y="150" rx="18" ry="18" width="300" height="520" fill="url(#panel)" stroke="#67D4B8" stroke-width="2" filter="url(#soft)"/>
   <text class="label" x="420" y="188">AI Intelligence Layer</text>
-  <text class="text" x="420" y="225">- Intraday cash forecasting</text>
-  <text class="text" x="420" y="252">- Stress scenario engine</text>
-  <text class="text" x="420" y="279">- Anomaly detection</text>
-  <text class="text" x="420" y="306">- Explainability service</text>
+  <text class="text" x="420" y="225">- AI model: intraday cash forecast</text>
+  <text class="text" x="420" y="252">- AI model: stress scenario simulation</text>
+  <text class="text" x="420" y="279">- AI model: anomaly detection</text>
+  <text class="text" x="420" y="306">- AI service: recommendation explainability</text>
   <rect x="420" y="350" rx="10" ry="10" width="250" height="34" fill="#1D5A47"/>
   <text class="chip" x="435" y="373">Treasury Knowledge Graph</text>
   <rect x="420" y="395" rx="10" ry="10" width="250" height="34" fill="#1D5A47"/>
   <text class="chip" x="435" y="418">Policy-Aware Recommendations</text>
 
   <rect x="760" y="150" rx="18" ry="18" width="280" height="520" fill="url(#panel)" stroke="#F3B367" stroke-width="2" filter="url(#soft)"/>
-  <text class="label" x="785" y="188">Decision Hub</text>
-  <text class="text" x="785" y="225">- Liquidity actions</text>
-  <text class="text" x="785" y="252">- Funding options</text>
-  <text class="text" x="785" y="279">- Hedging proposals</text>
+  <text class="label" x="785" y="188">Decision Hub (AI + Human)</text>
+  <text class="text" x="785" y="225">- AI output: liquidity actions</text>
+  <text class="text" x="785" y="252">- AI output: ranked funding options</text>
+  <text class="text" x="785" y="279">- AI output: hedging proposals</text>
   <text class="text" x="785" y="306">- Exposure balancing</text>
   <rect x="785" y="350" rx="10" ry="10" width="230" height="34" fill="#6D4A1E"/>
   <text class="chip" x="800" y="373">Human Approval Gates</text>
