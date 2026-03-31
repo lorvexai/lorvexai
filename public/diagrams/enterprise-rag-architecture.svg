@@ -1,107 +1,149 @@
-﻿<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture">
+﻿<svg width="1440" height="920" viewBox="0 0 1440 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture blueprint">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#09182C"/>
-      <stop offset="100%" stop-color="#12345A"/>
+      <stop offset="100%" stop-color="#123E6A"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#2F80ED" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#2F80ED" stop-opacity="0"/>
-    </radialGradient>
-    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#C9EBFF"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#153B63" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#0C2745" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1C4F7E" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#123D67" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="flowBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#75C0FF"/>
+      <stop offset="100%" stop-color="#BEE6FF"/>
+    </linearGradient>
+    <linearGradient id="flowGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5BD8A3"/>
+      <stop offset="100%" stop-color="#B5F4D7"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#BEE6FF"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9EF1C8"/>
     </marker>
     <style>
-      .title{font:700 52px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
-      .sub{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#BED8F4}
-      .node{font:700 26px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
-      .meta{font:500 15px 'Segoe UI',Arial,sans-serif;fill:#CFE6FF}
-      .flow{font:600 16px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
-      .flow-base{stroke:#C9EBFF;stroke-width:4;fill:none}
-      .flow-anim{
-        stroke:#8FD8FF;
-        stroke-width:6;
-        fill:none;
-        stroke-linecap:round;
-        stroke-dasharray:22 160;
-        filter:drop-shadow(0 0 8px rgba(143,216,255,0.85));
-        animation:flowForward 3.2s linear infinite;
-      }
-      .flow-anim-slow{animation-duration:4.2s}
-      .flow-reverse{animation-name:flowReverse}
-      @keyframes flowForward{to{stroke-dashoffset:-182}}
-      @keyframes flowReverse{to{stroke-dashoffset:182}}
+      .title{font:700 50px 'Segoe UI',Arial,sans-serif;fill:#EAF5FF}
+      .subtitle{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#BBD9F5}
+      .phase{font:700 27px 'Segoe UI',Arial,sans-serif;fill:#EAF5FF}
+      .phaseMeta{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#C9E5FF}
+      .cardTitle{font:700 30px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
+      .cardText{font:500 15px 'Segoe UI',Arial,sans-serif;fill:#D8EDFF}
+      .flowLabel{font:600 15px 'Segoe UI',Arial,sans-serif;fill:#D8EDFF}
+      .small{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#CBE7FF}
+      .chip{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#EAF8FF}
     </style>
   </defs>
 
-  <rect width="1440" height="900" fill="url(#bg)"/>
-  <ellipse cx="720" cy="340" rx="620" ry="360" fill="url(#glow)"/>
+  <rect width="1440" height="920" fill="url(#bg)"/>
+  <ellipse cx="710" cy="380" rx="610" ry="330" fill="#2F80ED" fill-opacity="0.15"/>
 
-  <text class="title" x="86" y="90">Enterprise RAG Architecture</text>
-  <text class="sub" x="86" y="122">High-trust retrieval for finance, healthcare, and NHS-grade operations</text>
+  <text x="80" y="86" class="title">Enterprise RAG Architecture</text>
+  <text x="80" y="120" class="subtitle">Production retrieval design for trusted answers, policy control, and enterprise scale</text>
 
-  <rect x="82" y="170" width="1276" height="660" rx="30" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
+  <rect x="70" y="160" width="1300" height="690" rx="28" fill="#0C233E" stroke="#3F8DD6" stroke-width="2"/>
 
-  <g>
-    <circle cx="280" cy="390" r="110" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
-    <circle cx="280" cy="357" r="20" fill="#ECF7FF"/>
-    <rect x="242" y="388" width="76" height="38" rx="19" fill="#ECF7FF"/>
-    <text class="node" x="280" y="548" text-anchor="middle">Business User</text>
-    <text class="meta" x="280" y="574" text-anchor="middle">Question and intent</text>
-  </g>
+  <rect x="95" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
+  <rect x="528" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
+  <rect x="961" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
 
-  <g>
-    <circle cx="720" cy="390" r="122" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
-    <rect x="675" y="344" width="90" height="88" rx="12" fill="none" stroke="#ECF7FF" stroke-width="4"/>
-    <text x="720" y="398" text-anchor="middle" font-size="42" font-family="Segoe UI" fill="#ECF7FF">AI</text>
-    <text class="node" x="720" y="548" text-anchor="middle">RAG Framework</text>
-    <text class="meta" x="720" y="574" text-anchor="middle">Retrieval orchestration</text>
-  </g>
+  <text x="287" y="232" text-anchor="middle" class="phase">Data Ingestion</text>
+  <text x="287" y="255" text-anchor="middle" class="phaseMeta">Source normalization and embedding prep</text>
 
-  <g>
-    <circle cx="1160" cy="390" r="110" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
-    <path d="M1118 372 C1102 340,1158 327,1180 358 C1202 327,1246 344,1228 374 C1246 395,1236 420,1203 416 C1185 435,1143 435,1125 416 C1092 420,1082 395,1100 374 Z" fill="#ECF7FF"/>
-    <line x1="1160" y1="351" x2="1160" y2="420" stroke="#0B1F3A" stroke-width="3"/>
-    <line x1="1138" y1="378" x2="1160" y2="378" stroke="#0B1F3A" stroke-width="3"/>
-    <line x1="1160" y1="395" x2="1190" y2="395" stroke="#0B1F3A" stroke-width="3"/>
-    <text class="node" x="1160" y="548" text-anchor="middle">LLM Layer</text>
-    <text class="meta" x="1160" y="574" text-anchor="middle">Draft and post-process</text>
-  </g>
+  <text x="720" y="232" text-anchor="middle" class="phase">Retrieval Phase</text>
+  <text x="720" y="255" text-anchor="middle" class="phaseMeta">Semantic search, rerank, governed context</text>
 
-  <g>
-    <circle cx="720" cy="690" r="96" fill="#0B1F3A" stroke="#75C0FF" stroke-width="4"/>
-    <ellipse cx="720" cy="668" rx="33" ry="10" fill="#ECF7FF"/>
-    <ellipse cx="720" cy="690" rx="33" ry="10" fill="#ECF7FF"/>
-    <ellipse cx="720" cy="712" rx="33" ry="10" fill="#ECF7FF"/>
-    <text class="node" x="720" y="818" text-anchor="middle">Vector Knowledge Base</text>
-  </g>
+  <text x="1153" y="232" text-anchor="middle" class="phase">Generation Phase</text>
+  <text x="1153" y="255" text-anchor="middle" class="phaseMeta">Prompt assembly, response generation, controls</text>
 
-  <g>
-    <rect x="1008" y="636" width="300" height="126" rx="16" fill="#143A63" stroke="#5FA8E8"/>
-    <text class="meta" x="1028" y="668">Content Sources</text>
-    <text class="meta" x="1028" y="692">- Original enterprise content</text>
-    <text class="meta" x="1028" y="716">- Newly indexed knowledge</text>
-    <text class="meta" x="1028" y="740">- Domain-specific updates</text>
-  </g>
+  <rect x="130" y="300" width="140" height="220" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="200" y="338" text-anchor="middle" class="cardText">Knowledge</text>
+  <text x="200" y="360" text-anchor="middle" class="cardText">Sources</text>
+  <text x="200" y="398" text-anchor="middle" class="small">Policies</text>
+  <text x="200" y="418" text-anchor="middle" class="small">Wikis</text>
+  <text x="200" y="438" text-anchor="middle" class="small">PDFs</text>
+  <text x="200" y="458" text-anchor="middle" class="small">Records</text>
 
-  <path d="M402 356 L592 356" class="flow-base" marker-end="url(#arr)"/>
-  <path d="M592 458 L402 458" class="flow-base" marker-end="url(#arr)"/>
-  <path d="M848 458 L1040 458" class="flow-base" marker-end="url(#arr)"/>
-  <path d="M1040 356 L848 356" class="flow-base" marker-end="url(#arr)"/>
-  <path d="M720 514 L720 592" class="flow-base" marker-end="url(#arr)"/>
-  <path d="M818 690 L998 690" class="flow-base" marker-end="url(#arr)"/>
+  <rect x="292" y="328" width="160" height="164" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="372" y="372" text-anchor="middle" class="cardText">Chunk + Tag</text>
+  <text x="372" y="397" text-anchor="middle" class="small">PII masking</text>
+  <text x="372" y="417" text-anchor="middle" class="small">ACL metadata</text>
+  <text x="372" y="437" text-anchor="middle" class="small">Freshness stamps</text>
 
-  <path d="M402 356 L592 356" class="flow-anim"/>
-  <path d="M592 458 L402 458" class="flow-anim flow-reverse"/>
-  <path d="M848 458 L1040 458" class="flow-anim"/>
-  <path d="M1040 356 L848 356" class="flow-anim flow-reverse"/>
-  <path d="M720 514 L720 592" class="flow-anim flow-anim-slow"/>
-  <path d="M818 690 L998 690" class="flow-anim flow-anim-slow"/>
+  <rect x="575" y="304" width="140" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="645" y="346" text-anchor="middle" class="cardText">Query</text>
+  <text x="645" y="368" text-anchor="middle" class="cardText">Embedder</text>
 
-  <text class="flow" x="488" y="342">Question</text>
-  <text class="flow" x="488" y="488">Response</text>
-  <text class="flow" x="914" y="342">Prompt</text>
-  <text class="flow" x="900" y="488">Post-processing</text>
-  <text class="flow" x="590" y="642">Semantic search</text>
-  <text class="flow" x="836" y="676">Context feed</text>
+  <rect x="575" y="452" width="294" height="168" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="722" y="492" text-anchor="middle" class="cardText">Vector + Hybrid Retrieval</text>
+  <text x="722" y="520" text-anchor="middle" class="small">Vector DB + BM25</text>
+  <text x="722" y="542" text-anchor="middle" class="small">Reranking + policy filter</text>
+  <text x="722" y="564" text-anchor="middle" class="small">Citations and provenance</text>
+
+  <rect x="575" y="650" width="294" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="722" y="688" text-anchor="middle" class="cardText">Retrieved Context Pack</text>
+  <text x="722" y="712" text-anchor="middle" class="small">Top-k chunks + metadata + scores</text>
+  <text x="722" y="734" text-anchor="middle" class="small">Security-trimmed for requester</text>
+
+  <rect x="1005" y="300" width="292" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="1151" y="346" text-anchor="middle" class="cardText">Prompt Orchestrator</text>
+  <text x="1151" y="370" text-anchor="middle" class="small">Template + guardrails + tool policy</text>
+
+  <rect x="1005" y="448" width="292" height="136" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="1151" y="494" text-anchor="middle" class="cardText">LLM Inference Layer</text>
+  <text x="1151" y="519" text-anchor="middle" class="small">Model routing (OpenAI/Gemini/Claude)</text>
+  <text x="1151" y="541" text-anchor="middle" class="small">Latency and quality controls</text>
+
+  <rect x="1005" y="612" width="292" height="160" rx="16" fill="url(#box)" stroke="#79BCF7"/>
+  <text x="1151" y="652" text-anchor="middle" class="cardText">Response + Governance</text>
+  <text x="1151" y="678" text-anchor="middle" class="small">Citation validation</text>
+  <text x="1151" y="700" text-anchor="middle" class="small">Policy checks and redaction</text>
+  <text x="1151" y="722" text-anchor="middle" class="small">Audit log and confidence score</text>
+
+  <rect x="565" y="270" width="160" height="28" rx="14" fill="#2C5884" stroke="#79BCF7"/>
+  <text x="645" y="289" text-anchor="middle" class="chip">User Query</text>
+
+  <rect x="724" y="270" width="170" height="28" rx="14" fill="#2C5884" stroke="#79BCF7"/>
+  <text x="809" y="289" text-anchor="middle" class="chip">Context Budgeting</text>
+
+  <path d="M270 410 L292 410" stroke="url(#flowGreen)" stroke-width="5" marker-end="url(#arrowGreen)" filter="url(#softGlow)"/>
+  <text x="276" y="396" class="flowLabel">ingest</text>
+
+  <path d="M452 410 L560 410" stroke="url(#flowGreen)" stroke-width="5" marker-end="url(#arrowGreen)" filter="url(#softGlow)"/>
+  <text x="482" y="396" class="flowLabel">embed documents</text>
+
+  <path d="M645 424 L645 452" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="657" y="444" class="flowLabel">search vector</text>
+
+  <path d="M722 620 L722 650" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="736" y="642" class="flowLabel">pack context</text>
+
+  <path d="M869 700 L995 700" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="900" y="686" class="flowLabel">augment prompt</text>
+
+  <path d="M1151 420 L1151 448" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="1164" y="441" class="flowLabel">generate</text>
+
+  <path d="M1151 584 L1151 612" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="1164" y="606" class="flowLabel">validate</text>
+
+  <path d="M862 284 L1005 284" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
+  <text x="905" y="268" class="flowLabel">query + controls</text>
+
+  <path d="M1297 690 L1335 690 L1335 322 L1297 322" stroke="url(#flowBlue)" stroke-width="4" fill="none" marker-end="url(#arrowBlue)"/>
+  <text x="1340" y="506" class="flowLabel" transform="rotate(90 1340 506)">final answer to user</text>
+
+  <rect x="1015" y="790" width="274" height="42" rx="12" fill="#214A76" stroke="#79BCF7"/>
+  <text x="1152" y="816" text-anchor="middle" class="chip">Observability: latency, quality, groundedness</text>
 </svg>
