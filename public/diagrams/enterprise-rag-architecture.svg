@@ -1,149 +1,90 @@
-﻿<svg width="1440" height="920" viewBox="0 0 1440 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture blueprint">
+﻿<svg width="1440" height="920" viewBox="0 0 1440 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#09182C"/>
-      <stop offset="100%" stop-color="#123E6A"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#153B63" stop-opacity="0.82"/>
-      <stop offset="100%" stop-color="#0C2745" stop-opacity="0.82"/>
-    </linearGradient>
-    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1C4F7E" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#123D67" stop-opacity="0.95"/>
-    </linearGradient>
-    <linearGradient id="flowBlue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#75C0FF"/>
-      <stop offset="100%" stop-color="#BEE6FF"/>
-    </linearGradient>
-    <linearGradient id="flowGreen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#5BD8A3"/>
-      <stop offset="100%" stop-color="#B5F4D7"/>
-    </linearGradient>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#BEE6FF"/>
-    </marker>
-    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#9EF1C8"/>
-    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#153D66" stop-opacity="0.86"/><stop offset="100%" stop-color="#0D2948" stop-opacity="0.86"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1D517F"/><stop offset="100%" stop-color="#134067"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/></marker>
     <style>
-      .title{font:700 50px 'Segoe UI',Arial,sans-serif;fill:#EAF5FF}
-      .subtitle{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#BBD9F5}
-      .phase{font:700 27px 'Segoe UI',Arial,sans-serif;fill:#EAF5FF}
-      .phaseMeta{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#C9E5FF}
-      .cardTitle{font:700 30px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
-      .cardText{font:500 15px 'Segoe UI',Arial,sans-serif;fill:#D8EDFF}
-      .flowLabel{font:600 15px 'Segoe UI',Arial,sans-serif;fill:#D8EDFF}
-      .small{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#CBE7FF}
-      .chip{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#EAF8FF}
+      .title{font:700 48px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .phase{font:700 24px 'Segoe UI',Arial,sans-serif;fill:#EBF7FF}
+      .meta{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#C9E6FF}
+      .cardTitle{font:700 19px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
+      .cardBody{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .flow{font:600 13px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
     </style>
   </defs>
 
   <rect width="1440" height="920" fill="url(#bg)"/>
-  <ellipse cx="710" cy="380" rx="610" ry="330" fill="#2F80ED" fill-opacity="0.15"/>
+  <ellipse cx="720" cy="390" rx="600" ry="320" fill="#2F80ED" fill-opacity="0.14"/>
 
-  <text x="80" y="86" class="title">Enterprise RAG Architecture</text>
-  <text x="80" y="120" class="subtitle">Production retrieval design for trusted answers, policy control, and enterprise scale</text>
+  <text x="80" y="88" class="title">Enterprise RAG Architecture</text>
+  <text x="80" y="120" class="sub">Ingestion, retrieval, and generation with policy and evidence controls</text>
 
-  <rect x="70" y="160" width="1300" height="690" rx="28" fill="#0C233E" stroke="#3F8DD6" stroke-width="2"/>
+  <rect x="80" y="160" width="1280" height="720" rx="26" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
 
-  <rect x="95" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
-  <rect x="528" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
-  <rect x="961" y="190" width="385" height="625" rx="22" fill="url(#panel)" stroke="#4E95D8"/>
+  <rect x="110" y="200" width="400" height="640" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
+  <rect x="520" y="200" width="400" height="640" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
+  <rect x="930" y="200" width="400" height="640" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
 
-  <text x="287" y="232" text-anchor="middle" class="phase">Data Ingestion</text>
-  <text x="287" y="255" text-anchor="middle" class="phaseMeta">Source normalization and embedding prep</text>
+  <text x="310" y="238" text-anchor="middle" class="phase">Data Ingestion</text>
+  <text x="310" y="260" text-anchor="middle" class="meta">Normalize, chunk, tag, and index source content</text>
+  <text x="720" y="238" text-anchor="middle" class="phase">Retrieval Core</text>
+  <text x="720" y="260" text-anchor="middle" class="meta">Embed, search, rerank, and build context package</text>
+  <text x="1130" y="238" text-anchor="middle" class="phase">Generation and Governance</text>
+  <text x="1130" y="260" text-anchor="middle" class="meta">Prompt, infer, verify, and produce cited response</text>
 
-  <text x="720" y="232" text-anchor="middle" class="phase">Retrieval Phase</text>
-  <text x="720" y="255" text-anchor="middle" class="phaseMeta">Semantic search, rerank, governed context</text>
+  <rect x="160" y="320" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="310" y="357" text-anchor="middle" class="cardTitle">Source Systems</text>
+  <text x="310" y="380" text-anchor="middle" class="cardBody">Docs, policies, records, knowledge bases</text>
 
-  <text x="1153" y="232" text-anchor="middle" class="phase">Generation Phase</text>
-  <text x="1153" y="255" text-anchor="middle" class="phaseMeta">Prompt assembly, response generation, controls</text>
+  <rect x="160" y="450" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="310" y="487" text-anchor="middle" class="cardTitle">Chunk and Tag</text>
+  <text x="310" y="510" text-anchor="middle" class="cardBody">ACL metadata, PII masking, freshness</text>
 
-  <rect x="130" y="300" width="140" height="220" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="200" y="338" text-anchor="middle" class="cardText">Knowledge</text>
-  <text x="200" y="360" text-anchor="middle" class="cardText">Sources</text>
-  <text x="200" y="398" text-anchor="middle" class="small">Policies</text>
-  <text x="200" y="418" text-anchor="middle" class="small">Wikis</text>
-  <text x="200" y="438" text-anchor="middle" class="small">PDFs</text>
-  <text x="200" y="458" text-anchor="middle" class="small">Records</text>
+  <rect x="160" y="580" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="310" y="617" text-anchor="middle" class="cardTitle">Vector Index</text>
+  <text x="310" y="640" text-anchor="middle" class="cardBody">Embeddings and searchable metadata</text>
 
-  <rect x="292" y="328" width="160" height="164" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="372" y="372" text-anchor="middle" class="cardText">Chunk + Tag</text>
-  <text x="372" y="397" text-anchor="middle" class="small">PII masking</text>
-  <text x="372" y="417" text-anchor="middle" class="small">ACL metadata</text>
-  <text x="372" y="437" text-anchor="middle" class="small">Freshness stamps</text>
+  <rect x="570" y="320" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="357" text-anchor="middle" class="cardTitle">Query Embedder</text>
+  <text x="720" y="380" text-anchor="middle" class="cardBody">Intent-aware query representation</text>
 
-  <rect x="575" y="304" width="140" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="645" y="346" text-anchor="middle" class="cardText">Query</text>
-  <text x="645" y="368" text-anchor="middle" class="cardText">Embedder</text>
+  <rect x="570" y="450" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="487" text-anchor="middle" class="cardTitle">Hybrid Retrieval</text>
+  <text x="720" y="510" text-anchor="middle" class="cardBody">Vector + keyword + rerank</text>
 
-  <rect x="575" y="452" width="294" height="168" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="722" y="492" text-anchor="middle" class="cardText">Vector + Hybrid Retrieval</text>
-  <text x="722" y="520" text-anchor="middle" class="small">Vector DB + BM25</text>
-  <text x="722" y="542" text-anchor="middle" class="small">Reranking + policy filter</text>
-  <text x="722" y="564" text-anchor="middle" class="small">Citations and provenance</text>
+  <rect x="570" y="580" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="617" text-anchor="middle" class="cardTitle">Context Pack</text>
+  <text x="720" y="640" text-anchor="middle" class="cardBody">Top chunks with evidence and scores</text>
 
-  <rect x="575" y="650" width="294" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="722" y="688" text-anchor="middle" class="cardText">Retrieved Context Pack</text>
-  <text x="722" y="712" text-anchor="middle" class="small">Top-k chunks + metadata + scores</text>
-  <text x="722" y="734" text-anchor="middle" class="small">Security-trimmed for requester</text>
+  <rect x="980" y="320" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1130" y="357" text-anchor="middle" class="cardTitle">Prompt Orchestrator</text>
+  <text x="1130" y="380" text-anchor="middle" class="cardBody">Template + guardrails + policy</text>
 
-  <rect x="1005" y="300" width="292" height="120" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="1151" y="346" text-anchor="middle" class="cardText">Prompt Orchestrator</text>
-  <text x="1151" y="370" text-anchor="middle" class="small">Template + guardrails + tool policy</text>
+  <rect x="980" y="450" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1130" y="487" text-anchor="middle" class="cardTitle">LLM Inference</text>
+  <text x="1130" y="510" text-anchor="middle" class="cardBody">Model routing and response draft</text>
 
-  <rect x="1005" y="448" width="292" height="136" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="1151" y="494" text-anchor="middle" class="cardText">LLM Inference Layer</text>
-  <text x="1151" y="519" text-anchor="middle" class="small">Model routing (OpenAI/Gemini/Claude)</text>
-  <text x="1151" y="541" text-anchor="middle" class="small">Latency and quality controls</text>
+  <rect x="980" y="580" width="300" height="95" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1130" y="617" text-anchor="middle" class="cardTitle">Governed Answer</text>
+  <text x="1130" y="640" text-anchor="middle" class="cardBody">Citation check, policy check, telemetry</text>
 
-  <rect x="1005" y="612" width="292" height="160" rx="16" fill="url(#box)" stroke="#79BCF7"/>
-  <text x="1151" y="652" text-anchor="middle" class="cardText">Response + Governance</text>
-  <text x="1151" y="678" text-anchor="middle" class="small">Citation validation</text>
-  <text x="1151" y="700" text-anchor="middle" class="small">Policy checks and redaction</text>
-  <text x="1151" y="722" text-anchor="middle" class="small">Audit log and confidence score</text>
+  <path d="M310 415 L310 450" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M310 545 L310 580" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M720 415 L720 450" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M720 545 L720 580" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1130 415 L1130 450" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1130 545 L1130 580" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <rect x="565" y="270" width="160" height="28" rx="14" fill="#2C5884" stroke="#79BCF7"/>
-  <text x="645" y="289" text-anchor="middle" class="chip">User Query</text>
+  <path d="M460 367 L570 367" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M460 497 L570 497" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M460 627 L570 627" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <rect x="724" y="270" width="170" height="28" rx="14" fill="#2C5884" stroke="#79BCF7"/>
-  <text x="809" y="289" text-anchor="middle" class="chip">Context Budgeting</text>
+  <path d="M870 367 L980 367" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M870 497 L980 497" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M870 627 L980 627" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <path d="M270 410 L292 410" stroke="url(#flowGreen)" stroke-width="5" marker-end="url(#arrowGreen)" filter="url(#softGlow)"/>
-  <text x="276" y="396" class="flowLabel">ingest</text>
-
-  <path d="M452 410 L560 410" stroke="url(#flowGreen)" stroke-width="5" marker-end="url(#arrowGreen)" filter="url(#softGlow)"/>
-  <text x="482" y="396" class="flowLabel">embed documents</text>
-
-  <path d="M645 424 L645 452" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="657" y="444" class="flowLabel">search vector</text>
-
-  <path d="M722 620 L722 650" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="736" y="642" class="flowLabel">pack context</text>
-
-  <path d="M869 700 L995 700" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="900" y="686" class="flowLabel">augment prompt</text>
-
-  <path d="M1151 420 L1151 448" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="1164" y="441" class="flowLabel">generate</text>
-
-  <path d="M1151 584 L1151 612" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="1164" y="606" class="flowLabel">validate</text>
-
-  <path d="M862 284 L1005 284" stroke="url(#flowBlue)" stroke-width="5" marker-end="url(#arrowBlue)" filter="url(#softGlow)"/>
-  <text x="905" y="268" class="flowLabel">query + controls</text>
-
-  <path d="M1297 690 L1335 690 L1335 322 L1297 322" stroke="url(#flowBlue)" stroke-width="4" fill="none" marker-end="url(#arrowBlue)"/>
-  <text x="1340" y="506" class="flowLabel" transform="rotate(90 1340 506)">final answer to user</text>
-
-  <rect x="1015" y="790" width="274" height="42" rx="12" fill="#214A76" stroke="#79BCF7"/>
-  <text x="1152" y="816" text-anchor="middle" class="chip">Observability: latency, quality, groundedness</text>
+  <rect x="1080" y="700" width="230" height="45" rx="12" fill="#285A89" stroke="#79C0F7"/>
+  <text x="1195" y="728" text-anchor="middle" class="flow">Output: trusted response + citations</text>
 </svg>

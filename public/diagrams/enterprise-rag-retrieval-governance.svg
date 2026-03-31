@@ -1,105 +1,77 @@
-﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG retrieval and governance flow">
+﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RAG retrieval and governance flow">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#09182C"/>
-      <stop offset="100%" stop-color="#123E6A"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#153D66" stop-opacity="0.84"/>
-      <stop offset="100%" stop-color="#0D2948" stop-opacity="0.84"/>
-    </linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1D517F" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#134067" stop-opacity="0.95"/>
-    </linearGradient>
-    <linearGradient id="flowBlue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#7EC6FF"/>
-      <stop offset="100%" stop-color="#C8ECFF"/>
-    </linearGradient>
-    <linearGradient id="flowGreen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#66E0AE"/>
-      <stop offset="100%" stop-color="#BDF5DB"/>
-    </linearGradient>
-    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/></marker>
-    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#BDF5DB"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1D517F"/><stop offset="100%" stop-color="#134067"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/></marker>
     <style>
-      .title{font:700 48px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
-      .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
-      .phase{font:700 25px 'Segoe UI',Arial,sans-serif;fill:#EBF7FF}
-      .meta{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#C9E6FF}
-      .cardTitle{font:700 19px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
-      .cardText{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
-      .flow{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
+      .title{font:700 46px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .cardTitle{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
+      .cardBody{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .flow{font:600 13px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
     </style>
   </defs>
 
   <rect width="1440" height="860" fill="url(#bg)"/>
-  <ellipse cx="720" cy="360" rx="600" ry="300" fill="#2F80ED" fill-opacity="0.16"/>
+  <ellipse cx="720" cy="370" rx="600" ry="300" fill="#2F80ED" fill-opacity="0.14"/>
 
-  <text x="86" y="84" class="title">RAG Retrieval and Governance Flow</text>
-  <text x="86" y="116" class="sub">From query intent to governed context and citation-ready answer</text>
+  <text x="86" y="82" class="title">RAG Retrieval and Governance Flow</text>
+  <text x="86" y="112" class="sub">Operational sequence from query to monitored answer</text>
 
-  <rect x="78" y="152" width="1284" height="650" rx="26" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+  <rect x="90" y="150" width="1260" height="640" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
 
-  <rect x="108" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
-  <text x="306" y="228" text-anchor="middle" class="phase">Query Preparation</text>
-  <text x="306" y="251" text-anchor="middle" class="meta">Intent parsing, rewrite, and access checks</text>
+  <rect x="130" y="250" width="180" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="220" y="286" text-anchor="middle" class="cardTitle">Query</text>
+  <text x="220" y="309" text-anchor="middle" class="cardBody">Intent + ACL</text>
 
-  <rect x="522" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
-  <text x="720" y="228" text-anchor="middle" class="phase">Retrieval Core</text>
-  <text x="720" y="251" text-anchor="middle" class="meta">Hybrid search, rerank, context assembly</text>
+  <rect x="340" y="250" width="180" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="430" y="286" text-anchor="middle" class="cardTitle">Rewrite</text>
+  <text x="430" y="309" text-anchor="middle" class="cardBody">Expand entities</text>
 
-  <rect x="936" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
-  <text x="1134" y="228" text-anchor="middle" class="phase">Governance and Answer</text>
-  <text x="1134" y="251" text-anchor="middle" class="meta">Policy gates, grounding checks, monitored output</text>
+  <rect x="550" y="250" width="180" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="640" y="286" text-anchor="middle" class="cardTitle">Retrieve</text>
+  <text x="640" y="309" text-anchor="middle" class="cardBody">Vector + keyword</text>
 
-  <rect x="150" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="306" y="332" text-anchor="middle" class="cardTitle">Query Intent and ACL</text>
-  <text x="306" y="353" text-anchor="middle" class="cardText">Role, scope, and sensitivity mapping</text>
+  <rect x="760" y="250" width="180" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="850" y="286" text-anchor="middle" class="cardTitle">Rerank</text>
+  <text x="850" y="309" text-anchor="middle" class="cardBody">Top-k relevance</text>
 
-  <rect x="150" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="306" y="442" text-anchor="middle" class="cardTitle">Rewrite and Expansion</text>
-  <text x="306" y="463" text-anchor="middle" class="cardText">Synonyms, entities, route selection</text>
+  <rect x="970" y="250" width="180" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1060" y="286" text-anchor="middle" class="cardTitle">Context</text>
+  <text x="1060" y="309" text-anchor="middle" class="cardBody">Pack evidence</text>
 
-  <rect x="150" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="306" y="552" text-anchor="middle" class="cardTitle">Metadata Constraints</text>
-  <text x="306" y="573" text-anchor="middle" class="cardText">Region, department, document class</text>
+  <rect x="1180" y="250" width="130" height="90" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1245" y="286" text-anchor="middle" class="cardTitle">Answer</text>
+  <text x="1245" y="309" text-anchor="middle" class="cardBody">Cited</text>
 
-  <rect x="564" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="720" y="332" text-anchor="middle" class="cardTitle">Hybrid Retrieval</text>
-  <text x="720" y="353" text-anchor="middle" class="cardText">Vector + keyword + graph hints</text>
+  <path d="M310 295 L340 295" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M520 295 L550 295" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M730 295 L760 295" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M940 295 L970 295" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1150 295 L1180 295" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <rect x="564" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="720" y="442" text-anchor="middle" class="cardTitle">Reranking and Pruning</text>
-  <text x="720" y="463" text-anchor="middle" class="cardText">Top-k quality boost and token fit</text>
+  <rect x="170" y="430" width="1100" height="280" rx="18" fill="#123458" stroke="#4F98D9"/>
+  <text x="210" y="470" class="cardTitle">Governance Gates</text>
 
-  <rect x="564" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="720" y="552" text-anchor="middle" class="cardTitle">Context Package</text>
-  <text x="720" y="573" text-anchor="middle" class="cardText">Evidence, scores, and provenance</text>
+  <rect x="210" y="500" width="500" height="72" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="460" y="531" text-anchor="middle" class="cardTitle">Grounding and Citation Check</text>
+  <text x="460" y="553" text-anchor="middle" class="cardBody">Ensure each claim maps to approved source chunks</text>
 
-  <rect x="978" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1134" y="332" text-anchor="middle" class="cardTitle">Prompt + Policy Injection</text>
-  <text x="1134" y="353" text-anchor="middle" class="cardText">Guardrails and response schema</text>
+  <rect x="740" y="500" width="490" height="72" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="985" y="531" text-anchor="middle" class="cardTitle">Policy and Sensitive Data Controls</text>
+  <text x="985" y="553" text-anchor="middle" class="cardBody">Apply redaction, compliance, and access constraints</text>
 
-  <rect x="978" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1134" y="442" text-anchor="middle" class="cardTitle">Grounding Verification</text>
-  <text x="1134" y="463" text-anchor="middle" class="cardText">Citation and factual consistency check</text>
+  <rect x="210" y="595" width="500" height="72" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="460" y="626" text-anchor="middle" class="cardTitle">Quality and Risk Review</text>
+  <text x="460" y="648" text-anchor="middle" class="cardBody">Score confidence and route uncertain answers for review</text>
 
-  <rect x="978" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1134" y="552" text-anchor="middle" class="cardTitle">Final Answer and Telemetry</text>
-  <text x="1134" y="573" text-anchor="middle" class="cardText">Output, confidence, latency, cost logs</text>
+  <rect x="740" y="595" width="490" height="72" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="985" y="626" text-anchor="middle" class="cardTitle">Telemetry Feedback</text>
+  <text x="985" y="648" text-anchor="middle" class="cardBody">Latency, cost, and quality signals tune retrieval policy</text>
 
-  <path d="M462 342 L558 342" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
-  <path d="M462 452 L558 452" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
-  <path d="M462 562 L558 562" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <path d="M1245 340 C1280 380,1280 430,1240 465" stroke="#BDF5DB" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M210 465 C170 430,170 380,205 340" stroke="#BDF5DB" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
 
-  <path d="M876 342 L972 342" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
-  <path d="M876 452 L972 452" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
-  <path d="M876 562 L972 562" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
-
-  <path d="M1288 560 C1320 560,1334 542,1334 504 C1334 466,1320 448,1288 448" stroke="url(#flowGreen)" stroke-width="4" fill="none" marker-end="url(#arrowGreen)"/>
-  <text x="1240" y="480" class="flow">feedback loop</text>
-
-  <path d="M978 604 C860 676,620 676,462 604" stroke="url(#flowGreen)" stroke-width="4" fill="none" marker-end="url(#arrowGreen)"/>
-  <text x="682" y="700" class="flow">observability updates routing and policy rules</text>
+  <text x="1150" y="420" class="flow">post-answer checks</text>
+  <text x="145" y="420" class="flow">feedback to routing</text>
 </svg>

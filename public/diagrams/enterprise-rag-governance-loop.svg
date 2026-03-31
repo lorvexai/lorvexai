@@ -1,47 +1,56 @@
-﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RAG governance flywheel">
+﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RAG governance loop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#12355C"/></linearGradient>
-    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C9EBFF"/></marker>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/></marker>
     <style>
-      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
-      .n{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
-      .s{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#CFE6FF}
+      .title{font:700 46px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .node{font:700 17px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
+      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
     </style>
   </defs>
+
   <rect width="1440" height="860" fill="url(#bg)"/>
-  <text class="title" x="88" y="80">Governance and Evaluation Flywheel</text>
+  <ellipse cx="720" cy="380" rx="580" ry="290" fill="#2F80ED" fill-opacity="0.14"/>
 
-  <g transform="translate(720 455)">
-    <circle cx="0" cy="0" r="290" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
-    <circle cx="0" cy="0" r="120" fill="#123A63" stroke="#69B8F2"/>
-    <text class="n" x="0" y="-6" text-anchor="middle">CONTROL</text>
-    <text class="n" x="0" y="18" text-anchor="middle">CENTER</text>
+  <text x="86" y="84" class="title">Governance and Evaluation Loop</text>
+  <text x="86" y="114" class="sub">Continuous control cycle for reliability, compliance, and quality</text>
 
-    <circle cx="0" cy="-230" r="64" fill="#153C64" stroke="#66B2F0"/>
-    <text class="n" x="0" y="-224" text-anchor="middle">Log</text>
+  <circle cx="720" cy="450" r="270" fill="#10345A" stroke="#3F8DD6" stroke-width="2"/>
+  <circle cx="720" cy="450" r="110" fill="#123C65" stroke="#69B8F2"/>
+  <text x="720" y="442" text-anchor="middle" class="node">CONTROL</text>
+  <text x="720" y="464" text-anchor="middle" class="node">CENTER</text>
 
-    <circle cx="198" cy="-116" r="64" fill="#14505D" stroke="#58C7CF"/>
-    <text class="n" x="198" y="-110" text-anchor="middle">Evaluate</text>
+  <rect x="654" y="170" width="132" height="72" rx="14" fill="#1C517F" stroke="#79C0F7"/>
+  <text x="720" y="199" text-anchor="middle" class="node">Log</text>
+  <text x="720" y="219" text-anchor="middle" class="meta">Trace capture</text>
 
-    <circle cx="198" cy="116" r="64" fill="#4D2938" stroke="#FF8FB2"/>
-    <text class="n" x="198" y="122" text-anchor="middle">Review</text>
+  <rect x="942" y="286" width="132" height="72" rx="14" fill="#1C517F" stroke="#79C0F7"/>
+  <text x="1008" y="315" text-anchor="middle" class="node">Evaluate</text>
+  <text x="1008" y="335" text-anchor="middle" class="meta">Quality score</text>
 
-    <circle cx="0" cy="230" r="64" fill="#58461F" stroke="#EDB472"/>
-    <text class="n" x="0" y="236" text-anchor="middle">Tune</text>
+  <rect x="942" y="542" width="132" height="72" rx="14" fill="#542B3C" stroke="#FF9ABD"/>
+  <text x="1008" y="571" text-anchor="middle" class="node">Review</text>
+  <text x="1008" y="591" text-anchor="middle" class="meta">Risk analysis</text>
 
-    <circle cx="-198" cy="116" r="64" fill="#58461F" stroke="#EDB472"/>
-    <text class="n" x="-198" y="122" text-anchor="middle">Release</text>
+  <rect x="654" y="658" width="132" height="72" rx="14" fill="#2E4E3A" stroke="#8EE5BD"/>
+  <text x="720" y="687" text-anchor="middle" class="node">Tune</text>
+  <text x="720" y="707" text-anchor="middle" class="meta">Policy updates</text>
 
-    <circle cx="-198" cy="-116" r="64" fill="#153C64" stroke="#66B2F0"/>
-    <text class="n" x="-198" y="-110" text-anchor="middle">Monitor</text>
+  <rect x="366" y="542" width="132" height="72" rx="14" fill="#2E4E3A" stroke="#8EE5BD"/>
+  <text x="432" y="571" text-anchor="middle" class="node">Release</text>
+  <text x="432" y="591" text-anchor="middle" class="meta">Canary deploy</text>
 
-    <path d="M55 -215 C110 -190,145 -165,165 -145" stroke="#C9EBFF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M230 -60 L230 60" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-    <path d="M165 145 C130 180,90 205,40 220" stroke="#C9EBFF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M-40 220 C-90 205,-130 180,-165 145" stroke="#C9EBFF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-    <path d="M-230 60 L-230 -60" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-    <path d="M-165 -145 C-130 -180,-90 -205,-40 -220" stroke="#C9EBFF" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-  </g>
+  <rect x="366" y="286" width="132" height="72" rx="14" fill="#1C517F" stroke="#79C0F7"/>
+  <text x="432" y="315" text-anchor="middle" class="node">Monitor</text>
+  <text x="432" y="335" text-anchor="middle" class="meta">Live metrics</text>
 
-  <text class="s" x="720" y="812" text-anchor="middle">Purpose: keep quality and safety rising while deployment velocity remains operationally stable.</text>
+  <path d="M786 206 L942 310" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M1008 358 L1008 542" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M942 590 L786 694" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M654 694 L498 590" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M432 542 L432 358" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M498 310 L654 206" stroke="#C8ECFF" stroke-width="4" marker-end="url(#arr)"/>
+
+  <text x="720" y="812" text-anchor="middle" class="meta">Objective: improve answer quality while preserving compliance and operational stability.</text>
 </svg>

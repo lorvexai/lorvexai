@@ -1,89 +1,75 @@
-﻿<svg width="1400" height="820" viewBox="0 0 1400 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic reliability and escalation loop">
+﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic AI reliability loop">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#09182C"/>
-      <stop offset="100%" stop-color="#133F6A"/>
-    </linearGradient>
-    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1E5482"/>
-      <stop offset="100%" stop-color="#14416A"/>
-    </linearGradient>
-    <linearGradient id="safe" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#67DFAC"/>
-      <stop offset="100%" stop-color="#BDF5DC"/>
-    </linearGradient>
-    <linearGradient id="risk" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FF8FB2"/>
-      <stop offset="100%" stop-color="#FFC0D4"/>
+      <stop offset="100%" stop-color="#123E6A"/>
     </linearGradient>
     <marker id="arrowSafe" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#BDF5DC"/></marker>
     <marker id="arrowRisk" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFC0D4"/></marker>
     <style>
       .title{font:700 46px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
-      .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#C8E4FC}
-      .node{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
-      .meta{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#D6EDFF}
-      .label{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C8E4FC}
+      .node{font:700 17px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
+      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D6EDFF}
+      .label{font:600 13px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
     </style>
   </defs>
 
-  <rect width="1400" height="820" fill="url(#bg)"/>
-  <ellipse cx="700" cy="380" rx="560" ry="280" fill="#2F80ED" fill-opacity="0.15"/>
+  <rect width="1440" height="860" fill="url(#bg)"/>
+  <ellipse cx="720" cy="400" rx="560" ry="300" fill="#2F80ED" fill-opacity="0.14"/>
 
-  <text x="78" y="80" class="title">Agentic Reliability Loop</text>
-  <text x="78" y="112" class="sub">Fast autonomy when confidence is high, human control when risk rises</text>
+  <text x="80" y="82" class="title">Agentic Reliability Loop</text>
+  <text x="80" y="114" class="sub">Autonomy path in green, escalation path in pink</text>
 
-  <circle cx="700" cy="425" r="268" fill="url(#ring)" stroke="#4A96DA" stroke-width="2"/>
-  <circle cx="700" cy="425" r="112" fill="#123C65" stroke="#75BFF8"/>
-  <text x="700" y="414" text-anchor="middle" class="node">SAFE</text>
-  <text x="700" y="438" text-anchor="middle" class="node">AUTONOMY CORE</text>
+  <circle cx="720" cy="430" r="260" fill="#10345A" stroke="#4A96DA" stroke-width="2"/>
+  <circle cx="720" cy="430" r="110" fill="#123C65" stroke="#75BFF8"/>
+  <text x="720" y="422" text-anchor="middle" class="node">SAFE</text>
+  <text x="720" y="444" text-anchor="middle" class="node">AUTONOMY</text>
 
-  <g>
-    <rect x="634" y="126" width="132" height="68" rx="14" fill="#1C517F" stroke="#79C0F7"/>
-    <text x="700" y="154" text-anchor="middle" class="node">Observe</text>
-    <text x="700" y="173" text-anchor="middle" class="meta">Goal + context</text>
-
-    <rect x="900" y="220" width="132" height="68" rx="14" fill="#1C517F" stroke="#79C0F7"/>
-    <text x="966" y="248" text-anchor="middle" class="node">Plan</text>
-    <text x="966" y="267" text-anchor="middle" class="meta">Task graph</text>
-
-    <rect x="1008" y="392" width="132" height="68" rx="14" fill="#1C517F" stroke="#79C0F7"/>
-    <text x="1074" y="420" text-anchor="middle" class="node">Act</text>
-    <text x="1074" y="439" text-anchor="middle" class="meta">Tool calls</text>
-
-    <rect x="900" y="564" width="132" height="68" rx="14" fill="#2E4E3A" stroke="#8EE5BD"/>
-    <text x="966" y="592" text-anchor="middle" class="node">Verify</text>
-    <text x="966" y="611" text-anchor="middle" class="meta">Quality + policy</text>
-
-    <rect x="634" y="656" width="132" height="68" rx="14" fill="#2E4E3A" stroke="#8EE5BD"/>
-    <text x="700" y="684" text-anchor="middle" class="node">Learn</text>
-    <text x="700" y="703" text-anchor="middle" class="meta">Feedback tuning</text>
-
-    <rect x="368" y="564" width="132" height="68" rx="14" fill="#542B3C" stroke="#FF9ABD"/>
-    <text x="434" y="592" text-anchor="middle" class="node">Escalate</text>
-    <text x="434" y="611" text-anchor="middle" class="meta">Confidence drop</text>
-
-    <rect x="260" y="392" width="132" height="68" rx="14" fill="#542B3C" stroke="#FF9ABD"/>
-    <text x="326" y="420" text-anchor="middle" class="node">Approve</text>
-    <text x="326" y="439" text-anchor="middle" class="meta">Human gate</text>
-
-    <rect x="368" y="220" width="132" height="68" rx="14" fill="#1C517F" stroke="#79C0F7"/>
-    <text x="434" y="248" text-anchor="middle" class="node">Resume</text>
-    <text x="434" y="267" text-anchor="middle" class="meta">Controlled return</text>
+  <g fill="#1C517F" stroke="#79C0F7">
+    <rect x="654" y="150" width="132" height="70" rx="14"/>
+    <rect x="930" y="250" width="132" height="70" rx="14"/>
+    <rect x="1035" y="430" width="132" height="70" rx="14"/>
+    <rect x="930" y="610" width="132" height="70" rx="14"/>
+    <rect x="654" y="710" width="132" height="70" rx="14"/>
+    <rect x="378" y="610" width="132" height="70" rx="14" fill="#542B3C" stroke="#FF9ABD"/>
+    <rect x="273" y="430" width="132" height="70" rx="14" fill="#542B3C" stroke="#FF9ABD"/>
+    <rect x="378" y="250" width="132" height="70" rx="14"/>
   </g>
 
-  <path d="M766 184 L900 240" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
-  <path d="M1032 288 L1060 392" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
-  <path d="M1060 460 L1032 564" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
-  <path d="M900 632 L766 688" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
-  <path d="M634 688 L500 632" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
-  <path d="M368 564 L340 460" stroke="url(#risk)" stroke-width="4" marker-end="url(#arrowRisk)"/>
-  <path d="M340 392 L368 288" stroke="url(#risk)" stroke-width="4" marker-end="url(#arrowRisk)"/>
-  <path d="M500 240 L634 184" stroke="url(#safe)" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <text x="720" y="179" text-anchor="middle" class="node">Observe</text>
+  <text x="720" y="199" text-anchor="middle" class="meta">Goal + context</text>
 
-  <path d="M980 600 C1120 610,1220 565,1260 470" stroke="url(#risk)" stroke-width="4" fill="none" marker-end="url(#arrowRisk)"/>
-  <text x="1130" y="610" class="label">if policy risk is high -> escalate</text>
+  <text x="996" y="279" text-anchor="middle" class="node">Plan</text>
+  <text x="996" y="299" text-anchor="middle" class="meta">Task graph</text>
 
-  <path d="M326 392 C240 340,220 250,286 186" stroke="url(#safe)" stroke-width="4" fill="none" marker-end="url(#arrowSafe)"/>
-  <text x="190" y="300" class="label">human-approved restart</text>
+  <text x="1101" y="459" text-anchor="middle" class="node">Act</text>
+  <text x="1101" y="479" text-anchor="middle" class="meta">Tool calls</text>
+
+  <text x="996" y="639" text-anchor="middle" class="node">Verify</text>
+  <text x="996" y="659" text-anchor="middle" class="meta">Policy check</text>
+
+  <text x="720" y="739" text-anchor="middle" class="node">Learn</text>
+  <text x="720" y="759" text-anchor="middle" class="meta">Feedback tuning</text>
+
+  <text x="444" y="639" text-anchor="middle" class="node">Escalate</text>
+  <text x="444" y="659" text-anchor="middle" class="meta">Low confidence</text>
+
+  <text x="339" y="459" text-anchor="middle" class="node">Approve</text>
+  <text x="339" y="479" text-anchor="middle" class="meta">Human gate</text>
+
+  <text x="444" y="279" text-anchor="middle" class="node">Resume</text>
+  <text x="444" y="299" text-anchor="middle" class="meta">Controlled return</text>
+
+  <path d="M786 185 L930 285" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <path d="M1062 285 L1095 430" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <path d="M1095 500 L1062 610" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <path d="M930 645 L786 745" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <path d="M654 745 L510 645" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+  <path d="M378 645 L345 500" stroke="#FFC0D4" stroke-width="4" marker-end="url(#arrowRisk)"/>
+  <path d="M345 430 L378 285" stroke="#FFC0D4" stroke-width="4" marker-end="url(#arrowRisk)"/>
+  <path d="M510 285 L654 185" stroke="#BDF5DC" stroke-width="4" marker-end="url(#arrowSafe)"/>
+
+  <text x="1110" y="635" class="label">policy risk high -> escalate</text>
+  <text x="180" y="430" class="label">human-approved restart</text>
 </svg>

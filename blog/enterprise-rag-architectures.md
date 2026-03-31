@@ -67,19 +67,19 @@ A production-grade Retrieval-Augmented Generation (RAG) stack is not just "LLM +
 
 ## End-to-End Architecture Diagram
 
-![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture.svg?v=4)
+![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture.svg?v=5)
 
 ---
 
 ## Retrieval Pipeline Diagram (Operational View)
 
-![Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=3)
+![Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=4)
 
 ---
 
 ## Governance and Evaluation Loop
 
-![Governance and Evaluation Loop](../../diagrams/enterprise-rag-governance-loop.svg?v=2)
+![Governance and Evaluation Loop](../../diagrams/enterprise-rag-governance-loop.svg?v=3)
 
 ---
 
