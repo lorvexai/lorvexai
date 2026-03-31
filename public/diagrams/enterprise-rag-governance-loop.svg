@@ -1,30 +1,42 @@
-﻿<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG governance flow infographic">
+﻿<svg width="1400" height="760" viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG governance loop original">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0A43B6"/><stop offset="100%" stop-color="#0A2E89"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D2F1FF"/></marker>
-    <style>.title{font:700 64px 'Segoe UI';fill:#D9F2FF}.label{font:700 24px 'Segoe UI';fill:#F2FAFF}.txt{font:500 18px 'Segoe UI';fill:#CFE7FF}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="100%" stop-color="#163f70"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9ad8ff"/>
+    </marker>
+    <style>
+      .t{font:700 36px 'Segoe UI',Arial,sans-serif;fill:#ecf7ff}
+      .n{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#eef9ff}
+      .s{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#d7ebff}
+    </style>
   </defs>
-  <rect width="1400" height="860" fill="url(#bg)"/>
-  <rect x="90" y="120" width="1220" height="640" rx="36" fill="#0B2B89" stroke="#5FB8FF" stroke-width="14" stroke-dasharray="8 12"/>
-  <text class="title" x="280" y="90">RAG Governance and Evaluation</text>
+  <rect width="1400" height="760" fill="url(#bg)"/>
+  <text class="t" x="80" y="72">RAG Governance Flywheel</text>
 
-  <circle cx="250" cy="330" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="198" y="338">Observe</text>
-  <circle cx="520" cy="270" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="465" y="278">Evaluate</text>
-  <circle cx="790" cy="330" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="752" y="338">Review</text>
-  <circle cx="1060" cy="270" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="1025" y="278">Tune</text>
-  <circle cx="1180" cy="520" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="1138" y="528">Release</text>
-  <circle cx="900" cy="600" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="858" y="608">Monitor</text>
-  <circle cx="620" cy="540" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="568" y="548">Feedback</text>
-  <circle cx="360" cy="600" r="78" fill="#041A62" stroke="#9BE2FF" stroke-width="4"/><text class="label" x="310" y="608">Improve</text>
+  <g transform="translate(700 410)">
+    <ellipse cx="0" cy="0" rx="470" ry="250" fill="#0f2f56" stroke="#4ba3e8" stroke-width="2"/>
 
-  <path d="M325 305 L442 285" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M598 285 L712 305" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M868 305 L982 285" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M1095 340 L1152 440" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M1112 557 L980 585" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M822 585 L700 555" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M542 555 L438 585" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M328 540 L248 405" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
+    <g>
+      <circle cx="-340" cy="-40" r="78" fill="#143f6d" stroke="#67b5f0"/><text class="n" x="-373" y="-35">Log</text><text class="s" x="-394" y="-15">Prompt/answer traces</text>
+      <circle cx="-150" cy="-170" r="78" fill="#124b5e" stroke="#5ac8cf"/><text class="n" x="-185" y="-165">Score</text><text class="s" x="-206" y="-145">Quality + grounding</text>
+      <circle cx="90" cy="-170" r="78" fill="#4c2637" stroke="#ff8fb2"/><text class="n" x="52" y="-165">Review</text><text class="s" x="34" y="-145">Risk + policy checks</text>
+      <circle cx="280" cy="-40" r="78" fill="#4f3f1c" stroke="#f0b56c"/><text class="n" x="245" y="-35">Tune</text><text class="s" x="220" y="-15">Prompt/retriever</text>
+      <circle cx="280" cy="180" r="78" fill="#4f3f1c" stroke="#f0b56c"/><text class="n" x="240" y="185">Release</text><text class="s" x="216" y="205">Canary + rollout</text>
+      <circle cx="40" cy="220" r="78" fill="#124b5e" stroke="#5ac8cf"/><text class="n" x="3" y="225">Monitor</text><text class="s" x="-31" y="245">Latency, cost, drift</text>
+      <circle cx="-200" cy="170" r="78" fill="#143f6d" stroke="#67b5f0"/><text class="n" x="-237" y="175">Improve</text><text class="s" x="-273" y="195">Update policies</text>
+    </g>
 
-  <text class="txt" x="180" y="700">Loop: logs -> quality scoring -> risk review -> tuning -> release -> monitoring -> feedback -> improvement</text>
+    <path d="M-285 -70 C-250 -130,-220 -145,-185 -165" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M-70 -170 L10 -170" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M170 -145 C210 -120,230 -90,250 -60" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M300 40 L300 100" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M230 210 C185 225,145 230,120 228" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M-40 220 C-85 220,-125 208,-150 196" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+    <path d="M-260 130 C-300 90,-318 40,-330 -5" stroke="#9ad8ff" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  </g>
+
+  <text class="s" x="360" y="720">Continuous control loop: quality and safety increase as deployment speed stays predictable.</text>
 </svg>

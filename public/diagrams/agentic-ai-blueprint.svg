@@ -1,39 +1,61 @@
-﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic AI architecture infographic">
+﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agentic AI mission control blueprint">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0A43B6"/><stop offset="100%" stop-color="#0A2E89"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#D2F1FF"/></marker>
-    <style>.title{font:700 92px 'Segoe UI';fill:#D9F2FF}.sub{font:500 26px 'Segoe UI';fill:#CBE7FF}.lbl{font:700 46px 'Segoe UI';fill:#F1FAFF}.flow{font:600 20px 'Segoe UI';fill:#D4EBFF}</style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="100%" stop-color="#13416f"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9ad8ff"/>
+    </marker>
+    <style>
+      .t{font:700 40px 'Segoe UI',Arial,sans-serif;fill:#ecf7ff}
+      .st{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#cbe6ff}
+      .h{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#eef9ff}
+      .b{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#d8ecff}
+    </style>
   </defs>
+
   <rect width="1400" height="900" fill="url(#bg)"/>
-  <text class="title" x="350" y="130">AGENTIC AI</text>
-  <text class="sub" x="370" y="168">From goals to reliable outcomes through controlled autonomy</text>
+  <text class="t" x="70" y="76">Agentic AI: Mission Control Architecture</text>
+  <text class="st" x="70" y="106">Original visual for controlled autonomy and human accountability</text>
 
-  <rect x="90" y="220" width="1220" height="620" rx="40" fill="#0B2B89" stroke="#5FB8FF" stroke-width="18" stroke-dasharray="8 14"/>
+  <rect x="70" y="150" width="1260" height="680" rx="24" fill="#0f2f56" stroke="#4ba3e8" stroke-width="2"/>
 
-  <circle cx="300" cy="440" r="100" fill="#041A62" stroke="#8ED8FF" stroke-width="4"/>
-  <text class="lbl" x="230" y="595">User Goal</text>
+  <rect x="110" y="200" width="1180" height="160" rx="16" fill="#143f6d" stroke="#67b5f0"/>
+  <text class="h" x="136" y="232">Control Lane</text>
+  <text class="b" x="136" y="258">Goal intake -> policy gate -> planner -> task graph -> risk tiering</text>
 
-  <circle cx="700" cy="440" r="100" fill="#041A62" stroke="#8ED8FF" stroke-width="4"/>
-  <rect x="662" y="402" width="76" height="76" rx="12" fill="none" stroke="#F3FAFF" stroke-width="4"/>
-  <text x="690" y="452" font-size="40" font-family="Segoe UI" fill="#F3FAFF">AI</text>
-  <text class="lbl" x="602" y="595">Orchestrator</text>
+  <rect x="110" y="390" width="1180" height="180" rx="16" fill="#124b5e" stroke="#5ac8cf"/>
+  <text class="h" x="136" y="422">Execution Lane</text>
+  <text class="b" x="136" y="448">Specialist agents coordinate tools, APIs, memory, retries, and fallback paths</text>
 
-  <circle cx="1100" cy="440" r="100" fill="#041A62" stroke="#8ED8FF" stroke-width="4"/>
-  <path d="M1068 420 h64 v18 h-64 z M1068 450 h64 v18 h-64 z" fill="#F3FAFF"/>
-  <text class="lbl" x="1038" y="595">Execution</text>
+  <rect x="110" y="600" width="1180" height="180" rx="16" fill="#4c2637" stroke="#ff8fb2"/>
+  <text class="h" x="136" y="632">Trust Lane</text>
+  <text class="b" x="136" y="658">Verification, policy checks, human escalation, audit trails, and telemetry feedback</text>
 
-  <circle cx="700" cy="700" r="92" fill="#041A62" stroke="#8ED8FF" stroke-width="4"/>
-  <path d="M670 706 q30-36 60 0" stroke="#F3FAFF" stroke-width="4" fill="none"/>
-  <circle cx="700" cy="680" r="12" fill="#F3FAFF"/>
-  <text class="lbl" x="590" y="822" font-size="40">Human Governance</text>
+  <circle cx="260" cy="280" r="40" fill="#0b1f3a" stroke="#9ad8ff" stroke-width="3"/>
+  <text class="b" x="242" y="286">Goal</text>
+  <circle cx="470" cy="280" r="40" fill="#0b1f3a" stroke="#9ad8ff" stroke-width="3"/>
+  <text class="b" x="446" y="286">Policy</text>
+  <circle cx="680" cy="280" r="40" fill="#0b1f3a" stroke="#9ad8ff" stroke-width="3"/>
+  <text class="b" x="656" y="286">Plan</text>
+  <circle cx="890" cy="280" r="40" fill="#0b1f3a" stroke="#9ad8ff" stroke-width="3"/>
+  <text class="b" x="866" y="286">Graph</text>
+  <circle cx="1100" cy="280" r="40" fill="#0b1f3a" stroke="#9ad8ff" stroke-width="3"/>
+  <text class="b" x="1078" y="286">Risk</text>
 
-  <path d="M404 415 L592 415" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M808 465 L995 465" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M700 542 L700 605" stroke="#D2F1FF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M620 690 L470 690 L470 500" stroke="#D2F1FF" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M300 280 L430 280" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M510 280 L640 280" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M720 280 L850 280" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M930 280 L1060 280" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
 
-  <text class="flow" x="470" y="400">Goal + context</text>
-  <text class="flow" x="870" y="500">Action plan</text>
-  <text class="flow" x="740" y="578">Approval gate</text>
-  <text class="flow" x="500" y="675">Policy feedback</text>
+  <rect x="210" y="460" width="280" height="70" rx="10" fill="#1b5f74"/><text class="b" x="230" y="502">Agent swarm orchestration</text>
+  <rect x="560" y="460" width="280" height="70" rx="10" fill="#1b5f74"/><text class="b" x="585" y="502">Tool/API execution mesh</text>
+  <rect x="910" y="460" width="280" height="70" rx="10" fill="#1b5f74"/><text class="b" x="934" y="502">Memory and context sync</text>
+
+  <path d="M350 530 L350 600" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M700 530 L700 600" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M1050 530 L1050 600" stroke="#9ad8ff" stroke-width="3" marker-end="url(#arr)"/>
+
+  <text class="b" x="220" y="725">Control principle: autonomous execution for low-risk steps, mandatory human gate for high-impact actions.</text>
 </svg>
