@@ -37,7 +37,7 @@ A mature agentic stack combines:
 
 ## Agentic System Blueprint
 
-![Agentic AI Blueprint](../../diagrams/agentic-ai-blueprint.svg?v=2)
+![Agentic AI Blueprint](../../diagrams/agentic-ai-blueprint.svg?v=3)
 
 ---
 
@@ -67,7 +67,7 @@ A mature agentic stack combines:
 
 ## Operating Loop (How Agents Stay Reliable)
 
-![Agentic Reliability Loop](../../diagrams/agentic-ai-loop.svg?v=2)
+![Agentic Reliability Loop](../../diagrams/agentic-ai-loop.svg?v=3)
 
 ---
 

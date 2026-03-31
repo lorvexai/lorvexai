@@ -73,7 +73,7 @@ A production-grade Retrieval-Augmented Generation (RAG) stack is not just "LLM +
 
 ## Retrieval Pipeline Diagram (Operational View)
 
-![Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=2)
+![Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=3)
 
 ---
 

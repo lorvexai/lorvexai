@@ -1,58 +1,105 @@
-﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RAG retrieval pipeline">
+﻿<svg width="1440" height="860" viewBox="0 0 1440 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG retrieval and governance flow">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#12355C"/></linearGradient>
-    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C9EBFF"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09182C"/>
+      <stop offset="100%" stop-color="#123E6A"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#153D66" stop-opacity="0.84"/>
+      <stop offset="100%" stop-color="#0D2948" stop-opacity="0.84"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D517F" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#134067" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="flowBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7EC6FF"/>
+      <stop offset="100%" stop-color="#C8ECFF"/>
+    </linearGradient>
+    <linearGradient id="flowGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#66E0AE"/>
+      <stop offset="100%" stop-color="#BDF5DB"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#BDF5DB"/></marker>
     <style>
-      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#EAF4FF}
-      .n{font:700 17px 'Segoe UI',Arial,sans-serif;fill:#EFF8FF}
-      .s{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#CFE6FF}
+      .title{font:700 48px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .phase{font:700 25px 'Segoe UI',Arial,sans-serif;fill:#EBF7FF}
+      .meta{font:500 14px 'Segoe UI',Arial,sans-serif;fill:#C9E6FF}
+      .cardTitle{font:700 19px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
+      .cardText{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .flow{font:600 14px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
     </style>
   </defs>
+
   <rect width="1440" height="860" fill="url(#bg)"/>
-  <text class="title" x="90" y="80">Retrieval Pipeline and Governance Gates</text>
+  <ellipse cx="720" cy="360" rx="600" ry="300" fill="#2F80ED" fill-opacity="0.16"/>
 
-  <rect x="90" y="130" width="1260" height="620" rx="26" fill="#0F2A4A" stroke="#3F8DD6" stroke-width="2"/>
+  <text x="86" y="84" class="title">RAG Retrieval and Governance Flow</text>
+  <text x="86" y="116" class="sub">From query intent to governed context and citation-ready answer</text>
 
-  <g>
-    <rect x="140" y="220" width="150" height="95" rx="12" fill="#153C64" stroke="#66B2F0"/>
-    <text class="n" x="215" y="255" text-anchor="middle">Query</text>
-    <text class="s" x="215" y="278" text-anchor="middle">User intent</text>
+  <rect x="78" y="152" width="1284" height="650" rx="26" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
 
-    <rect x="330" y="220" width="170" height="95" rx="12" fill="#153C64" stroke="#66B2F0"/>
-    <text class="n" x="415" y="255" text-anchor="middle">Rewrite</text>
-    <text class="s" x="415" y="278" text-anchor="middle">Expand and route</text>
+  <rect x="108" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
+  <text x="306" y="228" text-anchor="middle" class="phase">Query Preparation</text>
+  <text x="306" y="251" text-anchor="middle" class="meta">Intent parsing, rewrite, and access checks</text>
 
-    <rect x="540" y="220" width="190" height="95" rx="12" fill="#14505D" stroke="#58C7CF"/>
-    <text class="n" x="635" y="255" text-anchor="middle">Hybrid Recall</text>
-    <text class="s" x="635" y="278" text-anchor="middle">Dense + BM25</text>
+  <rect x="522" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
+  <text x="720" y="228" text-anchor="middle" class="phase">Retrieval Core</text>
+  <text x="720" y="251" text-anchor="middle" class="meta">Hybrid search, rerank, context assembly</text>
 
-    <rect x="770" y="220" width="170" height="95" rx="12" fill="#14505D" stroke="#58C7CF"/>
-    <text class="n" x="855" y="255" text-anchor="middle">Rerank</text>
-    <text class="s" x="855" y="278" text-anchor="middle">Cross-encoder</text>
+  <rect x="936" y="188" width="396" height="578" rx="20" fill="url(#panel)" stroke="#4F98D9"/>
+  <text x="1134" y="228" text-anchor="middle" class="phase">Governance and Answer</text>
+  <text x="1134" y="251" text-anchor="middle" class="meta">Policy gates, grounding checks, monitored output</text>
 
-    <rect x="980" y="220" width="170" height="95" rx="12" fill="#58461F" stroke="#EDB472"/>
-    <text class="n" x="1065" y="255" text-anchor="middle">Context Build</text>
-    <text class="s" x="1065" y="278" text-anchor="middle">Token budget</text>
+  <rect x="150" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="306" y="332" text-anchor="middle" class="cardTitle">Query Intent and ACL</text>
+  <text x="306" y="353" text-anchor="middle" class="cardText">Role, scope, and sensitivity mapping</text>
 
-    <rect x="1190" y="220" width="120" height="95" rx="12" fill="#58461F" stroke="#EDB472"/>
-    <text class="n" x="1250" y="255" text-anchor="middle">Answer</text>
-    <text class="s" x="1250" y="278" text-anchor="middle">Citations</text>
-  </g>
+  <rect x="150" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="306" y="442" text-anchor="middle" class="cardTitle">Rewrite and Expansion</text>
+  <text x="306" y="463" text-anchor="middle" class="cardText">Synonyms, entities, route selection</text>
 
-  <path d="M290 268 L325 268" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M500 268 L535 268" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M730 268 L765 268" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M940 268 L975 268" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
-  <path d="M1150 268 L1185 268" stroke="#C9EBFF" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="150" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="306" y="552" text-anchor="middle" class="cardTitle">Metadata Constraints</text>
+  <text x="306" y="573" text-anchor="middle" class="cardText">Region, department, document class</text>
 
-  <rect x="250" y="410" width="940" height="260" rx="18" fill="#122F53" stroke="#4A95DA"/>
-  <text class="n" x="286" y="450">Governance Gate Stack</text>
-  <text class="s" x="286" y="484">1) Groundedness scoring and attribution check</text>
-  <text class="s" x="286" y="512">2) Policy and sensitive-data controls</text>
-  <text class="s" x="286" y="540">3) Risk review and red-team replay</text>
-  <text class="s" x="286" y="568">4) Canary release + monitoring (latency, quality, cost)</text>
-  <text class="s" x="286" y="596">5) Feedback to query routing and retrieval policy rules</text>
+  <rect x="564" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="332" text-anchor="middle" class="cardTitle">Hybrid Retrieval</text>
+  <text x="720" y="353" text-anchor="middle" class="cardText">Vector + keyword + graph hints</text>
 
-  <path d="M1240 315 C1280 390, 1230 430, 1160 440" stroke="#59D7B7" stroke-width="3" fill="none" marker-end="url(#arr)"/>
-  <path d="M320 440 C260 430, 200 390, 170 315" stroke="#59D7B7" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+  <rect x="564" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="442" text-anchor="middle" class="cardTitle">Reranking and Pruning</text>
+  <text x="720" y="463" text-anchor="middle" class="cardText">Top-k quality boost and token fit</text>
+
+  <rect x="564" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="720" y="552" text-anchor="middle" class="cardTitle">Context Package</text>
+  <text x="720" y="573" text-anchor="middle" class="cardText">Evidence, scores, and provenance</text>
+
+  <rect x="978" y="300" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1134" y="332" text-anchor="middle" class="cardTitle">Prompt + Policy Injection</text>
+  <text x="1134" y="353" text-anchor="middle" class="cardText">Guardrails and response schema</text>
+
+  <rect x="978" y="410" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1134" y="442" text-anchor="middle" class="cardTitle">Grounding Verification</text>
+  <text x="1134" y="463" text-anchor="middle" class="cardText">Citation and factual consistency check</text>
+
+  <rect x="978" y="520" width="312" height="84" rx="14" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1134" y="552" text-anchor="middle" class="cardTitle">Final Answer and Telemetry</text>
+  <text x="1134" y="573" text-anchor="middle" class="cardText">Output, confidence, latency, cost logs</text>
+
+  <path d="M462 342 L558 342" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <path d="M462 452 L558 452" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <path d="M462 562 L558 562" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <path d="M876 342 L972 342" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <path d="M876 452 L972 452" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <path d="M876 562 L972 562" stroke="url(#flowBlue)" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <path d="M1288 560 C1320 560,1334 542,1334 504 C1334 466,1320 448,1288 448" stroke="url(#flowGreen)" stroke-width="4" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="1240" y="480" class="flow">feedback loop</text>
+
+  <path d="M978 604 C860 676,620 676,462 604" stroke="url(#flowGreen)" stroke-width="4" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="682" y="700" class="flow">observability updates routing and policy rules</text>
 </svg>
