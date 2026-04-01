@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const groups = [
   {
@@ -33,6 +34,7 @@ const groups = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 border-b border-secondary/15 bg-background/90 backdrop-blur">
@@ -60,22 +62,38 @@ export default function Header() {
               Home
             </Link>
             {groups.map((group) => (
-              <div key={group.label} className="group relative">
+              <div
+                key={group.label}
+                className="relative"
+                onMouseEnter={() => setOpenGroup(group.label)}
+                onMouseLeave={() => setOpenGroup((current) => (current === group.label ? null : current))}
+              >
                 <button
                   type="button"
+                  onClick={() =>
+                    setOpenGroup((current) => (current === group.label ? null : group.label))
+                  }
                   className="inline-flex min-h-11 items-center gap-1 rounded-full px-4 py-2 text-sm text-secondary/80 transition hover:text-white"
                   aria-haspopup="true"
+                  aria-expanded={openGroup === group.label}
                 >
                   {group.label}
                   <ChevronDown size={14} aria-hidden="true" />
                 </button>
-                <div className="pointer-events-none absolute left-0 top-full z-50 mt-2 w-64 rounded-2xl border border-secondary/20 bg-background/95 p-3 opacity-0 shadow-2xl backdrop-blur transition group-hover:pointer-events-auto group-hover:opacity-100">
+                <div
+                  className={`absolute left-0 top-full z-50 w-64 rounded-2xl border border-secondary/20 bg-background/95 p-3 shadow-2xl backdrop-blur transition ${
+                    openGroup === group.label
+                      ? "pointer-events-auto translate-y-1 opacity-100"
+                      : "pointer-events-none -translate-y-1 opacity-0"
+                  }`}
+                >
                   {group.links.map((item) => {
                     const active = pathname === item.href;
                     return (
                       <Link
                         key={`${group.label}-${item.href}-${item.label}`}
                         href={item.href}
+                        onClick={() => setOpenGroup(null)}
                         className={`mb-1 block min-h-11 rounded-xl px-3 py-2 text-sm transition last:mb-0 ${
                           active
                             ? "bg-primary/20 text-white"
