@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.github.io/lorvexai";
+const normalizedSiteUrl = siteUrl.replace(/\/$/, "");
+const socialImageUrl = `${normalizedSiteUrl}/og-image.png`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +22,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(`${normalizedSiteUrl}/`),
   title: "Lorvex AI | Operationalizing Agentic AI for Enterprise Scale",
   description:
     "Operationalize Agentic AI with Lorvex. We build production-ready LLM systems with governance-first controls for Finance and Healthcare.",
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
     "AI-native treasury control tower",
     "enterprise AI architecture"
   ],
+  authors: [{ name: "Lorvex AI Editorial Team" }],
   icons: {
     icon: "/lorvex_icon.png",
     apple: "/lorvex_icon.png"
@@ -44,7 +47,10 @@ export const metadata: Metadata = {
     siteName: "Lorvex AI",
     images: [
       {
-        url: "/Logo.png",
+        url: socialImageUrl,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: "Lorvex AI"
       }
     ],
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
     title: "Lorvex AI | Agentic AI for Enterprise",
     description:
       "Build production-grade agentic systems and enterprise RAG platforms with Lorvex.",
-    images: ["/Logo.png"]
+    images: [socialImageUrl]
   }
 };
 

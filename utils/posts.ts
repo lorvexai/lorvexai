@@ -11,6 +11,7 @@ export type PostMeta = {
   slug: string;
   title: string;
   date: string;
+  publishedAt: string;
   excerpt: string;
   tags: string[];
 };
@@ -38,12 +39,13 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title as string,
         date: formatDate(data.date),
+        publishedAt: String(data.date ?? ""),
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) || []
       };
     });
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export async function getPostContent(slug: string) {
