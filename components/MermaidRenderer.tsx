@@ -3,7 +3,11 @@
 import { useEffect } from "react";
 import mermaid from "mermaid";
 
-export default function MermaidRenderer() {
+export default function MermaidRenderer({
+  refreshKey
+}: {
+  refreshKey?: string;
+}) {
   useEffect(() => {
     mermaid.initialize({
       startOnLoad: false,
@@ -31,7 +35,7 @@ export default function MermaidRenderer() {
     mermaid.run({ querySelector: ".mermaid" }).catch(() => {
       // Keep the page usable even if one diagram fails to parse.
     });
-  }, []);
+  }, [refreshKey]);
 
   return null;
 }

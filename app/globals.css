@@ -69,7 +69,7 @@ body::after {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-space);
+  font-family: var(--font-inter);
   color: #E6ECF7;
 }
 

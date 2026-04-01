@@ -35,7 +35,7 @@ export default function ProductsPage() {
 
   return (
     <>
-      <MermaidRenderer />
+      <MermaidRenderer refreshKey={`${selected}:${ripView}`} />
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-3xl border border-primary/20 p-7 md:p-10">
@@ -116,45 +116,48 @@ export default function ProductsPage() {
                 })}
               </div>
 
-              <div className={`mt-6 space-y-4 text-secondary/85 ${ripView === "overview" ? "block" : "hidden"}`}>
-                <p>
-                  Regulatory Intelligence Platform converts complex regulatory language into
-                  structured obligations, control mappings, and evidence requirements.
-                  This removes the manual burden of interpreting long policy documents
-                  while preserving legal traceability.
-                </p>
-                <p>
-                  The product uses a core-plus-pack model: a reusable compliance core for
-                  controls, evidence, ownership, and testing, and jurisdiction packs for
-                  PRA Basel 3.1 and future rulebooks. This design allows organizations to
-                  scale across legal entities without rebuilding their operating model.
-                </p>
-                <p>
-                  A retrieval layer grounds answers in approved documents and evidence
-                  records, with every response tied to sources. Risk and compliance teams
-                  can trust outputs in governance meetings because recommendations remain
-                  explainable and auditable.
-                </p>
-                <p>
-                  The workflow layer connects obligations to owners, due dates,
-                  exceptions, and remediation tasks. Instead of static checklists, teams
-                  get a continuous compliance system that flags drift early and supports
-                  faster audit preparation.
-                </p>
-                <p>
-                  Delivery starts small and scales safely: begin with one framework and
-                  one business unit, prove impact within weeks, and expand to additional
-                  packs such as EBA, Fed, or HKMA.
-                </p>
-              </div>
-
-              <div className={`prose prose-invert mt-8 max-w-none ${ripView === "architecture" ? "block" : "hidden"}`}>
-                <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
-                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
-                    Architecture Diagram
+              {ripView === "overview" && (
+                <div className="mt-6 space-y-4 text-secondary/85">
+                  <p>
+                    Regulatory Intelligence Platform converts complex regulatory language into
+                    structured obligations, control mappings, and evidence requirements.
+                    This removes the manual burden of interpreting long policy documents
+                    while preserving legal traceability.
                   </p>
-                  <pre>
-                    <code className="language-mermaid">{`flowchart LR
+                  <p>
+                    The product uses a core-plus-pack model: a reusable compliance core for
+                    controls, evidence, ownership, and testing, and jurisdiction packs for
+                    PRA Basel 3.1 and future rulebooks. This design allows organizations to
+                    scale across legal entities without rebuilding their operating model.
+                  </p>
+                  <p>
+                    A retrieval layer grounds answers in approved documents and evidence
+                    records, with every response tied to sources. Risk and compliance teams
+                    can trust outputs in governance meetings because recommendations remain
+                    explainable and auditable.
+                  </p>
+                  <p>
+                    The workflow layer connects obligations to owners, due dates,
+                    exceptions, and remediation tasks. Instead of static checklists, teams
+                    get a continuous compliance system that flags drift early and supports
+                    faster audit preparation.
+                  </p>
+                  <p>
+                    Delivery starts small and scales safely: begin with one framework and
+                    one business unit, prove impact within weeks, and expand to additional
+                    packs such as EBA, Fed, or HKMA.
+                  </p>
+                </div>
+              )}
+
+              {ripView === "architecture" && (
+                <div className="prose prose-invert mt-8 max-w-none">
+                  <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
+                    <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
+                      Architecture Diagram
+                    </p>
+                    <pre>
+                      <code className="language-mermaid">{`flowchart LR
   A["PRA Basel 3.1 Rule Pack"] --> B["Clause + Obligation Parser"]
   B --> C["Control & Evidence Graph"]
   C --> D["Hybrid Retrieval Layer"]
@@ -162,17 +165,19 @@ export default function ProductsPage() {
   E --> F["Audit Pack + Action Tasks"]
   C --> G["Ownership + Workflow Engine"]
   G --> F`}</code>
-                  </pre>
+                    </pre>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className={`prose prose-invert mt-8 max-w-none ${ripView === "data-flow" ? "block" : "hidden"}`}>
-                <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
-                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
-                    Data Flow Diagram
-                  </p>
-                  <pre>
-                    <code className="language-mermaid">{`flowchart TB
+              {ripView === "data-flow" && (
+                <div className="prose prose-invert mt-8 max-w-none">
+                  <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
+                    <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
+                      Data Flow Diagram
+                    </p>
+                    <pre>
+                      <code className="language-mermaid">{`flowchart TB
   I["Regulations + Internal Policies + Logs"] --> J["Ingestion + Chunking"]
   J --> K["Obligation Mapping"]
   K --> L["Control Assignment"]
@@ -180,17 +185,19 @@ export default function ProductsPage() {
   M --> N["Risk Scoring"]
   N --> O["Recommendations + Exceptions"]
   O --> P["Board / Audit Reporting"]`}</code>
-                  </pre>
+                    </pre>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className={`prose prose-invert mt-8 max-w-none ${ripView === "usage" ? "block" : "hidden"}`}>
-                <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
-                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
-                    Usage Flow Diagram
-                  </p>
-                  <pre>
-                    <code className="language-mermaid">{`sequenceDiagram
+              {ripView === "usage" && (
+                <div className="prose prose-invert mt-8 max-w-none">
+                  <div className="rounded-xl border border-secondary/20 bg-background/40 p-4">
+                    <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">
+                      Usage Flow Diagram
+                    </p>
+                    <pre>
+                      <code className="language-mermaid">{`sequenceDiagram
   participant R as Risk Analyst
   participant P as Platform Engine
   participant KG as Control Graph
@@ -202,9 +209,10 @@ export default function ProductsPage() {
   P-->>R: Grounded answer + citations
   R->>WF: Open remediation task
   WF-->>R: Track closure + audit log`}</code>
-                  </pre>
+                    </pre>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <aside className="h-fit rounded-2xl border border-primary/35 bg-gradient-to-br from-[#13294B] to-[#1D4C8F] p-6">

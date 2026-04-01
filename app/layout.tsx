@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -13,25 +13,33 @@ const inter = Inter({
   display: "swap"
 });
 
-const space = Space_Grotesk({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-space",
+  variable: "--font-mono",
   display: "swap"
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Lorvex AI | Enterprise AI Systems & Agentic Intelligence",
+  title: "Lorvex AI | Operationalizing Agentic AI for Enterprise Scale",
   description:
-    "Lorvex AI delivers enterprise AI systems, LLM engineering, and agentic platforms for high-impact decision automation.",
+    "Operationalize Agentic AI with Lorvex. We build production-ready LLM systems with governance-first controls for Finance and Healthcare.",
+  keywords: [
+    "Agentic AI Systems",
+    "LLM Engineering for Banking",
+    "NHS AI Triage Blueprint",
+    "Enterprise RAG Governance",
+    "AI-native treasury control tower",
+    "enterprise AI architecture"
+  ],
   icons: {
     icon: "/lorvex_icon.png",
     apple: "/lorvex_icon.png"
   },
   openGraph: {
-    title: "Lorvex AI | Enterprise AI Systems & Agentic Intelligence",
+    title: "Lorvex AI | Operationalizing Agentic AI for Enterprise Scale",
     description:
-      "AI consulting, LLM engineering, and agentic AI systems for enterprise transformation.",
+      "Operationalize Agentic AI with governance-first controls for finance, healthcare, and NHS workflows.",
     url: siteUrl,
     siteName: "Lorvex AI",
     images: ["/og.svg"],
@@ -40,8 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lorvex AI",
-    description: "AI consulting, LLM engineering, and agentic AI systems."
+    title: "Lorvex AI | Agentic AI for Enterprise",
+    description:
+      "Build production-grade agentic systems and enterprise RAG platforms with Lorvex."
   }
 };
 
@@ -51,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable}`}>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="relative">
         <Header />
         <main>{children}</main>

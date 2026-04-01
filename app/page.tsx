@@ -1,31 +1,75 @@
-import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import CTA from "@/components/CTA";
 import BlogCard from "@/components/BlogCard";
 import Link from "next/link";
 import { getAllPosts } from "@/utils/posts";
-import ArchitectureDiagram from "@/components/ArchitectureDiagram";
-import DeliveryFrameworkDiagram from "@/components/DeliveryFrameworkDiagram";
+import { ArrowRight, ShieldCheck, Workflow, Database, Cpu } from "lucide-react";
+import LiveAgentTrace from "@/components/LiveAgentTrace";
+import TechnicalInsightsHeader from "@/components/TechnicalInsightsHeader";
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
-  const focusAreas = ["Finance", "Healthcare", "NHS", "Enterprise"];
+  const sectors = ["Finance", "Healthcare", "NHS", "Enterprise"];
 
   return (
     <>
-      <Hero />
+      <section className="section pb-10 pt-14 md:pt-20">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="glass grid gap-8 rounded-3xl border border-primary/30 p-7 md:grid-cols-[1.15fr_0.85fr] md:p-10">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
+                Lorvex AI Control Plane
+              </p>
+              <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">
+                Operationalizing Agentic AI for Enterprise Scale.
+              </h1>
+              <p className="mt-5 max-w-2xl text-secondary/85">
+                We engineer agentic AI systems, enterprise RAG governance layers, and
+                LLM engineering platforms for banking, healthcare, and NHS operations.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/contact" className="btn-primary min-h-11 text-sm">
+                  Request an Agentic Audit
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+                <Link href="/products" className="btn-outline min-h-11 text-sm">
+                  Explore Products
+                </Link>
+              </div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  { icon: Workflow, label: "Agentic AI Systems" },
+                  { icon: Database, label: "Enterprise RAG Governance" },
+                  { icon: Cpu, label: "LLM Engineering for Banking" },
+                  { icon: ShieldCheck, label: "NHS AI Triage Blueprint" }
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex min-h-11 items-center gap-2 rounded-xl border border-primary/25 bg-primary/10 px-3 py-2 text-sm text-secondary"
+                  >
+                    <item.icon size={16} className="text-primary" aria-hidden="true" />
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <LiveAgentTrace />
+          </div>
+        </div>
+      </section>
+
       <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-2xl p-5">
             <p className="text-xs uppercase tracking-[0.32em] text-secondary/70">
-              Current Focus Areas
+              Who We Help
             </p>
             <div className="mt-3 flex flex-wrap gap-3">
-              {focusAreas.map((area) => (
+              {sectors.map((area) => (
                 <span
                   key={area}
-                  className="rounded-full border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-medium text-secondary"
+                  className="min-h-11 rounded-full border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-medium text-secondary"
                 >
                   {area}
                 </span>
@@ -34,69 +78,65 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       <Section
-        eyebrow="Services"
-        title="Consulting built for complex AI systems"
-        description="From strategy to implementation, we architect secure, scalable AI systems that deliver measurable results."
+        eyebrow="Solutions"
+        title="Enterprise solutions with operational depth"
+        description="A grouped solution model spanning services, products, and delivery capabilities."
       >
         <div className="grid gap-6 md:grid-cols-3">
           <ServiceCard
-            title="AI Strategy Consulting"
-            description="Roadmaps, ROI modeling, and governance frameworks for enterprise AI adoption."
+            title="Services"
+            description="AI strategy, LLM engineering, and governance implementation."
+            bullets={[
+              "Agentic operating model",
+              "Enterprise RAG controls",
+              "Execution roadmap by business unit"
+            ]}
           />
           <ServiceCard
-            title="LLM Engineering"
-            description="Custom LLM pipelines, evaluation stacks, and production-grade retrieval systems."
+            title="Products"
+            description="Regulatory Intelligence Platform, NHS Flow Optimizer, and Treasury Sentinel."
+            bullets={[
+              "Production-ready architecture",
+              "Integrated data connectors",
+              "Audit-ready outputs"
+            ]}
           />
           <ServiceCard
-            title="Agentic AI Systems"
-            description="Autonomous workflows and multi-agent orchestration for high-impact operations."
+            title="Capabilities"
+            description="Capability map for planning, deployment, and governed AI scaling."
+            bullets={[
+              "Planner -> Tool -> Verifier patterns",
+              "Evaluation harnesses",
+              "Risk and monitoring controls"
+            ]}
           />
-        </div>
-      </Section>
-      <Section
-        eyebrow="Research"
-        title="Technical publishing with operational depth"
-        description="We publish research, whitepapers, and guides to help teams design resilient AI systems."
-      >
-        <div className="grid gap-6 md:grid-cols-3">
-          <ServiceCard
-            title="Books"
-            description="In-depth technical references on LLM systems design, evaluation, and scaling."
-          />
-          <ServiceCard
-            title="Whitepapers"
-            description="Strategic research on AI risk, governance, and industry transformation."
-          />
-          <ServiceCard
-            title="Technical Guides"
-            description="Practical guidance on architecture patterns and implementation playbooks."
-          />
-        </div>
-      </Section>
-      <Section
-        eyebrow="Architecture"
-        title="AI Capabilities"
-        description="A production capability model that aligns architecture, delivery, and governance across the AI lifecycle."
-      >
-        <div className="mb-6 rounded-2xl border border-primary/25 bg-primary/5 p-4 text-sm text-secondary/80">
-          We design capability systems, not isolated pilots: data and retrieval foundations, model and agent execution, and trust controls that remain stable under scale.
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <ArchitectureDiagram />
-          <DeliveryFrameworkDiagram />
         </div>
         <div className="mt-6">
-          <Link href="/capabilities" className="btn-outline text-sm">
-            Explore Full Capability Model
+          <Link href="/services" className="btn-outline min-h-11 text-sm">
+            Explore Solutions Architecture
           </Link>
         </div>
       </Section>
+
       <Section
         eyebrow="Insights"
-        title="Latest from our blog"
-        description="Stay current with agentic AI, enterprise RAG architectures, and applied AI risk management."
+        title="Technical authority built through operational insights"
+        description="Blueprint-grade content for enterprise architects, risk leaders, and AI product teams."
       >
+        <TechnicalInsightsHeader
+          eyebrow="Technical Guides"
+          title="From architecture patterns to implementation runbooks"
+          description="Each insight maps business problems to production system design, with explicit governance controls and conversion-focused next actions."
+          takeaways={[
+            "Agentic AI Systems: planner-tool-verifier orchestration patterns",
+            "LLM Engineering for Banking: grounded retrieval with compliance checks",
+            "NHS AI Triage Blueprint: safety-first escalation and evidence loops"
+          ]}
+          ctaLabel="Browse Technical Insights"
+          ctaHref="/blog"
+        />
         <div className="grid gap-6 md:grid-cols-3">
           {posts.map((post) => (
             <BlogCard
@@ -108,7 +148,8 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-      <Section title="Ready to deploy enterprise AI systems?" description="">
+
+      <Section title="Ready to operationalize enterprise AI?" description="">
         <CTA />
       </Section>
     </>
