@@ -42,7 +42,12 @@ export const metadata: Metadata = {
       "Operationalize Agentic AI with governance-first controls for finance, healthcare, and NHS workflows.",
     url: siteUrl,
     siteName: "Lorvex AI",
-    images: ["/og.svg"],
+    images: [
+      {
+        url: "/Logo.png",
+        alt: "Lorvex AI"
+      }
+    ],
     locale: "en_GB",
     type: "website"
   },
@@ -50,7 +55,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lorvex AI | Agentic AI for Enterprise",
     description:
-      "Build production-grade agentic systems and enterprise RAG platforms with Lorvex."
+      "Build production-grade agentic systems and enterprise RAG platforms with Lorvex.",
+    images: ["/Logo.png"]
   }
 };
 

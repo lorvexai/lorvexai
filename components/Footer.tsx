@@ -1,11 +1,18 @@
-﻿import Link from "next/link";
+﻿import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="text-lg font-semibold text-white">Lorvex AI</p>
+        <div className="space-y-2">
+          <Image
+            src="/Logo.png"
+            alt="Lorvex AI"
+            width={168}
+            height={40}
+            className="h-9 w-auto"
+          />
           <p className="text-sm text-secondary/70">Lorvex AI Technologies Ltd</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-secondary/70">

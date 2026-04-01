@@ -40,17 +40,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-secondary/15 bg-background/90 backdrop-blur">
       <div className="mx-auto w-full max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-white">
-            <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-primary/40 bg-primary/10">
-              <Image
-                src="/lorvex_icon.png"
-                alt="Lorvex AI"
-                width={28}
-                height={28}
-                priority
-              />
-            </span>
-            <span className="text-lg font-semibold">Lorvex AI</span>
+          <Link href="/" className="flex items-center text-white">
+            <Image
+              src="/Logo.png"
+              alt="Lorvex AI"
+              width={220}
+              height={54}
+              priority
+              className="h-11 w-auto md:h-12"
+            />
           </Link>
           <nav className="hidden items-center gap-4 md:flex">
             <Link

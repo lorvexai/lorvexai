@@ -1,9 +1,61 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getAllPosts, getPostContent } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.github.io/lorvexai";
+
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = getAllPosts().find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: "Article Not Found | Lorvex AI"
+    };
+  }
+
+  const canonicalPath = `/blog/${params.slug}`;
+  const maybeDate = new Date(post.date);
+  const publishedTime = Number.isNaN(maybeDate.getTime())
+    ? undefined
+    : maybeDate.toISOString();
+
+  return {
+    title: `${post.title} | Lorvex AI`,
+    description: post.excerpt,
+    alternates: {
+      canonical: canonicalPath
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `${siteUrl}${canonicalPath}`,
+      type: "article",
+      publishedTime,
+      authors: ["Lorvex AI Editorial Team"],
+      images: [
+        {
+          url: "/Logo.png",
+          alt: "Lorvex AI"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: ["/Logo.png"]
+    }
+  };
 }
 
 export default async function BlogPost({
