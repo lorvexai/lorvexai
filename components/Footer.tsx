@@ -1,5 +1,4 @@
 ﻿import Image from "next/image";
-import Link from "next/link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
@@ -17,20 +16,6 @@ export default function Footer() {
             className="h-9 w-auto"
           />
           <p className="text-sm text-secondary/70">LorveAI Technologies Ltd</p>
-        </div>
-        <div className="flex flex-wrap gap-4 text-sm text-secondary/70">
-          <Link href="/services" className="hover:text-white">
-            Solutions
-          </Link>
-          <Link href="/blog" className="hover:text-white">
-            Insights
-          </Link>
-          <Link href="/about" className="hover:text-white">
-            Company
-          </Link>
-          <Link href="/contact" className="hover:text-white">
-            Contact
-          </Link>
         </div>
         <p className="text-xs text-secondary/50">
           (c) {new Date().getFullYear()} LorveAI Technologies Ltd. All rights reserved.
