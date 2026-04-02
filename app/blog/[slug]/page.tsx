@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getAllPosts, getPostContent } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
@@ -21,7 +21,7 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Article Not Found | Lorvex AI"
+      title: "Article Not Found | LorvexAI"
     };
   }
 
@@ -32,26 +32,26 @@ export async function generateMetadata({
     : maybeDate.toISOString();
 
   return {
-    title: `${post.title} | Lorvex AI`,
+    title: `${post.title} | LorvexAI`,
     description: post.excerpt,
     alternates: {
       canonical: canonicalPath
     },
-    authors: [{ name: "Lorvex AI Editorial Team" }],
+    authors: [{ name: "LorvexAI Editorial Team" }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url: `${normalizedSiteUrl}${canonicalPath}`,
       type: "article",
       publishedTime,
-      authors: ["Lorvex AI Editorial Team"],
+      authors: ["LorvexAI Editorial Team"],
       images: [
         {
           url: socialImageUrl,
           width: 1200,
           height: 630,
           type: "image/png",
-          alt: "Lorvex AI"
+          alt: "LorvexAI"
         }
       ]
     },
@@ -94,3 +94,4 @@ export default async function BlogPost({
     </section>
   );
 }
+

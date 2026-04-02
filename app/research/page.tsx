@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+﻿import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import CTA from "@/components/CTA";
 
@@ -25,9 +25,10 @@ export default function ResearchPage() {
           />
         </div>
       </Section>
-      <Section title="Access Lorvex AI research" description="">
+      <Section title="Access LorvexAI research" description="">
         <CTA />
       </Section>
     </>
   );
 }
+

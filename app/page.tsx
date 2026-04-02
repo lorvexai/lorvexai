@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+﻿import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import CTA from "@/components/CTA";
 import BlogCard from "@/components/BlogCard";
@@ -19,7 +19,7 @@ export default function HomePage() {
           <div className="glass grid gap-8 rounded-3xl border border-primary/30 p-7 md:grid-cols-[1.15fr_0.85fr] md:p-10">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
-                Lorvex AI Control Plane
+                LorvexAI Control Plane
               </p>
               <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">
                 Operationalizing Agentic AI for Enterprise Scale.
@@ -155,3 +155,4 @@ export default function HomePage() {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -43,7 +43,7 @@ export default function ProductsPage() {
               Product Portfolio
             </p>
             <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">
-              Products By Lorvex AI
+              Products By LorvexAI
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
               We combine advisory depth with production software so clients can move
@@ -217,7 +217,7 @@ export default function ProductsPage() {
 
             <aside className="h-fit rounded-2xl border border-primary/35 bg-gradient-to-br from-[#13294B] to-[#1D4C8F] p-6">
               <p className="text-xs uppercase tracking-[0.25em] text-secondary/75">
-                Partner With Lorvex AI
+                Partner With LorvexAI
               </p>
               <h3 className="mt-3 text-2xl font-semibold text-white">
                 Get Started In 4 Weeks
@@ -262,3 +262,4 @@ export default function ProductsPage() {
     </>
   );
 }
+

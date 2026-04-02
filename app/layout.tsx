@@ -1,4 +1,4 @@
-import "./globals.css";
+﻿import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
@@ -23,9 +23,9 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${normalizedSiteUrl}/`),
-  title: "Lorvex AI | Operationalizing Agentic AI for Enterprise Scale",
+  title: "LorvexAI | Operationalizing Agentic AI for Enterprise Scale",
   description:
-    "Operationalize Agentic AI with Lorvex. We build production-ready LLM systems with governance-first controls for Finance and Healthcare.",
+    "Operationalize Agentic AI with LorvexAI. We build production-ready LLM systems with governance-first controls for Finance and Healthcare.",
   keywords: [
     "Agentic AI Systems",
     "LLM Engineering for Banking",
@@ -34,24 +34,24 @@ export const metadata: Metadata = {
     "AI-native treasury control tower",
     "enterprise AI architecture"
   ],
-  authors: [{ name: "Lorvex AI Editorial Team" }],
+  authors: [{ name: "LorvexAI Editorial Team" }],
   icons: {
     icon: "/lorvex_icon.png",
     apple: "/lorvex_icon.png"
   },
   openGraph: {
-    title: "Lorvex AI | Operationalizing Agentic AI for Enterprise Scale",
+    title: "LorvexAI | Operationalizing Agentic AI for Enterprise Scale",
     description:
       "Operationalize Agentic AI with governance-first controls for finance, healthcare, and NHS workflows.",
     url: siteUrl,
-    siteName: "Lorvex AI",
+    siteName: "LorvexAI",
     images: [
       {
         url: socialImageUrl,
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: "Lorvex AI"
+        alt: "LorvexAI"
       }
     ],
     locale: "en_GB",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lorvex AI | Agentic AI for Enterprise",
+    title: "LorvexAI | Agentic AI for Enterprise",
     description:
-      "Build production-grade agentic systems and enterprise RAG platforms with Lorvex.",
+      "Build production-grade agentic systems and enterprise RAG platforms with LorvexAI.",
     images: [socialImageUrl]
   }
 };
@@ -81,3 +81,4 @@ export default function RootLayout({
     </html>
   );
 }
+

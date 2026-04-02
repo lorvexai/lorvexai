@@ -1,4 +1,4 @@
-import Section from "@/components/Section";
+﻿import Section from "@/components/Section";
 import CTA from "@/components/CTA";
 import MethodologySection from "@/components/MethodologySection";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
@@ -9,7 +9,7 @@ export default function AboutPage() {
     <>
       <Section
         eyebrow="About"
-        title="Lorvex AI Technologies Ltd"
+        title="LorveAI Technologies Ltd"
         description="We partner with ambitious teams to deploy intelligent systems that scale across the enterprise."
       >
         <div className="grid gap-6 md:grid-cols-2">
@@ -72,9 +72,10 @@ export default function AboutPage() {
         </div>
       </Section>
       <MethodologySection />
-      <Section title="Partner with Lorvex AI" description="">
+      <Section title="Partner with LorvexAI" description="">
         <CTA />
       </Section>
     </>
   );
 }
+
