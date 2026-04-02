@@ -31,6 +31,8 @@ const groups = [
     ]
   }
 ];
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
 export default function Header() {
   const pathname = usePathname();
@@ -42,7 +44,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center text-white">
             <Image
-              src="/Logo.png"
+              src={logoSrc}
               alt="Lorvex AI"
               width={220}
               height={54}

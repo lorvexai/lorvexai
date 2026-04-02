@@ -1,13 +1,16 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
+
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
           <Image
-            src="/Logo.png"
+            src={logoSrc}
             alt="Lorvex AI"
             width={168}
             height={40}
