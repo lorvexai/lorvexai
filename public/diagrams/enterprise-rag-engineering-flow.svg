@@ -1,0 +1,95 @@
+﻿<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG engineering flow with agentic loops and evaluation">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09182C"/>
+      <stop offset="100%" stop-color="#123E6A"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D517F"/>
+      <stop offset="100%" stop-color="#134067"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/>
+    </marker>
+    <style>
+      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .node{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
+      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .note{font:600 12px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <ellipse cx="720" cy="390" rx="620" ry="300" fill="#2F80ED" fill-opacity="0.13"/>
+
+  <text x="88" y="80" class="title">Enterprise RAG Engineering Flow</text>
+  <text x="88" y="108" class="sub">Pre-retrieval optimization, secure retrieval, reranking, agentic retries, and quality evaluation</text>
+
+  <rect x="90" y="150" width="1260" height="650" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+
+  <rect x="130" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="215" y="282" text-anchor="middle" class="node">User Query</text>
+  <text x="215" y="303" text-anchor="middle" class="meta">Often vague or underspecified</text>
+
+  <rect x="330" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="415" y="282" text-anchor="middle" class="node">Rewrite + HyDE</text>
+  <text x="415" y="303" text-anchor="middle" class="meta">Pre-retrieval loop</text>
+
+  <rect x="530" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="615" y="282" text-anchor="middle" class="node">ACL Gatekeeper</text>
+  <text x="615" y="303" text-anchor="middle" class="meta">Role and policy filters</text>
+
+  <rect x="730" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="815" y="282" text-anchor="middle" class="node">Hybrid Retrieval</text>
+  <text x="815" y="303" text-anchor="middle" class="meta">Vector + keyword search</text>
+
+  <rect x="930" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1015" y="282" text-anchor="middle" class="node">Cross-Encoder</text>
+  <text x="1015" y="303" text-anchor="middle" class="meta">Post-retrieval reranking</text>
+
+  <rect x="1130" y="250" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1215" y="282" text-anchor="middle" class="node">Context Builder</text>
+  <text x="1215" y="303" text-anchor="middle" class="meta">Parent passages + citations</text>
+
+  <rect x="530" y="420" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="615" y="452" text-anchor="middle" class="node">LLM Reasoning</text>
+  <text x="615" y="473" text-anchor="middle" class="meta">ReAct agent loop</text>
+
+  <rect x="730" y="420" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="815" y="452" text-anchor="middle" class="node">Policy Verifier</text>
+  <text x="815" y="473" text-anchor="middle" class="meta">Safety and compliance gates</text>
+
+  <rect x="930" y="420" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1015" y="452" text-anchor="middle" class="node">Cited Answer</text>
+  <text x="1015" y="473" text-anchor="middle" class="meta">Structured response</text>
+
+  <rect x="1130" y="420" width="170" height="86" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1215" y="452" text-anchor="middle" class="node">Eval Harness</text>
+  <text x="1215" y="473" text-anchor="middle" class="meta">Ragas and TruLens checks</text>
+
+  <rect x="330" y="590" width="970" height="150" rx="16" fill="#123458" stroke="#4F98D9"/>
+  <text x="360" y="624" class="node">Telemetry and Feedback Loop</text>
+  <text x="360" y="650" class="meta">Collect answer relevance, faithfulness, context precision, latency, cost, and route-level failures</text>
+  <text x="360" y="674" class="meta">Feed scoring back into chunking, retrieval policies, prompt templates, and escalation thresholds</text>
+
+  <path d="M300 293 L330 293" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M500 293 L530 293" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M700 293 L730 293" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M900 293 L930 293" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M1100 293 L1130 293" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <path d="M1215 336 L1215 420" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M1130 463 L1100 463" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M930 463 L900 463" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M730 463 L700 463" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <path d="M615 420 C615 390,760 380,815 336" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="660" y="377" class="note">Agent decides to retrieve again</text>
+
+  <path d="M1215 506 C1215 558,1130 560,1080 590" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M420 590 C360 560,260 520,215 336" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="170" y="365" width="280" height="56" rx="10" fill="#5B3A25" stroke="#E9B98A"/>
+  <text x="310" y="399" text-anchor="middle" class="note">Small-to-large retrieval applied in context builder</text>
+</svg>

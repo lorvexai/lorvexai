@@ -16,170 +16,171 @@ Designing retrieval-augmented generation systems for reliability, governance, an
 
 ## Article Focus
 
-- Written for: Technology architecture teams, finance risk/compliance teams, healthcare knowledge-platform teams, and NHS digital transformation teams
+- Written for: technology architecture teams, finance risk/compliance teams, healthcare knowledge-platform teams, and NHS digital transformation teams
 - Primary value: trusted retrieval and decision support with measurable governance
 
 ---
 
 ## Why Enterprise RAG Is Different
 
-A production-grade Retrieval-Augmented Generation (RAG) stack is not just "LLM + vector DB". In enterprise settings, every answer must be:
+A production-grade Retrieval-Augmented Generation stack is not just "LLM + vector DB." In enterprise environments, every answer must be:
 
-- Grounded in trusted internal knowledge
-- Enforced by role and policy controls
-- Observable with quality and latency SLAs
-- Auditable for compliance and model risk
-
----
-
-## Reference Architecture
-
-### 1. Data Ingestion and Knowledge Processing
-- Structured (databases, warehouses)
-- Semi-structured (PDFs, Office docs)
-- Unstructured (emails, transcripts)
-- CDC + scheduled sync pipelines
-- PII and policy tagging at ingestion time
-
-### 2. Retrieval and Memory Layer
-- Embedding indexes (semantic search)
-- Hybrid retrieval (BM25 + embeddings)
-- Metadata filters (region, sensitivity, department)
-- Knowledge graph for entity-level reasoning
-- Policy-aware filtering
-
-### 3. Orchestration Layer
-- Intent classification and query rewriting
-- Multi-stage retrieval and reranking
-- Context budgeting by token and relevance
-
-### 4. Generation Layer
-- Task-specific prompts and response schemas
-- Tool-augmented generation
-- Citation-first answer formatting
-
-### 5. Trust, Safety, and Evaluation Layer
-- Guardrails and policy checks
-- Hallucination and groundedness scoring
-- Real-time monitoring with feedback loops
+- Grounded in approved internal knowledge
+- Enforced by role and policy controls before answer generation
+- Observable with quality, latency, and cost SLAs
+- Auditable for compliance and model risk governance
 
 ---
 
-## End-to-End Architecture Diagram
+## Five-Layer Architecture Blueprint
 
-![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture.svg?v=5)
+### 1. Ingestion and Knowledge Processing
+- Structured, semi-structured, and unstructured data pipelines
+- ACL, PII, and policy tagging at ingestion
+- Small-to-large chunking (child chunks for search, parent docs for final context)
+
+### 2. Pre-Retrieval Intelligence
+- Query rewriting and expansion for underspecified prompts
+- HyDE generation to create stronger semantic search vectors
+- Retrieval route planning by intent and policy constraints
+
+### 3. Retrieval and Relevance
+- ACL gatekeeper before results are exposed to orchestration
+- Hybrid retrieval (BM25 + vector)
+- Cross-encoder reranking to optimize relevance over similarity-only ranking
+
+### 4. Orchestration and Agentic Reasoning
+- Context packaging with citation links and parent passages
+- ReAct loops: model can trigger re-search when evidence confidence is low
+- Policy-aware tool use and escalation logic
+
+### 5. Generation, Trust, and Evaluation
+- Structured, citation-first responses
+- Policy and safety verification before final delivery
+- Continuous evaluation harness with Ragas and TruLens metrics
 
 ---
 
-## Retrieval Pipeline Diagram (Operational View)
+## Architecture Diagram (Business + Platform View)
 
-![Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=4)
+![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture-impact.svg?v=1)
 
 ---
 
-## Governance and Evaluation Loop
+## Engineering Flow Diagram (Detailed Technical View)
 
-![Governance and Evaluation Loop](../../diagrams/enterprise-rag-governance-loop.svg?v=3)
+![Enterprise RAG Engineering Flow](../../diagrams/enterprise-rag-engineering-flow.svg?v=1)
+
+---
+
+## Mermaid Source-of-Truth (Implementation View)
+
+```mermaid
+flowchart LR
+  U["User Query"] --> PR1["Query Rewrite"]
+  PR1 --> PR2["HyDE Generation"]
+  PR2 --> GATE["ACL Gatekeeper"]
+  GATE --> RET["Hybrid Retrieval (BM25 + Vector)"]
+  RET --> RR["Cross-Encoder Reranker"]
+  RR --> CB["Context Builder (Parent Passages + Citations)"]
+  CB --> ORCH["Agent Orchestrator (ReAct)"]
+  ORCH --> GEN["LLM Generation"]
+  GEN --> PV["Policy + Safety Verifier"]
+  PV --> OUT["Cited Response"]
+  OUT --> EVAL["Ragas + TruLens Evaluation"]
+  EVAL --> FB["Feedback Loop"]
+  FB --> PR1
+  ORCH --> RET
+```
 
 ---
 
 ## Design Principles for Production RAG
 
-- Treat retrieval as a first-class product
-- Separate retrieval, reasoning, and generation concerns
-- Enforce governance before and after generation
-- Optimize for groundedness over fluency
-- Build continuous feedback loops from real user traffic
-- Prefer structured outputs over free-form responses
+- Treat retrieval as a first-class system, not a utility call
+- Separate pre-retrieval, retrieval, orchestration, and trust concerns
+- Enforce ACL and policy checks before and after generation
+- Prefer evidence-backed, structured answers over fluent but unverifiable output
+- Build closed-loop evaluation from live traffic and reviewer feedback
 
 ---
 
 ## Key Enterprise Metrics
 
-### Retrieval Quality
-- Recall at k and nDCG
-- Citation coverage percentage
-- Freshness lag from source to index
+### Retrieval and Relevance
+- Recall at k, nDCG, and reranker lift
+- Citation coverage and context precision
+- Freshness lag from source update to retrievable index
 
-### Generation Quality
-- Groundedness score
-- Factual consistency
-- Task completion rate
+### Generation and Trust
+- Faithfulness and groundedness
+- Answer relevance and task completion quality
+- Policy violation rate and abstention accuracy
 
 ### Reliability and Cost
 - p95 latency by route
-- Cost per answered query
-- Error and fallback rates
+- Cost per answered query and per successful task
+- Failure, fallback, and escalation rates
+
+### Evaluation Frameworks to Operationalize
+- Ragas: answer relevance, faithfulness, context precision
+- TruLens: trace-level quality and groundedness instrumentation
 
 ---
 
 ## Vector Database Options and Comparison
 
-| Option | Best Fit | Strengths | Tradeoffs |
-| --- | --- | --- | --- |
-| Pinecone | Managed enterprise deployments | Fast setup, reliable managed scaling, strong ecosystem adoption | Higher managed cost at large scale |
-| Weaviate | Teams needing rich filtering + hybrid search | Strong schema/filter support and modular architecture | Requires careful tuning at high scale |
-| Qdrant | High-performance, cost-aware production | Excellent vector performance and payload filtering | Fewer fully managed enterprise features out of the box |
-| Milvus | Large-scale self-hosted workloads | Strong throughput and horizontal scaling | Operational complexity if self-managed |
-| pgvector (PostgreSQL) | Teams standardizing on Postgres | Simpler stack, transactional + vector together | Can become expensive for very large retrieval workloads |
-| OpenSearch / Azure AI Search (vector enabled) | Existing search platform users | Combines lexical + vector in familiar search stack | Feature depth and tuning vary by platform |
+| Option | Search Type | Best Fit | Strengths | Tradeoffs |
+| --- | --- | --- | --- | --- |
+| Pinecone | Hybrid support (keyword + vector) | Managed enterprise deployments | Fast setup, managed scaling, mature ecosystem | Higher managed cost at larger scale |
+| Weaviate | Hybrid support (keyword + vector) | Teams needing rich filtering and schema controls | Strong filter model and modular architecture | Needs careful tuning at high scale |
+| Qdrant | Hybrid support (keyword + vector) | High-performance, cost-aware production | Excellent vector performance and payload filtering | Fewer managed enterprise features out of the box |
+| Milvus | Hybrid via surrounding search stack | Large-scale self-hosted workloads | High throughput and horizontal scaling | Operational complexity if self-managed |
+| pgvector (PostgreSQL) | Hybrid via SQL + lexical patterns | Teams standardizing on Postgres | Transactional + vector in one platform | Can be costly for very large retrieval workloads |
+| OpenSearch / Azure AI Search | Native hybrid search | Existing enterprise search platform users | Familiar stack and operational integration | Relevance tuning depth varies by platform |
 
 ### Selection Heuristics
-- Choose managed-first if your team is early and wants speed to production.
-- Choose self-hosted/high-control if data residency or cost control is dominant.
-- Validate with your own corpus: recall quality, filter performance, latency, and operational load.
+- Treat hybrid search as mandatory for enterprise-grade retrieval quality.
+- Validate with your own corpus: recall quality, filter behavior, reranker lift, and p95 latency.
+- Choose managed-first for speed, self-hosted when residency and control are dominant.
 
 ---
 
-## Embedding Model Strategy (OpenAI, Gemini, Claude Stacks)
+## Agentic RAG: From Chains to Adaptive Agents
 
-Yes, it is useful to mention model families in the article. The most durable approach is to explain **when** to use each pattern rather than hardcoding benchmark claims.
+Enterprise RAG is shifting from fixed chains to adaptive agents that can reason about evidence quality. A practical pattern:
 
-### Practical Pattern
-- OpenAI-first stack: strong default for general enterprise semantic retrieval and multilingual business corpora.
-- Gemini-first stack: useful when your broader platform already uses Google-native workflows and tooling.
-- Claude-centric generation stack: commonly paired with dedicated embedding providers for retrieval while using Claude for reasoning/generation.
+1. Retrieve initial evidence.
+2. Score confidence and grounding quality.
+3. Re-plan and retrieve again when confidence is below threshold.
+4. Finalize only after policy and evidence checks pass.
 
-### How to Decide
-- Corpus characteristics: domain language, multilingual needs, document length patterns.
-- Retrieval quality: recall at k, nDCG, and citation-grounded answer quality.
-- Runtime economics: embedding cost per document, re-index cadence, query volume.
-- Governance: data handling requirements, regional controls, auditability expectations.
-
-### Recommended Operating Model
-- Keep retrieval and generation loosely coupled.
-- Standardize an internal evaluation harness.
-- Run periodic A/B retrieval tests before changing embedding providers.
+This ReAct loop improves answer robustness for ambiguous, multi-document enterprise queries.
 
 ---
 
 ## Common Failure Modes and Mitigations
 
-### Failure Mode: Retrieval Misses
-- Cause: weak metadata, poor chunking
-- Mitigation: schema-aware chunking + reranking + query rewrite
+### Failure Mode: Retrieval misses critical context
+- Cause: weak metadata, poor chunk granularity, no query expansion
+- Mitigation: schema-aware chunking, rewrite + HyDE, hybrid retrieval, reranking
 
-### Failure Mode: High Confidence Hallucination
-- Cause: low-quality context or no citation enforcement
-- Mitigation: citation-required templates + abstain policy
+### Failure Mode: Fluent but ungrounded responses
+- Cause: weak context package or missing citation policy
+- Mitigation: citation-required output, groundedness checks, abstain policy
 
-### Failure Mode: Policy Leakage
-- Cause: ACL checks happen too late
-- Mitigation: enforce policy filters before retrieval returns candidates
+### Failure Mode: Policy leakage
+- Cause: ACL checks applied too late in pipeline
+- Mitigation: gatekeeper enforcement before retrieval results reach orchestration
 
 ---
 
 ## Finance Example (Regulatory Intelligence)
 
-### Typical Challenges
-- Regulatory updates across jurisdictions
-- Auditability and traceability requirements
-- Sensitive financial data segmentation
-
-### Architecture Pattern
-- Hybrid retrieval from policy docs + controls database
-- Graph linking between regulation, process, and control owners
-- Structured output with source paragraph references
+### Pattern
+- Hybrid retrieval across policy text and controls data
+- Graph links from regulation -> process -> control owner
+- Structured responses with source paragraph citations
 
 ### Example Query
 Explain variance in liquidity coverage ratio and cite relevant internal policy clauses.
@@ -188,15 +189,10 @@ Explain variance in liquidity coverage ratio and cite relevant internal policy c
 
 ## Healthcare Example (Clinical Knowledge Assistant)
 
-### Typical Challenges
-- Rapidly changing medical evidence
-- Conflicting patient history and guideline updates
-- Safety-critical response requirements
-
-### Architecture Pattern
+### Pattern
 - Temporal retrieval with date-aware ranking
-- Clinical guardrails for contraindications
-- Human-in-the-loop escalation for uncertain recommendations
+- Safety guardrails for contraindications
+- Human review escalation on low-confidence outputs
 
 ### Example Query
 Suggest treatment adjustments for a diabetic patient with declining renal function using the latest approved protocol.
@@ -205,15 +201,15 @@ Suggest treatment adjustments for a diabetic patient with declining renal functi
 
 ## Implementation Roadmap
 
-1. Start with one high-value workflow and clear acceptance metrics
-2. Build ingestion contracts and metadata taxonomy
-3. Implement hybrid retrieval + reranking before model tuning
-4. Add guardrails, policy checks, and citation enforcement
-5. Launch shadow testing, then canary rollout
-6. Close the loop with automated evaluation and user feedback
+1. Start with one high-value workflow and explicit acceptance metrics
+2. Define ingestion contracts and metadata/ACL taxonomy
+3. Implement pre-retrieval loop + hybrid retrieval + reranker
+4. Add agentic re-search loop and policy verifier
+5. Stand up Ragas and TruLens evaluation harnesses
+6. Launch shadow testing, canary rollout, and feedback-driven tuning
 
 ---
 
 ## Final Thought
 
-Enterprise RAG becomes a durable competitive capability when it is engineered as a full system: retrieval quality, orchestration intelligence, governance controls, and measurable business outcomes.
+Enterprise RAG requires moving beyond basic vector search into a modular five-layer system integrating intelligent ingestion, hybrid retrieval, agentic reasoning, and measurable trust controls.
