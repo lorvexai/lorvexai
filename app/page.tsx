@@ -25,7 +25,7 @@ export default function HomePage() {
     { icon: Landmark, label: "Finance" },
     { icon: HeartPulse, label: "Healthcare" },
     { icon: Building2, label: "NHS" },
-    { icon: Factory, label: "Enterprise" }
+    { icon: Factory, label: "Enterprise Platforms" }
   ];
   const outcomes = [
     {
@@ -53,19 +53,19 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="border-b border-secondary/10 bg-background/75 py-4">
+      <section className="border-b border-secondary/10 bg-background/75 py-2.5">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 md:flex-row md:items-center md:justify-between">
-            <p className="text-xs uppercase tracking-[0.32em] text-secondary/70">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-secondary/65">
               Who We Help
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {sectors.map((area) => (
                 <span
                   key={area.label}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/35 bg-primary/10 px-4 py-2 text-sm font-medium text-secondary"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-secondary"
                 >
-                  <area.icon size={14} className="text-primary" aria-hidden="true" />
+                  <area.icon size={12} className="text-primary" aria-hidden="true" />
                   {area.label}
                 </span>
               ))}
@@ -119,11 +119,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section
-        eyebrow="Solutions"
-        title="Enterprise solutions with operational depth"
-        description="A grouped solution model spanning services, products, and delivery capabilities."
-      >
+      <section className="section">
+        <div className="mx-auto w-full max-w-6xl px-6">
         <div className="grid gap-6 md:grid-cols-3">
           <ServiceCard
             title="Services"
@@ -158,13 +155,11 @@ export default function HomePage() {
             Explore Solutions Architecture
           </Link>
         </div>
-      </Section>
+        </div>
+      </section>
 
-      <Section
-        eyebrow="Impact"
-        title="Built for outcomes, not demos"
-        description="A landing flow designed to convert high-intent teams into delivery programs."
-      >
+      <section className="section pt-6">
+        <div className="mx-auto w-full max-w-6xl px-6">
         <div className="grid gap-5 md:grid-cols-3">
           {outcomes.map((item) => (
             <div
@@ -195,13 +190,11 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </Section>
+        </div>
+      </section>
 
-      <Section
-        eyebrow="Insights"
-        title="Technical authority built through operational insights"
-        description="Blueprint-grade content for enterprise architects, risk leaders, and AI product teams."
-      >
+      <section className="section">
+        <div className="mx-auto w-full max-w-6xl px-6">
         <TechnicalInsightsHeader
           eyebrow="Technical Guides"
           title="From architecture patterns to implementation runbooks"
@@ -224,7 +217,8 @@ export default function HomePage() {
             />
           ))}
         </div>
-      </Section>
+        </div>
+      </section>
 
       <Section title="Ready to operationalize enterprise AI?" description="">
         <CTA />
