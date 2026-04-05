@@ -1,0 +1,57 @@
+﻿<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decisioning Flow Operational">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1D517F"/><stop offset="100%" stop-color="#134067"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#CDEBFF"/></marker>
+    <style>
+      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .node{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#EDF8FF}
+      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D9EEFF}
+    </style>
+  </defs>
+  <rect width="1400" height="860" fill="url(#bg)"/>
+  <text x="70" y="78" class="title">Decisioning Flow (Operational)</text>
+  <text x="70" y="108" class="sub">Real-time event to governed decision with full auditability</text>
+
+  <rect x="70" y="150" width="1260" height="620" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+
+  <rect x="120" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="205" y="292" text-anchor="middle" class="node">Channel App</text>
+  <text x="205" y="314" text-anchor="middle" class="meta">Case or event input</text>
+
+  <rect x="320" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="405" y="292" text-anchor="middle" class="node">Scoring API</text>
+  <text x="405" y="314" text-anchor="middle" class="meta">Realtime and batch access</text>
+
+  <rect x="520" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="605" y="292" text-anchor="middle" class="node">Risk Engines</text>
+  <text x="605" y="314" text-anchor="middle" class="meta">Credit market liquidity ops</text>
+
+  <rect x="720" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="805" y="292" text-anchor="middle" class="node">Decision Engine</text>
+  <text x="805" y="314" text-anchor="middle" class="meta">Rules + risk outputs</text>
+
+  <rect x="920" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1005" y="292" text-anchor="middle" class="node">Governance Gate</text>
+  <text x="1005" y="314" text-anchor="middle" class="meta">Controls and approvals</text>
+
+  <rect x="1120" y="250" width="170" height="100" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1205" y="292" text-anchor="middle" class="node">Decision Output</text>
+  <text x="1205" y="314" text-anchor="middle" class="meta">Action + rationale</text>
+
+  <path d="M290 300 L320 300" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M490 300 L520 300" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M690 300 L720 300" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M890 300 L920 300" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1090 300 L1120 300" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="460" width="900" height="170" rx="16" fill="#123458" stroke="#4F98D9"/>
+  <text x="280" y="500" class="node">Reporting and Evidence Stream</text>
+  <text x="280" y="528" class="meta">Lineage records, decision metrics, override reasons, threshold breaches, and control attestations</text>
+
+  <path d="M1205 350 C1205 415,1080 430,1020 460" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M460 460 C380 430,320 390,405 350" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="700" y="730" text-anchor="middle" class="meta">Outcome: explainable decisions with enforced controls and reusable audit evidence</text>
+</svg>

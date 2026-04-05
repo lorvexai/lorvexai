@@ -98,6 +98,8 @@ The end-to-end platform model solves this by standardizing data contracts, orche
 
 ## End-to-End Platform Flow (Mermaid)
 
+![End-to-End Platform Flow](../../diagrams/risk-platform-end-to-end-flow.svg?v=1)
+
 ```mermaid
 flowchart LR
   DS["Data Sources"] --> DI["Ingestion and Storage"]
@@ -121,6 +123,8 @@ flowchart LR
 
 ## Decisioning Flow (Operational)
 
+![Decisioning Flow (Operational)](../../diagrams/risk-platform-decisioning-flow.svg?v=1)
+
 ```mermaid
 sequenceDiagram
   participant CH as Channel App
@@ -143,6 +147,8 @@ sequenceDiagram
 ---
 
 ## Model Lifecycle and Control Loop
+
+![Model Lifecycle and Control Loop](../../diagrams/risk-platform-model-lifecycle-loop.svg?v=1)
 
 ```mermaid
 flowchart TB

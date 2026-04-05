@@ -1,0 +1,57 @@
+﻿<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Model Lifecycle and Control Loop">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1D517F"/><stop offset="100%" stop-color="#134067"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#CDEBFF"/></marker>
+    <style>
+      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
+      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .node{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#EDF8FF}
+      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D9EEFF}
+    </style>
+  </defs>
+  <rect width="1400" height="860" fill="url(#bg)"/>
+  <text x="70" y="78" class="title">Model Lifecycle and Control Loop</text>
+  <text x="70" y="108" class="sub">Train, validate, approve, deploy, monitor, and retrain under governance</text>
+
+  <rect x="70" y="150" width="1260" height="620" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+
+  <circle cx="700" cy="450" r="250" fill="#10345A" stroke="#4F98D9" stroke-width="2"/>
+
+  <rect x="620" y="190" width="160" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="700" y="225" text-anchor="middle" class="node">Train</text>
+  <text x="700" y="246" text-anchor="middle" class="meta">Feature aligned datasets</text>
+
+  <rect x="950" y="315" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1035" y="350" text-anchor="middle" class="node">Validate</text>
+  <text x="1035" y="371" text-anchor="middle" class="meta">Bias, stability, performance</text>
+
+  <rect x="950" y="500" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="1035" y="535" text-anchor="middle" class="node">Approval Gate</text>
+  <text x="1035" y="556" text-anchor="middle" class="meta">Model risk and controls</text>
+
+  <rect x="620" y="626" width="160" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="700" y="661" text-anchor="middle" class="node">Deploy</text>
+  <text x="700" y="682" text-anchor="middle" class="meta">Versioned release</text>
+
+  <rect x="280" y="500" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="365" y="535" text-anchor="middle" class="node">Monitor</text>
+  <text x="365" y="556" text-anchor="middle" class="meta">Drift and performance</text>
+
+  <rect x="280" y="315" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
+  <text x="365" y="350" text-anchor="middle" class="node">Retrain Trigger</text>
+  <text x="365" y="371" text-anchor="middle" class="meta">Threshold breach logic</text>
+
+  <path d="M780 232 L950 337" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M1035 399 L1035 500" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M950 542 L780 658" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M620 658 L450 542" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M365 500 L365 399" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M450 337 L620 232" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="500" y="402" width="400" height="96" rx="14" fill="#123458" stroke="#4F98D9"/>
+  <text x="700" y="438" text-anchor="middle" class="node">Control Evidence Hub</text>
+  <text x="700" y="460" text-anchor="middle" class="meta">Lineage, approvals, test results, incident trace, and audit artifacts</text>
+
+  <text x="700" y="730" text-anchor="middle" class="meta">Goal: continuous model improvement with transparent control accountability</text>
+</svg>
