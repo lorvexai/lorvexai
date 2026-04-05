@@ -8,6 +8,9 @@
       .h{font:700 14px 'Inter',Arial,sans-serif;fill:#F3FAFF}
       .b{font:500 12px 'Inter',Arial,sans-serif;fill:#D8EEFF}
       .n{font:600 11px 'Inter',Arial,sans-serif;fill:#D8EEFF}
+      .flowPrimary{stroke-dasharray:14 90;animation:flowMove 3s linear infinite}
+      .flowDep{stroke-dasharray:8 22;animation:flowMove 4s linear infinite}
+      @keyframes flowMove{to{stroke-dashoffset:-120}}
     </style>
   </defs>
   <rect width="1400" height="900" fill="url(#bg)"/>
@@ -31,20 +34,20 @@
   <rect x="270" y="310" width="200" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
   <text x="370" y="338" class="n" text-anchor="middle">5</text><text x="370" y="360" class="h" text-anchor="middle">Workflow Orchestration</text><text x="370" y="380" class="b" text-anchor="middle">Pipeline and schedule control</text>
 
-  <path d="M780 235 L930 344" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M1030 400 L1030 500" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M930 545 L780 655" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M620 655 L470 545" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M370 500 L370 400" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M470 344 L620 235" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M780 235 L930 344" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M1030 400 L1030 500" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M930 545 L780 655" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M620 655 L470 545" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M370 500 L370 400" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M470 344 L620 235" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
 
   <rect x="180" y="740" width="1040" height="70" rx="12" fill="#2D2256" stroke="#9070D8"/>
   <text x="700" y="766" class="n" text-anchor="middle">7 Governance, Controls and Compliance Dependency</text>
   <text x="700" y="789" class="b" text-anchor="middle">Model lineage, approval evidence, access controls, independent review, and audit trails across every stage</text>
 
-  <path d="M700 710 L700 740" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M1030 590 C1030 700,900 725,780 740" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" fill="none" marker-end="url(#arr)"/>
-  <path d="M370 590 C370 700,500 725,620 740" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" fill="none" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M700 710 L700 740" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M1030 590 C1030 700,900 725,780 740" stroke="#9BE9C5" stroke-width="2.6" fill="none" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M370 590 C370 700,500 725,620 740" stroke="#9BE9C5" stroke-width="2.6" fill="none" marker-end="url(#arr)"/>
 
   <text x="1160" y="840" class="b">Solid = lifecycle loop | Dashed = governance dependency</text>
 </svg>

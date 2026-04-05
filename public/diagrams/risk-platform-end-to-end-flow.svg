@@ -8,6 +8,9 @@
       .h{font:700 14px 'Inter',Arial,sans-serif;fill:#F3FAFF}
       .b{font:500 12px 'Inter',Arial,sans-serif;fill:#D8EEFF}
       .n{font:600 11px 'Inter',Arial,sans-serif;fill:#D8EEFF}
+      .flowPrimary{stroke-dasharray:14 90;animation:flowMove 3s linear infinite}
+      .flowDep{stroke-dasharray:8 22;animation:flowMove 4s linear infinite}
+      @keyframes flowMove{to{stroke-dashoffset:-120}}
     </style>
   </defs>
   <rect width="1400" height="900" fill="url(#bg)"/>
@@ -25,11 +28,11 @@
     <rect x="1030" y="220" width="170" height="106" rx="12" fill="#0F5561" stroke="#66D2E2"/><text x="1115" y="250" class="n" text-anchor="middle">6</text><text x="1115" y="272" class="h" text-anchor="middle">Risk Engines</text>
   </g>
 
-  <path d="M250 273 L270 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M440 273 L460 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M630 273 L650 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M820 273 L840 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
-  <path d="M1010 273 L1030 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M250 273 L270 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M440 273 L460 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M630 273 L650 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M820 273 L840 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M1010 273 L1030 273" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
 
   <rect x="110" y="400" width="1180" height="120" rx="14" fill="#2D2256" stroke="#9070D8"/>
   <text x="700" y="434" class="n" text-anchor="middle">7</text>
@@ -46,15 +49,15 @@
   <text x="965" y="654" class="h" text-anchor="middle">Consumption &amp; Reporting</text>
   <text x="965" y="676" class="b" text-anchor="middle">Dashboards, regulatory returns, alerts</text>
 
-  <path d="M650 655 L750 655" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path class="flowPrimary" d="M650 655 L750 655" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
 
-  <path d="M355 326 L355 400" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M545 326 L545 400" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M735 326 L735 400" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M925 326 L925 400" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M1115 326 L1115 400" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M700 520 L700 600" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
-  <path d="M965 600 L965 520" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M355 326 L355 400" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M545 326 L545 400" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M735 326 L735 400" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M925 326 L925 400" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M1115 326 L1115 400" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M700 520 L700 600" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
+  <path class="flowDep" d="M965 600 L965 520" stroke="#9BE9C5" stroke-width="2.6" marker-end="url(#arr)"/>
 
   <text x="1160" y="780" class="b">Solid = primary flow | Dashed = control dependency</text>
 </svg>
