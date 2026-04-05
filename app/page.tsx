@@ -15,13 +15,14 @@ import {
   Factory
 } from "lucide-react";
 import LiveAgentTrace from "@/components/LiveAgentTrace";
-import TechnicalInsightsHeader from "@/components/TechnicalInsightsHeader";
 
 export default function HomePage() {
   const hiddenHomePostTitles = new Set([
     "From Waiting Lists to Smart Pathways",
     "NHS AI Triage Without Harm",
-    "AI-Native Treasury Control Tower: Real-Time Liquidity, Risk, and Decisioning"
+    "AI-Native Treasury Control Tower: Real-Time Liquidity, Risk, and Decisioning",
+    "AI Agents in Banking Operations",
+    "The Rise of Agentic AI"
   ]);
 
   const posts = getAllPosts()
@@ -105,18 +106,6 @@ export default function HomePage() {
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <TechnicalInsightsHeader
-            eyebrow="Technical Guides"
-            title="From architecture patterns to implementation runbooks"
-            description="Each insight maps business problems to production system design, with explicit governance controls and conversion-focused next actions."
-            takeaways={[
-              "Agentic AI Systems: planner-tool-verifier orchestration patterns",
-              "LLM Engineering for Banking: grounded retrieval with compliance checks",
-              "NHS AI Triage Blueprint: safety-first escalation and evidence loops"
-            ]}
-            ctaLabel="Browse Technical Insights"
-            ctaHref="/blog"
-          />
           <div className="grid gap-6 md:grid-cols-3">
             {posts.map((post) => (
               <BlogCard
