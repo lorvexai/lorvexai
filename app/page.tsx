@@ -1,6 +1,4 @@
-﻿import Section from "@/components/Section";
-import CTA from "@/components/CTA";
-import BlogCard from "@/components/BlogCard";
+﻿import BlogCard from "@/components/BlogCard";
 import Link from "next/link";
 import { getAllPosts } from "@/utils/posts";
 import {
@@ -20,7 +18,9 @@ export default function HomePage() {
   const hiddenHomePostTitles = new Set([
     "From Waiting Lists to Smart Pathways",
     "NHS AI Triage Without Harm",
-    "AI-Native Treasury Control Tower: Real-Time Liquidity, Risk, and Decisioning",
+    "AI-Native Treasury Control Tower",
+    "AI in Financial Risk Management",
+    "Enterprise RAG Architectures",
     "AI Agents in Banking Operations",
     "The Rise of Agentic AI"
   ]);
@@ -106,6 +106,9 @@ export default function HomePage() {
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
+          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-secondary/70">
+            Featured Insights
+          </p>
           <div className="grid gap-6 md:grid-cols-3">
             {posts.map((post) => (
               <BlogCard
@@ -118,10 +121,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <Section title="Ready to operationalize enterprise AI?" description="">
-        <CTA />
-      </Section>
     </>
   );
 }
