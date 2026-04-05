@@ -1,66 +1,88 @@
-﻿<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="End-to-End Platform Flow">
+﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="End-to-End AI Risk Platform Flow aligned to master architecture">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E5382"/><stop offset="100%" stop-color="#15466D"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#CDEBFF"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06162B"/><stop offset="100%" stop-color="#10385C"/></linearGradient>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3EEFF"/></marker>
     <style>
-      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
-      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
-      .node{font:700 17px 'Segoe UI',Arial,sans-serif;fill:#EDF8FF}
-      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D9EEFF}
+      .t{font:700 42px 'Segoe UI',Arial,sans-serif;fill:#EEF7FF}
+      .s{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .h{font:700 14px 'Segoe UI',Arial,sans-serif;fill:#F3FAFF}
+      .b{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .n{font:600 11px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
     </style>
   </defs>
-  <rect width="1400" height="860" fill="url(#bg)"/>
-  <text x="70" y="78" class="title">End-to-End Platform Flow</text>
-  <text x="70" y="108" class="sub">From source ingestion to governed decision intelligence</text>
 
-  <rect x="70" y="150" width="1260" height="620" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="64" y="74" class="t">End-to-End Platform Flow</text>
+  <text x="64" y="102" class="s">Aligned to the 9-layer risk platform architecture</text>
 
-  <rect x="110" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="185" y="292" text-anchor="middle" class="node">Data</text>
-  <text x="185" y="312" text-anchor="middle" class="node">Sources</text>
+  <rect x="56" y="130" width="1288" height="690" rx="22" fill="#0A213A" stroke="#3F8DD6"/>
 
-  <rect x="290" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="365" y="292" text-anchor="middle" class="node">Ingestion</text>
-  <text x="365" y="312" text-anchor="middle" class="node">Storage</text>
+  <rect x="88" y="220" width="170" height="112" rx="12" fill="#123D72" stroke="#75BDF7"/>
+  <text x="173" y="250" text-anchor="middle" class="n">1</text>
+  <text x="173" y="272" text-anchor="middle" class="h">Data Sources</text>
+  <text x="173" y="295" text-anchor="middle" class="b">Core, market, customer,</text>
+  <text x="173" y="312" text-anchor="middle" class="b">external, unstructured</text>
 
-  <rect x="470" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="545" y="292" text-anchor="middle" class="node">Feature</text>
-  <text x="545" y="312" text-anchor="middle" class="node">Engineering</text>
+  <rect x="282" y="220" width="170" height="112" rx="12" fill="#0F5A4A" stroke="#67D3B0"/>
+  <text x="367" y="250" text-anchor="middle" class="n">2</text>
+  <text x="367" y="272" text-anchor="middle" class="h">Ingestion + Storage</text>
+  <text x="367" y="295" text-anchor="middle" class="b">Stream and batch ingest</text>
+  <text x="367" y="312" text-anchor="middle" class="b">Raw lake, feature store</text>
 
-  <rect x="650" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="725" y="292" text-anchor="middle" class="node">AI ML LLM</text>
-  <text x="725" y="312" text-anchor="middle" class="node">Layer</text>
+  <rect x="476" y="220" width="170" height="112" rx="12" fill="#6B3C13" stroke="#F7B26C"/>
+  <text x="561" y="250" text-anchor="middle" class="n">3</text>
+  <text x="561" y="272" text-anchor="middle" class="h">Processing + Features</text>
+  <text x="561" y="295" text-anchor="middle" class="b">Validation, transforms,</text>
+  <text x="561" y="312" text-anchor="middle" class="b">versioned feature sets</text>
 
-  <rect x="830" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="905" y="292" text-anchor="middle" class="node">Lifecycle</text>
-  <text x="905" y="312" text-anchor="middle" class="node">Orchestration</text>
+  <rect x="670" y="220" width="170" height="112" rx="12" fill="#4B2D79" stroke="#C5A3FF"/>
+  <text x="755" y="250" text-anchor="middle" class="n">4</text>
+  <text x="755" y="272" text-anchor="middle" class="h">AI ML LLM Layer</text>
+  <text x="755" y="295" text-anchor="middle" class="b">Risk models and policy</text>
+  <text x="755" y="312" text-anchor="middle" class="b">reasoning pipelines</text>
 
-  <rect x="1010" y="250" width="150" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1085" y="292" text-anchor="middle" class="node">Risk</text>
-  <text x="1085" y="312" text-anchor="middle" class="node">Engines</text>
+  <rect x="864" y="220" width="170" height="112" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="949" y="250" text-anchor="middle" class="n">5</text>
+  <text x="949" y="272" text-anchor="middle" class="h">MLOps + Orchestration</text>
+  <text x="949" y="295" text-anchor="middle" class="b">Train, validate, approve,</text>
+  <text x="949" y="312" text-anchor="middle" class="b">deploy and monitor</text>
 
-  <rect x="1190" y="250" width="100" height="110" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1240" y="292" text-anchor="middle" class="node">Serving</text>
-  <text x="1240" y="312" text-anchor="middle" class="node">Reports</text>
+  <rect x="1058" y="220" width="170" height="112" rx="12" fill="#0F5561" stroke="#66D2E2"/>
+  <text x="1143" y="250" text-anchor="middle" class="n">6</text>
+  <text x="1143" y="272" text-anchor="middle" class="h">Risk Engines</text>
+  <text x="1143" y="295" text-anchor="middle" class="b">Credit, market, liquidity,</text>
+  <text x="1143" y="312" text-anchor="middle" class="b">operational and AML</text>
 
-  <path d="M260 305 L290 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M440 305 L470 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M620 305 L650 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M800 305 L830 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M980 305 L1010 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M1160 305 L1190 305" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M258 276 L282 276" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M452 276 L476 276" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M646 276 L670 276" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M840 276 L864 276" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M1034 276 L1058 276" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
 
-  <rect x="180" y="470" width="1040" height="170" rx="16" fill="#123458" stroke="#4F98D9"/>
-  <text x="210" y="510" class="node">Governance Controls Compliance Plane</text>
-  <text x="210" y="538" class="meta">Lineage, access control, model governance, policy validation, audit evidence, and regulatory mapping</text>
+  <rect x="120" y="410" width="1160" height="118" rx="14" fill="#2D2256" stroke="#9070D8"/>
+  <text x="700" y="444" text-anchor="middle" class="n">7</text>
+  <text x="700" y="466" text-anchor="middle" class="h">Governance, Controls, and Regulatory Compliance</text>
+  <text x="700" y="490" text-anchor="middle" class="b">Model governance, audit lineage, risk control framework, and regulatory mapping</text>
 
-  <path d="M365 360 L365 470" stroke="#BDF5DB" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M545 360 L545 470" stroke="#BDF5DB" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M725 360 L725 470" stroke="#BDF5DB" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M905 360 L905 470" stroke="#BDF5DB" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M1085 360 L1085 470" stroke="#BDF5DB" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M1240 360 C1240 430,1200 450,1140 470" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M367 332 L367 410" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M561 332 L561 410" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M755 332 L755 410" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M949 332 L949 410" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M1143 332 L1143 410" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
 
-  <text x="700" y="730" text-anchor="middle" class="meta">Platform objective: consistent risk intelligence, governed automation, and explainable enterprise decisions</text>
+  <rect x="220" y="610" width="430" height="110" rx="12" fill="#0E4A8C" stroke="#6BB5FF"/>
+  <text x="435" y="640" text-anchor="middle" class="n">8</text>
+  <text x="435" y="662" text-anchor="middle" class="h">Serving and Decision Layer</text>
+  <text x="435" y="685" text-anchor="middle" class="b">Scoring APIs and decision engine</text>
+
+  <rect x="750" y="610" width="430" height="110" rx="12" fill="#0A5D66" stroke="#66D8E2"/>
+  <text x="965" y="640" text-anchor="middle" class="n">9</text>
+  <text x="965" y="662" text-anchor="middle" class="h">Consumption and Reporting</text>
+  <text x="965" y="685" text-anchor="middle" class="b">Dashboards, regulatory returns, alerts</text>
+
+  <path d="M650 665 L750 665" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M700 528 L700 610" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M965 610 L965 528" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+
+  <text x="700" y="790" text-anchor="middle" class="b">Production-grade, regulatory-first, explainable, secure, and continuously monitored</text>
 </svg>

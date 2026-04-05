@@ -1,57 +1,66 @@
-﻿<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Model Lifecycle and Control Loop">
+﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Model lifecycle and control loop aligned to MLOps and governance layers">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#09182C"/><stop offset="100%" stop-color="#123E6A"/></linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1D517F"/><stop offset="100%" stop-color="#134067"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#CDEBFF"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06162B"/><stop offset="100%" stop-color="#10385C"/></linearGradient>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3EEFF"/></marker>
     <style>
-      .title{font:700 44px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
-      .sub{font:500 18px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
-      .node{font:700 16px 'Segoe UI',Arial,sans-serif;fill:#EDF8FF}
-      .meta{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D9EEFF}
+      .t{font:700 42px 'Segoe UI',Arial,sans-serif;fill:#EEF7FF}
+      .s{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
+      .h{font:700 14px 'Segoe UI',Arial,sans-serif;fill:#F3FAFF}
+      .b{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .n{font:600 11px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
     </style>
   </defs>
-  <rect width="1400" height="860" fill="url(#bg)"/>
-  <text x="70" y="78" class="title">Model Lifecycle and Control Loop</text>
-  <text x="70" y="108" class="sub">Train, validate, approve, deploy, monitor, and retrain under governance</text>
 
-  <rect x="70" y="150" width="1260" height="620" rx="24" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="64" y="74" class="t">Model Lifecycle and Control Loop</text>
+  <text x="64" y="102" class="s">Aligned to Layer 5 (MLOps and Orchestration) and Layer 7 (Governance)</text>
 
-  <circle cx="700" cy="450" r="250" fill="#10345A" stroke="#4F98D9" stroke-width="2"/>
+  <rect x="56" y="130" width="1288" height="690" rx="22" fill="#0A213A" stroke="#3F8DD6"/>
 
-  <rect x="620" y="190" width="160" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="700" y="225" text-anchor="middle" class="node">Train</text>
-  <text x="700" y="246" text-anchor="middle" class="meta">Feature aligned datasets</text>
+  <circle cx="700" cy="420" r="225" fill="#7A1F57" fill-opacity="0.25" stroke="#FF9FD1"/>
 
-  <rect x="950" y="315" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1035" y="350" text-anchor="middle" class="node">Validate</text>
-  <text x="1035" y="371" text-anchor="middle" class="meta">Bias, stability, performance</text>
+  <rect x="620" y="188" width="160" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="700" y="216" text-anchor="middle" class="n">5</text>
+  <text x="700" y="238" text-anchor="middle" class="h">Train and Validate</text>
+  <text x="700" y="258" text-anchor="middle" class="b">Performance and bias checks</text>
 
-  <rect x="950" y="500" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1035" y="535" text-anchor="middle" class="node">Approval Gate</text>
-  <text x="1035" y="556" text-anchor="middle" class="meta">Model risk and controls</text>
+  <rect x="930" y="310" width="200" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="1030" y="338" text-anchor="middle" class="n">5</text>
+  <text x="1030" y="360" text-anchor="middle" class="h">Approval Gates</text>
+  <text x="1030" y="380" text-anchor="middle" class="b">Controlled promotion policy</text>
 
-  <rect x="620" y="626" width="160" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="700" y="661" text-anchor="middle" class="node">Deploy</text>
-  <text x="700" y="682" text-anchor="middle" class="meta">Versioned release</text>
+  <rect x="930" y="500" width="200" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="1030" y="528" text-anchor="middle" class="n">5</text>
+  <text x="1030" y="550" text-anchor="middle" class="h">Deploy and Monitor</text>
+  <text x="1030" y="570" text-anchor="middle" class="b">Drift and incident signals</text>
 
-  <rect x="280" y="500" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="365" y="535" text-anchor="middle" class="node">Monitor</text>
-  <text x="365" y="556" text-anchor="middle" class="meta">Drift and performance</text>
+  <rect x="620" y="622" width="160" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="700" y="650" text-anchor="middle" class="n">5</text>
+  <text x="700" y="672" text-anchor="middle" class="h">Retrain Trigger</text>
+  <text x="700" y="692" text-anchor="middle" class="b">Threshold-driven refresh</text>
 
-  <rect x="280" y="315" width="170" height="84" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="365" y="350" text-anchor="middle" class="node">Retrain Trigger</text>
-  <text x="365" y="371" text-anchor="middle" class="meta">Threshold breach logic</text>
+  <rect x="270" y="500" width="200" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="370" y="528" text-anchor="middle" class="n">5</text>
+  <text x="370" y="550" text-anchor="middle" class="h">Workflow Orchestration</text>
+  <text x="370" y="570" text-anchor="middle" class="b">Scheduled and event runs</text>
 
-  <path d="M780 232 L950 337" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M1035 399 L1035 500" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M950 542 L780 658" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M620 658 L450 542" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M365 500 L365 399" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
-  <path d="M450 337 L620 232" stroke="#CDEBFF" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="270" y="310" width="200" height="90" rx="12" fill="#7A1F57" stroke="#FF9FD1"/>
+  <text x="370" y="338" text-anchor="middle" class="n">5</text>
+  <text x="370" y="360" text-anchor="middle" class="h">Model Registry</text>
+  <text x="370" y="380" text-anchor="middle" class="b">Versioned approved models</text>
 
-  <rect x="500" y="402" width="400" height="96" rx="14" fill="#123458" stroke="#4F98D9"/>
-  <text x="700" y="438" text-anchor="middle" class="node">Control Evidence Hub</text>
-  <text x="700" y="460" text-anchor="middle" class="meta">Lineage, approvals, test results, incident trace, and audit artifacts</text>
+  <path d="M780 233 L930 345" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M1030 400 L1030 500" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M930 545 L780 657" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M620 657 L470 545" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M370 500 L370 400" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
+  <path d="M470 345 L620 233" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
 
-  <text x="700" y="730" text-anchor="middle" class="meta">Goal: continuous model improvement with transparent control accountability</text>
+  <rect x="210" y="740" width="980" height="56" rx="12" fill="#2D2256" stroke="#9070D8"/>
+  <text x="700" y="765" text-anchor="middle" class="n">7 Governance Controls and Compliance</text>
+  <text x="700" y="785" text-anchor="middle" class="b">Lineage, independent review, access control, and audit evidence integrated across lifecycle</text>
+
+  <path d="M700 712 L700 740" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M1030 590 C1030 690,920 720,780 740" stroke="#BDF5DB" stroke-width="3" fill="none" marker-end="url(#a)"/>
+  <path d="M370 590 C370 690,480 720,620 740" stroke="#BDF5DB" stroke-width="3" fill="none" marker-end="url(#a)"/>
 </svg>
