@@ -1,67 +1,51 @@
-﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decisioning flow aligned to risk platform architecture">
+﻿<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Operational decisioning flow with dependencies">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06162B"/><stop offset="100%" stop-color="#10385C"/></linearGradient>
-    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3EEFF"/></marker>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#D3EEFF"/></marker>
     <style>
-      .t{font:700 42px 'Segoe UI',Arial,sans-serif;fill:#EEF7FF}
-      .s{font:500 17px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
-      .h{font:700 14px 'Segoe UI',Arial,sans-serif;fill:#F3FAFF}
-      .b{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
-      .n{font:600 11px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
+      .t{font:700 40px 'Inter',Arial,sans-serif;fill:#EEF7FF}
+      .s{font:500 16px 'Inter',Arial,sans-serif;fill:#C7E3FB}
+      .h{font:700 14px 'Inter',Arial,sans-serif;fill:#F3FAFF}
+      .b{font:500 12px 'Inter',Arial,sans-serif;fill:#D8EEFF}
+      .n{font:600 11px 'Inter',Arial,sans-serif;fill:#D8EEFF}
     </style>
   </defs>
-
   <rect width="1400" height="900" fill="url(#bg)"/>
-  <text x="64" y="74" class="t">Decisioning Flow (Operational)</text>
-  <text x="64" y="102" class="s">Detailed path from risk engines to serving, reporting, and governance evidence</text>
+  <text x="60" y="72" class="t">Decisioning Flow (Operational)</text>
+  <text x="60" y="98" class="s">Aligned with layers 6, 8, 9 and cross-cutting 7 governance</text>
 
-  <rect x="56" y="130" width="1288" height="690" rx="22" fill="#0A213A" stroke="#3F8DD6"/>
+  <rect x="50" y="120" width="1300" height="740" rx="22" fill="#0A213A" stroke="#3F8DD6"/>
 
-  <rect x="110" y="230" width="180" height="106" rx="12" fill="#0F5561" stroke="#66D2E2"/>
-  <text x="200" y="258" text-anchor="middle" class="n">6</text>
-  <text x="200" y="279" text-anchor="middle" class="h">Risk Engines</text>
-  <text x="200" y="301" text-anchor="middle" class="b">Credit, market, liquidity,</text>
-  <text x="200" y="318" text-anchor="middle" class="b">operational, AML outputs</text>
+  <rect x="110" y="230" width="210" height="106" rx="12" fill="#0F5561" stroke="#66D2E2"/>
+  <text x="215" y="258" class="n" text-anchor="middle">6</text><text x="215" y="280" class="h" text-anchor="middle">Risk Engines</text><text x="215" y="301" class="b" text-anchor="middle">Credit / Market / Liquidity / AML</text>
+  <rect x="360" y="230" width="220" height="106" rx="12" fill="#0E4A8C" stroke="#6BB5FF"/>
+  <text x="470" y="258" class="n" text-anchor="middle">8</text><text x="470" y="280" class="h" text-anchor="middle">Scoring API Layer</text><text x="470" y="301" class="b" text-anchor="middle">Realtime and batch scoring</text>
+  <rect x="620" y="230" width="220" height="106" rx="12" fill="#0E4A8C" stroke="#6BB5FF"/>
+  <text x="730" y="258" class="n" text-anchor="middle">8</text><text x="730" y="280" class="h" text-anchor="middle">Decision Engine</text><text x="730" y="301" class="b" text-anchor="middle">Rules + AI outputs + overrides</text>
+  <rect x="880" y="230" width="220" height="106" rx="12" fill="#2D2256" stroke="#9070D8"/>
+  <text x="990" y="258" class="n" text-anchor="middle">7</text><text x="990" y="280" class="h" text-anchor="middle">Governance Gate</text><text x="990" y="301" class="b" text-anchor="middle">Policy, access, approval check</text>
+  <rect x="1140" y="230" width="170" height="106" rx="12" fill="#0A5D66" stroke="#66D8E2"/>
+  <text x="1225" y="258" class="n" text-anchor="middle">9</text><text x="1225" y="280" class="h" text-anchor="middle">Consumption</text><text x="1225" y="301" class="b" text-anchor="middle">Decision + rationale</text>
 
-  <rect x="330" y="230" width="230" height="106" rx="12" fill="#0E4A8C" stroke="#6BB5FF"/>
-  <text x="445" y="258" text-anchor="middle" class="n">8</text>
-  <text x="445" y="279" text-anchor="middle" class="h">Serving + Scoring APIs</text>
-  <text x="445" y="301" text-anchor="middle" class="b">Real-time and batch inference</text>
+  <path d="M320 283 L360 283" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path d="M580 283 L620 283" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path d="M840 283 L880 283" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
+  <path d="M1100 283 L1140 283" stroke="#D3EEFF" stroke-width="3.2" marker-end="url(#arr)"/>
 
-  <rect x="600" y="230" width="230" height="106" rx="12" fill="#0E4A8C" stroke="#6BB5FF"/>
-  <text x="715" y="258" text-anchor="middle" class="n">8</text>
-  <text x="715" y="279" text-anchor="middle" class="h">Decision Engine</text>
-  <text x="715" y="301" text-anchor="middle" class="b">Rules + AI outputs + overrides</text>
+  <rect x="150" y="430" width="1120" height="132" rx="14" fill="#0A5D66" stroke="#66D8E2"/>
+  <text x="710" y="464" text-anchor="middle" class="n">9</text>
+  <text x="710" y="486" text-anchor="middle" class="h">Consumption &amp; Reporting</text>
+  <text x="710" y="509" text-anchor="middle" class="b">Executive dashboards, regulatory packs, threshold alerts, drift monitoring</text>
 
-  <rect x="870" y="230" width="190" height="106" rx="12" fill="#2D2256" stroke="#9070D8"/>
-  <text x="965" y="258" text-anchor="middle" class="n">7</text>
-  <text x="965" y="279" text-anchor="middle" class="h">Governance Gate</text>
-  <text x="965" y="301" text-anchor="middle" class="b">Access, policy, approvals</text>
+  <rect x="250" y="620" width="920" height="130" rx="14" fill="#2D2256" stroke="#9070D8"/>
+  <text x="710" y="654" text-anchor="middle" class="n">7</text>
+  <text x="710" y="676" text-anchor="middle" class="h">Audit and Lineage Dependency</text>
+  <text x="710" y="699" text-anchor="middle" class="b">Every decision stores model version, feature snapshot, policy result, and approval evidence</text>
 
-  <rect x="1100" y="230" width="190" height="106" rx="12" fill="#0A5D66" stroke="#66D8E2"/>
-  <text x="1195" y="258" text-anchor="middle" class="n">9</text>
-  <text x="1195" y="279" text-anchor="middle" class="h">Consumption</text>
-  <text x="1195" y="301" text-anchor="middle" class="b">Decision and rationale</text>
+  <path d="M1225 336 L1225 430" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
+  <path d="M990 336 L990 430" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
+  <path d="M710 562 L710 620" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" marker-end="url(#arr)"/>
+  <path d="M300 620 C190 600,145 545,215 336" stroke="#9BE9C5" stroke-width="2.6" stroke-dasharray="7 7" fill="none" marker-end="url(#arr)"/>
 
-  <path d="M290 283 L330 283" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
-  <path d="M560 283 L600 283" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
-  <path d="M830 283 L870 283" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
-  <path d="M1060 283 L1100 283" stroke="#D3EEFF" stroke-width="3.5" marker-end="url(#a)"/>
-
-  <rect x="150" y="430" width="1100" height="170" rx="14" fill="#10324F" stroke="#4F98D9"/>
-  <text x="700" y="466" text-anchor="middle" class="n">9</text>
-  <text x="700" y="488" text-anchor="middle" class="h">Reporting, Alerts, and Executive Consumption</text>
-  <text x="700" y="512" text-anchor="middle" class="b">Risk dashboards, regulatory packs, limit breach alerts, model drift monitoring</text>
-
-  <rect x="300" y="640" width="800" height="118" rx="14" fill="#2D2256" stroke="#9070D8"/>
-  <text x="700" y="675" text-anchor="middle" class="n">7</text>
-  <text x="700" y="697" text-anchor="middle" class="h">Audit and Lineage Evidence</text>
-  <text x="700" y="720" text-anchor="middle" class="b">Decision trace, model version, data provenance, approval history, immutable evidence</text>
-
-  <path d="M1195 336 L1195 430" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
-  <path d="M965 336 L965 430" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
-  <path d="M700 600 L700 640" stroke="#BDF5DB" stroke-width="3" marker-end="url(#a)"/>
-  <path d="M320 640 C220 620,170 560,200 336" stroke="#BDF5DB" stroke-width="3" fill="none" marker-end="url(#a)"/>
-
-  <text x="700" y="790" text-anchor="middle" class="b">Operational target: fast decisions with enforced controls and regulator-ready traceability</text>
+  <text x="1160" y="790" class="b">Solid = operational flow | Dashed = governance dependency</text>
 </svg>

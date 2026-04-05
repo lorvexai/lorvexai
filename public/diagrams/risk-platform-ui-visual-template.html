@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Platform Visual Template</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glow { box-shadow: 0 0 24px rgba(59,130,246,0.20); }
+    .arrow {
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(to right, #60a5fa, #22d3ee);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .arrow::after {
+      content: '';
+      position: absolute;
+      right: -7px;
+      top: -4px;
+      border-left: 8px solid #22d3ee;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+    .dep {
+      border-top: 2px dashed rgba(134,239,172,0.8);
+      height: 0;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+
+  <div class="text-center py-10">
+    <h1 class="text-4xl font-bold tracking-wide">END-TO-END AI RISK PLATFORM</h1>
+    <p class="text-slate-400 mt-2">Reusable diagram style template for flow and dependency visuals</p>
+  </div>
+
+  <div class="flex items-center justify-start gap-5 px-10 overflow-x-auto pb-10">
+    <div class="min-w-[220px] bg-blue-600/20 border border-blue-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-blue-300 mb-2">1. Data Sources</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Core systems and market feeds</li>
+        <li>Customer and external intelligence</li>
+      </ul>
+    </div>
+    <div class="arrow"></div>
+    <div class="min-w-[220px] bg-green-600/20 border border-green-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-green-300 mb-2">2. Ingestion & Storage</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Event-stream + batch/API ingestion</li>
+        <li>Raw lake and curated data products</li>
+      </ul>
+    </div>
+    <div class="arrow"></div>
+    <div class="min-w-[220px] bg-orange-600/20 border border-orange-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-orange-300 mb-2">3. Processing & Features</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Validation, transform, feature versioning</li>
+      </ul>
+    </div>
+    <div class="arrow"></div>
+    <div class="min-w-[220px] bg-purple-600/20 border border-purple-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-purple-300 mb-2">4. AI / ML / LLM</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Risk models and policy reasoning</li>
+      </ul>
+    </div>
+    <div class="arrow"></div>
+    <div class="min-w-[220px] bg-pink-600/20 border border-pink-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-pink-300 mb-2">5. Lifecycle & Orchestration</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Train, validate, approve, deploy, monitor</li>
+      </ul>
+    </div>
+    <div class="arrow"></div>
+    <div class="min-w-[220px] bg-teal-600/20 border border-teal-500/30 rounded-2xl p-4 glow">
+      <h3 class="font-semibold text-teal-300 mb-2">6. Risk Engines</h3>
+      <ul class="text-sm text-slate-300 space-y-1">
+        <li>Credit, market, liquidity, AML</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mx-10 mt-6 bg-indigo-900/30 border border-indigo-500/30 rounded-2xl p-6 glow">
+    <h3 class="text-lg font-semibold text-indigo-300 mb-3">7. Governance, Controls & Compliance (Cross-Cutting)</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-slate-300">
+      <div>Model Governance</div>
+      <div>Audit & Lineage</div>
+      <div>Risk Controls</div>
+      <div>Regulatory Mapping</div>
+    </div>
+  </div>
+
+  <div class="mx-10 mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-blue-900/30 border border-blue-500/30 rounded-2xl p-6 glow">
+      <h3 class="font-semibold text-blue-300 mb-2">8. Serving & Decision Layer</h3>
+      <p class="text-sm text-slate-300">API scoring, decision engine, and policy-aware routing.</p>
+    </div>
+    <div class="bg-cyan-900/30 border border-cyan-500/30 rounded-2xl p-6 glow">
+      <h3 class="font-semibold text-cyan-300 mb-2">9. Consumption & Reporting</h3>
+      <p class="text-sm text-slate-300">Dashboards, regulatory packs, alerts, and monitoring.</p>
+    </div>
+  </div>
+
+  <div class="text-center text-slate-500 text-sm py-8">
+    Production-grade • Explainable • Secure • Governed • Continuously monitored
+  </div>
+
+</body>
+</html>
