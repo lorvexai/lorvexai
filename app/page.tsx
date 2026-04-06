@@ -55,7 +55,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section pb-10 pt-14 md:pt-20">
+      <section className="section pb-4 pt-14 md:pb-6 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass grid gap-8 rounded-3xl border border-primary/30 p-7 md:grid-cols-[1.15fr_0.85fr] md:p-10">
             <div>
