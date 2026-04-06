@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import BlogCard from "@/components/BlogCard";
+import Link from "next/link";
 
 type InsightPost = {
   slug: string;
@@ -67,6 +68,9 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
         <p className="mb-3 text-xs uppercase tracking-[0.25em] text-secondary/70">
           Featured Insights
         </p>
+        <p className="mb-4 text-sm text-secondary/80">
+          Latest architecture and risk intelligence notes.
+        </p>
         <div className="mb-5 flex flex-wrap gap-2">
           {TOPIC_FILTERS.map((topic) => {
             const isActive = topic === activeTopic;
@@ -89,7 +93,10 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
 
         {filteredPosts.length === 0 ? (
           <div className="rounded-2xl border border-secondary/20 bg-background/30 p-6 text-sm text-secondary/80">
-            No insights in this topic yet.
+            <p>No insights in this topic yet.</p>
+            <Link href="/blog" className="mt-3 inline-block text-primary">
+              View all blog {"->"}
+            </Link>
           </div>
         ) : (
           <div className="grid gap-6 md:grid-cols-3">

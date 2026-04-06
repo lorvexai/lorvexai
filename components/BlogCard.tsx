@@ -12,7 +12,9 @@ export default function BlogCard({
   return (
     <article className="glass rounded-2xl p-6">
       <h3 className="text-xl font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm text-secondary/80">{excerpt}</p>
+      <p className="mt-3 text-sm text-secondary/80 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden">
+        {excerpt}
+      </p>
       <Link href={`/blog/${slug}`} className="mt-4 inline-block text-primary">
         Read article {"->"}
       </Link>
