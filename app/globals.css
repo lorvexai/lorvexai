@@ -126,3 +126,58 @@ h1, h2, h3, h4, h5 {
   padding: 0.65rem 0.8rem;
   text-align: left;
 }
+
+/* ─── Gradient text utility ─── */
+.text-gradient {
+  background: linear-gradient(
+    105deg,
+    #ffffff 0%,
+    #a8c8ff 38%,
+    #2F80ED 72%,
+    #56A3FF 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Group-hover gradient title for BlogCard */
+.group:hover .group-title {
+  background: linear-gradient(105deg, #ffffff 0%, #a8c8ff 38%, #2F80ED 72%, #56A3FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Stat glow for numbers ─── */
+.stat-glow {
+  text-shadow: 0 0 32px rgba(47, 128, 237, 0.55);
+}
+
+/* ─── Card hover utility ─── */
+.card-hover {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 36px rgba(47, 128, 237, 0.28);
+  border-color: rgba(47, 128, 237, 0.45);
+}
+
+/* ─── Shimmer animation for CTA primary button ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    #2F80ED 0%,
+    #56A3FF 40%,
+    #2F80ED 60%,
+    #1a5fb4 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3.5s linear infinite;
+}
