@@ -7,26 +7,34 @@ import { useState, useEffect, useRef } from "react";
 
 const groups = [
   {
+    label: "Who We Help",
+    links: [
+      { href: "/industries/finance",    label: "Finance & Banking" },
+      { href: "/industries/healthcare", label: "Healthcare (NHS)" },
+      { href: "/industries/enterprise", label: "Enterprise" }
+    ]
+  },
+  {
     label: "Solutions",
     links: [
-      { href: "/services", label: "Services" },
-      { href: "/products", label: "Products" },
-      { href: "/platform", label: "Platform" },
-      { href: "/capabilities", label: "Capabilities" }
+      { href: "/services",      label: "Services" },
+      { href: "/products",      label: "Products" },
+      { href: "/platform",      label: "Platform" },
+      { href: "/capabilities",  label: "Capabilities" }
     ]
   },
   {
     label: "Insights",
     links: [
-      { href: "/blog", label: "Blog" },
-      { href: "/models", label: "Model Garden" },
+      { href: "/blog",    label: "Blog" },
+      { href: "/models",  label: "Model Garden" },
       { href: "/research", label: "Research" }
     ]
   },
   {
     label: "Company",
     links: [
-      { href: "/about", label: "About" },
+      { href: "/about",   label: "About" },
       { href: "/contact", label: "Contact" }
     ]
   }

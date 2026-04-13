@@ -200,29 +200,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Compliance badge strip */}
-      <section className="border-b border-secondary/10 bg-background/60 py-4">
+      {/* Who We Help — industry cards */}
+      <section className="border-b border-secondary/10 bg-background/60 py-8">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-secondary/45">Built to comply with</p>
-            <div className="flex flex-wrap items-center justify-center gap-3 md:justify-end">
-              {[
-                { label: "SOC 2 Type II",     color: "text-blue-300   border-blue-400/30   bg-blue-400/8"    },
-                { label: "GDPR Aligned",       color: "text-violet-300 border-violet-400/30 bg-violet-400/8"  },
-                { label: "ISO 42001 AI",       color: "text-primary    border-primary/30    bg-primary/8"     },
-                { label: "NHS IG Toolkit",     color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/8" },
-                { label: "PRA / Basel 3.1",    color: "text-orange-300 border-orange-400/30 bg-orange-400/8"  },
-                { label: "FCA Aligned",        color: "text-blue-300   border-blue-400/30   bg-blue-400/8"    },
-              ].map((badge) => (
-                <span
-                  key={badge.label}
-                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] ${badge.color}`}
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-current opacity-70" />
-                  {badge.label}
-                </span>
-              ))}
-            </div>
+          <p className="mb-5 text-center text-[10px] uppercase tracking-[0.28em] text-secondary/45">Who we help</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                href: "/industries/finance",
+                label: "Finance & Banking",
+                description: "FCA, PRA, Basel IV — compliance automation and model risk governance",
+                frameworks: ["FCA", "PRA SS1/23", "Basel IV", "SMCR"],
+                color: "border-blue-400/25 bg-blue-400/5 hover:border-blue-400/50",
+                accent: "text-blue-300"
+              },
+              {
+                href: "/industries/healthcare",
+                label: "Healthcare (NHS)",
+                description: "Clinical workflow AI with on-premise deployment and DCB0129 clinical safety",
+                frameworks: ["NHS IG Toolkit", "DCB0129", "DSPT", "UK GDPR"],
+                color: "border-emerald-400/25 bg-emerald-400/5 hover:border-emerald-400/50",
+                accent: "text-emerald-300"
+              },
+              {
+                href: "/industries/enterprise",
+                label: "Regulated Enterprise",
+                description: "ISO 42001 AI governance, SOC 2, EU AI Act — board-ready AI deployment",
+                frameworks: ["ISO 42001", "SOC 2 II", "EU AI Act", "GDPR"],
+                color: "border-violet-400/25 bg-violet-400/5 hover:border-violet-400/50",
+                accent: "text-violet-300"
+              }
+            ].map((ind) => (
+              <Link
+                key={ind.href}
+                href={ind.href}
+                className={`group glass rounded-2xl border p-5 transition-all ${ind.color}`}
+              >
+                <p className={`text-xs font-semibold uppercase tracking-[0.15em] ${ind.accent}`}>{ind.label}</p>
+                <p className="mt-2 text-sm leading-relaxed text-secondary/70">{ind.description}</p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {ind.frameworks.map((f) => (
+                    <span key={f} className="rounded-full border border-secondary/15 bg-background/30 px-2 py-0.5 text-[10px] text-secondary/50">{f}</span>
+                  ))}
+                </div>
+                <p className={`mt-3 flex items-center gap-1 text-xs font-medium ${ind.accent} transition group-hover:gap-2`}>
+                  See how we help <ArrowRight size={11} />
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
