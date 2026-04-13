@@ -268,6 +268,7 @@ export default function AboutPage() {
 
       {/* Operating principles */}
       <Section
+        accent
         eyebrow="Operating Principles"
         title="Engineering excellence and trusted AI systems"
         description="We blend research depth with production pragmatism — built on principles shaped by 20+ years in regulated environments."

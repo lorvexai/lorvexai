@@ -166,6 +166,17 @@ h1, h2, h3, h4, h5 {
   stroke: rgba(47, 128, 237, 0.35) !important;
 }
 
+/* ─── Prose image polish ─── */
+.prose img {
+  border-radius: 1rem;
+  border: 1px solid rgba(192, 198, 212, 0.15);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(47, 128, 237, 0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Prose table ─── */
 .prose table {
   display: block;
   width: 100%;
@@ -173,11 +184,54 @@ h1, h2, h3, h4, h5 {
   border-collapse: collapse;
 }
 
-.prose th,
+.prose thead tr {
+  background: rgba(47, 128, 237, 0.12);
+}
+
+.prose th {
+  border: 1px solid rgba(191, 216, 244, 0.25);
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  color: #E6ECF7;
+  font-weight: 600;
+}
+
 .prose td {
   border: 1px solid rgba(191, 216, 244, 0.25);
   padding: 0.65rem 0.8rem;
   text-align: left;
+}
+
+.prose tbody tr:hover {
+  background: rgba(47, 128, 237, 0.06);
+}
+
+/* ─── Prose blockquote ─── */
+.prose blockquote {
+  border-left: 3px solid #2F80ED;
+  background: rgba(47, 128, 237, 0.07);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1rem 1.25rem;
+}
+
+.prose blockquote p {
+  color: rgba(192, 198, 212, 0.9) !important;
+  font-style: italic;
+}
+
+/* ─── Prose code block ─── */
+.prose pre {
+  background: rgba(15, 42, 74, 0.7) !important;
+  border: 1px solid rgba(47, 128, 237, 0.2);
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+}
+
+/* ─── Prose horizontal rule ─── */
+.prose hr {
+  border-color: rgba(192, 198, 212, 0.12);
+  margin: 2.5rem 0;
 }
 
 /* ─── Gradient text utility ─── */

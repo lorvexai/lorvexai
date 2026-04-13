@@ -158,6 +158,7 @@ export default function CapabilitiesPage() {
 
       {/* Capability tracks */}
       <Section
+        accent
         eyebrow="Capability Tracks"
         title="Four disciplines. End-to-end coverage."
         description="Each track is a standalone engagement or part of an integrated programme — designed to meet you where you are on the AI maturity curve."

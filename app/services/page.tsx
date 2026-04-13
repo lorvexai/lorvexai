@@ -193,6 +193,7 @@ export default function ServicesPage() {
 
       {/* Delivery model */}
       <Section
+        accent
         eyebrow="How We Work"
         title="A delivery approach designed to reduce execution risk"
         description="We combine strategic clarity, engineering depth, and governance discipline in every phase."

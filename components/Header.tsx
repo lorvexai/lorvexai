@@ -19,8 +19,7 @@ const groups = [
     label: "Insights",
     links: [
       { href: "/blog", label: "Blog" },
-      { href: "/research", label: "Research" },
-      { href: "/blog", label: "Technical Guides" }
+      { href: "/research", label: "Research" }
     ]
   },
   {
@@ -52,7 +51,7 @@ export default function Header() {
               className="h-11 w-auto md:h-12"
             />
             <span className="hidden text-sm font-medium text-secondary/85 lg:inline">
-              LorveAI Technologies Ltd
+              LorvexAI Technologies Ltd
             </span>
           </Link>
           <nav className="hidden items-center gap-4 md:flex">

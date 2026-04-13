@@ -33,6 +33,30 @@ const navColumns = [
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10 bg-background/60">
+      {/* Pre-footer CTA strip */}
+      <div className="border-b border-secondary/10 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 py-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-semibold text-white">Ready to explore what AI can do for your organisation?</p>
+            <p className="mt-1 text-sm text-secondary/60">Book a free 30-minute discovery call — no commitment, just clarity.</p>
+          </div>
+          <div className="flex shrink-0 gap-3">
+            <a
+              href="/contact"
+              className="btn-primary text-sm"
+            >
+              Book a Call
+            </a>
+            <a
+              href="mailto:hello@lorvex.ai"
+              className="btn-outline text-sm"
+            >
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto w-full max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand column */}
