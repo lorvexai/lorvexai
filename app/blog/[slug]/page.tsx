@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, getPostContent } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
+import CopyCodeButton from "@/components/CopyCodeButton";
 import BlogCard from "@/components/BlogCard";
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.github.io/lorvexai";
@@ -148,6 +149,19 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               <span className="h-1 w-1 rounded-full bg-secondary/30" />
               <span>LorvexAI</span>
             </div>
+            <div className="ml-auto flex items-center gap-2">
+              <span className="text-xs text-secondary/40">Share:</span>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${normalizedSiteUrl}/blog/${params.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-secondary/20 bg-background/40 px-3 py-1.5 text-xs text-secondary/60 transition hover:border-primary/40 hover:text-primary"
+                aria-label="Share on LinkedIn"
+              >
+                <Linkedin size={12} aria-hidden="true" />
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -155,6 +169,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
       {/* Article body */}
       <section className="py-12 md:py-16">
         <div className="mx-auto w-full max-w-4xl px-6">
+          <CopyCodeButton />
           <MermaidRenderer />
           <article
             className="prose prose-invert max-w-none

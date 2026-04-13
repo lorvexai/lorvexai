@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "About LorvexAI | Founders & Mission",
+  description: "LorvexAI is founded by AI and finance practitioners with 20+ years building production systems for HSBC, JPMorgan, and Deutsche Bank.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About LorvexAI | Founders & Mission",
+    description: "Founded by practitioners with 20+ years at HSBC, JPMorgan, and Deutsche Bank — building production AI for regulated industries.",
+    url: "/about",
+    type: "website"
+  }
+};
 import CTA from "@/components/CTA";
 import MethodologySection from "@/components/MethodologySection";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";

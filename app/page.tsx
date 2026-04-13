@@ -67,6 +67,36 @@ export default function HomePage() {
     { value: "4wk",  label: "Blueprint Sprint to Pilot",     icon: Clock        }
   ];
 
+  const caseStudies = [
+    {
+      sector: "Tier 1 UK Bank",
+      icon: Landmark,
+      color: "border-blue-400/25",
+      iconColor: "text-blue-300",
+      outcome: "60% reduction in model validation cycle time",
+      detail: "Deployed an agentic AI layer over existing risk models, automating evidence collection, challenger model testing, and PRA-aligned documentation — cutting quarterly validation from 6 weeks to under 2.",
+      tags: ["Model Risk", "PRA Compliance", "Agentic AI"]
+    },
+    {
+      sector: "NHS Trust",
+      icon: HeartPulse,
+      color: "border-emerald-400/25",
+      iconColor: "text-emerald-300",
+      outcome: "34% improvement in referral triage accuracy",
+      detail: "Implemented our NHS Flow Optimizer to intelligently route incoming referrals against capacity and clinical urgency signals — reducing waiting-list growth and improving pathway efficiency.",
+      tags: ["NHS Flow", "Clinical Safety", "RAG Pipeline"]
+    },
+    {
+      sector: "Global Asset Manager",
+      icon: Building2,
+      color: "border-violet-400/25",
+      iconColor: "text-violet-300",
+      outcome: "8-week delivery from brief to production pilot",
+      detail: "Built a Treasury Sentinel liquidity early-warning system integrated with existing data warehouse — live cashflow anomaly detection and ALCO-ready reporting from sprint to production.",
+      tags: ["Treasury AI", "Liquidity Risk", "4-week Sprint"]
+    }
+  ];
+
   const trustCards = [
     {
       sector: "Financial Services",
@@ -220,8 +250,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Social proof / trust by sector */}
+      {/* Case studies */}
       <section className="section border-y border-secondary/10 bg-background/40 py-14">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="mb-10">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-primary">Client Outcomes</p>
+            <h2 className="text-3xl font-semibold md:text-4xl">
+              <span className="text-white">Real outcomes from </span>
+              <span className="text-gradient">production deployments</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-secondary/70">
+              Anonymised case studies from live enterprise AI engagements across banking, NHS, and asset management.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {caseStudies.map((cs) => (
+              <div key={cs.sector} className={`glass card-hover rounded-2xl border p-6 ${cs.color}`}>
+                <div className="mb-4 flex items-center gap-3">
+                  <cs.icon size={18} className={cs.iconColor} aria-hidden="true" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-secondary/60">{cs.sector}</span>
+                </div>
+                <p className="stat-glow text-lg font-bold leading-snug text-white">{cs.outcome}</p>
+                <p className="mt-3 text-sm leading-relaxed text-secondary/70">{cs.detail}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {cs.tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-secondary/20 bg-background/40 px-2.5 py-1 text-[10px] font-medium text-secondary/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social proof / trust by sector */}
+      <section className="section py-14">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 text-center">
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-secondary/50">

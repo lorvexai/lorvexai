@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "AI Consultancy Services | LorvexAI",
+  description: "Enterprise AI strategy, LLM engineering, agentic systems, and governance consulting for finance, banking, and NHS operations.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "AI Consultancy Services | LorvexAI",
+    description: "Enterprise AI strategy, LLM engineering, agentic systems, and governance consulting.",
+    url: "/services",
+    type: "website"
+  }
+};
 import CTA from "@/components/CTA";
 import {
   Activity,

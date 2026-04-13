@@ -1,6 +1,7 @@
 import Section from "@/components/Section";
 import CTA from "@/components/CTA";
-import { Mail, Linkedin, Clock, MessageSquare, CalendarCheck, ArrowRight } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
+import { Mail, Linkedin, Clock, CalendarCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const contactMethods = [
@@ -94,53 +95,7 @@ export default function ContactPage() {
             <div className="glass rounded-2xl border border-secondary/20 p-8">
               <p className="mb-1 font-mono text-xs uppercase tracking-[0.28em] text-primary">Contact Form</p>
               <h2 className="mb-6 text-2xl font-semibold text-white">Send us a message</h2>
-              <form className="grid gap-5">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="grid gap-2">
-                    <label htmlFor="name" className="text-sm text-secondary/70">Full Name</label>
-                    <input id="name" name="name" type="text"
-                      className="rounded-xl border border-secondary/20 bg-background/60 px-4 py-3 text-sm text-white outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
-                      placeholder="Your name" required />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="company" className="text-sm text-secondary/70">Company</label>
-                    <input id="company" name="company" type="text"
-                      className="rounded-xl border border-secondary/20 bg-background/60 px-4 py-3 text-sm text-white outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
-                      placeholder="Your organisation" />
-                  </div>
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="email" className="text-sm text-secondary/70">Work Email</label>
-                  <input id="email" name="email" type="email"
-                    className="rounded-xl border border-secondary/20 bg-background/60 px-4 py-3 text-sm text-white outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
-                    placeholder="you@company.com" required />
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="interest" className="text-sm text-secondary/70">What are you interested in?</label>
-                  <select id="interest" name="interest"
-                    className="rounded-xl border border-secondary/20 bg-background/60 px-4 py-3 text-sm text-white outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30">
-                    <option value="">Select an engagement type</option>
-                    <option>Agentic AI Blueprint Sprint</option>
-                    <option>LLM Engineering Engagement</option>
-                    <option>AI Risk &amp; Governance Audit</option>
-                    <option>Regulatory Intelligence Platform Pilot</option>
-                    <option>NHS Flow Optimizer Pilot</option>
-                    <option>Treasury Sentinel Pilot</option>
-                    <option>General Enquiry</option>
-                  </select>
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="message" className="text-sm text-secondary/70">Tell us about your project</label>
-                  <textarea id="message" name="message" rows={5}
-                    className="rounded-xl border border-secondary/20 bg-background/60 px-4 py-3 text-sm text-white outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
-                    placeholder="What are you trying to achieve? What does success look like?" required />
-                </div>
-                <button type="submit" className="btn-primary w-fit gap-2">
-                  <MessageSquare size={16} />
-                  Send Message
-                  <ArrowRight size={16} />
-                </button>
-              </form>
+              <ContactForm />
             </div>
 
             {/* Side info */}

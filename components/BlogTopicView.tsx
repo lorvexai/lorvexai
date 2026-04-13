@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import type { PostMeta } from "@/utils/posts";
+import { Search } from "lucide-react";
 
 const TOPICS = ["All", "Technology", "Finance", "Healthcare", "NHS", "Enterprise"] as const;
 type Topic = (typeof TOPICS)[number];
@@ -37,6 +38,7 @@ function toTime(dateLabel: string) {
 
 export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
   const [activeTopic, setActiveTopic] = useState<Topic>("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const grouped = useMemo(() => {
     const groups: Record<Exclude<Topic, "All">, PostMeta[]> = {
@@ -67,8 +69,49 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
     [grouped, posts.length]
   );
 
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return null;
+    const q = searchQuery.toLowerCase();
+    return posts.filter(
+      (p) =>
+        p.title.toLowerCase().includes(q) ||
+        p.excerpt.toLowerCase().includes(q) ||
+        p.tags.join(" ").toLowerCase().includes(q)
+    );
+  }, [posts, searchQuery]);
+
   return (
     <div className="space-y-8">
+      {/* Search bar */}
+      <div className="relative">
+        <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary/40 pointer-events-none" aria-hidden="true" />
+        <input
+          type="search"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search articles by title, topic, or keyword…"
+          className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-white placeholder-secondary/40 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
+        />
+      </div>
+
+      {/* Search results */}
+      {searchResults !== null ? (
+        <div>
+          <p className="mb-5 text-sm text-secondary/55">
+            {searchResults.length === 0
+              ? `No results for "${searchQuery}"`
+              : `${searchResults.length} result${searchResults.length !== 1 ? "s" : ""} for "${searchQuery}"`}
+          </p>
+          {searchResults.length > 0 && (
+            <div className="grid gap-5 md:grid-cols-2">
+              {searchResults.map((post) => (
+                <BlogCard key={post.slug} slug={post.slug} title={post.title} excerpt={post.excerpt} tags={post.tags} />
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <>
       {/* Filter pills */}
       <div className="flex flex-wrap gap-2">
         {TOPICS.map((topic) => {
@@ -140,6 +183,8 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
             />
           ))}
         </div>
+      )}
+        </>
       )}
     </div>
   );

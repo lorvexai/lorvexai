@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "AI Capabilities | LorvexAI",
+  description: "AI strategy, enterprise architecture, LLM engineering, agentic systems, and governance — four capability tracks for regulated enterprise.",
+  alternates: { canonical: "/capabilities" },
+  openGraph: {
+    title: "AI Capabilities | LorvexAI",
+    description: "Four capability tracks covering AI strategy, architecture, LLM engineering, and governance for finance and healthcare.",
+    url: "/capabilities",
+    type: "website"
+  }
+};
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 import DeliveryFrameworkDiagram from "@/components/DeliveryFrameworkDiagram";
 import CTA from "@/components/CTA";

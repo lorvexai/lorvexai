@@ -1,17 +1,19 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lorvexai.github.io/lorvexai/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/about/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/services/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/capabilities/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-agents-in-banking-operations/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/enterprise-rag-architectures/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/the-rise-of-agentic-ai/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-native-treasury-control-tower/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-in-financial-risk-management/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/nhs-ai-triage-without-harm/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/blog/nhs-waiting-lists-to-smart-pathways/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/research/</loc></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/contact/</loc></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/products/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/capabilities/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/research/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-agents-in-banking-operations/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-native-treasury-control-tower/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-in-financial-risk-management/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/enterprise-rag-architectures/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/end-to-end-ai-risk-platform-architecture/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/the-rise-of-agentic-ai/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/nhs-ai-triage-without-harm/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/blog/nhs-waiting-lists-to-smart-pathways/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

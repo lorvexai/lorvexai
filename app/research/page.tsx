@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "Research & Publications | LorvexAI",
+  description: "Whitepapers, technical guides, and books on enterprise AI, agentic systems, RAG governance, and AI in financial risk management.",
+  alternates: { canonical: "/research" },
+  openGraph: {
+    title: "Research & Publications | LorvexAI",
+    description: "Published research on enterprise AI architecture, agentic systems, and AI governance for regulated industries.",
+    url: "/research",
+    type: "website"
+  }
+};
 import CTA from "@/components/CTA";
 import {
   BookOpen,

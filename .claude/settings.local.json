@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Sree/lorvex-ai/public/diagrams/**)",
+      "Bash(done)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
