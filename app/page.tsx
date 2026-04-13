@@ -15,7 +15,8 @@ import {
   Zap,
   TrendingUp,
   ChevronRight,
-  BarChart3
+  BarChart3,
+  CheckCircle2
 } from "lucide-react";
 import LiveAgentTrace from "@/components/LiveAgentTrace";
 import FeaturedInsights from "@/components/FeaturedInsights";
@@ -32,9 +33,9 @@ export default function HomePage() {
   const posts = getAllPosts().filter((post) => !hiddenHomePostTitles.has(post.title));
 
   const sectors = [
-    { icon: Landmark,   label: "Finance"            },
-    { icon: HeartPulse, label: "Healthcare"          },
-    { icon: Building2,  label: "NHS"                 },
+    { icon: Landmark,   label: "Finance"             },
+    { icon: HeartPulse, label: "Healthcare"           },
+    { icon: Building2,  label: "NHS"                  },
     { icon: Factory,    label: "Enterprise Platforms" }
   ];
 
@@ -60,10 +61,37 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { value: "3",    label: "AI Products in Market",          icon: BarChart3   },
-    { value: "4",    label: "Regulated Sectors Served",       icon: ShieldCheck },
-    { value: "100%", label: "Governance-First Architecture",  icon: Lock        },
-    { value: "4wk",  label: "Blueprint Sprint to Pilot",      icon: Clock       }
+    { value: "3",    label: "AI Products in Market",         icon: BarChart3    },
+    { value: "4",    label: "Regulated Sectors Served",      icon: ShieldCheck  },
+    { value: "100%", label: "Governance-First Architecture", icon: Lock         },
+    { value: "4wk",  label: "Blueprint Sprint to Pilot",     icon: Clock        }
+  ];
+
+  const trustCards = [
+    {
+      sector: "Financial Services",
+      icon: Landmark,
+      color: "border-blue-400/25 bg-blue-400/5",
+      iconColor: "text-blue-300",
+      quote: "We bring banking-grade control to AI deployment — PRA compliance, model risk governance, and full auditability built in from day one.",
+      highlights: ["Basel 3.1 / PRA alignment", "Model risk framework", "ALCO-ready reporting"]
+    },
+    {
+      sector: "NHS & Healthcare",
+      icon: HeartPulse,
+      color: "border-emerald-400/25 bg-emerald-400/5",
+      iconColor: "text-emerald-300",
+      quote: "Our NHS systems are designed around clinical safety, IG Toolkit compliance, and real throughput gains — not demo-ware.",
+      highlights: ["IG Toolkit & NHS Digital aligned", "Clinical safety by design", "Referral-to-discharge intelligence"]
+    },
+    {
+      sector: "Enterprise Operations",
+      icon: Building2,
+      color: "border-violet-400/25 bg-violet-400/5",
+      iconColor: "text-violet-300",
+      quote: "We architect enterprise AI platforms that scale from a single team to organisation-wide deployment without rebuilding the foundation.",
+      highlights: ["Multi-system integration", "Role-based governance", "Scalable agentic architecture"]
+    }
   ];
 
   return (
@@ -118,10 +146,10 @@ export default function HomePage() {
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {[
-                  { icon: Workflow,    label: "Agentic AI Systems"          },
-                  { icon: Database,   label: "Enterprise RAG Governance"    },
-                  { icon: Cpu,        label: "LLM Engineering for Banking"  },
-                  { icon: ShieldCheck,label: "NHS AI Triage Blueprint"      }
+                  { icon: Workflow,     label: "Agentic AI Systems"         },
+                  { icon: Database,    label: "Enterprise RAG Governance"   },
+                  { icon: Cpu,         label: "LLM Engineering for Banking" },
+                  { icon: ShieldCheck, label: "NHS AI Triage Blueprint"     }
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -155,7 +183,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why LorvexAI differentiators */}
+      {/* Why LorvexAI */}
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 text-center">
@@ -171,7 +199,6 @@ export default function HomePage() {
               production-grade AI in environments where failure has real consequences.
             </p>
           </div>
-
           <div className="grid gap-5 md:grid-cols-3">
             {differentiators.map((item) => (
               <div
@@ -187,6 +214,56 @@ export default function HomePage() {
                   <ChevronRight size={12} aria-hidden="true" />
                   {item.accent}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social proof / trust by sector */}
+      <section className="section border-y border-secondary/10 bg-background/40 py-14">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="mb-10 text-center">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-secondary/50">
+              Trusted by teams across
+            </p>
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Regulated industries that can&apos;t afford to get AI wrong
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {trustCards.map((card) => (
+              <div key={card.sector} className={`card-hover rounded-2xl border p-6 ${card.color}`}>
+                <div className="mb-4 flex items-center gap-3">
+                  <card.icon size={20} className={card.iconColor} aria-hidden="true" />
+                  <h3 className="font-semibold text-white">{card.sector}</h3>
+                </div>
+                <p className="text-sm italic leading-relaxed text-secondary/70">
+                  &ldquo;{card.quote}&rdquo;
+                </p>
+                <ul className="mt-4 space-y-1.5">
+                  {card.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2 text-xs text-secondary/60">
+                      <CheckCircle2 size={11} className="shrink-0 text-primary/60" aria-hidden="true" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              "No generic AI — every system is sector-specific",
+              "Governance built in, not bolted on after",
+              "Production delivery with measurable SLAs",
+              "From sprint to scale without re-architecture"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-2.5 rounded-xl border border-secondary/15 bg-background/30 px-4 py-3">
+                <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-primary/70" aria-hidden="true" />
+                <p className="text-xs leading-snug text-secondary/65">{item}</p>
               </div>
             ))}
           </div>

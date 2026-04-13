@@ -69,7 +69,7 @@ export default function Header() {
                 key={group.label}
                 className="relative"
                 onMouseEnter={() => setOpenGroup(group.label)}
-                onMouseLeave={() => setOpenGroup((current) => (current === group.label ? null : current))}
+                onMouseLeave={() => setOpenGroup(null)}
               >
                 <button
                   type="button"
@@ -83,11 +83,13 @@ export default function Header() {
                   {group.label}
                   <ChevronDown size={14} aria-hidden="true" />
                 </button>
+                {/* pt-2 bridges the gap between button and panel so onMouseLeave doesn't fire mid-hover */}
+                <div className="absolute left-0 top-full z-50 w-64 pt-2">
                 <div
-                  className={`absolute left-0 top-full z-50 w-64 rounded-2xl border border-secondary/20 bg-background/95 p-3 shadow-2xl backdrop-blur transition ${
+                  className={`rounded-2xl border border-secondary/20 bg-background/95 p-3 shadow-2xl backdrop-blur transition ${
                     openGroup === group.label
-                      ? "pointer-events-auto translate-y-1 opacity-100"
-                      : "pointer-events-none -translate-y-1 opacity-0"
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-2 opacity-0"
                   }`}
                 >
                   {group.links.map((item) => {
@@ -107,6 +109,7 @@ export default function Header() {
                       </Link>
                     );
                   })}
+                </div>
                 </div>
               </div>
             ))}
