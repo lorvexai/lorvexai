@@ -98,7 +98,7 @@ const deliveryModel = [
 const trustSignals = [
   "Regulated sector expertise — Finance, NHS, Banking",
   "Governance-first — FCA, NHS Digital, ISO 42001 aligned",
-  "Production delivery — not just pilots and PowerPoints",
+  "Production-focused delivery — architecture and engineering, not just strategy",
   "End-to-end — from strategy through to running system"
 ];
 
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                   <span className="text-gradient">Real Enterprise Adoption</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  From strategy to engineering to governance — we help teams move from pilot activity to dependable, production-grade AI capability.
+                  From strategy to engineering to governance — we help teams move from first pilot to production-grade AI capability.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className="btn-primary text-sm">
@@ -194,7 +194,7 @@ export default function ServicesPage() {
       {/* Delivery model */}
       <Section
         eyebrow="How We Work"
-        title="A delivery model designed to reduce execution risk"
+        title="A delivery approach designed to reduce execution risk"
         description="We combine strategic clarity, engineering depth, and governance discipline in every phase."
       >
         <div className="grid gap-6 md:grid-cols-3">

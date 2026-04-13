@@ -1,4 +1,4 @@
-﻿---
+---
 title: From Waiting Lists to Smart Pathways
 date: 2026-03-31
 excerpt: A practical AI blueprint for NHS elective recovery that improves throughput, fairness, and patient outcomes.
@@ -28,7 +28,7 @@ NHS elective services are balancing:
 
 - Long referral-to-treatment pathways
 - High variation in demand and staffing
-- Theatre and clinic under-utilization in some windows
+- Theatre and clinic under-utilisation in some windows
 - High downstream impact from cancellations and no-shows
 
 AI can support pathway orchestration, but it must preserve fairness, transparency, and clinical governance.
@@ -37,7 +37,7 @@ AI can support pathway orchestration, but it must preserve fairness, transparenc
 
 ## Where AI Delivers Immediate Value
 
-- Referral prioritization with risk-aware segmentation
+- Referral prioritisation with risk-aware segmentation
 - Dynamic scheduling for clinics and theatres
 - No-show risk prediction and proactive outreach
 - Capacity forecasting by specialty and site
@@ -51,15 +51,61 @@ AI can support pathway orchestration, but it must preserve fairness, transparenc
 
 ---
 
+## End-to-End Pathway Flow
+
+```mermaid
+flowchart LR
+  REF["GP Referral\ne-Referral System"]
+  --> TRIAGE["AI Triage Scoring\nUrgency · Clinical complexity"]
+  TRIAGE --> PRI["Priority Queue\nRisk-adjusted waiting list"]
+  PRI --> SCHED["Dynamic Scheduling\nClinic · Theatre · Outpatient"]
+  SCHED --> PRED["No-Show Prediction\nProactive outreach"]
+  PRED --> APPT["Appointment Confirmed"]
+  APPT --> RTT["RTT Clock Tracking"]
+  RTT --> DISCH["Discharge & Outcome\nCapture"]
+  DISCH -->|Feedback loop| TRIAGE
+
+  subgraph Governance
+    AUD["Audit Trail"]
+    FAIR["Fairness Monitor\nDemographic equity"]
+    OVR["Human Override\nLog + rationale"]
+  end
+  SCHED --> AUD
+  PRI --> FAIR
+  SCHED --> OVR
+```
+
+---
+
 ## Referral-to-Treatment Flow with Feedback
 
 ![Referral-to-Treatment AI Loop](../../diagrams/nhs-elective-rtt-loop.svg?v=2)
 
 ---
 
+## No-Show and Capacity Intelligence
+
+```mermaid
+sequenceDiagram
+  participant S as Scheduling AI
+  participant C as Capacity Manager
+  participant P as Patient Engagement
+  participant CL as Clinician
+  S->>C: Forecast clinic utilisation 7 days out
+  C-->>S: Spare capacity slots identified
+  S->>S: Run no-show risk model per patient
+  S->>P: Proactive reminder to high-risk patients
+  P-->>S: Cancellation received
+  S->>C: Re-allocate slot to next priority patient
+  S->>CL: Updated schedule with rationale
+  CL->>S: Confirm or override allocation
+```
+
+---
+
 ## Fairness and Governance Guardrails
 
-- Prioritization must include clinical urgency and vulnerability factors
+- Prioritisation must include clinical urgency and vulnerability factors
 - Protected groups should be monitored for adverse scheduling drift
 - Every booking decision should preserve auditability and rationale
 - High-impact exceptions should require human review and sign-off
@@ -71,7 +117,7 @@ AI can support pathway orchestration, but it must preserve fairness, transparenc
 ### Access and Throughput
 - Median and 95th percentile waiting time by specialty
 - Treated patients per theatre session
-- Utilization rate by site, list, and consultant team
+- Utilisation rate by site, list, and consultant team
 
 ### Reliability
 - Cancellation and DNA rates
@@ -87,9 +133,18 @@ AI can support pathway orchestration, but it must preserve fairness, transparenc
 
 ## Implementation Plan
 
-1. Prioritize one specialty with high waiting-list pressure
+```mermaid
+flowchart TD
+  W1["Week 1–2\nSelect pilot specialty\nHigh waiting-list pressure"]
+  --> W3["Week 3–4\nData quality baseline\nReferrals · Scheduling · Outcomes"]
+  --> W5["Week 5–8\nDeploy advisory-only AI\nClinician oversight mode"]
+  --> W9["Week 9–12\nTrack fairness + throughput KPIs\nWeekly governance review"]
+  --> W13["Week 13+\nExpand to additional specialties\nAfter stable performance confirmed"]
+```
+
+1. Prioritise one specialty with high waiting-list pressure
 2. Build data quality baseline for referrals, scheduling, and outcomes
-3. Deploy advisory-only optimization with clinician oversight
+3. Deploy advisory-only optimisation with clinician oversight
 4. Track fairness and throughput KPIs weekly
 5. Expand gradually across specialties after stable performance
 

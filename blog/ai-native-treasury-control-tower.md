@@ -1,4 +1,4 @@
-﻿---
+---
 title: AI-Native Treasury Control Tower
 date: 2026-03-31
 excerpt: Where and how to use AI in treasury for real-time liquidity, risk, and decisioning with governance-first controls.
@@ -45,6 +45,40 @@ Treasury teams are under pressure to make faster decisions with higher confidenc
 
 ---
 
+## Platform Data Flow
+
+```mermaid
+flowchart LR
+  subgraph Sources["Data Sources"]
+    BA["Bank Accounts\n+ Payment Rails"]
+    TMS["TMS / ERP"]
+    MKT["Market Feeds\nFX · Rates · Credit"]
+    REG["Regulatory\nBasel III / PRA"]
+  end
+  subgraph Intelligence["Intelligence Layer"]
+    FC["Cashflow\nForecasting"]
+    AN["Anomaly\nDetection"]
+    SC["Scenario\nEngine"]
+    EX["Explainability\nService"]
+  end
+  subgraph Decision["Decision Hub"]
+    RE["Recommendation\nEngine"]
+    AG["Approval\nGates"]
+    PB["Playbook\nExecution"]
+  end
+  subgraph Governance["Governance Layer"]
+    LOG["Immutable\nAudit Log"]
+    MR["Model Risk\nControls"]
+    RP["Reporting\nPacks"]
+  end
+  Sources --> Intelligence
+  Intelligence --> Decision
+  Decision --> Governance
+  Governance -->|ALCO · Board · Regulators| RP
+```
+
+---
+
 ## Functional Blueprint
 
 ### Data Fabric
@@ -75,14 +109,35 @@ Treasury teams are under pressure to make faster decisions with higher confidenc
 
 ---
 
+## Morning Liquidity Workflow
+
+```mermaid
+sequenceDiagram
+  participant T as Treasurer
+  participant S as Sentinel Engine
+  participant A as Anomaly Detector
+  participant R as Risk Model
+  participant ALCO as ALCO / Board
+  T->>S: Review morning liquidity position
+  S-->>T: Consolidated multi-entity cashflow
+  A->>T: Alert: unexpected outflow detected
+  T->>R: Run stress scenario (rate +200bps)
+  R-->>T: Scenario impact + headroom analysis
+  T->>T: Approve recommended transfer action
+  T->>ALCO: Generate ALCO reporting pack
+  ALCO-->>T: Pre-computed LCR/NSFR + audit trail
+```
+
+---
+
 ## Example Use Cases by Treasury Function
 
 ### Cash and Liquidity Management
-- Predict same-day shortfalls and optimize internal sweeping
-- Recommend actions to minimize idle cash and overdraft costs
+- Predict same-day shortfalls and optimise internal sweeping
+- Recommend actions to minimise idle cash and overdraft costs
 
 ### Funding Desk
-- Prioritize funding options by spread, tenor, and concentration limits
+- Prioritise funding options by spread, tenor, and concentration limits
 - Rebalance short-term and term funding under stress scenarios
 
 ### Risk and Control
@@ -97,30 +152,27 @@ Treasury teams are under pressure to make faster decisions with higher confidenc
 
 ## KPI Stack for Business Impact
 
-### Financial Impact
-- Funding cost reduction
-- Liquidity buffer optimization
-- Avoided penalty and overdraft costs
-
-### Risk Impact
-- Earlier detection of limit stress
-- Fewer unplanned liquidity events
-- Lower concentration risk incidents
-
-### Operating Impact
-- Decision cycle time reduction
-- Analyst productivity uplift
-- Faster production of committee-ready evidence
+| Category | KPI | Target |
+| --- | --- | --- |
+| Financial | Funding cost reduction | Measurable vs baseline |
+| Financial | Liquidity buffer optimisation | Improved utilisation |
+| Risk | Earlier detection of limit stress | +24–48h lead time |
+| Risk | Fewer unplanned liquidity events | Reduction vs prior year |
+| Operating | Decision cycle time | Significant reduction |
+| Operating | Committee-ready evidence | Same-day generation |
 
 ---
 
 ## Implementation Strategy
 
-1. Start with one treasury workflow, such as intraday liquidity forecasting
-2. Define policy boundaries and human approval thresholds early
-3. Run advisory mode first and compare AI recommendations with actual decisions
-4. Expand to funding and hedge optimization after control metrics are stable
-5. Operationalize continuous learning with strict model governance
+```mermaid
+flowchart TD
+  I1["Start with one treasury workflow\ne.g. intraday liquidity forecasting"]
+  --> I2["Define policy boundaries &\nhuman approval thresholds"]
+  --> I3["Advisory mode first\nCompare AI vs actual decisions"]
+  --> I4["Expand to funding &\nhedge optimisation\nAfter control metrics stable"]
+  --> I5["Operationalise continuous learning\nStrict model governance"]
+```
 
 ---
 

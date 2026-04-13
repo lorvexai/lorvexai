@@ -1,4 +1,4 @@
-﻿---
+---
 title: End-to-End AI Risk Platform Architecture
 date: 2026-04-05
 excerpt: A production blueprint for modern banking and finance risk platforms spanning data, AI/LLM pipelines, MLOps, governance, and decision serving.
@@ -23,20 +23,40 @@ A production blueprint for building a unified AI-native risk platform for modern
 
 ## Why Most Risk Stacks Fail at Scale
 
-Many organizations have individual risk engines, separate data marts, and disconnected model pipelines. This usually creates:
+Many organisations have individual risk engines, separate data marts, and disconnected model pipelines. This usually creates:
 
 - Inconsistent definitions across credit, market, liquidity, and operational risk
 - Slow model deployment cycles due to fragmented handoffs
 - Limited traceability from business decision back to model inputs and control evidence
 - Duplication of infrastructure and governance controls across teams
 
-The end-to-end platform model solves this by standardizing data contracts, orchestration, governance, and serving paths across all risk domains.
+The end-to-end platform model solves this by standardising data contracts, orchestration, governance, and serving paths across all risk domains.
 
 ---
 
-## Reference Architecture (Visual)
+## Reference Architecture
 
-![End-to-End AI Risk Platform Architecture](../../diagrams/end2end-risk-platform-architecture.png?v=1)
+![End-to-End AI Risk Platform — Reference Architecture](../../diagrams/end2end-risk-platform-architecture.png?v=2)
+
+---
+
+## Platform Layer Overview
+
+```mermaid
+flowchart TD
+  A["Data Sources\nTransactions · Market · KYC · External · Unstructured"]
+  B["Ingestion & Storage\nEvent Stream · Batch · Data Lake · Feature Store · Vector Layer"]
+  C["Feature Engineering\nCleansing · Temporal Alignment · Domain Features · Versioning"]
+  D["AI / ML / LLM Layer\nRisk Models · RAG Pipelines · LLM Reasoning · Model Registry"]
+  E["MLOps & Orchestration\nTrain → Validate → Deploy · Monitoring · Approval Gates"]
+  F["Risk Engines\nCredit · Market · Liquidity · Operational · Financial Crime"]
+  G["Governance & Control Plane\nModel Governance · Lineage · Privacy · Regulatory Mapping"]
+  H["Serving & Decision Layer\nReal-Time APIs · Decision Engine · Human Override Workflows"]
+  I["Consumption\nExecutive Dashboards · Regulatory Packs · Alerting"]
+  A --> B --> C --> D --> E --> F --> G --> H --> I
+  style A fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+  style I fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+```
 
 ---
 
@@ -45,7 +65,7 @@ The end-to-end platform model solves this by standardizing data contracts, orche
 ### 1. Data Sources
 - Core banking transactions: loans, deposits, repayments, payments
 - Market feeds: rates, FX, spreads, equities, volatility signals
-- Customer intelligence: KYC, behavior, CRM, interaction history
+- Customer intelligence: KYC, behaviour, CRM, interaction history
 - External intelligence: bureaus, sanctions, macroeconomic indicators, regulator publications
 - Unstructured evidence: policies, legal agreements, credit memos, audit documentation
 
@@ -72,17 +92,46 @@ The end-to-end platform model solves this by standardizing data contracts, orche
 - Workflow orchestration for scheduled and event-driven jobs
 - Monitoring for drift, performance decay, and policy guardrail breaches
 
+---
+
+## Model Lifecycle and MLOps Loop
+
+![Model Lifecycle and Control Loop](../../diagrams/risk-platform-model-lifecycle-loop.svg?v=1)
+
+---
+
 ### 6. Risk Engines
-- Credit risk engine (PD, LGD, EAD, IFRS 9 style outputs)
+
+```mermaid
+flowchart LR
+  FE["Feature Store\n+ Vector Layer"] --> CR["Credit Risk\nPD · LGD · EAD · IFRS9"]
+  FE --> MR["Market Risk\nVaR · ES · Stress Scenarios"]
+  FE --> LR["Liquidity Risk\nLCR · NSFR · Cash Forecast"]
+  FE --> OR["Operational & Crime\nFraud · AML · Scenario Loss"]
+  CR --> DS["Decision\nServing Layer"]
+  MR --> DS
+  LR --> DS
+  OR --> DS
+```
+
+- Credit risk engine (PD, LGD, EAD, IFRS 9-style outputs)
 - Market risk engine (VaR, expected shortfall, stress scenarios)
 - Liquidity risk engine (LCR, NSFR, cash forecasting)
-- Operational/financial crime engines (fraud, AML, scenario loss analysis)
+- Operational and financial crime engines (fraud, AML, scenario loss analysis)
 
 ### 7. Governance and Regulatory Control Plane
 - Model governance and independent challenge workflows
 - End-to-end lineage and immutable audit trails
 - Data privacy, access segregation, and control attestations
 - Regulatory mapping to PRA, Basel, CRR/CRD, AML, and AI governance frameworks
+
+---
+
+## Governance and Decisioning Flow
+
+![AI Risk Platform — Governance and Decisioning Flow](../../diagrams/risk-platform-decisioning-flow.svg?v=1)
+
+---
 
 ### 8. Serving and Decision Layer
 - Real-time and batch scoring APIs
@@ -96,70 +145,9 @@ The end-to-end platform model solves this by standardizing data contracts, orche
 
 ---
 
-## End-to-End Platform Flow (Mermaid)
+## End-to-End Platform Flow
 
-![End-to-End Platform Flow](../../diagrams/risk-platform-end-to-end-flow.svg?v=1)
-
-```mermaid
-flowchart LR
-  DS["Data Sources"] --> DI["Ingestion and Storage"]
-  DI --> FE["Processing and Feature Engineering"]
-  FE --> AIML["AI ML and LLM Layer"]
-  AIML --> MLOPS["MLOps and Orchestration"]
-  MLOPS --> RE["Risk Engines"]
-  RE --> SD["Serving and Decision Layer"]
-  SD --> CR["Consumption and Reporting"]
-
-  GOV["Governance Controls Compliance"] --> DI
-  GOV --> FE
-  GOV --> AIML
-  GOV --> MLOPS
-  GOV --> RE
-  GOV --> SD
-  CR --> GOV
-```
-
----
-
-## Decisioning Flow (Operational)
-
-![Decisioning Flow (Operational)](../../diagrams/risk-platform-decisioning-flow.svg?v=1)
-
-```mermaid
-sequenceDiagram
-  participant CH as Channel App
-  participant API as Scoring API
-  participant DE as Decision Engine
-  participant RE as Risk Engines
-  participant GOV as Governance Gate
-  participant REP as Reporting
-
-  CH->>API: Submit event or case payload
-  API->>RE: Request credit market liquidity and op-risk outputs
-  RE-->>API: Risk scores explanations confidence
-  API->>DE: Combine scores with policy rules
-  DE->>GOV: Validate controls and approval requirements
-  GOV-->>DE: Pass or escalate with reason
-  DE-->>CH: Decision and rationale
-  DE->>REP: Emit lineage metrics and audit event
-```
-
----
-
-## Model Lifecycle and Control Loop
-
-![Model Lifecycle and Control Loop](../../diagrams/risk-platform-model-lifecycle-loop.svg?v=1)
-
-```mermaid
-flowchart TB
-  T["Train Models"] --> V["Validate and Benchmark"]
-  V --> A["Approval Gate"]
-  A --> D["Deploy"]
-  D --> M["Monitor Drift and Performance"]
-  M --> R["Retrain Trigger"]
-  R --> T
-  M --> C["Control Review and Audit Evidence"]
-```
+![End-to-End Risk Platform Flow](../../diagrams/risk-platform-end-to-end-flow.svg?v=1)
 
 ---
 
@@ -187,48 +175,50 @@ This allows teams to swap tools over time without redesigning the operating mode
 
 ## Implementation Blueprint (90-Day Path)
 
-### Phase 1: Foundation (Weeks 1-4)
-- Define target operating model and risk-domain scope
-- Establish canonical data contracts and lineage baseline
-- Stand up ingestion pathways and raw/curated lake zones
-
-### Phase 2: Risk Intelligence (Weeks 5-8)
-- Build reusable feature store and vector-enabled policy layer
-- Deploy initial risk models and decision APIs
-- Integrate model lifecycle controls and approval workflows
-
-### Phase 3: Governance and Scale (Weeks 9-12)
-- Implement dashboard, alerting, and regulatory evidence packs
-- Enable model monitoring and retraining triggers
-- Expand to additional risk engines and business units
+```mermaid
+sequenceDiagram
+  participant P as Platform Team
+  participant R as Risk SMEs
+  participant G as Governance
+  participant B as Business
+  Note over P,B: Phase 1 — Foundation (Weeks 1–4)
+  P->>R: Define domain scope and data contracts
+  R-->>P: Canonical schemas and lineage baseline
+  P->>G: Stand up ingestion pathways and lake zones
+  Note over P,B: Phase 2 — Risk Intelligence (Weeks 5–8)
+  P->>R: Build feature store + vector policy layer
+  R-->>P: Deploy risk models and decision APIs
+  P->>G: Integrate model lifecycle controls
+  Note over P,B: Phase 3 — Governance & Scale (Weeks 9–12)
+  P->>B: Dashboard, alerting, and regulatory packs
+  P->>G: Model monitoring and retraining triggers
+  P->>R: Expand to additional risk engines
+```
 
 ---
 
 ## KPI Framework to Track Value
 
-### Platform KPIs
-- Time from model approval to production deployment
-- Percentage of decisions with complete lineage and rationale
-- Reuse rate of governed features across risk teams
-
-### Risk Outcome KPIs
-- Early-warning lead time improvement
-- Drift detection to remediation turnaround
-- Reduction in policy exceptions and manual overrides
-
-### Compliance KPIs
-- Audit evidence completeness rate
-- Regulatory reporting cycle time
-- Number of unresolved control findings
+| KPI Category | Metric | Target |
+| --- | --- | --- |
+| Platform | Model deployment cycle time | < 5 business days |
+| Platform | Decision lineage coverage | > 98% |
+| Platform | Feature reuse rate across teams | > 60% |
+| Risk Outcomes | Early-warning lead time improvement | +48h average |
+| Risk Outcomes | Drift detection to remediation | < 24h |
+| Compliance | Audit evidence completeness | > 99% |
+| Compliance | Regulatory reporting cycle time | -40% reduction |
 
 ---
 
 ## Common Pitfalls and How to Avoid Them
 
-- Building separate stacks by risk type: enforce shared platform standards early
-- Treating governance as post-processing: embed controls in every layer
-- Mixing policy logic into model code: keep decision policy externalized and versioned
-- Skipping operational readiness: define alert ownership and response runbooks before launch
+| Pitfall | Risk | Mitigation |
+| --- | --- | --- |
+| Separate stacks per risk type | Fragmented governance, duplicated cost | Enforce shared platform standards early |
+| Governance as post-processing | Control gaps that fail audit | Embed controls in every layer |
+| Policy logic inside model code | Hard to update, impossible to audit | Externalise and version policy rules |
+| Skipping operational readiness | No-one knows who responds to alerts | Define alert ownership and runbooks before launch |
 
 ---
 

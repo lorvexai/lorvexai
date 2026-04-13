@@ -35,8 +35,8 @@ export default function CTA() {
         </h3>
 
         <p className="mt-4 mx-auto max-w-xl text-secondary/75">
-          Partner with our team to architect, deploy, and govern enterprise-grade
-          AI platforms — from first discovery sprint to production rollout.
+          Work with our team to design, build, and govern enterprise-grade
+          AI — from first discovery sprint through to production.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">

@@ -1,4 +1,4 @@
-﻿---
+---
 title: AI in Financial Risk Management
 date: 2026-03-05
 excerpt: Applying AI to risk modeling requires governance-first architectures and transparent decision workflows.
@@ -10,7 +10,7 @@ tags:
 
 # AI in Financial Risk Management
 
-Applying AI to risk functions is not only a modeling challenge. It is an operating model challenge where accuracy, governance, explainability, and regulatory readiness must all improve together.
+Applying AI to risk functions is not only a modelling challenge. It is an operating model challenge where accuracy, governance, explainability, and regulatory readiness must all improve together.
 
 ---
 
@@ -45,14 +45,53 @@ In financial services, every recommendation can affect capital allocation, liqui
 
 ### 3. Operational and Fraud Risk
 - Real-time anomaly detection on payment streams
-- Behavioral deviation alerts for insider risk
+- Behavioural deviation alerts for insider risk
 - Case triage with investigation support summaries
+
+---
+
+## Risk Domain Coverage
+
+```mermaid
+flowchart LR
+  DS["Governed\nData Sources"]
+  DS --> CR["Credit Risk\nPD · LGD · EAD\nIFRS 9"]
+  DS --> MR["Market Risk\nVaR · Expected Shortfall\nStress Scenarios"]
+  DS --> LR["Liquidity Risk\nLCR · NSFR\nIntraday Cash"]
+  DS --> OR["Operational Risk\nFraud · AML\nInsider Risk"]
+  CR --> DE["Decision\nEngine"]
+  MR --> DE
+  LR --> DE
+  OR --> DE
+  DE --> GOV["Governance\n& Audit Layer"]
+  GOV --> REP["Board · ALCO\nRegulatory Reporting"]
+```
 
 ---
 
 ## Decision Governance Flow
 
 ![Financial Decision Governance Flow](../../diagrams/finance-risk-governance-flow.svg?v=2)
+
+---
+
+## Decision Governance Sequence
+
+```mermaid
+sequenceDiagram
+  participant M as Risk Model
+  participant D as Decision Engine
+  participant P as Policy Rules
+  participant A as Analyst
+  participant G as Governance Log
+  M->>D: Risk score + feature attribution
+  D->>P: Check policy thresholds and constraints
+  P-->>D: Policy-aligned action options
+  D->>A: Recommendation + confidence + rationale
+  A->>D: Approve / override / escalate
+  D->>G: Immutable decision trace
+  G->>G: Lineage: input → model → policy → action
+```
 
 ---
 
@@ -77,21 +116,25 @@ In financial services, every recommendation can affect capital allocation, liqui
 
 ## Common Failure Modes and Controls
 
-### Failure: Hidden Data Drift
-- Risk: model quality degrades silently
-- Control: drift alarms + challenger models + retrain triggers
-
-### Failure: Spurious Correlations
-- Risk: brittle decisions under market stress
-- Control: stress backtesting and causal feature review
-
-### Failure: Weak Auditability
-- Risk: regulatory challenge and remediation cost
-- Control: immutable decision logs, lineage, and evidence bundles
+| Failure Mode | Risk | Control |
+| --- | --- | --- |
+| Hidden data drift | Model quality degrades silently | Drift alarms + challenger models + retrain triggers |
+| Spurious correlations | Brittle decisions under market stress | Stress backtesting and causal feature review |
+| Weak auditability | Regulatory challenge and remediation cost | Immutable decision logs, lineage, and evidence bundles |
+| Policy logic in model code | Impossible to update without redeployment | Externalise and version policy rules separately |
 
 ---
 
 ## Practical Rollout Strategy
+
+```mermaid
+flowchart LR
+  S1["Advisory Mode\nAI recommends,\nhumans decide"] -->
+  S2["Logging & Explainability\nBuild before scale"] -->
+  S3["Risk Committee Integration\nModel outputs in existing process"] -->
+  S4["Dual-Control Approvals\nHigh-impact actions only"] -->
+  S5["Selective Automation\nAfter sustained KPI performance"]
+```
 
 1. Start with advisory mode before automated decisions
 2. Build explainability and logging before scale

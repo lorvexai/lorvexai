@@ -104,13 +104,66 @@ h1, h2, h3, h4, h5 {
 }
 
 .prose .mermaid {
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   overflow-x: auto;
+  background: rgba(15, 42, 74, 0.5);
+  border: 1px solid rgba(47, 128, 237, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
 }
 
 .prose .mermaid svg {
   max-width: 100%;
+  width: 100%;
   height: auto;
+  min-height: 200px;
+  display: block;
+}
+
+/* Boost all text inside mermaid SVGs */
+.prose .mermaid svg text,
+.prose .mermaid svg .label,
+.prose .mermaid svg .nodeLabel,
+.prose .mermaid svg .edgeLabel,
+.prose .mermaid svg .actor,
+.prose .mermaid svg .messageText,
+.prose .mermaid svg .loopText,
+.prose .mermaid svg tspan {
+  font-size: 14px !important;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif !important;
+  fill: #E6ECF7 !important;
+}
+
+/* Sequence diagram actor boxes */
+.prose .mermaid svg .actor {
+  fill: #0F2A4A !important;
+  stroke: #2F80ED !important;
+}
+
+/* Node boxes */
+.prose .mermaid svg .node rect,
+.prose .mermaid svg .node circle,
+.prose .mermaid svg .node polygon,
+.prose .mermaid svg .node path {
+  fill: #0F2A4A !important;
+  stroke: #2F80ED !important;
+}
+
+/* Edge lines */
+.prose .mermaid svg .edgePath path,
+.prose .mermaid svg line.actor {
+  stroke: #56A3FF !important;
+}
+
+/* Arrowheads */
+.prose .mermaid svg marker path {
+  fill: #56A3FF !important;
+}
+
+/* Subgraph backgrounds */
+.prose .mermaid svg .cluster rect {
+  fill: rgba(19, 41, 75, 0.6) !important;
+  stroke: rgba(47, 128, 237, 0.35) !important;
 }
 
 .prose table {

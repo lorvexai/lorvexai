@@ -45,8 +45,7 @@ export default function Footer() {
               className="h-9 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-secondary/60">
-              Agentic AI systems, enterprise RAG governance, and LLM engineering
-              for Finance, Banking, and NHS operations.
+              Building agentic AI systems, enterprise RAG platforms, and LLM engineering solutions for Finance, Banking, and NHS operations.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a

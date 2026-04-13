@@ -113,11 +113,11 @@ export default function CapabilitiesPage() {
                   <span className="text-gradient">Engineered for Outcomes</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  Our capability model connects strategy, architecture, delivery, and governance — so you can deploy AI with speed and control at every stage of maturity.
+                  Our capability model connects strategy, architecture, delivery, and governance — so you can move at speed with control built in from the start.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className="btn-primary text-sm">
-                    Build Your Roadmap
+                    Start the Conversation
                     <ArrowRight size={16} />
                   </Link>
                   <Link href="/services" className="btn-outline text-sm">

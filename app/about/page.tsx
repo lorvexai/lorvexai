@@ -82,7 +82,7 @@ export default function AboutPage() {
                   <span className="text-gradient">Know the Problem</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  LorvexAI was founded by practitioners who spent two decades inside the world&apos;s largest financial institutions — building the systems that regulators rely on, and seeing first-hand where AI can transform what&apos;s possible.
+                  LorvexAI was founded by practitioners with two decades of experience inside the world&apos;s largest financial institutions — building the systems that regulators rely on, and applying that insight to AI systems that actually work in production.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className="btn-primary text-sm">

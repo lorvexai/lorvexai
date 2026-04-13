@@ -1,4 +1,4 @@
-﻿---
+---
 title: AI Agents in Banking Operations
 date: 2026-03-31
 excerpt: A production blueprint for AI agents in banking with governance-first controls, faster investigation cycles, and auditable decisioning.
@@ -32,7 +32,7 @@ Agentic systems help by orchestrating multi-step workflows: detect, investigate,
 
 ### 1. Risk Triage Agent
 - Classifies event severity and intent
-- Prioritizes queue items by risk and business impact
+- Prioritises queue items by risk and business impact
 - Routes straightforward cases to fast lanes
 
 ### 2. Investigation Agent
@@ -52,6 +52,26 @@ Agentic systems help by orchestrating multi-step workflows: detect, investigate,
 
 ---
 
+## Multi-Agent Orchestration Flow
+
+```mermaid
+flowchart LR
+  EVT["Transaction / Alert\nEvent Detected"]
+  --> TRI["Triage Agent\nSeverity · Priority · Fast-lane routing"]
+  TRI --> INV["Investigation Agent\nKYC · Graph · Transaction history"]
+  INV --> DEC["Decision Agent\nPolicy-aligned options · Confidence scores"]
+  DEC --> CTL["Control Agent\nPolicy check · Escalation rules"]
+  CTL --> D{Risk Tier?}
+  D -->|Low| AUTO["Assisted Automation\nPost-action review"]
+  D -->|Medium| ANAL["Analyst Approval\nRequired"]
+  D -->|High| SENR["Senior Review\nMandatory rationale"]
+  AUTO --> LOG["Immutable Audit Log"]
+  ANAL --> LOG
+  SENR --> LOG
+```
+
+---
+
 ## Architecture Diagram
 
 ![AI Agents Banking Architecture](../../diagrams/ai-agents-banking-architecture.svg?v=1)
@@ -64,10 +84,25 @@ Agentic systems help by orchestrating multi-step workflows: detect, investigate,
 Analyst teams often spend most of their time gathering evidence rather than making decisions. Case triage is slow, false positives are high, and audit evidence quality varies by reviewer.
 
 ### Agentic Solution
-- Triage agent ranks suspicious events by risk profile
-- Investigation agent assembles account, transaction, and entity-link evidence
-- Decision agent proposes hold/release/escalate actions
-- Control agent validates policy fit and routes high-impact actions for human approval
+
+```mermaid
+sequenceDiagram
+  participant A as Analyst
+  participant TR as Triage Agent
+  participant IN as Investigation Agent
+  participant DE as Decision Agent
+  participant CO as Control Agent
+  A->>TR: New suspicious event flagged
+  TR-->>A: Risk score + priority + fast-lane eligible?
+  A->>IN: Initiate investigation
+  IN->>IN: Pull transactions · KYC · entity links
+  IN-->>A: Evidence pack + contradiction flags
+  A->>DE: Request action recommendation
+  DE-->>A: Hold / Release / Escalate + rationale
+  A->>CO: Submit chosen action
+  CO->>CO: Policy check + threshold validation
+  CO-->>A: Approved / Blocked + audit entry
+```
 
 ### Expected Impact
 - Lower investigation cycle time
@@ -85,9 +120,12 @@ Analyst teams often spend most of their time gathering evidence rather than maki
 ## Governance Model for Production
 
 ### Human-in-the-Loop by Risk Tier
-- Low-risk: assisted automation with post-action review
-- Medium-risk: analyst approval required
-- High-risk: senior reviewer approval and mandatory rationale capture
+
+| Risk Tier | Automation Level | Human Role |
+| --- | --- | --- |
+| Low | Assisted automation | Post-action review |
+| Medium | AI recommendation | Analyst approval required |
+| High | AI advisory only | Senior reviewer + mandatory rationale |
 
 ### Control Objectives
 - Every action is traceable to inputs, policy rules, and model outputs
@@ -104,11 +142,14 @@ Analyst teams often spend most of their time gathering evidence rather than maki
 
 ## Implementation Roadmap
 
-1. Start with one bounded workflow (for example suspicious-payment investigation)
-2. Define decision rights and escalation thresholds with compliance and risk teams
-3. Run shadow mode against current operations and benchmark outcomes
-4. Introduce supervised deployment with analyst approval gates
-5. Expand automation only after quality and governance KPIs stabilize
+```mermaid
+flowchart TD
+  P1["Phase 1\nPick one bounded workflow\ne.g. suspicious-payment investigation"]
+  --> P2["Phase 2\nDefine decision rights &\nescalation thresholds with compliance"]
+  --> P3["Phase 3\nShadow mode vs current operations\nBenchmark outcomes"]
+  --> P4["Phase 4\nSupervised deployment\nAnalyst approval gates"]
+  --> P5["Phase 5\nExpand automation\nAfter governance KPIs stabilise"]
+```
 
 ---
 

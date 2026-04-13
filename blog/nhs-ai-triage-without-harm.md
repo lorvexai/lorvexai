@@ -1,4 +1,4 @@
-﻿---
+---
 title: NHS AI Triage Without Harm
 date: 2026-03-31
 excerpt: A safety-first architecture for NHS front door triage that improves access while protecting clinical accountability.
@@ -30,7 +30,7 @@ Front door services across the NHS face sustained pressure:
 - Significant 111 and GP triage volume
 - Capacity mismatch between demand and clinical staffing
 
-AI can help prioritize and route patients faster, but only if safety is engineered into the system from day one.
+AI can help prioritise and route patients faster, but only if safety is engineered into the system from day one.
 
 ---
 
@@ -50,9 +50,50 @@ AI can help prioritize and route patients faster, but only if safety is engineer
 
 ---
 
+## Triage Decision Flow
+
+```mermaid
+flowchart TD
+  P["Patient Presents\n111 · ED · GP Surgery"]
+  --> I["Symptom Intake\nStructured + free-text"]
+  I --> NLP["Clinical NLP\nSNOMED coding · severity signals"]
+  NLP --> SCORE["Urgency Scoring\nRisk stratification model"]
+  SCORE --> D{Risk Level?}
+  D -->|Red — High Risk| ESC["Immediate Clinical Escalation\nClinician takes over"]
+  D -->|Amber — Moderate| REVIEW["Clinician Review\nAI recommendation + rationale"]
+  D -->|Green — Low Risk| ROUTE["Pathway Routing\nSelf-care · 111 callback · GP appt"]
+  ESC --> LOG["Audit Log\nFull trace + evidence"]
+  REVIEW --> LOG
+  ROUTE --> LOG
+  LOG --> MONITOR["Continuous Safety Monitoring"]
+```
+
+---
+
 ## Red-Flag Escalation Logic
 
 ![Red-Flag Escalation and Human Oversight](../../diagrams/nhs-triage-escalation.svg?v=2)
+
+---
+
+## Clinical Safety Sequence
+
+```mermaid
+sequenceDiagram
+  participant P as Patient
+  participant T as Triage AI
+  participant C as Clinician
+  participant S as Safety Monitor
+  P->>T: Symptom input (structured + free-text)
+  T->>T: NLP coding + urgency scoring
+  T->>C: Recommendation + confidence + evidence
+  Note over T,C: Red flag detected
+  T->>C: IMMEDIATE ESCALATION alert
+  C->>P: Direct clinical assessment
+  C->>T: Override / confirm decision
+  T->>S: Log decision trace + outcome
+  S->>S: Continuous safety KPI update
+```
 
 ---
 
@@ -75,6 +116,30 @@ AI can help prioritize and route patients faster, but only if safety is engineer
 
 ---
 
+## Governance Requirements by Tier
+
+```mermaid
+flowchart LR
+  subgraph Green["Green — Low Risk"]
+    G1["AI recommendation"]
+    G2["Automated pathway routing"]
+    G3["Post-action audit log"]
+  end
+  subgraph Amber["Amber — Moderate Risk"]
+    A1["AI recommendation + rationale"]
+    A2["Clinician review required"]
+    A3["Explicit confirmation to proceed"]
+  end
+  subgraph Red["Red — High Risk"]
+    R1["Immediate escalation alert"]
+    R2["Senior clinician takes over"]
+    R3["Mandatory rationale capture"]
+    R4["Incident review if outcome adverse"]
+  end
+```
+
+---
+
 ## Implementation Roadmap for NHS Teams
 
 1. Start with one bounded triage pathway (for example minor illness)
@@ -87,4 +152,4 @@ AI can help prioritize and route patients faster, but only if safety is engineer
 
 ## Final Thought
 
-The best NHS triage AI is not the most autonomous system. It is the safest system: fast when confidence is high, and immediate human-led when risk is uncertain.
+The best NHS triage AI is not the most autonomous system. It is the safest system: fast when confidence is high, and immediately human-led when risk is uncertain.

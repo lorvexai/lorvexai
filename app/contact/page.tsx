@@ -51,7 +51,7 @@ export default function ContactPage() {
                   <span className="text-gradient">AI Transformation</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  Whether you&apos;re scoping your first agentic system, evaluating our products, or looking for a governance audit — we&apos;d love to hear from you.
+                  Whether you&apos;re exploring your first agentic system, evaluating our products, or looking for an AI governance review — we&apos;d love to hear from you.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
                   {contactMethods.map((m) => (

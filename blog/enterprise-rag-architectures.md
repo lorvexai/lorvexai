@@ -1,4 +1,4 @@
-﻿---
+---
 title: Enterprise RAG Architectures
 date: 2026-03-30
 excerpt: Designing retrieval-augmented generation systems for reliability, governance, and production-grade intelligence at scale.
@@ -34,6 +34,17 @@ A production-grade Retrieval-Augmented Generation stack is not just "LLM + vecto
 
 ## Five-Layer Architecture Blueprint
 
+```mermaid
+flowchart LR
+  A["1. Ingestion &\nKnowledge Processing"] --> B["2. Pre-Retrieval\nIntelligence"]
+  B --> C["3. Retrieval &\nRelevance"]
+  C --> D["4. Orchestration &\nAgentic Reasoning"]
+  D --> E["5. Generation,\nTrust & Evaluation"]
+  E -->|Feedback| B
+  style A fill:#0F2A4A,stroke:#2F80ED,color:#E6ECF7
+  style E fill:#0F2A4A,stroke:#2F80ED,color:#E6ECF7
+```
+
 ### 1. Ingestion and Knowledge Processing
 - Structured, semi-structured, and unstructured data pipelines
 - ACL, PII, and policy tagging at ingestion
@@ -47,7 +58,7 @@ A production-grade Retrieval-Augmented Generation stack is not just "LLM + vecto
 ### 3. Retrieval and Relevance
 - ACL gatekeeper before results are exposed to orchestration
 - Hybrid retrieval (BM25 + vector)
-- Cross-encoder reranking to optimize relevance over similarity-only ranking
+- Cross-encoder reranking to optimise relevance over similarity-only ranking
 
 ### 4. Orchestration and Agentic Reasoning
 - Context packaging with citation links and parent passages
@@ -63,7 +74,7 @@ A production-grade Retrieval-Augmented Generation stack is not just "LLM + vecto
 
 ## Architecture Diagram (Business + Platform View)
 
-![Enterprise RAG Architecture](../../diagrams/enterprise-rag-architecture-impact.svg?v=1)
+![Enterprise RAG Architecture — Business and Platform View](../../diagrams/enterprise-rag-architecture-impact.svg?v=1)
 
 ---
 
@@ -73,24 +84,29 @@ A production-grade Retrieval-Augmented Generation stack is not just "LLM + vecto
 
 ---
 
-## Mermaid Source-of-Truth (Implementation View)
+## Retrieval and Governance Flow
+
+![RAG Retrieval and Governance Flow](../../diagrams/enterprise-rag-retrieval-governance.svg?v=1)
+
+---
+
+## Implementation Flow (Mermaid)
 
 ```mermaid
 flowchart LR
   U["User Query"] --> PR1["Query Rewrite"]
   PR1 --> PR2["HyDE Generation"]
   PR2 --> GATE["ACL Gatekeeper"]
-  GATE --> RET["Hybrid Retrieval (BM25 + Vector)"]
-  RET --> RR["Cross-Encoder Reranker"]
-  RR --> CB["Context Builder (Parent Passages + Citations)"]
-  CB --> ORCH["Agent Orchestrator (ReAct)"]
+  GATE --> RET["Hybrid Retrieval\nBM25 + Vector"]
+  RET --> RR["Cross-Encoder\nReranker"]
+  RR --> CB["Context Builder\nParent Passages + Citations"]
+  CB --> ORCH["Agent Orchestrator\nReAct"]
   ORCH --> GEN["LLM Generation"]
-  GEN --> PV["Policy + Safety Verifier"]
+  GEN --> PV["Policy + Safety\nVerifier"]
   PV --> OUT["Cited Response"]
   OUT --> EVAL["Evaluation Harness"]
-  EVAL --> FB["Feedback Loop"]
-  FB --> PR1
-  ORCH --> RET
+  EVAL -->|Continuous feedback| PR1
+  ORCH -->|Low confidence re-search| RET
 ```
 
 ---
@@ -102,6 +118,12 @@ flowchart LR
 - Enforce ACL and policy checks before and after generation
 - Prefer evidence-backed, structured answers over fluent but unverifiable output
 - Build closed-loop evaluation from live traffic and reviewer feedback
+
+---
+
+## Governance Loop
+
+![RAG Governance and Continuous Evaluation Loop](../../diagrams/enterprise-rag-governance-loop.svg?v=1)
 
 ---
 
@@ -122,80 +144,88 @@ flowchart LR
 - Cost per answered query and per successful task
 - Failure, fallback, and escalation rates
 
-### Evaluation Frameworks to Operationalize
-- Evaluation framework 1: answer relevance, faithfulness, context precision
-- Evaluation framework 2: trace-level quality and groundedness instrumentation
-
 ---
 
 ## Vector Database Options and Comparison
 
 | Option | Search Type | Best Fit | Strengths | Tradeoffs |
 | --- | --- | --- | --- | --- |
-| Managed vector platform | Hybrid support (keyword + vector) | Teams optimizing for speed to production | Fast setup, lower platform ops burden | Higher recurring platform cost at scale |
-| Schema-first retrieval platform | Hybrid support (keyword + vector) | Teams needing rich filtering and metadata controls | Strong retrieval governance and query controls | Requires careful index and filter tuning |
-| Performance-optimized vector engine | Hybrid support (keyword + vector) | High-throughput, cost-aware workloads | Excellent vector performance and payload filtering | Managed enterprise features vary by provider |
-| Self-hosted distributed vector stack | Hybrid via surrounding search layer | Large-scale, high-control environments | Strong horizontal scaling and control | Higher operational complexity |
-| Relational DB with vector extension | Hybrid via SQL + lexical patterns | Teams standardizing on relational data platforms | Unified transactional + vector workflows | Can become expensive for very large retrieval workloads |
-| Enterprise search platform with vector support | Native hybrid search | Teams already invested in enterprise search | Familiar stack and enterprise integration | Relevance tuning depth varies by implementation |
+| Managed vector platform | Hybrid (keyword + vector) | Speed to production | Fast setup, lower ops burden | Higher cost at scale |
+| Schema-first retrieval platform | Hybrid (keyword + vector) | Rich filtering and metadata | Strong retrieval governance | Requires careful index tuning |
+| Performance-optimised vector engine | Hybrid (keyword + vector) | High-throughput, cost-aware | Excellent vector performance | Managed features vary by provider |
+| Self-hosted distributed vector stack | Hybrid via surrounding search | Large-scale, high-control | Strong horizontal scaling | Higher operational complexity |
+| Relational DB with vector extension | Hybrid via SQL + lexical | Teams on relational platforms | Unified transactional + vector | Can be expensive at large scale |
+| Enterprise search with vector support | Native hybrid search | Teams in enterprise search | Familiar stack + integration | Relevance tuning depth varies |
 
-### Selection Heuristics
-- Treat hybrid search as mandatory for enterprise-grade retrieval quality.
-- Validate with your own corpus: recall quality, filter behavior, reranker lift, and p95 latency.
-- Choose managed-first for speed, self-hosted when residency and control are dominant.
+**Selection heuristics:** Treat hybrid search as mandatory. Validate with your own corpus. Choose managed-first for speed, self-hosted when residency and control dominate.
 
 ---
 
 ## Agentic RAG: From Chains to Adaptive Agents
 
-Enterprise RAG is shifting from fixed chains to adaptive agents that can reason about evidence quality. A practical pattern:
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant A as Agent Orchestrator
+  participant R as Retrieval Engine
+  participant E as Evidence Scorer
+  participant G as LLM Generator
+  participant P as Policy Verifier
+  U->>A: Submit query
+  A->>R: Initial retrieval
+  R-->>A: Evidence bundle v1
+  A->>E: Score confidence & grounding
+  E-->>A: Confidence below threshold
+  A->>R: Re-plan and retrieve (targeted)
+  R-->>A: Evidence bundle v2
+  A->>E: Re-score — confidence sufficient
+  A->>G: Generate with citations
+  G->>P: Policy and safety check
+  P-->>U: Verified cited response
+```
+
+Enterprise RAG is shifting from fixed chains to adaptive agents that reason about evidence quality:
 
 1. Retrieve initial evidence.
 2. Score confidence and grounding quality.
 3. Re-plan and retrieve again when confidence is below threshold.
-4. Finalize only after policy and evidence checks pass.
-
-This ReAct loop improves answer robustness for ambiguous, multi-document enterprise queries.
+4. Finalise only after policy and evidence checks pass.
 
 ---
 
 ## Common Failure Modes and Mitigations
 
-### Failure Mode: Retrieval misses critical context
-- Cause: weak metadata, poor chunk granularity, no query expansion
-- Mitigation: schema-aware chunking, rewrite + HyDE, hybrid retrieval, reranking
-
-### Failure Mode: Fluent but ungrounded responses
-- Cause: weak context package or missing citation policy
-- Mitigation: citation-required output, groundedness checks, abstain policy
-
-### Failure Mode: Policy leakage
-- Cause: ACL checks applied too late in pipeline
-- Mitigation: gatekeeper enforcement before retrieval results reach orchestration
+| Failure Mode | Cause | Mitigation |
+| --- | --- | --- |
+| Retrieval misses critical context | Weak metadata, poor chunking, no query expansion | Schema-aware chunking, rewrite + HyDE, hybrid retrieval, reranking |
+| Fluent but ungrounded responses | Weak context package or missing citation policy | Citation-required output, groundedness checks, abstain policy |
+| Policy leakage | ACL checks applied too late in pipeline | Gatekeeper enforcement before results reach orchestration |
 
 ---
 
 ## Finance Example (Regulatory Intelligence)
 
-### Pattern
-- Hybrid retrieval across policy text and controls data
-- Graph links from regulation -> process -> control owner
-- Structured responses with source paragraph citations
-
-### Example Query
-Explain variance in liquidity coverage ratio and cite relevant internal policy clauses.
+```mermaid
+flowchart LR
+  Q["Query: Explain LCR variance\nand cite internal policy clauses"]
+  --> H["Hybrid Retrieval\nPolicy text + Controls data"]
+  H --> G["Graph Links\nRegulation → Process → Control Owner"]
+  G --> R["Structured Response\n+ Source paragraph citations"]
+```
 
 ---
 
 ## Healthcare Example (Clinical Knowledge Assistant)
 
-### Pattern
-- Temporal retrieval with date-aware ranking
-- Safety guardrails for contraindications
-- Human review escalation on low-confidence outputs
-
-### Example Query
-Suggest treatment adjustments for a diabetic patient with declining renal function using the latest approved protocol.
+```mermaid
+flowchart LR
+  Q["Query: Suggest treatment adjustments\nfor diabetic patient with declining\nrenal function — latest protocol"]
+  --> T["Temporal Retrieval\nDate-aware ranking"]
+  T --> S["Safety Guardrails\nContraindication check"]
+  S --> D{Confidence?}
+  D -->|High| R["Structured response\n+ protocol citations"]
+  D -->|Low| HE["Human review\nescalation"]
+```
 
 ---
 
