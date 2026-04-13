@@ -1,12 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { X, Check, Minus, ArrowRight } from "lucide-react";
+import { X, Check, Minus, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 /* ─── Types ─────────────────────────────────────────────────────── */
-type Score = "Excellent" | "Good" | "Fair" | "Limited";
-type Tab   = "overview" | "features" | "info";
+type Score  = "Excellent" | "Good" | "Fair" | "Limited";
+type Tab    = "overview" | "features" | "info";
+type Status = "Active" | "Preview" | "Legacy" | "Deprecated" | "Open Source";
+
+interface ModelVariant {
+  name: string;
+  contextWindow: string;
+  pricingInput: string;
+  pricingOutput: string;
+  releaseDate: string;
+  status: Status;
+  parameters?: string;
+  note?: string;
+}
 
 interface Model {
   id: string;
@@ -30,6 +42,10 @@ interface Model {
   costTier: string;
   bestFor: string;
 
+  /* vendor links */
+  docsUrl: string;
+  vendorUrl: string;
+
   /* modal — overview */
   overview: string;
   strengths: string[];
@@ -44,17 +60,10 @@ interface Model {
   streaming: boolean;
   functionCalling: boolean;
 
-  /* modal — model info */
-  latestVersion: string;
-  releaseDate: string;
-  parameters: string;
-  contextWindowFull: string;
-  trainingCutoff: string;
-  deprecationDate: string;
-  pricingInput: string;
-  pricingOutput: string;
-  deploymentOptions: string[];
+  /* modal — model variants */
+  variants: ModelVariant[];
   certifications: string[];
+  deploymentOptions: string[];
 }
 
 /* ─── Data ───────────────────────────────────────────────────────── */
@@ -62,7 +71,7 @@ const models: Model[] = [
   {
     id: "openai",
     provider: "OpenAI",
-    family: "GPT-4o",
+    family: "GPT Series",
     tagline: "The industry benchmark for enterprise AI",
     badge: "Industry Standard",
     cardStyle: "border-emerald-400/25 bg-emerald-400/5",
@@ -71,66 +80,137 @@ const models: Model[] = [
     accentText: "text-emerald-300",
     initial: "O",
 
-    contextWindow: "128K",
+    contextWindow: "Up to 200K",
     onPremise: false,
     euResidency: "Via Azure OpenAI",
     ragScore: "Excellent",
     reasoningScore: "Excellent",
     speed: "Good",
-    costTier: "Medium",
-    bestFor: "Complex compliance analysis, multi-step reasoning, code generation",
+    costTier: "Low → Very High",
+    bestFor: "Complex compliance analysis, structured output, general reasoning",
 
-    overview: "GPT-4o is OpenAI's flagship multimodal model, combining text, image, and audio understanding in a single architecture. It is the most widely adopted LLM in enterprise AI deployments and sets the benchmark most other models are compared against. For regulated industries, it is best accessed through Azure OpenAI Service, which provides EU data residency, private networking, and Microsoft compliance certifications.",
+    docsUrl: "https://platform.openai.com/docs/models",
+    vendorUrl: "https://openai.com",
+
+    overview: "OpenAI's GPT series is the industry benchmark — the models most enterprise AI teams evaluate first. The family spans from fast, cheap task models (GPT-4o mini) through balanced frontier models (GPT-4o) to specialised reasoning models (o1, o3) built for multi-step problem solving. GPT-4.5 was released in February 2025 as a research preview, representing OpenAI's largest dense model to date. For regulated industries, Azure OpenAI Service provides EU data residency, private networking, and enterprise compliance certifications.",
     strengths: [
-      "Strongest general reasoning and instruction-following",
-      "Widest third-party integration ecosystem",
-      "Azure OpenAI provides enterprise-grade SLAs and data residency",
-      "Extensive tool-use and function-calling capabilities",
-      "Best-in-class for structured output generation (JSON mode)"
+      "Strongest general instruction-following and structured output (JSON mode, Structured Outputs API)",
+      "Widest third-party integration ecosystem of any LLM provider",
+      "o1 / o3 reasoning models purpose-built for multi-step analysis",
+      "Azure OpenAI provides enterprise SLAs, VNET isolation, and data residency",
+      "Batch API offers 50% cost reduction for async workloads at scale"
     ],
     limitations: [
-      "No on-premise deployment option — data must leave your infrastructure",
-      "Higher cost for long-context workloads",
-      "Training cutoff means it lacks knowledge of recent regulatory changes",
-      "Vendor lock-in risk for organisations relying solely on OpenAI"
+      "No on-premise deployment — data must traverse OpenAI or Azure infrastructure",
+      "GPT-4.5 and o3 are very expensive for high-volume production use",
+      "Training cutoff means real-time regulatory changes require RAG augmentation",
+      "Vendor lock-in risk without abstraction layer"
     ],
-    regulatedFit: "Strong fit for finance and banking via Azure OpenAI with FCA/PRA-aligned data governance. Not suitable for NHS patient-identifiable data workloads without on-prem or NHS-approved cloud infrastructure.",
+    regulatedFit: "Strong fit for finance and banking via Azure OpenAI with FCA/PRA-aligned data governance. Not suitable for NHS patient-identifiable data without on-prem or NHS-approved cloud infrastructure.",
 
     capabilities: [
-      "Text generation, summarisation, classification",
-      "Structured data extraction (JSON, tables)",
-      "Multi-step reasoning and chain-of-thought",
-      "Code generation and analysis",
-      "Image understanding (documents, charts, screenshots)",
-      "Long document processing (up to 128K tokens)"
+      "Text generation, summarisation, classification, extraction",
+      "Structured data output (JSON schema enforcement)",
+      "Multi-step chain-of-thought reasoning",
+      "Code generation, review, and debugging",
+      "Image and document understanding (multimodal)",
+      "Long document processing (128K–200K context)"
     ],
     specialFeatures: [
-      "Structured Outputs — guaranteed JSON schema compliance",
-      "Parallel tool calling — multiple function calls in one turn",
-      "Reproducible outputs with seed parameter",
-      "Assistants API for stateful multi-turn conversations",
-      "Batch API for 50% cost reduction on async workloads"
+      "Structured Outputs API — guaranteed JSON schema compliance",
+      "Parallel tool calling — multiple functions in one turn",
+      "Reasoning models (o1/o3) — extended internal chain-of-thought",
+      "Batch API — 50% cost savings for asynchronous workloads",
+      "Assistants API — stateful multi-turn with file retrieval"
     ],
     toolUse: true,
     multimodal: true,
     streaming: true,
     functionCalling: true,
 
-    latestVersion: "gpt-4o-2024-11-20",
-    releaseDate: "May 2024",
-    parameters: "Not publicly disclosed (est. ~200B)",
-    contextWindowFull: "128,000 tokens (~300 pages of text)",
-    trainingCutoff: "October 2023",
-    deprecationDate: "No announced date",
-    pricingInput: "$2.50 per 1M tokens",
-    pricingOutput: "$10.00 per 1M tokens",
+    variants: [
+      {
+        name: "GPT-4o",
+        contextWindow: "128K",
+        pricingInput: "$2.50 / 1M",
+        pricingOutput: "$10.00 / 1M",
+        releaseDate: "May 2024",
+        status: "Active",
+        note: "Primary production model — best balance of quality and cost"
+      },
+      {
+        name: "GPT-4o mini",
+        contextWindow: "128K",
+        pricingInput: "$0.15 / 1M",
+        pricingOutput: "$0.60 / 1M",
+        releaseDate: "July 2024",
+        status: "Active",
+        note: "Cost-optimised for high-volume routing and simple tasks"
+      },
+      {
+        name: "GPT-4.5",
+        contextWindow: "128K",
+        pricingInput: "$75.00 / 1M",
+        pricingOutput: "$150.00 / 1M",
+        releaseDate: "Feb 2025",
+        status: "Preview",
+        note: "Largest dense model — research preview, very high cost"
+      },
+      {
+        name: "o1",
+        contextWindow: "200K",
+        pricingInput: "$15.00 / 1M",
+        pricingOutput: "$60.00 / 1M",
+        releaseDate: "Dec 2024",
+        status: "Active",
+        note: "Reasoning model — excels at complex multi-step compliance analysis"
+      },
+      {
+        name: "o1-mini",
+        contextWindow: "128K",
+        pricingInput: "$3.00 / 1M",
+        pricingOutput: "$12.00 / 1M",
+        releaseDate: "Sept 2024",
+        status: "Active",
+        note: "Fast reasoning at lower cost — good for structured analysis tasks"
+      },
+      {
+        name: "o3",
+        contextWindow: "200K",
+        pricingInput: "$10.00 / 1M",
+        pricingOutput: "$40.00 / 1M",
+        releaseDate: "Early 2025",
+        status: "Active",
+        note: "Next-generation reasoning model — strongest complex reasoning available"
+      },
+      {
+        name: "o3-mini",
+        contextWindow: "200K",
+        pricingInput: "$1.10 / 1M",
+        pricingOutput: "$4.40 / 1M",
+        releaseDate: "Early 2025",
+        status: "Active",
+        note: "Cost-efficient reasoning — recommended for production reasoning workloads"
+      },
+      {
+        name: "GPT-4 Turbo",
+        contextWindow: "128K",
+        pricingInput: "$10.00 / 1M",
+        pricingOutput: "$30.00 / 1M",
+        releaseDate: "Nov 2023",
+        status: "Legacy",
+        note: "Being replaced by GPT-4o — migrate before deprecation"
+      }
+    ],
+
     deploymentOptions: ["OpenAI API", "Azure OpenAI Service", "AWS Marketplace"],
     certifications: ["SOC 2 Type II", "ISO 27001", "GDPR (via Azure)", "HIPAA (via Azure)", "UK Cyber Essentials"]
   },
+
   {
     id: "claude",
     provider: "Anthropic",
-    family: "Claude 4",
+    family: "Claude Series",
     tagline: "Safety-first reasoning for high-stakes decisions",
     badge: "Best for Regulated",
     cardStyle: "border-primary/25 bg-primary/5",
@@ -145,24 +225,27 @@ const models: Model[] = [
     ragScore: "Excellent",
     reasoningScore: "Excellent",
     speed: "Good",
-    costTier: "Medium–High",
-    bestFor: "Long regulatory document analysis, safety-critical outputs, NHS clinical summarisation",
+    costTier: "Low → High",
+    bestFor: "Long regulatory document analysis, NHS clinical summarisation, safety-critical outputs",
 
-    overview: "Claude is Anthropic's model family, designed with Constitutional AI — a training approach that prioritises safety, honesty, and harm avoidance. The Claude 4 series (Opus 4, Sonnet 4, Haiku 4) offers the largest context window of any major model at 200K tokens, making it especially well-suited for long regulatory documents. Its safety-first design philosophy makes it the preferred choice for healthcare and clinical AI applications.",
+    docsUrl: "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+    vendorUrl: "https://anthropic.com",
+
+    overview: "Claude is Anthropic's model family, trained with Constitutional AI — a methodology that embeds safety and harm avoidance directly into training rather than adding it as a post-processing layer. The Claude 4 series (current as of 2025) includes Opus 4 for maximum reasoning quality, Sonnet 4 as the primary production model, and Haiku 4 for high-speed, cost-efficient workloads. With a 200K token context window — the largest of any cloud-hosted frontier model — Claude is especially well-suited for long regulatory documents and clinical records.",
     strengths: [
-      "Largest context window (200K) — fits entire regulatory rulebooks",
-      "Constitutional AI training reduces harmful or non-compliant outputs",
-      "Exceptional long-document comprehension and summarisation",
-      "Strong citation and attribution behaviour — names sources",
-      "Haiku tier offers ultra-low latency for high-volume routing"
+      "Largest context window (200K) — processes entire regulatory rulebooks in one call",
+      "Constitutional AI training reduces harmful, non-compliant, or hallucinated outputs",
+      "Extended thinking mode enables deeper multi-step reasoning traces",
+      "Haiku tier offers fastest response times for high-volume routing",
+      "Strong citation and attribution behaviour — explicitly names source passages"
     ],
     limitations: [
-      "No on-premise deployment — requires cloud API",
-      "Slightly more conservative output style can require prompt tuning",
-      "Smaller ecosystem of third-party integrations vs GPT-4o",
-      "EU data residency dependent on AWS/GCP region selection"
+      "No on-premise deployment option",
+      "EU data residency requires careful AWS/GCP region selection",
+      "Smaller third-party integration ecosystem compared to OpenAI",
+      "Conservative output style on sensitive topics may require prompt calibration"
     ],
-    regulatedFit: "Highest fit for NHS and healthcare due to safety-first design and DCB0129 alignment. Strong fit for FCA/PRA compliance workloads requiring long-document reasoning. Available on AWS Bedrock with UK/EU data residency options.",
+    regulatedFit: "Highest fit for NHS and healthcare due to safety-first Constitutional AI training. Strong fit for FCA/PRA workloads requiring long-document reasoning. Available on AWS Bedrock (UK/EU regions) with NHS and financial services compliance.",
 
     capabilities: [
       "Long-document reading and analysis (200K context)",
@@ -170,36 +253,86 @@ const models: Model[] = [
       "Clinical document summarisation and triage support",
       "Complex multi-step reasoning with explicit chain-of-thought",
       "Code generation with security-aware output",
-      "Multi-turn conversation with persistent context"
+      "Multi-turn conversation with persistent session context"
     ],
     specialFeatures: [
-      "Constitutional AI — built-in safety guardrails at training level",
-      "Extended thinking mode — deeper reasoning for complex problems",
-      "Vision support — analyse regulatory PDFs, charts, forms",
-      "Tool use with parallel execution",
-      "Model family tiers: Opus (best quality), Sonnet (balanced), Haiku (fastest)"
+      "Constitutional AI — safety guardrails built into training weights",
+      "Extended thinking mode — visible reasoning trace for audit",
+      "Vision — analyse regulatory PDFs, charts, scanned forms",
+      "Model tier system: Opus (quality) → Sonnet (balanced) → Haiku (speed)",
+      "Tool use with parallel execution across multiple tools"
     ],
     toolUse: true,
     multimodal: true,
     streaming: true,
     functionCalling: true,
 
-    latestVersion: "claude-sonnet-4-6 / claude-opus-4-6",
-    releaseDate: "2025",
-    parameters: "Not publicly disclosed",
-    contextWindowFull: "200,000 tokens (~500 pages of text)",
-    trainingCutoff: "Early 2025",
-    deprecationDate: "Claude 3 models scheduled for deprecation in 2025",
-    pricingInput: "~$3.00 per 1M tokens (Sonnet)",
-    pricingOutput: "~$15.00 per 1M tokens (Sonnet)",
+    variants: [
+      {
+        name: "Claude Opus 4.6",
+        contextWindow: "200K",
+        pricingInput: "~$15.00 / 1M",
+        pricingOutput: "~$75.00 / 1M",
+        releaseDate: "2025",
+        status: "Active",
+        note: "Maximum reasoning quality — use for most complex compliance and clinical tasks"
+      },
+      {
+        name: "Claude Sonnet 4.6",
+        contextWindow: "200K",
+        pricingInput: "~$3.00 / 1M",
+        pricingOutput: "~$15.00 / 1M",
+        releaseDate: "2025",
+        status: "Active",
+        note: "Primary production model — best balance of quality, speed, and cost"
+      },
+      {
+        name: "Claude Haiku 4.5",
+        contextWindow: "200K",
+        pricingInput: "~$0.80 / 1M",
+        pricingOutput: "~$4.00 / 1M",
+        releaseDate: "2025",
+        status: "Active",
+        note: "Fastest and cheapest — ideal for high-volume routing and triage"
+      },
+      {
+        name: "Claude 3.5 Sonnet",
+        contextWindow: "200K",
+        pricingInput: "$3.00 / 1M",
+        pricingOutput: "$15.00 / 1M",
+        releaseDate: "Oct 2024",
+        status: "Legacy",
+        note: "Previous generation — still strong, being superseded by Sonnet 4.6"
+      },
+      {
+        name: "Claude 3.5 Haiku",
+        contextWindow: "200K",
+        pricingInput: "$0.80 / 1M",
+        pricingOutput: "$4.00 / 1M",
+        releaseDate: "Oct 2024",
+        status: "Legacy",
+        note: "Previous fast tier — superseded by Haiku 4.5"
+      },
+      {
+        name: "Claude 3 Opus",
+        contextWindow: "200K",
+        pricingInput: "$15.00 / 1M",
+        pricingOutput: "$75.00 / 1M",
+        releaseDate: "Mar 2024",
+        status: "Deprecated",
+        note: "Scheduled for deprecation — migrate to Opus 4.6"
+      }
+    ],
+
     deploymentOptions: ["Anthropic API", "Amazon Bedrock", "Google Cloud Vertex AI"],
-    certifications: ["SOC 2 Type II", "GDPR (via AWS/GCP)", "HIPAA (via AWS Bedrock)"]
+    certifications: ["SOC 2 Type II", "GDPR (via AWS/GCP regions)", "HIPAA (via AWS Bedrock)"]
   },
+
   {
     id: "gemini",
-    provider: "Google",
-    family: "Gemini 1.5/2.0",
-    tagline: "Unmatched context for document-heavy workflows",
+    provider: "Google DeepMind",
+    family: "Gemini Series",
+    tagline: "Unmatched context for document-heavy workloads",
     badge: "Largest Context",
     cardStyle: "border-blue-400/25 bg-blue-400/5",
     iconBg: "bg-blue-400/15 border-blue-400/30",
@@ -213,60 +346,104 @@ const models: Model[] = [
     ragScore: "Excellent",
     reasoningScore: "Good",
     speed: "Excellent",
-    costTier: "Low–Medium",
-    bestFor: "Entire regulatory library ingestion, massive document corpus analysis, cost-optimised RAG",
+    costTier: "Low → Medium",
+    bestFor: "Entire regulatory library ingestion, massive document corpus, cost-optimised RAG",
 
-    overview: "Gemini 1.5 Pro and the Gemini 2.0 series from Google DeepMind offer the industry's largest publicly available context window at 1 million tokens — equivalent to approximately 10 thick regulatory rulebooks in a single call. This makes Gemini uniquely suited for workloads where the entire knowledge corpus needs to be in context simultaneously, rather than retrieved via RAG. Available on Google Cloud Vertex AI with enterprise compliance and EU data residency.",
+    docsUrl: "https://ai.google.dev/gemini-api/docs/models/gemini",
+    vendorUrl: "https://deepmind.google/technologies/gemini",
+
+    overview: "Google DeepMind's Gemini family offers the largest publicly available context window at 1 million tokens — the equivalent of roughly 10 thick regulatory rulebooks in a single API call. The 2.0 series brings improved reasoning and speed with Gemini 2.0 Flash becoming the default cost-efficient choice for most workloads. Available on Google Cloud Vertex AI with enterprise compliance certifications and EU data residency options.",
     strengths: [
-      "1M token context window — entire regulatory library in one call",
-      "Gemini Flash is one of the fastest and cheapest frontier models",
-      "Native multimodal — text, images, audio, video, code",
-      "Strong grounding via Google Search integration",
-      "Vertex AI provides enterprise compliance and EU regions"
+      "1M token context window — entire regulatory corpus in a single call",
+      "Gemini Flash is one of the fastest and most cost-efficient frontier models",
+      "Native multimodal: text, images, audio, video, code",
+      "Google Search grounding — verifiable answers linked to live sources",
+      "Vertex AI provides enterprise compliance, audit logging, and EU regions"
     ],
     limitations: [
-      "Reasoning quality slightly behind GPT-4o and Claude on complex multi-step tasks",
-      "1M context at full capacity is expensive — cost management required",
+      "Reasoning depth slightly behind Claude Opus and o3 on complex multi-step tasks",
+      "1M context at full utilisation is expensive — cost management needed",
       "No on-premise deployment",
-      "Google ecosystem dependency for enterprise features"
+      "Google ecosystem dependency for full enterprise feature set"
     ],
-    regulatedFit: "Good fit for finance workloads requiring large document corpus analysis. Vertex AI provides FCA/GDPR-aligned data governance. For NHS, requires careful assessment of data residency — Google Cloud EU regions available but NHS IG Toolkit compliance needs verification.",
+    regulatedFit: "Good fit for finance workloads requiring large document corpus analysis. Vertex AI provides GDPR-aligned data governance. For NHS, EU regions available but NHS IG Toolkit compliance verification required before patient data processing.",
 
     capabilities: [
       "1M token context — entire corpora in one call",
       "Multimodal reasoning (text, image, audio, video, code)",
       "Document understanding including PDFs, slides, spreadsheets",
-      "Code generation and analysis",
+      "Code generation and execution (via Code Execution tool)",
       "Long-context summarisation and extraction",
-      "Grounding with Google Search for real-time information"
+      "Real-time grounding via Google Search API"
     ],
     specialFeatures: [
-      "1M token context window — industry leading",
-      "Gemini Flash — ultra-fast, cost-optimised for high-volume routing",
-      "Native video understanding for training and compliance footage",
-      "Code Execution tool — runs Python in-context",
-      "Grounding API — verifiable answers linked to Google Search sources"
+      "1M token context window — industry's largest",
+      "Gemini 2.0 Flash — ultra-fast, lowest cost per token among frontier models",
+      "Code Execution — runs Python in-context for data analysis",
+      "Google Search grounding — live, citable answers",
+      "Native video understanding for compliance and training footage"
     ],
     toolUse: true,
     multimodal: true,
     streaming: true,
     functionCalling: true,
 
-    latestVersion: "gemini-2.0-flash / gemini-1.5-pro-002",
-    releaseDate: "Gemini 1.5 — February 2024; 2.0 — late 2024",
-    parameters: "Not publicly disclosed",
-    contextWindowFull: "1,000,000 tokens (~2,500 pages of text)",
-    trainingCutoff: "Early 2024 (varies by model)",
-    deprecationDate: "Gemini 1.0 deprecated; 1.5 active; 2.0 series current",
-    pricingInput: "$1.25–$2.50 per 1M tokens (context dependent)",
-    pricingOutput: "$5.00–$10.00 per 1M tokens",
+    variants: [
+      {
+        name: "Gemini 2.5 Pro",
+        contextWindow: "1M",
+        pricingInput: "$1.25 / 1M",
+        pricingOutput: "$10.00 / 1M",
+        releaseDate: "2025",
+        status: "Active",
+        note: "Latest flagship — strongest reasoning in Gemini family, recommended for complex tasks"
+      },
+      {
+        name: "Gemini 2.0 Flash",
+        contextWindow: "1M",
+        pricingInput: "$0.10 / 1M",
+        pricingOutput: "$0.40 / 1M",
+        releaseDate: "Feb 2025",
+        status: "Active",
+        note: "Default for high-volume workloads — exceptional speed and cost efficiency"
+      },
+      {
+        name: "Gemini 2.0 Flash-Lite",
+        contextWindow: "1M",
+        pricingInput: "$0.075 / 1M",
+        pricingOutput: "$0.30 / 1M",
+        releaseDate: "Feb 2025",
+        status: "Active",
+        note: "Cheapest Gemini model — use for simple classification and extraction"
+      },
+      {
+        name: "Gemini 1.5 Pro",
+        contextWindow: "1M",
+        pricingInput: "$1.25 / 1M (≤128K)",
+        pricingOutput: "$5.00 / 1M (≤128K)",
+        releaseDate: "Feb 2024",
+        status: "Legacy",
+        note: "First 1M context model — still capable, being superseded by 2.5 Pro"
+      },
+      {
+        name: "Gemini 1.5 Flash",
+        contextWindow: "1M",
+        pricingInput: "$0.075 / 1M",
+        pricingOutput: "$0.30 / 1M",
+        releaseDate: "May 2024",
+        status: "Legacy",
+        note: "Previous fast tier — superseded by 2.0 Flash"
+      }
+    ],
+
     deploymentOptions: ["Google AI Studio", "Google Cloud Vertex AI"],
     certifications: ["SOC 2 Type II", "ISO 27001", "ISO 27017", "GDPR", "HIPAA (Vertex AI)"]
   },
+
   {
     id: "mistral",
     provider: "Mistral AI",
-    family: "Mistral Large 2",
+    family: "Mistral Series",
     tagline: "European sovereignty — GDPR by design",
     badge: "EU Native",
     cardStyle: "border-orange-400/25 bg-orange-400/5",
@@ -281,60 +458,126 @@ const models: Model[] = [
     ragScore: "Good",
     reasoningScore: "Good",
     speed: "Good",
-    costTier: "Low–Medium",
-    bestFor: "GDPR-strict workloads, EU data sovereignty requirements, multilingual European regulatory text",
+    costTier: "Free → Medium",
+    bestFor: "GDPR-strict workloads, EU data sovereignty, multilingual European regulatory text",
 
-    overview: "Mistral AI is a French AI company offering a unique combination of strong model performance, EU-native data residency, and partial open-source availability. Mistral Large 2 is its flagship API model, while smaller models (Mistral 7B, Mixtral 8x7B) are fully open source and self-hostable. For European regulated industries — including UK firms with EU data transfer restrictions — Mistral offers the clearest GDPR compliance story of any frontier model provider.",
+    docsUrl: "https://docs.mistral.ai/getting-started/models/models_overview/",
+    vendorUrl: "https://mistral.ai",
+
+    overview: "Mistral AI is a French AI company offering a unique combination of frontier model performance, EU-native data residency, and extensive open-source availability. Unlike US-headquartered providers, Mistral processes data within the EU by default. Mistral Large 2 is the flagship API model, while a range of smaller open-source models (Mistral 7B, Mixtral 8x7B, Mixtral 8x22B, Mistral Nemo) can be fully self-hosted. For European regulated industries with strict data sovereignty requirements, Mistral offers the strongest compliance story.",
     strengths: [
       "EU-native: French company, data processed in EU by default",
-      "Open-source smaller models (7B, Mixtral) fully self-hostable",
-      "Strongest multilingual performance for European regulatory text",
-      "Cost-effective — competitive pricing with strong quality",
-      "Codestral model optimised for code generation workflows"
+      "Open-source smaller models (7B, Mixtral, Nemo) fully self-hostable",
+      "Best multilingual performance for European regulatory text",
+      "Codestral — specialist model for code generation workflows",
+      "Pixtral — multimodal model for document and image analysis"
     ],
     limitations: [
       "Mistral Large is API-only (not open source)",
-      "Smaller ecosystem and fewer enterprise integrations",
-      "Reasoning ceiling slightly below GPT-4o and Claude Opus",
+      "Reasoning ceiling below Claude Opus and o3 for very complex tasks",
+      "Smaller enterprise integration ecosystem",
       "Context window (128K) smaller than Claude or Gemini"
     ],
-    regulatedFit: "Best fit for EU-headquartered regulated firms and UK firms needing to demonstrate EU data residency for GDPR compliance. Partial on-prem via open-source variants. Strong for European multilingual compliance documentation.",
+    regulatedFit: "Best fit for EU-headquartered regulated firms and UK firms demonstrating EU data residency for GDPR compliance. Open-source variants support on-prem deployments. Strongest choice for multilingual European compliance documentation.",
 
     capabilities: [
       "Text generation, summarisation, classification",
       "Multilingual — strongest European language performance",
       "Code generation (Codestral specialised model)",
       "Function calling and tool use",
-      "RAG-optimised with strong retrieval performance",
+      "Document and image analysis (Pixtral)",
       "Self-hostable via open-source variants"
     ],
     specialFeatures: [
-      "Mistral 7B / Mixtral 8x7B — fully open source, self-hostable",
-      "Codestral — dedicated model for code generation",
-      "EU data residency by default — no data leaves EU",
-      "Mistral Embeddings — European-language optimised",
-      "La Plateforme — Mistral's own enterprise API with EU SLAs"
+      "EU data residency by default — data never leaves EU",
+      "Open-source models: 7B, Mixtral 8x7B, Mixtral 8x22B, Nemo",
+      "Codestral — dedicated code generation model",
+      "Pixtral — multimodal vision model (open source)",
+      "Mistral Embeddings — optimised for European-language RAG"
     ],
     toolUse: true,
-    multimodal: false,
+    multimodal: true,
     streaming: true,
     functionCalling: true,
 
-    latestVersion: "mistral-large-2407",
-    releaseDate: "Mistral Large — February 2024; v2 — July 2024",
-    parameters: "~70B+ (Large, not officially disclosed); 7B (open-source)",
-    contextWindowFull: "128,000 tokens (~300 pages of text)",
-    trainingCutoff: "Early 2024",
-    deprecationDate: "No announced date",
-    pricingInput: "~€2.00 per 1M tokens (Mistral Large)",
-    pricingOutput: "~€6.00 per 1M tokens (Mistral Large)",
-    deploymentOptions: ["Mistral La Plateforme (EU)", "Azure AI", "AWS Bedrock", "Self-hosted (open-source)"],
+    variants: [
+      {
+        name: "Mistral Large 2",
+        contextWindow: "128K",
+        pricingInput: "~€2.00 / 1M",
+        pricingOutput: "~€6.00 / 1M",
+        releaseDate: "July 2024",
+        status: "Active",
+        note: "Flagship API model — top reasoning quality in the Mistral family"
+      },
+      {
+        name: "Mistral Small 3",
+        contextWindow: "32K",
+        pricingInput: "~€0.10 / 1M",
+        pricingOutput: "~€0.30 / 1M",
+        releaseDate: "2025",
+        status: "Active",
+        note: "Cost-efficient — good for classification and extraction at scale"
+      },
+      {
+        name: "Codestral",
+        contextWindow: "32K",
+        pricingInput: "~€0.20 / 1M",
+        pricingOutput: "~€0.60 / 1M",
+        releaseDate: "May 2024",
+        status: "Active",
+        note: "Specialist code model — fill-in-the-middle and generation"
+      },
+      {
+        name: "Pixtral 12B",
+        contextWindow: "128K",
+        pricingInput: "~€0.15 / 1M",
+        pricingOutput: "~€0.15 / 1M",
+        releaseDate: "Sept 2024",
+        status: "Open Source",
+        parameters: "12B",
+        note: "Multimodal — document and image understanding, self-hostable"
+      },
+      {
+        name: "Mistral Nemo 12B",
+        contextWindow: "128K",
+        pricingInput: "~€0.15 / 1M",
+        pricingOutput: "~€0.15 / 1M",
+        releaseDate: "July 2024",
+        status: "Open Source",
+        parameters: "12B",
+        note: "Open source — strong multilingual, fully self-hostable"
+      },
+      {
+        name: "Mixtral 8x22B",
+        contextWindow: "65K",
+        pricingInput: "~€2.00 / 1M",
+        pricingOutput: "~€6.00 / 1M",
+        releaseDate: "Apr 2024",
+        status: "Open Source",
+        parameters: "141B (MoE)",
+        note: "Mixture-of-Experts — open source, strong reasoning, self-hostable"
+      },
+      {
+        name: "Mixtral 8x7B",
+        contextWindow: "32K",
+        pricingInput: "~€0.70 / 1M",
+        pricingOutput: "~€0.70 / 1M",
+        releaseDate: "Dec 2023",
+        status: "Open Source",
+        parameters: "46.7B (MoE)",
+        note: "Widely deployed open-source model — proven in production"
+      }
+    ],
+
+    deploymentOptions: ["Mistral La Plateforme (EU)", "Azure AI Foundry", "AWS Bedrock", "Self-hosted (open-source models)"],
     certifications: ["ISO 27001 (in progress)", "GDPR compliant by design", "French ANSSI cloud provider"]
   },
+
   {
     id: "llama",
     provider: "Meta",
-    family: "Llama 3.3",
+    family: "Llama Series",
     tagline: "Full data sovereignty — runs entirely on your infrastructure",
     badge: "On-Premise Ready",
     cardStyle: "border-violet-400/25 bg-violet-400/5",
@@ -350,54 +593,122 @@ const models: Model[] = [
     reasoningScore: "Good",
     speed: "Excellent",
     costTier: "Free / Self-hosted",
-    bestFor: "NHS on-premise patient data, banks requiring zero third-party data exposure, cost optimisation at scale",
+    bestFor: "NHS on-premise patient data, banks requiring zero third-party data exposure, cost at scale",
 
-    overview: "Meta's Llama 3 family is the most capable open-source LLM series available, released under a permissive community licence that allows commercial deployment. Llama 3.3 70B matches or exceeds GPT-4o on many benchmarks while running entirely on your own infrastructure. For NHS deployments — where patient identifiable data must never leave NHS-controlled systems — Llama on NHS hardware is the only viable frontier-model option. For banks and insurers with strict third-party data policies, Llama eliminates API data exposure entirely.",
+    docsUrl: "https://www.llama.com/docs/model-cards-and-prompt-formats/",
+    vendorUrl: "https://llama.meta.com",
+
+    overview: "Meta's Llama series is the most capable open-source LLM family available, with models released under a permissive community licence for commercial deployment. Llama 3.1 and 3.3 match frontier API models on many benchmarks while running entirely on your own infrastructure. For NHS deployments — where patient identifiable data must never leave NHS-controlled systems — Llama on NHS hardware is the only viable frontier-model option. The Llama 3.2 vision models also add multimodal capability to on-prem deployments.",
     strengths: [
-      "Fully open source — runs on your own infrastructure, zero data leaves",
-      "No per-token API cost — only infrastructure cost at scale",
-      "NHS patient data never leaves NHS hardware",
-      "Llama 3.3 70B performance matches frontier API models",
-      "Available in multiple sizes: 8B (fast/cheap), 70B (balanced), 405B (frontier)"
+      "Fully open weights — runs on your infrastructure, zero data exposure to third parties",
+      "No per-token API cost — only your infrastructure cost at scale",
+      "NHS patient data stays on NHS hardware — only compliant option for PII",
+      "Llama 3.3 70B matches frontier API models on most tasks",
+      "Fine-tunable on clinical or regulatory domain data"
     ],
     limitations: [
-      "Requires GPU infrastructure to run (significant hardware investment)",
-      "No managed service SLAs — your team owns the infrastructure",
-      "405B variant requires significant GPU cluster",
-      "Lacks some specialised features of commercial models (batch API, etc.)"
+      "Requires GPU infrastructure (NVIDIA A100/H100 for 70B+)",
+      "Your team owns infrastructure, uptime, and maintenance",
+      "405B variant requires significant GPU cluster investment",
+      "No managed SLAs or vendor support out of the box"
     ],
-    regulatedFit: "Essential for NHS patient-identifiable data workloads — the only frontier model option that keeps data on NHS infrastructure. Ideal for banks and insurers with strict third-party processor policies under GDPR Art. 28. LorvexAI's NHS Flow Optimizer supports Llama 3.3 70B in hybrid and full on-prem configurations.",
+    regulatedFit: "Essential for NHS patient-identifiable data workloads — only frontier option that keeps data on NHS infrastructure. Ideal for banks and insurers with strict third-party processor policies under GDPR Article 28. LorvexAI supports Llama 3.3 70B in hybrid and full on-prem configurations.",
 
     capabilities: [
       "Text generation, summarisation, classification",
-      "Instruction following and dialogue",
+      "Instruction following and multi-turn dialogue",
       "Code generation and analysis",
-      "RAG with any vector store",
+      "RAG with any vector store (no API dependency)",
       "Function calling (Llama 3.1+)",
-      "Fine-tuning on domain-specific data"
+      "Fine-tuning on domain-specific clinical or regulatory data"
     ],
     specialFeatures: [
-      "Fully open weights — inspect, audit, modify the model",
-      "Three deployment sizes: 8B / 70B / 405B",
-      "Fine-tunable on clinical or regulatory domain data",
-      "Runs on NVIDIA A100/H100 or consumer GPUs (8B variant)",
-      "No data sharing with any third party — ever"
+      "Fully open weights — inspect, audit, and modify the model",
+      "Multiple sizes: 1B / 3B / 8B / 70B / 405B for different hardware",
+      "Vision variants: Llama 3.2 11B and 90B for multimodal on-prem",
+      "No data sharing with Meta or any third party",
+      "Runs on vLLM, Ollama, llama.cpp, TGI — wide deployment options"
     ],
     toolUse: true,
-    multimodal: false,
+    multimodal: true,
     streaming: true,
     functionCalling: true,
 
-    latestVersion: "Llama 3.3 70B (December 2024)",
-    releaseDate: "Llama 3 — April 2024; 3.1 — July 2024; 3.3 — December 2024",
-    parameters: "8B / 70B / 405B (all public)",
-    contextWindowFull: "128,000 tokens (~300 pages of text)",
-    trainingCutoff: "December 2023",
-    deprecationDate: "N/A — open source, no deprecation",
-    pricingInput: "Free (self-hosted) / ~$0.27 per 1M tokens (via cloud providers)",
-    pricingOutput: "Free (self-hosted) / ~$0.85 per 1M tokens (via cloud providers)",
-    deploymentOptions: ["Self-hosted (on-prem)", "AWS (SageMaker / Bedrock)", "Azure AI", "Google Cloud Vertex AI", "Ollama / vLLM / llama.cpp"],
-    certifications: ["N/A — open source", "Certifications depend on deployment infrastructure", "NHS IG Toolkit compliance possible on NHS hardware"]
+    variants: [
+      {
+        name: "Llama 3.3 70B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "Dec 2024",
+        status: "Active",
+        parameters: "70B",
+        note: "Best current Llama — matches GPT-4o on most tasks, recommended for production"
+      },
+      {
+        name: "Llama 3.1 405B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "July 2024",
+        status: "Active",
+        parameters: "405B",
+        note: "Largest open-source model — frontier quality, requires significant GPU cluster"
+      },
+      {
+        name: "Llama 3.1 70B",
+        contextWindow: "128K",
+        pricingInput: "Free / ~$0.27 via cloud",
+        pricingOutput: "Free / ~$0.85 via cloud",
+        releaseDate: "July 2024",
+        status: "Active",
+        parameters: "70B",
+        note: "Proven production model — widely deployed, strong community support"
+      },
+      {
+        name: "Llama 3.2 Vision 90B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "Sept 2024",
+        status: "Active",
+        parameters: "90B",
+        note: "Multimodal on-prem — vision + text for document analysis without cloud dependency"
+      },
+      {
+        name: "Llama 3.2 Vision 11B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "Sept 2024",
+        status: "Active",
+        parameters: "11B",
+        note: "Lightweight vision model — edge/hybrid deployments with image understanding"
+      },
+      {
+        name: "Llama 3.1 8B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "July 2024",
+        status: "Active",
+        parameters: "8B",
+        note: "Lightweight model — runs on single GPU, good for routing and simple tasks"
+      },
+      {
+        name: "Llama 3.2 3B / 1B",
+        contextWindow: "128K",
+        pricingInput: "Free (self-hosted)",
+        pricingOutput: "Free (self-hosted)",
+        releaseDate: "Sept 2024",
+        status: "Active",
+        parameters: "3B / 1B",
+        note: "Edge models — runs on CPU/mobile hardware, classification and triage routing"
+      }
+    ],
+
+    deploymentOptions: ["Self-hosted (on-prem)", "AWS SageMaker / Bedrock", "Azure AI", "Google Cloud Vertex AI", "Ollama", "vLLM", "llama.cpp", "TGI (HuggingFace)"],
+    certifications: ["N/A — open source (certifications depend on deployment infrastructure)", "NHS IG Toolkit compliance achievable on NHS hardware"]
   }
 ];
 
@@ -411,9 +722,16 @@ const SCORE_COLORS: Record<Score, string> = {
 const SCORE_FILLED: Record<Score, number> = {
   Excellent: 4, Good: 3, Fair: 2, Limited: 1
 };
+const STATUS_STYLE: Record<Status, string> = {
+  "Active":      "bg-emerald-400/15 text-emerald-300 border-emerald-400/30",
+  "Preview":     "bg-blue-400/15 text-blue-300 border-blue-400/30",
+  "Open Source": "bg-violet-400/15 text-violet-300 border-violet-400/30",
+  "Legacy":      "bg-yellow-400/15 text-yellow-300 border-yellow-400/30",
+  "Deprecated":  "bg-red-400/15 text-red-300 border-red-400/30"
+};
 
 function ScoreDots({ level }: { level: Score }) {
-  const fill = SCORE_FILLED[level];
+  const fill  = SCORE_FILLED[level];
   const color = SCORE_COLORS[level];
   return (
     <div className="flex items-center gap-1">
@@ -424,7 +742,7 @@ function ScoreDots({ level }: { level: Score }) {
   );
 }
 
-function BoolBadge({ value }: { value: boolean | "Partial" | string }) {
+function BoolBadge({ value }: { value: boolean | "Partial" }) {
   if (value === true)
     return <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-300"><Check size={12} /> Yes</span>;
   if (value === "Partial")
@@ -437,9 +755,9 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
   const [tab, setTab] = useState<Tab>("overview");
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: "overview",  label: "Overview" },
-    { key: "features",  label: "Features & Capabilities" },
-    { key: "info",      label: "Model Information" }
+    { key: "overview", label: "Overview" },
+    { key: "features", label: "Features & Capabilities" },
+    { key: "info",     label: "Model Information" }
   ];
 
   return (
@@ -448,81 +766,82 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className={`relative w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-3xl border bg-[#0a1628] shadow-2xl ${model.cardStyle}`}>
-        {/* Header */}
-        <div className={`sticky top-0 z-10 rounded-t-3xl border-b border-secondary/10 bg-[#0a1628]/95 px-6 pt-6 pb-4 backdrop-blur`}>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="absolute right-5 top-5 rounded-full border border-secondary/20 bg-background/60 p-1.5 text-secondary/60 transition hover:text-white"
-          >
+
+        {/* ── Modal header ── */}
+        <div className="sticky top-0 z-10 rounded-t-3xl border-b border-secondary/10 bg-[#0a1628]/95 px-6 pt-6 pb-0 backdrop-blur">
+          <button type="button" onClick={onClose} aria-label="Close"
+            className="absolute right-5 top-5 rounded-full border border-secondary/20 bg-background/60 p-1.5 text-secondary/60 transition hover:text-white">
             <X size={15} />
           </button>
 
-          <div className="flex items-center gap-3 pr-10">
+          <div className="flex items-start gap-3 pr-10">
             <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border text-lg font-bold ${model.iconBg} ${model.iconText}`}>
               {model.initial}
             </div>
-            <div>
-              <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${model.accentText}`}>{model.provider}</p>
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${model.accentText}`}>{model.provider}</p>
+                <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] ${model.cardStyle} ${model.accentText}`}>
+                  {model.badge}
+                </span>
+              </div>
               <h2 className="text-lg font-semibold text-white">{model.family}</h2>
+              <p className="text-xs text-secondary/55 mt-0.5">{model.variants.length} models in this family</p>
             </div>
-            <span className={`ml-auto rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] ${model.cardStyle} ${model.accentText}`}>
-              {model.badge}
-            </span>
+          </div>
+
+          {/* Vendor links */}
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a href={model.docsUrl} target="_blank" rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1 text-xs font-medium ${model.accentText} hover:opacity-80 transition`}>
+              <ExternalLink size={11} /> Official model docs
+            </a>
+            <a href={model.vendorUrl} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-secondary/50 hover:text-secondary/80 transition">
+              <ExternalLink size={11} /> {model.provider} website
+            </a>
           </div>
 
           {/* Tabs */}
-          <div className="mt-4 flex gap-1">
+          <div className="mt-4 flex gap-1 border-t border-secondary/10 pt-3 pb-3">
             {tabs.map((t) => (
-              <button
-                key={t.key}
-                type="button"
-                onClick={() => setTab(t.key)}
+              <button key={t.key} type="button" onClick={() => setTab(t.key)}
                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                  tab === t.key
-                    ? "bg-primary/25 text-white"
-                    : "text-secondary/60 hover:text-secondary/90"
-                }`}
-              >
+                  tab === t.key ? "bg-primary/25 text-white" : "text-secondary/55 hover:text-secondary/90"
+                }`}>
                 {t.label}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Tab content */}
+        {/* ── Tab content ── */}
         <div className="px-6 py-5">
 
-          {/* ── Overview ── */}
+          {/* Overview */}
           {tab === "overview" && (
             <div className="space-y-5">
               <p className="text-sm leading-relaxed text-secondary/75">{model.overview}</p>
-
               <div>
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Strengths</p>
                 <ul className="space-y-2">
                   {model.strengths.map((s) => (
                     <li key={s} className="flex gap-2 text-sm text-secondary/75">
-                      <Check size={13} className="mt-0.5 shrink-0 text-emerald-400" />
-                      {s}
+                      <Check size={13} className="mt-0.5 shrink-0 text-emerald-400" />{s}
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div>
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Limitations</p>
                 <ul className="space-y-2">
                   {model.limitations.map((l) => (
                     <li key={l} className="flex gap-2 text-sm text-secondary/65">
-                      <Minus size={13} className="mt-0.5 shrink-0 text-yellow-400" />
-                      {l}
+                      <Minus size={13} className="mt-0.5 shrink-0 text-yellow-400" />{l}
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div className={`rounded-2xl border p-4 ${model.cardStyle}`}>
                 <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Regulated Industry Fit</p>
                 <p className="text-sm leading-relaxed text-secondary/80">{model.regulatedFit}</p>
@@ -530,39 +849,35 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
             </div>
           )}
 
-          {/* ── Features ── */}
+          {/* Features */}
           {tab === "features" && (
             <div className="space-y-5">
               <div>
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Core Capabilities</p>
-                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <ul className="grid gap-2 sm:grid-cols-2">
                   {model.capabilities.map((c) => (
                     <li key={c} className="flex gap-2 text-sm text-secondary/75">
-                      <Check size={13} className={`mt-0.5 shrink-0 ${model.iconText}`} />
-                      {c}
+                      <Check size={13} className={`mt-0.5 shrink-0 ${model.iconText}`} />{c}
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div>
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Special Features</p>
                 <ul className="space-y-2">
                   {model.specialFeatures.map((f) => (
                     <li key={f} className="flex gap-2 text-sm text-secondary/75">
-                      <span className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${SCORE_COLORS.Excellent}`} />
-                      {f}
+                      <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${SCORE_COLORS.Excellent}`} />{f}
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  { label: "Tool Use",      value: model.toolUse },
-                  { label: "Multimodal",    value: model.multimodal },
-                  { label: "Streaming",     value: model.streaming },
-                  { label: "Fn Calling",    value: model.functionCalling }
+                  { label: "Tool Use",   value: model.toolUse },
+                  { label: "Multimodal", value: model.multimodal },
+                  { label: "Streaming",  value: model.streaming },
+                  { label: "Fn Calling", value: model.functionCalling }
                 ].map(({ label, value }) => (
                   <div key={label} className="rounded-xl border border-secondary/15 bg-background/30 px-3 py-2.5 text-center">
                     <p className="text-[10px] text-secondary/45">{label}</p>
@@ -572,49 +887,58 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
                   </div>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* ── Model Info ── */}
-          {tab === "info" && (
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {[
-                  { label: "Latest Version",      value: model.latestVersion },
-                  { label: "Release Date",         value: model.releaseDate },
-                  { label: "Parameters",           value: model.parameters },
-                  { label: "Context Window",       value: model.contextWindowFull },
-                  { label: "Training Cutoff",      value: model.trainingCutoff },
-                  { label: "Deprecation / Expiry", value: model.deprecationDate },
-                ].map(({ label, value }) => (
-                  <div key={label} className="rounded-xl border border-secondary/15 bg-background/30 px-4 py-3">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-secondary/40">{label}</p>
-                    <p className="mt-1 text-sm text-white">{value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className={`rounded-2xl border p-4 ${model.cardStyle}`}>
-                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Pricing (per 1M tokens)</p>
-                <div className="flex gap-6">
-                  <div>
-                    <p className="text-[10px] text-secondary/45">Input</p>
-                    <p className={`text-sm font-semibold ${model.accentText}`}>{model.pricingInput}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-secondary/45">Output</p>
-                    <p className={`text-sm font-semibold ${model.accentText}`}>{model.pricingOutput}</p>
-                  </div>
-                </div>
-              </div>
-
               <div>
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Deployment Options</p>
                 <div className="flex flex-wrap gap-2">
                   {model.deploymentOptions.map((d) => (
-                    <span key={d} className="rounded-full border border-secondary/20 bg-background/30 px-2.5 py-1 text-xs text-secondary/65">
-                      {d}
-                    </span>
+                    <span key={d} className="rounded-full border border-secondary/20 bg-background/30 px-2.5 py-1 text-xs text-secondary/65">{d}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Model Info — variant table */}
+          {tab === "info" && (
+            <div className="space-y-5">
+              <div>
+                <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">
+                  All models in the {model.family} ({model.variants.length} total)
+                </p>
+                <div className="space-y-2">
+                  {model.variants.map((v) => (
+                    <div key={v.name} className={`rounded-xl border border-secondary/15 bg-background/30 p-3.5`}>
+                      <div className="flex flex-wrap items-start gap-2 mb-1.5">
+                        <span className={`font-semibold text-sm ${model.accentText}`}>{v.name}</span>
+                        <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold ${STATUS_STYLE[v.status]}`}>
+                          {v.status}
+                        </span>
+                        {v.parameters && (
+                          <span className="rounded-full border border-secondary/20 bg-background/30 px-2 py-0.5 text-[9px] text-secondary/55">
+                            {v.parameters}
+                          </span>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mb-2 sm:grid-cols-4">
+                        <div>
+                          <span className="text-secondary/40">Context: </span>
+                          <span className="text-secondary/70">{v.contextWindow}</span>
+                        </div>
+                        <div>
+                          <span className="text-secondary/40">Released: </span>
+                          <span className="text-secondary/70">{v.releaseDate}</span>
+                        </div>
+                        <div>
+                          <span className="text-secondary/40">In: </span>
+                          <span className="text-secondary/70">{v.pricingInput}</span>
+                        </div>
+                        <div>
+                          <span className="text-secondary/40">Out: </span>
+                          <span className="text-secondary/70">{v.pricingOutput}</span>
+                        </div>
+                      </div>
+                      {v.note && <p className="text-[11px] leading-relaxed text-secondary/50 italic">{v.note}</p>}
+                    </div>
                   ))}
                 </div>
               </div>
@@ -623,10 +947,22 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
                 <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Compliance Certifications</p>
                 <div className="flex flex-wrap gap-2">
                   {model.certifications.map((c) => (
-                    <span key={c} className={`rounded-full border px-2.5 py-1 text-[10px] font-medium ${model.cardStyle} ${model.accentText}`}>
-                      {c}
-                    </span>
+                    <span key={c} className={`rounded-full border px-2.5 py-1 text-[10px] font-medium ${model.cardStyle} ${model.accentText}`}>{c}</span>
                   ))}
+                </div>
+              </div>
+
+              <div className={`rounded-2xl border p-4 ${model.cardStyle}`}>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Official documentation</p>
+                <div className="flex flex-col gap-2">
+                  <a href={model.docsUrl} target="_blank" rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 text-sm font-medium ${model.accentText} hover:opacity-80 transition`}>
+                    <ExternalLink size={13} /> Model docs & API reference — {model.provider}
+                  </a>
+                  <a href={model.vendorUrl} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-secondary/55 hover:text-secondary/80 transition">
+                    <ExternalLink size={13} /> {model.provider} website
+                  </a>
                 </div>
               </div>
             </div>
@@ -637,13 +973,15 @@ function ModelModal({ model, onClose }: { model: Model; onClose: () => void }) {
   );
 }
 
-/* ─── Main Component ──────────────────────────────────────────────── */
+/* ─── Main ────────────────────────────────────────────────────────── */
 export default function ModelGardenClient() {
   const [selected, setSelected] = useState<Model | null>(null);
 
+  const totalVariants = models.reduce((sum, m) => sum + m.variants.length, 0);
+
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-3xl border border-primary/30 p-8 md:p-12">
@@ -653,33 +991,32 @@ export default function ModelGardenClient() {
               <span className="text-gradient">For the right task.</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
-              Not every AI task needs the same model. LorvexAI routes queries intelligently across OpenAI, Claude, Gemini, Mistral, and Llama — matching complexity, cost, and compliance requirements automatically. Compare the five models that power our regulated AI stack.
+              LorvexAI routes queries intelligently across {totalVariants}+ models from 5 providers — matching complexity, data residency, and compliance requirements automatically. Compare providers and click any card to explore every model variant, pricing, and official documentation.
             </p>
-            <p className="mt-3 text-sm text-secondary/50">
-              Click any model card for detailed specs, pricing, and regulatory fit.
-            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {models.map((m) => (
+                <span key={m.id} className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${m.cardStyle} ${m.accentText}`}>
+                  <span className="font-bold">{m.initial}</span> {m.provider} · {m.variants.length} models
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Model Cards ── */}
+      {/* Model cards */}
       <section className="section pt-2">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.35em] text-secondary/50">Five Models</p>
-          <h2 className="text-2xl font-semibold text-white md:text-3xl">The models in our stack</h2>
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.35em] text-secondary/50">5 Providers · {totalVariants}+ Models</p>
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">Provider families</h2>
           <p className="mt-3 max-w-2xl text-sm text-secondary/65">
-            Click a model to see full overview, capabilities, and technical specifications.
+            Click a card to explore all model variants, full specifications, pricing, and links to official vendor documentation.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {models.map((m) => (
-              <button
-                key={m.id}
-                type="button"
-                onClick={() => setSelected(m)}
-                className={`card-hover glass group text-left rounded-2xl border p-5 transition ${m.cardStyle}`}
-              >
-                {/* Icon + provider */}
+              <button key={m.id} type="button" onClick={() => setSelected(m)}
+                className={`card-hover glass group text-left rounded-2xl border p-5 transition ${m.cardStyle}`}>
                 <div className="flex items-center gap-2.5 mb-4">
                   <div className={`flex h-9 w-9 items-center justify-center rounded-xl border text-sm font-bold ${m.iconBg} ${m.iconText}`}>
                     {m.initial}
@@ -690,17 +1027,19 @@ export default function ModelGardenClient() {
                   </div>
                 </div>
 
-                {/* Badge */}
                 <span className={`inline-block rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.15em] ${m.cardStyle} ${m.accentText} mb-3`}>
                   {m.badge}
                 </span>
 
                 <p className="text-xs leading-relaxed text-secondary/65 mb-4">{m.tagline}</p>
 
-                {/* Quick stats */}
                 <div className="space-y-2 border-t border-secondary/10 pt-3">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-secondary/45">Context</span>
+                    <span className="text-secondary/45">Models</span>
+                    <span className={`font-semibold ${m.accentText}`}>{m.variants.length} variants</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-secondary/45">Max context</span>
                     <span className={`font-semibold ${m.accentText}`}>{m.contextWindow}</span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
@@ -711,14 +1050,10 @@ export default function ModelGardenClient() {
                     <span className="text-secondary/45">Reasoning</span>
                     <ScoreDots level={m.reasoningScore} />
                   </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-secondary/45">RAG fit</span>
-                    <ScoreDots level={m.ragScore} />
-                  </div>
                 </div>
 
                 <p className={`mt-4 flex items-center gap-1 text-xs font-medium ${m.accentText} transition group-hover:gap-2`}>
-                  View details <ArrowRight size={11} />
+                  Explore {m.variants.length} models <ArrowRight size={11} />
                 </p>
               </button>
             ))}
@@ -726,29 +1061,27 @@ export default function ModelGardenClient() {
         </div>
       </section>
 
-      {/* ── Comparison Table ── */}
+      {/* Comparison table */}
       <section className="section border-y border-secondary/10 bg-background/40 py-14">
         <div className="mx-auto w-full max-w-6xl px-6">
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.35em] text-secondary/50">Side-by-Side</p>
           <h2 className="text-2xl font-semibold text-white md:text-3xl">Regulated enterprise comparison</h2>
           <p className="mt-3 max-w-2xl text-sm text-secondary/65">
-            Dimensions that matter for FCA, PRA, NHS, and GDPR compliance — not just raw benchmark scores.
+            Dimensions that matter for FCA, PRA, NHS, and GDPR compliance. Click any provider name to see full model variants.
           </p>
 
           <div className="mt-8 overflow-x-auto rounded-2xl border border-secondary/15">
-            <table className="w-full min-w-[700px] text-sm">
+            <table className="w-full min-w-[720px] text-sm">
               <thead>
                 <tr className="border-b border-secondary/15 bg-background/60">
                   <th className="px-4 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40 w-36">Dimension</th>
                   {models.map((m) => (
                     <th key={m.id} className="px-3 py-3 text-center">
-                      <button
-                        type="button"
-                        onClick={() => setSelected(m)}
-                        className={`inline-flex flex-col items-center gap-1 rounded-xl px-2 py-1.5 transition hover:bg-primary/10`}
-                      >
+                      <button type="button" onClick={() => setSelected(m)}
+                        className="inline-flex flex-col items-center gap-0.5 rounded-xl px-2 py-1.5 transition hover:bg-primary/10">
                         <span className={`text-xs font-semibold ${m.accentText}`}>{m.family}</span>
-                        <span className="text-[9px] text-secondary/45">{m.provider}</span>
+                        <span className="text-[9px] text-secondary/40">{m.provider}</span>
+                        <span className="text-[9px] text-secondary/35">{m.variants.length} models</span>
                       </button>
                     </th>
                   ))}
@@ -756,62 +1089,38 @@ export default function ModelGardenClient() {
               </thead>
               <tbody>
                 {[
-                  {
-                    label: "Context Window",
-                    render: (m: Model) => <span className="font-semibold text-white">{m.contextWindow}</span>
-                  },
-                  {
-                    label: "On-Premise",
-                    render: (m: Model) => <BoolBadge value={m.onPremise} />
-                  },
-                  {
-                    label: "EU / UK Data Residency",
-                    render: (m: Model) => <span className="text-xs text-secondary/70">{m.euResidency}</span>
-                  },
-                  {
-                    label: "Reasoning Quality",
-                    render: (m: Model) => (
-                      <div className="flex flex-col items-center gap-1">
-                        <ScoreDots level={m.reasoningScore} />
-                        <span className="text-[10px] text-secondary/50">{m.reasoningScore}</span>
-                      </div>
-                    )
-                  },
-                  {
-                    label: "RAG Suitability",
-                    render: (m: Model) => (
-                      <div className="flex flex-col items-center gap-1">
-                        <ScoreDots level={m.ragScore} />
-                        <span className="text-[10px] text-secondary/50">{m.ragScore}</span>
-                      </div>
-                    )
-                  },
-                  {
-                    label: "Speed",
-                    render: (m: Model) => (
-                      <div className="flex flex-col items-center gap-1">
-                        <ScoreDots level={m.speed} />
-                        <span className="text-[10px] text-secondary/50">{m.speed}</span>
-                      </div>
-                    )
-                  },
-                  {
-                    label: "Cost Tier",
-                    render: (m: Model) => <span className="text-xs text-secondary/70">{m.costTier}</span>
-                  },
-                  {
-                    label: "Multimodal",
-                    render: (m: Model) => <BoolBadge value={m.multimodal} />
-                  },
-                  {
-                    label: "Best Regulated Use Case",
-                    render: (m: Model) => <span className="text-[10px] leading-relaxed text-secondary/60">{m.bestFor}</span>
-                  }
+                  { label: "Max Context", render: (m: Model) => <span className="font-semibold text-white">{m.contextWindow}</span> },
+                  { label: "On-Premise",  render: (m: Model) => <BoolBadge value={m.onPremise} /> },
+                  { label: "EU / UK Residency", render: (m: Model) => <span className="text-xs text-secondary/70">{m.euResidency}</span> },
+                  { label: "Reasoning", render: (m: Model) => (
+                    <div className="flex flex-col items-center gap-1">
+                      <ScoreDots level={m.reasoningScore} />
+                      <span className="text-[10px] text-secondary/45">{m.reasoningScore}</span>
+                    </div>
+                  )},
+                  { label: "RAG Suitability", render: (m: Model) => (
+                    <div className="flex flex-col items-center gap-1">
+                      <ScoreDots level={m.ragScore} />
+                      <span className="text-[10px] text-secondary/45">{m.ragScore}</span>
+                    </div>
+                  )},
+                  { label: "Speed",  render: (m: Model) => (
+                    <div className="flex flex-col items-center gap-1">
+                      <ScoreDots level={m.speed} />
+                      <span className="text-[10px] text-secondary/45">{m.speed}</span>
+                    </div>
+                  )},
+                  { label: "Cost Range", render: (m: Model) => <span className="text-xs text-secondary/70">{m.costTier}</span> },
+                  { label: "Multimodal", render: (m: Model) => <BoolBadge value={m.multimodal} /> },
+                  { label: "Vendor Docs", render: (m: Model) => (
+                    <a href={m.docsUrl} target="_blank" rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-1 text-xs ${m.accentText} hover:opacity-70 transition`}>
+                      <ExternalLink size={10} /> Docs
+                    </a>
+                  )},
+                  { label: "Best Regulated Use", render: (m: Model) => <span className="text-[10px] leading-relaxed text-secondary/60">{m.bestFor}</span> }
                 ].map((row, i) => (
-                  <tr
-                    key={row.label}
-                    className={`border-b border-secondary/10 ${i % 2 === 0 ? "" : "bg-background/20"}`}
-                  >
+                  <tr key={row.label} className={`border-b border-secondary/10 ${i % 2 === 0 ? "" : "bg-background/20"}`}>
                     <td className="px-4 py-3 text-xs font-medium text-secondary/55 align-top">{row.label}</td>
                     {models.map((m) => (
                       <td key={m.id} className="px-3 py-3 text-center align-middle">{row.render(m)}</td>
@@ -824,49 +1133,45 @@ export default function ModelGardenClient() {
         </div>
       </section>
 
-      {/* ── How LorvexAI Routes ── */}
+      {/* Routing section */}
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid gap-6 md:grid-cols-2 items-center">
             <div>
               <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-primary">Intelligent Routing</p>
               <h2 className="text-2xl font-semibold text-white md:text-3xl">
-                You don't have to choose. We route automatically.
+                You don't choose. We route automatically.
               </h2>
               <p className="mt-4 text-secondary/70">
-                LorvexAI's multi-model router classifies every query and sends it to the right model — matching complexity, data residency requirements, and cost targets without manual configuration.
+                LorvexAI's multi-model router classifies every query and sends it to the optimal model — balancing quality, data residency, and cost targets without manual configuration.
               </p>
               <ul className="mt-5 space-y-2.5">
                 {[
-                  "Simple factual queries → Llama 3.3 or Gemini Flash (fast, cheap)",
-                  "Complex compliance analysis → Claude Opus or GPT-4o",
-                  "NHS patient data workloads → Llama 3.3 on-prem only",
-                  "EU data residency required → Mistral or EU-region cloud",
-                  "Long regulatory documents (>128K) → Gemini 1.5 Pro"
+                  "Simple queries → Llama 3.3 8B or Gemini 2.0 Flash-Lite (fast, cheap)",
+                  "Complex compliance analysis → Claude Opus 4.6 or o3",
+                  "NHS patient data → Llama 3.3 70B on-prem only",
+                  "EU data residency required → Mistral Large or EU-region cloud",
+                  "Documents > 128K tokens → Gemini 2.5 Pro (1M context)"
                 ].map((rule) => (
                   <li key={rule} className="flex gap-2 text-sm text-secondary/70">
-                    <ArrowRight size={13} className="mt-0.5 shrink-0 text-primary" />
-                    {rule}
+                    <ArrowRight size={13} className="mt-0.5 shrink-0 text-primary" />{rule}
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/platform"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition hover:gap-2.5"
-              >
+              <Link href="/platform" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition hover:gap-2.5">
                 See the full platform architecture <ArrowRight size={14} />
               </Link>
             </div>
 
             <div className="glass rounded-2xl border border-primary/20 p-6">
-              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Routing decision logic</p>
+              <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary/40">Live routing decisions</p>
               <div className="space-y-2.5">
                 {[
-                  { query: "Summarise this regulatory circular", model: "Gemini Flash", reason: "Long doc, cost-optimised", color: "text-blue-300" },
-                  { query: "Map Basel IV obligations to controls", model: "Claude Opus", reason: "Complex reasoning", color: "text-primary" },
-                  { query: "Triage this patient referral", model: "Llama 3.3 (on-prem)", reason: "PII — data stays on NHS", color: "text-violet-300" },
-                  { query: "Generate ALCO report section", model: "GPT-4o", reason: "Structured output quality", color: "text-emerald-300" },
-                  { query: "EU GDPR compliance gap analysis", model: "Mistral Large", reason: "EU data residency", color: "text-orange-300" },
+                  { query: "Summarise this regulatory circular", model: "Gemini 2.0 Flash", reason: "Long doc, cost-optimised", color: "text-blue-300" },
+                  { query: "Map Basel IV obligations to controls", model: "Claude Opus 4.6", reason: "Complex reasoning", color: "text-primary" },
+                  { query: "Triage this patient referral (PII)", model: "Llama 3.3 70B (on-prem)", reason: "NHS data stays on-site", color: "text-violet-300" },
+                  { query: "Generate ALCO report section", model: "GPT-4o / o3-mini", reason: "Structured output quality", color: "text-emerald-300" },
+                  { query: "EU GDPR compliance gap analysis", model: "Mistral Large 2", reason: "EU data residency", color: "text-orange-300" },
                 ].map((row) => (
                   <div key={row.query} className="rounded-xl border border-secondary/10 bg-background/40 px-3 py-2.5">
                     <p className="text-[10px] text-secondary/50 truncate">{row.query}</p>
@@ -883,9 +1188,7 @@ export default function ModelGardenClient() {
       </section>
 
       {/* Modal */}
-      {selected && (
-        <ModelModal model={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected && <ModelModal model={selected} onClose={() => setSelected(null)} />}
     </>
   );
 }
