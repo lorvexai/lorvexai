@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const groups = [
   {
@@ -37,6 +36,23 @@ const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 export default function Header() {
   const pathname = usePathname();
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside the nav
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenGroup(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setOpenGroup(null);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-secondary/15 bg-background/90 backdrop-blur">
@@ -55,7 +71,8 @@ export default function Header() {
               LorvexAI Technologies Ltd
             </span>
           </Link>
-          <nav className="hidden items-center gap-4 md:flex">
+
+          <nav ref={navRef} className="hidden items-center gap-1 md:flex">
             <Link
               href="/"
               className={`min-h-11 rounded-full px-4 py-2 text-sm transition ${
@@ -64,60 +81,61 @@ export default function Header() {
             >
               Home
             </Link>
-            {groups.map((group) => (
-              <div
-                key={group.label}
-                className="relative"
-                onMouseEnter={() => setOpenGroup(group.label)}
-                onMouseLeave={() => setOpenGroup(null)}
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenGroup((current) => (current === group.label ? null : group.label))
-                  }
-                  className="inline-flex min-h-11 items-center gap-1 rounded-full px-4 py-2 text-sm text-secondary/80 transition hover:text-white"
-                  aria-haspopup="true"
-                  aria-expanded={openGroup === group.label}
-                >
-                  {group.label}
-                  <ChevronDown size={14} aria-hidden="true" />
-                </button>
-                {/* pt-2 bridges the gap between button and panel so onMouseLeave doesn't fire mid-hover */}
-                <div className="absolute left-0 top-full z-50 w-64 pt-2">
-                <div
-                  className={`rounded-2xl border border-secondary/20 bg-background/95 p-3 shadow-2xl backdrop-blur transition ${
-                    openGroup === group.label
-                      ? "pointer-events-auto translate-y-0 opacity-100"
-                      : "pointer-events-none -translate-y-2 opacity-0"
-                  }`}
-                >
-                  {group.links.map((item) => {
-                    const active = pathname === item.href;
-                    return (
-                      <Link
-                        key={`${group.label}-${item.href}-${item.label}`}
-                        href={item.href}
-                        onClick={() => setOpenGroup(null)}
-                        className={`mb-1 block min-h-11 rounded-xl px-3 py-2 text-sm transition last:mb-0 ${
-                          active
-                            ? "bg-primary/20 text-white"
-                            : "text-secondary/80 hover:bg-primary/10 hover:text-white"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    );
-                  })}
+
+            {groups.map((group) => {
+              const isOpen = openGroup === group.label;
+              return (
+                <div key={group.label} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setOpenGroup(isOpen ? null : group.label)}
+                    className={`min-h-11 rounded-full px-4 py-2 text-sm transition ${
+                      isOpen ? "text-white" : "text-secondary/80 hover:text-white"
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={isOpen}
+                  >
+                    {group.label}
+                  </button>
+
+                  <div className="absolute left-0 top-full z-50 w-56 pt-2">
+                    <div
+                      className={`rounded-2xl border border-secondary/20 bg-background/95 p-2 shadow-2xl backdrop-blur transition-all duration-150 ${
+                        isOpen
+                          ? "pointer-events-auto translate-y-0 opacity-100"
+                          : "pointer-events-none -translate-y-2 opacity-0"
+                      }`}
+                    >
+                      {group.links.map((item) => {
+                        const active = pathname === item.href;
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setOpenGroup(null)}
+                            className={`mb-0.5 block min-h-10 rounded-xl px-3 py-2 text-sm transition last:mb-0 ${
+                              active
+                                ? "bg-primary/20 text-white"
+                                : "text-secondary/80 hover:bg-primary/10 hover:text-white"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </nav>
+
           <Link href="/contact" className="btn-outline min-h-11 text-sm">
             Start a Project
           </Link>
         </div>
+
+        {/* Mobile scroll nav */}
         <nav className="mt-4 flex gap-2 overflow-x-auto pb-1 md:hidden">
           <Link
             href="/"
@@ -134,7 +152,7 @@ export default function Header() {
               const active = pathname === item.href;
               return (
                 <Link
-                  key={`mobile-${group.label}-${item.href}-${item.label}`}
+                  key={`mobile-${item.href}`}
                   href={item.href}
                   className={
                     active

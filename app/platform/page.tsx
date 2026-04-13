@@ -7,12 +7,12 @@ import {
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "AI Platform Capabilities | LorvexAI",
-  description: "The eight engineering disciplines behind every LorvexAI product — agents, workflows, RAG, evaluations, guardrails, tuning, chat, and templates.",
+  title: "Regulated AI Stack | LorvexAI Platform",
+  description: "The eight engineering disciplines behind every LorvexAI product — purpose-built for compliance, auditability, and governance in finance, banking, and NHS.",
   alternates: { canonical: "/platform" },
   openGraph: {
-    title: "AI Platform Capabilities | LorvexAI",
-    description: "Eight production AI engineering disciplines for regulated enterprise — built for finance, banking, and NHS.",
+    title: "Regulated AI Stack | LorvexAI Platform",
+    description: "Eight AI engineering disciplines built for FCA, PRA, Basel, and NHS compliance — not generic tooling.",
     url: "/platform",
     type: "website"
   }
@@ -23,8 +23,8 @@ const capabilities = [
     icon: Bot,
     key: "agents",
     slug: "agentic-ai-design-patterns",
-    label: "Agents",
-    headline: "Agentic AI that reasons, plans, and acts",
+    label: "Governed Agents",
+    headline: "Agentic AI with compliance and audit built in",
     description: "Multi-step AI agents that orchestrate complex workflows autonomously — with human-in-the-loop checkpoints, policy enforcement, and full audit trails for regulated environments.",
     bullets: [
       "ReAct, Plan-and-Execute, and Multi-Agent patterns",
@@ -41,7 +41,7 @@ const capabilities = [
     icon: Workflow,
     key: "workflows",
     slug: "ai-workflows-for-regulated-enterprises",
-    label: "Workflows",
+    label: "Auditable Workflows",
     headline: "Multi-step AI workflows with governance built in",
     description: "Structured workflow orchestration that combines LLM reasoning, tool calls, conditional logic, and human checkpoints — designed for auditability, recoverability, and compliance.",
     bullets: [
@@ -59,7 +59,7 @@ const capabilities = [
     icon: Database,
     key: "rag",
     slug: "production-rag-beyond-the-basics",
-    label: "RAG",
+    label: "Regulated RAG",
     headline: "Enterprise retrieval that cites every claim",
     description: "Production RAG beyond demos — hierarchical chunking, hybrid retrieval, domain-fine-tuned reranking, faithfulness scoring, and full citation chains for every answer.",
     bullets: [
@@ -77,8 +77,8 @@ const capabilities = [
     icon: BarChart3,
     key: "evaluations",
     slug: "llm-evaluation-in-production",
-    label: "Evaluations",
-    headline: "Know exactly where your AI fails — before users do",
+    label: "Audit-Grade Evaluations",
+    headline: "Know exactly where your AI fails — before regulators do",
     description: "Comprehensive evaluation frameworks with golden datasets, LLM-as-judge scoring, regression testing in CI/CD, and production monitoring with automated alerting.",
     bullets: [
       "Correctness, faithfulness, relevance, safety metrics",
@@ -95,8 +95,8 @@ const capabilities = [
     icon: ShieldCheck,
     key: "guardrails",
     slug: "guardrails-for-enterprise-ai",
-    label: "Guardrails",
-    headline: "Input and output controls for regulated AI",
+    label: "Compliance Controls",
+    headline: "Input and output controls aligned to FCA, PRA, and NHS standards",
     description: "Multi-layer guardrails covering scope enforcement, PII detection, prompt injection prevention, hallucination checking, advice boundary enforcement, and confidentiality leakage detection.",
     bullets: [
       "Input: scope, PII masking, injection detection",
@@ -113,7 +113,7 @@ const capabilities = [
     icon: Sliders,
     key: "tuning",
     slug: "fine-tuning-vs-rag-vs-prompting",
-    label: "Tuning",
+    label: "Domain Tuning",
     headline: "Right approach, right results — prompting, RAG, or fine-tuning",
     description: "A practical decision framework and implementation capability for choosing and combining prompt engineering, RAG, and fine-tuning to maximise quality and minimise cost.",
     bullets: [
@@ -131,7 +131,7 @@ const capabilities = [
     icon: MessageSquare,
     key: "chat",
     slug: "enterprise-llm-chat-interfaces",
-    label: "LLM Chat",
+    label: "Governed Chat",
     headline: "Enterprise chat with identity, audit, and governance",
     description: "Production-grade AI chat interfaces with SSO authentication, role-based access, multi-model routing, session audit logging, and domain-specific UI patterns for regulated industries.",
     bullets: [
@@ -149,8 +149,8 @@ const capabilities = [
     icon: FileCode2,
     key: "templates",
     slug: "ai-prompt-and-workflow-templates",
-    label: "Templates",
-    headline: "Production-tested prompt and workflow templates",
+    label: "Regulated Templates",
+    headline: "Version-controlled prompt and workflow templates for regulated domains",
     description: "A library of version-controlled, evaluated prompt templates and workflow blueprints for compliance analysis, clinical summarisation, risk reporting, and agentic task orchestration.",
     bullets: [
       "Regulatory obligation extraction templates",
@@ -172,13 +172,13 @@ export default function PlatformPage() {
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-3xl border border-primary/30 p-8 md:p-12">
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Platform</p>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Regulated AI Stack</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-              <span className="text-white">Eight disciplines. </span>
-              <span className="text-gradient">One production platform.</span>
+              <span className="text-white">Built for compliance. </span>
+              <span className="text-gradient">Not just capability.</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
-              Every LorvexAI product is built on the same engineering stack — eight tightly integrated AI capabilities, each production-grade, each designed for regulated enterprise environments.
+              Generic AI tooling is fast to demo and slow to govern. Every LorvexAI capability is designed for regulated environments — with audit trails, compliance controls, and FCA, PRA, and NHS alignment from day one, not bolted on later.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {capabilities.map((c) => (
@@ -198,10 +198,10 @@ export default function PlatformPage() {
       {/* Capability grid */}
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.35em] text-secondary/50">Capabilities</p>
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">What we build with</h2>
+          <p className="mb-2 font-mono text-xs uppercase tracking-[0.35em] text-secondary/50">Eight Disciplines</p>
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">Compliance-first, not compliance-bolted-on</h2>
           <p className="mt-4 max-w-2xl text-secondary/70">
-            Each capability is a standalone engineering discipline and a component of every LorvexAI product deployment.
+            Each capability ships with governance built in — audit logging, policy enforcement, and regulatory alignment are core features, not optional add-ons.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
