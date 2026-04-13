@@ -166,14 +166,15 @@ export default function HomePage() {
                 LLM engineering platforms for banking, healthcare, and NHS operations.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary min-h-11 text-sm">
-                  Request an Agentic Audit
+                <Link href="/products" className="btn-primary min-h-11 text-sm">
+                  See Our Products
                   <ArrowRight size={16} aria-hidden="true" />
                 </Link>
-                <Link href="/products" className="btn-outline min-h-11 text-sm">
-                  Explore Products
+                <Link href="/contact" className="btn-outline min-h-11 text-sm">
+                  Book a Pilot
                 </Link>
               </div>
+              <p className="mt-3 text-xs text-secondary/40">4-week pilot · Enterprise pricing · No lock-in</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {[
                   { icon: Workflow,     label: "Agentic AI Systems"         },
@@ -196,8 +197,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Compliance badge strip */}
+      <section className="border-b border-secondary/10 bg-background/60 py-4">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-secondary/45">Built to comply with</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:justify-end">
+              {[
+                { label: "SOC 2 Type II",     color: "text-blue-300   border-blue-400/30   bg-blue-400/8"    },
+                { label: "GDPR Aligned",       color: "text-violet-300 border-violet-400/30 bg-violet-400/8"  },
+                { label: "ISO 42001 AI",       color: "text-primary    border-primary/30    bg-primary/8"     },
+                { label: "NHS IG Toolkit",     color: "text-emerald-300 border-emerald-400/30 bg-emerald-400/8" },
+                { label: "PRA / Basel 3.1",    color: "text-orange-300 border-orange-400/30 bg-orange-400/8"  },
+                { label: "FCA Aligned",        color: "text-blue-300   border-blue-400/30   bg-blue-400/8"    },
+              ].map((badge) => (
+                <span
+                  key={badge.label}
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] ${badge.color}`}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-current opacity-70" />
+                  {badge.label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats strip */}
-      <section className="border-y border-secondary/10 bg-background/50 py-10 md:py-12">
+      <section className="border-b border-secondary/10 bg-background/50 py-10 md:py-12">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat) => (
@@ -208,6 +236,32 @@ export default function HomePage() {
                   {stat.label}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Logo / trust strip */}
+      <section className="border-b border-secondary/10 py-8">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <p className="mb-6 text-center text-[10px] uppercase tracking-[0.28em] text-secondary/40">
+            Expertise built across leading institutions
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {[
+              "HSBC",
+              "JPMorgan Chase",
+              "Deutsche Bank",
+              "Lehman Brothers",
+              "Bank of England",
+              "NHS England",
+            ].map((name) => (
+              <span
+                key={name}
+                className="text-sm font-semibold tracking-wide text-secondary/30 transition hover:text-secondary/55"
+              >
+                {name}
+              </span>
             ))}
           </div>
         </div>
@@ -250,8 +304,161 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Product feature rows */}
+      <section className="section border-y border-secondary/10 bg-background/40 py-16">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="mb-12 text-center">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-primary">Our Products</p>
+            <h2 className="text-3xl font-semibold md:text-4xl">
+              <span className="text-white">Three products. </span>
+              <span className="text-gradient">Production-ready.</span>
+            </h2>
+            <p className="mt-4 mx-auto max-w-2xl text-secondary/70">
+              Each product ships with a governance layer, audit trail, and enterprise integration — not a prototype.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Product 1 */}
+            <div className="grid items-center gap-8 md:grid-cols-2">
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-blue-300">Finance &amp; Banking</span>
+                <h3 className="mt-4 text-2xl font-semibold text-white">Regulatory Intelligence Platform</h3>
+                <p className="mt-3 text-secondary/75">Transforms PRA, Basel, and FCA regulatory text into structured obligations, mapped controls, and audit-ready evidence — in minutes, not weeks.</p>
+                <ul className="mt-5 space-y-2.5">
+                  {["Obligation extraction from 100+ regulatory sources", "Automated control mapping and gap analysis", "PRA/FCA audit evidence packages on demand", "Model risk governance workflow built-in"].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-secondary/70">
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-primary/70" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex gap-3">
+                  <Link href="/contact" className="btn-primary text-sm">Book a Pilot</Link>
+                  <Link href="/products" className="btn-outline text-sm">See Details</Link>
+                </div>
+              </div>
+              <div className="glass rounded-2xl border border-blue-400/20 p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="font-mono text-xs text-secondary/50">reg-intelligence · live</span>
+                  <span className="flex items-center gap-1.5 text-xs text-emerald-400"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />Running</span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { label: "Obligations mapped",   value: "2,847", color: "text-blue-300"    },
+                    { label: "Controls linked",      value: "1,203", color: "text-primary"     },
+                    { label: "Evidence packages",    value: "94",    color: "text-violet-300"  },
+                    { label: "Audit readiness",      value: "98%",   color: "text-emerald-300" },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center justify-between rounded-xl border border-secondary/10 bg-background/40 px-4 py-2.5">
+                      <span className="text-sm text-secondary/65">{row.label}</span>
+                      <span className={`font-mono text-sm font-bold ${row.color}`}>{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-center text-xs text-secondary/35">PRA · Basel 3.1 · FCA · ISO 42001</p>
+              </div>
+            </div>
+
+            {/* Product 2 */}
+            <div className="grid items-center gap-8 md:grid-cols-2">
+              <div className="glass rounded-2xl border border-emerald-400/20 p-6 md:order-first">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="font-mono text-xs text-secondary/50">nhs-flow · live</span>
+                  <span className="flex items-center gap-1.5 text-xs text-emerald-400"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />Running</span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { label: "Referrals triaged today", value: "342",  color: "text-emerald-300" },
+                    { label: "Avg triage time",         value: "4.2s", color: "text-primary"     },
+                    { label: "Pathway accuracy",        value: "94%",  color: "text-emerald-300" },
+                    { label: "Bed days saved (mo)",     value: "180",  color: "text-blue-300"    },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center justify-between rounded-xl border border-secondary/10 bg-background/40 px-4 py-2.5">
+                      <span className="text-sm text-secondary/65">{row.label}</span>
+                      <span className={`font-mono text-sm font-bold ${row.color}`}>{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-center text-xs text-secondary/35">NHS Digital · IG Toolkit · Clinical Safety DCB0129</p>
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-300">NHS &amp; Healthcare</span>
+                <h3 className="mt-4 text-2xl font-semibold text-white">NHS Flow Optimizer</h3>
+                <p className="mt-3 text-secondary/75">Intelligent referral triage, discharge pathway optimisation, and waiting-list intelligence for NHS trusts — designed around clinical safety and IG Toolkit compliance.</p>
+                <ul className="mt-5 space-y-2.5">
+                  {["AI-powered referral triage in under 5 seconds", "Discharge bottleneck detection and escalation", "Waiting-list demand forecasting", "Full DCB0129 clinical safety documentation"].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-secondary/70">
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-emerald-400/70" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex gap-3">
+                  <Link href="/contact" className="btn-primary text-sm">Book a Pilot</Link>
+                  <Link href="/products" className="btn-outline text-sm">See Details</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Product 3 */}
+            <div className="grid items-center gap-8 md:grid-cols-2">
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-400/30 bg-orange-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-orange-300">Treasury &amp; Finance</span>
+                <h3 className="mt-4 text-2xl font-semibold text-white">Treasury Sentinel</h3>
+                <p className="mt-3 text-secondary/75">Real-time liquidity and cashflow early-warning intelligence — surfacing anomalies, stress signals, and ALCO-ready reports before they become problems.</p>
+                <ul className="mt-5 space-y-2.5">
+                  {["Real-time cashflow anomaly detection", "LCR/NSFR stress scenario modelling", "ALCO-ready reporting packs on demand", "Integrates with existing treasury systems in days"].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-secondary/70">
+                      <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-orange-400/70" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex gap-3">
+                  <Link href="/contact" className="btn-primary text-sm">Book a Pilot</Link>
+                  <Link href="/products" className="btn-outline text-sm">See Details</Link>
+                </div>
+              </div>
+              <div className="glass rounded-2xl border border-orange-400/20 p-6">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="font-mono text-xs text-secondary/50">treasury-sentinel · live</span>
+                  <span className="flex items-center gap-1.5 text-xs text-emerald-400"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />Running</span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { label: "Positions monitored",  value: "1,240",  color: "text-orange-300"  },
+                    { label: "Anomalies flagged",     value: "3",      color: "text-red-300"     },
+                    { label: "LCR current",           value: "142%",   color: "text-emerald-300" },
+                    { label: "ALCO reports ready",    value: "7",      color: "text-primary"     },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-center justify-between rounded-xl border border-secondary/10 bg-background/40 px-4 py-2.5">
+                      <span className="text-sm text-secondary/65">{row.label}</span>
+                      <span className={`font-mono text-sm font-bold ${row.color}`}>{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-center text-xs text-secondary/35">PRA · Basel LCR/NSFR · ALCO · ILAAP</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Pricing anchor */}
+          <div className="mt-14 rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center md:p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Pilot Pricing</p>
+            <h3 className="mt-2 text-xl font-semibold text-white">Start with a focused 4-week pilot</h3>
+            <p className="mt-2 text-sm text-secondary/70">Deploy one product in one team. Measure the impact. Scale what works. No long-term commitment required.</p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <Link href="/contact" className="btn-primary text-sm">Request Pilot Pricing</Link>
+              <Link href="/services" className="btn-outline text-sm">View Full Services</Link>
+            </div>
+            <p className="mt-3 text-xs text-secondary/35">Enterprise licensing available · On-prem deployment supported · SOC 2 aligned</p>
+          </div>
+        </div>
+      </section>
+
       {/* Case studies */}
-      <section className="section border-y border-secondary/10 bg-background/40 py-14">
+      <section className="section py-14">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10">
             <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-primary">Client Outcomes</p>

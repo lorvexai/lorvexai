@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Section from "@/components/Section";
 import MermaidRenderer from "@/components/MermaidRenderer";
+import { CheckCircle2 } from "lucide-react";
 
 const products = [
   {
@@ -109,14 +110,36 @@ export default function ProductsPage() {
               <span className="text-gradient">LorvexAI</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
-              We combine advisory depth with production software so clients can move
-              from strategy to measurable outcomes in regulated environments.
+              Production-ready AI products for finance, banking, and NHS operations — each deployable as a standalone SaaS pilot or integrated enterprise platform.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#pilot" className="btn-primary text-sm">
+                Start a 4-Week Pilot
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#products" className="btn-outline text-sm">Explore Products</a>
+            </div>
+            <p className="mt-3 text-xs text-secondary/40">Enterprise pricing · On-prem supported · No lock-in</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance strip */}
+      <section className="border-y border-secondary/10 bg-background/60 py-4">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-between">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-secondary/45">Compliance frameworks</p>
+            <div className="flex flex-wrap gap-2">
+              {["PRA / Basel 3.1", "FCA Aligned", "SOC 2 Type II", "GDPR", "NHS IG Toolkit", "ISO 42001 AI", "DCB0129 Clinical Safety"].map((b) => (
+                <span key={b} className="rounded-full border border-secondary/20 bg-background/40 px-3 py-1 text-[10px] font-medium text-secondary/55">{b}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Product selector */}
+      <div id="products">
       <Section
         eyebrow="Products"
         title="Choose a product"
@@ -146,6 +169,7 @@ export default function ProductsPage() {
           })}
         </div>
       </Section>
+      </div>
 
       {/* ───────────────────────────────────────────────────────────
           PRODUCT 1 — Regulatory Intelligence Platform
@@ -516,6 +540,35 @@ export default function ProductsPage() {
           </div>
         </Section>
       )}
+
+      {/* Pilot pricing anchor */}
+      <section id="pilot" className="section border-t border-secondary/10 bg-background/40 py-14">
+        <div className="mx-auto w-full max-w-4xl px-6 text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Pilot Pricing</p>
+          <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">One product. One team. Four weeks.</h2>
+          <p className="mt-4 mx-auto max-w-xl text-secondary/70">
+            Start with a focused pilot in a single department. We handle integration, configuration, and training — you measure the impact. Scale across the organisation when you&apos;re ready.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              { phase: "Week 1–2", title: "Discovery & Setup",    desc: "Integration, data mapping, and configuration" },
+              { phase: "Week 3",   title: "Pilot Go-Live",        desc: "Live in your environment with your team" },
+              { phase: "Week 4",   title: "Results & Roadmap",    desc: "Impact report and scale-up recommendations" },
+            ].map((p) => (
+              <div key={p.phase} className="glass rounded-2xl border border-primary/15 p-5 text-left">
+                <p className="font-mono text-xs text-primary">{p.phase}</p>
+                <p className="mt-2 font-semibold text-white">{p.title}</p>
+                <p className="mt-1 text-sm text-secondary/60">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/contact" className="btn-primary text-sm">Request Pilot Pricing</Link>
+            <Link href="/services" className="btn-outline text-sm">View Full Services</Link>
+          </div>
+          <p className="mt-4 text-xs text-secondary/35">Enterprise licensing available · On-prem deployment supported · SOC 2 aligned · No lock-in</p>
+        </div>
+      </section>
     </>
   );
 }
