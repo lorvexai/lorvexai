@@ -20,9 +20,9 @@ const phases = [
     icon: Network
   },
   {
-    title: "AI Platform Development",
+    title: "AI Reference Design",
     description:
-      "Scope prototype-ready LLM pipelines, agent orchestration, and integration workflows.",
+      "Document conceptual LLM pipelines, agent orchestration patterns, and integration considerations.",
     icon: Blocks
   },
   {

@@ -233,7 +233,7 @@ flowchart LR
     style FT fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
 ```
 
-**LorvexAI's approach for the Regulatory Intelligence Platform:**
+**Reference blueprint approach for regulatory intelligence:**
 1. **Prompt engineering** — role assignment (public-framework mapping reviewer), reasoning format (obligation → control → gap → recommendation), output structure (JSON + narrative)
 2. **RAG** — retrieves the precise regulatory text, internal controls inventory, and evidence documents for each query
 3. **Fine-tuning** — a domain-adapted model trained on 2,400 examples of regulatory mapping outputs, ensuring consistent evidence-oriented language and report structure

@@ -13,7 +13,7 @@ import { CheckCircle2 } from "lucide-react";
 const blueprints = [
   {
     key: "regulatory-intelligence",
-    name: "Regulatory Intelligence Platform",
+    name: "Regulatory Intelligence Blueprint",
     summary:
       "An educational reference blueprint for obligation candidates, control-mapping drafts, and evidence-pack templates."
   },
@@ -25,7 +25,7 @@ const blueprints = [
   },
   {
     key: "treasury-sentinel",
-    name: "Treasury Sentinel",
+    name: "Treasury Sentinel Blueprint",
     summary:
       "An educational finance-operations blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft packs."
   }
@@ -138,7 +138,7 @@ export default function BlueprintsPage() {
 
       {selected === "regulatory-intelligence" && (
         <Section
-          eyebrow="Regulatory Intelligence Platform"
+          eyebrow="Regulatory Intelligence Blueprint"
           title="Public regulation text to reviewable obligation candidates"
           description="An educational reference architecture for turning public regulatory text into structured obligation candidates, control-mapping drafts, and evidence-pack templates. Outputs require human validation and do not constitute legal or regulatory advice."
         >
@@ -217,7 +217,7 @@ export default function BlueprintsPage() {
 
       {selected === "treasury-sentinel" && (
         <Section
-          eyebrow="Treasury Sentinel"
+          eyebrow="Treasury Sentinel Blueprint"
           title="Liquidity monitoring and ALCO-style draft reporting blueprint"
           description="A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-pack drafting. It is designed for educational discussion only, not autonomous treasury decision-making or implementation for others."
         >

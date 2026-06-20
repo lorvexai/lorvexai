@@ -129,7 +129,7 @@ flowchart TD
     style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-In LorvexAI's Regulatory Intelligence Platform, the Orchestrator receives the audit task, dispatches to the Compliance Agent (obligations), Data Agent (evidence retrieval), and Reporting Agent (pack generation). The Critic validates consistency before the package goes for human sign-off.
+In the regulatory intelligence reference blueprint, the Orchestrator receives the audit task, dispatches to the Compliance Agent (obligations), Data Agent (evidence retrieval), and Reporting Agent (pack generation). The Critic validates consistency before the package goes for human sign-off.
 
 ### Pattern 4: Tool-Augmented Agent
 
@@ -244,7 +244,7 @@ flowchart TD
 
 ## LorvexAI's Agentic AI Implementation
 
-All three LorvexAI products are built on an agentic core. The Regulatory Intelligence Platform uses a Plan-and-Execute pattern with a Critic agent validating obligation mappings before any evidence package is generated. The Healthcare Flow Intelligence blueprint uses a ReAct pattern for referral triage, with a mandatory HITL checkpoint for HIGH urgency cases. Treasury Sentinel uses a multi-agent pattern with specialist agents for position monitoring, stress testing, and ALCO pack generation.
+The LorvexAI reference blueprints use agentic patterns as educational examples. The regulatory intelligence blueprint uses a Plan-and-Execute pattern with a Critic agent validating obligation mappings before any evidence package is generated. The Healthcare Flow Intelligence blueprint uses a ReAct pattern for referral triage, with a mandatory HITL checkpoint for HIGH urgency cases. The Treasury Sentinel blueprint uses a multi-agent pattern with specialist agents for position monitoring, stress testing, and ALCO pack generation.
 
 Every agent conceptual deployment includes our four governance primitives: scoped tool access, immutable audit logging, policy engine enforcement, and configurable HITL thresholds.
 

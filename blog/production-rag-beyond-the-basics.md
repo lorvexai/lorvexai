@@ -236,7 +236,7 @@ Run these evaluations weekly on a curated golden dataset of query/expected-answe
 
 ## Enterprise RAG in Practice: LorvexAI's Approach
 
-The Regulatory Intelligence Platform reference blueprint is based on a controlled RAG stack with:
+The regulatory intelligence reference blueprint is based on a controlled RAG stack with:
 
 - **Hierarchical chunking** of 100+ regulatory sources with parent-context injection
 - **Domain-specific embedding model** fine-tuned on financial regulation language

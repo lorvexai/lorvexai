@@ -71,7 +71,7 @@ flowchart LR
     style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-**Example in practice:** LorvexAI's Regulatory Intelligence Platform uses this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for the governance team.
+**Example pattern:** A regulatory intelligence reference blueprint can use this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for a governance review.
 
 ### Pattern 2: Parallel Fan-out Workflow
 

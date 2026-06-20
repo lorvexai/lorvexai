@@ -33,7 +33,7 @@ export default function Header() {
               className="h-9 w-auto md:h-10"
             />
             <span className="hidden text-xs font-medium text-secondary/70 xl:inline">
-              Personal research by Sreedhara Reddy Kotha
+              Independent AI research and writing
             </span>
           </Link>
 

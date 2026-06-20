@@ -35,10 +35,10 @@ const proofPoints = [
   { label: "Finance, risk, compliance, and healthcare operations focus", icon: ShieldCheck }
 ];
 
-const products = [
+const blueprints = [
   {
     eyebrow: "Finance & Risk",
-    title: "Regulatory Intelligence Platform",
+    title: "Regulatory Intelligence Blueprint",
     body: "A reference architecture for turning public regulatory text into structured obligation candidates, control-mapping drafts, and evidence-pack templates for internal review.",
     bullets: [
       "Human validation required",
@@ -64,7 +64,7 @@ const products = [
   },
   {
     eyebrow: "Treasury & Finance",
-    title: "Treasury Sentinel",
+    title: "Treasury Sentinel Blueprint",
     body: "A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft reporting.",
     bullets: [
       "Educational discussion only",
@@ -221,7 +221,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 space-y-16">
-            {products.map((product, index) => (
+            {blueprints.map((product, index) => (
               <div key={product.title} className="grid items-center gap-8 md:grid-cols-2">
                 <div className={index % 2 === 1 ? "md:order-2" : ""}>
                   <span className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${product.accent}`}>

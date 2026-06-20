@@ -207,13 +207,13 @@ Run adversarial testing quarterly: have a red team attempt to bypass each guardr
 
 ## LorvexAI's Guardrail Layer
 
-Every LorvexAI product ships with a pre-configured guardrail layer tailored to its domain:
+Each reference blueprint includes an educational guardrail layer tailored to its domain:
 
-**Regulatory Intelligence Platform**: scope enforcement (regulatory queries only), faithfulness check on every output, regulatory advice boundary classifier, immutable audit log of all outputs with user/timestamp/version.
+**Regulatory intelligence blueprint**: scope enforcement (regulatory queries only), faithfulness check on every output, regulatory advice boundary classifier, immutable audit log of all outputs with user/timestamp/version.
 
 **Healthcare Flow Intelligence blueprint**: patient identifier and patient PII masking, clinical advice boundary enforcement, clinical-safety-documentation-aware escalation for HIGH urgency decisions, clinician override audit trail.
 
-**Treasury Sentinel**: MNPI pattern detection, LCR/NSFR output verification against source data, ALCO report classification (board-grade vs internal), role-based data boundaries (treasury team vs board view).
+**Treasury Sentinel blueprint**: MNPI pattern detection, LCR/NSFR output verification against source data, ALCO report classification (board-grade vs internal), role-based data boundaries (treasury team vs board view).
 
 ---
 

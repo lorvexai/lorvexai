@@ -21,7 +21,7 @@ Enterprise AI fails not because the models are incapable but because teams reinv
 
 Templates solve this by encoding **proven patterns** into reusable building blocks. A well-designed prompt template for regulatory obligation extraction, tested on 500 examples and refined over three months, will consistently outperform a prompt written from scratch in an afternoon.
 
-This article covers the core templates LorvexAI uses in controlled settings across the Regulatory Intelligence Platform, Healthcare Flow Intelligence blueprint, and Treasury Sentinel — structured as patterns you can adapt for your own conceptual conceptual deployments.
+This article covers core templates used across the regulatory intelligence, healthcare flow, and Treasury Sentinel reference blueprints, structured as educational patterns for conceptual deployments.
 
 ---
 

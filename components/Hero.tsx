@@ -11,7 +11,7 @@ export default function Hero() {
         <Reveal>
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-secondary/30 px-4 py-2 text-xs uppercase tracking-[0.3em] text-secondary/80">
             <Atom className="h-4 w-4 text-primary" />
-            AI Consulting & Engineering
+            AI Research & Architecture
           </span>
         </Reveal>
         <Reveal>
@@ -21,7 +21,7 @@ export default function Hero() {
         </Reveal>
         <Reveal>
           <p className="max-w-2xl text-lg text-secondary/80 md:text-xl">
-            AI Consulting, LLM Engineering, and Agentic AI Platforms.
+            Educational AI architecture, LLM engineering notes, and governed agentic-system patterns.
           </p>
         </Reveal>
         <Reveal>
@@ -32,8 +32,8 @@ export default function Hero() {
             <Link href="/research" className="btn-outline">
               Read Research
             </Link>
-            <Link href="/contact" className="btn-outline">
-              Contact Us
+            <Link href="/about" className="btn-outline">
+              About Sree
             </Link>
           </div>
         </Reveal>
