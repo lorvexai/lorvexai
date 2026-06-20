@@ -32,9 +32,6 @@ export default function Header() {
               priority
               className="h-9 w-auto md:h-10"
             />
-            <span className="hidden text-xs font-medium text-secondary/70 xl:inline">
-              Independent AI research and writing
-            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
