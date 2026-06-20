@@ -34,7 +34,7 @@ export default function FinanceIndustryPage() {
             </div>
           ))}
         </div>
-        <Link href="/products" className="btn-primary mt-8 text-sm">
+        <Link href="/blueprints" className="btn-primary mt-8 text-sm">
           View Blueprints
           <ArrowRight size={15} />
         </Link>

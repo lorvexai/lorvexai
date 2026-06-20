@@ -9,7 +9,7 @@ const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 const footerLinks = [
   { href: "/books", label: "Books" },
   { href: "/research", label: "Research" },
-  { href: "/products", label: "Reference Blueprints" },
+  { href: "/blueprints", label: "Reference Blueprints" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/disclaimers", label: "Disclaimers" },
@@ -54,7 +54,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="https://linkedin.com/company/lorvexai"
+                href="https://www.linkedin.com/in/sreekotha/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
@@ -63,10 +63,10 @@ export default function Footer() {
                 LinkedIn
                 <ArrowUpRight size={12} className="opacity-60" aria-hidden="true" />
               </a>
-              <a href="mailto:[INSERT CONTACT EMAIL]" className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary">
+              <span className="inline-flex items-center gap-2 text-sm text-secondary/65">
                 <Mail size={15} aria-hidden="true" />
                 [INSERT CONTACT EMAIL]
-              </a>
+              </span>
             </div>
           </div>
 

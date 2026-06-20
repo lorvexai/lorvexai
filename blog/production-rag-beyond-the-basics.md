@@ -250,4 +250,4 @@ The result: 94% answer faithfulness in controlled settings, 89% retrieval recall
 
 ---
 
-*Want to see this RAG stack in action? [Book a demo](/contact) of the Regulatory Intelligence Platform or [explore our products](/products).*
+*For related educational material, explore the [research notes](/research) and [reference blueprints](/blueprints).*

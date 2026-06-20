@@ -332,4 +332,4 @@ The LorvexAI platform accelerates this to 4 weeks by providing pre-built modules
 
 ---
 
-*Want to see an enterprise chat interface running on your own regulatory knowledge base? [Book a demo](/contact) with the LorvexAI team.*
+*For related educational material, explore the [research notes](/research) and [reference blueprints](/blueprints).*

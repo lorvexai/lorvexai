@@ -45,7 +45,7 @@ const products = [
       "Evidence-pack templates for governance discussion",
       "No legal or regulatory advice"
     ],
-    href: "/products",
+    href: "/blueprints",
     visual: <RegulatoryMockup />,
     accent: "text-blue-300 border-blue-400/30 bg-blue-400/10"
   },
@@ -58,7 +58,7 @@ const products = [
       "Synthetic demo data only",
       "Formal safety and IG review required for real use"
     ],
-    href: "/products",
+    href: "/blueprints",
     visual: <NHSFlowMockup />,
     accent: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10"
   },
@@ -71,7 +71,7 @@ const products = [
       "No autonomous treasury decision-making",
       "Integration feasibility depends on governance approval"
     ],
-    href: "/products",
+    href: "/blueprints",
     visual: <TreasurySentinelMockup />,
     accent: "text-orange-300 border-orange-400/30 bg-orange-400/10"
   }
@@ -109,13 +109,13 @@ const scenarios = [
 
 const focusAreas = [
   {
-    href: "/products",
+    href: "/blueprints",
     icon: Landmark,
     title: "Finance, Risk & Compliance",
     body: "Reference designs for regulatory reporting, model risk evidence, controlled RAG, treasury operations, and governance-aware automation."
   },
   {
-    href: "/products",
+    href: "/blueprints",
     icon: HeartPulse,
     title: "Healthcare Operations Research",
     body: "Conceptual patterns for flow intelligence, operational visibility, queue analytics, and human-reviewed support workflows."

@@ -49,14 +49,14 @@ export default function BooksPage() {
                   View book details
                   <ArrowRight size={15} />
                 </Link>
-                <a href="[INSERT AMAZON PAPERBACK URL]" className="btn-outline text-sm">
+                <span className="btn-outline cursor-not-allowed text-sm opacity-60" aria-disabled="true">
                   <ExternalLink size={15} />
-                  Paperback on Amazon
-                </a>
-                <a href="[INSERT LEANPUB BOOK URL]" className="btn-outline text-sm">
+                  Paperback link coming soon
+                </span>
+                <span className="btn-outline cursor-not-allowed text-sm opacity-60" aria-disabled="true">
                   <Download size={15} />
-                  Digital edition on Leanpub
-                </a>
+                  Digital edition coming soon
+                </span>
               </div>
             </div>
           </article>

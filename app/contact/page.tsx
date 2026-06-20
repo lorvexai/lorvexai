@@ -16,14 +16,14 @@ const contactMethods = [
     title: "Email",
     detail: "[INSERT CONTACT EMAIL]",
     sub: "For books, research, writing, publishing, and general enquiries",
-    href: "mailto:[INSERT CONTACT EMAIL]"
+    href: ""
   },
   {
     icon: Linkedin,
     title: "LinkedIn",
-    detail: "LorvexAI",
+    detail: "Sreedhara Reddy Kotha",
     sub: "Follow for educational AI architecture updates",
-    href: "https://linkedin.com/company/lorvexai"
+    href: "https://www.linkedin.com/in/sreekotha/"
   },
   {
     icon: CalendarCheck,
@@ -59,20 +59,32 @@ export default function ContactPage() {
                   Use this form for books, research, speaking, writing, publishing, corrections, or general enquiries. LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  {contactMethods.map((m) => (
-                    <a
-                      key={m.title}
-                      href={m.href}
-                      target={m.href.startsWith("http") ? "_blank" : undefined}
-                      rel={m.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="glass flex flex-col gap-2 rounded-lg border border-primary/20 p-4 transition hover:border-primary/45"
-                    >
-                      <m.icon size={18} className="text-primary" />
-                      <p className="text-sm font-semibold text-white">{m.title}</p>
-                      <p className="text-xs text-primary">{m.detail}</p>
-                      <p className="text-xs text-secondary/60">{m.sub}</p>
-                    </a>
-                  ))}
+                  {contactMethods.map((m) =>
+                    m.href ? (
+                      <a
+                        key={m.title}
+                        href={m.href}
+                        target={m.href.startsWith("http") ? "_blank" : undefined}
+                        rel={m.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="glass flex flex-col gap-2 rounded-lg border border-primary/20 p-4 transition hover:border-primary/45"
+                      >
+                        <m.icon size={18} className="text-primary" />
+                        <p className="text-sm font-semibold text-white">{m.title}</p>
+                        <p className="text-xs text-primary">{m.detail}</p>
+                        <p className="text-xs text-secondary/60">{m.sub}</p>
+                      </a>
+                    ) : (
+                      <div
+                        key={m.title}
+                        className="glass flex flex-col gap-2 rounded-lg border border-primary/20 p-4"
+                      >
+                        <m.icon size={18} className="text-primary" />
+                        <p className="text-sm font-semibold text-white">{m.title}</p>
+                        <p className="text-xs text-primary">{m.detail}</p>
+                        <p className="text-xs text-secondary/60">{m.sub}</p>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-3">

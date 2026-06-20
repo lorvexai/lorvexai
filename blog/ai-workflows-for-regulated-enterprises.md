@@ -284,4 +284,4 @@ This is the LorvexAI educational blueprint methodology — one workflow, reviewa
 
 ---
 
-*Interested in mapping your workflows for AI? [Book a discovery call](/contact) or explore our [AI products](/products) built on these patterns.*
+*For related educational material, explore the [research notes](/research) and [reference blueprints](/blueprints).*

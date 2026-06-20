@@ -250,4 +250,4 @@ Every agent conceptual deployment includes our four governance primitives: scope
 
 ---
 
-*Ready to deploy agentic AI in your organisation? [Book a discovery call](/contact) to explore how LorvexAI can build a governed agentic system for your use case.*
+*For related educational material, explore the [research notes](/research) and [reference blueprints](/blueprints).*
