@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const stages = [
   { name: "Discover", note: "Use-case and value mapping" },
   { name: "Design", note: "Architecture and control model" },
-  { name: "Build", note: "Pipelines, agents, integrations" },
-  { name: "Deploy", note: "Canary release + monitoring" },
-  { name: "Scale", note: "Optimization and expansion" }
+  { name: "Prototype", note: "Pipelines, agents, integrations" },
+  { name: "Review", note: "Controls, validation, and monitoring plan" },
+  { name: "Refine", note: "Evaluation and governance iteration" }
 ];
 
 export default function DeliveryFrameworkDiagram() {
@@ -15,7 +15,7 @@ export default function DeliveryFrameworkDiagram() {
     <div className="glass rounded-2xl p-6 md:p-8">
       <h3 className="text-xl font-semibold text-white">AI Delivery Framework</h3>
       <p className="mt-2 text-sm text-secondary/80">
-        A delivery model built for production reliability, governance, and measurable business outcomes.
+        A design model for prototype scoping, governance discussion, and evidence-oriented review.
       </p>
 
       <div className="mt-6 space-y-3">
@@ -42,7 +42,7 @@ export default function DeliveryFrameworkDiagram() {
       </div>
 
       <div className="mt-5 rounded-xl border border-primary/25 bg-primary/5 p-3 text-xs text-secondary/75">
-        Gate criteria: architecture sign-off, security controls, quality thresholds, and operating KPI readiness.
+        Gate criteria: architecture review, security considerations, quality thresholds, and governance readiness.
       </div>
     </div>
   );

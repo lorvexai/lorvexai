@@ -8,10 +8,10 @@ export default function MobileStickyCTA() {
     >
       <div className="mx-auto flex w-full max-w-6xl gap-2">
         <Link href="/contact" className="btn-primary min-h-11 flex-1 justify-center text-sm">
-          Book a Call
+          Request Scoping
         </Link>
         <Link href="/services" className="btn-outline min-h-11 flex-1 justify-center text-sm">
-          Our Services
+          Services
         </Link>
       </div>
     </div>

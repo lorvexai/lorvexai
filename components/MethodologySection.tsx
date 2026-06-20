@@ -10,7 +10,7 @@ const phases = [
   {
     title: "AI Opportunity Discovery",
     description:
-      "Identify high-impact AI opportunities with feasibility scoring, ROI modeling, and data readiness audits.",
+      "Identify AI education, architecture, and prototype opportunities with feasibility, risk, and data-readiness review.",
     icon: Radar
   },
   {
@@ -22,13 +22,13 @@ const phases = [
   {
     title: "AI Platform Development",
     description:
-      "Ship production-grade LLM pipelines, agent orchestration, and integration workflows.",
+      "Scope prototype-ready LLM pipelines, agent orchestration, and integration workflows.",
     icon: Blocks
   },
   {
-    title: "Deployment & Governance",
+    title: "Review & Governance",
     description:
-      "Launch secure AI systems with monitoring, policy enforcement, and responsible AI controls.",
+      "Define monitoring, policy enforcement, responsible AI controls, and human-review points.",
     icon: ShieldCheck
   },
   {
@@ -47,11 +47,11 @@ export default function MethodologySection() {
           Methodology
         </p>
         <h2 className="text-3xl font-semibold text-white md:text-4xl">
-          AI Methodology & Delivery Framework
+          AI Methodology & Design Framework
         </h2>
         <p className="mt-4 max-w-2xl text-secondary/80">
-          A structured delivery model that aligns strategy, system design, and
-          operational excellence for enterprise AI outcomes.
+          A structured design model that aligns education, architecture, governance,
+          and prototype scoping for controlled AI systems.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {phases.map((phase) => {

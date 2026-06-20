@@ -1,156 +1,107 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
+import CTA from "@/components/CTA";
+import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
+import { ArrowRight, BookOpen, CheckCircle2, Compass, FileText, FlaskConical, Network, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Consultancy Services | LorvexAI",
-  description: "Enterprise AI strategy, LLM engineering, agentic systems, and governance consulting for finance, banking, and NHS operations.",
+  title: "Educational Advisory, Architecture Reviews & AI Design Support | LorvexAI",
+  description: "Educational workshops, architecture reviews, governance design patterns, and prototype-scoping support for controlled AI systems in regulated environments.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "AI Consultancy Services | LorvexAI",
-    description: "Enterprise AI strategy, LLM engineering, agentic systems, and governance consulting.",
+    title: "Educational Advisory, Architecture Reviews & AI Design Support | LorvexAI",
+    description: "AI architecture and governance support for regulated teams, subject to professional boundary review and conflict checks.",
     url: "/services",
     type: "website"
   }
 };
-import CTA from "@/components/CTA";
-import {
-  Activity,
-  Bot,
-  Compass,
-  Network,
-  ShieldCheck,
-  Sparkles,
-  TrendingUp,
-  Wrench,
-  CheckCircle2,
-  ArrowRight
-} from "lucide-react";
 
 const capabilityPillars = [
   {
     icon: Compass,
-    title: "AI Strategy & Value Realization",
-    summary: "Turn board-level ambition into a practical roadmap with measurable outcomes.",
+    title: "AI Education & Executive Briefings",
     bullets: [
-      "Use-case prioritization and ROI cases",
-      "AI portfolio and funding model",
-      "Operating model and leadership alignment"
+      "Board and leadership briefings on controlled AI adoption",
+      "AI risk, governance, and operating model education",
+      "Finance/risk/compliance AI awareness sessions"
     ]
   },
   {
     icon: Network,
-    title: "Enterprise AI Architecture",
-    summary: "Design scalable AI foundations that integrate with your existing data and controls.",
+    title: "Architecture Review & Design Support",
     bullets: [
-      "Reference architecture and integration blueprint",
-      "Data, security, and model access patterns",
-      "Environment strategy across cloud and on-prem"
-    ]
-  },
-  {
-    icon: Wrench,
-    title: "LLM Engineering",
-    summary: "Build production-grade generative AI systems with reliability, speed, and quality controls.",
-    bullets: [
-      "RAG pipelines and retrieval quality tuning",
-      "Prompt orchestration and evaluation harnesses",
-      "Model routing, latency, and cost optimization"
-    ]
-  },
-  {
-    icon: Bot,
-    title: "Agentic AI Systems",
-    summary: "Deploy supervised AI agents that execute workflows across enterprise tools.",
-    bullets: [
-      "Single-agent and multi-agent orchestration",
-      "Tool integration and guarded action execution",
-      "Human-in-the-loop checkpoints for critical decisions"
+      "Reference architecture review",
+      "RAG, agentic workflow, and LLMOps design patterns",
+      "Data, access-control, and governance considerations"
     ]
   },
   {
     icon: ShieldCheck,
-    title: "AI Risk & Governance",
-    summary: "Embed control, explainability, and compliance into delivery from day one.",
+    title: "Regulated AI Governance Design",
     bullets: [
-      "Risk taxonomy and control mapping",
-      "Model/agent policy enforcement",
-      "Auditability, monitoring, and incident playbooks"
+      "AI control framework design support",
+      "Model/agent inventory concepts",
+      "Evidence-pack and audit-trail design patterns"
     ]
   },
   {
-    icon: Sparkles,
-    title: "AI Enablement & Change",
-    summary: "Build the internal capability to scale safely beyond a single pilot.",
+    icon: FlaskConical,
+    title: "Prototype and Product-Lab Scoping",
     bullets: [
-      "Role-based enablement and playbooks",
-      "Cross-functional delivery governance",
-      "Adoption planning and KPI instrumentation"
+      "Pilot scope definition",
+      "Feasibility and risk assessment",
+      "Evaluation framework and success criteria"
+    ]
+  },
+  {
+    icon: BookOpen,
+    title: "Technical Content, Books & Templates",
+    bullets: [
+      "Books and technical guides",
+      "Governance templates and checklists",
+      "Reference diagrams and implementation notes"
     ]
   }
 ];
 
-const deliveryModel = [
-  {
-    icon: Activity,
-    title: "1. Diagnose",
-    detail: "We assess strategic priorities, data reality, architecture constraints, and risk exposure."
-  },
-  {
-    icon: Bot,
-    title: "2. Deliver",
-    detail: "We design and ship production-ready AI systems with measurable business outcomes."
-  },
-  {
-    icon: TrendingUp,
-    title: "3. Scale",
-    detail: "We establish governance, enable teams, and optimize performance to sustain value."
-  }
-];
-
-const trustSignals = [
-  "Regulated sector expertise — Finance, NHS, Banking",
-  "Governance-first — FCA, NHS Digital, ISO 42001 aligned",
-  "Production-focused delivery — architecture and engineering, not just strategy",
-  "End-to-end — from strategy through to running system"
+const guardrails = [
+  "Engagements are subject to conflict checks, professional boundary review, and written scope agreement.",
+  "Framework references are mapped to selected public materials for educational design purposes.",
+  "Any prototype or architecture support requires independent validation before use.",
+  "Human oversight, accountability, and local governance remain mandatory."
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Full-width hero banner */}
       <section className="section pb-6 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="glass rounded-3xl border border-primary/30 p-8 md:p-12">
+          <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
             <div className="grid gap-8 md:grid-cols-[1.3fr_0.7fr]">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Services</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">AI Services Built for </span>
-                  <span className="text-gradient">Real Enterprise Adoption</span>
+                  <span className="text-white">AI Architecture and Governance Support </span>
+                  <span className="text-gradient">for Regulated Teams</span>
                 </h1>
-                <p className="mt-5 max-w-xl text-secondary/80">
-                  From strategy to engineering to governance — we help teams move from first pilot to production-grade AI capability.
+                <p className="mt-5 max-w-2xl text-secondary/80">
+                  LorvexAI supports professionals and teams with educational workshops, architecture reviews, governance design patterns, and prototype-scoping support for AI systems in regulated environments. Engagements are subject to conflict checks, professional boundary review, and written scope agreement.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/contact" className="btn-primary text-sm">
-                    Book a Discovery Call
+                    Request a Scoping Conversation
                     <ArrowRight size={16} />
                   </Link>
-                  <Link href="/products" className="btn-outline text-sm">
-                    See Our Products
+                  <Link href="/books" className="btn-outline text-sm">
+                    Explore Research &amp; Books
                   </Link>
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                {[
-                  "Outcome-driven AI portfolio design",
-                  "Production-grade LLM and agent systems",
-                  "Governance-ready deployment in regulated settings",
-                  "4-week blueprint sprint to first pilot"
-                ].map((point) => (
-                  <div key={point} className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/10 px-4 py-3">
-                    <CheckCircle2 size={16} className="shrink-0 text-primary" />
+                {guardrails.map((point) => (
+                  <div key={point} className="flex items-start gap-3 rounded-lg border border-primary/20 bg-primary/10 px-4 py-3">
+                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-primary" />
                     <span className="text-sm text-secondary">{point}</span>
                   </div>
                 ))}
@@ -160,24 +111,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Capability pillars */}
       <Section
-        eyebrow="Capability Pillars"
-        title="Six disciplines. One integrated delivery."
-        description="Each pillar is a standalone engagement or part of an end-to-end programme — designed to fit where you are on the AI maturity curve."
+        eyebrow="Educational advisory and design support"
+        title="Five support areas with clear boundaries."
+        description="Each area is educational and architecture-support focused unless separately agreed in writing and legally appropriate."
       >
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {capabilityPillars.map((pillar) => (
-            <article
-              key={pillar.title}
-              className="glass card-hover rounded-2xl border border-primary/15 p-6"
-            >
-              <div className="mb-4 inline-flex rounded-xl border border-primary/30 bg-primary/10 p-2.5 text-primary">
+            <article key={pillar.title} className="glass rounded-lg border border-primary/15 p-6">
+              <div className="mb-4 inline-flex rounded-lg border border-primary/30 bg-primary/10 p-2.5 text-primary">
                 <pillar.icon size={18} aria-hidden="true" />
               </div>
               <h3 className="text-lg font-semibold text-white">{pillar.title}</h3>
-              <p className="mt-3 text-sm text-secondary/75">{pillar.summary}</p>
-              <ul className="mt-4 space-y-2 pl-0">
+              <ul className="mt-4 space-y-2">
                 {pillar.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-secondary/65">
                     <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-primary/60" />
@@ -190,44 +136,27 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* Trust signals strip */}
       <section className="border-y border-secondary/10 bg-background/50 py-8">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {trustSignals.map((signal) => (
-              <div key={signal} className="flex items-start gap-3">
-                <ShieldCheck size={16} className="mt-0.5 shrink-0 text-primary" />
-                <p className="text-sm text-secondary/75">{signal}</p>
-              </div>
-            ))}
-          </div>
+          <LegalDisclaimerBanner />
         </div>
       </section>
 
-      {/* Delivery model */}
       <Section
         accent
-        eyebrow="How We Work"
-        title="A delivery approach designed to reduce execution risk"
-        description="We combine strategic clarity, engineering depth, and governance discipline in every phase."
+        eyebrow="Service disclaimer"
+        title="Educational and architecture-support focused."
+        description="LorvexAI does not provide regulated financial, legal, regulatory, clinical, tax, investment, or compliance advice. Services are educational and architecture-support focused unless separately agreed in writing and legally appropriate."
       >
-        <div className="grid gap-6 md:grid-cols-3">
-          {deliveryModel.map((stage, i) => (
-            <article key={stage.title} className="relative glass card-hover rounded-2xl border border-primary/15 p-6">
-              <span className="absolute right-5 top-5 select-none font-mono text-4xl font-bold text-primary/10">
-                0{i + 1}
-              </span>
-              <div className="mb-4 inline-flex rounded-xl border border-primary/30 bg-primary/10 p-2.5 text-primary">
-                <stage.icon size={18} aria-hidden="true" />
-              </div>
-              <h3 className="text-lg font-semibold text-white">{stage.title}</h3>
-              <p className="mt-3 text-sm text-secondary/75">{stage.detail}</p>
-            </article>
-          ))}
+        <div className="rounded-lg border border-secondary/15 bg-background/35 p-6">
+          <FileText className="text-primary" size={22} />
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-secondary/70">
+            Any advisory or scoping conversation is subject to availability, professional boundary review, conflict checks, confidentiality obligations, and written scope agreement. LorvexAI does not accept work that would conflict with employment duties, confidentiality obligations, professional obligations, regulatory responsibilities, or legal restrictions.
+          </p>
         </div>
       </Section>
 
-      <Section title="Launch your AI programme with confidence" description="">
+      <Section title="Request a bounded scoping conversation" description="">
         <CTA />
       </Section>
     </>

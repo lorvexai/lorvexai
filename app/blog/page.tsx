@@ -47,7 +47,7 @@ export default function BlogPage() {
       {/* Hero banner */}
       <section className="section pb-6 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="glass rounded-3xl border border-primary/30 p-8 md:p-12">
+          <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
             <div className="grid gap-8 md:grid-cols-[1.4fr_0.6fr]">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Insights</p>
@@ -56,7 +56,7 @@ export default function BlogPage() {
                   <span className="text-gradient">AI Strategy</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  Practical guidance, architecture patterns, and risk intelligence from our team — built from real enterprise AI deployments across finance, banking, and NHS operations.
+                  Educational guidance, architecture patterns, and risk intelligence for controlled AI systems in finance, healthcare operations, and enterprise automation.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/research" className="btn-primary text-sm">
@@ -69,7 +69,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/10 px-4 py-3">
+                <div className="flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/10 px-4 py-3">
                   <BookOpen size={16} className="shrink-0 text-primary" />
                   <div>
                     <p className="stat-glow text-lg font-bold text-white">{posts.length}</p>
@@ -79,7 +79,7 @@ export default function BlogPage() {
                 {topicCounts.map(({ topic, count }) => (
                   <div
                     key={topic}
-                    className="flex items-center justify-between rounded-xl border border-secondary/15 bg-background/30 px-4 py-2.5"
+                    className="flex items-center justify-between rounded-lg border border-secondary/15 bg-background/30 px-4 py-2.5"
                   >
                     <span className="text-sm text-secondary/70">{topic}</span>
                     <span className="font-mono text-xs text-primary">
@@ -87,7 +87,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                 ))}
-                <div className="flex items-center gap-2 rounded-xl border border-secondary/15 bg-background/30 px-4 py-2.5">
+                <div className="flex items-center gap-2 rounded-lg border border-secondary/15 bg-background/30 px-4 py-2.5">
                   <Rss size={13} className="text-secondary/50" />
                   <span className="text-xs text-secondary/50">New articles published regularly</span>
                 </div>

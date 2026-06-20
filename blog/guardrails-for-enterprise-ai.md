@@ -1,7 +1,7 @@
 ---
 title: Guardrails for Enterprise AI
 date: 2026-04-13
-excerpt: Building input and output controls that keep AI systems safe, compliant, and within policy boundaries — for finance, banking, and NHS deployments.
+excerpt: Building input and output controls that keep AI systems safe, compliant, and within policy boundaries — for finance, banking, and NHS conceptual conceptual deployments.
 tags:
   - Guard Rails
   - LLM Engineering
@@ -11,7 +11,7 @@ tags:
 
 # Guardrails for Enterprise AI
 
-Building input and output controls that keep AI systems safe, compliant, and within policy boundaries — for finance, banking, and NHS deployments.
+Building input and output controls that keep AI systems safe, compliant, and within policy boundaries — for finance, banking, and NHS conceptual conceptual deployments.
 
 ---
 
@@ -23,7 +23,7 @@ A guardrail is a **control layer** that intercepts inputs to and outputs from an
 - A one-time configuration (they require ongoing tuning as the system evolves)
 - A guarantee of safety (they reduce risk; they do not eliminate it)
 
-In regulated environments, guardrails are a **compliance requirement**, not an optional feature. The FCA's Consumer Duty, PRA model risk guidance, and NHS clinical safety standards all imply that AI systems operating in regulated contexts must have documented controls preventing harmful outputs. Guardrails are the technical implementation of those controls.
+In regulated environments, guardrails are a **governance consideration**, not an optional feature. The FCA's Consumer Duty, public model-risk guidance, and NHS clinical safety considerations all imply that AI systems operating in regulated contexts must have documented controls preventing harmful outputs. Guardrails are the technical implementation of those controls.
 
 ---
 
@@ -60,7 +60,7 @@ Every AI system in a regulated environment needs guardrails at **both layers**:
 ## Input Guardrail Types
 
 ### 1. Scope Enforcement
-Ensure the system only responds to queries within its defined purpose. A regulatory compliance assistant should not answer questions about competitor strategies or personal financial advice.
+Ensure the system only responds to queries within its defined purpose. A public-framework mapping assistant should not answer questions about competitor strategies or personal professional advice.
 
 ```mermaid
 sequenceDiagram
@@ -71,14 +71,14 @@ sequenceDiagram
     U->>SC: "What should I invest my savings in?"
     SC->>SC: Topic: personal_financial_advice
     SC->>SC: Permitted topics: [regulatory_compliance, model_risk, basel_framework]
-    SC->>U: "This system covers regulatory compliance. For personal financial advice, please consult a qualified adviser."
+    SC->>U: "This system covers public-framework mapping. For personal professional advice, please consult a qualified adviser."
     Note over SC,SY: System never sees the query
 ```
 
 ### 2. PII Detection and Masking
 Prevent users from inadvertently sending personal data into the LLM — names, NHS numbers, account numbers, national insurance numbers.
 
-In NHS deployments, patient identifiable information (PII) must never be sent to external LLM APIs. The guardrail detects PII patterns, masks them before the LLM call, and optionally alerts the information governance team.
+In NHS conceptual conceptual deployments, patient identifiable information (PII) must never be sent to external LLM APIs. The guardrail detects PII patterns, masks them before the LLM call, and optionally alerts the information governance team.
 
 ```mermaid
 flowchart LR
@@ -102,7 +102,7 @@ Detection approaches:
 - Structural analysis (does the input attempt to use instruction-like formatting?)
 
 ### 4. Sensitive Query Routing
-Some queries are legitimate but require elevated handling. A compliance officer asking about a specific enforcement action should be answered; a junior analyst asking the same question at 2am on a weekend might warrant a flag.
+Some queries are legitimate but require elevated handling. A authorised reviewer asking about a specific enforcement action should be answered; a junior analyst asking the same question at 2am on a weekend might warrant a flag.
 
 Routing rules combine: query content + user role + time/context + session history.
 
@@ -139,7 +139,7 @@ AI systems trained on or given access to confidential documents (board papers, M
 Output scanning checks whether the response contains content patterns that match classified document segments, using either exact-match or semantic similarity.
 
 ### 4. Toxicity and Bias Filtering
-In customer-facing and staff-facing NHS applications, outputs must be screened for discriminatory language, clinical misinformation, and content that could cause patient harm if acted upon.
+In customer-facing and staff-facing healthcare applications, outputs must be screened for discriminatory language, clinical misinformation, and content that could cause patient harm if acted upon.
 
 ---
 
@@ -155,7 +155,7 @@ Violation → response modified with disclaimer, partial answer returned, incide
 Violation → response delivered, incident flagged for human review, user experience unaffected. Used for: borderline scope queries, low-severity tone issues.
 
 ### Pattern 4: Escalation
-Violation → response held, human reviewer notified, user informed of delay. Used for: high-risk outputs, MNPI potential, clinical safety concern.
+Violation → response held, human reviewer notified, user informed of delay. Used for: high-risk outputs, MNPI potential, clinical-risk concern.
 
 ```mermaid
 flowchart TD
@@ -179,14 +179,14 @@ flowchart TD
 |---|---|---|
 | Scope enforcement (no personal advice) | FCA COBS | Query classifier |
 | MNPI detection | Market Abuse Regulation | Content pattern matching |
-| Model output uncertainty disclosure | PRA SS1/23 | Confidence threshold + disclaimer |
+| Model output uncertainty disclosure | public model-risk materials | Confidence threshold + disclaimer |
 | Audit trail for all outputs | SMCR | Immutable output log |
 
-### NHS and Healthcare
+### Healthcare Operations
 | Guardrail | Standard | Implementation |
 |---|---|---|
-| PII masking before LLM call | NHS IG Toolkit, GDPR | NER-based PII detection + masking |
-| Clinical advice boundary | DCB0129 Clinical Safety | Advice classifier + clinician escalation |
+| PII masking before LLM call | healthcare information governance considerations, GDPR | NER-based PII detection + masking |
+| Clinical advice boundary | clinical safety documentation considerations | Advice classifier + clinician escalation |
 | Prohibited clinical claims | MHRA guidance | Claim type classifier |
 | Patient data access control | Data Security Standard | Role-based retrieval scoping |
 
@@ -199,7 +199,7 @@ Guardrails themselves need to be evaluated. Track:
 - **False positive rate** — how often are legitimate inputs/outputs blocked? High false positives destroy user trust and force workarounds.
 - **False negative rate** — how often do violations pass through? This is the safety metric.
 - **Latency overhead** — guardrails add latency. Track p50/p95 overhead and optimise hot paths.
-- **Coverage** — what percentage of production traffic passes through each guardrail type? Gaps indicate uncovered attack surfaces.
+- **Coverage** — what percentage of reviewed workflow traffic passes through each guardrail type? Gaps indicate uncovered attack surfaces.
 
 Run adversarial testing quarterly: have a red team attempt to bypass each guardrail using current attack techniques. Document findings, update guardrails, retest.
 
@@ -211,7 +211,7 @@ Every LorvexAI product ships with a pre-configured guardrail layer tailored to i
 
 **Regulatory Intelligence Platform**: scope enforcement (regulatory queries only), faithfulness check on every output, regulatory advice boundary classifier, immutable audit log of all outputs with user/timestamp/version.
 
-**NHS Flow Optimizer**: NHS-number and patient PII masking, clinical advice boundary enforcement, DCB0129-compliant escalation for HIGH urgency decisions, clinician override audit trail.
+**Healthcare Flow Intelligence blueprint**: patient identifier and patient PII masking, clinical advice boundary enforcement, clinical-safety-documentation-aware escalation for HIGH urgency decisions, clinician override audit trail.
 
 **Treasury Sentinel**: MNPI pattern detection, LCR/NSFR output verification against source data, ALCO report classification (board-grade vs internal), role-based data scoping (treasury team vs board view).
 

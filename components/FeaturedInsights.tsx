@@ -17,7 +17,6 @@ const TOPIC_FILTERS = [
   "Technology",
   "Finance",
   "Healthcare",
-  "NHS",
   "Enterprise"
 ] as const;
 
@@ -46,12 +45,6 @@ function matchesTopic(post: InsightPost, topic: TopicFilter) {
     return (
       normalizedTitle.includes("healthcare") ||
       normalizedTags.some((tag) => tag.includes("healthcare"))
-    );
-  }
-  if (topic === "NHS") {
-    return (
-      normalizedTitle.includes("nhs") ||
-      normalizedTags.some((tag) => tag.includes("nhs"))
     );
   }
   if (topic === "Enterprise") {

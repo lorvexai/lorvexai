@@ -1,7 +1,7 @@
 ---
 title: Enterprise LLM Chat Interfaces
 date: 2026-04-13
-excerpt: Building production-grade AI chat interfaces for regulated industries — authentication, audit trails, multi-model routing, session governance, and compliance-by-design.
+excerpt: Building production-aware AI chat interfaces for regulated industries — authentication, audit trails, multi-model routing, session governance, and compliance-by-design.
 tags:
   - LLM Chat
   - Architecture
@@ -11,7 +11,7 @@ tags:
 
 # Enterprise LLM Chat Interfaces
 
-Building production-grade AI chat interfaces for regulated industries — authentication, audit trails, multi-model routing, session governance, and compliance-by-design.
+Building production-aware AI chat interfaces for regulated industries — authentication, audit trails, multi-model routing, session governance, and compliance-by-design.
 
 ---
 
@@ -21,7 +21,7 @@ ChatGPT is a consumer product. It is stateless between sessions, has no role-bas
 
 Enterprise LLM chat is a fundamentally different product. It must be:
 
-- **Identity-aware** — responses differ by user role (analyst vs compliance officer vs board)
+- **Identity-aware** — responses differ by user role (analyst vs authorised reviewer vs board)
 - **Auditable** — every message, every response, every source logged immutably
 - **Domain-scoped** — the system answers within its defined knowledge boundary
 - **Multi-model** — different query types route to different models for quality and cost
@@ -110,7 +110,7 @@ sequenceDiagram
     CH-->>U: Chat ready (role-appropriate context)
 ```
 
-**Role profiles for a banking deployment:**
+**Role profiles for a banking conceptual deployment:**
 
 | Role | Knowledge Access | Tools | Log Level |
 |---|---|---|---|
@@ -153,7 +153,7 @@ Every session record must capture:
 - Latencies and confidence scores
 - Any human override events
 
-This is the evidence bundle that satisfies FCA SYSC record-keeping requirements and NHS information governance audits.
+This is the evidence bundle that satisfies public record-keeping materials and NHS information governance audits.
 
 ---
 
@@ -183,10 +183,10 @@ flowchart TD
     style FM fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
 ```
 
-**Routing logic for a regulatory compliance assistant:**
+**Routing logic for a public-framework mapping assistant:**
 
 - "What is the LCR minimum requirement?" → Standard model (simple factual, retrievable)
-- "Analyse our model risk governance against PRA SS1/23 and identify gaps" → Frontier model (multi-step reasoning)
+- "Analyse our model risk governance against public model-risk materials and identify gaps" → Frontier model (multi-step reasoning)
 - "Summarise this 40-page ALCO pack" → Standard model with document context
 - "Draft a remediation plan for our identified Basel IV gaps" → Frontier model (complex generation)
 
@@ -256,11 +256,11 @@ flowchart LR
 
 **Key UI patterns for regulated industries:**
 
-**In-line citations** — every factual claim links to the source document, section, and page. Users can click to verify. This is essential for compliance officer adoption.
+**In-line citations** — every factual claim links to the source document, section, and page. Users can click to verify. This is essential for authorised reviewer adoption.
 
 **Confidence indicators** — a visual signal when the system is less certain (amber/red) vs highly confident (green). Trains users to verify borderline answers.
 
-**Human handoff button** — one click sends the conversation thread to a specialist. The specialist sees the full context, the sources consulted, and the AI's reasoning. Critical for NHS triage and compliance escalations.
+**Human handoff button** — one click sends the conversation thread to a specialist. The specialist sees the full context, the sources consulted, and the AI's reasoning. Critical for healthcare operations and compliance escalations.
 
 **Session export** — export the full session (questions, answers, citations) as a formatted PDF or structured JSON for regulatory evidence purposes.
 
@@ -268,17 +268,17 @@ flowchart LR
 
 ## Compliance by Design: FCA and NHS Requirements
 
-### FCA / SMCR
+### Public conduct and accountability materials
 - All AI-assisted decisions by Senior Managers must be logged with the AI's output and the human's final decision
 - The "why" behind AI recommendations must be explainable and retrievable
 - Records must be retained for at minimum 7 years
 - Material model changes (prompt updates that change answer patterns) require model risk review
 
-### NHS IG Toolkit / DSPT
-- PII must never leave the NHS network boundary — on-premise or private cloud deployment required for patient-related queries
+### Healthcare information governance considerations
+- PII must never leave the approved healthcare network boundary — on-premise or private cloud conceptual deployment required for patient-related queries
 - Access logs must be reviewed quarterly by the Information Asset Owner
 - Any clinical advice boundary breach must be reported as a data quality incident
-- System must have a named Clinical Safety Officer and a DCB0129 Safety Case
+- System must have a named clinical safety lead and a clinical safety case documentation
 
 ---
 
@@ -313,13 +313,13 @@ flowchart TD
     style OO fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-**NHS requirement**: patient-identifiable data must not leave NHS-controlled infrastructure. Full on-premise or NHS private cloud deployment is required for any system that processes patient records. LorvexAI's NHS Flow Optimizer supports both hybrid (anonymised queries to cloud LLM, PII stays on-prem) and full on-premise deployment.
+**Healthcare information-governance consideration**: patient-identifiable data must not leave approved healthcare infrastructure. Full on-premise or approved private healthcare cloud conceptual deployment is required for any system that processes patient records. LorvexAI's Healthcare Flow Intelligence blueprint supports both hybrid (anonymised queries to cloud LLM, PII stays on-prem) and full on-premise conceptual deployment.
 
 ---
 
 ## Getting Started
 
-Building an enterprise chat interface from scratch is a 12–16 week project. The fastest path to production:
+Building an enterprise chat interface from scratch is a 12–16 week project. The fastest path to a reviewable prototype:
 
 1. Start with an existing open-source chat framework (Open WebUI, LibreChat) as the UI layer
 2. Add SSO authentication via your existing identity provider

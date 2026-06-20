@@ -1,4 +1,4 @@
-﻿<svg width="1280" height="620" viewBox="0 0 1280 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NHS triage escalation flow">
+<svg width="1280" height="620" viewBox="0 0 1280 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NHS triage escalation flow">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B1F3A"/><stop offset="100%" stop-color="#102D4D"/></linearGradient><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#74C8FF"/></marker><style>.t{font:700 30px 'Segoe UI';fill:#EAF4FF}.n{font:700 15px 'Segoe UI';fill:#ECF7FF}.s{font:500 12px 'Segoe UI';fill:#D6EAFE}</style></defs>
 <rect width="1280" height="620" fill="url(#bg)"/>
 <text class="t" x="40" y="54">Red-Flag Escalation and Human Oversight</text>

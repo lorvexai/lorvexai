@@ -121,7 +121,7 @@ sequenceDiagram
 | Hidden data drift | Model quality degrades silently | Drift alarms + challenger models + retrain triggers |
 | Spurious correlations | Brittle decisions under market stress | Stress backtesting and causal feature review |
 | Weak auditability | Regulatory challenge and remediation cost | Immutable decision logs, lineage, and evidence bundles |
-| Policy logic in model code | Impossible to update without redeployment | Externalise and version policy rules separately |
+| Policy logic in model code | Impossible to update without reconceptual deployment | Externalise and version policy rules separately |
 
 ---
 

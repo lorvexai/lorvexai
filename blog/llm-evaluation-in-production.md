@@ -1,7 +1,7 @@
 ---
 title: LLM Evaluation in Production
 date: 2026-04-13
-excerpt: How to build evaluation frameworks that catch failures before they reach users — metrics, harnesses, and continuous quality monitoring for enterprise LLM deployments.
+excerpt: How to build evaluation frameworks that catch failures before they reach users — metrics, harnesses, and continuous quality monitoring for enterprise LLM conceptual conceptual deployments.
 tags:
   - Evaluations
   - LLM Engineering
@@ -11,7 +11,7 @@ tags:
 
 # LLM Evaluation in Production
 
-How to build evaluation frameworks that catch failures before they reach users — metrics, harnesses, and continuous quality monitoring for enterprise LLM deployments.
+How to build evaluation frameworks that catch failures before they reach users — metrics, harnesses, and continuous quality monitoring for enterprise LLM conceptual conceptual deployments.
 
 ---
 
@@ -122,10 +122,10 @@ flowchart LR
 
 **Composition guidance for a regulatory AI system:**
 - 30% straightforward factual queries ("What is the LCR minimum?")
-- 30% complex multi-hop queries ("What controls do we need for Basel IV credit risk under PRA SS1/23?")
+- 30% complex multi-hop queries ("What controls do we need for Basel IV credit risk under public model-risk materials?")
 - 20% edge cases and known failure modes
 - 10% adversarial inputs (jailbreaks, out-of-scope queries, ambiguous phrasing)
-- 10% newly added as new failure modes are discovered in production
+- 10% newly added as new failure modes are discovered in controlled settings
 
 Start with 200 examples. By the time you reach 500 well-curated examples, your evaluation will be more reliable than most human review processes.
 
@@ -158,7 +158,7 @@ sequenceDiagram
 
 ## Regression Testing in CI/CD
 
-Every code change — a prompt edit, a chunking parameter change, a model update — should trigger an automated evaluation run before deployment.
+Every code change — a prompt edit, a chunking parameter change, a model update — should trigger an automated evaluation run before conceptual deployment.
 
 ```mermaid
 flowchart LR
@@ -174,7 +174,7 @@ flowchart LR
     style AP fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-A 2% degradation threshold sounds small but is meaningful in practice. A system answering 1,000 queries per day at 90% correctness produces 100 errors. A 2% regression takes that to 120 errors — 20 additional wrong answers to compliance officers or clinicians per day.
+A 2% degradation threshold sounds small but is meaningful in practice. A system answering 1,000 queries per day at 90% correctness produces 100 errors. A 2% regression takes that to 120 errors — 20 additional wrong answers to authorised reviewers or clinicians per day.
 
 ---
 
@@ -222,7 +222,7 @@ flowchart TD
 
 Standard evaluation frameworks were built for general-purpose AI assistants. Regulated environments have additional requirements:
 
-**Regulatory accuracy tracking** — categorise evaluation queries by regulatory framework (PRA, FCA, NICE, NHS Digital) and track accuracy per framework separately. A system that is 95% accurate on Basel questions but 70% accurate on Consumer Duty questions needs targeted improvement.
+**Regulatory accuracy tracking** — categorise evaluation queries by regulatory framework (public finance-framework, NICE, public healthcare digital guidance) and track accuracy per framework separately. A system that is 95% accurate on Basel questions but 70% accurate on Consumer Duty questions needs targeted improvement.
 
 **Confidence calibration** — does the system know when it doesn't know? In regulated environments, a confident wrong answer is worse than an appropriately uncertain answer. Evaluate calibration: when the system says it is 90% confident, is it right 90% of the time?
 
@@ -238,8 +238,8 @@ If you are building your first evaluation framework:
 
 1. **Week 1**: Build a 100-example golden dataset from your most common query categories. Label expected outputs manually.
 2. **Week 2**: Implement automated scoring for correctness and faithfulness using an LLM judge. Run against your golden dataset.
-3. **Week 3**: Wire evaluation into your deployment pipeline. Any PR that degrades scores by > 3% requires human review before merge.
-4. **Week 4**: Add production sampling. Sample 2% of live outputs daily and run through your automated scorer. Set up alerting.
+3. **Week 3**: Wire evaluation into your conceptual deployment pipeline. Any PR that degrades scores by > 3% requires human review before merge.
+4. **Week 4**: Add review sampling. Sample 2% of live outputs daily and run through your automated scorer. Set up alerting.
 
 After one month, you will know more about your system's failure modes than most teams discover in a year.
 

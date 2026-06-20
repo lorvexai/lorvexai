@@ -1,7 +1,7 @@
 ---
 title: AI Workflows for Regulated Enterprises
 date: 2026-04-13
-excerpt: How to design, orchestrate, and govern multi-step AI workflows across banking, healthcare, and NHS operations — without breaking compliance.
+excerpt: How to design, orchestrate, and govern multi-step AI workflows across banking, healthcare, and healthcare operations — without breaking compliance.
 tags:
   - Workflows
   - Agentic AI
@@ -11,7 +11,7 @@ tags:
 
 # AI Workflows for Regulated Enterprises
 
-How to design, orchestrate, and govern multi-step AI workflows across banking, healthcare, and NHS operations — without breaking compliance.
+How to design, orchestrate, and govern multi-step AI workflows across banking, healthcare, and healthcare operations — without breaking compliance.
 
 ---
 
@@ -57,7 +57,7 @@ flowchart LR
 
 ### Pattern 1: Linear Sequential Workflow
 
-The simplest pattern — steps execute in order, each passing output to the next. Used for document processing, report generation, and compliance checks where the sequence is deterministic.
+The simplest pattern — steps execute in order, each passing output to the next. Used for document processing, report generation, and governance checks where the sequence is deterministic.
 
 ```mermaid
 flowchart LR
@@ -71,7 +71,7 @@ flowchart LR
     style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-**Example in practice:** LorvexAI's Regulatory Intelligence Platform uses this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for the compliance team.
+**Example in practice:** LorvexAI's Regulatory Intelligence Platform uses this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for the governance team.
 
 ### Pattern 2: Parallel Fan-out Workflow
 
@@ -93,7 +93,7 @@ flowchart TD
     style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-**Example in practice:** NHS Flow Optimizer runs urgency scoring, pathway matching, and patient history summarisation in parallel, then merges results for the final triage decision — reducing average processing time from minutes to under 5 seconds.
+**Example in practice:** Healthcare Flow Intelligence blueprint runs urgency scoring, pathway matching, and patient history summarisation in parallel, then merges results for the final triage decision — reducing average processing time from minutes to under 5 seconds.
 
 ### Pattern 3: Conditional Branching Workflow
 
@@ -192,9 +192,9 @@ flowchart TD
 
 **Auditability** — every step writes an immutable log entry: timestamp, inputs, outputs, model version, latency, and confidence score. This is the audit trail for regulators.
 
-**Explainability** — the reasoning at each LLM step is captured as a scratchpad. For FCA Consumer Duty compliance, the "why" behind every AI-influenced decision must be retrievable.
+**Explainability** — the reasoning at each LLM step is captured as a scratchpad. For public consumer-outcomes materials compliance, the "why" behind every AI-influenced decision must be retrievable.
 
-**Controllability** — authorised users can pause, redirect, or override any workflow at any step. A compliance officer can halt a workflow mid-execution and reroute it.
+**Controllability** — authorised users can pause, redirect, or override any workflow at any step. A authorised reviewer can halt a workflow mid-execution and reroute it.
 
 **Recoverability** — if a step fails, the workflow can resume from the last successful checkpoint, not from the beginning. This prevents data loss and duplicate actions.
 
@@ -209,7 +209,7 @@ flowchart TD
 ```mermaid
 flowchart LR
     A[New Model Submission] --> B[Automated Model Inventory Check]
-    B --> C[Obligation Mapping - PRA SS1/23]
+    B --> C[Obligation Mapping - public model-risk materials]
     C --> D[Challenger Model Analysis]
     D --> E[Evidence Package Generation]
     E --> F[MRM Committee Review]
@@ -280,7 +280,7 @@ The best way to introduce AI workflows into a regulated enterprise is the **sing
 5. Run in shadow mode alongside the human process for 2 weeks, compare outputs
 6. Go live with the AI workflow, human reviewing exceptions only
 
-This is the LorvexAI 4-week pilot methodology — one workflow, measurable outcomes, production-grade from day one.
+This is the LorvexAI prototype-scoping methodology — one workflow, reviewable outcomes, governance-aware from day one.
 
 ---
 

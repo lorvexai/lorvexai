@@ -1,7 +1,7 @@
 ---
 title: End-to-End AI Risk Platform Architecture
 date: 2026-04-05
-excerpt: A production blueprint for modern banking and finance risk platforms spanning data, AI/LLM pipelines, MLOps, governance, and decision serving.
+excerpt: A reference blueprint for modern banking and finance risk platforms spanning data, AI/LLM pipelines, MLOps, governance, and decision serving.
 tags:
   - Risk Platform
   - Banking
@@ -10,7 +10,7 @@ tags:
 
 # End-to-End AI Risk Platform Architecture
 
-A production blueprint for building a unified AI-native risk platform for modern banking and finance.
+A reference blueprint for building a unified AI-native risk platform for modern banking and finance.
 
 ---
 
@@ -26,7 +26,7 @@ A production blueprint for building a unified AI-native risk platform for modern
 Many organisations have individual risk engines, separate data marts, and disconnected model pipelines. This usually creates:
 
 - Inconsistent definitions across credit, market, liquidity, and operational risk
-- Slow model deployment cycles due to fragmented handoffs
+- Slow model conceptual deployment cycles due to fragmented handoffs
 - Limited traceability from business decision back to model inputs and control evidence
 - Duplication of infrastructure and governance controls across teams
 
@@ -201,7 +201,7 @@ sequenceDiagram
 
 | KPI Category | Metric | Target |
 | --- | --- | --- |
-| Platform | Model deployment cycle time | < 5 business days |
+| Platform | Model conceptual deployment cycle time | < 5 business days |
 | Platform | Decision lineage coverage | > 98% |
 | Platform | Feature reuse rate across teams | > 60% |
 | Risk Outcomes | Early-warning lead time improvement | +48h average |
@@ -224,4 +224,4 @@ sequenceDiagram
 
 ## Final Thought
 
-An end-to-end AI risk platform is not just a technology upgrade. It is an operating model shift that aligns risk analytics, AI delivery, governance, and executive decisioning on one production-grade foundation.
+An end-to-end AI risk platform is not just a technology upgrade. It is an operating model shift that aligns risk analytics, AI delivery, governance, and executive decisioning on one production-aware foundation.

@@ -5,15 +5,15 @@ import BlogCard from "@/components/BlogCard";
 import type { PostMeta } from "@/utils/posts";
 import { Search } from "lucide-react";
 
-const TOPICS = ["All", "Technology", "Finance", "Healthcare", "NHS", "Enterprise"] as const;
+const TOPICS = ["All", "Technology", "Finance", "Healthcare", "Enterprise"] as const;
 type Topic = (typeof TOPICS)[number];
 
 const topicBySlug: Record<string, Exclude<Topic, "All">> = {
   "ai-agents-in-banking-operations":          "Finance",
   "ai-native-treasury-control-tower":         "Finance",
   "ai-in-financial-risk-management":          "Finance",
-  "nhs-ai-triage-without-harm":               "NHS",
-  "nhs-waiting-lists-to-smart-pathways":      "NHS",
+  "nhs-ai-triage-without-harm":               "Healthcare",
+  "nhs-waiting-lists-to-smart-pathways":      "Healthcare",
   "enterprise-rag-architectures":             "Technology",
   "end-to-end-ai-risk-platform-architecture": "Technology",
   "the-rise-of-agentic-ai":                   "Technology",
@@ -31,7 +31,6 @@ const topicAccent: Record<Exclude<Topic, "All">, string> = {
   Technology:   "border-blue-400/30 text-blue-300",
   Finance:      "border-orange-400/30 text-orange-300",
   Healthcare:   "border-emerald-400/30 text-emerald-300",
-  NHS:          "border-emerald-400/30 text-emerald-300",
   Enterprise:   "border-violet-400/30 text-violet-300"
 };
 
@@ -53,7 +52,6 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
       Technology: [],
       Finance: [],
       Healthcare: [],
-      NHS: [],
       Enterprise: []
     };
     posts.forEach((post) => {
@@ -71,7 +69,6 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
       Technology: grouped.Technology.length,
       Finance:    grouped.Finance.length,
       Healthcare: grouped.Healthcare.length,
-      NHS:        grouped.NHS.length,
       Enterprise: grouped.Enterprise.length
     }),
     [grouped, posts.length]

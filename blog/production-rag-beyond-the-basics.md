@@ -1,7 +1,7 @@
 ---
 title: Production RAG — Beyond the Basics
 date: 2026-04-13
-excerpt: Building retrieval-augmented generation systems that actually work in production — chunking strategy, reranking, governance, and hallucination control for enterprise deployments.
+excerpt: Building retrieval-augmented generation systems that actually work in controlled settings — chunking strategy, reranking, governance, and hallucination control for enterprise conceptual conceptual deployments.
 tags:
   - RAG
   - LLM Engineering
@@ -11,7 +11,7 @@ tags:
 
 # Production RAG — Beyond the Basics
 
-Building retrieval-augmented generation systems that actually work in production — chunking strategy, reranking, governance, and hallucination control for enterprise deployments.
+Building retrieval-augmented generation systems that actually work in controlled settings — chunking strategy, reranking, governance, and hallucination control for enterprise conceptual conceptual deployments.
 
 ---
 
@@ -58,13 +58,13 @@ flowchart TD
     style CI fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-Each component in this architecture has decisions that significantly impact production quality. Let's work through the most critical ones.
+Each component in this architecture has decisions that significantly impact controlled-system quality. Let's work through the most critical ones.
 
 ---
 
 ## Chunking Strategy
 
-Chunking is where most production RAG systems fail. The default — split every 512 tokens with 50-token overlap — works for demos and fails for enterprise documents.
+Chunking is where most controlled RAG systems fail. The default — split every 512 tokens with 50-token overlap — works for demos and fails for enterprise documents.
 
 ### The core problem
 
@@ -95,7 +95,7 @@ flowchart TD
 
 | Document Type | Recommended Strategy |
 |---|---|
-| Regulatory PDFs (PRA, FCA) | Semantic sectioning by heading hierarchy + parent context prepending |
+| Regulatory PDFs (public finance-framework) | Semantic sectioning by heading hierarchy + parent context prepending |
 | Clinical guidelines (NICE, NHS) | Paragraph-level with section + subsection metadata |
 | Contracts and agreements | Clause-level chunking with clause number + parent section |
 | Structured data (tables, reports) | Row-level with table header + column context |
@@ -143,7 +143,7 @@ sequenceDiagram
 
     U->>QP: "What do we need for PRA model approval?"
     QP->>LLM: Generate query variants
-    LLM-->>QP: ["PRA SS1/23 model validation requirements", "model risk governance policy PRA", "independent model review process Basel"]
+    LLM-->>QP: ["public model-risk materials model validation requirements", "model risk governance policy PRA", "independent model review process Basel"]
     QP->>VS: Retrieve for all 4 queries
     VS-->>QP: Merged, deduplicated results
     QP-->>U: Top-K results
@@ -171,13 +171,13 @@ flowchart LR
     style CE fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
 ```
 
-At LorvexAI, we use a domain-fine-tuned reranker on our regulatory corpus — the off-the-shelf models are not trained on PRA/FCA language patterns and make systematic errors on regulatory text.
+A reference design may use a domain-fine-tuned reranker on our regulatory corpus — the off-the-shelf models are not trained on public finance-framework language patterns and make systematic errors on regulatory text.
 
 ---
 
 ## Hallucination Control
 
-The hardest problem in production RAG. An LLM will produce fluent, confident text even when the retrieved context does not contain the answer.
+The hardest problem in controlled settings RAG. An LLM will produce fluent, confident text even when the retrieved context does not contain the answer.
 
 ### The three-layer approach
 
@@ -206,7 +206,7 @@ flowchart TD
 
 ## Citation and Source Tracking
 
-In regulated environments, every answer must cite its source. Users — compliance officers, clinicians, risk managers — need to verify the output against the source document.
+In regulated environments, every answer must cite its source. Users — authorised reviewers, clinicians, risk managers — need to verify the output against the source document.
 
 The citation system must track:
 - **Source document** — name, version, date
@@ -215,7 +215,7 @@ The citation system must track:
 - **Retrieval score** — how confident the system was in this source
 - **Generation timestamp** — when this answer was produced
 
-This citation chain is the audit trail. In a PRA audit, the regulator can ask "what was the basis for this control mapping?" and the system must produce a complete provenance record.
+This citation chain is the audit trail. In a governance review, the regulator can ask "what was the basis for this control mapping?" and the system must produce a complete provenance record.
 
 ---
 
@@ -236,17 +236,17 @@ Run these evaluations weekly on a curated golden dataset of query/expected-answe
 
 ## Enterprise RAG in Practice: LorvexAI's Approach
 
-The Regulatory Intelligence Platform is built on a production RAG stack with:
+The Regulatory Intelligence Platform reference blueprint is based on a controlled RAG stack with:
 
 - **Hierarchical chunking** of 100+ regulatory sources with parent-context injection
 - **Domain-specific embedding model** fine-tuned on financial regulation language
 - **Hybrid retrieval** (vector + BM25) with RRF merging
-- **Fine-tuned cross-encoder reranker** on PRA/FCA/Basel document pairs
+- **Fine-tuned cross-encoder reranker** on public finance-framework/Basel document pairs
 - **Faithfulness scoring** on every generated answer
 - **Full citation chain** with section-level references for every claim
 - **Weekly evaluation** against a 500-query golden dataset
 
-The result: 94% answer faithfulness in production, 89% retrieval recall@5, and a complete audit trail for every output.
+The result: 94% answer faithfulness in controlled settings, 89% retrieval recall@5, and a complete audit trail for every output.
 
 ---
 

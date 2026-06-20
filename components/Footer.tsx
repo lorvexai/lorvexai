@@ -1,75 +1,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
-const navColumns = [
-  {
-    heading: "Solutions",
-    links: [
-      { href: "/services",     label: "Services"     },
-      { href: "/products",     label: "Products"     },
-      { href: "/capabilities", label: "Capabilities" }
-    ]
-  },
-  {
-    heading: "Insights",
-    links: [
-      { href: "/blog",     label: "Blog"     },
-      { href: "/research", label: "Research" }
-    ]
-  },
-  {
-    heading: "Company",
-    links: [
-      { href: "/about",   label: "About"   },
-      { href: "/contact", label: "Contact" }
-    ]
-  }
+const footerLinks = [
+  { href: "/books", label: "Books" },
+  { href: "/research", label: "Research" },
+  { href: "/products", label: "Product Lab" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/disclaimers", label: "Disclaimers" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/cookies", label: "Cookies" },
+  { href: "/terms", label: "Terms" }
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10 bg-background/60">
-      {/* Pre-footer CTA strip */}
-      <div className="border-b border-secondary/10 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 py-8">
+      <div className="border-b border-secondary/10 bg-primary/8 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold text-white">Ready to explore what AI can do for your organisation?</p>
-            <p className="mt-1 text-sm text-secondary/60">Book a free 30-minute discovery call — no commitment, just clarity.</p>
+            <p className="font-semibold text-white">Explore controlled AI architecture with clear boundaries.</p>
+            <p className="mt-1 text-sm text-secondary/60">
+              Request a scoping conversation for books, research, workshops, architecture review, or product-lab concepts.
+            </p>
           </div>
           <div className="flex shrink-0 gap-3">
-            <a
-              href="/contact"
-              className="btn-primary text-sm"
-            >
-              Book a Call
-            </a>
-            <a
-              href="mailto:hello@lorvex.ai"
-              className="btn-outline text-sm"
-            >
-              Email Us
-            </a>
+            <Link href="/contact" className="btn-primary text-sm">
+              Request Scoping
+            </Link>
+            <Link href="/books" className="btn-outline text-sm">
+              View Books
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="mx-auto w-full max-w-6xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
-          {/* Brand column */}
+        <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <div>
-            <Image
-              src={logoSrc}
-              alt="LorvexAI"
-              width={168}
-              height={40}
-              className="h-9 w-auto"
-            />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-secondary/60">
-              Building agentic AI systems, enterprise RAG platforms, and LLM engineering solutions for Finance, Banking, and NHS operations.
+            <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
+              <strong className="text-white">LorvexAI Technologies Ltd</strong>
+              <br />
+              Independent education, publishing, research, and AI architecture platform.
+            </p>
+            <p className="mt-3 text-xs leading-relaxed text-secondary/45">
+              Company number: [INSERT COMPANY NUMBER]
+              <br />
+              Registered office: [INSERT REGISTERED OFFICE ADDRESS]
+              <br />
+              Registered in England &amp; Wales
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
@@ -82,48 +68,38 @@ export default function Footer() {
                 LinkedIn
                 <ArrowUpRight size={12} className="opacity-60" aria-hidden="true" />
               </a>
-              <a
-                href="mailto:hello@lorvex.ai"
-                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
-              >
+              <a href="mailto:[INSERT CONTACT EMAIL]" className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary">
                 <Mail size={15} aria-hidden="true" />
-                hello@lorvex.ai
+                [INSERT CONTACT EMAIL]
               </a>
             </div>
           </div>
 
-          {/* Navigation columns */}
-          {navColumns.map((col) => (
-            <div key={col.heading}>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/45">
-                {col.heading}
-              </p>
-              <ul className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-secondary/65 transition hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/45">
+              Site links
+            </p>
+            <nav className="grid grid-cols-2 gap-3" aria-label="Footer navigation">
+              {footerLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-secondary/65 transition hover:text-white">
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <LegalDisclaimerBanner />
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-secondary/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-5 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-secondary/40">
             &copy; {new Date().getFullYear()} LorvexAI Technologies Ltd. All rights reserved.
           </p>
-          <p className="text-xs text-secondary/30">
-            Registered in England &amp; Wales
-          </p>
+          <p className="text-xs text-secondary/30">Educational content only. No professional advice.</p>
         </div>
       </div>
     </footer>

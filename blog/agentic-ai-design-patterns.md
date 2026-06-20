@@ -17,7 +17,7 @@ How to architect AI agents that plan, reason, and act across enterprise workflow
 
 ## What Makes an Agent Different
 
-Most enterprise AI deployments are pipelines — a prompt goes in, a response comes out. Agents are different. An agent **perceives its environment, decides what to do next, executes actions, and adapts based on results** — in a loop, without a human directing each step.
+Most enterprise AI conceptual conceptual deployments are pipelines — a prompt goes in, a response comes out. Agents are different. An agent **perceives its environment, decides what to do next, executes actions, and adapts based on results** — in a loop, without a human directing each step.
 
 This capability is transformative for regulated enterprises. A compliance agent doesn't just answer questions about PRA rules — it reads the regulation, identifies the relevant obligation, retrieves the firm's control documentation, identifies the gap, drafts the remediation plan, and flags it for human review. That is an entire workflow that previously required a team.
 
@@ -61,7 +61,7 @@ The **Human Review** node is critical in regulated environments. Not every decis
 
 ### Pattern 1: ReAct (Reasoning + Acting)
 
-The most widely deployed agent pattern. The LLM interleaves reasoning steps ("I need to find the PRA obligation for model risk...") with action calls ("search_regulation('PRA SS1/23 model risk')"). The trace of reasoning steps is logged for audit.
+The most widely deployed agent pattern. The LLM interleaves reasoning steps ("I need to find the PRA obligation for model risk...") with action calls ("search_regulation('public model-risk materials model risk')"). The trace of reasoning steps is logged for audit.
 
 ```mermaid
 sequenceDiagram
@@ -70,9 +70,9 @@ sequenceDiagram
     participant T as Tool Layer
     participant L as Audit Log
 
-    U->>A: "What is our model risk exposure under PRA SS1/23?"
+    U->>A: "What is our model risk exposure under public model-risk materials?"
     A->>L: Log: reasoning step 1
-    A->>T: search_regulation("PRA SS1/23 §4")
+    A->>T: search_regulation("public model-risk materials §4")
     T-->>A: Regulation text returned
     A->>L: Log: reasoning step 2
     A->>T: query_controls_db("model risk governance")
@@ -156,7 +156,7 @@ flowchart LR
 
 ### Pattern 5: Human-in-the-Loop (HITL) Agent
 
-For the highest-risk decisions — a referral triage changing a patient's priority, a compliance gap triggering a regulatory notification — the agent pauses, presents its reasoning, and requests explicit human confirmation.
+For the highest-risk decisions — a referral triage changing a patient's priority, a governance gap triggering a regulatory notification — the agent pauses, presents its reasoning, and requests explicit human confirmation.
 
 ```mermaid
 sequenceDiagram
@@ -173,7 +173,7 @@ sequenceDiagram
     A->>A: Log outcome for model improvement
 ```
 
-The threshold for HITL intervention is configurable — in NHS triage, any HIGH urgency referral always passes through a clinician. In PRA compliance, any gap rated HIGH risk requires a compliance officer to approve the remediation plan.
+The threshold for HITL intervention is configurable — in healthcare operations, any HIGH urgency referral always passes through a clinician. In public-framework mapping, any gap rated HIGH risk requires a authorised reviewer to approve the remediation plan.
 
 ---
 
@@ -221,9 +221,9 @@ flowchart TD
     style EB fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
 ```
 
-**Policy Engine** — every agent action is checked against a policy ruleset before execution. In a banking agent, this includes: "never write to production systems without human approval", "never access data outside this user's permissions", "always attach evidence citations".
+**Policy Engine** — every agent action is checked against a policy ruleset before execution. In a banking agent, this includes: "never write to controlled systems without human approval", "never access data outside this user's permissions", "always attach evidence citations".
 
-**Audit Logger** — every perception, reasoning step, tool call, and output is immutably logged with timestamps and user context. This is non-negotiable in FCA and PRA-regulated environments.
+**Audit Logger** — every perception, reasoning step, tool call, and output is immutably logged with timestamps and user context. This is non-negotiable in public finance-framework-regulated environments.
 
 **Escalation Bus** — violations, blocked actions, and low-confidence decisions route to a human review queue rather than failing silently.
 
@@ -244,9 +244,9 @@ flowchart TD
 
 ## LorvexAI's Agentic AI Implementation
 
-All three LorvexAI products are built on an agentic core. The Regulatory Intelligence Platform uses a Plan-and-Execute pattern with a Critic agent validating obligation mappings before any evidence package is generated. The NHS Flow Optimizer uses a ReAct pattern for referral triage, with a mandatory HITL checkpoint for HIGH urgency cases. Treasury Sentinel uses a multi-agent pattern with specialist agents for position monitoring, stress testing, and ALCO pack generation.
+All three LorvexAI products are built on an agentic core. The Regulatory Intelligence Platform uses a Plan-and-Execute pattern with a Critic agent validating obligation mappings before any evidence package is generated. The Healthcare Flow Intelligence blueprint uses a ReAct pattern for referral triage, with a mandatory HITL checkpoint for HIGH urgency cases. Treasury Sentinel uses a multi-agent pattern with specialist agents for position monitoring, stress testing, and ALCO pack generation.
 
-Every agent deployment includes our four governance primitives: scoped tool access, immutable audit logging, policy engine enforcement, and configurable HITL thresholds.
+Every agent conceptual deployment includes our four governance primitives: scoped tool access, immutable audit logging, policy engine enforcement, and configurable HITL thresholds.
 
 ---
 

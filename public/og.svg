@@ -38,7 +38,7 @@
   <image href="Logo.png" x="72" y="180" width="300" height="76" preserveAspectRatio="xMinYMid meet"/>
 
   <text x="72" y="340" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="700" fill="#EAF5FF">
-    Operationalizing Agentic AI
+    Controlled AI Architecture
   </text>
   <text x="72" y="408" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="700" fill="#EAF5FF">
     for Enterprise Scale
@@ -50,6 +50,6 @@
 
   <rect x="72" y="528" width="380" height="44" rx="12" fill="#10365B" stroke="#74BCF6" stroke-opacity="0.6"/>
   <text x="95" y="556" font-family="Inter, Arial, sans-serif" font-size="20" fill="#DDF1FF">
-    Finance  Healthcare  NHS  Enterprise
+    Finance  Risk  Healthcare Operations  Enterprise
   </text>
 </svg>

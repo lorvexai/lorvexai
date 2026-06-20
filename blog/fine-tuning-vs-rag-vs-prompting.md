@@ -1,7 +1,7 @@
 ---
 title: Fine-Tuning vs RAG vs Prompting — Choosing the Right Approach
 date: 2026-04-13
-excerpt: A practical decision framework for choosing between prompt engineering, retrieval-augmented generation, and fine-tuning for enterprise AI deployments in regulated industries.
+excerpt: A practical decision framework for choosing between prompt engineering, retrieval-augmented generation, and fine-tuning for enterprise AI conceptual conceptual deployments in regulated industries.
 tags:
   - Tuning
   - RAG
@@ -11,7 +11,7 @@ tags:
 
 # Fine-Tuning vs RAG vs Prompting — Choosing the Right Approach
 
-A practical decision framework for choosing between prompt engineering, retrieval-augmented generation, and fine-tuning for enterprise AI deployments in regulated industries.
+A practical decision framework for choosing between prompt engineering, retrieval-augmented generation, and fine-tuning for enterprise AI conceptual conceptual deployments in regulated industries.
 
 ---
 
@@ -70,9 +70,9 @@ Prompt engineering is the baseline. Before considering RAG or fine-tuning, exhau
 **Best for:**
 - Formatting and structure control (output as JSON, tables, bullet lists)
 - Tone and persona (formal regulatory language, clinical brevity)
-- Chain-of-thought reasoning (step-by-step compliance analysis)
+- Chain-of-thought reasoning (step-by-step governance analysis)
 - Task decomposition (breaking a complex question into sub-queries)
-- Role assignment (acting as a PRA compliance specialist)
+- Role assignment (acting as a public-framework mapping reviewer)
 
 **Limitations:**
 - Cannot add factual knowledge the model doesn't have
@@ -86,7 +86,7 @@ flowchart LR
     SP --> LLM[LLM - existing weights]
     LLM --> O[Output]
 
-    SP --> |Role| R["You are a PRA compliance expert..."]
+    SP --> |Role| R["You are a public-framework mapping reviewer..."]
     SP --> |Format| F["Return as structured JSON..."]
     SP --> |Reasoning| RE["Think step by step..."]
 
@@ -113,8 +113,8 @@ flowchart TD
     end
 
     subgraph Knowledge Base
-        D1[PRA Rulebook] --> VS
-        D2[FCA Handbook] --> VS
+        D1[public rulebook materials] --> VS
+        D2[public conduct materials] --> VS
         D3[Internal Controls] --> VS
         D4[Basel Framework] --> VS
     end
@@ -219,7 +219,7 @@ flowchart TD
 
 ## Combining Approaches: The Hybrid Stack
 
-In practice, production systems use all three together:
+In practice, controlled systems use all three together:
 
 ```mermaid
 flowchart LR
@@ -234,9 +234,9 @@ flowchart LR
 ```
 
 **LorvexAI's approach for the Regulatory Intelligence Platform:**
-1. **Prompt engineering** — role assignment (PRA compliance specialist), reasoning format (obligation → control → gap → recommendation), output structure (JSON + narrative)
+1. **Prompt engineering** — role assignment (public-framework mapping reviewer), reasoning format (obligation → control → gap → recommendation), output structure (JSON + narrative)
 2. **RAG** — retrieves the precise regulatory text, internal controls inventory, and evidence documents for each query
-3. **Fine-tuning** — a domain-adapted model trained on 2,400 examples of regulatory mapping outputs, ensuring consistent PRA-grade language and report structure
+3. **Fine-tuning** — a domain-adapted model trained on 2,400 examples of regulatory mapping outputs, ensuring consistent evidence-oriented language and report structure
 
 The result: a system where factual accuracy comes from RAG (with citations), consistent quality comes from fine-tuning, and reasoning depth comes from prompt engineering.
 
@@ -268,8 +268,8 @@ Add **fine-tuning** only when you have:
 - A stable, well-defined output format that prompting doesn't reliably produce
 - High query volume making inference cost a concern
 - A curated, high-quality labelled dataset from domain experts
-- A model risk process for the fine-tuned model (it is a model, and therefore in scope for PRA SS1/23)
+- A model risk process for the fine-tuned model (it is a model, and therefore in scope for public model-risk materials)
 
 ---
 
-*Unsure which approach fits your use case? [Book a technical consultation](/contact) — we'll map the right architecture for your data, your compliance requirements, and your timeline.*
+*Unsure which approach fits your use case? [Book a technical consultation](/contact) — we'll map the right architecture for your data, your governance considerations, and your timeline.*

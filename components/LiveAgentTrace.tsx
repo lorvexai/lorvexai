@@ -158,7 +158,7 @@ export default function LiveAgentTrace() {
       {/* Footer context */}
       <div className="mt-4 flex items-center gap-2 border-t border-secondary/10 pt-3">
         <span className="font-mono text-[10px] text-secondary/40 uppercase tracking-[0.12em]">
-          Policy: PRA Compliance Â· Confidence: 94%
+          Policy: Public-framework mapping · Human review required
         </span>
       </div>
     </div>

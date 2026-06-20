@@ -1,7 +1,7 @@
 ---
 title: AI Agents in Banking Operations
 date: 2026-03-31
-excerpt: A production blueprint for AI agents in banking with governance-first controls, faster investigation cycles, and auditable decisioning.
+excerpt: A reference blueprint for AI agents in banking with governance-first controls, faster investigation cycles, and auditable decisioning.
 tags:
   - AI Agents
   - Banking
@@ -147,7 +147,7 @@ flowchart TD
   P1["Phase 1\nPick one bounded workflow\ne.g. suspicious-payment investigation"]
   --> P2["Phase 2\nDefine decision rights &\nescalation thresholds with compliance"]
   --> P3["Phase 3\nShadow mode vs current operations\nBenchmark outcomes"]
-  --> P4["Phase 4\nSupervised deployment\nAnalyst approval gates"]
+  --> P4["Phase 4\nSupervised conceptual deployment\nAnalyst approval gates"]
   --> P5["Phase 5\nExpand automation\nAfter governance KPIs stabilise"]
 ```
 

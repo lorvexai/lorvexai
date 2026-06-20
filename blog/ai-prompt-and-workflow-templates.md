@@ -1,7 +1,7 @@
 ---
 title: AI Prompt and Workflow Templates for Finance and Healthcare
 date: 2026-04-13
-excerpt: Production-tested prompt patterns and reusable workflow templates for regulated AI deployments — covering compliance analysis, clinical summarisation, risk reporting, and agentic task orchestration.
+excerpt: Reference prompt patterns and reusable workflow templates for regulated AI conceptual conceptual deployments — covering governance analysis, clinical summarisation, risk reporting, and agentic task orchestration.
 tags:
   - Templates
   - LLM Engineering
@@ -11,23 +11,23 @@ tags:
 
 # AI Prompt and Workflow Templates for Finance and Healthcare
 
-Production-tested prompt patterns and reusable workflow templates for regulated AI deployments — covering compliance analysis, clinical summarisation, risk reporting, and agentic task orchestration.
+Reference prompt patterns and reusable workflow templates for regulated AI conceptual conceptual deployments — covering governance analysis, clinical summarisation, risk reporting, and agentic task orchestration.
 
 ---
 
 ## Why Templates Matter in Enterprise AI
 
-Enterprise AI fails not because the models are incapable but because teams reinvent the same patterns repeatedly — each team writing their own version of a compliance analysis prompt, each slightly different, none consistently reliable.
+Enterprise AI fails not because the models are incapable but because teams reinvent the same patterns repeatedly — each team writing their own version of a governance analysis prompt, each slightly different, none consistently reliable.
 
 Templates solve this by encoding **proven patterns** into reusable building blocks. A well-designed prompt template for regulatory obligation extraction, tested on 500 examples and refined over three months, will consistently outperform a prompt written from scratch in an afternoon.
 
-This article covers the core templates LorvexAI uses in production across the Regulatory Intelligence Platform, NHS Flow Optimizer, and Treasury Sentinel — structured as patterns you can adapt for your own deployments.
+This article covers the core templates LorvexAI uses in controlled settings across the Regulatory Intelligence Platform, Healthcare Flow Intelligence blueprint, and Treasury Sentinel — structured as patterns you can adapt for your own conceptual conceptual deployments.
 
 ---
 
 ## The Anatomy of a Production Prompt Template
 
-Every production prompt template has four components:
+Every reference prompt template has four components:
 
 ```mermaid
 flowchart TD
@@ -67,7 +67,7 @@ flowchart TD
 
 ```
 SYSTEM:
-You are a regulatory obligations analyst specialising in PRA, FCA, and Basel frameworks.
+You are a regulatory obligations analyst specialising in public finance-framework, and Basel frameworks.
 Your task is to extract obligations from the provided regulatory text.
 
 Rules:
@@ -82,7 +82,7 @@ OUTPUT FORMAT:
   "obligations": [
     {
       "id": "OBL-001",
-      "reference": "PRA SS1/23 §4.2",
+      "reference": "public model-risk materials §4.2",
       "text": "Exact obligation text from source",
       "type": "SHALL | SHOULD | MAY",
       "applies_to": ["model risk", "validation", ...],
@@ -118,7 +118,7 @@ flowchart LR
 
 ```
 SYSTEM:
-You are a compliance gap analyst. You will receive:
+You are a governance gap analyst. You will receive:
 1. A list of regulatory obligations (from regulation source)
 2. A list of existing controls (from internal control inventory)
 
@@ -187,7 +187,7 @@ flowchart LR
 
 ---
 
-## NHS and Healthcare Templates
+## Healthcare Operations Templates
 
 ### Template 4: Referral Triage Summary
 
@@ -195,7 +195,7 @@ flowchart LR
 
 ```
 SYSTEM:
-You are a clinical triage assistant supporting NHS specialist teams.
+You are a clinical triage assistant supporting healthcare specialist teams.
 You summarise GP referral letters to assist clinicians in prioritisation decisions.
 
 Rules:
@@ -241,7 +241,7 @@ flowchart TD
 
 ```
 SYSTEM:
-You are a clinical documentation assistant supporting NHS ward teams.
+You are a clinical documentation assistant supporting healthcare ward teams.
 You draft discharge summaries from structured clinical notes for clinician review and sign-off.
 
 Rules:
@@ -250,7 +250,7 @@ Rules:
 - Include ALL medications with doses and durations
 - Flag any outstanding investigations or follow-up actions
 - Do NOT include information not present in the source notes
-- Output in structured discharge summary format per NHS guidance
+- Output in structured discharge summary format per local healthcare guidance
 
 CONTEXT:
 CLINICAL NOTES:
@@ -271,7 +271,7 @@ Draft a discharge summary for this patient episode.
 
 ```
 SYSTEM:
-You are a healthcare operations analyst supporting NHS specialty teams.
+You are a healthcare operations analyst supporting healthcare specialty teams.
 Generate a concise weekly intelligence brief from waiting list data.
 
 Rules:
@@ -307,7 +307,7 @@ flowchart TD
     OB --> T2[Template 2: Gap analysis vs controls]
     T2 --> GA[Gaps identified]
     GA --> PR{Priority gaps?}
-    PR -->|HIGH gaps| AL[Alert compliance team]
+    PR -->|HIGH gaps| AL[Alert governance team]
     PR -->|MEDIUM/LOW| QU[Add to review queue]
     AL --> T3[Template: Draft remediation brief]
     T3 --> HU[Human review & sign-off]
@@ -318,7 +318,7 @@ flowchart TD
     style HU fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
 ```
 
-### Workflow Template B: NHS Referral Processing Pipeline
+### Workflow Template B: Healthcare Referral Processing Pipeline
 
 ```mermaid
 flowchart TD
@@ -381,7 +381,7 @@ flowchart LR
     RE --> ME[Merge to main]
     ME --> ST[Staging deploy]
     ST --> PR2[Production deploy]
-    PR2 --> MO[Monitor in production]
+    PR2 --> MO[Monitor in controlled settings]
 
     style SC fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
     style BL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
@@ -392,22 +392,22 @@ flowchart LR
 - Every template has a version number (`obligation-extractor-v2.3`)
 - Every LLM call logs the template version used — essential for reproducing outputs in an audit
 - Breaking changes (those that alter output structure) increment the major version
-- All production templates are stored in version control, not in a database or config file
-- Template changes require an evaluation run against the golden dataset before deployment
+- All reference templates are stored in version control, not in a database or config file
+- Template changes require an evaluation run against the golden dataset before conceptual deployment
 
 ---
 
 ## Building Your Own Template Library
 
-Start with the highest-frequency, highest-value tasks in your team. For a compliance team:
+Start with the highest-frequency, highest-value tasks in your team. For a governance team:
 
 1. **Week 1**: Identify the 3 tasks that consume the most time and have clear, structured outputs (obligation extraction, gap analysis, report drafting)
 2. **Week 2**: Write the first version of each template, test manually on 20 examples
 3. **Week 3**: Build a 100-example golden dataset, measure baseline performance
 4. **Week 4**: Iterate on the worst-performing template, retest, deploy
 
-After one month you will have three production-grade templates that consistently outperform ad-hoc prompting and save hours of manual work per week.
+After one month you will have three production-aware templates that consistently outperform ad-hoc prompting and save hours of manual work per week.
 
 ---
 
-*The templates in this article are adapted from LorvexAI's production library. Want access to the full template library for your domain? [Get in touch](/contact).*
+*The templates in this article are adapted from LorvexAI's reference library. Want access to the full template library for your domain? [Get in touch](/contact).*

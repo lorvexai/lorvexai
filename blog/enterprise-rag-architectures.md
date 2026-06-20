@@ -1,7 +1,7 @@
 ---
 title: Enterprise RAG Architectures
 date: 2026-03-30
-excerpt: Designing retrieval-augmented generation systems for reliability, governance, and production-grade intelligence at scale.
+excerpt: Designing retrieval-augmented generation systems for reliability, governance, and production-aware intelligence at scale.
 tags:
   - RAG
   - LLM Engineering
@@ -10,20 +10,20 @@ tags:
 
 # Enterprise RAG Architectures
 
-Designing retrieval-augmented generation systems for reliability, governance, and production-grade intelligence at scale.
+Designing retrieval-augmented generation systems for reliability, governance, and production-aware intelligence at scale.
 
 ---
 
 ## Article Focus
 
-- Written for: technology architecture teams, finance risk/compliance teams, healthcare knowledge-platform teams, and NHS digital transformation teams
+- Written for: technology architecture teams, finance risk/governance teams, healthcare knowledge-platform teams, and healthcare digital transformation teams
 - Primary value: trusted retrieval and decision support with measurable governance
 
 ---
 
 ## Why Enterprise RAG Is Different
 
-A production-grade Retrieval-Augmented Generation stack is not just "LLM + vector DB." In enterprise environments, every answer must be:
+A production-aware Retrieval-Augmented Generation stack is not just "LLM + vector DB." In enterprise environments, every answer must be:
 
 - Grounded in approved internal knowledge
 - Enforced by role and policy controls before answer generation

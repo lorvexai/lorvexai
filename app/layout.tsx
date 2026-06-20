@@ -24,16 +24,16 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${normalizedSiteUrl}/`),
-  title: "LorvexAI | Operationalizing Agentic AI for Enterprise Scale",
+  title: "LorvexAI - Controlled AI Architecture, Books and Research",
   description:
-    "Operationalize Agentic AI with LorvexAI. We build production-ready LLM systems with governance-first controls for Finance and Healthcare.",
+    "Independent books, research, technical guides, and reference architectures for controlled AI systems in finance, risk, compliance, healthcare operations, and enterprise automation.",
   keywords: [
-    "Agentic AI Systems",
-    "LLM Engineering for Banking",
-    "NHS AI Triage Blueprint",
-    "Enterprise RAG Governance",
-    "AI-native treasury control tower",
-    "enterprise AI architecture"
+    "Controlled AI Architecture",
+    "AI Governance Education",
+    "Enterprise RAG Patterns",
+    "AI Books and Research",
+    "Finance Risk Technology",
+    "Healthcare Operations Research"
   ],
   authors: [{ name: "LorvexAI Editorial Team" }],
   icons: {
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     apple: "/lorvex_icon.png"
   },
   openGraph: {
-    title: "LorvexAI | Operationalizing Agentic AI for Enterprise Scale",
+    title: "LorvexAI - Controlled AI Architecture, Books and Research",
     description:
-      "Operationalize Agentic AI with governance-first controls for finance, healthcare, and NHS workflows.",
+      "Independent books, research, technical guides, and reference architectures for controlled AI systems in regulated environments.",
     url: siteUrl,
     siteName: "LorvexAI",
     images: [
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LorvexAI | Agentic AI for Enterprise",
+    title: "LorvexAI | Controlled AI Architecture",
     description:
-      "Build production-grade agentic systems and enterprise RAG platforms with LorvexAI.",
+      "Books, research, technical guides, and reference architectures for controlled AI systems.",
     images: [socialImageUrl]
   }
 };
@@ -83,4 +83,3 @@ export default function RootLayout({
     </html>
   );
 }
-

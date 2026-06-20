@@ -1,7 +1,7 @@
 ---
-title: NHS AI Triage Without Harm
+title: Healthcare Operations Triage Without Harm
 date: 2026-03-31
-excerpt: A safety-first architecture for NHS front door triage that improves access while protecting clinical accountability.
+excerpt: A safety-first architecture for healthcare front door workflow support that improves access while protecting clinical accountability.
 tags:
   - NHS
   - Healthcare AI
@@ -9,22 +9,22 @@ tags:
   - Clinical Operations
 ---
 
-# NHS AI Triage Without Harm
+# Healthcare Operations Triage Without Harm
 
-A safety-first architecture for NHS front door triage that improves access while protecting clinical accountability.
+A safety-first architecture for healthcare front door workflow support that improves access while protecting clinical accountability.
 
 ---
 
 ## Article Focus
 
-- Written for: NHS urgent care leaders, clinical safety teams, and healthcare digital transformation teams
+- Written for: healthcare operations leaders, healthcare safety teams, and healthcare digital transformation teams
 - Primary value: safe AI triage acceleration with mandatory human escalation controls
 
 ---
 
 ## Why This Matters Now
 
-Front door services across the NHS face sustained pressure:
+Front door services across healthcare operations face sustained pressure:
 
 - High emergency department demand
 - Significant 111 and GP triage volume
@@ -46,7 +46,7 @@ AI can help prioritise and route patients faster, but only if safety is engineer
 
 ## Reference Architecture for NHS Triage
 
-![NHS Triage Safety Architecture](../../diagrams/nhs-triage-architecture.svg?v=2)
+![Healthcare Operations Triage Safety Architecture](../../diagrams/nhs-triage-architecture.svg?v=2)
 
 ---
 
@@ -152,4 +152,4 @@ flowchart LR
 
 ## Final Thought
 
-The best NHS triage AI is not the most autonomous system. It is the safest system: fast when confidence is high, and immediately human-led when risk is uncertain.
+The best healthcare operations AI is not the most autonomous system. It is the safest system: fast when confidence is high, and immediately human-led when risk is uncertain.

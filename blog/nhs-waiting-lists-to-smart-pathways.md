@@ -17,7 +17,7 @@ A practical AI blueprint for NHS elective recovery that improves throughput, fai
 
 ## Article Focus
 
-- Written for: healthcare operations leaders and NHS elective recovery teams
+- Written for: healthcare operations leaders and healthcare elective recovery teams
 - Primary value: pathway throughput gains with fairness-aware, clinically governed AI
 
 ---
@@ -47,7 +47,7 @@ AI can support pathway orchestration, but it must preserve fairness, transparenc
 
 ## Elective Pathway Intelligence Architecture
 
-![NHS Elective Pathway Architecture](../../diagrams/nhs-elective-architecture.svg?v=2)
+![Healthcare Operations Pathway Architecture](../../diagrams/nhs-elective-architecture.svg?v=2)
 
 ---
 
