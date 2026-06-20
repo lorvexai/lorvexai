@@ -208,6 +208,9 @@ export default function HomePage() {
               <Link href="/research" className="btn-outline min-h-11 text-sm font-semibold">
                 Read Research
               </Link>
+              <Link href="/topics" className="btn-outline min-h-11 text-sm font-semibold">
+                Explore Topics
+              </Link>
               <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
                 View Blueprints
               </Link>

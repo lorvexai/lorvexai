@@ -9,6 +9,7 @@ const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 const footerLinks = [
   { href: "/research", label: "Research" },
   { href: "/blog", label: "Blog" },
+  { href: "/topics", label: "Topics" },
   { href: "/blueprints", label: "Reference Blueprints" },
   { href: "/books", label: "Books" },
   { href: "/about", label: "About" },

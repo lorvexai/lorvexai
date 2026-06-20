@@ -113,7 +113,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
               Featured Insights
             </p>
             <h2 className="text-3xl font-semibold md:text-4xl">
-              <span className="text-white">Regulated AI </span>
+              <span className="text-white">Latest </span>
               <span className="text-gradient">Research Notes</span>
             </h2>
           </div>
@@ -163,7 +163,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
           </div>
         ) : (
           <div className="grid gap-6 md:grid-cols-3">
-            {filteredPosts.slice(0, 3).map((post) => (
+            {filteredPosts.slice(0, 6).map((post) => (
               <BlogCard
                 key={post.slug}
                 slug={post.slug}

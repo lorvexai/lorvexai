@@ -113,7 +113,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
           type="search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search articles by title, topic, or keyword…"
+          placeholder="Search articles by title, topic, or keyword..."
           className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-white placeholder-secondary/40 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
         />
       </div>

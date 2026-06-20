@@ -13,6 +13,9 @@ export default function MobileStickyCTA() {
         <Link href="/research" className="btn-outline min-h-11 flex-1 justify-center text-sm">
           Research
         </Link>
+        <Link href="/topics" className="btn-outline min-h-11 flex-1 justify-center text-sm">
+          Topics
+        </Link>
       </div>
     </div>
   );
