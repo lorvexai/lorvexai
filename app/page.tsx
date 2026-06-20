@@ -20,19 +20,19 @@ import {
 } from "lucide-react";
 
 const badges = [
-  "AI Architecture",
-  "Regulated AI Governance",
-  "Enterprise RAG Patterns",
-  "Agentic Workflow Design",
-  "Finance & Risk Technology",
-  "Healthcare Operations Research"
+  "AI Strategy & Governance",
+  "Model Risk Management",
+  "AI Audit & Assurance",
+  "PRA, ECB, Fed & SEC Themes",
+  "Reference Architectures",
+  "Board Risk Reporting"
 ];
 
 const proofPoints = [
-  { label: "Research-led AI architecture", icon: BookOpen },
-  { label: "Prototype and reference designs", icon: Layers3 },
-  { label: "Governance-aware implementation patterns", icon: Lock },
-  { label: "Finance, risk, compliance, and healthcare operations focus", icon: ShieldCheck }
+  { label: "Research-led AI governance notes", icon: BookOpen },
+  { label: "Model risk and audit evidence patterns", icon: Layers3 },
+  { label: "Financial regulation themes from public sources", icon: Lock },
+  { label: "Finance, risk, compliance, and assurance focus", icon: ShieldCheck }
 ];
 
 const blueprints = [
@@ -109,22 +109,61 @@ const scenarios = [
 
 const focusAreas = [
   {
-    href: "/blueprints",
+    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions",
     icon: Landmark,
-    title: "Finance, Risk & Compliance",
-    body: "Reference designs for regulatory reporting, model risk evidence, controlled RAG, treasury operations, and governance-aware automation."
+    title: "AI Strategy, Governance & Audit",
+    body: "Plain-language research on AI operating models, evidence packs, audit readiness, human oversight, and board-level control."
+  },
+  {
+    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance",
+    icon: HeartPulse,
+    title: "Model Risk & Financial Regulation",
+    body: "Educational notes on model inventory, tiering, validation, monitoring, PRA SS1/23, ECB supervision, Fed guidance, and SEC AI themes."
   },
   {
     href: "/blueprints",
-    icon: HeartPulse,
-    title: "Healthcare Operations Research",
-    body: "Conceptual patterns for flow intelligence, operational visibility, queue analytics, and human-reviewed support workflows."
+    icon: Database,
+    title: "Reference Architectures",
+    body: "Conceptual blueprints for controlled RAG, regulatory intelligence, treasury monitoring, evidence trails, and supervised AI workflows."
+  }
+];
+
+const regulatedResearchSeries = [
+  {
+    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions",
+    label: "Strategy",
+    title: "AI Strategy and Governance",
+    body: "A board-friendly way to connect AI ambition, risk appetite, ownership, controls, and evidence."
   },
   {
-    href: "/platform",
-    icon: Database,
-    title: "Enterprise Automation",
-    body: "Architecture notes for access control, retrieval governance, evidence trails, evaluation, and supervised AI workflows."
+    href: "/blog/ai-audit-readiness-evidence-controls-logs-human-oversight",
+    label: "Audit",
+    title: "AI Audit Readiness",
+    body: "How evidence, controls, logs, and human oversight make AI systems easier to test and challenge."
+  },
+  {
+    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance",
+    label: "Model Risk",
+    title: "Model Risk Management for AI",
+    body: "A practical view of AI inventory, tiering, validation, monitoring, and effective challenge."
+  },
+  {
+    href: "/blog/ecb-ai-supervision-governance-genai-prudential-risk",
+    label: "ECB",
+    title: "ECB AI Supervision",
+    body: "Governance, GenAI, prudential risk, strategy, and control themes for supervised banks."
+  },
+  {
+    href: "/blog/sec-and-ai-ai-washing-predictive-analytics-conflicts-disclosure-risk",
+    label: "SEC",
+    title: "SEC and AI",
+    body: "AI-washing, predictive analytics, conflicts, disclosure risk, and governance evidence."
+  },
+  {
+    href: "/blog/board-reporting-for-ai-risk-and-model-risk-committees",
+    label: "Board",
+    title: "AI Risk Reporting",
+    body: "How to report AI adoption, incidents, assurance, validation findings, and remediation."
   }
 ];
 
@@ -146,13 +185,13 @@ export default function HomePage() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               <Sparkles size={14} aria-hidden="true" />
-              Independent AI education, publishing, research, architecture lab
+              AI governance, model risk, audit, and financial regulation research
             </p>
             <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
-              Controlled AI Architecture for Regulated Enterprise
+              Controlled AI Governance for Regulated Financial Institutions
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/78">
-              LorvexAI publishes books, research, reference architectures, technical guides, and prototype blueprints for applying AI safely in finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation.
+              LorvexAI publishes educational research, reference architectures, and practical notes on AI strategy, model risk, auditability, and financial regulation across PRA, ECB, Federal Reserve, and SEC supervisory themes.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {badges.map((badge) => (
@@ -162,12 +201,15 @@ export default function HomePage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/books" className="btn-primary min-h-11 text-sm font-semibold">
-                Explore Research &amp; Books
+              <Link href="/blog" className="btn-primary min-h-11 text-sm font-semibold">
+                Read Blog
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link href="/research" className="btn-outline min-h-11 text-sm font-semibold">
                 Read Research
+              </Link>
+              <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
+                View Blueprints
               </Link>
             </div>
             <div className="mt-8 max-w-2xl">
@@ -207,6 +249,41 @@ export default function HomePage() {
       </section>
 
       <section className="section">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">New research series</p>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                AI governance, audit, model risk, and financial regulation.
+              </h2>
+              <p className="mt-4 text-secondary/70">
+                A connected article series for regulated financial institutions, written as educational research rather than consulting or advisory material.
+              </p>
+            </div>
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
+              Browse all articles
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {regulatedResearchSeries.map((item) => (
+              <Link key={item.href} href={item.href} className="group rounded-lg border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
+                <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+                  {item.label}
+                </span>
+                <h3 className="mt-5 text-xl font-semibold leading-snug text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-secondary/65">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">
+                  Read article
+                  <ArrowRight size={14} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">

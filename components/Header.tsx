@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/books", label: "Books" },
   { href: "/research", label: "Research" },
+  { href: "/blog", label: "Blog" },
+  { href: "/blueprints", label: "Blueprints" },
+  { href: "/books", label: "Books" },
   { href: "/platform", label: "Architecture" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" }
+  { href: "/about", label: "About" }
 ];
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -51,8 +52,8 @@ export default function Header() {
             })}
           </nav>
 
-          <Link href="/books" className="btn-primary min-h-10 px-5 py-2.5 text-sm">
-            Explore Books
+          <Link href="/blog" className="btn-primary min-h-10 px-5 py-2.5 text-sm">
+            Read Blog
           </Link>
         </div>
 

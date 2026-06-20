@@ -5,7 +5,7 @@ import BlogCard from "@/components/BlogCard";
 import type { PostMeta } from "@/utils/posts";
 import { Search } from "lucide-react";
 
-const TOPICS = ["All", "Technology", "Finance", "Healthcare", "Enterprise"] as const;
+const TOPICS = ["All", "Governance", "Audit", "Model Risk", "Regulation", "Technology", "Finance", "Healthcare", "Enterprise"] as const;
 type Topic = (typeof TOPICS)[number];
 
 const topicBySlug: Record<string, Exclude<Topic, "All">> = {
@@ -24,10 +24,21 @@ const topicBySlug: Record<string, Exclude<Topic, "All">> = {
   "guardrails-for-enterprise-ai":             "Enterprise",
   "fine-tuning-vs-rag-vs-prompting":          "Technology",
   "enterprise-llm-chat-interfaces":           "Enterprise",
-  "ai-prompt-and-workflow-templates":         "Enterprise"
+  "ai-prompt-and-workflow-templates":         "Enterprise",
+  "ai-strategy-and-governance-for-regulated-financial-institutions": "Governance",
+  "ai-audit-readiness-evidence-controls-logs-human-oversight": "Audit",
+  "model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance": "Model Risk",
+  "ecb-ai-supervision-governance-genai-prudential-risk": "Regulation",
+  "sec-and-ai-ai-washing-predictive-analytics-conflicts-disclosure-risk": "Regulation",
+  "ai-model-inventory-and-tiering-for-banks": "Model Risk",
+  "board-reporting-for-ai-risk-and-model-risk-committees": "Governance"
 };
 
 const topicAccent: Record<Exclude<Topic, "All">, string> = {
+  Governance:   "border-cyan-400/30 text-cyan-300",
+  Audit:        "border-emerald-400/30 text-emerald-300",
+  "Model Risk": "border-orange-400/30 text-orange-300",
+  Regulation:   "border-rose-400/30 text-rose-300",
   Technology:   "border-blue-400/30 text-blue-300",
   Finance:      "border-orange-400/30 text-orange-300",
   Healthcare:   "border-emerald-400/30 text-emerald-300",
@@ -49,6 +60,10 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
 
   const grouped = useMemo(() => {
     const groups: Record<Exclude<Topic, "All">, PostMeta[]> = {
+      Governance: [],
+      Audit: [],
+      "Model Risk": [],
+      Regulation: [],
       Technology: [],
       Finance: [],
       Healthcare: [],
@@ -66,6 +81,10 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
   const counts = useMemo(
     () => ({
       All:        posts.length,
+      Governance: grouped.Governance.length,
+      Audit: grouped.Audit.length,
+      "Model Risk": grouped["Model Risk"].length,
+      Regulation: grouped.Regulation.length,
       Technology: grouped.Technology.length,
       Finance:    grouped.Finance.length,
       Healthcare: grouped.Healthcare.length,

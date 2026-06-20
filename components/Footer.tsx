@@ -7,9 +7,10 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
 const footerLinks = [
-  { href: "/books", label: "Books" },
   { href: "/research", label: "Research" },
+  { href: "/blog", label: "Blog" },
   { href: "/blueprints", label: "Reference Blueprints" },
+  { href: "/books", label: "Books" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/disclaimers", label: "Disclaimers" },

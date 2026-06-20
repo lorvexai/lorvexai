@@ -14,10 +14,12 @@ type InsightPost = {
 
 const TOPIC_FILTERS = [
   "All",
-  "Technology",
+  "Governance",
+  "Audit",
+  "Model Risk",
+  "Regulation",
   "Finance",
-  "Healthcare",
-  "Enterprise"
+  "Technology"
 ] as const;
 
 type TopicFilter = (typeof TOPIC_FILTERS)[number];
@@ -26,6 +28,42 @@ function matchesTopic(post: InsightPost, topic: TopicFilter) {
   if (topic === "All") return true;
   const normalizedTitle = post.title.toLowerCase();
   const normalizedTags = post.tags.map((tag) => tag.toLowerCase());
+  if (topic === "Governance") {
+    return (
+      normalizedTitle.includes("governance") ||
+      normalizedTitle.includes("strategy") ||
+      normalizedTags.some((tag) => tag.includes("governance") || tag.includes("strategy"))
+    );
+  }
+  if (topic === "Audit") {
+    return (
+      normalizedTitle.includes("audit") ||
+      normalizedTitle.includes("assurance") ||
+      normalizedTags.some((tag) => tag.includes("audit") || tag.includes("assurance"))
+    );
+  }
+  if (topic === "Model Risk") {
+    return (
+      normalizedTitle.includes("model risk") ||
+      normalizedTitle.includes("model inventory") ||
+      normalizedTags.some((tag) => tag.includes("model risk"))
+    );
+  }
+  if (topic === "Regulation") {
+    return (
+      normalizedTitle.includes("pra") ||
+      normalizedTitle.includes("ecb") ||
+      normalizedTitle.includes("sec") ||
+      normalizedTitle.includes("fed") ||
+      normalizedTags.some((tag) =>
+        tag.includes("regulation") ||
+        tag.includes("pra") ||
+        tag.includes("ecb") ||
+        tag.includes("sec") ||
+        tag.includes("federal reserve")
+      )
+    );
+  }
   if (topic === "Technology") {
     return normalizedTags.some((tag) =>
       ["rag", "architecture", "llm engineering", "ai architecture"].includes(tag)
@@ -75,8 +113,8 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
               Featured Insights
             </p>
             <h2 className="text-3xl font-semibold md:text-4xl">
-              <span className="text-white">Architecture &amp; </span>
-              <span className="text-gradient">Risk Intelligence</span>
+              <span className="text-white">Regulated AI </span>
+              <span className="text-gradient">Research Notes</span>
             </h2>
           </div>
           <div className="flex items-center gap-3">

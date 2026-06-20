@@ -3,7 +3,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import CTA from "@/components/CTA";
 import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
-import { ArrowRight, BookOpen, Code2, FileText } from "lucide-react";
+import { ArrowRight, BookOpen, ClipboardCheck, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Research & Technical Guides | LorvexAI",
@@ -14,24 +14,24 @@ export const metadata: Metadata = {
 const featuredResearch = [
   {
     icon: FileText,
-    category: "Technical Guide",
-    title: "Enterprise RAG Governance: A Practitioner's Framework",
-    desc: "A design discussion for retrieval-augmented generation systems, covering source controls, data lineage, citation checks, human review, and evidence-oriented records.",
-    href: "/blog/enterprise-rag-architectures-for-the-regulated-enterprise"
+    category: "AI Governance",
+    title: "AI Strategy and Governance for Regulated Financial Institutions",
+    desc: "A practical, board-friendly guide to AI ambition, risk appetite, ownership, controls, and evidence in regulated financial institutions.",
+    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions"
   },
   {
-    icon: Code2,
-    category: "Architecture Note",
-    title: "Agentic AI Systems: Design Patterns for Supervised Workflows",
-    desc: "Reference patterns for multi-step AI workflows in environments where governance, oversight, and accountability matter.",
-    href: "/blog/the-rise-of-agentic-ai"
+    icon: ClipboardCheck,
+    category: "Audit & Assurance",
+    title: "AI Audit Readiness: Evidence, Controls, Logs, and Human Oversight",
+    desc: "A plain-language note on making AI systems easier to audit by designing evidence and human review into the workflow.",
+    href: "/blog/ai-audit-readiness-evidence-controls-logs-human-oversight"
   },
   {
     icon: BookOpen,
-    category: "Book",
-    title: "AI for Financial Risk, Compliance and Regulatory Reporting",
-    desc: "Practitioner-focused educational writing on controlled AI adoption for financial risk, compliance, regulatory reporting, governance, RAG, agents, MLOps, LLMOps, and enterprise banking architecture.",
-    href: "/books"
+    category: "Model Risk",
+    title: "Model Risk Management for AI: PRA SS1/23 and US Supervisory Guidance",
+    desc: "Educational research on model inventory, tiering, validation, monitoring, explainability, and effective challenge for AI systems.",
+    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance"
   }
 ];
 
@@ -63,7 +63,7 @@ export default function ResearchPage() {
           <LegalDisclaimerBanner />
         </div>
       </section>
-      <Section title="Explore books and research" description="">
+      <Section title="Explore books, articles, and research" description="">
         <CTA />
       </Section>
     </>

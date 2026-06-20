@@ -9,6 +9,34 @@ export default function BlogPage() {
 
   const topicCounts: { topic: string; count: number }[] = [
     {
+      topic: "Governance",
+      count: posts.filter((p) =>
+        /governance|strategy|board reporting/i.test(p.title) ||
+        p.tags.some((t) => /governance|strategy|board reporting/i.test(t))
+      ).length
+    },
+    {
+      topic: "Audit",
+      count: posts.filter((p) =>
+        /audit|assurance/i.test(p.title) ||
+        p.tags.some((t) => /audit|assurance/i.test(t))
+      ).length
+    },
+    {
+      topic: "Model Risk",
+      count: posts.filter((p) =>
+        /model risk|model inventory/i.test(p.title) ||
+        p.tags.some((t) => /model risk/i.test(t))
+      ).length
+    },
+    {
+      topic: "Regulation",
+      count: posts.filter((p) =>
+        /pra|ecb|sec|fed|regulation/i.test(p.title) ||
+        p.tags.some((t) => /pra|ecb|sec|federal reserve|financial regulation/i.test(t))
+      ).length
+    },
+    {
       topic: "Technology",
       count: posts.filter((p) =>
         p.tags.some((t) =>
@@ -52,19 +80,19 @@ export default function BlogPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Insights</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">Technical Insights &amp; </span>
-                  <span className="text-gradient">AI Strategy</span>
+                  <span className="text-white">Regulated AI </span>
+                  <span className="text-gradient">Research Library</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
-                  Educational guidance, architecture patterns, and risk intelligence for controlled AI systems in finance, healthcare operations, and enterprise automation.
+                  Educational articles on AI strategy, governance, audit readiness, model risk, and financial regulation across PRA, ECB, Federal Reserve, and SEC themes.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Link href="/research" className="btn-primary text-sm">
-                    View Research
+                  <Link href="#articles" className="btn-primary text-sm">
+                    Browse Articles
                     <ArrowRight size={16} />
                   </Link>
-                  <Link href="/books" className="btn-outline text-sm">
-                    Explore Books
+                  <Link href="/research" className="btn-outline text-sm">
+                    View Research
                   </Link>
                 </div>
               </div>
@@ -97,13 +125,15 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <Section
+      <div id="articles">
+        <Section
         eyebrow="All Articles"
         title="Browse by topic"
-        description="Filter by sector or technology to find the most relevant guidance for your team."
-      >
-        <BlogTopicView posts={posts} />
-      </Section>
+        description="Filter by governance, audit, model risk, regulation, sector, or technology."
+        >
+          <BlogTopicView posts={posts} />
+        </Section>
+      </div>
     </>
   );
 }
