@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -22,11 +23,11 @@ body {
   position: relative;
   isolation: isolate;
   background-image:
-    radial-gradient(700px circle at 12% 8%, rgba(47, 128, 237, 0.2), transparent 42%),
-    radial-gradient(620px circle at 88% 18%, rgba(86, 163, 255, 0.16), transparent 45%),
-    radial-gradient(520px circle at 52% 95%, rgba(47, 128, 237, 0.1), transparent 48%),
-    linear-gradient(180deg, #0B1F3A 0%, #09182C 100%);
+    radial-gradient(820px circle at 18% 0%, rgba(47, 128, 237, 0.14), transparent 46%),
+    radial-gradient(760px circle at 90% 10%, rgba(86, 163, 255, 0.1), transparent 48%),
+    linear-gradient(180deg, #081a31 0%, #071426 48%, #08182d 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -35,19 +36,19 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: -2;
-  opacity: 0.28;
+  opacity: 0.16;
   background-image:
     repeating-linear-gradient(
       0deg,
-      rgba(204, 230, 255, 0.085) 0px,
-      rgba(204, 230, 255, 0.085) 1px,
+      rgba(204, 230, 255, 0.07) 0px,
+      rgba(204, 230, 255, 0.07) 1px,
       transparent 1px,
       transparent 56px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(204, 230, 255, 0.075) 0px,
-      rgba(204, 230, 255, 0.075) 1px,
+      rgba(204, 230, 255, 0.06) 0px,
+      rgba(204, 230, 255, 0.06) 1px,
       transparent 1px,
       transparent 56px
     );
@@ -61,10 +62,10 @@ body::after {
   height: 95vh;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.28;
+  opacity: 0.16;
   background:
-    radial-gradient(1300px 560px at 85% 0%, rgba(129, 201, 255, 0.2), transparent 62%),
-    radial-gradient(1200px 520px at 18% 12%, rgba(104, 179, 239, 0.16), transparent 60%);
+    radial-gradient(1300px 560px at 85% 0%, rgba(129, 201, 255, 0.14), transparent 62%),
+    radial-gradient(1200px 520px at 18% 12%, rgba(104, 179, 239, 0.1), transparent 60%);
   transform: rotate(-4deg);
 }
 
@@ -78,17 +79,18 @@ h1, h2, h3, h4, h5 {
 }
 
 .glass {
-  background: rgba(15, 42, 74, 0.6);
-  border: 1px solid rgba(192, 198, 212, 0.18);
+  background: rgba(13, 39, 69, 0.58);
+  border: 1px solid rgba(192, 198, 212, 0.14);
   backdrop-filter: blur(12px);
 }
 
 .btn-primary {
   @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-white shadow-glow transition hover:brightness-110;
+  box-shadow: 0 16px 34px rgba(47, 128, 237, 0.22);
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-secondary/40 px-6 py-3 text-secondary transition hover:border-secondary/70 hover:text-white;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-secondary/30 px-6 py-3 text-secondary transition hover:border-secondary/55 hover:text-white;
 }
 
 .grid-glow::before {
@@ -103,13 +105,24 @@ h1, h2, h3, h4, h5 {
   opacity: 0.5;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .prose .mermaid {
-  margin: 2rem 0;
+  margin: 2.25rem 0;
   overflow-x: auto;
-  background: rgba(15, 42, 74, 0.5);
-  border: 1px solid rgba(47, 128, 237, 0.2);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(10, 31, 55, 0.96), rgba(7, 20, 38, 0.98)),
+    radial-gradient(800px circle at 20% 0%, rgba(94, 168, 255, 0.16), transparent 55%);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 0.75rem;
+  padding: 1.35rem;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
 }
 
 .prose .mermaid svg {
@@ -136,8 +149,8 @@ h1, h2, h3, h4, h5 {
 
 /* Sequence diagram actor boxes */
 .prose .mermaid svg .actor {
-  fill: #0F2A4A !important;
-  stroke: #2F80ED !important;
+  fill: #102A46 !important;
+  stroke: #7DD3FC !important;
 }
 
 /* Node boxes */
@@ -145,35 +158,48 @@ h1, h2, h3, h4, h5 {
 .prose .mermaid svg .node circle,
 .prose .mermaid svg .node polygon,
 .prose .mermaid svg .node path {
-  fill: #0F2A4A !important;
-  stroke: #2F80ED !important;
+  fill: #102A46 !important;
+  stroke: #7DD3FC !important;
+  stroke-width: 1.4px !important;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
 }
 
 /* Edge lines */
 .prose .mermaid svg .edgePath path,
 .prose .mermaid svg line.actor {
-  stroke: #56A3FF !important;
+  stroke: #9BD5FF !important;
+  stroke-width: 1.9px !important;
 }
 
 /* Arrowheads */
 .prose .mermaid svg marker path {
-  fill: #56A3FF !important;
+  fill: #9BD5FF !important;
+  stroke: #9BD5FF !important;
+}
+
+.prose .mermaid svg .edgeLabel,
+.prose .mermaid svg .labelBkg {
+  background: #071426 !important;
+  border-radius: 0.35rem;
 }
 
 /* Subgraph backgrounds */
 .prose .mermaid svg .cluster rect {
-  fill: rgba(19, 41, 75, 0.6) !important;
-  stroke: rgba(47, 128, 237, 0.35) !important;
+  fill: rgba(15, 39, 66, 0.74) !important;
+  stroke: rgba(125, 211, 252, 0.28) !important;
+  stroke-width: 1.2px !important;
 }
 
 /* ─── Prose image polish ─── */
 .prose img {
-  border-radius: 1rem;
-  border: 1px solid rgba(192, 198, 212, 0.15);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(47, 128, 237, 0.1);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  background: #071426;
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(94, 168, 255, 0.08);
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 0;
 }
 
 /* ─── Prose table ─── */
@@ -258,7 +284,7 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Stat glow for numbers ─── */
 .stat-glow {
-  text-shadow: 0 0 32px rgba(47, 128, 237, 0.55);
+  text-shadow: 0 0 22px rgba(47, 128, 237, 0.36);
 }
 
 /* ─── Card hover utility ─── */
@@ -266,9 +292,9 @@ h1, h2, h3, h4, h5 {
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 .card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 36px rgba(47, 128, 237, 0.28);
-  border-color: rgba(47, 128, 237, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  border-color: rgba(47, 128, 237, 0.36);
 }
 
 /* ─── Shimmer animation for CTA primary button ─── */

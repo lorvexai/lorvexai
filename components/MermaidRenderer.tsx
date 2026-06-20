@@ -15,28 +15,42 @@ export default function MermaidRenderer({
       securityLevel: "loose",
       themeVariables: {
         darkMode: true,
-        background: "#0B1F3A",
-        primaryColor: "#1D4C8F",
-        primaryBorderColor: "#2F80ED",
+        background: "#081A31",
+        primaryColor: "#102A46",
+        primaryBorderColor: "#5EA8FF",
         primaryTextColor: "#E6ECF7",
-        secondaryColor: "#0F2A4A",
-        secondaryBorderColor: "#56A3FF",
-        secondaryTextColor: "#C0C6D4",
-        tertiaryColor: "#13294B",
-        tertiaryBorderColor: "#2F80ED",
+        secondaryColor: "#12395B",
+        secondaryBorderColor: "#7DD3FC",
+        secondaryTextColor: "#D7E4F3",
+        tertiaryColor: "#17324F",
+        tertiaryBorderColor: "#8AB4F8",
         tertiaryTextColor: "#E6ECF7",
-        lineColor: "#56A3FF",
+        lineColor: "#8CCBFF",
         textColor: "#E6ECF7",
-        mainBkg: "#0F2A4A",
-        nodeBorder: "#2F80ED",
-        clusterBkg: "#13294B",
+        mainBkg: "#102A46",
+        nodeBorder: "#5EA8FF",
+        clusterBkg: "#0F2742",
         titleColor: "#E6ECF7",
-        edgeLabelBackground: "#0B1F3A",
+        edgeLabelBackground: "#071426",
         fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
-        fontSize: "15px"
+        fontSize: "14px"
       },
-      flowchart: { curve: "basis", padding: 20 },
-      sequence: { actorFontSize: 14, noteFontSize: 13, messageFontSize: 14 },
+      flowchart: {
+        curve: "linear",
+        padding: 28,
+        nodeSpacing: 54,
+        rankSpacing: 72,
+        htmlLabels: true
+      },
+      sequence: {
+        actorFontSize: 14,
+        noteFontSize: 13,
+        messageFontSize: 13,
+        actorMargin: 70,
+        boxMargin: 12,
+        diagramMarginX: 36,
+        diagramMarginY: 24
+      },
       gantt: { fontSize: 14 }
     });
 

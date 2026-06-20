@@ -1,13 +1,61 @@
-<svg width="1280" height="620" viewBox="0 0 1280 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NHS triage escalation flow">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B1F3A"/><stop offset="100%" stop-color="#102D4D"/></linearGradient><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#74C8FF"/></marker><style>.t{font:700 30px 'Segoe UI';fill:#EAF4FF}.n{font:700 15px 'Segoe UI';fill:#ECF7FF}.s{font:500 12px 'Segoe UI';fill:#D6EAFE}</style></defs>
-<rect width="1280" height="620" fill="url(#bg)"/>
-<text class="t" x="40" y="54">Red-Flag Escalation and Human Oversight</text>
-<rect x="80" y="140" width="180" height="86" rx="10" fill="#133B61" stroke="#6FC0F7"/><text class="n" x="170" y="172" text-anchor="middle">Assessment</text><text class="s" x="170" y="193" text-anchor="middle">Initial triage</text>
-<rect x="300" y="140" width="180" height="86" rx="10" fill="#18463A" stroke="#59D7B7"/><text class="n" x="390" y="172" text-anchor="middle">AI Risk</text><text class="s" x="390" y="193" text-anchor="middle">Score and confidence</text>
-<rect x="520" y="140" width="190" height="86" rx="10" fill="#5A3F1B" stroke="#F2BC73"/><text class="n" x="615" y="172" text-anchor="middle">Red Flag</text><text class="s" x="615" y="193" text-anchor="middle">Clinical trigger check</text>
-<rect x="750" y="140" width="210" height="86" rx="10" fill="#5A2538" stroke="#FF90B6"/><text class="n" x="855" y="172" text-anchor="middle">Escalate</text><text class="s" x="855" y="193" text-anchor="middle">Senior clinician review</text>
-<rect x="1000" y="140" width="190" height="86" rx="10" fill="#5A2538" stroke="#FF90B6"/><text class="n" x="1095" y="172" text-anchor="middle">Disposition</text><text class="s" x="1095" y="193" text-anchor="middle">Advice and safety netting</text>
-<path d="M260 173 L295 173" stroke="#74C8FF" stroke-width="3" marker-end="url(#ar)"/><path d="M480 173 L515 173" stroke="#74C8FF" stroke-width="3" marker-end="url(#ar)"/><path d="M710 173 L745 173" stroke="#74C8FF" stroke-width="3" marker-end="url(#ar)"/><path d="M960 173 L995 173" stroke="#74C8FF" stroke-width="3" marker-end="url(#ar)"/>
-<path d="M615 226 C620 300, 860 300, 1095 226" stroke="#59D7B7" stroke-width="3" fill="none" marker-end="url(#ar)"/>
-<rect x="210" y="390" width="860" height="150" rx="12" fill="#0D2746" stroke="#2D649D"/><text class="s" x="240" y="428">Control rule: low confidence or red-flag patterns always route to human review.</text><text class="s" x="240" y="452">Safety KPIs: missed urgent-case rate, escalation time, rationale coverage.</text>
+<svg width="1440" height="780" viewBox="0 0 1440 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Red-Flag Escalation and Human Oversight">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071426"/>
+      <stop offset="55%" stop-color="#0B2038"/>
+      <stop offset="100%" stop-color="#102B47"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="22%" cy="8%" r="80%">
+      <stop offset="0%" stop-color="#5EA8FF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5EA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#9BD5FF"/>
+    </marker>
+    <style>
+      .title{font:700 42px Inter,'Segoe UI',Arial,sans-serif;fill:#F2F7FF}
+      .subtitle{font:500 18px Inter,'Segoe UI',Arial,sans-serif;fill:#BFD7EE}
+      .kicker{font:700 12px Inter,'Segoe UI',Arial,sans-serif;letter-spacing:.16em;fill:#7DD3FC}
+      .head{font:700 20px Inter,'Segoe UI',Arial,sans-serif;fill:#F2F7FF}
+      .body{font:500 15px Inter,'Segoe UI',Arial,sans-serif;fill:#C8D8EA}
+      .small{font:600 13px Inter,'Segoe UI',Arial,sans-serif;fill:#AFC5DC}
+      .panel{fill:#0E2946;stroke:#3B82C4;stroke-width:1.3}
+      .node{fill:#102F4F;stroke:#76C6FF;stroke-width:1.2}
+      .node2{fill:#123B42;stroke:#6EE7D8;stroke-width:1.2}
+      .node3{fill:#3C3147;stroke:#C4A7FF;stroke-width:1.2}
+      .node4{fill:#3E2E26;stroke:#F7B267;stroke-width:1.2}
+      .line{fill:none;stroke:#9BD5FF;stroke-width:2.4;marker-end:url(#arrow);stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:none;stroke:#72E4C2;stroke-width:2.2;marker-end:url(#arrow);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 8}
+    </style>
+  </defs>
+  <rect width="1440" height="780" fill="url(#bg)"/>
+  <rect width="1440" height="780" fill="url(#glow)"/>
+  <rect x="58" y="48" width="1324" height="684" rx="28" fill="#071B31" stroke="#244D75" stroke-width="1"/>
+  <text class="kicker" x="92" y="96">LORVEXAI REFERENCE DIAGRAM</text>
+  <text class="title" x="92" y="146">Red-Flag Escalation and Human Oversight</text>
+  <text class="subtitle" x="92" y="178">A safety-oriented review loop for high-risk healthcare operations signals.</text>
+  <path class="line" d="M848 215 C919.7218684219822 215, 919.7218684219822 346.28677106876, 991.4437368439644 346.28677106876"/>
+<path class="line" d="M991.4437368439644 346.28677106876 C1043.1567714034015 346.28677106876, 1043.1567714034015 558.71322893124, 1094.8698059628387 558.71322893124"/>
+<path class="line" d="M838.8698059628387 558.71322893124 C720 558.71322893124, 720 558.71322893124, 601.1301940371613 558.71322893124"/>
+<path class="line" d="M345.13019403716135 558.71322893124 C396.84322859659846 558.71322893124, 396.84322859659846 346.28677106875995, 448.5562631560355 346.28677106875995"/>
+<path class="line" d="M448.5562631560355 346.28677106875995 C520.2781315780178 346.28677106875995, 520.2781315780178 215, 592 215"/>
+<rect class="node" x="602" y="165" width="236" height="100" rx="18"/>
+<text class="head" x="720" y="203" text-anchor="middle">Flag</text>
+<text class="small" x="720" y="231" text-anchor="middle">Potential risk</text>
+<rect class="node2" x="1001.4437368439644" y="296.28677106876" width="236" height="100" rx="18"/>
+<text class="head" x="1119.4437368439644" y="334.28677106876" text-anchor="middle">Pause</text>
+<text class="small" x="1119.4437368439644" y="362.28677106876" text-anchor="middle">No automation</text>
+<rect class="node3" x="848.8698059628387" y="508.71322893124" width="236" height="100" rx="18"/>
+<text class="head" x="966.8698059628387" y="546.71322893124" text-anchor="middle">Escalate</text>
+<text class="small" x="966.8698059628387" y="574.71322893124" text-anchor="middle">Authorised review</text>
+<rect class="node4" x="355.13019403716135" y="508.71322893124" width="236" height="100" rx="18"/>
+<text class="head" x="473.13019403716135" y="546.71322893124" text-anchor="middle">Decide</text>
+<text class="small" x="473.13019403716135" y="574.71322893124" text-anchor="middle">Human action</text>
+<rect class="node" x="202.55626315603553" y="296.28677106875995" width="236" height="100" rx="18"/>
+<text class="head" x="320.5562631560355" y="334.28677106875995" text-anchor="middle">Record</text>
+<text class="small" x="320.5562631560355" y="362.28677106875995" text-anchor="middle">Safety log</text>
+<circle cx="720" cy="405" r="94" fill="#071B31" stroke="#3B82C4" stroke-width="1.4"/>
+<text class="head" x="720" y="397" text-anchor="middle">Control</text>
+<text class="small" x="720" y="423" text-anchor="middle">Evidence and review</text>
+<text class="body" x="720" y="690" text-anchor="middle">The safest high-risk pathway is explicit escalation, not hidden automation.</text>
 </svg>

@@ -1,132 +1,78 @@
-﻿<svg width="1440" height="920" viewBox="0 0 1440 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG architecture with pre-retrieval loop, ACL gatekeeper, and reranker">
+<svg width="1440" height="820" viewBox="0 0 1440 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise RAG Architecture">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#09182C"/>
-      <stop offset="100%" stop-color="#123E6A"/>
+      <stop offset="0%" stop-color="#071426"/>
+      <stop offset="55%" stop-color="#0B2038"/>
+      <stop offset="100%" stop-color="#102B47"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#153D66" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0D2948" stop-opacity="0.9"/>
-    </linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1E5382"/>
-      <stop offset="100%" stop-color="#16466D"/>
-    </linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-      <path d="M0 0 L10 5 L0 10 z" fill="#C8ECFF"/>
+    <radialGradient id="glow" cx="22%" cy="8%" r="80%">
+      <stop offset="0%" stop-color="#5EA8FF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5EA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L11 6 L1 11 Z" fill="#9BD5FF"/>
     </marker>
     <style>
-      .title{font:700 48px 'Segoe UI',Arial,sans-serif;fill:#ECF7FF}
-      .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#C7E3FB}
-      .phase{font:700 23px 'Segoe UI',Arial,sans-serif;fill:#EBF7FF}
-      .meta{font:500 13px 'Segoe UI',Arial,sans-serif;fill:#C9E6FF}
-      .cardTitle{font:700 17px 'Segoe UI',Arial,sans-serif;fill:#EEF8FF}
-      .cardBody{font:500 12px 'Segoe UI',Arial,sans-serif;fill:#D8EEFF}
-      .flow{font:600 12px 'Segoe UI',Arial,sans-serif;fill:#DAEEFF}
-      .gate{font:700 14px 'Segoe UI',Arial,sans-serif;fill:#FFEFD8}
+      .title{font:700 42px Inter,'Segoe UI',Arial,sans-serif;fill:#F2F7FF}
+      .subtitle{font:500 18px Inter,'Segoe UI',Arial,sans-serif;fill:#BFD7EE}
+      .kicker{font:700 12px Inter,'Segoe UI',Arial,sans-serif;letter-spacing:.16em;fill:#7DD3FC}
+      .head{font:700 20px Inter,'Segoe UI',Arial,sans-serif;fill:#F2F7FF}
+      .body{font:500 15px Inter,'Segoe UI',Arial,sans-serif;fill:#C8D8EA}
+      .small{font:600 13px Inter,'Segoe UI',Arial,sans-serif;fill:#AFC5DC}
+      .panel{fill:#0E2946;stroke:#3B82C4;stroke-width:1.3}
+      .node{fill:#102F4F;stroke:#76C6FF;stroke-width:1.2}
+      .node2{fill:#123B42;stroke:#6EE7D8;stroke-width:1.2}
+      .node3{fill:#3C3147;stroke:#C4A7FF;stroke-width:1.2}
+      .node4{fill:#3E2E26;stroke:#F7B267;stroke-width:1.2}
+      .line{fill:none;stroke:#9BD5FF;stroke-width:2.4;marker-end:url(#arrow);stroke-linecap:round;stroke-linejoin:round}
+      .soft{fill:none;stroke:#72E4C2;stroke-width:2.2;marker-end:url(#arrow);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 8}
     </style>
   </defs>
-
-  <rect width="1440" height="920" fill="url(#bg)"/>
-  <ellipse cx="720" cy="390" rx="620" ry="330" fill="#2F80ED" fill-opacity="0.13"/>
-
-  <text x="80" y="88" class="title">Enterprise RAG Architecture</text>
-  <text x="80" y="120" class="sub">Five-layer system with pre-retrieval intelligence, secure retrieval gates, and agentic reasoning loops</text>
-
-  <rect x="80" y="160" width="1280" height="720" rx="26" fill="#0C223C" stroke="#3F8DD6" stroke-width="2"/>
-
-  <rect x="112" y="200" width="248" height="640" rx="18" fill="url(#panel)" stroke="#4F98D9"/>
-  <rect x="372" y="200" width="248" height="640" rx="18" fill="url(#panel)" stroke="#4F98D9"/>
-  <rect x="632" y="200" width="248" height="640" rx="18" fill="url(#panel)" stroke="#4F98D9"/>
-  <rect x="892" y="200" width="248" height="640" rx="18" fill="url(#panel)" stroke="#4F98D9"/>
-  <rect x="1152" y="200" width="176" height="640" rx="18" fill="url(#panel)" stroke="#4F98D9"/>
-
-  <text x="236" y="236" text-anchor="middle" class="phase">Ingestion</text>
-  <text x="496" y="236" text-anchor="middle" class="phase">Pre-Retrieval</text>
-  <text x="756" y="236" text-anchor="middle" class="phase">Retrieval</text>
-  <text x="1016" y="236" text-anchor="middle" class="phase">Orchestration</text>
-  <text x="1240" y="236" text-anchor="middle" class="phase">Generation &amp; Trust</text>
-
-  <rect x="140" y="300" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="236" y="334" text-anchor="middle" class="cardTitle">Source Systems</text>
-  <text x="236" y="356" text-anchor="middle" class="cardBody">Policies, SOPs, KBs, logs</text>
-
-  <rect x="140" y="430" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="236" y="464" text-anchor="middle" class="cardTitle">Small-to-Large</text>
-  <text x="236" y="486" text-anchor="middle" class="cardBody">Child chunks -> parent docs</text>
-
-  <rect x="140" y="560" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="236" y="594" text-anchor="middle" class="cardTitle">Metadata &amp; ACL Tags</text>
-  <text x="236" y="616" text-anchor="middle" class="cardBody">PII, role, region, policy</text>
-
-  <rect x="400" y="300" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="496" y="334" text-anchor="middle" class="cardTitle">Query Rewrite</text>
-  <text x="496" y="356" text-anchor="middle" class="cardBody">Intent expansion &amp; disambiguation</text>
-
-  <rect x="400" y="430" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="496" y="464" text-anchor="middle" class="cardTitle">HyDE Builder</text>
-  <text x="496" y="486" text-anchor="middle" class="cardBody">Hypothetical answer embedding</text>
-
-  <rect x="400" y="560" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="496" y="594" text-anchor="middle" class="cardTitle">Route Planner</text>
-  <text x="496" y="616" text-anchor="middle" class="cardBody">Select tools and retrieval path</text>
-
-  <rect x="660" y="300" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="756" y="334" text-anchor="middle" class="cardTitle">ACL Gatekeeper</text>
-  <text x="756" y="356" text-anchor="middle" class="cardBody">Policy-aware candidate filter</text>
-
-  <rect x="660" y="430" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="756" y="464" text-anchor="middle" class="cardTitle">Hybrid Search</text>
-  <text x="756" y="486" text-anchor="middle" class="cardBody">BM25 + vector retrieval</text>
-
-  <rect x="660" y="560" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="756" y="594" text-anchor="middle" class="cardTitle">Cross-Encoder Reranker</text>
-  <text x="756" y="616" text-anchor="middle" class="cardBody">Relevance over pure similarity</text>
-
-  <rect x="920" y="300" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1016" y="334" text-anchor="middle" class="cardTitle">Context Builder</text>
-  <text x="1016" y="356" text-anchor="middle" class="cardBody">Parent passages + citations</text>
-
-  <rect x="920" y="430" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1016" y="464" text-anchor="middle" class="cardTitle">Agentic Loop (ReAct)</text>
-  <text x="1016" y="486" text-anchor="middle" class="cardBody">Search again if evidence is weak</text>
-
-  <rect x="920" y="560" width="192" height="90" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1016" y="594" text-anchor="middle" class="cardTitle">Policy Verifier</text>
-  <text x="1016" y="616" text-anchor="middle" class="cardBody">Redaction and compliance checks</text>
-
-  <rect x="1170" y="340" width="140" height="94" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1240" y="376" text-anchor="middle" class="cardTitle">LLM</text>
-  <text x="1240" y="398" text-anchor="middle" class="cardBody">Structured answer</text>
-
-  <rect x="1170" y="500" width="140" height="118" rx="12" fill="url(#card)" stroke="#79C0F7"/>
-  <text x="1240" y="536" text-anchor="middle" class="cardTitle">Trust Layer</text>
-  <text x="1240" y="558" text-anchor="middle" class="cardBody">Citations</text>
-  <text x="1240" y="576" text-anchor="middle" class="cardBody">Groundedness</text>
-  <text x="1240" y="594" text-anchor="middle" class="cardBody">Telemetry</text>
-
-  <path d="M332 345 L400 345" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M592 345 L660 345" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M852 345 L920 345" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M1112 385 L1170 385" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-  <path d="M236 390 L236 430" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M236 520 L236 560" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-  <path d="M496 390 L496 430" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M496 520 L496 560" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-  <path d="M756 390 L756 430" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M756 520 L756 560" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-  <path d="M1016 390 L1016 430" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-  <path d="M1016 520 L1016 560" stroke="#C8ECFF" stroke-width="3.5" marker-end="url(#arrow)"/>
-
-  <path d="M1112 475 C1150 475,1150 475,1170 530" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
-  <path d="M1240 620 C1240 690,1030 700,1016 650" stroke="#BDF5DB" stroke-width="3.5" fill="none" marker-end="url(#arrow)"/>
-
-  <rect x="650" y="690" width="212" height="48" rx="12" fill="#5B3A25" stroke="#E9B98A"/>
-  <text x="756" y="719" text-anchor="middle" class="gate">Security Gate before retrieval output</text>
-
-  <text x="934" y="674" class="flow">Agentic re-search loop if context confidence is low</text>
+  <rect width="1440" height="820" fill="url(#bg)"/>
+  <rect width="1440" height="820" fill="url(#glow)"/>
+  <rect x="58" y="48" width="1324" height="724" rx="28" fill="#071B31" stroke="#244D75" stroke-width="1"/>
+  <text class="kicker" x="92" y="96">LORVEXAI REFERENCE DIAGRAM</text>
+  <text class="title" x="92" y="146">Enterprise RAG Architecture</text>
+  <text class="subtitle" x="92" y="178">Business and platform view for governed retrieval-augmented generation.</text>
+  <rect class="node" x="92" y="245" width="285" height="350" rx="20"/>
+<text class="head" x="116" y="291">Questions</text>
+<text class="body" x="116" y="321" text-anchor="start">User intent</text>
+<rect x="116" y="327" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="134" y="353" text-anchor="start">Business query</text>
+<rect x="116" y="385" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="134" y="411" text-anchor="start">Policy context</text>
+<rect x="116" y="443" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="134" y="469" text-anchor="start">Role permissions</text>
+<rect class="node2" x="412" y="245" width="285" height="350" rx="20"/>
+<text class="head" x="436" y="291">Retrieval</text>
+<text class="body" x="436" y="321" text-anchor="start">Evidence layer</text>
+<rect x="436" y="327" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="454" y="353" text-anchor="start">Approved sources</text>
+<rect x="436" y="385" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="454" y="411" text-anchor="start">Hybrid search</text>
+<rect x="436" y="443" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="454" y="469" text-anchor="start">Citation mapping</text>
+<rect class="node3" x="732" y="245" width="285" height="350" rx="20"/>
+<text class="head" x="756" y="291">Generation</text>
+<text class="body" x="756" y="321" text-anchor="start">Controlled response</text>
+<rect x="756" y="327" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="774" y="353" text-anchor="start">Grounded answer</text>
+<rect x="756" y="385" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="774" y="411" text-anchor="start">Uncertainty flags</text>
+<rect x="756" y="443" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="774" y="469" text-anchor="start">No-answer policy</text>
+<rect class="node4" x="1052" y="245" width="285" height="350" rx="20"/>
+<text class="head" x="1076" y="291">Assurance</text>
+<text class="body" x="1076" y="321" text-anchor="start">Quality loop</text>
+<rect x="1076" y="327" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="1094" y="353" text-anchor="start">Evaluation</text>
+<rect x="1076" y="385" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="1094" y="411" text-anchor="start">Feedback</text>
+<rect x="1076" y="443" width="237" height="42" rx="10" fill="#071B31" stroke="#2D5D87" stroke-width="1"/>
+<text class="small" x="1094" y="469" text-anchor="start">Audit log</text>
+<path class="line" d="M385 420 L404 420"/>
+<path class="line" d="M705 420 L724 420"/>
+<path class="line" d="M1025 420 L1044 420"/>
+<rect class="panel" x="170" y="649" width="1100" height="88" rx="18"/>
+<text class="body" x="210" y="701" text-anchor="start">The value of RAG comes from governed evidence, not just fluent generation.</text>
 </svg>
