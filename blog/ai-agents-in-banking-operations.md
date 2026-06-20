@@ -113,7 +113,7 @@ sequenceDiagram
 
 ## Operating Loop Diagram
 
-![AI Agents Banking Operating Loop](../../diagrams/ai-agents-banking-loop.svg?v=1)
+![AI Agents Banking Operating Loop](../../diagrams/ai-agents-banking-loop.svg?v=2)
 
 ---
 
