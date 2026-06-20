@@ -7,11 +7,11 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  ["Who we are", "LorvexAI Technologies Ltd operates this website. Company number: [INSERT COMPANY NUMBER]. Registered office: [INSERT REGISTERED OFFICE ADDRESS]. Contact: [INSERT CONTACT EMAIL]."],
+  ["Who we are", "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Contact: [INSERT CONTACT EMAIL]."],
   ["What personal data we collect", "We may collect contact form data including name, email, organisation, job title, message, and enquiry type. We may also collect technical data such as IP address, browser/device data, and server logs if analytics, hosting, or security logging is used."],
   ["Contact form data", "Contact form submissions may include name, email, organisation, job title, message, and enquiry type. Do not submit confidential, proprietary, customer, transaction, patient, clinical, employer, client, regulatory filing, supervisory, or non-public information."],
   ["Technical data", "Analytics provider: [INSERT ANALYTICS PROVIDER OR \"No analytics currently used\"]. Form handler provider: [INSERT FORM HANDLER PROVIDER]. Hosting and form providers may process technical data such as IP address, browser, device, timestamp, and usage logs."],
-  ["Why we process data", "We process data to respond to enquiries, manage scoping conversations, maintain site security, understand website usage where permitted, and keep appropriate records."],
+  ["Why we process data", "We process data to respond to books, research, writing, publishing, correction, or general enquiries, maintain site security, understand website usage where permitted, and keep appropriate records."],
   ["Legal basis", "Under UK GDPR, our legal basis may include consent, legitimate interests in responding to enquiries and operating the website, and compliance with legal obligations where applicable."],
   ["How long we keep data", "Retention period: [INSERT RETENTION PERIOD]. We aim to keep personal data only for as long as needed for the purpose collected, unless a longer period is required by law or appropriate record-keeping obligations."],
   ["Who data is shared with", "Personal data may be shared with hosting, contact form, email, analytics, security, or professional service providers where needed. Current provider details should be inserted here: [INSERT FORM HANDLER PROVIDER] and [INSERT ANALYTICS PROVIDER OR \"No analytics currently used\"]."],

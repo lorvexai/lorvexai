@@ -51,7 +51,7 @@ export default function MethodologySection() {
         </h2>
         <p className="mt-4 max-w-2xl text-secondary/80">
           A structured design model that aligns education, architecture, governance,
-          and prototype scoping for controlled AI systems.
+          and educational prototyping for controlled AI systems.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {phases.map((phase) => {

@@ -8,9 +8,8 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/books", label: "Books" },
   { href: "/research", label: "Research" },
-  { href: "/products", label: "Product Lab" },
+  { href: "/products", label: "Blueprints" },
   { href: "/platform", label: "Architecture" },
-  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ];
@@ -35,7 +34,7 @@ export default function Header() {
               className="h-9 w-auto md:h-10"
             />
             <span className="hidden text-xs font-medium text-secondary/70 xl:inline">
-              LorvexAI Technologies Ltd
+              Personal research by Sreedhara Reddy Kotha
             </span>
           </Link>
 
@@ -56,8 +55,8 @@ export default function Header() {
             })}
           </nav>
 
-          <Link href="/contact#form" className="btn-primary min-h-10 px-5 py-2.5 text-sm">
-            Scope a Conversation
+          <Link href="/books" className="btn-primary min-h-10 px-5 py-2.5 text-sm">
+            Explore Books
           </Link>
         </div>
 

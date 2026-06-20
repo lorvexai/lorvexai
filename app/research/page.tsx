@@ -41,7 +41,7 @@ export default function ResearchPage() {
       <Section
         eyebrow="Research"
         title="Research, guides, and reference architectures"
-        description="LorvexAI publishes educational research and technical guides for controlled AI systems. Materials are informational and do not constitute professional advice, compliance certification, regulatory approval, or delivered outcome claims."
+        description="LorvexAI publishes personal educational research and technical guides for controlled AI systems. Materials are informational and do not constitute professional advice, consulting, implementation services, compliance certification, regulatory approval, or delivered outcome claims."
       >
         <div className="grid gap-6 md:grid-cols-3">
           {featuredResearch.map((item) => (
@@ -63,7 +63,7 @@ export default function ResearchPage() {
           <LegalDisclaimerBanner />
         </div>
       </section>
-      <Section title="Discuss research or publications" description="">
+      <Section title="Explore books and research" description="">
         <CTA />
       </Section>
     </>

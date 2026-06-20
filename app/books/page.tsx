@@ -19,7 +19,7 @@ export default function BooksPage() {
             Educational resources for controlled AI in regulated environments.
           </h1>
           <p className="mt-5 max-w-2xl text-secondary/75">
-            Long-form books, technical guides, and companion resources are separated from services and product-lab concepts so readers can engage with LorvexAI as an independent education and publishing platform.
+            Long-form books, technical guides, and companion resources are presented as personal educational publishing. LorvexAI does not offer consulting, client delivery, product implementation, or system development for others.
           </p>
         </div>
       </section>

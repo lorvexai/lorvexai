@@ -35,7 +35,7 @@ export default function HealthcareIndustryPage() {
           ))}
         </div>
         <Link href="/products" className="btn-primary mt-8 text-sm">
-          View Product Lab
+          View Blueprints
           <ArrowRight size={15} />
         </Link>
       </Section>

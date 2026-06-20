@@ -26,8 +26,8 @@ export default function Hero() {
         </Reveal>
         <Reveal>
           <div className="flex flex-wrap gap-4">
-            <Link href="/services" className="btn-primary">
-              Explore Services <ArrowRight className="h-4 w-4" />
+            <Link href="/books" className="btn-primary">
+              Explore Books <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/research" className="btn-outline">
               Read Research

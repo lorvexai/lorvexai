@@ -35,7 +35,7 @@ const financeExpertise = [
   "Finance technology, risk, regulatory reporting, data, automation, and enterprise technology",
   "Controlled AI architecture, retrieval governance, evidence design, and human oversight",
   "Educational research into finance, risk, compliance, regulatory reporting, and healthcare operations",
-  "Independent writing, publishing, technical diagrams, templates, and product-lab blueprints"
+  "Independent writing, publishing, technical diagrams, templates, and reference blueprints"
 ];
 
 const principles = [
@@ -67,7 +67,7 @@ export default function AboutPage() {
                   <span className="text-gradient">for Controlled AI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
-                  LorvexAI is an independent education, publishing, research, and AI architecture platform created by Sreedhara Reddy Kotha. It focuses on controlled AI systems for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. The content is educational and personal in nature and does not represent any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation.
+                  LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. It focuses on controlled AI systems for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. The content is educational and personal in nature, does not offer consulting or product development for others, and does not represent any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/books" className="btn-primary text-sm">
@@ -104,7 +104,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-5">
               <p className="text-xl font-semibold text-white">Sreedhara Reddy Kotha</p>
-              <p className="mt-1 text-sm text-primary">Founder, LorvexAI Technologies Ltd</p>
+              <p className="mt-1 text-sm text-primary">Creator of LorvexAI</p>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-secondary/75">
               Sreedhara Reddy Kotha is a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data platforms, automation, and enterprise technology. His work focuses on how AI can be designed with governance, auditability, human oversight, and operational control in mind. LorvexAI reflects his independent educational, publishing, and research interests.

@@ -136,7 +136,7 @@ flowchart LR
   S5["Selective Automation\nAfter sustained KPI performance"]
 ```
 
-1. Start with advisory mode before automated decisions
+1. Start with human-reviewed educational mode before automated decisions
 2. Build explainability and logging before scale
 3. Integrate model outputs into existing risk committees
 4. Use dual-control approvals for high-impact actions

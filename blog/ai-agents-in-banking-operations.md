@@ -125,7 +125,7 @@ sequenceDiagram
 | --- | --- | --- |
 | Low | Assisted automation | Post-action review |
 | Medium | AI recommendation | Analyst approval required |
-| High | AI advisory only | Senior reviewer + mandatory rationale |
+| High | AI draft only | Senior reviewer + mandatory rationale |
 
 ### Control Objectives
 - Every action is traceable to inputs, policy rules, and model outputs

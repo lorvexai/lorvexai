@@ -7,11 +7,11 @@ export default function MobileStickyCTA() {
       style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))", paddingTop: "0.75rem" }}
     >
       <div className="mx-auto flex w-full max-w-6xl gap-2">
-        <Link href="/contact" className="btn-primary min-h-11 flex-1 justify-center text-sm">
-          Request Scoping
+        <Link href="/books" className="btn-primary min-h-11 flex-1 justify-center text-sm">
+          Books
         </Link>
-        <Link href="/services" className="btn-outline min-h-11 flex-1 justify-center text-sm">
-          Services
+        <Link href="/research" className="btn-outline min-h-11 flex-1 justify-center text-sm">
+          Research
         </Link>
       </div>
     </div>

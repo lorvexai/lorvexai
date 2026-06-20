@@ -15,7 +15,7 @@ export default function DeliveryFrameworkDiagram() {
     <div className="glass rounded-2xl p-6 md:p-8">
       <h3 className="text-xl font-semibold text-white">AI Delivery Framework</h3>
       <p className="mt-2 text-sm text-secondary/80">
-        A design model for prototype scoping, governance discussion, and evidence-oriented review.
+        A design model for educational prototyping, governance discussion, and evidence-oriented review.
       </p>
 
       <div className="mt-6 space-y-3">
@@ -42,7 +42,7 @@ export default function DeliveryFrameworkDiagram() {
       </div>
 
       <div className="mt-5 rounded-xl border border-primary/25 bg-primary/5 p-3 text-xs text-secondary/75">
-        Gate criteria: architecture review, security considerations, quality thresholds, and governance readiness.
+        Gate criteria: architecture notes, security considerations, quality thresholds, and governance readiness.
       </div>
     </div>
   );

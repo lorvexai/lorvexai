@@ -9,8 +9,7 @@ const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 const footerLinks = [
   { href: "/books", label: "Books" },
   { href: "/research", label: "Research" },
-  { href: "/products", label: "Product Lab" },
-  { href: "/services", label: "Services" },
+  { href: "/products", label: "Reference Blueprints" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/disclaimers", label: "Disclaimers" },
@@ -25,17 +24,17 @@ export default function Footer() {
       <div className="border-b border-secondary/10 bg-primary/8 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold text-white">Explore controlled AI architecture with clear boundaries.</p>
+            <p className="font-semibold text-white">Explore controlled AI research with clear boundaries.</p>
             <p className="mt-1 text-sm text-secondary/60">
-              Request a scoping conversation for books, research, workshops, architecture review, or product-lab concepts.
+              Read books, research notes, and educational reference blueprints by Sreedhara Reddy Kotha.
             </p>
           </div>
           <div className="flex shrink-0 gap-3">
-            <Link href="/contact" className="btn-primary text-sm">
-              Request Scoping
+            <Link href="/books" className="btn-primary text-sm">
+              Explore Books
             </Link>
-            <Link href="/books" className="btn-outline text-sm">
-              View Books
+            <Link href="/research" className="btn-outline text-sm">
+              Read Research
             </Link>
           </div>
         </div>
@@ -46,16 +45,12 @@ export default function Footer() {
           <div>
             <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
-              <strong className="text-white">LorvexAI Technologies Ltd</strong>
+              <strong className="text-white">LorvexAI</strong>
               <br />
-              Independent education, publishing, research, and AI architecture platform.
+              A personal AI education, publishing, and research website by Sreedhara Reddy Kotha.
             </p>
             <p className="mt-3 text-xs leading-relaxed text-secondary/45">
-              Company number: [INSERT COMPANY NUMBER]
-              <br />
-              Registered office: [INSERT REGISTERED OFFICE ADDRESS]
-              <br />
-              Registered in England &amp; Wales
+              LorvexAI does not offer consulting, advisory services, client delivery, product implementation, or system development for others.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
@@ -97,7 +92,7 @@ export default function Footer() {
       <div className="border-t border-secondary/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-5 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-secondary/40">
-            &copy; {new Date().getFullYear()} LorvexAI Technologies Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} Sreedhara Reddy Kotha. All rights reserved.
           </p>
           <p className="text-xs text-secondary/30">Educational content only. No professional advice.</p>
         </div>

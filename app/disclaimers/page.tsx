@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Disclaimers & Independence | LorvexAI",
-  description: "Independence, no-advice, no-endorsement, no-confidential-information, and product-lab disclaimers for LorvexAI.",
+  description: "Independence, no-advice, no-endorsement, no-confidential-information, and personal publishing disclaimers for LorvexAI.",
   alternates: { canonical: "/disclaimers" }
 };
 
 const sections = [
   {
     title: "Independent Capacity",
-    body: "LorvexAI is operated independently and in a personal/professional capacity. The views, articles, books, diagrams, templates, prototypes, and educational resources published here are personal to the author/operator and do not represent the views, policies, systems, controls, data, clients, projects, or positions of any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation."
+    body: "LorvexAI is operated independently as a personal education, publishing, and research website. The views, articles, books, diagrams, templates, reference blueprints, and educational resources published here are personal to the author/operator and do not represent the views, policies, systems, controls, data, clients, projects, or positions of any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation."
   },
   {
     title: "No Employer or Client Endorsement",
-    body: "No current or former employer, client, regulator, vendor, financial institution, healthcare body, or public-sector organisation has reviewed, approved, sponsored, endorsed, or authorised LorvexAI content, books, products, prototypes, services, templates, or research."
+    body: "No current or former employer, client, regulator, vendor, financial institution, healthcare body, or public-sector organisation has reviewed, approved, sponsored, endorsed, or authorised LorvexAI content, books, reference blueprints, templates, or research."
   },
   {
     title: "No Confidential Information",
@@ -33,15 +33,15 @@ const sections = [
   },
   {
     title: "Product and Prototype Notice",
-    body: "LorvexAI product concepts, labs, dashboards, diagrams, screenshots, and prototypes are educational reference designs unless clearly stated otherwise. They are not production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems."
+    body: "LorvexAI reference blueprints, dashboards, diagrams, screenshots, and conceptual examples are educational materials only. They are not products for sale, client prototypes, consulting deliverables, production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems."
   },
   {
     title: "Regulatory and Framework References",
     body: "References to PRA, FCA, Basel, EU AI Act, DORA, UK GDPR, NHS DSPT, DCB0129, ISO 42001, SOC 2, or similar frameworks are for educational mapping and design discussion only. They do not imply certification, compliance, regulatory approval, clinical safety approval, audit approval, or legal interpretation."
   },
   {
-    title: "Conflict and Boundary Statement",
-    body: "Any advisory or scoping conversation is subject to availability, professional boundary review, conflict checks, confidentiality obligations, and written scope agreement. LorvexAI does not accept work that would conflict with employment duties, confidentiality obligations, professional obligations, regulatory responsibilities, or legal restrictions."
+    title: "No Services or Product Development",
+    body: "LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services. LorvexAI does not accept work that would conflict with employment duties, confidentiality obligations, professional obligations, regulatory responsibilities, or legal restrictions."
   }
 ];
 

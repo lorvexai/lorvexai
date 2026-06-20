@@ -67,7 +67,7 @@ const products = [
     title: "Treasury Sentinel",
     body: "A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft reporting.",
     bullets: [
-      "Educational discussion and prototype scoping",
+      "Educational discussion only",
       "No autonomous treasury decision-making",
       "Integration feasibility depends on governance approval"
     ],
@@ -166,8 +166,8 @@ export default function HomePage() {
                 Explore Research &amp; Books
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/contact#form" className="btn-outline min-h-11 text-sm font-semibold">
-                Request a Scoping Conversation
+              <Link href="/research" className="btn-outline min-h-11 text-sm font-semibold">
+                Read Research
               </Link>
             </div>
             <div className="mt-8 max-w-2xl">
@@ -210,13 +210,13 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
-              Product Lab
+              Reference Blueprints
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-white md:text-5xl">
-              Prototype blueprints and reference architectures.
+              Educational blueprints and reference architectures.
             </h2>
             <p className="mt-4 text-secondary/70">
-              These concepts are educational reference designs. They are not production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems.
+              These concepts are educational reference designs. They are not products for sale, client prototypes, consulting deliverables, production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems.
             </p>
           </div>
 
@@ -238,7 +238,7 @@ export default function HomePage() {
                     ))}
                   </ul>
                   <Link href={product.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
-                    See product lab
+                    See blueprints
                     <ArrowRight size={15} aria-hidden="true" />
                   </Link>
                 </div>
@@ -258,7 +258,7 @@ export default function HomePage() {
                 Production-aware design thinking without regulated-advice claims.
               </h2>
               <p className="mt-4 text-secondary/70">
-                Subject to availability, professional boundary review, and conflict checks, LorvexAI may provide educational workshops, architecture reviews, AI governance design support, and prototype-scoping support.
+                LorvexAI publishes educational notes, diagrams, and reference blueprints only. It does not offer consulting, advisory services, client delivery, product implementation, or system development for others.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

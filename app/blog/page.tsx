@@ -63,8 +63,8 @@ export default function BlogPage() {
                     View Research
                     <ArrowRight size={16} />
                   </Link>
-                  <Link href="/contact" className="btn-outline text-sm">
-                    Request a Briefing
+                  <Link href="/books" className="btn-outline text-sm">
+                    Explore Books
                   </Link>
                 </div>
               </div>

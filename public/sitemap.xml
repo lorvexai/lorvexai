@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://lorvexai.github.io/lorvexai/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lorvexai.github.io/lorvexai/services/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/products/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/capabilities/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/research/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/books/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/disclaimers/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/privacy/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/cookies/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://lorvexai.github.io/lorvexai/terms/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-agents-in-banking-operations/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lorvexai.github.io/lorvexai/blog/ai-native-treasury-control-tower/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

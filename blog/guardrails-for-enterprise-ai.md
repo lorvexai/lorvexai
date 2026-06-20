@@ -188,7 +188,7 @@ flowchart TD
 | PII masking before LLM call | healthcare information governance considerations, GDPR | NER-based PII detection + masking |
 | Clinical advice boundary | clinical safety documentation considerations | Advice classifier + clinician escalation |
 | Prohibited clinical claims | MHRA guidance | Claim type classifier |
-| Patient data access control | Data Security Standard | Role-based retrieval scoping |
+| Patient data access control | Data Security Standard | Role-based retrieval boundaries |
 
 ---
 
@@ -213,7 +213,7 @@ Every LorvexAI product ships with a pre-configured guardrail layer tailored to i
 
 **Healthcare Flow Intelligence blueprint**: patient identifier and patient PII masking, clinical advice boundary enforcement, clinical-safety-documentation-aware escalation for HIGH urgency decisions, clinician override audit trail.
 
-**Treasury Sentinel**: MNPI pattern detection, LCR/NSFR output verification against source data, ALCO report classification (board-grade vs internal), role-based data scoping (treasury team vs board view).
+**Treasury Sentinel**: MNPI pattern detection, LCR/NSFR output verification against source data, ALCO report classification (board-grade vs internal), role-based data boundaries (treasury team vs board view).
 
 ---
 

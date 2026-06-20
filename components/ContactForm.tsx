@@ -28,11 +28,9 @@ const INITIAL: FormData = {
 
 const ENQUIRY_TYPES = [
   "Book or research enquiry",
-  "Educational workshop",
-  "AI architecture review",
-  "Governance framework discussion",
-  "Product-lab scoping conversation",
   "Speaking or writing enquiry",
+  "Academic or publishing collaboration",
+  "Correction or content feedback",
   "General enquiry"
 ];
 
@@ -73,7 +71,7 @@ export default function ContactForm() {
     body.append("Job Title", data.jobTitle || "-");
     body.append("Enquiry Type", data.enquiryType);
     body.append("Message", data.message);
-    body.append("Professional Advice Acknowledgement", data.acknowledgement ? "Accepted" : "Not accepted");
+    body.append("No Services Acknowledgement", data.acknowledgement ? "Accepted" : "Not accepted");
     body.append("Updates Consent", data.updates ? "Accepted" : "Not accepted");
 
     try {
@@ -97,7 +95,7 @@ export default function ContactForm() {
         <div>
           <h3 className="text-xl font-semibold text-white">Enquiry received</h3>
           <p className="mt-2 max-w-sm text-sm text-secondary/70">
-            Thank you. LorvexAI will review your message and respond where appropriate, subject to availability and boundary checks.
+            Thank you. LorvexAI will review your message and respond where appropriate. Consulting, advisory, client delivery, product implementation, and system development enquiries cannot be accepted.
           </p>
         </div>
         <button type="button" onClick={() => { setData(INITIAL); setStatus("idle"); }} className="text-sm text-secondary/50 transition hover:text-white">
@@ -143,14 +141,14 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={LABEL}>Message <span className="text-red-400">*</span></label>
-        <textarea id="message" className={INPUT} rows={5} placeholder="Tell us about the book, research, workshop, architecture review, or product-lab concept you would like to discuss." value={data.message} onChange={(e) => set("message", e.target.value)} />
+        <textarea id="message" className={INPUT} rows={5} placeholder="Share a book, research, speaking, writing, publishing, correction, or general enquiry. Please do not include confidential or restricted information." value={data.message} onChange={(e) => set("message", e.target.value)} />
         {errors.message && <p className={ERR}>{errors.message}</p>}
       </div>
 
       <label className="flex cursor-pointer gap-3 rounded-lg border border-secondary/15 bg-background/35 p-4">
         <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-primary" checked={data.acknowledgement} onChange={(e) => set("acknowledgement", e.target.checked)} />
         <span className="text-xs leading-relaxed text-secondary/70">
-          I understand that LorvexAI content and discussions are educational and informational only and do not constitute financial, investment, legal, regulatory, tax, clinical, compliance, model validation, cybersecurity, or professional advice. <span className="text-red-400">*</span>
+          I understand that LorvexAI is a personal educational and publishing website and does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services. <span className="text-red-400">*</span>
         </span>
       </label>
       {errors.acknowledgement && <p className={ERR}>{errors.acknowledgement}</p>}

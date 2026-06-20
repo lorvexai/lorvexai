@@ -5,8 +5,8 @@ import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 import { ArrowRight, CalendarCheck, Clock, Linkedin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Start a Scoping Conversation | LorvexAI",
-  description: "Contact LorvexAI about books, research, educational workshops, architecture reviews, product-lab concepts, or a potential scoping conversation.",
+  title: "Contact | LorvexAI",
+  description: "Contact LorvexAI about books, research, speaking, writing, publishing, corrections, or general enquiries.",
   alternates: { canonical: "/contact" }
 };
 
@@ -15,32 +15,30 @@ const contactMethods = [
     icon: Mail,
     title: "Email",
     detail: "[INSERT CONTACT EMAIL]",
-    sub: "For books, research, workshops, and scoping enquiries",
+    sub: "For books, research, writing, publishing, and general enquiries",
     href: "mailto:[INSERT CONTACT EMAIL]"
   },
   {
     icon: Linkedin,
     title: "LinkedIn",
-    detail: "LorvexAI Technologies",
+    detail: "LorvexAI",
     sub: "Follow for educational AI architecture updates",
     href: "https://linkedin.com/company/lorvexai"
   },
   {
     icon: CalendarCheck,
-    title: "Scoping",
-    detail: "Boundary-aware conversation",
-    sub: "Subject to availability and conflict checks",
+    title: "Boundaries",
+    detail: "No consulting or delivery work",
+    sub: "Educational publishing site only",
     href: "#form"
   }
 ];
 
 const engagementTypes = [
   "Book or research enquiry",
-  "Educational workshop",
-  "AI architecture review",
-  "Governance framework discussion",
-  "Product-lab scoping conversation",
   "Speaking or writing enquiry",
+  "Academic or publishing collaboration",
+  "Correction or content feedback",
   "General enquiry"
 ];
 
@@ -54,11 +52,11 @@ export default function ContactPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Get In Touch</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">Start a </span>
-                  <span className="text-gradient">Scoping Conversation</span>
+                  <span className="text-white">Contact </span>
+                  <span className="text-gradient">LorvexAI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
-                  Use this form to discuss books, research, educational workshops, architecture reviews, product-lab concepts, or a potential scoping conversation. Any advisory discussion is subject to availability, professional boundary review, conflict checks, and written scope agreement.
+                  Use this form for books, research, speaking, writing, publishing, corrections, or general enquiries. LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
                   {contactMethods.map((m) => (
@@ -105,16 +103,16 @@ export default function ContactPage() {
                 <Clock size={20} className="mb-3 text-primary" />
                 <h3 className="text-lg font-semibold text-white">Response and review</h3>
                 <p className="mt-2 text-sm text-secondary/70">
-                  Enquiries are reviewed for professional boundaries, conflicts, and scope fit before any conversation is confirmed.
+                  Enquiries are reviewed for fit with the site&apos;s personal educational and publishing purpose.
                 </p>
               </div>
               <div className="glass rounded-lg border border-primary/20 p-6">
                 <h3 className="text-lg font-semibold text-white">What happens next?</h3>
                 <ol className="mt-4 space-y-3">
                   {[
-                    "Your enquiry is reviewed for scope and boundary fit",
+                    "Your enquiry is reviewed for publishing or research relevance",
                     "LorvexAI responds where appropriate",
-                    "Any conversation remains educational unless a written scope is agreed",
+                    "Consulting, advisory, delivery, and product-development enquiries cannot be accepted",
                     "Confidential or restricted information should not be submitted"
                   ].map((step, i) => (
                     <li key={step} className="flex gap-3 text-sm text-secondary/70">

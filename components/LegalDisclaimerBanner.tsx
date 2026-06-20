@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export const shortDisclaimer =
-  "LorvexAI content is educational and informational. It does not constitute financial, investment, legal, regulatory, tax, clinical, compliance, or professional advice.";
+  "LorvexAI is a personal educational and publishing website. It does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services.";
 
 export const fullDisclaimer =
-  "LorvexAI is an independent education, publishing, research, and AI architecture platform. Content is for general educational and informational purposes only and does not constitute financial, investment, legal, regulatory, tax, clinical, compliance, model validation, cybersecurity, or professional advice. LorvexAI is not affiliated with, endorsed by, sponsored by, or connected to any current or former employer, client, regulator, financial institution, NHS body, vendor, or other organisation.";
+  "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Content is for general educational and informational purposes only and does not constitute financial, investment, legal, regulatory, tax, clinical, compliance, model validation, cybersecurity, or professional advice. LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services. LorvexAI is not affiliated with, endorsed by, sponsored by, or connected to any current or former employer, client, regulator, financial institution, NHS body, vendor, or other organisation.";
 
 export default function LegalDisclaimerBanner({ compact = false }: { compact?: boolean }) {
   return (

@@ -280,7 +280,7 @@ The best way to introduce AI workflows into a regulated enterprise is the **sing
 5. Run in shadow mode alongside the human process for 2 weeks, compare outputs
 6. Go live with the AI workflow, human reviewing exceptions only
 
-This is the LorvexAI prototype-scoping methodology — one workflow, reviewable outcomes, governance-aware from day one.
+This is the LorvexAI educational blueprint methodology — one workflow, reviewable outcomes, governance-aware from day one.
 
 ---
 

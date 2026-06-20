@@ -15,19 +15,19 @@ const products = [
     key: "regulatory-intelligence",
     name: "Regulatory Intelligence Platform",
     summary:
-      "A reference architecture for obligation candidates, control-mapping drafts, and evidence-pack templates for internal review."
+      "An educational reference blueprint for obligation candidates, control-mapping drafts, and evidence-pack templates."
   },
   {
     key: "healthcare-flow",
     name: "Healthcare Flow Intelligence",
     summary:
-      "A conceptual healthcare-operations blueprint for referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility."
+      "An educational healthcare-operations blueprint for referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility."
   },
   {
     key: "treasury-sentinel",
     name: "Treasury Sentinel",
     summary:
-      "A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft packs."
+      "An educational finance-operations blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft packs."
   }
 ] as const;
 
@@ -44,7 +44,7 @@ const frameworkNotes = [
 function ProductNotice() {
   return (
     <div className="rounded-lg border border-primary/20 bg-primary/10 p-4 text-sm leading-relaxed text-secondary/75">
-      LorvexAI product concepts, labs, dashboards, diagrams, screenshots, and prototypes are educational reference designs unless clearly stated otherwise. They are not production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems.
+      LorvexAI reference blueprints, diagrams, screenshots, and conceptual examples are educational materials only. They are not products for sale, client prototypes, consulting deliverables, production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems.
     </div>
   );
 }
@@ -72,21 +72,21 @@ export default function ProductsPage() {
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Product Lab</p>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Reference Blueprints</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
               <span className="text-white">LorvexAI </span>
-              <span className="text-gradient">Product Lab</span>
+              <span className="text-gradient">Reference Blueprints</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
-              Prototype blueprints, product concepts, and reference architectures for controlled AI in finance, risk, compliance, treasury, and healthcare operations.
+              Educational concept blueprints and reference architectures for controlled AI in finance, risk, compliance, treasury, and healthcare operations.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary text-sm">
-                Request a Product-Lab Scoping Conversation
+              <Link href="/research" className="btn-primary text-sm">
+                Read Research
               </Link>
               <a href="#products" className="btn-outline text-sm">Explore Blueprints</a>
             </div>
-            <p className="mt-3 text-xs text-secondary/45">Concept validation · Prototype scoping · Governance-first design</p>
+            <p className="mt-3 text-xs text-secondary/45">Educational concepts · Synthetic examples · Governance-aware design patterns</p>
           </div>
         </div>
       </section>
@@ -106,9 +106,9 @@ export default function ProductsPage() {
 
       <div id="products">
         <Section
-          eyebrow="Reference Product Blueprints"
-          title="Choose a product-lab concept"
-          description="Select a product card to explore educational architecture, data flow, and controlled usage patterns."
+          eyebrow="Reference Blueprints"
+          title="Choose an educational concept"
+          description="Select a blueprint to explore educational architecture, data flow, and controlled usage patterns. These are not products for sale or implementation offers."
         >
           <div className="grid gap-6 md:grid-cols-3">
             {products.map((product) => {
@@ -140,7 +140,7 @@ export default function ProductsPage() {
         <Section
           eyebrow="Regulatory Intelligence Platform"
           title="Public regulation text to reviewable obligation candidates"
-          description="A reference architecture for turning public regulatory text into structured obligation candidates, control-mapping drafts, and evidence-pack templates for internal review. Outputs require human validation and do not constitute legal or regulatory advice."
+          description="An educational reference architecture for turning public regulatory text into structured obligation candidates, control-mapping drafts, and evidence-pack templates. Outputs require human validation and do not constitute legal or regulatory advice."
         >
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
             <div className="rounded-lg border border-secondary/25 bg-background/35 p-6">
@@ -159,15 +159,15 @@ export default function ProductsPage() {
               />
             </div>
             <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Regulatory intelligence prototype scoping</h3>
+              <h3 className="text-2xl font-semibold text-white">Regulatory intelligence blueprint</h3>
               <ul className="mt-5 space-y-2 text-sm text-secondary/85">
                 <li>Evidence-pack templates to support internal review and governance discussions</li>
                 <li>Human validation required before use</li>
                 <li>No legal, regulatory, or compliance advice</li>
                 <li>No certification or regulatory approval implied</li>
               </ul>
-              <Link href="/contact" className="btn-primary mt-6 w-full text-sm">
-                Request Scoping
+              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
+                Read Research
               </Link>
             </aside>
           </div>
@@ -197,7 +197,7 @@ export default function ProductsPage() {
               />
             </div>
             <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Healthcare operations scoping</h3>
+              <h3 className="text-2xl font-semibold text-white">Healthcare operations blueprint</h3>
               <p className="mt-4 text-sm text-secondary/85">
                 Any real healthcare use would require formal clinical safety, information governance, data protection, procurement, and local deployment review.
               </p>
@@ -207,8 +207,8 @@ export default function ProductsPage() {
                 <li>No clinical safety certification implied</li>
                 <li>Human accountability remains with authorised staff</li>
               </ul>
-              <Link href="/contact" className="btn-primary mt-6 w-full text-sm">
-                Request Scoping
+              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
+                Read Research
               </Link>
             </aside>
           </div>
@@ -219,7 +219,7 @@ export default function ProductsPage() {
         <Section
           eyebrow="Treasury Sentinel"
           title="Liquidity monitoring and ALCO-style draft reporting blueprint"
-          description="A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-pack drafting. It is designed for educational discussion and prototype scoping, not autonomous treasury decision-making."
+          description="A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-pack drafting. It is designed for educational discussion only, not autonomous treasury decision-making or implementation for others."
         >
           <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
             <div className="rounded-lg border border-secondary/25 bg-background/35 p-6">
@@ -238,15 +238,15 @@ export default function ProductsPage() {
               />
             </div>
             <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Treasury prototype scoping</h3>
+              <h3 className="text-2xl font-semibold text-white">Treasury reference blueprint</h3>
               <ul className="mt-5 space-y-2 text-sm text-secondary/85">
                 <li>ALCO-style draft packs for review</li>
                 <li>Synthetic demo data only</li>
                 <li>Integration feasibility depends on data availability, security, system access, and governance approval</li>
                 <li>No investment, treasury, or regulated financial advice</li>
               </ul>
-              <Link href="/contact" className="btn-primary mt-6 w-full text-sm">
-                Request Scoping
+              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
+                Read Research
               </Link>
             </aside>
           </div>

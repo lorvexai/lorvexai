@@ -137,14 +137,14 @@ sequenceDiagram
 flowchart TD
   W1["Week 1–2\nSelect pilot specialty\nHigh waiting-list pressure"]
   --> W3["Week 3–4\nData quality baseline\nReferrals · Scheduling · Outcomes"]
-  --> W5["Week 5–8\nDeploy advisory-only AI\nClinician oversight mode"]
+  --> W5["Week 5–8\nStudy human-reviewed AI\nClinician oversight mode"]
   --> W9["Week 9–12\nTrack fairness + throughput KPIs\nWeekly governance review"]
   --> W13["Week 13+\nExpand to additional specialties\nAfter stable performance confirmed"]
 ```
 
 1. Prioritise one specialty with high waiting-list pressure
 2. Build data quality baseline for referrals, scheduling, and outcomes
-3. Deploy advisory-only optimisation with clinician oversight
+3. Study human-reviewed optimisation with clinician oversight
 4. Track fairness and throughput KPIs weekly
 5. Expand gradually across specialties after stable performance
 

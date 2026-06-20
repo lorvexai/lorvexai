@@ -89,7 +89,7 @@ flowchart LR
 ### Intelligence Layer
 - Forecasting models for liquidity horizons
 - Scenario engines for stress and regime-change analysis
-- Explainability services for every recommendation
+- Explainability notes for every recommendation
 
 ### Decision Hub
 - Recommendation engine for funding, transfer, and hedge options

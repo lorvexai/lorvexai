@@ -26,7 +26,7 @@ export default function PlatformPage() {
       <Section
         eyebrow="Architecture"
         title="Controlled AI architecture patterns"
-        description="LorvexAI is an independent AI education, publishing, research, and architecture lab focused on controlled AI systems for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation."
+        description="LorvexAI is a personal AI education, publishing, and research website focused on controlled AI systems for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. These are educational patterns, not consulting or implementation offers."
       >
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {capabilities.map((item) => (
@@ -43,7 +43,7 @@ export default function PlatformPage() {
           <LegalDisclaimerBanner />
         </div>
       </section>
-      <Section title="Request architecture scoping" description="">
+      <Section title="Read more about controlled AI architecture" description="">
         <CTA />
       </Section>
     </>
