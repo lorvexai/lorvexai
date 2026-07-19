@@ -5,6 +5,9 @@ node_modules/
 .next/
 out/
 
+# generated at build time by scripts/build-search-index.js
+public/content-index.json
+
 # logs
 npm-debug.log*
 yarn-debug.log*

@@ -127,6 +127,9 @@ export default function HomePage() {
               <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
                 View Blueprints
               </Link>
+              <Link href="/ask" className="btn-outline min-h-11 text-sm font-semibold">
+                Ask the Archive
+              </Link>
             </div>
           </div>
 

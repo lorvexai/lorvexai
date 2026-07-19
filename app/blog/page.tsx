@@ -115,6 +115,9 @@ export default function BlogPage() {
                     Browse Articles
                     <ArrowRight size={16} />
                   </Link>
+                  <Link href="/ask" className="btn-outline text-sm">
+                    Ask the Archive
+                  </Link>
                 </div>
               </div>
               <div className="flex flex-col gap-3">
