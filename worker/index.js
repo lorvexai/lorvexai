@@ -1,4 +1,4 @@
-const MODEL = "@cf/ibm-granite/granite-4.0-h-micro";
+const MODEL = "@cf/meta/llama-3.2-3b-instruct";
 const TOP_K = 5;
 
 export default {
@@ -58,6 +58,7 @@ async function handleAsk(request, env) {
 
     const answer =
       (typeof aiResponse?.response === "string" && aiResponse.response.trim()) ||
+      (typeof aiResponse === "string" && aiResponse.trim()) ||
       "I couldn't generate an answer just now — please try again in a moment.";
 
     return json({ answer, sources: uniqueSources(top) });
