@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Home, BookOpen, Cpu } from "lucide-react";
+import { ArrowRight, Home, BookOpen } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -30,9 +30,9 @@ export default function NotFound() {
 
         <div className="mt-16 grid gap-5 sm:grid-cols-3">
           {[
-            { href: "/books",        label: "Books",        desc: "Educational books and publications" },
-            { href: "/blueprints",   label: "Blueprints",   desc: "Educational reference blueprints" },
-            { href: "/capabilities", label: "Capabilities", desc: "Technical capabilities" }
+            { href: "/books",        label: "Books",        desc: "Books and publications" },
+            { href: "/blueprints",   label: "Blueprints",   desc: "Reference architectures" },
+            { href: "/topics",       label: "Topics",       desc: "Research by topic" }
           ].map((item) => (
             <Link
               key={item.href}
