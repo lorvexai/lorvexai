@@ -160,14 +160,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-14 md:py-20">
-        <div className="mx-auto w-full max-w-3xl px-6 text-center">
-          <p className="text-xl leading-relaxed text-secondary/85 md:text-2xl">
-            I've spent twenty-plus years building and reviewing systems inside banks and healthcare providers. Most AI governance writing I come across is either vendor marketing or committee-speak. This site is my attempt at something else — opinionated, technical, and honest about what still needs a human in the loop.
-          </p>
-        </div>
-      </section>
-
       <section className="section pt-0">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
