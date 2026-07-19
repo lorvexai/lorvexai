@@ -7,6 +7,7 @@ tags:
   - Healthcare AI
   - Patient Safety
   - Clinical Operations
+hidden: true
 ---
 
 # Healthcare Operations Triage Without Harm

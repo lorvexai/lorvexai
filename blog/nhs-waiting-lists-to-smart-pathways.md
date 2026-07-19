@@ -7,6 +7,7 @@ tags:
   - Elective Recovery
   - Healthcare Operations
   - AI Strategy
+hidden: true
 ---
 
 # From Waiting Lists to Smart Pathways

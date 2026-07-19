@@ -5,7 +5,6 @@ import { useState } from "react";
 import Section from "@/components/Section";
 import MermaidRenderer from "@/components/MermaidRenderer";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
-import NHSFlowMockup from "@/components/mockups/NHSFlowMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
 import { CheckCircle2 } from "lucide-react";
 
@@ -15,12 +14,6 @@ const blueprints = [
     name: "Regulatory Intelligence Blueprint",
     summary:
       "An educational reference blueprint for obligation candidates, control-mapping drafts, and evidence-pack templates."
-  },
-  {
-    key: "healthcare-flow",
-    name: "Healthcare Flow Intelligence",
-    summary:
-      "An educational healthcare-operations blueprint for referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility."
   },
   {
     key: "treasury-sentinel",
@@ -155,47 +148,6 @@ export default function BlueprintsPage() {
                 <li>Human validation required before use</li>
                 <li>No legal, regulatory, or compliance advice</li>
                 <li>No certification or regulatory approval implied</li>
-              </ul>
-              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
-                Read Research
-              </Link>
-            </aside>
-          </div>
-        </Section>
-      )}
-
-      {selected === "healthcare-flow" && (
-        <Section
-          eyebrow="Healthcare Flow Intelligence"
-          title="Healthcare operations blueprint, not clinical decisioning"
-          description="A conceptual healthcare-operations blueprint for exploring referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility. It is not a clinical triage system, medical device, diagnostic tool, or patient-specific decision system."
-        >
-          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
-            <div className="rounded-lg border border-secondary/25 bg-background/35 p-6">
-              <BlueprintNotice />
-              <div className="mt-6">
-                <NHSFlowMockup />
-              </div>
-              <MermaidBlock
-                label="Conceptual Flow"
-                code={`flowchart LR
-  A["Synthetic referral queue"] --> B["Operations visibility layer"]
-  B --> C["Waiting-list and capacity analytics"]
-  C --> D["Exception dashboard"]
-  D --> E["Authorised staff review"]
-  E --> F["Operational decision outside system"]`}
-              />
-            </div>
-            <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Healthcare operations blueprint</h3>
-              <p className="mt-4 text-sm text-secondary/85">
-                Any real healthcare use would require formal clinical safety, information governance, data protection, procurement, and local deployment review.
-              </p>
-              <ul className="mt-5 space-y-2 text-sm text-secondary/85">
-                <li>Patient A, Patient B, and synthetic case labels only</li>
-                <li>No medical or clinical advice</li>
-                <li>No clinical safety certification implied</li>
-                <li>Human accountability remains with authorised staff</li>
               </ul>
               <Link href="/research" className="btn-primary mt-6 w-full text-sm">
                 Read Research

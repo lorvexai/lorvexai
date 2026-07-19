@@ -33,7 +33,7 @@ const technicalSkills = [
 const financeExpertise = [
   "Finance technology, risk, regulatory reporting, data, automation, and enterprise technology",
   "Controlled AI architecture, retrieval governance, evidence design, and human oversight",
-  "Educational research into finance, risk, compliance, regulatory reporting, and healthcare operations",
+  "Educational research into finance, risk, compliance, and regulatory reporting",
   "Independent writing, publishing, technical diagrams, templates, and reference blueprints"
 ];
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
                   <span className="text-gradient">for Controlled AI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
-                  I'm Sreedhara Reddy Kotha, and this is where I publish my own research, writing, and reference architecture on controlled AI — for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. Everything here is personal and independent: it isn't consulting work, product development, or a position taken on behalf of any employer, client, regulator, or organisation I've worked with.
+                  I'm Sreedhara Reddy Kotha, and this is where I publish my own research, writing, and reference architecture on controlled AI — for finance, risk, compliance, regulatory reporting, and enterprise automation. Everything here is personal and independent: it isn't consulting work, product development, or a position taken on behalf of any employer, client, regulator, or organisation I've worked with.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/books" className="btn-primary text-sm">

@@ -32,14 +32,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${normalizedSiteUrl}/`),
   title: "LorvexAI - Controlled AI Architecture, Books and Research",
   description:
-    "Independent books, research, technical guides, and reference architectures for controlled AI systems in finance, risk, compliance, healthcare operations, and enterprise automation.",
+    "Independent books, research, technical guides, and reference architectures for controlled AI systems in finance, risk, compliance, and enterprise automation.",
   keywords: [
     "Controlled AI Architecture",
     "AI Governance Education",
     "Enterprise RAG Patterns",
     "AI Books and Research",
-    "Finance Risk Technology",
-    "Healthcare Operations Research"
+    "Finance Risk Technology"
   ],
   authors: [{ name: "LorvexAI Editorial Team" }],
   icons: {

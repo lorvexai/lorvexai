@@ -41,9 +41,11 @@ export function getAllPosts(): PostMeta[] {
         date: formatDate(data.date),
         publishedAt: String(data.date ?? ""),
         excerpt: data.excerpt as string,
-        tags: (data.tags as string[]) || []
+        tags: (data.tags as string[]) || [],
+        hidden: Boolean(data.hidden)
       };
-    });
+    })
+    .filter((post) => !post.hidden);
 
   return posts.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }

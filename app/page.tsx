@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/utils/posts";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
-import NHSFlowMockup from "@/components/mockups/NHSFlowMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
 import FeaturedInsights from "@/components/FeaturedInsights";
 import {
@@ -22,15 +21,6 @@ const blueprints = [
     href: "/blueprints",
     visual: <RegulatoryMockup />,
     accent: "text-blue-300 border-blue-400/30 bg-blue-400/10"
-  },
-  {
-    eyebrow: "Healthcare Operations",
-    title: "Healthcare Flow Intelligence",
-    body: "A conceptual healthcare-operations blueprint for referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility.",
-    bullet: "A conceptual blueprint, not a clinical triage system — synthetic demo data only.",
-    href: "/blueprints",
-    visual: <NHSFlowMockup />,
-    accent: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10"
   },
   {
     eyebrow: "Treasury & Finance",
@@ -223,7 +213,7 @@ export default function HomePage() {
               Reference architectures I sketch out to think this through.
             </h2>
             <p className="mt-4 text-secondary/70">
-              These are concepts, not products — a way to work through how controlled AI systems should behave in finance, treasury, and healthcare operations before anyone builds the real thing.
+              These are concepts, not products — a way to work through how controlled AI systems should behave in finance and treasury before anyone builds the real thing.
             </p>
           </div>
 
