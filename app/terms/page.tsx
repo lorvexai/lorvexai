@@ -17,7 +17,7 @@ const sections = [
   ["No services offered", "LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services."],
   ["No warranties", "The website and its content are provided as is and as available. LorvexAI does not warrant that the site will be uninterrupted, error-free, complete, current, secure, or suitable for any particular purpose."],
   ["Limitation of liability", "To the fullest extent permitted by law, LorvexAI excludes liability for loss or damage arising from use of, or reliance on, this website or its content. Nothing in these terms excludes liability that cannot be excluded under applicable law."],
-  ["Contact details", "Contact: lorvexai@gmail.com."],
+  ["Contact details", "Contact: [INSERT CONTACT EMAIL]."],
   ["Last updated", "20 June 2026"]
 ];
 

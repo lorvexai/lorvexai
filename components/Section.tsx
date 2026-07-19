@@ -15,7 +15,7 @@ export default function Section({
     <section className={`section${accent ? " border-y border-secondary/10 bg-background/40" : ""}`}>
       <div className="mx-auto w-full max-w-6xl px-6">
         {eyebrow && (
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-primary">
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-secondary/55">
             {eyebrow}
           </p>
         )}

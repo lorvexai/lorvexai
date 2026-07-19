@@ -26,17 +26,17 @@ export default function Footer() {
       <div className="border-b border-secondary/10 bg-primary/8 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold text-white">Get new research notes by email.</p>
+            <p className="font-semibold text-white">I write about controlled AI, model risk, and financial regulation.</p>
             <p className="mt-1 text-sm text-secondary/60">
-              Occasional writing on controlled AI, finance, governance, and technology.
+              Books, research notes, and reference blueprints from Sreedhara Reddy Kotha.
             </p>
           </div>
           <div className="flex shrink-0 gap-3">
-            <Link href="/#subscribe" className="btn-primary text-sm">
-              Subscribe
+            <Link href="/books" className="btn-primary text-sm">
+              Explore Books
             </Link>
             <Link href="/research" className="btn-outline text-sm">
-              Browse Research
+              Read Research
             </Link>
           </div>
         </div>
@@ -46,17 +46,17 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <div>
             <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/75">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
               <strong className="text-white">LorvexAI</strong>
               <br />
-              Independent research, technical writing, books, and reference architecture by Sreedhara Reddy Kotha.
+              My personal site for research, writing, and reference architecture on controlled AI.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
                 href="https://www.linkedin.com/in/sreekotha/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-secondary/75 transition hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
               >
                 <Linkedin size={15} aria-hidden="true" />
                 LinkedIn
@@ -64,7 +64,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:lorvexai@gmail.com"
-                className="inline-flex items-center gap-2 text-sm text-secondary/75 transition hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
               >
                 <Mail size={15} aria-hidden="true" />
                 lorvexai@gmail.com
@@ -78,7 +78,7 @@ export default function Footer() {
             </p>
             <nav className="grid grid-cols-2 gap-3" aria-label="Footer navigation">
               {footerLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-secondary/75 transition hover:text-white">
+                <Link key={link.href} href={link.href} className="text-sm text-secondary/65 transition hover:text-white">
                   {link.label}
                 </Link>
               ))}
@@ -93,10 +93,10 @@ export default function Footer() {
 
       <div className="border-t border-secondary/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-secondary/60">
+          <p className="text-xs text-secondary/40">
             &copy; {new Date().getFullYear()} Sreedhara Reddy Kotha. All rights reserved.
           </p>
-          <p className="text-xs text-secondary/55">Educational content only. No professional advice.</p>
+          <p className="text-xs text-secondary/30">Educational content only. No professional advice.</p>
         </div>
       </div>
     </footer>

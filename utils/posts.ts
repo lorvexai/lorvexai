@@ -26,11 +26,6 @@ function formatDate(value: unknown) {
   });
 }
 
-function machineDate(value: unknown) {
-  const date = value instanceof Date ? value : new Date(String(value));
-  return Number.isNaN(date.getTime()) ? String(value ?? "") : date.toISOString();
-}
-
 export function getAllPosts(): PostMeta[] {
   const files = fs.readdirSync(postsDirectory);
   const posts = files
@@ -44,13 +39,13 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title as string,
         date: formatDate(data.date),
-        publishedAt: machineDate(data.date),
+        publishedAt: String(data.date ?? ""),
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) || []
       };
     });
 
-  return posts.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  return posts.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export async function getPostContent(slug: string) {
@@ -58,5 +53,5 @@ export async function getPostContent(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { content } = matter(fileContents);
   const processed = await remark().use(remarkGfm).use(html).process(content);
-  return processed.toString().replace(/^<h1>[\s\S]*?<\/h1>\s*/i, "");
+  return processed.toString();
 }
