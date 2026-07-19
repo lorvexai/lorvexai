@@ -146,8 +146,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative rounded-lg border border-secondary/15 bg-[#0d2745]/75 p-4 shadow-2xl shadow-black/30">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Reference architecture note</p>
+          <div className="corner-ticks relative border border-secondary/15 bg-[#0d2745]/75 p-4 shadow-2xl shadow-black/30">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Reference architecture — Fig. 01</p>
             <h2 className="mt-4 text-2xl font-semibold text-white">Controlled AI system pattern</h2>
             <div className="mt-6 grid gap-3">
               {[
@@ -161,6 +161,10 @@ export default function HomePage() {
                   <span className="text-sm text-secondary/75">{text}</span>
                 </div>
               ))}
+            </div>
+            <div className="mt-4 flex items-center justify-between border-t border-secondary/15 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-secondary/45">
+              <span>Drawn — S. R. Kotha</span>
+              <span>Rev B</span>
             </div>
           </div>
         </div>

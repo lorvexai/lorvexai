@@ -8,18 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#0B1F3A",
-        primary: "#2F80ED",
-        secondary: "#C0C6D4",
-        surface: "#0F2A4A",
-        glow: "#56A3FF"
+        background: "#0B2038",
+        primary: "#B8863A",
+        secondary: "#90A7BE",
+        surface: "#12315A",
+        glow: "#D9A75C"
       },
       fontFamily: {
         inter: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         space: ["var(--font-space)", "ui-sans-serif", "system-ui"]
       },
       boxShadow: {
-        glow: "0 0 30px rgba(47, 128, 237, 0.35)"
+        glow: "0 0 26px rgba(184, 134, 58, 0.28)"
       }
     }
   },

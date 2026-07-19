@@ -1,5 +1,5 @@
 .gradient-animate {
-  background: linear-gradient(120deg, #0B1F3A, #0F2A4A, #2F80ED);
+  background: linear-gradient(120deg, #0B2038, #12315A, #B8863A);
   background-size: 200% 200%;
   animation: gradientShift 12s ease infinite;
 }
@@ -11,5 +11,5 @@
 }
 
 .neural-glow {
-  filter: drop-shadow(0 0 12px rgba(47, 128, 237, 0.5));
+  filter: drop-shadow(0 0 12px rgba(184, 134, 58, 0.4));
 }
