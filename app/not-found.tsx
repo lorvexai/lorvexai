@@ -30,9 +30,9 @@ export default function NotFound() {
 
         <div className="mt-16 grid gap-5 sm:grid-cols-3">
           {[
-            { href: "/books",        label: "Books",        desc: "Books and publications" },
+            { href: "/blog",         label: "Writing",      desc: "Articles by topic" },
             { href: "/blueprints",   label: "Blueprints",   desc: "Reference architectures" },
-            { href: "/topics",       label: "Topics",       desc: "Research by topic" }
+            { href: "/books",        label: "Books",        desc: "Books and publications" }
           ].map((item) => (
             <Link
               key={item.href}

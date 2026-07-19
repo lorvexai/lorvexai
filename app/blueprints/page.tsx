@@ -73,8 +73,8 @@ export default function BlueprintsPage() {
               These are the reference architectures I sketch out when I'm thinking through how AI should work inside regulated environments — retrieval governance, supervised agent workflows, evaluation, and evidence-oriented design. Concepts, not products: synthetic data, human review built in, nothing autonomous.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/research" className="btn-primary text-sm">
-                Read Research
+              <Link href="/blog" className="btn-primary text-sm">
+                Read Writing
               </Link>
               <a href="#blueprints" className="btn-outline text-sm">Explore Blueprints</a>
             </div>
@@ -149,8 +149,8 @@ export default function BlueprintsPage() {
                 <li>No legal, regulatory, or compliance advice</li>
                 <li>No certification or regulatory approval implied</li>
               </ul>
-              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
-                Read Research
+              <Link href="/blog" className="btn-primary mt-6 w-full text-sm">
+                Read Writing
               </Link>
             </aside>
           </div>
@@ -187,8 +187,8 @@ export default function BlueprintsPage() {
                 <li>Integration feasibility depends on data availability, security, system access, and governance approval</li>
                 <li>No investment, treasury, or regulated financial advice</li>
               </ul>
-              <Link href="/research" className="btn-primary mt-6 w-full text-sm">
-                Read Research
+              <Link href="/blog" className="btn-primary mt-6 w-full text-sm">
+                Read Writing
               </Link>
             </aside>
           </div>

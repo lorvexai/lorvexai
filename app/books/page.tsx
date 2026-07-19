@@ -44,8 +44,8 @@ export default function BooksPage() {
                 Digital editions, updates, and companion resources may be available through the author&apos;s official channels.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/research" className="btn-primary text-sm">
-                  View book details
+                <Link href="/blog" className="btn-primary text-sm">
+                  Read related writing
                   <ArrowRight size={15} />
                 </Link>
                 <span className="btn-outline cursor-not-allowed text-sm opacity-60" aria-disabled="true">

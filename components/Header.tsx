@@ -6,9 +6,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/blog", label: "Blog" },
-  { href: "/research", label: "Research" },
-  { href: "/topics", label: "Topics" },
+  { href: "/blog", label: "Writing" },
   { href: "/blueprints", label: "Blueprints" },
   { href: "/books", label: "Books" },
   { href: "/about", label: "About" }
@@ -51,10 +49,6 @@ export default function Header() {
               );
             })}
           </nav>
-
-          <Link href="/blog" className="btn-primary min-h-10 px-5 py-2.5 text-sm">
-            Read Blog
-          </Link>
         </div>
 
         <nav className="hide-scrollbar mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">

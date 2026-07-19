@@ -8,13 +8,13 @@ export default function MobileStickyCTA() {
     >
       <div className="mx-auto flex w-full max-w-6xl gap-2">
         <Link href="/blog" className="btn-primary min-h-11 flex-1 justify-center text-sm">
-          Blog
+          Writing
         </Link>
-        <Link href="/research" className="btn-outline min-h-11 flex-1 justify-center text-sm">
-          Research
+        <Link href="/blueprints" className="btn-outline min-h-11 flex-1 justify-center text-sm">
+          Blueprints
         </Link>
-        <Link href="/topics" className="btn-outline min-h-11 flex-1 justify-center text-sm">
-          Topics
+        <Link href="/books" className="btn-outline min-h-11 flex-1 justify-center text-sm">
+          Books
         </Link>
       </div>
     </div>

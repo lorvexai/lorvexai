@@ -3,6 +3,8 @@
 /capabilities/*          /blueprints/          301
 /models/*                /blueprints/          301
 /platform/*              /blueprints/          301
-/industries/finance/*    /topics/              301
-/industries/healthcare/* /topics/              301
-/industries/enterprise/* /topics/              301
+/industries/finance/*    /blog/                301
+/industries/healthcare/* /blog/                301
+/industries/enterprise/* /blog/                301
+/research/*              /blog/                301
+/topics/*                /blog/                301

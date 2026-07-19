@@ -121,14 +121,8 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/blog" className="btn-primary min-h-11 text-sm font-semibold">
-                Read Blog
+                Read Writing
                 <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              <Link href="/research" className="btn-outline min-h-11 text-sm font-semibold">
-                Read Research
-              </Link>
-              <Link href="/topics" className="btn-outline min-h-11 text-sm font-semibold">
-                Explore Topics
               </Link>
               <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
                 View Blueprints

@@ -7,9 +7,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
 const footerLinks = [
-  { href: "/research", label: "Research" },
-  { href: "/blog", label: "Blog" },
-  { href: "/topics", label: "Topics" },
+  { href: "/blog", label: "Writing" },
   { href: "/blueprints", label: "Reference Blueprints" },
   { href: "/books", label: "Books" },
   { href: "/about", label: "About" },
@@ -35,8 +33,8 @@ export default function Footer() {
             <Link href="/books" className="btn-primary text-sm">
               Explore Books
             </Link>
-            <Link href="/research" className="btn-outline text-sm">
-              Read Research
+            <Link href="/blog" className="btn-outline text-sm">
+              Read Writing
             </Link>
           </div>
         </div>

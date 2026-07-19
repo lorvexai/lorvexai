@@ -19,8 +19,8 @@ export default function CTA() {
           Explore Books
           <ArrowRight size={16} aria-hidden="true" />
         </Link>
-        <Link href="/research" className="btn-outline min-h-11 text-sm">
-          Read Research
+        <Link href="/blog" className="btn-outline min-h-11 text-sm">
+          Read Writing
         </Link>
       </div>
     </div>
