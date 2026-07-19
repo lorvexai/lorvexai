@@ -14,6 +14,7 @@ const writingLinks = [
 ];
 
 const primaryLinks = [
+  { href: "/lab", label: "Lab" },
   { href: "/research", label: "Research" },
   { href: "/books", label: "Books" },
   { href: "/about", label: "About" }

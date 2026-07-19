@@ -6,6 +6,7 @@ import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
 import BlogCard from "@/components/BlogCard";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import ArticleProgress from "@/components/ArticleProgress";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
 const siteUrl =
@@ -122,6 +123,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ArticleProgress />
       {/* Article hero */}
       <section className="border-b border-secondary/10 bg-background/60 py-10 md:py-14">
         <div className="mx-auto w-full max-w-4xl px-6">

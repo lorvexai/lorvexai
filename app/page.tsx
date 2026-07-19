@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, FileText, Landmark, Layers3, Linkedin, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Landmark, Layers3, ShieldCheck } from "lucide-react";
 import { getAllPosts } from "@/utils/posts";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
 import NHSFlowMockup from "@/components/mockups/NHSFlowMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
+import InteractiveResearchHero from "@/components/InteractiveResearchHero";
 
 const focusAreas = [
   {
@@ -55,58 +56,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-secondary/10">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_12%,rgba(184,134,58,0.14),transparent_32%)]" />
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.14fr_0.86fr] md:items-center md:py-24">
-          <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              <Sparkles size={14} aria-hidden="true" />
-              Independent research and practical writing
-            </p>
-            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
-              Clear thinking about controlled AI.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/85 md:text-xl">
-              I&apos;m Sreedhara Reddy Kotha. I publish research, technical essays, books, and reference architectures on AI governance, model risk, financial regulation, and enterprise technology.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={`/blog/${featured.slug}`} className="btn-primary min-h-12 text-sm">
-                Read featured research
-                <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              <Link href="/blog" className="btn-outline min-h-12 text-sm">Explore all writing</Link>
-            </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-secondary/15 pt-6 text-sm text-secondary/70">
-              <span>20+ years in finance technology</span>
-              <span>Independent and educational</span>
-              <span>Written in the UK</span>
-            </div>
-          </div>
-
-          <aside className="corner-ticks border border-secondary/20 bg-[#0d2745]/75 p-6 shadow-2xl shadow-black/30" aria-label="About the author">
-            <div className="flex items-center gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/15 font-serif text-xl font-semibold text-primary">SK</div>
-              <div>
-                <p className="font-semibold text-white">Sreedhara Reddy Kotha</p>
-                <p className="mt-1 text-sm text-primary">Creator and author of LorvexAI</p>
-              </div>
-            </div>
-            <p className="mt-6 text-base leading-relaxed text-secondary/80">
-              I write from a practitioner&apos;s perspective: how systems work, where governance fails, what evidence matters, and where human judgement still belongs.
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <Link href="/about" className="rounded-xl border border-secondary/20 bg-background/35 p-4 transition hover:border-primary/45">
-                <span className="block text-xs uppercase tracking-[0.16em] text-secondary/55">Profile</span>
-                <span className="mt-2 block text-sm font-semibold text-white">About my work</span>
-              </Link>
-              <a href="https://www.linkedin.com/in/sreekotha/" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-secondary/20 bg-background/35 p-4 transition hover:border-primary/45">
-                <Linkedin size={16} className="text-primary" aria-hidden="true" />
-                <span className="mt-2 block text-sm font-semibold text-white">Follow on LinkedIn</span>
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
+      <InteractiveResearchHero featuredHref={`/blog/${featured.slug}`} />
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
