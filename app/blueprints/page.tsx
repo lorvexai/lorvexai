@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import Section from "@/components/Section";
 import MermaidRenderer from "@/components/MermaidRenderer";
-import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
 import NHSFlowMockup from "@/components/mockups/NHSFlowMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
@@ -33,12 +32,12 @@ const blueprints = [
 
 type BlueprintKey = (typeof blueprints)[number]["key"];
 
-const frameworkNotes = [
-  "Mapped to selected public frameworks for educational purposes",
-  "Supports governance discussion",
-  "Human review required",
-  "Requires independent validation before use",
-  "No certification or regulatory approval implied"
+const architecturePatterns = [
+  "Retrieval governance",
+  "Supervised agent workflows",
+  "Evaluation & monitoring",
+  "Evidence-oriented design",
+  "Human-reviewed outputs"
 ];
 
 function BlueprintNotice() {
@@ -72,13 +71,13 @@ export default function BlueprintsPage() {
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Reference Blueprints</p>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Blueprints</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-              <span className="text-white">LorvexAI </span>
-              <span className="text-gradient">Reference Blueprints</span>
+              <span className="text-white">How I'd architect </span>
+              <span className="text-gradient">controlled AI systems</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
-              Educational concept blueprints and reference architectures for controlled AI in finance, risk, compliance, treasury, and healthcare operations.
+              These are the reference architectures I sketch out when I'm thinking through how AI should work inside regulated environments — retrieval governance, supervised agent workflows, evaluation, and evidence-oriented design. Concepts, not products: synthetic data, human review built in, nothing autonomous.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/research" className="btn-primary text-sm">
@@ -86,17 +85,8 @@ export default function BlueprintsPage() {
               </Link>
               <a href="#blueprints" className="btn-outline text-sm">Explore Blueprints</a>
             </div>
-            <p className="mt-3 text-xs text-secondary/45">Educational concepts · Synthetic examples · Governance-aware design patterns</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-secondary/10 bg-background/60 py-4">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-wrap items-center justify-center gap-3 md:justify-between">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-secondary/45">Framework references</p>
-            <div className="flex flex-wrap gap-2">
-              {frameworkNotes.map((b) => (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {architecturePatterns.map((b) => (
                 <span key={b} className="rounded-full border border-secondary/20 bg-background/40 px-3 py-1 text-[10px] font-medium text-secondary/55">{b}</span>
               ))}
             </div>
@@ -253,11 +243,6 @@ export default function BlueprintsPage() {
         </Section>
       )}
 
-      <section className="border-y border-secondary/10 bg-background/50 py-8">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <LegalDisclaimerBanner />
-        </div>
-      </section>
     </>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
-import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 import { ArrowRight, CalendarCheck, Clock, Linkedin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -14,9 +13,9 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    detail: "[INSERT CONTACT EMAIL]",
+    detail: "lorvexai@gmail.com",
     sub: "For books, research, writing, publishing, and general enquiries",
-    href: ""
+    href: "mailto:lorvexai@gmail.com"
   },
   {
     icon: Linkedin,
@@ -56,7 +55,7 @@ export default function ContactPage() {
                   <span className="text-gradient">LorvexAI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
-                  Use this form for books, research, speaking, writing, publishing, corrections, or general enquiries. LorvexAI does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services.
+                  Reach out about books, research, speaking, writing, publishing, or corrections. I read everything myself.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
                   {contactMethods.map((m) =>
@@ -122,10 +121,10 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-white">What happens next?</h3>
                 <ol className="mt-4 space-y-3">
                   {[
-                    "Your enquiry is reviewed for publishing or research relevance",
-                    "LorvexAI responds where appropriate",
-                    "Consulting, advisory, delivery, and product-development enquiries cannot be accepted",
-                    "Confidential or restricted information should not be submitted"
+                    "I read the enquiry myself",
+                    "I reply where it's a good fit for the site",
+                    "I can't take on consulting, advisory, or delivery work",
+                    "Please don't send confidential or restricted information"
                   ].map((step, i) => (
                     <li key={step} className="flex gap-3 text-sm text-secondary/70">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/15 text-[10px] font-bold text-primary">{i + 1}</span>
@@ -134,7 +133,6 @@ export default function ContactPage() {
                   ))}
                 </ol>
               </div>
-              <LegalDisclaimerBanner compact />
               <p className="text-xs leading-relaxed text-secondary/45">
                 Contact form provider: [INSERT FORM HANDLER PROVIDER]. See the <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for data handling details.
               </p>

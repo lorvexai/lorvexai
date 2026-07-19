@@ -26,9 +26,9 @@ export default function Footer() {
       <div className="border-b border-secondary/10 bg-primary/8 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold text-white">Explore controlled AI research with clear boundaries.</p>
+            <p className="font-semibold text-white">I write about controlled AI, model risk, and financial regulation.</p>
             <p className="mt-1 text-sm text-secondary/60">
-              Read books, research notes, and educational reference blueprints by Sreedhara Reddy Kotha.
+              Books, research notes, and reference blueprints from Sreedhara Reddy Kotha.
             </p>
           </div>
           <div className="flex shrink-0 gap-3">
@@ -49,10 +49,7 @@ export default function Footer() {
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
               <strong className="text-white">LorvexAI</strong>
               <br />
-              A personal AI education, publishing, and research website by Sreedhara Reddy Kotha.
-            </p>
-            <p className="mt-3 text-xs leading-relaxed text-secondary/45">
-              LorvexAI does not offer consulting, advisory services, client delivery, product implementation, or system development for others.
+              My personal site for research, writing, and reference architecture on controlled AI.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
@@ -65,10 +62,13 @@ export default function Footer() {
                 LinkedIn
                 <ArrowUpRight size={12} className="opacity-60" aria-hidden="true" />
               </a>
-              <span className="inline-flex items-center gap-2 text-sm text-secondary/65">
+              <a
+                href="mailto:lorvexai@gmail.com"
+                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
+              >
                 <Mail size={15} aria-hidden="true" />
-                [INSERT CONTACT EMAIL]
-              </span>
+                lorvexai@gmail.com
+              </a>
             </div>
           </div>
 

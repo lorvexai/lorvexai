@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import CTA from "@/components/CTA";
-import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 import { ArrowRight, BookOpen, ClipboardCheck, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,7 +40,7 @@ export default function ResearchPage() {
       <Section
         eyebrow="Research"
         title="Research, guides, and reference architectures"
-        description="LorvexAI publishes personal educational research and technical guides for controlled AI systems. Materials are informational and do not constitute professional advice, consulting, implementation services, compliance certification, regulatory approval, or delivered outcome claims."
+        description="This is where I put the longer, slower-moving pieces — the research and technical guides I write for controlled AI systems in regulated environments, meant to be read rather than skimmed."
       >
         <div className="grid gap-6 md:grid-cols-3">
           {featuredResearch.map((item) => (
@@ -58,11 +57,6 @@ export default function ResearchPage() {
           ))}
         </div>
       </Section>
-      <section className="section pt-0">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <LegalDisclaimerBanner />
-        </div>
-      </section>
       <Section title="Explore books, articles, and research" description="">
         <CTA />
       </Section>

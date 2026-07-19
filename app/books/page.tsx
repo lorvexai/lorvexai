@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Download, ExternalLink } from "lucide-react";
-import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 
 export const metadata: Metadata = {
   title: "Books & Publications | LorvexAI",
@@ -19,7 +18,7 @@ export default function BooksPage() {
             Educational resources for controlled AI in regulated environments.
           </h1>
           <p className="mt-5 max-w-2xl text-secondary/75">
-            Long-form books, technical guides, and companion resources are presented as personal educational publishing. LorvexAI does not offer consulting, client delivery, product implementation, or system development for others.
+            The long-form writing I've put into book form — practitioner guides, not marketing collateral.
           </p>
         </div>
       </section>
@@ -60,10 +59,6 @@ export default function BooksPage() {
               </div>
             </div>
           </article>
-
-          <div className="mt-8">
-            <LegalDisclaimerBanner compact />
-          </div>
         </div>
       </section>
     </>

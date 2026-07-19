@@ -8,7 +8,7 @@ import BlogCard from "@/components/BlogCard";
 import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.github.io/lorvexai";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
 const normalizedSiteUrl = siteUrl.replace(/\/$/, "");
 const socialImageUrl = `${normalizedSiteUrl}/og-image.png`;
 
@@ -147,7 +147,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </div>
             <div className="flex items-center gap-1.5 text-sm text-secondary/55">
               <span className="h-1 w-1 rounded-full bg-secondary/30" />
-              <span>LorvexAI</span>
+              <span>By LorvexAI</span>
             </div>
             <div className="ml-auto flex items-center gap-2">
               <span className="text-xs text-secondary/40">Share:</span>

@@ -1,0 +1,8 @@
+/services/*              /about/               301
+/products/*              /blueprints/          301
+/capabilities/*          /blueprints/          301
+/models/*                /blueprints/          301
+/platform/*              /blueprints/          301
+/industries/finance/*    /topics/              301
+/industries/healthcare/* /topics/              301
+/industries/enterprise/* /topics/              301

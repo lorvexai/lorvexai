@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.github.io/lorvexai";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
 const normalizedSiteUrl = siteUrl.replace(/\/$/, "");
 const socialImageUrl = `${normalizedSiteUrl}/og-image.png`;
 

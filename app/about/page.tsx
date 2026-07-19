@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import CTA from "@/components/CTA";
-import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 import { ArrowRight, Award, BookOpen, CheckCircle2, Cloud, Cpu, GraduationCap, Linkedin, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -67,7 +66,7 @@ export default function AboutPage() {
                   <span className="text-gradient">for Controlled AI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
-                  LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. It focuses on controlled AI systems for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. The content is educational and personal in nature, does not offer consulting or product development for others, and does not represent any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation.
+                  I'm Sreedhara Reddy Kotha, and this is where I publish my own research, writing, and reference architecture on controlled AI — for finance, risk, compliance, regulatory reporting, healthcare operations, and enterprise automation. Everything here is personal and independent: it isn't consulting work, product development, or a position taken on behalf of any employer, client, regulator, or organisation I've worked with.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/books" className="btn-primary text-sm">
@@ -93,9 +92,9 @@ export default function AboutPage() {
       </section>
 
       <Section
-        eyebrow="Founder"
+        eyebrow="Who I am"
         title="20+ years across finance technology, risk, regulatory reporting, data, automation, and AI"
-        description="LorvexAI is led by Sreedhara Reddy Kotha, a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data, automation, and enterprise technology."
+        description="I'm a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data, automation, and enterprise technology — and this site is where I write about it."
       >
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-lg border border-primary/25 bg-[#0d2745]/70 p-7">
@@ -107,10 +106,10 @@ export default function AboutPage() {
               <p className="mt-1 text-sm text-primary">Creator of LorvexAI</p>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-secondary/75">
-              Sreedhara Reddy Kotha is a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data platforms, automation, and enterprise technology. His work focuses on how AI can be designed with governance, auditability, human oversight, and operational control in mind. LorvexAI reflects his independent educational, publishing, and research interests.
+              I've spent more than two decades in financial services, risk, regulatory reporting, data platforms, automation, and enterprise technology. Most of what I write here comes back to one question: how do you design AI systems with governance, auditability, human oversight, and operational control built in from the start, rather than bolted on afterward.
             </p>
             <p className="mt-4 rounded-lg border border-secondary/15 bg-background/35 p-3 text-xs leading-relaxed text-secondary/65">
-              This profile does not disclose or rely on confidential employer, client, customer, transaction, regulatory filing, supervisory, or proprietary information.
+              I don't disclose or rely on confidential employer, client, customer, transaction, regulatory, or proprietary information here.
             </p>
             <div className="mt-5 space-y-2 border-t border-secondary/15 pt-4">
               {credentials.map((c) => (
@@ -197,13 +196,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <LegalDisclaimerBanner />
-        </div>
-      </section>
-
-      <Section title="Discuss books, research, or architecture support" description="">
+      <Section title="Read the books, research, and blueprints" description="">
         <CTA />
       </Section>
     </>
