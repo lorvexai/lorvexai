@@ -134,7 +134,7 @@ export default function ContactPage() {
                 </ol>
               </div>
               <p className="text-xs leading-relaxed text-secondary/45">
-                Contact form provider: [INSERT FORM HANDLER PROVIDER]. See the <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for data handling details.
+                Contact form provider: Formspree. See the <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for data handling details.
               </p>
             </div>
           </div>

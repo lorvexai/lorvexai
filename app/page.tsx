@@ -1,282 +1,221 @@
 import Link from "next/link";
+import { ArrowRight, BookOpen, FileText, Landmark, Layers3, Linkedin, ShieldCheck, Sparkles } from "lucide-react";
 import { getAllPosts } from "@/utils/posts";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
 import NHSFlowMockup from "@/components/mockups/NHSFlowMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
-import FeaturedInsights from "@/components/FeaturedInsights";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Database,
-  HeartPulse,
-  Landmark,
-  Sparkles
-} from "lucide-react";
-
-const blueprints = [
-  {
-    eyebrow: "Finance & Risk",
-    title: "Regulatory Intelligence Blueprint",
-    body: "A reference architecture for turning public regulatory text into structured obligation candidates, control-mapping drafts, and evidence-pack templates for internal review.",
-    bullet: "Evidence-pack templates for governance discussion — human validation required.",
-    href: "/blueprints",
-    visual: <RegulatoryMockup />,
-    accent: "text-blue-300 border-blue-400/30 bg-blue-400/10"
-  },
-  {
-    eyebrow: "Healthcare Operations",
-    title: "Healthcare Flow Intelligence",
-    body: "A conceptual healthcare-operations blueprint for referral-flow intelligence, waiting-list analytics, and discharge-pathway visibility.",
-    bullet: "A conceptual blueprint, not a clinical triage system — synthetic demo data only.",
-    href: "/blueprints",
-    visual: <NHSFlowMockup />,
-    accent: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10"
-  },
-  {
-    eyebrow: "Treasury & Finance",
-    title: "Treasury Sentinel Blueprint",
-    body: "A finance-operations reference blueprint for liquidity monitoring, cash-flow anomaly detection, scenario analysis, and ALCO-style draft reporting.",
-    bullet: "Educational discussion only — no autonomous treasury decision-making.",
-    href: "/blueprints",
-    visual: <TreasurySentinelMockup />,
-    accent: "text-orange-300 border-orange-400/30 bg-orange-400/10"
-  }
-];
 
 const focusAreas = [
   {
-    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions",
+    icon: ShieldCheck,
+    title: "AI governance and audit",
+    body: "Operating models, evidence, human oversight, board reporting, and the controls that turn policy into practice.",
+    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions"
+  },
+  {
     icon: Landmark,
-    title: "AI Strategy, Governance & Audit",
-    body: "My take on AI operating models, evidence packs, audit readiness, human oversight, and board-level control — written plainly, not as a framework pitch."
+    title: "Model risk and regulation",
+    body: "Practical notes on validation, monitoring, PRA, ECB, Federal Reserve, and SEC supervisory themes.",
+    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance"
   },
   {
-    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance",
-    icon: HeartPulse,
-    title: "Model Risk & Financial Regulation",
-    body: "Notes on model inventory, tiering, validation, monitoring, PRA SS1/23, ECB supervision, Fed guidance, and SEC AI themes."
-  },
-  {
-    href: "/blueprints",
-    icon: Database,
-    title: "Reference Architectures",
-    body: "The blueprints I sketch out to think through controlled RAG, regulatory intelligence, treasury monitoring, and supervised AI workflows."
+    icon: Layers3,
+    title: "Controlled AI architecture",
+    body: "Reference designs for RAG, agentic workflows, treasury monitoring, and reviewable evidence trails.",
+    href: "/blueprints"
   }
 ];
 
-const regulatedResearchSeries = [
+const blueprints = [
   {
-    href: "/blog/ai-strategy-and-governance-for-regulated-financial-institutions",
-    label: "Strategy",
-    title: "AI Strategy and Governance",
-    body: "A board-friendly way to connect AI ambition, risk appetite, ownership, controls, and evidence."
+    label: "Finance and risk",
+    title: "Regulatory Intelligence",
+    body: "From public regulatory text to reviewable obligation candidates and evidence-pack drafts.",
+    visual: <RegulatoryMockup />
   },
   {
-    href: "/blog/ai-audit-readiness-evidence-controls-logs-human-oversight",
-    label: "Audit",
-    title: "AI Audit Readiness",
-    body: "How evidence, controls, logs, and human oversight make AI systems easier to test and challenge."
+    label: "Healthcare operations",
+    title: "Flow Intelligence",
+    body: "A conceptual pattern for referral visibility, queue analytics, and supervised operational support.",
+    visual: <NHSFlowMockup />
   },
   {
-    href: "/blog/model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance",
-    label: "Model Risk",
-    title: "Model Risk Management for AI",
-    body: "A practical view of AI inventory, tiering, validation, monitoring, and effective challenge."
-  },
-  {
-    href: "/blog/ecb-ai-supervision-governance-genai-prudential-risk",
-    label: "ECB",
-    title: "ECB AI Supervision",
-    body: "Governance, GenAI, prudential risk, strategy, and control themes for supervised banks."
-  },
-  {
-    href: "/blog/sec-and-ai-ai-washing-predictive-analytics-conflicts-disclosure-risk",
-    label: "SEC",
-    title: "SEC and AI",
-    body: "AI-washing, predictive analytics, conflicts, disclosure risk, and governance evidence."
-  },
-  {
-    href: "/blog/board-reporting-for-ai-risk-and-model-risk-committees",
-    label: "Board",
-    title: "AI Risk Reporting",
-    body: "How to report AI adoption, incidents, assurance, validation findings, and remediation."
+    label: "Treasury and finance",
+    title: "Treasury Sentinel",
+    body: "A reference pattern for anomaly monitoring, liquidity scenarios, and human-reviewed reporting.",
+    visual: <TreasurySentinelMockup />
   }
 ];
 
 export default function HomePage() {
-  const hiddenHomePostTitles = new Set([
-    "From Waiting Lists to Smart Pathways",
-    "NHS AI Triage Without Harm",
-    "AI-Native Treasury Control Tower",
-    "AI in Financial Risk Management",
-    "AI Agents in Banking Operations"
-  ]);
-
-  const posts = getAllPosts().filter((post) => !hiddenHomePostTitles.has(post.title));
+  const posts = getAllPosts();
+  const featured = posts.find((post) => post.slug === "ai-strategy-and-governance-for-regulated-financial-institutions") ?? posts[0];
+  const latest = posts.filter((post) => post.slug !== featured.slug).slice(0, 3);
 
   return (
     <>
       <section className="relative overflow-hidden border-b border-secondary/10">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 pb-16 pt-16 md:grid-cols-[1.08fr_0.92fr] md:items-center md:pb-24 md:pt-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_12%,rgba(184,134,58,0.14),transparent_32%)]" />
+        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1.14fr_0.86fr] md:items-center md:py-24">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <Sparkles size={14} aria-hidden="true" />
-              Notes on AI governance, model risk, and financial regulation
+              Independent research and practical writing
             </p>
             <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
-              What controlled AI governance actually looks like.
+              Clear thinking about controlled AI.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/78">
-              I'm Sreedhara Reddy Kotha. This is where I publish my own research, reference architectures, and books on AI strategy, model risk, auditability, and financial regulation — written the way I'd want to read it: plainly, with the caveats included, and without a sales pitch.
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/85 md:text-xl">
+              I&apos;m Sreedhara Reddy Kotha. I publish research, technical essays, books, and reference architectures on AI governance, model risk, financial regulation, and enterprise technology.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/blog" className="btn-primary min-h-11 text-sm font-semibold">
-                Read Blog
+              <Link href={`/blog/${featured.slug}`} className="btn-primary min-h-12 text-sm">
+                Read featured research
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/research" className="btn-outline min-h-11 text-sm font-semibold">
-                Read Research
-              </Link>
-              <Link href="/topics" className="btn-outline min-h-11 text-sm font-semibold">
-                Explore Topics
-              </Link>
-              <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
-                View Blueprints
-              </Link>
+              <Link href="/blog" className="btn-outline min-h-12 text-sm">Explore all writing</Link>
+            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-secondary/15 pt-6 text-sm text-secondary/70">
+              <span>20+ years in finance technology</span>
+              <span>Independent and educational</span>
+              <span>Written in the UK</span>
             </div>
           </div>
 
-          <div className="corner-ticks relative border border-secondary/15 bg-[#0d2745]/75 p-4 shadow-2xl shadow-black/30">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Reference architecture — Fig. 01</p>
-            <h2 className="mt-4 text-2xl font-semibold text-white">Controlled AI system pattern</h2>
-            <div className="mt-6 grid gap-3">
-              {[
-                ["1", "Public or approved information sources"],
-                ["2", "Retrieval, workflow, and evidence controls"],
-                ["3", "Human review and approval gates"],
-                ["4", "Educational blueprint or prototype scope"]
-              ].map(([n, text]) => (
-                <div key={n} className="flex items-center gap-3 rounded-lg border border-secondary/15 bg-background/35 p-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-primary">{n}</span>
-                  <span className="text-sm text-secondary/75">{text}</span>
-                </div>
-              ))}
+          <aside className="corner-ticks border border-secondary/20 bg-[#0d2745]/75 p-6 shadow-2xl shadow-black/30" aria-label="About the author">
+            <div className="flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/15 font-serif text-xl font-semibold text-primary">SK</div>
+              <div>
+                <p className="font-semibold text-white">Sreedhara Reddy Kotha</p>
+                <p className="mt-1 text-sm text-primary">Creator and author of LorvexAI</p>
+              </div>
             </div>
-            <div className="mt-4 flex items-center justify-between border-t border-secondary/15 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-secondary/45">
-              <span>Drawn — S. R. Kotha</span>
-              <span>Rev B</span>
+            <p className="mt-6 text-base leading-relaxed text-secondary/80">
+              I write from a practitioner&apos;s perspective: how systems work, where governance fails, what evidence matters, and where human judgement still belongs.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <Link href="/about" className="rounded-xl border border-secondary/20 bg-background/35 p-4 transition hover:border-primary/45">
+                <span className="block text-xs uppercase tracking-[0.16em] text-secondary/55">Profile</span>
+                <span className="mt-2 block text-sm font-semibold text-white">About my work</span>
+              </Link>
+              <a href="https://www.linkedin.com/in/sreekotha/" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-secondary/20 bg-background/35 p-4 transition hover:border-primary/45">
+                <Linkedin size={16} className="text-primary" aria-hidden="true" />
+                <span className="mt-2 block text-sm font-semibold text-white">Follow on LinkedIn</span>
+              </a>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section className="py-14 md:py-20">
-        <div className="mx-auto w-full max-w-3xl px-6 text-center">
-          <p className="text-xl leading-relaxed text-secondary/85 md:text-2xl">
-            I've spent twenty-plus years building and reviewing systems inside banks and healthcare providers. Most AI governance writing I come across is either vendor marketing or committee-speak. This site is my attempt at something else — opinionated, technical, and honest about what still needs a human in the loop.
-          </p>
-        </div>
-      </section>
-
-      <section className="section pt-0">
+      <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I'm writing about</p>
-              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-                AI governance, audit, model risk, and financial regulation.
-              </h2>
-              <p className="mt-4 text-secondary/70">
-                A connected series I'm building for regulated financial institutions — written as research, not as a pitch.
-              </p>
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Start here</p>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-5xl">One argument, explored properly.</h2>
+              <p className="mt-4 text-secondary/75">Featured research for readers who want the substance before the summaries.</p>
             </div>
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
-              Browse all articles
-              <ArrowRight size={15} aria-hidden="true" />
-            </Link>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {regulatedResearchSeries.map((item) => (
-              <Link key={item.href} href={item.href} className="group rounded-lg border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
-                <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
-                  {item.label}
-                </span>
-                <h3 className="mt-5 text-xl font-semibold leading-snug text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-secondary/65">{item.body}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">
-                  Read article
-                  <ArrowRight size={14} aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section pt-0">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
-              Blueprints
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-5xl">
-              Reference architectures I sketch out to think this through.
-            </h2>
-            <p className="mt-4 text-secondary/70">
-              These are concepts, not products — a way to work through how controlled AI systems should behave in finance, treasury, and healthcare operations before anyone builds the real thing.
-            </p>
+            <Link href="/research" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">Browse research <ArrowRight size={15} /></Link>
           </div>
 
-          <div className="mt-12 space-y-16">
-            {blueprints.map((product, index) => (
-              <div key={product.title} className="grid items-center gap-8 md:grid-cols-2">
-                <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                  <span className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${product.accent}`}>
-                    {product.eyebrow}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-semibold text-white md:text-3xl">{product.title}</h3>
-                  <p className="mt-3 max-w-xl leading-relaxed text-secondary/72">{product.body}</p>
-                  <p className="mt-5 flex items-start gap-2 text-sm text-secondary/70">
-                    <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-primary/75" aria-hidden="true" />
-                    {product.bullet}
-                  </p>
-                  <Link href={product.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
-                    See blueprints
-                    <ArrowRight size={15} aria-hidden="true" />
-                  </Link>
-                </div>
-                <div className={index % 2 === 1 ? "md:order-1" : ""}>{product.visual}</div>
+          <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+            <Link href={`/blog/${featured.slug}`} className="group rounded-2xl border border-primary/30 bg-[linear-gradient(145deg,rgba(18,49,90,0.9),rgba(8,26,46,0.96))] p-7 transition hover:border-primary/60 md:p-9">
+              <div className="flex items-center justify-between gap-4">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary"><FileText size={14} /> Featured research</span>
+                <span className="text-xs text-secondary/60">{featured.date}</span>
               </div>
-            ))}
+              <h3 className="mt-8 max-w-3xl text-3xl font-semibold leading-tight text-white md:text-4xl">{featured.title}</h3>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-secondary/80">{featured.excerpt}</p>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {featured.tags.slice(0, 4).map((tag) => <span key={tag} className="rounded-full border border-secondary/20 px-3 py-1 text-xs text-secondary/70">{tag}</span>)}
+              </div>
+              <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">Read the full paper <ArrowRight size={15} /></span>
+            </Link>
+
+            <div className="grid gap-4">
+              {latest.map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-2xl border border-secondary/15 bg-background/35 p-5 transition hover:border-primary/45 hover:bg-primary/5">
+                  <p className="text-xs text-secondary/60">{post.date}</p>
+                  <h3 className="mt-2 text-lg font-semibold leading-snug text-white">{post.title}</h3>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-primary group-hover:text-white">Read note <ArrowRight size={13} /></span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="border-y border-secondary/10 bg-background/45 py-16 md:py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="mb-10 max-w-3xl">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I keep coming back to</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Three threads that run through most of what I write.
-            </h2>
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Core themes</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Three threads that connect the work.</h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             {focusAreas.map((area) => (
-              <Link key={area.title} href={area.href} className="group rounded-lg border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
-                <area.icon size={22} className="text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-lg font-semibold text-white">{area.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-secondary/65">{area.body}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">
-                  Explore
-                  <ArrowRight size={14} aria-hidden="true" />
-                </span>
+              <Link key={area.title} href={area.href} className="group rounded-2xl border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:-translate-y-1 hover:border-primary/45">
+                <area.icon size={22} className="text-primary" />
+                <h3 className="mt-5 text-xl font-semibold text-white">{area.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-secondary/75">{area.body}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-white">Explore <ArrowRight size={14} /></span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <FeaturedInsights posts={posts} />
+      <section className="section">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Reference architecture</p>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-5xl">Ideas made visible.</h2>
+              <p className="mt-4 text-secondary/75">Conceptual diagrams for thinking through controls, evidence, escalation, and human accountability before implementation.</p>
+            </div>
+            <Link href="/blueprints" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-white">View all blueprints <ArrowRight size={15} /></Link>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {blueprints.map((blueprint) => (
+              <article key={blueprint.title} className="overflow-hidden rounded-2xl border border-secondary/15 bg-[#0d2745]/45">
+                <div className="border-b border-secondary/10 p-3">{blueprint.visual}</div>
+                <div className="p-6">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">{blueprint.label}</p>
+                  <h3 className="mt-3 text-xl font-semibold text-white">{blueprint.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-secondary/75">{blueprint.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-secondary/10 bg-[#e8edf2] py-16 text-[#10243b] md:py-20">
+        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-[#10243b]/15 bg-[#dce4eb]">
+            <BookOpen size={58} className="text-[#9a6e2b]" aria-hidden="true" />
+          </div>
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#8b642b]">Books and reading notes</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#10243b] md:text-4xl">Long-form thinking for practitioners.</h2>
+            <p className="mt-5 max-w-2xl leading-relaxed text-[#334a63]">Explore the book project on AI for financial risk, compliance, and regulatory reporting, alongside reading notes that connect important books to real enterprise decisions.</p>
+            <Link href="/books" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#10243b] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#183653]">Explore books and reviews <ArrowRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscribe" className="section scroll-mt-24">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="grid gap-8 rounded-3xl border border-primary/30 bg-[radial-gradient(circle_at_top_right,rgba(184,134,58,0.18),transparent_38%),rgba(13,39,69,0.8)] p-7 md:grid-cols-[0.9fr_1.1fr] md:items-center md:p-12">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">Research notes by email</p>
+              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">One useful idea at a time.</h2>
+              <p className="mt-4 max-w-xl leading-relaxed text-secondary/75">Occasional notes on controlled AI, finance, governance, and the books shaping my thinking. No promotional noise.</p>
+            </div>
+            <NewsletterSignup />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

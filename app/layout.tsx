@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
@@ -41,7 +40,9 @@ export const metadata: Metadata = {
     "Finance Risk Technology",
     "Healthcare Operations Research"
   ],
-  authors: [{ name: "LorvexAI Editorial Team" }],
+  authors: [{ name: "Sreedhara Reddy Kotha", url: "/about" }],
+  creator: "Sreedhara Reddy Kotha",
+  publisher: "LorvexAI",
   icons: {
     icon: "/lorvex_icon.png",
     apple: "/lorvex_icon.png"
@@ -80,10 +81,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable} ${serif.variable}`}>
-      <body className="relative pb-20 md:pb-0">
+      <body className="relative">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main>{children}</main>
-        <MobileStickyCTA />
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

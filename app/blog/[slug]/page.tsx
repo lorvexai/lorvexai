@@ -5,7 +5,8 @@ import { getAllPosts, getPostContent } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
 import BlogCard from "@/components/BlogCard";
-import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
@@ -34,14 +35,14 @@ export async function generateMetadata({
     title: `${post.title} | LorvexAI`,
     description: post.excerpt,
     alternates: { canonical: canonicalPath },
-    authors: [{ name: "LorvexAI" }],
+    authors: [{ name: "Sreedhara Reddy Kotha", url: "/about" }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url: `${normalizedSiteUrl}${canonicalPath}`,
       type: "article",
       publishedTime,
-      authors: ["LorvexAI"],
+      authors: ["Sreedhara Reddy Kotha"],
       images: [{ url: socialImageUrl, width: 1200, height: 630, type: "image/png", alt: "LorvexAI" }]
     },
     twitter: {
@@ -86,6 +87,28 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   const html = await getPostContent(params.slug);
   const readingTime = estimateReadingTime(html);
+  const publishedDate = new Date(post.publishedAt);
+  const publishedTime = Number.isNaN(publishedDate.getTime()) ? undefined : publishedDate.toISOString();
+  const articleUrl = `${normalizedSiteUrl}/blog/${params.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: publishedTime,
+    mainEntityOfPage: articleUrl,
+    image: socialImageUrl,
+    author: {
+      "@type": "Person",
+      name: "Sreedhara Reddy Kotha",
+      url: `${normalizedSiteUrl}/about`
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "LorvexAI",
+      url: normalizedSiteUrl
+    }
+  };
 
   const relatedPosts = allPosts
     .filter((c) => c.slug !== post.slug)
@@ -98,6 +121,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Article hero */}
       <section className="border-b border-secondary/10 bg-background/60 py-10 md:py-14">
         <div className="mx-auto w-full max-w-4xl px-6">
@@ -147,7 +171,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </div>
             <div className="flex items-center gap-1.5 text-sm text-secondary/55">
               <span className="h-1 w-1 rounded-full bg-secondary/30" />
-              <span>By LorvexAI</span>
+              <Link href="/about" className="transition hover:text-white">By Sreedhara Reddy Kotha</Link>
             </div>
             <div className="ml-auto flex items-center gap-2">
               <span className="text-xs text-secondary/40">Share:</span>
@@ -172,14 +196,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           <CopyCodeButton />
           <MermaidRenderer />
           <article
-            className="prose prose-invert max-w-none
+            className="prose prose-lg prose-invert max-w-none
               prose-headings:font-semibold prose-headings:text-white
               prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-              prose-p:text-secondary/80 prose-p:leading-relaxed
+              prose-p:text-secondary/90 prose-p:leading-[1.8]
               prose-a:text-primary prose-a:no-underline hover:prose-a:text-white
               prose-strong:text-white
-              prose-li:text-secondary/80
+              prose-li:text-secondary/90 prose-li:leading-relaxed
               prose-code:text-primary prose-code:bg-primary/10 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
               prose-pre:bg-background/60 prose-pre:border prose-pre:border-secondary/15 prose-pre:rounded-xl
               prose-blockquote:border-primary/50 prose-blockquote:bg-primary/5 prose-blockquote:rounded-r-xl prose-blockquote:py-0.5
@@ -187,6 +211,22 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               prose-img:rounded-2xl prose-img:border prose-img:border-secondary/15"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+
+          <div className="mt-14 grid gap-5 border-t border-secondary/15 pt-8 md:grid-cols-[0.7fr_1.3fr]">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/35 bg-primary/15 font-serif font-semibold text-primary">SK</div>
+              <div>
+                <p className="font-semibold text-white">Sreedhara Reddy Kotha</p>
+                <p className="mt-1 text-sm leading-relaxed text-secondary/75">Finance technology and AI practitioner writing independently about controlled AI systems.</p>
+                <Link href="/about" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-white">About the author <ArrowRight size={13} /></Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
+              <p className="font-semibold text-white">Get the next research note</p>
+              <p className="mb-4 mt-1 text-sm text-secondary/75">Occasional writing on controlled AI, finance, governance, and technology.</p>
+              <NewsletterSignup compact />
+            </div>
+          </div>
         </div>
       </section>
 

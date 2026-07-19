@@ -12,6 +12,35 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: rgba(184, 134, 58, 0.45);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #d5a451;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  border-radius: 9999px;
+  background: #d5a451;
+  color: #0b2038;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -83,6 +112,12 @@ h1, h2, h3, h4, h5 {
 .btn-primary {
   @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-[#0B2038] font-semibold shadow-glow transition hover:brightness-110;
   box-shadow: 0 14px 30px rgba(184, 134, 58, 0.18);
+}
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .btn-outline {
@@ -184,6 +219,18 @@ h1, h2, h3, h4, h5 {
   fill: rgba(18, 49, 90, 0.6) !important;
   stroke: rgba(220, 234, 242, 0.24) !important;
   stroke-width: 1px !important;
+}
+
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > blockquote {
+  max-width: 46rem;
+}
+
+.prose > h2,
+.prose > h3 {
+  max-width: 50rem;
 }
 
 /* ─── Prose image polish ─── */

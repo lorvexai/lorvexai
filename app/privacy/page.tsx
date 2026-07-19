@@ -7,18 +7,18 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  ["Who we are", "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Contact: [INSERT CONTACT EMAIL]."],
+  ["Who we are", "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Contact: lorvexai@gmail.com."],
   ["What personal data we collect", "We may collect contact form data including name, email, organisation, job title, message, and enquiry type. We may also collect technical data such as IP address, browser/device data, and server logs if analytics, hosting, or security logging is used."],
   ["Contact form data", "Contact form submissions may include name, email, organisation, job title, message, and enquiry type. Do not submit confidential, proprietary, customer, transaction, patient, clinical, employer, client, regulatory filing, supervisory, or non-public information."],
-  ["Technical data", "Analytics provider: [INSERT ANALYTICS PROVIDER OR \"No analytics currently used\"]. Form handler provider: [INSERT FORM HANDLER PROVIDER]. Hosting and form providers may process technical data such as IP address, browser, device, timestamp, and usage logs."],
+  ["Technical data", "No first-party analytics service is currently configured. Contact and subscription forms are handled by Formspree. Hosting, security, and form providers may process technical data such as IP address, browser, device, timestamp, and usage logs."],
   ["Why we process data", "We process data to respond to books, research, writing, publishing, correction, or general enquiries, maintain site security, understand website usage where permitted, and keep appropriate records."],
   ["Legal basis", "Under UK GDPR, our legal basis may include consent, legitimate interests in responding to enquiries and operating the website, and compliance with legal obligations where applicable."],
-  ["How long we keep data", "Retention period: [INSERT RETENTION PERIOD]. We aim to keep personal data only for as long as needed for the purpose collected, unless a longer period is required by law or appropriate record-keeping obligations."],
-  ["Who data is shared with", "Personal data may be shared with hosting, contact form, email, analytics, security, or professional service providers where needed. Current provider details should be inserted here: [INSERT FORM HANDLER PROVIDER] and [INSERT ANALYTICS PROVIDER OR \"No analytics currently used\"]."],
+  ["How long we keep data", "Contact and subscription data is kept only for as long as reasonably needed to respond, provide requested updates, maintain appropriate records, or meet legal obligations. You can request deletion at any time."],
+  ["Who data is shared with", "Personal data may be processed by the website hosting provider, Formspree as the contact-form provider, email providers, and security or professional service providers where necessary to operate the site."],
   ["International transfers", "Some third-party tools may process data outside the UK/EEA. Where relevant, appropriate safeguards should be confirmed with each provider before use."],
   ["Your rights", "You may have rights to access, correct, delete, restrict, object to processing, and request portability of your personal data. You may also withdraw consent where consent is the lawful basis."],
-  ["How to contact LorvexAI", "For privacy questions or rights requests, contact [INSERT CONTACT EMAIL]."],
-  ["Date last updated", "20 June 2026"]
+  ["How to contact LorvexAI", "For privacy questions, unsubscribe requests, or data-rights requests, contact lorvexai@gmail.com."],
+  ["Date last updated", "19 July 2026"]
 ];
 
 export default function PrivacyPage() {
