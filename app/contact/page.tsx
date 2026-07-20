@@ -51,7 +51,7 @@ export default function ContactPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Get In Touch</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">Contact </span>
+                  <span className="text-heading">Contact </span>
                   <span className="text-gradient">LorvexAI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
@@ -68,7 +68,7 @@ export default function ContactPage() {
                         className="glass flex flex-col gap-2 rounded-lg border border-primary/20 p-4 transition hover:border-primary/45"
                       >
                         <m.icon size={18} className="text-primary" />
-                        <p className="text-sm font-semibold text-white">{m.title}</p>
+                        <p className="text-sm font-semibold text-heading">{m.title}</p>
                         <p className="text-xs text-primary">{m.detail}</p>
                         <p className="text-xs text-secondary/60">{m.sub}</p>
                       </a>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                         className="glass flex flex-col gap-2 rounded-lg border border-primary/20 p-4"
                       >
                         <m.icon size={18} className="text-primary" />
-                        <p className="text-sm font-semibold text-white">{m.title}</p>
+                        <p className="text-sm font-semibold text-heading">{m.title}</p>
                         <p className="text-xs text-primary">{m.detail}</p>
                         <p className="text-xs text-secondary/60">{m.sub}</p>
                       </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 {engagementTypes.map((label) => (
                   <div key={label} className="flex items-start gap-3 rounded-lg border border-secondary/15 bg-background/30 px-4 py-3">
                     <ArrowRight size={14} className="mt-0.5 shrink-0 text-primary" />
-                    <p className="text-sm font-medium text-white">{label}</p>
+                    <p className="text-sm font-medium text-heading">{label}</p>
                   </div>
                 ))}
               </div>
@@ -105,20 +105,20 @@ export default function ContactPage() {
           <div className="grid gap-10 md:grid-cols-[1.35fr_0.65fr]">
             <div className="glass rounded-lg border border-secondary/20 p-8">
               <p className="mb-1 font-mono text-xs uppercase tracking-[0.28em] text-primary">Contact Form</p>
-              <h2 className="mb-6 text-2xl font-semibold text-white">Send an enquiry</h2>
+              <h2 className="mb-6 text-2xl font-semibold text-heading">Send an enquiry</h2>
               <ContactForm />
             </div>
 
             <div className="flex flex-col gap-5">
               <div className="glass rounded-lg border border-primary/20 p-6">
                 <Clock size={20} className="mb-3 text-primary" />
-                <h3 className="text-lg font-semibold text-white">Response and review</h3>
+                <h3 className="text-lg font-semibold text-heading">Response and review</h3>
                 <p className="mt-2 text-sm text-secondary/70">
                   Enquiries are reviewed for fit with the site&apos;s personal educational and publishing purpose.
                 </p>
               </div>
               <div className="glass rounded-lg border border-primary/20 p-6">
-                <h3 className="text-lg font-semibold text-white">What happens next?</h3>
+                <h3 className="text-lg font-semibold text-heading">What happens next?</h3>
                 <ol className="mt-4 space-y-3">
                   {[
                     "I read the enquiry myself",

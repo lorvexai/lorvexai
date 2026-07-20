@@ -114,7 +114,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search articles by title, topic, or keyword..."
-          className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-white placeholder-secondary/40 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
+          className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-heading placeholder-secondary/40 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
         />
       </div>
 
@@ -149,12 +149,12 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
               onClick={() => setActiveTopic(topic)}
               className={
                 active
-                  ? "min-h-10 rounded-full border border-primary/60 bg-primary/25 px-4 py-2 text-sm font-semibold text-white shadow-glow"
+                  ? "min-h-10 rounded-full border border-primary/60 bg-primary/25 px-4 py-2 text-sm font-semibold text-heading shadow-glow"
                   : "min-h-10 rounded-full border border-secondary/25 bg-background/30 px-4 py-2 text-sm text-secondary/65 transition hover:border-primary/35 hover:text-secondary/90"
               }
             >
               {topic}
-              <span className={`ml-1.5 font-mono text-xs ${active ? "text-white/70" : "text-secondary/40"}`}>
+              <span className={`ml-1.5 font-mono text-xs ${active ? "text-heading/70" : "text-secondary/40"}`}>
                 {count}
               </span>
             </button>

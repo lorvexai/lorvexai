@@ -34,7 +34,7 @@ export default function TreasurySentinelMockup() {
       <div className="flex items-center justify-between border-b border-secondary/10 px-4 py-2.5" style={{ background: "rgba(12,25,48,0.9)" }}>
         <div className="flex gap-4">
           {["Dashboard", "Positions", "Cashflow", "Alerts", "ALCO Drafts"].map((t, i) => (
-            <span key={t} className={`text-xs ${i === 0 ? "border-b border-orange-400 pb-1 text-white" : "text-secondary/45"}`}>{t}</span>
+            <span key={t} className={`text-xs ${i === 0 ? "border-b border-orange-400 pb-1 text-heading" : "text-secondary/45"}`}>{t}</span>
           ))}
         </div>
         <span className="rounded-full border border-orange-400/30 bg-orange-400/10 px-2 py-0.5 text-[10px] text-orange-300">
@@ -67,7 +67,7 @@ export default function TreasurySentinelMockup() {
               {positions.map((p, i) => (
                 <div key={p.entity} className={`grid grid-cols-[1.4fr_auto_auto_auto_auto] items-center gap-2 px-3 py-1.5 ${i % 2 === 0 ? "bg-background/20" : ""}`}>
                   <div>
-                    <p className="text-[10px] font-medium text-white">{p.entity}</p>
+                    <p className="text-[10px] font-medium text-heading">{p.entity}</p>
                     <p className="text-[9px] text-secondary/40">{p.currency}</p>
                   </div>
                   <span className="font-mono text-[9px] text-secondary/65">{p.balance}</span>
@@ -111,7 +111,7 @@ export default function TreasurySentinelMockup() {
 
             <div className="rounded-lg border border-orange-400/20 bg-orange-400/5 p-3">
               <p className="text-[9px] font-semibold uppercase tracking-wider text-orange-300">ALCO-style Draft</p>
-              <p className="mt-1 text-[10px] text-white">Synthetic Review Pack</p>
+              <p className="mt-1 text-[10px] text-heading">Synthetic Review Pack</p>
               <p className="mt-1 text-[9px] text-secondary/50">Human approval required</p>
             </div>
           </div>

@@ -21,7 +21,7 @@ export default function TechnicalInsightsHeader({
   return (
     <div className="glass rounded-3xl border border-primary/25 p-6 md:p-8">
       <p className="text-xs uppercase tracking-[0.3em] text-secondary/70">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">{title}</h2>
+      <h2 className="mt-3 text-3xl font-semibold text-heading md:text-4xl">{title}</h2>
       <p className="mt-4 max-w-3xl text-secondary/85">{description}</p>
 
       <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/10 p-5">

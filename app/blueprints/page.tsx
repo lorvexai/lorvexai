@@ -66,7 +66,7 @@ export default function BlueprintsPage() {
           <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
             <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Blueprints</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-              <span className="text-white">How I'd architect </span>
+              <span className="text-heading">How I'd architect </span>
               <span className="text-gradient">controlled AI systems</span>
             </h1>
             <p className="mt-5 max-w-3xl text-secondary/80">
@@ -107,7 +107,7 @@ export default function BlueprintsPage() {
                       : "border-secondary/20 bg-background/30 hover:border-primary/45"
                   }`}
                 >
-                  <h3 className="text-xl font-semibold text-white">{blueprint.name}</h3>
+                  <h3 className="text-xl font-semibold text-heading">{blueprint.name}</h3>
                   <p className="mt-3 text-sm text-secondary/80">{blueprint.summary}</p>
                   <p className="mt-5 text-xs uppercase tracking-[0.22em] text-primary">
                     {isActive ? "Selected" : "Open Blueprint"}
@@ -141,8 +141,8 @@ export default function BlueprintsPage() {
   E --> F["Human validated output"]`}
               />
             </div>
-            <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Regulatory intelligence blueprint</h3>
+            <aside className="h-fit rounded-lg border border-primary/35 bg-panel2 p-6">
+              <h3 className="text-2xl font-semibold text-heading">Regulatory intelligence blueprint</h3>
               <ul className="mt-5 space-y-2 text-sm text-secondary/85">
                 <li>Evidence-pack templates to support internal review and governance discussions</li>
                 <li>Human validation required before use</li>
@@ -179,8 +179,8 @@ export default function BlueprintsPage() {
   E --> F["Formal governance outside prototype"]`}
               />
             </div>
-            <aside className="h-fit rounded-lg border border-primary/35 bg-[#13294B] p-6">
-              <h3 className="text-2xl font-semibold text-white">Treasury reference blueprint</h3>
+            <aside className="h-fit rounded-lg border border-primary/35 bg-panel2 p-6">
+              <h3 className="text-2xl font-semibold text-heading">Treasury reference blueprint</h3>
               <ul className="mt-5 space-y-2 text-sm text-secondary/85">
                 <li>ALCO-style draft packs for review</li>
                 <li>Synthetic demo data only</li>

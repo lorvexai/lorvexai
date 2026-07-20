@@ -104,7 +104,7 @@ export default function BlogPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Writing</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">Everything I've written </span>
+                  <span className="text-heading">Everything I've written </span>
                   <span className="text-gradient">on regulated AI</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-secondary/80">
@@ -124,7 +124,7 @@ export default function BlogPage() {
                 <div className="flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/10 px-4 py-3">
                   <BookOpen size={16} className="shrink-0 text-primary" />
                   <div>
-                    <p className="stat-glow text-lg font-bold text-white">{posts.length}</p>
+                    <p className="stat-glow text-lg font-bold text-heading">{posts.length}</p>
                     <p className="text-xs text-secondary/60">Articles published</p>
                   </div>
                 </div>
@@ -159,9 +159,9 @@ export default function BlogPage() {
             <Link key={item.title} href={item.href} className="group rounded-lg border border-secondary/15 bg-background/35 p-6 transition hover:border-primary/45">
               <item.icon size={22} className="text-primary" />
               <p className="mt-4 text-xs uppercase tracking-[0.18em] text-secondary/45">{item.category}</p>
-              <h2 className="mt-3 text-xl font-semibold text-white">{item.title}</h2>
+              <h2 className="mt-3 text-xl font-semibold text-heading">{item.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-secondary/70">{item.desc}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-white">
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
                 Read more
                 <ArrowRight size={14} />
               </span>

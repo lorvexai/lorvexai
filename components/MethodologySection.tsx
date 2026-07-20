@@ -46,7 +46,7 @@ export default function MethodologySection() {
         <p className="mb-3 text-xs uppercase tracking-[0.35em] text-secondary/70">
           Methodology
         </p>
-        <h2 className="text-3xl font-semibold text-white md:text-4xl">
+        <h2 className="text-3xl font-semibold text-heading md:text-4xl">
           AI Methodology & Design Framework
         </h2>
         <p className="mt-4 max-w-2xl text-secondary/80">
@@ -61,7 +61,7 @@ export default function MethodologySection() {
                 key={phase.title}
                 className="glass rounded-2xl p-6 shadow-glow"
               >
-                <div className="flex items-center gap-3 text-white">
+                <div className="flex items-center gap-3 text-heading">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-primary/20 text-primary">
                     <Icon className="h-5 w-5" />
                   </span>

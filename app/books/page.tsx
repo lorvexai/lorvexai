@@ -14,7 +14,7 @@ export default function BooksPage() {
       <section className="section pb-8 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Books &amp; Publications</p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-white md:text-5xl">
+          <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-heading md:text-5xl">
             Educational resources for controlled AI in regulated environments.
           </h1>
           <p className="mt-5 max-w-2xl text-secondary/75">
@@ -25,13 +25,13 @@ export default function BooksPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <article className="grid gap-8 rounded-lg border border-primary/25 bg-[#0d2745]/70 p-8 md:grid-cols-[0.75fr_1.25fr]">
+          <article className="grid gap-8 rounded-lg border border-primary/25 bg-panel/70 p-8 md:grid-cols-[0.75fr_1.25fr]">
             <div className="flex aspect-[3/4] items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary">
               <BookOpen size={54} aria-hidden="true" />
             </div>
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">Featured book</p>
-              <h2 className="mt-3 text-3xl font-semibold text-white">
+              <h2 className="mt-3 text-3xl font-semibold text-heading">
                 AI for Financial Risk, Compliance and Regulatory Reporting
               </h2>
               <p className="mt-2 text-lg text-secondary/70">

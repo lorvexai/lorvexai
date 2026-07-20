@@ -62,7 +62,7 @@ export default function AboutPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">About LorvexAI</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-white">Independent Research and Architecture </span>
+                  <span className="text-heading">Independent Research and Architecture </span>
                   <span className="text-gradient">for Controlled AI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
@@ -81,7 +81,7 @@ export default function AboutPage() {
               <div className="flex flex-col gap-4">
                 {principles.map((item) => (
                   <div key={item.title} className="rounded-lg border border-primary/20 bg-primary/10 p-5">
-                    <h2 className="text-sm font-semibold text-white">{item.title}</h2>
+                    <h2 className="text-sm font-semibold text-heading">{item.title}</h2>
                     <p className="mt-2 text-sm text-secondary/70">{item.body}</p>
                   </div>
                 ))}
@@ -97,12 +97,12 @@ export default function AboutPage() {
         description="I'm a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data, automation, and enterprise technology — and this site is where I write about it."
       >
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-lg border border-primary/25 bg-[#0d2745]/70 p-7">
+          <div className="rounded-lg border border-primary/25 bg-panel/70 p-7">
             <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-primary/40 bg-primary/20 text-2xl font-bold text-primary">
               SK
             </div>
             <div className="mt-5">
-              <p className="text-xl font-semibold text-white">Sreedhara Reddy Kotha</p>
+              <p className="text-xl font-semibold text-heading">Sreedhara Reddy Kotha</p>
               <p className="mt-1 text-sm text-primary">Creator of LorvexAI</p>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-secondary/75">
@@ -123,7 +123,7 @@ export default function AboutPage() {
               href="https://www.linkedin.com/in/sreekotha/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary transition hover:text-white"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary transition hover:text-heading"
             >
               <Linkedin size={15} />
               Connect on LinkedIn
@@ -179,7 +179,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="mb-1 font-mono text-xs uppercase tracking-[0.22em] text-primary">Published Book</p>
-              <h2 className="text-xl font-semibold text-white md:text-2xl">
+              <h2 className="text-xl font-semibold text-heading md:text-2xl">
                 AI for Financial Risk, Compliance and Regulatory Reporting
               </h2>
               <p className="mt-2 max-w-2xl text-sm text-secondary/70">

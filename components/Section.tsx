@@ -19,7 +19,7 @@ export default function Section({
             {eyebrow}
           </p>
         )}
-        <h2 className="text-3xl font-semibold text-white md:text-4xl">
+        <h2 className="text-3xl font-semibold text-heading md:text-4xl">
           {title}
         </h2>
         {description && (

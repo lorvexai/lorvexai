@@ -39,7 +39,7 @@ export default function RegulatoryMockup() {
       <div className="flex items-center justify-between border-b border-secondary/10 px-4 py-2.5" style={{ background: "rgba(12,25,48,0.9)" }}>
         <div className="flex gap-4">
           {["Dashboard", "Obligations", "Controls", "Evidence", "Reports"].map((t, i) => (
-            <span key={t} className={`text-xs ${i === 1 ? "border-b border-primary pb-1 text-white" : "text-secondary/45"}`}>{t}</span>
+            <span key={t} className={`text-xs ${i === 1 ? "border-b border-primary pb-1 text-heading" : "text-secondary/45"}`}>{t}</span>
           ))}
         </div>
         <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] text-primary">
@@ -51,7 +51,7 @@ export default function RegulatoryMockup() {
         <div className="p-4">
           <div className="mb-4 grid grid-cols-4 gap-2">
             {[
-              { label: "Obligation Candidates", value: "2,847", color: "text-white" },
+              { label: "Obligation Candidates", value: "2,847", color: "text-heading" },
               { label: "Draft Mappings", value: "2,401", color: "text-emerald-300" },
               { label: "Review Gaps", value: "127", color: "text-red-300" },
               { label: "Template Coverage", value: "94%", color: "text-primary" }
@@ -97,7 +97,7 @@ export default function RegulatoryMockup() {
             ))}
           </div>
           <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-2">
-            <p className="text-[9px] font-semibold text-white">Review Window</p>
+            <p className="text-[9px] font-semibold text-heading">Review Window</p>
             <p className="mt-0.5 text-[9px] text-secondary/50">Synthetic timeline</p>
           </div>
         </div>

@@ -50,11 +50,11 @@ export default function DisclaimersPage() {
     <section className="section">
       <div className="mx-auto w-full max-w-4xl px-6">
         <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Legal</p>
-        <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Disclaimers &amp; Independence</h1>
+        <h1 className="mt-3 text-4xl font-semibold text-heading md:text-5xl">Disclaimers &amp; Independence</h1>
         <div className="mt-10 space-y-8">
           {sections.map((section) => (
             <article key={section.title} className="rounded-lg border border-secondary/15 bg-background/35 p-6">
-              <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+              <h2 className="text-xl font-semibold text-heading">{section.title}</h2>
               <p className="mt-3 leading-relaxed text-secondary/75">{section.body}</p>
             </article>
           ))}

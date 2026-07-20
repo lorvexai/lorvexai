@@ -13,7 +13,7 @@ const stages = [
 export default function DeliveryFrameworkDiagram() {
   return (
     <div className="glass rounded-2xl p-6 md:p-8">
-      <h3 className="text-xl font-semibold text-white">AI Delivery Framework</h3>
+      <h3 className="text-xl font-semibold text-heading">AI Delivery Framework</h3>
       <p className="mt-2 text-sm text-secondary/80">
         A design model for educational prototyping, governance discussion, and evidence-oriented review.
       </p>
@@ -23,7 +23,7 @@ export default function DeliveryFrameworkDiagram() {
           <div key={stage.name} className="relative">
             <div className="rounded-2xl border border-primary/40 bg-gradient-to-r from-primary/20 via-glow/10 to-primary/5 px-4 py-3">
               <div className="flex items-center justify-between gap-4">
-                <p className="text-sm font-semibold text-white">{index + 1}. {stage.name}</p>
+                <p className="text-sm font-semibold text-heading">{index + 1}. {stage.name}</p>
                 <p className="text-xs text-secondary/75">{stage.note}</p>
               </div>
             </div>

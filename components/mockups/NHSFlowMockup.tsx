@@ -32,7 +32,7 @@ export default function NHSFlowMockup() {
       <div className="flex items-center justify-between border-b border-secondary/10 px-4 py-2.5" style={{ background: "rgba(12,25,48,0.9)" }}>
         <div className="flex gap-4">
           {["Overview", "Referrals", "Pathways", "Capacity", "Reports"].map((t, i) => (
-            <span key={t} className={`text-xs ${i === 1 ? "border-b border-emerald-400 pb-1 text-white" : "text-secondary/45"}`}>{t}</span>
+            <span key={t} className={`text-xs ${i === 1 ? "border-b border-emerald-400 pb-1 text-heading" : "text-secondary/45"}`}>{t}</span>
           ))}
         </div>
         <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] text-emerald-300">
@@ -64,7 +64,7 @@ export default function NHSFlowMockup() {
             {referrals.map((r, i) => (
               <div key={r.id} className={`grid grid-cols-[1.4fr_0.8fr_1fr_auto_auto_auto] items-center gap-2 px-3 py-2 ${i % 2 === 0 ? "bg-background/20" : ""}`}>
                 <span className="truncate font-mono text-[9px] text-secondary/40">{r.id}</span>
-                <span className="truncate text-[10px] text-white">{r.patient}</span>
+                <span className="truncate text-[10px] text-heading">{r.patient}</span>
                 <span className="truncate text-[9px] text-secondary/55">{r.pathway}</span>
                 <span className="text-[9px] text-secondary/40">{r.wait}</span>
                 <span className={`rounded-full border px-1.5 py-0.5 text-[9px] ${urgencyStyle[r.urgency]}`}>{r.urgency}</span>
@@ -93,7 +93,7 @@ export default function NHSFlowMockup() {
             </div>
             <div className="mt-3 rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-2">
               <p className="text-[9px] font-semibold text-emerald-300">Draft Signals</p>
-              <p className="mt-0.5 text-sm font-bold text-white">23</p>
+              <p className="mt-0.5 text-sm font-bold text-heading">23</p>
               <p className="text-[9px] text-secondary/45">Illustrative only</p>
             </div>
           </div>

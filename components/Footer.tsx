@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="border-b border-secondary/10 bg-primary/8 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold text-white">I write about controlled AI, model risk, and financial regulation.</p>
+            <p className="font-semibold text-heading">I write about controlled AI, model risk, and financial regulation.</p>
             <p className="mt-1 text-sm text-secondary/60">
               Books, research notes, and reference blueprints from Sreedhara Reddy Kotha.
             </p>
@@ -45,7 +45,7 @@ export default function Footer() {
           <div>
             <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
-              <strong className="text-white">LorvexAI</strong>
+              <strong className="text-heading">LorvexAI</strong>
               <br />
               My personal site for research, writing, and reference architecture on controlled AI.
             </p>
@@ -76,7 +76,7 @@ export default function Footer() {
             </p>
             <nav className="grid grid-cols-2 gap-3" aria-label="Footer navigation">
               {footerLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-secondary/65 transition hover:text-white">
+                <Link key={link.href} href={link.href} className="text-sm text-secondary/65 transition hover:text-heading">
                   {link.label}
                 </Link>
               ))}

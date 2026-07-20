@@ -14,7 +14,7 @@ export default function AskPage() {
       <div className="mx-auto w-full max-w-3xl px-6">
         <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Ask</p>
         <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-          <span className="text-white">Query </span>
+          <span className="text-heading">Query </span>
           <span className="text-gradient">the archive</span>
         </h1>
         <p className="mt-5 max-w-2xl text-secondary/80">

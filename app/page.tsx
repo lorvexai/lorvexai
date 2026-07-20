@@ -113,7 +113,7 @@ export default function HomePage() {
               <Sparkles size={14} aria-hidden="true" />
               Notes on AI governance, model risk, and financial regulation
             </p>
-            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-white md:text-7xl">
+            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-heading md:text-7xl">
               What controlled AI governance actually looks like.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/78">
@@ -133,9 +133,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="corner-ticks relative border border-secondary/15 bg-[#0d2745]/75 p-4 shadow-2xl shadow-black/30">
+          <div className="corner-ticks relative border border-secondary/15 bg-panel/75 p-4 shadow-2xl shadow-black/30">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Reference architecture — Fig. 01</p>
-            <h2 className="mt-4 text-2xl font-semibold text-white">Controlled AI system pattern</h2>
+            <h2 className="mt-4 text-2xl font-semibold text-heading">Controlled AI system pattern</h2>
             <div className="mt-6 grid gap-3">
               {[
                 ["1", "Public or approved information sources"],
@@ -162,27 +162,27 @@ export default function HomePage() {
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I'm writing about</p>
-              <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold text-heading md:text-4xl">
                 AI governance, audit, model risk, and financial regulation.
               </h2>
               <p className="mt-4 text-secondary/70">
                 A connected series I'm building for regulated financial institutions — written as research, not as a pitch.
               </p>
             </div>
-            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-heading">
               Browse all articles
               <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {regulatedResearchSeries.map((item) => (
-              <Link key={item.href} href={item.href} className="group rounded-lg border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
+              <Link key={item.href} href={item.href} className="group rounded-lg border border-secondary/15 bg-panel/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
                 <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                   {item.label}
                 </span>
-                <h3 className="mt-5 text-xl font-semibold leading-snug text-white">{item.title}</h3>
+                <h3 className="mt-5 text-xl font-semibold leading-snug text-heading">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-secondary/65">{item.body}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-heading">
                   Read article
                   <ArrowRight size={14} aria-hidden="true" />
                 </span>
@@ -198,7 +198,7 @@ export default function HomePage() {
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
               Blueprints
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold text-heading md:text-5xl">
               Reference architectures I sketch out to think this through.
             </h2>
             <p className="mt-4 text-secondary/70">
@@ -213,13 +213,13 @@ export default function HomePage() {
                   <span className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] ${product.accent}`}>
                     {product.eyebrow}
                   </span>
-                  <h3 className="mt-4 text-2xl font-semibold text-white md:text-3xl">{product.title}</h3>
+                  <h3 className="mt-4 text-2xl font-semibold text-heading md:text-3xl">{product.title}</h3>
                   <p className="mt-3 max-w-xl leading-relaxed text-secondary/72">{product.body}</p>
                   <p className="mt-5 flex items-start gap-2 text-sm text-secondary/70">
                     <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-primary/75" aria-hidden="true" />
                     {product.bullet}
                   </p>
-                  <Link href={product.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-white">
+                  <Link href={product.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-heading">
                     See blueprints
                     <ArrowRight size={15} aria-hidden="true" />
                   </Link>
@@ -235,17 +235,17 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I keep coming back to</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold text-heading md:text-4xl">
               Three threads that run through most of what I write.
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {focusAreas.map((area) => (
-              <Link key={area.title} href={area.href} className="group rounded-lg border border-secondary/15 bg-[#0d2745]/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
+              <Link key={area.title} href={area.href} className="group rounded-lg border border-secondary/15 bg-panel/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
                 <area.icon size={22} className="text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-lg font-semibold text-white">{area.title}</h3>
+                <h3 className="mt-5 text-lg font-semibold text-heading">{area.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-secondary/65">{area.body}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-white">
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition group-hover:text-heading">
                   Explore
                   <ArrowRight size={14} aria-hidden="true" />
                 </span>

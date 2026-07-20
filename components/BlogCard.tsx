@@ -47,7 +47,7 @@ export default function BlogCard({
         </div>
       )}
 
-      <h3 className="group-title text-base font-semibold leading-snug text-white transition-colors md:text-lg">
+      <h3 className="group-title text-base font-semibold leading-snug text-heading transition-colors md:text-lg">
         {title}
       </h3>
 

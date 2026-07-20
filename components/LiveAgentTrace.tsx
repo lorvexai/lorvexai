@@ -110,7 +110,7 @@ export default function LiveAgentTrace() {
                     <Icon size={13} aria-hidden="true" />
                   </span>
                   <div>
-                    <p className={`text-xs font-semibold ${isQueued ? "text-secondary/40" : "text-white"}`}>
+                    <p className={`text-xs font-semibold ${isQueued ? "text-secondary/40" : "text-heading"}`}>
                       {step.title}
                     </p>
                     <p className={`mt-0.5 text-[11px] leading-snug ${isQueued ? "text-secondary/35" : "text-secondary/65"}`}>

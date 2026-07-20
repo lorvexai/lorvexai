@@ -104,7 +104,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           {/* Back link */}
           <Link
             href="/blog"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm text-secondary/55 transition hover:text-white"
+            className="mb-6 inline-flex items-center gap-1.5 text-sm text-secondary/55 transition hover:text-heading"
           >
             <ArrowLeft size={14} aria-hidden="true" />
             All articles
@@ -126,7 +126,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           )}
 
           {/* Title */}
-          <h1 className="text-3xl font-semibold leading-snug text-white md:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-semibold leading-snug text-heading md:text-4xl lg:text-5xl">
             {post.title}
           </h1>
 
@@ -173,12 +173,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           <MermaidRenderer />
           <article
             className="prose prose-invert max-w-none
-              prose-headings:font-semibold prose-headings:text-white
+              prose-headings:font-semibold prose-headings:text-heading
               prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
               prose-p:text-secondary/80 prose-p:leading-relaxed
-              prose-a:text-primary prose-a:no-underline hover:prose-a:text-white
-              prose-strong:text-white
+              prose-a:text-primary prose-a:no-underline hover:prose-a:text-heading
+              prose-strong:text-heading
               prose-li:text-secondary/80
               prose-code:text-primary prose-code:bg-primary/10 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
               prose-pre:bg-background/60 prose-pre:border prose-pre:border-secondary/15 prose-pre:rounded-xl
@@ -199,11 +199,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 <p className="mb-1 font-mono text-xs uppercase tracking-[0.28em] text-secondary/50">
                   Continue Reading
                 </p>
-                <h2 className="text-xl font-semibold text-white">Related Insights</h2>
+                <h2 className="text-xl font-semibold text-heading">Related Insights</h2>
               </div>
               <Link
                 href="/blog"
-                className="text-sm text-secondary/55 transition hover:text-white"
+                className="text-sm text-secondary/55 transition hover:text-heading"
               >
                 View all →
               </Link>

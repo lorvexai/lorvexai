@@ -34,7 +34,7 @@ const ENQUIRY_TYPES = [
   "General enquiry"
 ];
 
-const INPUT = "w-full rounded-lg border border-secondary/20 bg-background/60 px-4 py-2.5 text-sm text-white outline-none transition placeholder-secondary/35 focus:border-primary/60 focus:ring-1 focus:ring-primary/30";
+const INPUT = "w-full rounded-lg border border-secondary/20 bg-background/60 px-4 py-2.5 text-sm text-heading outline-none transition placeholder-secondary/35 focus:border-primary/60 focus:ring-1 focus:ring-primary/30";
 const LABEL = "mb-1.5 block text-xs font-medium text-secondary/65";
 const ERR = "mt-1 text-[11px] text-red-400";
 
@@ -93,12 +93,12 @@ export default function ContactForm() {
           <CheckCircle2 size={30} className="text-emerald-400" />
         </div>
         <div>
-          <h3 className="text-xl font-semibold text-white">Enquiry received</h3>
+          <h3 className="text-xl font-semibold text-heading">Enquiry received</h3>
           <p className="mt-2 max-w-sm text-sm text-secondary/70">
             Thank you. LorvexAI will review your message and respond where appropriate. Consulting, advisory, client delivery, product implementation, and system development enquiries cannot be accepted.
           </p>
         </div>
-        <button type="button" onClick={() => { setData(INITIAL); setStatus("idle"); }} className="text-sm text-secondary/50 transition hover:text-white">
+        <button type="button" onClick={() => { setData(INITIAL); setStatus("idle"); }} className="text-sm text-secondary/50 transition hover:text-heading">
           Submit another enquiry
         </button>
       </div>

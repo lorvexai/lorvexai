@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function ArchitectureDiagram() {
   return (
     <div className="glass rounded-2xl p-6 md:p-8">
-      <h3 className="text-xl font-semibold text-white">Enterprise AI Capability Stack</h3>
+      <h3 className="text-xl font-semibold text-heading">Enterprise AI Capability Stack</h3>
       <p className="mt-2 text-sm text-secondary/80">
         A layered blueprint connecting data, retrieval, reasoning, orchestration, and governance.
       </p>

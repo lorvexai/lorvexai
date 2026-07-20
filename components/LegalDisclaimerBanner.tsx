@@ -10,7 +10,7 @@ export default function LegalDisclaimerBanner({ compact = false }: { compact?: b
   return (
     <aside className="rounded-lg border border-secondary/15 bg-background/50 p-4 text-xs leading-relaxed text-secondary/70">
       <p>{compact ? shortDisclaimer : fullDisclaimer}</p>
-      <Link href="/disclaimers" className="mt-2 inline-flex font-semibold text-primary hover:text-white">
+      <Link href="/disclaimers" className="mt-2 inline-flex font-semibold text-primary hover:text-heading">
         Read disclaimers and independence statement
       </Link>
     </aside>

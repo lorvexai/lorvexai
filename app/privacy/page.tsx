@@ -26,11 +26,11 @@ export default function PrivacyPage() {
     <section className="section">
       <div className="mx-auto w-full max-w-4xl px-6">
         <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Legal</p>
-        <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Privacy Policy</h1>
+        <h1 className="mt-3 text-4xl font-semibold text-heading md:text-5xl">Privacy Policy</h1>
         <div className="mt-10 space-y-6">
           {sections.map(([title, body]) => (
             <article key={title} className="rounded-lg border border-secondary/15 bg-background/35 p-6">
-              <h2 className="text-xl font-semibold text-white">{title}</h2>
+              <h2 className="text-xl font-semibold text-heading">{title}</h2>
               <p className="mt-3 leading-relaxed text-secondary/75">{body}</p>
             </article>
           ))}

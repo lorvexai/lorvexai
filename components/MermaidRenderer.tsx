@@ -9,29 +9,45 @@ export default function MermaidRenderer({
   refreshKey?: string;
 }) {
   useEffect(() => {
+    const root = getComputedStyle(document.documentElement);
+    const cssVar = (name: string, fallback: string) => root.getPropertyValue(name).trim() || fallback;
+    const cssVarRgb = (name: string, fallback: string) => {
+      const triple = root.getPropertyValue(name).trim();
+      return triple ? `rgb(${triple})` : fallback;
+    };
+    const isDark = cssVar("color-scheme", "dark").includes("dark");
+
+    const panel = cssVarRgb("--color-panel-rgb", isDark ? "#12315A" : "#FFFFFF");
+    const panel2 = cssVarRgb("--color-panel-2-rgb", isDark ? "#13294B" : "#E8EDF1");
+    const stroke = cssVar("--mermaid-stroke", isDark ? "#DCEAF2" : "#0E2338");
+    const edge = cssVar("--mermaid-edge", isDark ? "#B8863A" : "#8A611F");
+    const heading = cssVarRgb("--color-heading-rgb", isDark ? "#E9EEF5" : "#0E2338");
+    const labelBg = cssVar("--mermaid-label-bg", isDark ? "#0A1D34" : "#F1F4F6");
+    const background = cssVarRgb("--color-background-rgb", isDark ? "#0B2038" : "#F1F4F6");
+
     mermaid.initialize({
       startOnLoad: false,
       theme: "base",
       securityLevel: "loose",
       themeVariables: {
-        darkMode: true,
-        background: "#081A31",
-        primaryColor: "#102A46",
-        primaryBorderColor: "#5EA8FF",
-        primaryTextColor: "#E6ECF7",
-        secondaryColor: "#12395B",
-        secondaryBorderColor: "#7DD3FC",
-        secondaryTextColor: "#D7E4F3",
-        tertiaryColor: "#17324F",
-        tertiaryBorderColor: "#8AB4F8",
-        tertiaryTextColor: "#E6ECF7",
-        lineColor: "#8CCBFF",
-        textColor: "#E6ECF7",
-        mainBkg: "#102A46",
-        nodeBorder: "#5EA8FF",
-        clusterBkg: "#0F2742",
-        titleColor: "#E6ECF7",
-        edgeLabelBackground: "#071426",
+        darkMode: isDark,
+        background,
+        primaryColor: panel,
+        primaryBorderColor: stroke,
+        primaryTextColor: heading,
+        secondaryColor: panel2,
+        secondaryBorderColor: stroke,
+        secondaryTextColor: heading,
+        tertiaryColor: panel2,
+        tertiaryBorderColor: stroke,
+        tertiaryTextColor: heading,
+        lineColor: edge,
+        textColor: heading,
+        mainBkg: panel,
+        nodeBorder: stroke,
+        clusterBkg: panel2,
+        titleColor: heading,
+        edgeLabelBackground: labelBg,
         fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
         fontSize: "14px"
       },

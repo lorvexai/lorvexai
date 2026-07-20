@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -22,7 +23,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-secondary/10 bg-background/88 backdrop-blur-xl">
       <div className="mx-auto w-full max-w-6xl px-6 py-3">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 text-white" aria-label="LorvexAI home">
+          <Link href="/" className="flex items-center gap-3 text-heading" aria-label="LorvexAI home">
             <Image
               src={logoSrc}
               alt="LorvexAI"
@@ -41,17 +42,20 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`min-h-10 rounded-full px-3 py-2 text-sm transition ${
-                    active ? "bg-primary/16 text-white" : "text-secondary/80 hover:text-white"
+                    active ? "bg-primary/16 text-heading" : "text-secondary/80 hover:text-heading"
                   }`}
                 >
                   {item.label}
                 </Link>
               );
             })}
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
 
-        <nav className="hide-scrollbar mt-3 flex gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
+        <nav className="hide-scrollbar mt-3 flex items-center gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
           {links.map((item) => {
             const active = pathname === item.href;
             return (
@@ -60,7 +64,7 @@ export default function Header() {
                 href={item.href}
                 className={
                   active
-                    ? "whitespace-nowrap rounded-full border border-primary/45 bg-primary/20 px-3 py-2 text-xs font-semibold text-white"
+                    ? "whitespace-nowrap rounded-full border border-primary/45 bg-primary/20 px-3 py-2 text-xs font-semibold text-heading"
                     : "whitespace-nowrap rounded-full border border-secondary/35 bg-background/30 px-3 py-2 text-xs text-secondary/85"
                 }
               >
@@ -68,6 +72,9 @@ export default function Header() {
               </Link>
             );
           })}
+          <div className="ml-1 shrink-0">
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </header>

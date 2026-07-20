@@ -39,7 +39,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <div className={`corner-ticks border border-secondary/15 bg-[#0d2745]/75 ${compact ? "p-4" : "p-6 md:p-8"}`}>
+    <div className={`corner-ticks border border-secondary/15 bg-panel/75 ${compact ? "p-4" : "p-6 md:p-8"}`}>
       <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">Ask — Fig. 02</p>
       <p className="mt-2 text-sm leading-relaxed text-secondary/70">
         Answers are generated only from what I've actually written below — not general knowledge.
@@ -88,7 +88,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           placeholder="Ask about model risk, governance, audit..."
-          className="flex-1 bg-transparent font-mono text-sm text-white outline-none placeholder:text-secondary/35"
+          className="flex-1 bg-transparent font-mono text-sm text-heading outline-none placeholder:text-secondary/35"
         />
         <button
           type="submit"
