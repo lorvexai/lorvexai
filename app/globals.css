@@ -5,73 +5,74 @@
 @import "../styles/theme.css";
 
 :root {
-  /* light "diazo paper" — the default ground */
-  --color-background-rgb: 241 244 246;
-  --color-primary-rgb: 138 97 31;
-  --color-secondary-rgb: 51 65 85;
-  --color-surface-rgb: 255 255 255;
-  --color-panel-rgb: 255 255 255;
-  --color-panel-2-rgb: 232 237 241;
-  --color-glow-rgb: 138 97 31;
-  --color-heading-rgb: 14 35 56;
-  --shadow-glow-rgb: 138, 97, 31;
-  --on-primary: #FFFFFF;
-  --body-grad-1: #F4F6F8;
-  --body-grad-2: #F1F4F6;
-  --body-grad-3: #ECF1F4;
-  --grid-line-1: rgba(14, 35, 56, 0.05);
-  --grid-line-2: rgba(14, 35, 56, 0.045);
-  --wash-rgb: 138, 97, 31;
-  --hairline: rgba(14, 35, 56, 0.13);
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --gradient-start: #0E2338;
-  --gradient-mid: #334155;
-  --gradient-end: #8A611F;
-  --mermaid-node-fill: #FFFFFF;
-  --mermaid-stroke: #0E2338;
-  --mermaid-edge: #8A611F;
-  --mermaid-label-bg: #F1F4F6;
-  --mermaid-cluster-bg: rgba(232, 237, 241, 0.7);
-  --mermaid-cluster-border: rgba(14, 35, 56, 0.24);
-  --blockquote-text: rgba(14, 35, 56, 0.85);
-  --code-bg: rgba(232, 237, 241, 0.7);
-  --img-bg: #FFFFFF;
-  color-scheme: light;
+  /* dark cyanotype is the default ground — the site's signature look */
+  --color-background-rgb: 11 32 56;
+  --color-primary-rgb: 184 134 58;
+  --color-secondary-rgb: 144 167 190;
+  --color-surface-rgb: 18 49 90;
+  --color-panel-rgb: 13 39 69;
+  --color-panel-2-rgb: 19 41 75;
+  --color-glow-rgb: 217 167 92;
+  --color-heading-rgb: 233 238 245;
+  --shadow-glow-rgb: 184, 134, 58;
+  --on-primary: #0B2038;
+  --body-grad-1: #0C2340;
+  --body-grad-2: #0A1D34;
+  --body-grad-3: #0B2038;
+  --grid-line-1: rgba(220, 234, 242, 0.07);
+  --grid-line-2: rgba(220, 234, 242, 0.06);
+  --wash-rgb: 184, 134, 58;
+  --hairline: rgba(220, 234, 242, 0.14);
+  --glass-bg: rgba(18, 49, 90, 0.5);
+  --gradient-start: #ffffff;
+  --gradient-mid: #DCEAF2;
+  --gradient-end: #B8863A;
+  --mermaid-node-fill: #12315A;
+  --mermaid-stroke: #DCEAF2;
+  --mermaid-edge: #B8863A;
+  --mermaid-label-bg: #0A1D34;
+  --mermaid-cluster-bg: rgba(18, 49, 90, 0.6);
+  --mermaid-cluster-border: rgba(220, 234, 242, 0.24);
+  --blockquote-text: rgba(192, 198, 212, 0.9);
+  --code-bg: rgba(18, 49, 90, 0.6);
+  --img-bg: #0A1D34;
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-background-rgb: 11 32 56;
-    --color-primary-rgb: 184 134 58;
-    --color-secondary-rgb: 144 167 190;
-    --color-surface-rgb: 18 49 90;
-    --color-panel-rgb: 13 39 69;
-    --color-panel-2-rgb: 19 41 75;
-    --color-glow-rgb: 217 167 92;
-    --color-heading-rgb: 233 238 245;
-    --shadow-glow-rgb: 184, 134, 58;
-    --on-primary: #0B2038;
-    --body-grad-1: #0C2340;
-    --body-grad-2: #0A1D34;
-    --body-grad-3: #0B2038;
-    --grid-line-1: rgba(220, 234, 242, 0.07);
-    --grid-line-2: rgba(220, 234, 242, 0.06);
-    --wash-rgb: 184, 134, 58;
-    --hairline: rgba(220, 234, 242, 0.14);
-    --glass-bg: rgba(18, 49, 90, 0.5);
-    --gradient-start: #ffffff;
-    --gradient-mid: #DCEAF2;
-    --gradient-end: #B8863A;
-    --mermaid-node-fill: #12315A;
-    --mermaid-stroke: #DCEAF2;
-    --mermaid-edge: #B8863A;
-    --mermaid-label-bg: #0A1D34;
-    --mermaid-cluster-bg: rgba(18, 49, 90, 0.6);
-    --mermaid-cluster-border: rgba(220, 234, 242, 0.24);
-    --blockquote-text: rgba(192, 198, 212, 0.9);
-    --code-bg: rgba(18, 49, 90, 0.6);
-    --img-bg: #0A1D34;
-    color-scheme: dark;
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    /* light "diazo paper" — shown when the OS explicitly prefers light */
+    --color-background-rgb: 241 244 246;
+    --color-primary-rgb: 138 97 31;
+    --color-secondary-rgb: 51 65 85;
+    --color-surface-rgb: 255 255 255;
+    --color-panel-rgb: 255 255 255;
+    --color-panel-2-rgb: 232 237 241;
+    --color-glow-rgb: 138 97 31;
+    --color-heading-rgb: 14 35 56;
+    --shadow-glow-rgb: 138, 97, 31;
+    --on-primary: #FFFFFF;
+    --body-grad-1: #F4F6F8;
+    --body-grad-2: #F1F4F6;
+    --body-grad-3: #ECF1F4;
+    --grid-line-1: rgba(14, 35, 56, 0.05);
+    --grid-line-2: rgba(14, 35, 56, 0.045);
+    --wash-rgb: 138, 97, 31;
+    --hairline: rgba(14, 35, 56, 0.13);
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --gradient-start: #0E2338;
+    --gradient-mid: #334155;
+    --gradient-end: #8A611F;
+    --mermaid-node-fill: #FFFFFF;
+    --mermaid-stroke: #0E2338;
+    --mermaid-edge: #8A611F;
+    --mermaid-label-bg: #F1F4F6;
+    --mermaid-cluster-bg: rgba(232, 237, 241, 0.7);
+    --mermaid-cluster-border: rgba(14, 35, 56, 0.24);
+    --blockquote-text: rgba(14, 35, 56, 0.85);
+    --code-bg: rgba(232, 237, 241, 0.7);
+    --img-bg: #FFFFFF;
+    color-scheme: light;
   }
 }
 

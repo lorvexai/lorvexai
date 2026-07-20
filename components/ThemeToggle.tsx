@@ -12,8 +12,9 @@ export default function ThemeToggle() {
     if (stored === "light" || stored === "dark") {
       setTheme(stored);
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
+      // Dark is the default ground; only an explicit OS light preference switches it.
+      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      setTheme(prefersLight ? "light" : "dark");
     }
   }, []);
 
