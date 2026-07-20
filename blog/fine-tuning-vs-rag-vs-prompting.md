@@ -54,9 +54,9 @@ flowchart TD
         F4[Expensive, needs labelled data]
     end
 
-    style P1 fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style R1 fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style F1 fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style P1 fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style R1 fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style F1 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 ---
@@ -90,7 +90,7 @@ flowchart LR
     SP --> |Format| F["Return as structured JSON..."]
     SP --> |Reasoning| RE["Think step by step..."]
 
-    style SP fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style SP fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Prompt engineering decision**: if your task requires the model to be smarter, better reasoned, or better formatted — prompting. If it requires the model to know things it doesn't know — you need RAG or fine-tuning.
@@ -119,9 +119,9 @@ flowchart TD
         D4[Basel Framework] --> VS
     end
 
-    style VS fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style RR fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style O fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style VS fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style RR fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style O fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Best for:**
@@ -166,8 +166,8 @@ flowchart TD
         EXN --> TR
     end
 
-    style FT fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style TR fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style FT fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style TR fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Best for:**
@@ -209,10 +209,10 @@ flowchart TD
     F -->|Yes| PE
     F -->|No| FT2[Fine-Tuning for Style]
 
-    style RAG fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style FT fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style FT2 fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style PE fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style RAG fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style FT fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style FT2 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style PE fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 ---
@@ -228,9 +228,9 @@ flowchart LR
     RAG --> FT[Fine-Tuned Model\nDomain Style]
     FT --> O[High-quality\nGrounded Output]
 
-    style SP fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style RAG fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style FT fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style SP fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style RAG fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style FT fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 **Reference blueprint approach for regulatory intelligence:**

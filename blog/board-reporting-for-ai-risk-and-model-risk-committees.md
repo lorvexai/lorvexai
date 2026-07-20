@@ -36,8 +36,8 @@ flowchart LR
   C --> H[Validation and assurance]
   C --> I[Open remediation]
 
-  style A fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style C fill:#7B2FBE,stroke:#c084fc,color:#E6ECF7
+  style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style C fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 This prevents a common problem: senior forums hearing only the success story.

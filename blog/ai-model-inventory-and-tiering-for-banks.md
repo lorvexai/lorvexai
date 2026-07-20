@@ -72,8 +72,8 @@ flowchart TB
   D --> G[Evidence pack and control testing]
   E --> H[Formal validation, senior approval, continuous monitoring]
 
-  style E fill:#7B2FBE,stroke:#c084fc,color:#E6ECF7
-  style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+  style E fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+  style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 Tiering should consider:

@@ -43,9 +43,9 @@ flowchart LR
   E --> F[Human approval gates]
   F --> G[Monitoring and audit evidence]
 
-  style B fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style D fill:#7B2FBE,stroke:#c084fc,color:#E6ECF7
-  style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+  style B fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style D fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+  style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -106,9 +106,9 @@ flowchart TB
   Comp --> Evidence
   Audit --> Assurance[Independent assurance view]
 
-  style ARC fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style Evidence fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-  style Audit fill:#7B2FBE,stroke:#c084fc,color:#E6ECF7
+  style ARC fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style Evidence fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+  style Audit fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 The central hub owns standards, templates, guardrails, and reporting. Business teams own use-case purpose and outcomes. Risk and control functions challenge assumptions. Audit checks whether the framework works in practice.

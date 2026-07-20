@@ -41,8 +41,8 @@ flowchart LR
   C --> D["4. Orchestration &\nAgentic Reasoning"]
   D --> E["5. Generation,\nTrust & Evaluation"]
   E -->|Feedback| B
-  style A fill:#0F2A4A,stroke:#2F80ED,color:#E6ECF7
-  style E fill:#0F2A4A,stroke:#2F80ED,color:#E6ECF7
+  style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style E fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 ### 1. Ingestion and Knowledge Processing

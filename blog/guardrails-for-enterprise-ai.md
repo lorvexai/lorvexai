@@ -41,13 +41,13 @@ flowchart TD
     OV -->|Yes| RS[Return to User]
     RF --> HR[Human Review Queue]
 
-    style IG fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style OG fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style VA fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style OV fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style RE fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style RF fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style HR fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style IG fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style OG fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style VA fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style OV fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style RE fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style RF fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style HR fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 Every AI system in a regulated environment needs guardrails at **both layers**:
@@ -89,8 +89,8 @@ flowchart LR
     UM --> O[Output - PII restored]
     PD --> AL[IG Alert Log]
 
-    style PD fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style AL fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style PD fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style AL fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 ### 3. Prompt Injection Detection
@@ -123,9 +123,9 @@ flowchart LR
     SC -->|No| LW[Low-confidence warning + cite missing claims]
     SC -->|Many ungrounded| BL[Block + Human Review]
 
-    style SC fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style LW fill:#E67E22,stroke:#f39c12,color:#E6ECF7
-    style BL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
+    style SC fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style LW fill:#8A611F,stroke:#D9A75C,color:#E6ECF7
+    style BL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
 ```
 
 ### 2. Regulatory Advice Boundary
@@ -165,9 +165,9 @@ flowchart TD
     SE -->|Medium| SR[Soft Redirect]
     SE -->|Low| SF[Silent Flag]
 
-    style SE fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style HB fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style ES fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style SE fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style HB fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style ES fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---

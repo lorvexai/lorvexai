@@ -53,9 +53,9 @@ flowchart TD
         CI --> OUT[Output + Sources]
     end
 
-    style RR fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style GR fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style CI fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style RR fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style GR fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style CI fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 Each component in this architecture has decisions that significantly impact controlled-system quality. Let's work through the most critical ones.
@@ -86,9 +86,9 @@ flowchart TD
         D2 --> S3[Section 3: Controls]
     end
 
-    style S2 fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style P1 fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style P2 fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style S2 fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style P1 fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style P2 fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### Recommended chunking approaches by document type
@@ -117,7 +117,7 @@ flowchart LR
     KW --> RR
     RR --> TOP[Top-K Results]
 
-    style RR fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style RR fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Reciprocal Rank Fusion (RRF)** merges the two ranked lists without needing calibrated scores. A document ranked 3rd in vector search and 7th in keyword search gets a combined score that typically outperforms either list alone.
@@ -168,7 +168,7 @@ flowchart LR
     CE --> T5[Top-5 Reranked Chunks]
     T5 --> CTX[Context Window]
 
-    style CE fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style CE fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 A reference design may use a domain-fine-tuned reranker on our regulatory corpus — the off-the-shelf models are not trained on public finance-framework language patterns and make systematic errors on regulatory text.
@@ -197,9 +197,9 @@ flowchart TD
     SC -->|No| FL[Flag as Low Confidence]
     FL --> HR[Human Review Queue]
 
-    style SC fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style FL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style HR fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style SC fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style FL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style HR fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---

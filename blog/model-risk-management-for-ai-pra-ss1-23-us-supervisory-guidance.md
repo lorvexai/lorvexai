@@ -53,9 +53,9 @@ flowchart LR
   H --> I[Change or retirement]
   G --> C
 
-  style C fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style E fill:#7B2FBE,stroke:#c084fc,color:#E6ECF7
-  style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+  style C fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style E fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+  style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 For AI, the lifecycle should pay special attention to:

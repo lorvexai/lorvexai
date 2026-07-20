@@ -77,10 +77,10 @@ flowchart TD
     AL --> MO
     MO --> HQ
 
-    style AU fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style GP fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style AL fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style MR fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style AU fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style GP fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style AL fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style MR fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -138,10 +138,10 @@ flowchart TD
     SE --> SR[Session Record\nAll messages, responses, sources, latencies]
     SR --> AS[Archive Store\n7-year retention]
 
-    style AL1 fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style AL2 fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style SR fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style AS fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style AL1 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style AL2 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style SR fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style AS fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 Every session record must capture:
@@ -178,9 +178,9 @@ flowchart TD
     CM --> GP
     SM2 --> GP
 
-    style CL fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style C1 fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style FM fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
+    style CL fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style C1 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style FM fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
 ```
 
 **Routing logic for a public-framework mapping assistant:**
@@ -220,8 +220,8 @@ flowchart LR
     CW --> SM[Summariser - when full]
     SM --> SU
 
-    style PR fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style SM fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style PR fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style SM fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 **Compression strategy**: when the active context approaches 80% capacity, a lightweight LLM compresses the oldest 50% of the conversation into a summary paragraph, preserving key facts (regulatory references cited, decisions made, entities mentioned) while discarding verbatim exchange. The summary is injected into the system context for all future turns.
@@ -309,8 +309,8 @@ flowchart TD
         OL --> OO[Output - no data leaves]
     end
 
-    style CF fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style OO fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style CF fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style OO fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Healthcare information-governance consideration**: patient-identifiable data must not leave approved healthcare infrastructure. Full on-premise or approved private healthcare cloud conceptual deployment is required for any system that processes patient records. LorvexAI's Healthcare Flow Intelligence blueprint supports both hybrid (anonymised queries to cloud LLM, PII stays on-prem) and full on-premise conceptual deployment.

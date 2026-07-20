@@ -41,8 +41,8 @@ flowchart LR
   F --> H
   G --> H
 
-  style A fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+  style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ECB Banking Supervision has flagged AI and generative AI as areas of ongoing attention in supervisory priorities and public commentary. The practical implication for banks is simple: AI should not sit outside risk governance just because it arrived through productivity tools, innovation labs, or vendor platforms.
@@ -107,7 +107,7 @@ flowchart TB
   A --> F[Validation and assurance]
   A --> G[Open remediation]
 
-  style A fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
+  style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 Good board reporting is not a celebration of AI adoption. It is a clear picture of AI control.

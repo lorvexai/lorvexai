@@ -58,9 +58,9 @@ flowchart TD
     LO --> HF
     HF --> DR --> AL
 
-    style TH fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style BL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style AL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
+    style TH fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style BL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style AL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
 ```
 
 ---
@@ -117,7 +117,7 @@ flowchart LR
         WK --> SC[Score Tracking]
     end
 
-    style GD fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style GD fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Composition guidance for a regulatory AI system:**
@@ -169,9 +169,9 @@ flowchart LR
     RG -->|> 2% degradation| BL[Block Merge + Alert]
     RG -->|Within threshold| AP[Approve Merge]
 
-    style RG fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style BL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style AP fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style RG fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style BL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style AP fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 A 2% degradation threshold sounds small but is meaningful in practice. A system answering 1,000 queries per day at 90% correctness produces 100 errors. A 2% regression takes that to 120 errors — 20 additional wrong answers to authorised reviewers or clinicians per day.
@@ -207,7 +207,7 @@ flowchart TD
     FL2 --> DA
     ED --> DA
 
-    style DA fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style DA fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Alert thresholds** (recommended starting points):

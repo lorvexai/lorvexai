@@ -54,8 +54,8 @@ flowchart TD
   H["Serving & Decision Layer\nReal-Time APIs · Decision Engine · Human Override Workflows"]
   I["Consumption\nExecutive Dashboards · Regulatory Packs · Alerting"]
   A --> B --> C --> D --> E --> F --> G --> H --> I
-  style A fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-  style I fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+  style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style I fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 ---

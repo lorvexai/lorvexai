@@ -38,11 +38,11 @@ flowchart LR
     T --> H([Human Review])
     H --> A
 
-    style P fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style T fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style A fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style O fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style P fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style T fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style A fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style O fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Perceive** — the agent receives input: a user query, a trigger event, a document, a data feed.
@@ -103,8 +103,8 @@ flowchart TD
     H -->|Pass| I[Deliver Output]
     H -->|Fail| D
 
-    style C fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style H fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style C fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style H fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 This is the recommended pattern for **high-stakes actions** — regulatory submissions, patient pathway changes, treasury position adjustments.
@@ -124,9 +124,9 @@ flowchart TD
     CR --> O
     O --> H[Human Sign-off]
 
-    style O fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style CR fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style O fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style CR fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 In the regulatory intelligence reference blueprint, the Orchestrator receives the audit task, dispatches to the Compliance Agent (obligations), Data Agent (evidence retrieval), and Reporting Agent (pack generation). The Critic validates consistency before the package goes for human sign-off.
@@ -149,7 +149,7 @@ flowchart LR
     T4 --> AL
     T5 --> AL
 
-    style AL fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style AL fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 **Principle:** agents in regulated environments should prefer **read tools over write tools**, always log every action, and require elevated permission for irreversible actions (send, submit, delete).
@@ -216,9 +216,9 @@ flowchart TD
     G2 -->|Violation| EB
     EB --> AL
 
-    style PL fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style AL fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style EB fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
+    style PL fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style AL fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style EB fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
 ```
 
 **Policy Engine** — every agent action is checked against a policy ruleset before execution. In a banking agent, this includes: "never write to controlled systems without human approval", "never access data outside this user's permissions", "always attach evidence citations".

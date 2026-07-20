@@ -46,9 +46,9 @@ flowchart LR
     O --> AU[Audit & Log]
     AU --> N[Notify / Deliver]
 
-    style D fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style AU fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
+    style D fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style AU fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
 ```
 
 ---
@@ -68,7 +68,7 @@ flowchart LR
     E --> F[Format Report]
     F --> G[Human Sign-off]
 
-    style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Example pattern:** A regulatory intelligence reference blueprint can use this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for a governance review.
@@ -89,8 +89,8 @@ flowchart TD
     E -->|Yes| F[Auto-assign Pathway]
     E -->|No| G[Clinician Review]
 
-    style E fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style E fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Example in practice:** Healthcare Flow Intelligence blueprint runs urgency scoring, pathway matching, and patient history summarisation in parallel, then merges results for the final triage decision — reducing average processing time from minutes to under 5 seconds.
@@ -110,9 +110,9 @@ flowchart TD
     E --> H[Log & Continue]
     D --> H
 
-    style C fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style F fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style C fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style F fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### Pattern 4: Loop / Iterative Workflow
@@ -129,8 +129,8 @@ flowchart TD
     C -->|Yes| F[Deliver Output]
     C -->|No, max reached| G[Escalate to Human]
 
-    style C fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style G fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style C fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### Pattern 5: Event-Driven Workflow
@@ -183,11 +183,11 @@ flowchart TD
     RE -.-> W3
     BO -.-> W1
 
-    style AU fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style EX fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style CO fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
-    style RE fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style BO fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
+    style AU fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style EX fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style CO fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
+    style RE fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style BO fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
 ```
 
 **Auditability** — every step writes an immutable log entry: timestamp, inputs, outputs, model version, latency, and confidence score. This is the audit trail for regulators.
@@ -216,7 +216,7 @@ flowchart LR
     F -->|Approved| G[Production Sign-off]
     F -->|Changes Required| C
 
-    style F fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style F fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### NHS — Discharge Pathway Workflow
@@ -232,8 +232,8 @@ flowchart LR
     F --> H[GP Notification]
     F --> I[Community Team Brief]
 
-    style E fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style G fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
+    style E fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style G fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
 ```
 
 ### Treasury — Daily Liquidity Monitoring Workflow
@@ -249,9 +249,9 @@ flowchart LR
     G --> H[Auto-draft Board Memo]
     H --> I[CFO Review & Approve]
 
-    style D fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style G fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style I fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style D fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style G fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style I fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---

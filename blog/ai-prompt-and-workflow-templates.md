@@ -44,9 +44,9 @@ flowchart TD
     OP --> LLM
     LLM --> O[Structured Output]
 
-    style SP fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style CP fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style OP fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style SP fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style CP fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style OP fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **System Prompt** — sets the role, constraints, and non-negotiable rules. This is where compliance guardrails live.
@@ -106,8 +106,8 @@ flowchart LR
     OJ --> DB[Obligations Database]
     OJ --> CM[Control Mapper]
 
-    style TP fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style OJ fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style TP fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style OJ fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -181,8 +181,8 @@ flowchart LR
     RS --> RV[Human Review]
     RV --> AP[Approved ALCO Pack]
 
-    style T3 fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style RV fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style T3 fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style RV fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -228,9 +228,9 @@ flowchart TD
     CL -->|Yes| EU[URGENT - Clinician Review]
     CL -->|No| QU[Standard Queue]
 
-    style AN fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style T4 fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style EU fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style AN fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style T4 fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style EU fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -312,10 +312,10 @@ flowchart TD
     AL --> T3[Template: Draft remediation brief]
     T3 --> HU[Human review & sign-off]
 
-    style T fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style PR fill:#7B2FBE,stroke:#a855f7,color:#E6ECF7
-    style AL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style HU fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style T fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style PR fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
+    style AL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style HU fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### Workflow Template B: Healthcare Referral Processing Pipeline
@@ -339,9 +339,9 @@ flowchart TD
     RQ --> SC
     SC --> PT[Patient notification]
 
-    style RF fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style UR fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style UR2 fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style RF fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style UR fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style UR2 fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ### Workflow Template C: Daily Treasury Monitoring Pipeline
@@ -360,9 +360,9 @@ flowchart TD
     DB --> WR[Template: Weekly variance report]
     WR --> QU[Queue for Monday ALCO meeting]
 
-    style TH fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style AL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style CF fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style TH fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style AL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style CF fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
@@ -383,9 +383,9 @@ flowchart LR
     ST --> PR2[Production deploy]
     PR2 --> MO[Monitor in controlled settings]
 
-    style SC fill:#1D4C8F,stroke:#2F80ED,color:#E6ECF7
-    style BL fill:#C0392B,stroke:#e74c3c,color:#E6ECF7
-    style MO fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+    style SC fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+    style BL fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
+    style MO fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 **Template versioning best practices:**

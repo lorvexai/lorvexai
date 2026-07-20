@@ -49,8 +49,8 @@ flowchart LR
   F --> H
   G --> H
 
-  style B fill:#1D4C8F,stroke:#60a5fa,color:#E6ECF7
-  style H fill:#2D6A4F,stroke:#4ade80,color:#E6ECF7
+  style B fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
+  style H fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
 ```
 
 ---
