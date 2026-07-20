@@ -5,19 +5,38 @@ import Link from "next/link";
 import { ArrowRight, Loader2 } from "lucide-react";
 
 type Source = { href: string; title: string };
-type Turn = { question: string; answer: string; sources: Source[] };
+type Turn = { question: string; answer: string; sources: Source[]; streaming?: boolean };
 
 export default function AskPanel({ compact = false }: { compact?: boolean }) {
   const [question, setQuestion] = useState("");
   const [turns, setTurns] = useState<Turn[]>([]);
-  const [status, setStatus] = useState<"idle" | "asking">("idle");
+  const [status, setStatus] = useState<"idle" | "loading">("idle");
+
+  function appendToLastTurn(text: string) {
+    setTurns((t) => {
+      if (t.length === 0) return t;
+      const copy = [...t];
+      const last = copy[copy.length - 1];
+      copy[copy.length - 1] = { ...last, answer: last.answer + text };
+      return copy;
+    });
+  }
+
+  function finishLastTurn() {
+    setTurns((t) => {
+      if (t.length === 0) return t;
+      const copy = [...t];
+      copy[copy.length - 1] = { ...copy[copy.length - 1], streaming: false };
+      return copy;
+    });
+  }
 
   async function ask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const q = question.trim();
-    if (!q || status === "asking") return;
+    if (!q || status === "loading") return;
 
-    setStatus("asking");
+    setStatus("loading");
     setQuestion("");
 
     try {
@@ -26,14 +45,61 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ question: q })
       });
-      const data = await res.json();
-      setTurns((t) => [...t, { question: q, answer: data.answer, sources: data.sources || [] }]);
+
+      const contentType = res.headers.get("content-type") || "";
+
+      if (contentType.includes("text/event-stream") && res.body) {
+        const sourcesHeader = res.headers.get("x-ask-sources");
+        let sources: Source[] = [];
+        if (sourcesHeader) {
+          try {
+            sources = JSON.parse(decodeURIComponent(sourcesHeader));
+          } catch {
+            sources = [];
+          }
+        }
+
+        setTurns((t) => [...t, { question: q, answer: "", sources, streaming: true }]);
+        setStatus("idle");
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const parts = buffer.split("\n\n");
+          buffer = parts.pop() ?? "";
+
+          for (const part of parts) {
+            const dataLine = part.split("\n").find((line) => line.startsWith("data:"));
+            if (!dataLine) continue;
+            const payload = dataLine.slice(5).trim();
+            if (payload === "[DONE]") continue;
+            try {
+              const parsed = JSON.parse(payload);
+              if (typeof parsed.response === "string" && parsed.response) {
+                appendToLastTurn(parsed.response);
+              }
+            } catch {
+              // ignore a malformed chunk boundary
+            }
+          }
+        }
+
+        finishLastTurn();
+      } else {
+        const data = await res.json();
+        setTurns((t) => [...t, { question: q, answer: data.answer, sources: data.sources || [] }]);
+        setStatus("idle");
+      }
     } catch {
       setTurns((t) => [
         ...t,
         { question: q, answer: "Something went wrong reaching the archive — try again in a moment.", sources: [] }
       ]);
-    } finally {
       setStatus("idle");
     }
   }
@@ -54,7 +120,10 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
         {turns.map((turn, i) => (
           <div key={i} className="space-y-2">
             <p className="font-mono text-xs text-primary">&gt; {turn.question}</p>
-            <p className="font-serif text-[15px] leading-relaxed text-secondary/90">{turn.answer}</p>
+            <p className="font-serif text-[15px] leading-relaxed text-secondary/90">
+              {turn.answer}
+              {turn.streaming && <span className="ml-0.5 animate-pulse text-primary">▍</span>}
+            </p>
             {turn.sources.length > 0 && (
               <div className="flex flex-wrap gap-2 pt-1">
                 {turn.sources.map((s) => (
@@ -70,7 +139,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
             )}
           </div>
         ))}
-        {status === "asking" && (
+        {status === "loading" && (
           <p className="flex items-center gap-2 font-mono text-xs text-secondary/50">
             <Loader2 size={12} className="motion-safe:animate-spin" aria-hidden="true" />
             searching the archive…
@@ -92,7 +161,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
         />
         <button
           type="submit"
-          disabled={status === "asking"}
+          disabled={status === "loading"}
           className="btn-primary min-h-9 px-3 py-1.5 text-xs disabled:cursor-wait disabled:opacity-50"
           aria-label="Ask"
         >

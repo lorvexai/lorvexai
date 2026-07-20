@@ -49,19 +49,21 @@ async function handleAsk(request, env) {
 
     const systemPrompt = `You are a research assistant answering questions strictly from the excerpts below, taken from Sreedhara Reddy Kotha's own writing on AI governance, model risk, and financial regulation. Answer only using these excerpts — do not use outside knowledge. If the excerpts don't cover the question, say so plainly and suggest browsing the writing directly rather than guessing. Cite the excerpt numbers you drew from inline, like [1].\n\nExcerpts:\n${context}`;
 
-    const aiResponse = await env.AI.run(MODEL, {
+    const stream = await env.AI.run(MODEL, {
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: question }
-      ]
+      ],
+      stream: true
     });
 
-    const answer =
-      (typeof aiResponse?.response === "string" && aiResponse.response.trim()) ||
-      (typeof aiResponse === "string" && aiResponse.trim()) ||
-      "I couldn't generate an answer just now — please try again in a moment.";
-
-    return json({ answer, sources: uniqueSources(top) });
+    return new Response(stream, {
+      headers: {
+        "content-type": "text/event-stream",
+        "cache-control": "no-cache",
+        "x-ask-sources": encodeURIComponent(JSON.stringify(uniqueSources(top)))
+      }
+    });
   } catch (err) {
     return json({
       answer:
