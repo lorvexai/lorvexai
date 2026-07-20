@@ -8,7 +8,7 @@
   /* light "diazo paper" — the default ground */
   --color-background-rgb: 241 244 246;
   --color-primary-rgb: 138 97 31;
-  --color-secondary-rgb: 76 97 120;
+  --color-secondary-rgb: 51 65 85;
   --color-surface-rgb: 255 255 255;
   --color-panel-rgb: 255 255 255;
   --color-panel-2-rgb: 232 237 241;
@@ -25,7 +25,7 @@
   --hairline: rgba(14, 35, 56, 0.13);
   --glass-bg: rgba(255, 255, 255, 0.6);
   --gradient-start: #0E2338;
-  --gradient-mid: #4C6178;
+  --gradient-mid: #334155;
   --gradient-end: #8A611F;
   --mermaid-node-fill: #FFFFFF;
   --mermaid-stroke: #0E2338;
@@ -112,7 +112,7 @@
 :root[data-theme="light"] {
   --color-background-rgb: 241 244 246;
   --color-primary-rgb: 138 97 31;
-  --color-secondary-rgb: 76 97 120;
+  --color-secondary-rgb: 51 65 85;
   --color-surface-rgb: 255 255 255;
   --color-panel-rgb: 255 255 255;
   --color-panel-2-rgb: 232 237 241;
@@ -129,7 +129,7 @@
   --hairline: rgba(14, 35, 56, 0.13);
   --glass-bg: rgba(255, 255, 255, 0.6);
   --gradient-start: #0E2338;
-  --gradient-mid: #4C6178;
+  --gradient-mid: #334155;
   --gradient-end: #8A611F;
   --mermaid-node-fill: #FFFFFF;
   --mermaid-stroke: #0E2338;
