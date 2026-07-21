@@ -55,21 +55,11 @@ flowchart LR
 
 ## Core Workflow Patterns
 
+[[diagram:workflow-pattern-gallery]]
+
 ### Pattern 1: Linear Sequential Workflow
 
 The simplest pattern — steps execute in order, each passing output to the next. Used for document processing, report generation, and governance checks where the sequence is deterministic.
-
-```mermaid
-flowchart LR
-    A[Ingest Document] --> B[Extract Entities]
-    B --> C[Map to Obligations]
-    C --> D[Identify Gaps]
-    D --> E[Generate Remediation]
-    E --> F[Format Report]
-    F --> G[Human Sign-off]
-
-    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
-```
 
 **Example pattern:** A regulatory intelligence reference blueprint can use this pattern to process new PRA circulars — ingesting the document, extracting obligations, mapping to existing controls, identifying gaps, and generating a remediation brief for a governance review.
 
@@ -77,82 +67,19 @@ flowchart LR
 
 Multiple steps execute simultaneously, then results are merged. Dramatically reduces latency for tasks that have independent sub-components.
 
-```mermaid
-flowchart TD
-    A[Receive Referral] --> B[Clinical Urgency Score]
-    A --> C[Pathway Availability Check]
-    A --> D[Patient History Summary]
-    B --> M[Merge & Triage Decision]
-    C --> M
-    D --> M
-    M --> E{Confidence ≥ 90%?}
-    E -->|Yes| F[Auto-assign Pathway]
-    E -->|No| G[Clinician Review]
-
-    style E fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
-    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
-```
-
 **Example in practice:** Healthcare Flow Intelligence blueprint runs urgency scoring, pathway matching, and patient history summarisation in parallel, then merges results for the final triage decision — reducing average processing time from minutes to under 5 seconds.
 
 ### Pattern 3: Conditional Branching Workflow
 
 Workflow routes differ based on data conditions, confidence scores, or risk classifications. Enables intelligent escalation without hard-coding every scenario.
 
-```mermaid
-flowchart TD
-    A[Transaction Event] --> B[Risk Classification]
-    B --> C{Risk Level}
-    C -->|Low| D[Auto-process]
-    C -->|Medium| E[Enhanced Monitoring]
-    C -->|High| F[Compliance Alert]
-    F --> G[Freeze & Investigate]
-    E --> H[Log & Continue]
-    D --> H
-
-    style C fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
-    style F fill:#8C4A3D,stroke:#D6A697,color:#E6ECF7
-    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
-```
-
 ### Pattern 4: Loop / Iterative Workflow
 
 The workflow repeats until a quality criterion is met. Used for document drafting, evidence compilation, and scenario analysis where a single pass is rarely sufficient.
 
-```mermaid
-flowchart TD
-    A[Draft Output] --> B[Evaluate Quality]
-    B --> C{Score ≥ Threshold?}
-    C -->|No, iteration < max| D[Identify Issues]
-    D --> E[Refine Prompt / Context]
-    E --> A
-    C -->|Yes| F[Deliver Output]
-    C -->|No, max reached| G[Escalate to Human]
-
-    style C fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
-    style G fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
-```
-
 ### Pattern 5: Event-Driven Workflow
 
 Workflows triggered by external events — a new filing, a market movement, an inbound referral, a threshold breach. The trigger is usually a message queue or webhook; the workflow executes asynchronously.
-
-```mermaid
-sequenceDiagram
-    participant ES as Event Source
-    participant MQ as Message Queue
-    participant WE as Workflow Engine
-    participant AG as AI Agent
-    participant NS as Notification Service
-
-    ES->>MQ: LCR breach event (entity: EU, value: 98%)
-    MQ->>WE: Trigger: liquidity_alert workflow
-    WE->>AG: Execute stress analysis
-    AG-->>WE: 3 scenarios, recommendations
-    WE->>NS: Alert treasury team
-    WE->>NS: Generate ALCO brief
-    WE->>WE: Log to audit trail
-```
 
 ---
 
@@ -265,7 +192,7 @@ flowchart LR
 | **Hybrid (planned + guarded)** | Most regulated enterprise use cases | Best of both; requires more engineering |
 | **Event-driven** | Real-time monitoring and alerting | Low latency; complex state management |
 
-LorvexAI recommends the **hybrid approach** for regulated environments: the workflow structure is defined and auditable, but LLM reasoning is used within each step for the intelligence layer — not for deciding the workflow structure itself.
+My recommendation is the **hybrid approach** for regulated environments: the workflow structure is defined and auditable, but LLM reasoning is used within each step for the intelligence layer — not for deciding the workflow structure itself.
 
 ---
 
@@ -280,7 +207,7 @@ The best way to introduce AI workflows into a regulated enterprise is the **sing
 5. Run in shadow mode alongside the human process for 2 weeks, compare outputs
 6. Go live with the AI workflow, human reviewing exceptions only
 
-This is the LorvexAI educational blueprint methodology — one workflow, reviewable outcomes, governance-aware from day one.
+This is the same methodology behind every blueprint on this site — one workflow, reviewable outcomes, governance-aware from day one.
 
 ---
 

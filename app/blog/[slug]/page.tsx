@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getAllPosts, getPostContent } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
+import DiagramMounter from "@/components/DiagramMounter";
 import BlogCard from "@/components/BlogCard";
 import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
@@ -171,6 +172,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <div className="mx-auto w-full max-w-4xl px-6">
           <CopyCodeButton />
           <MermaidRenderer />
+          <DiagramMounter />
           <article
             className="prose prose-invert max-w-none
               prose-headings:font-semibold prose-headings:text-heading

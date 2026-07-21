@@ -55,5 +55,7 @@ export async function getPostContent(slug: string) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { content } = matter(fileContents);
   const processed = await remark().use(remarkGfm).use(html).process(content);
-  return processed.toString();
+  return processed
+    .toString()
+    .replace(/<p>\[\[diagram:([a-z0-9-]+)\]\]<\/p>/g, '<div data-diagram="$1"></div>');
 }

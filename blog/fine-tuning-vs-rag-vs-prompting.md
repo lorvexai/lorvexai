@@ -31,33 +31,7 @@ Each has a different cost profile, capability profile, and risk profile. Getting
 
 ## Visual Overview: The Three Approaches
 
-```mermaid
-flowchart TD
-    subgraph Prompting
-        P1[Model weights unchanged]
-        P2[Instructions in context]
-        P3[Works immediately]
-        P4[Limited by context window]
-    end
-
-    subgraph RAG
-        R1[Model weights unchanged]
-        R2[Relevant docs injected at runtime]
-        R3[Knowledge always current]
-        R4[Retrieval quality is the bottleneck]
-    end
-
-    subgraph FineTuning
-        F1[Model weights updated]
-        F2[Domain knowledge baked in]
-        F3[Fast inference, no retrieval]
-        F4[Expensive, needs labelled data]
-    end
-
-    style P1 fill:#2C4A63,stroke:#8FB2CC,color:#E6ECF7
-    style R1 fill:#3D6B52,stroke:#95C2A8,color:#E6ECF7
-    style F1 fill:#5B4570,stroke:#BCA6CC,color:#E6ECF7
-```
+[[diagram:approach-comparison]]
 
 ---
 
@@ -272,4 +246,4 @@ Add **fine-tuning** only when you have:
 
 ---
 
-*Unsure which approach fits your use case? [Book a technical consultation](/contact) — we'll map the right architecture for your data, your governance considerations, and your timeline.*
+*Have a specific use case in mind? [Get in touch](/contact) — I read every message myself.*
