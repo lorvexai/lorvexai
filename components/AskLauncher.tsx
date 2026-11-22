@@ -11,10 +11,11 @@ export default function AskLauncher() {
   return (
     <Link
       href="/ask"
-      className="corner-ticks fixed bottom-20 right-4 z-50 flex items-center gap-2 border border-primary/40 bg-panel/95 px-4 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-primary shadow-2xl shadow-black/40 transition hover:bg-primary/10 md:bottom-6 md:right-6"
+      aria-label="Ask the archive"
+      className="btn-primary fixed bottom-20 right-4 z-50 h-12 w-12 !gap-2 !rounded-full !p-0 text-sm md:bottom-6 md:right-6 md:h-12 md:w-auto md:!px-5"
     >
-      <MessageCircleQuestion size={14} aria-hidden="true" />
-      Ask
+      <MessageCircleQuestion size={18} aria-hidden="true" />
+      <span className="hidden md:inline">Ask</span>
     </Link>
   );
 }
