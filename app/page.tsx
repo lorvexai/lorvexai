@@ -3,6 +3,9 @@ import { getAllPosts } from "@/utils/posts";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
 import FeaturedInsights from "@/components/FeaturedInsights";
+import AgentTrace from "@/components/AgentTrace";
+import CountUp from "@/components/CountUp";
+import Reveal from "@/components/Reveal";
 import { BOOK_KINDLE_URL, BOOK_PAPERBACK_URL } from "@/utils/site";
 import {
   ArrowRight,
@@ -10,6 +13,8 @@ import {
   Database,
   HeartPulse,
   Landmark,
+  Mail,
+  MessageSquareText,
   Sparkles
 } from "lucide-react";
 
@@ -94,6 +99,18 @@ const regulatedResearchSeries = [
   }
 ];
 
+const MARQUEE = [
+  "PRA SS1/23", "EU AI Act", "DORA", "BCBS 239", "SM&CR", "IFRS 9", "Basel 3.1", "FRTB", "COREP / FINREP",
+  "Consumer Duty", "Model Risk", "Agentic RAG", "Human-in-the-loop", "Audit Evidence"
+];
+
+const STATS = [
+  ["16", "Book chapters"],
+  ["31", "AI systems built"],
+  ["66K+", "Lines of Python"],
+  ["20+", "Years in finance tech"]
+];
+
 export default function HomePage() {
   const hiddenHomePostTitles = new Set([
     "From Waiting Lists to Smart Pathways",
@@ -107,98 +124,122 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-secondary/10">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 pb-16 pt-16 md:grid-cols-[1.08fr_0.92fr] md:items-center md:pb-24 md:pt-24">
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 pb-16 pt-14 md:grid-cols-[1.15fr_0.85fr] md:items-center md:pb-24 md:pt-20">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              <Sparkles size={14} aria-hidden="true" />
-              Notes on AI governance, model risk, and financial regulation
+            <p className="chip">
+              <Sparkles size={13} aria-hidden="true" />
+              AI governance · model risk · financial regulation
             </p>
-            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] text-heading md:text-7xl">
-              What controlled AI governance actually looks like.
+            <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.02] md:text-7xl">
+              <span className="text-heading">AI you can </span>
+              <span className="text-gradient">govern, audit</span>
+              <span className="text-heading"> and defend.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary/78">
-              I'm Sreedhara Reddy Kotha. This is where I publish my own research, reference architectures, and books on AI strategy, model risk, auditability, and financial regulation — written the way I'd want to read it: plainly, with the caveats included, and without a sales pitch.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-secondary/80">
+              I&apos;m Sreedhara Reddy Kotha. Research, reference architectures, a weekly newsletter and a book on controlled AI in
+              banking, written plainly, with the caveats included.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/blog" className="btn-primary min-h-11 text-sm font-semibold">
-                Read Writing
+              <Link href="/books" className="btn-primary min-h-11 text-sm">
+                Explore the book
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/books" className="btn-outline min-h-11 text-sm font-semibold">
-                The Book
-              </Link>
               <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
+                <Mail size={15} aria-hidden="true" />
                 Newsletter
               </Link>
-              <Link href="/ask" className="btn-outline min-h-11 text-sm font-semibold">
-                Ask the Archive
+              <Link href="/blog" className="btn-outline min-h-11 text-sm font-semibold">
+                Read writing
               </Link>
             </div>
-          </div>
-
-          <div className="corner-ticks relative border border-secondary/15 bg-panel/75 p-4 shadow-2xl shadow-black/30">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary">Reference architecture — Fig. 01</p>
-            <h2 className="mt-4 text-2xl font-semibold text-heading">Controlled AI system pattern</h2>
-            <div className="mt-6 grid gap-3">
-              {[
-                ["1", "Public or approved information sources"],
-                ["2", "Retrieval, workflow, and evidence controls"],
-                ["3", "Human review and approval gates"],
-                ["4", "Educational blueprint or prototype scope"]
-              ].map(([n, text]) => (
-                <div key={n} className="flex items-center gap-3 rounded-lg border border-secondary/15 bg-background/35 p-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-primary">{n}</span>
-                  <span className="text-sm text-secondary/75">{text}</span>
+            <dl className="mt-10 grid max-w-xl grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-4">
+              {STATS.map(([value, label]) => (
+                <div key={label}>
+                  <dt className="text-xs text-secondary/60">{label}</dt>
+                  <dd className="stat-glow mt-1 font-semibold text-heading text-3xl">
+                    <CountUp value={value} />
+                  </dd>
                 </div>
               ))}
-            </div>
-            <div className="mt-4 flex items-center justify-between border-t border-secondary/15 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-secondary/45">
-              <span>Drawn — S. R. Kotha</span>
-              <span>Rev B</span>
-            </div>
+            </dl>
+          </div>
+          <AgentTrace />
+        </div>
+
+        <div className="marquee border-y border-secondary/10 py-4" aria-hidden="true">
+          <div className="marquee-track">
+            {[...MARQUEE, ...MARQUEE].map((m, i) => (
+              <span key={`${m}-${i}`} className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.22em] text-secondary/55">
+                {m}
+                <span className="ml-10 text-primary/60">◆</span>
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="section pb-0">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid gap-8 rounded-lg border border-primary/25 bg-panel/70 p-8 md:grid-cols-[1.4fr_1fr] md:items-center">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">The book</p>
-              <h2 className="mt-3 text-3xl font-semibold text-heading">
-                AI for Financial Risk, Compliance and Regulatory Reporting
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-secondary/75">
-                16 chapters, 31 AI systems and tested Python reference code, governed from day one against PRA SS1/23, the EU AI Act and DORA.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href={BOOK_PAPERBACK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
-                  Buy paperback
-                </a>
-                <a href={BOOK_KINDLE_URL} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
-                  Kindle
-                </a>
-                <Link href="/books" className="btn-outline text-sm">
-                  Contents and companion code
+          <Reveal>
+            <div className="grid gap-5 md:grid-cols-6">
+              <article className="card-glow p-8 md:col-span-4">
+                <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+                  <div>
+                    <p className="chip">The book</p>
+                    <h2 className="mt-4 text-3xl font-semibold leading-tight">
+                      AI for Financial Risk, Compliance and Regulatory Reporting
+                    </h2>
+                    <p className="mt-3 max-w-lg text-sm leading-relaxed text-secondary/75">
+                      16 chapters, 31 AI systems and tested Python, governed from day one against PRA SS1/23, the EU AI Act and DORA.
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <a href={BOOK_PAPERBACK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
+                        Buy paperback
+                      </a>
+                      <a href={BOOK_KINDLE_URL} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+                        Kindle
+                      </a>
+                      <Link href="/books" className="btn-outline text-sm">
+                        Contents &amp; code
+                      </Link>
+                    </div>
+                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/title_page.jpg`}
+                    alt="Book cover"
+                    width={150}
+                    height={225}
+                    className="mx-auto hidden w-36 rounded-lg border border-primary/30 shadow-2xl shadow-black/40 sm:block"
+                  />
+                </div>
+              </article>
+
+              <div className="grid gap-5 md:col-span-2">
+                <Link href="/newsletter" className="card-glow group p-6">
+                  <Mail size={20} className="text-primary" aria-hidden="true" />
+                  <h3 className="mt-3 text-lg font-semibold">Weekly newsletter</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-secondary/70">What PRA, FCA, EBA and Fed changes mean for AI in risk.</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    Learn more <ArrowRight size={14} aria-hidden="true" />
+                  </span>
+                </Link>
+                <Link href="/ask" className="card-glow group p-6">
+                  <MessageSquareText size={20} className="text-primary" aria-hidden="true" />
+                  <h3 className="mt-3 text-lg font-semibold">Ask the archive</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-secondary/70">Questions answered from the writing, with citations.</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    Try it <ArrowRight size={14} aria-hidden="true" />
+                  </span>
                 </Link>
               </div>
             </div>
-            <div className="rounded-lg border border-secondary/15 bg-background/35 p-6">
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Newsletter</p>
-              <p className="mt-3 text-sm leading-relaxed text-secondary/75">
-                A weekly briefing on what PRA, FCA, EBA and Fed changes mean for AI in risk and regulatory reporting.
-              </p>
-              <Link href="/newsletter" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-heading">
-                About the newsletter
-                <ArrowRight size={14} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
@@ -217,7 +258,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {regulatedResearchSeries.map((item) => (
-              <Link key={item.href} href={item.href} className="group rounded-lg border border-secondary/15 bg-panel/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
+              <Link key={item.href} href={item.href} className="card-glow group p-6">
                 <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                   {item.label}
                 </span>
@@ -272,7 +313,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-secondary/10 bg-background/45 py-16 md:py-20">
+      <section className="border-y border-secondary/10 bg-panel/30 py-16 md:py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="mb-10 max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I keep coming back to</p>
@@ -282,7 +323,7 @@ export default function HomePage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {focusAreas.map((area) => (
-              <Link key={area.title} href={area.href} className="group rounded-lg border border-secondary/15 bg-panel/45 p-6 transition hover:border-primary/45 hover:bg-primary/10">
+              <Link key={area.title} href={area.href} className="card-glow group p-6">
                 <area.icon size={22} className="text-primary" aria-hidden="true" />
                 <h3 className="mt-5 text-lg font-semibold text-heading">{area.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-secondary/65">{area.body}</p>

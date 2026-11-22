@@ -97,7 +97,7 @@ export default function AboutPage() {
         description="I'm a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data, automation, and enterprise technology — and this site is where I write about it."
       >
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-lg border border-primary/25 bg-panel/70 p-7">
+          <div className="card-glow p-7">
             <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-primary/40 bg-primary/20 text-2xl font-bold text-primary">
               SK
             </div>

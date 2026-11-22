@@ -50,7 +50,7 @@ export default function NewsletterPage() {
           <h2 className="text-2xl font-semibold text-heading">What each issue contains</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {FORMAT.map(([title, text]) => (
-              <article key={title} className="rounded-lg border border-primary/25 bg-panel/70 p-6">
+              <article key={title} className="card-glow p-6">
                 <h3 className="text-lg font-semibold text-heading">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
               </article>

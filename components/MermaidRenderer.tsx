@@ -20,7 +20,7 @@ export default function MermaidRenderer({
     const panel = cssVarRgb("--color-panel-rgb", isDark ? "#12315A" : "#FFFFFF");
     const panel2 = cssVarRgb("--color-panel-2-rgb", isDark ? "#13294B" : "#E8EDF1");
     const stroke = cssVar("--mermaid-stroke", isDark ? "#DCEAF2" : "#0E2338");
-    const edge = cssVar("--mermaid-edge", isDark ? "#B8863A" : "#8A611F");
+    const edge = cssVar("--mermaid-edge", isDark ? "#22D3EE" : "#0E7490");
     const heading = cssVarRgb("--color-heading-rgb", isDark ? "#E9EEF5" : "#0E2338");
     const labelBg = cssVar("--mermaid-label-bg", isDark ? "#0A1D34" : "#F1F4F6");
     const background = cssVarRgb("--color-background-rgb", isDark ? "#0B2038" : "#F1F4F6");

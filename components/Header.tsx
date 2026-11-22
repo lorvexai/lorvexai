@@ -21,8 +21,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-secondary/10 bg-background/88 backdrop-blur-xl">
-      <div className="mx-auto w-full max-w-6xl px-6 py-3">
+    <header className="sticky top-0 z-50 px-3 pt-3 md:px-6">
+      <div className="glass mx-auto w-full max-w-6xl rounded-2xl px-5 py-2.5 shadow-lg shadow-black/10">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 text-heading" aria-label="LorvexAI home">
             <Image
@@ -31,7 +31,7 @@ export default function Header() {
               width={220}
               height={54}
               priority
-              className="h-9 w-auto md:h-10"
+              className="h-9 w-auto rounded-md md:h-10"
             />
           </Link>
 
@@ -43,7 +43,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`min-h-10 rounded-full px-3 py-2 text-sm transition ${
-                    active ? "bg-primary/16 text-heading" : "text-secondary/80 hover:text-heading"
+                    active ? "bg-primary/15 text-heading ring-1 ring-primary/30" : "text-secondary/80 hover:bg-secondary/10 hover:text-heading"
                   }`}
                 >
                   {item.label}

@@ -22,7 +22,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10 bg-background/60">
-      <div className="border-b border-secondary/10 bg-primary/8 py-8">
+      <div className="border-b border-secondary/10 bg-gradient-to-r from-primary/10 via-transparent to-glow/10 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-semibold text-heading">I write about controlled AI, model risk, and financial regulation.</p>

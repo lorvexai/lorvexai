@@ -138,7 +138,7 @@ export default function BooksPage() {
             alt="Book cover: AI for Financial Risk, Compliance and Regulatory Reporting"
             width={420}
             height={630}
-            className="mx-auto w-full max-w-[280px] rounded-lg border border-primary/25 shadow-2xl shadow-black/30 md:max-w-none"
+            className="float-slow mx-auto w-full max-w-[280px] rounded-lg border border-primary/25 shadow-[0_30px_80px_rgba(var(--shadow-glow-rgb),0.25)] md:max-w-none"
           />
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function BooksPage() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <dl className="grid grid-cols-2 gap-4 md:grid-cols-6">
             {STATS.map(([value, label]) => (
-              <div key={label} className="rounded-lg border border-primary/25 bg-panel/70 p-4">
+              <div key={label} className="card-glow p-4">
                 <dt className="text-xs text-secondary/60">{label}</dt>
                 <dd className="mt-1 text-2xl font-semibold text-heading">{value}</dd>
               </div>
@@ -169,7 +169,7 @@ export default function BooksPage() {
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {WHY.map(([title, text]) => (
-              <article key={title} className="rounded-lg border border-primary/25 bg-panel/70 p-6">
+              <article key={title} className="card-glow p-6">
                 <h3 className="text-lg font-semibold text-heading">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
               </article>
@@ -184,7 +184,7 @@ export default function BooksPage() {
           <h2 className="mt-3 text-3xl font-semibold text-heading">One bank, sixteen chapters, one continuous build</h2>
           <ol className="mt-6 grid gap-4 md:grid-cols-3">
             {JOURNEY.map(([title, text, ch], i) => (
-              <li key={title} className="rounded-lg border border-secondary/15 bg-panel/45 p-5">
+              <li key={title} className="card-glow p-5">
                 <div className="flex items-center justify-between">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-primary">
                     {i + 1}
@@ -205,7 +205,7 @@ export default function BooksPage() {
           <h2 className="mt-3 text-3xl font-semibold text-heading">Find your entry point</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {AUDIENCE.map(([who, text, chapters]) => (
-              <article key={who} className="rounded-lg border border-primary/25 bg-panel/70 p-6">
+              <article key={who} className="card-glow p-6">
                 <h3 className="font-semibold text-heading">{who}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
                 <p className="mt-3 font-mono text-xs text-primary">{chapters}</p>
@@ -235,7 +235,7 @@ export default function BooksPage() {
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary/70">{p.desc}</p>
               <div className="mt-4 grid gap-3 md:grid-cols-2">
                 {p.chapters.map((c) => (
-                  <details key={c.num} className="group rounded-lg border border-secondary/15 bg-panel/45 p-4 open:border-primary/40">
+                  <details key={c.num} className="group card-glow p-4 open:border-primary/40">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
                       <span className="flex items-center gap-3">
                         <span className="font-mono text-sm text-primary">{c.num}</span>
@@ -289,7 +289,7 @@ export default function BooksPage() {
               <Link
                 key={letter}
                 href={href}
-                className="group rounded-lg border border-secondary/15 bg-panel/45 p-5 transition hover:border-primary/45 hover:bg-primary/10"
+                className="group card-glow p-5 transition hover:border-primary/45 hover:bg-primary/10"
               >
                 <span className="font-mono text-xs text-primary">Appendix {letter}</span>
                 <h3 className="mt-2 font-semibold text-heading">{title}</h3>
@@ -333,7 +333,7 @@ export default function BooksPage() {
 
       <section className="section pt-0">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="rounded-lg border border-primary/25 bg-panel/70 p-8 text-center">
+          <div className="card-glow p-8 text-center">
             <h2 className="text-3xl font-semibold text-heading">Stop experimenting. Start operating.</h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm text-secondary/75">
               Sixteen chapters, 31 primary AI systems and 11 agentic governance pipelines, all working, tested and built to
