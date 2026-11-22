@@ -12,9 +12,8 @@ export default function ThemeToggle() {
     if (stored === "light" || stored === "dark") {
       setTheme(stored);
     } else {
-      // Dark is the default ground; only an explicit OS light preference switches it.
-      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-      setTheme(prefersLight ? "light" : "dark");
+      // The site matches the dark book cover; light is opt-in via the toggle.
+      setTheme("dark");
     }
   }, []);
 
