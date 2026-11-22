@@ -14,11 +14,6 @@ export const metadata: Metadata = {
   }
 };
 
-const STATS = [
-  ["20+", "years in finance technology"],
-  ["16", "chapters, one case study"],
-  ["31", "AI systems with tested code"]
-];
 
 const PERSPECTIVE = [
   [
@@ -47,7 +42,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="section pb-0 pt-12 md:pt-16">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[1.25fr_0.75fr] md:items-start">
+        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6">
           <div>
             <p className="chip">About</p>
             <h1 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
@@ -74,32 +69,17 @@ export default function AboutPage() {
                 <Mail size={15} aria-hidden="true" />
                 Get the weekly briefing
               </Link>
+              <a
+                href="https://www.linkedin.com/in/sreekotha/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline min-h-11 text-sm font-semibold"
+              >
+                <Linkedin size={15} aria-hidden="true" />
+                LinkedIn
+              </a>
             </div>
           </div>
-
-          <aside className="card-glow p-6">
-            <div>
-              <p className="text-lg font-semibold text-heading">Sreedhara Reddy Kotha</p>
-              <p className="text-sm text-secondary/80">Author and founder, LorvexAI</p>
-            </div>
-            <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-secondary/15 pt-5">
-              {STATS.map(([n, label]) => (
-                <div key={label}>
-                  <dt className="text-2xl font-bold text-gradient">{n}</dt>
-                  <dd className="mt-1 text-sm leading-snug text-secondary/80">{label}</dd>
-                </div>
-              ))}
-            </dl>
-            <a
-              href="https://www.linkedin.com/in/sreekotha/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 border-t border-secondary/15 pt-4 text-sm font-semibold text-primary hover:text-heading"
-            >
-              <Linkedin size={15} aria-hidden="true" />
-              Connect on LinkedIn
-            </a>
-          </aside>
         </div>
       </section>
 

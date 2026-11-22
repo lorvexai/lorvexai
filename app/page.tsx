@@ -58,11 +58,6 @@ export default function HomePage() {
                 Get the weekly briefing
               </Link>
             </div>
-            <p className="mt-6 max-w-xl text-sm font-medium leading-relaxed text-secondary/85">
-              By Sreedhara Reddy Kotha <span className="mx-1.5 text-primary">·</span> 20+ years in finance technology{" "}
-              <span className="mx-1.5 text-primary">·</span> Basel, risk and regulatory reporting{" "}
-              <span className="mx-1.5 text-primary">·</span> RAG, agents and automation
-            </p>
           </div>
           <Link href="/books" className="group mx-auto block w-full max-w-xs">
             {/* eslint-disable-next-line @next/next/no-img-element */}

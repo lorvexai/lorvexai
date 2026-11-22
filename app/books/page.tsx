@@ -310,34 +310,6 @@ export default function BooksPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 md:grid-cols-[0.3fr_1fr] md:items-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={img("author-avatar.png")}
-            alt="Sreedhara Reddy Kotha"
-            width={200}
-            height={200}
-            className="h-40 w-40 rounded-lg border border-primary/25 object-cover"
-          />
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">The author</p>
-            <h2 className="mt-2 text-2xl font-semibold text-heading">Sreedhara Reddy Kotha</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-secondary/75">
-              Sreedhara has spent over two decades working across global banking, financial risk and regulatory technology. He
-              writes as a practitioner, focused on how AI and automation can help risk and compliance teams do their jobs
-              rather than replace the judgement they bring to it.
-            </p>
-            <p className="mt-3 text-xs text-secondary/70">
-              The views expressed in this book are the author&apos;s own and do not represent the views of any current or former
-              employer.
-            </p>
-            <Link href="/about" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading">
-              More about the author <ArrowRight size={14} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <section className="section pt-0">
         <div className="mx-auto w-full max-w-6xl px-6">
