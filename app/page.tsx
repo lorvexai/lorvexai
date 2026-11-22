@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CTA from "@/components/CTA";
+import SubscribeForm from "@/components/SubscribeForm";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
 import { PARTS } from "@/utils/book-data";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
@@ -72,10 +72,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section pb-0">
+
+      <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <h2 className="max-w-2xl text-3xl font-semibold text-heading md:text-4xl">Inside the book</h2>
+            <h2 className="text-3xl font-semibold text-heading md:text-4xl">Inside the book</h2>
             <Link href="/books#chapters" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading">
               All 16 chapters <ArrowRight size={14} aria-hidden="true" />
             </Link>
@@ -92,27 +93,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {latest && (
-        <section className="section pb-0">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <Link href={`/newsletter/${latest.slug}`} className="card-glow group block border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8">
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="card-glow grid gap-8 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
+            <div>
               <p className="chip">
                 <Mail size={13} aria-hidden="true" />
-                Latest briefing · Issue {latest.number} · {formatIssueDate(latest.date)}
+                Weekly briefing
               </p>
-              <h2 className="mt-4 max-w-3xl text-2xl font-semibold leading-snug md:text-3xl">{latest.title}</h2>
-              <p className="mt-3 max-w-3xl text-base leading-relaxed text-secondary/80">{latest.summary}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
-                Read the issue <ArrowRight size={14} aria-hidden="true" />
-              </span>
-            </Link>
+              {latest ? (
+                <>
+                  <h2 className="mt-4 text-2xl font-semibold leading-snug md:text-3xl">{latest.title}</h2>
+                  <p className="mt-3 text-base leading-relaxed text-secondary/80">{latest.summary}</p>
+                  <Link
+                    href={`/newsletter/${latest.slug}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading"
+                  >
+                    Read Issue {latest.number}, {formatIssueDate(latest.date)} <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </>
+              ) : (
+                <h2 className="mt-4 text-2xl font-semibold md:text-3xl">What regulators changed for AI in risk.</h2>
+              )}
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-heading">Get it every week</p>
+              <p className="mb-4 mt-1 text-base text-secondary/80">Short, sourced, written for practitioners.</p>
+              <SubscribeForm id="home-email" />
+            </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      <section className="section pb-0">
+      <section className="section pt-2 md:pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+          <div className="grid gap-5 md:grid-cols-[auto_1fr_auto] md:items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/author-avatar.png`}
@@ -129,12 +144,6 @@ export default function HomePage() {
               About the author <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="section py-8 md:py-10">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <CTA />
         </div>
       </section>
     </>
