@@ -124,28 +124,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section className="section pt-2 md:pt-4">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid gap-5 md:grid-cols-[auto_1fr_auto] md:items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/author-avatar.png`}
-              alt=""
-              width={64}
-              height={64}
-              className="h-16 w-16 rounded-full"
-            />
-            <p className="max-w-2xl text-base leading-relaxed text-secondary/85">
-              <strong className="text-heading">Sreedhara Reddy Kotha</strong> has spent 20+ years in finance technology, risk
-              and regulatory reporting. LorvexAI is where he publishes independent work on controlled AI.
-            </p>
-            <Link href="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading">
-              About the author <ArrowRight size={14} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

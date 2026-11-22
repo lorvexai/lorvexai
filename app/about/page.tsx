@@ -59,20 +59,10 @@ export default function AboutPage() {
           </div>
 
           <aside className="card-glow p-6">
-            <div className="flex items-center gap-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/author-avatar.png`}
-                alt=""
-                width={64}
-                height={64}
-                className="h-16 w-16 rounded-full"
-              />
-              <div>
+            <div>
                 <p className="text-lg font-semibold text-heading">Sreedhara Reddy Kotha</p>
                 <p className="text-sm text-secondary/80">Author and founder, LorvexAI</p>
               </div>
-            </div>
             <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-secondary/15 pt-5">
               {STATS.map(([n, label]) => (
                 <div key={label}>
