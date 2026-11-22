@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -12,8 +12,6 @@ const links = [
   { href: "/about", label: "About" }
 ];
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
 export default function Header() {
   const pathname = usePathname();
@@ -23,14 +21,7 @@ export default function Header() {
       <div className="glass mx-auto w-full max-w-6xl rounded-2xl px-5 py-2.5 shadow-lg shadow-black/10">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 text-heading" aria-label="LorvexAI home">
-            <Image
-              src={logoSrc}
-              alt="LorvexAI"
-              width={220}
-              height={54}
-              priority
-              className="h-9 w-auto rounded-md md:h-10"
-            />
+            <Logo />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
