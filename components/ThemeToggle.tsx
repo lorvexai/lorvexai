@@ -12,8 +12,8 @@ export default function ThemeToggle() {
     if (stored === "light" || stored === "dark") {
       setTheme(stored);
     } else {
-      // The site matches the dark book cover; light is opt-in via the toggle.
-      setTheme("dark");
+      // Follow the visitor's system setting until they choose.
+      setTheme(window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
     }
   }, []);
 
