@@ -41,8 +41,7 @@ export default function HomePage() {
             </p>
             <h1 className="mt-5 max-w-3xl text-5xl font-bold leading-[1.03] md:text-6xl">
               <span className="text-heading">AI you can </span>
-              <span className="text-gradient">govern, audit</span>
-              <span className="text-heading"> and defend.</span>
+              <span className="text-gradient">govern, audit and defend.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-secondary/85">
               Practical guidance for banking, finance, risk and regulatory-reporting teams building AI systems that must be
@@ -129,7 +128,7 @@ export default function HomePage() {
 
       <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="card-glow grid gap-8 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
+          <div className="card-glow grid gap-8 border-primary/30 bg-primary/5 p-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
             <div>
               <p className="chip">
                 <Mail size={13} aria-hidden="true" />

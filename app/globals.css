@@ -5,7 +5,7 @@
 @import "../styles/theme.css";
 
 /* ── Design tokens ─────────────────────────────────────────────
-   Light theme only: soft slate ground, dark-slate text, deep teal primary, indigo accent (all text meets WCAG AA).
+   Light theme only: soft slate ground, dark-slate text, deep teal primary, teal accent (all text meets WCAG AA).
    Edit this block to re-theme the whole site.                  */
 :root {
   --color-background-rgb: 248 250 252;
@@ -23,16 +23,13 @@
   --body-grad-3: #EEF2F8;
   --grid-line-1: rgba(15, 23, 42, 0.07);
   --grid-line-2: rgba(15, 23, 42, 0.07);
-  --wash-rgb: 79, 70, 229;
-  --accent-rgb: 79, 70, 229;
-  --accent2-rgb: 192, 38, 211;
+  --wash-rgb: 14, 105, 130;
+  --accent-rgb: 14, 105, 130;
+  --accent2-rgb: 14, 105, 130;
   --hairline: rgba(15, 23, 42, 0.12);
   --glass-bg: rgba(255, 255, 255, 0.7);
-  --gradient-start: #0F172A;
-  --gradient-mid: #4F46E5;
-  --gradient-end: #0E7490;
   --mermaid-node-fill: #FFFFFF;
-  --mermaid-stroke: #4F46E5;
+  --mermaid-stroke: #0E6982;
   --mermaid-edge: #0E7490;
   --mermaid-label-bg: #F1F5F9;
   --mermaid-cluster-bg: rgba(241, 245, 249, 0.8);
@@ -122,7 +119,7 @@ h1, h2, h3, h4, h5 {
 .btn-primary {
   @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition;
   color: var(--on-primary);
-  background: linear-gradient(115deg, rgb(var(--color-primary-rgb)) 0%, rgb(var(--accent-rgb)) 100%);
+  background: rgb(var(--color-primary-rgb));
   box-shadow: 0 10px 34px rgba(var(--shadow-glow-rgb), 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 14px 40px rgba(var(--shadow-glow-rgb), 0.4), inset 0 1px 0 rgba(255,255,255,.3); }
@@ -344,23 +341,13 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Gradient text utility ─── */
 .text-gradient {
-  background: linear-gradient(
-    105deg,
-    var(--gradient-start) 0%,
-    var(--gradient-mid) 42%,
-    var(--gradient-end) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* single brand colour (name kept for existing markup) */
+  color: rgb(var(--color-primary-rgb));
 }
 
 /* Group-hover gradient title for BlogCard */
 .group:hover .group-title {
-  background: linear-gradient(105deg, var(--gradient-start) 0%, var(--gradient-mid) 42%, var(--gradient-end) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: rgb(var(--color-primary-rgb));
 }
 
 /* ─── Stat glow for numbers ─── */
@@ -384,11 +371,6 @@ h1, h2, h3, h4, h5 {
   100% { background-position:  200% center; }
 }
 
-.btn-shimmer {
-  background: linear-gradient(90deg, #22D3EE 0%, #818CF8 40%, #22D3EE 60%, #E879F9 100%);
-  background-size: 200% auto;
-  animation: shimmer 3.5s linear infinite;
-}
 
 /* ─── Blueprint corner registration ticks ─── */
 .corner-ticks {
