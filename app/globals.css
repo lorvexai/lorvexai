@@ -340,10 +340,6 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ─── Gradient text utility ─── */
-.text-gradient {
-  /* single brand colour (name kept for existing markup) */
-  color: rgb(var(--color-primary-rgb));
-}
 
 /* Group-hover gradient title for BlogCard */
 .group:hover .group-title {

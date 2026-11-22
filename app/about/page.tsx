@@ -46,8 +46,7 @@ export default function AboutPage() {
           <div>
             <p className="chip">About</p>
             <h1 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
-              <span className="text-heading">Hi, I'm Sree. I write about </span>
-              <span className="text-gradient">AI that regulated firms can trust.</span>
+              <span className="text-heading">Hi, I'm Sree. I write about AI that regulated firms can trust.</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-secondary/85">
               I'm an AI transformation leader and practitioner-author with more than 20 years of experience at the intersection

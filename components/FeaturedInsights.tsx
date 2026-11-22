@@ -113,8 +113,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
               Featured Insights
             </p>
             <h2 className="text-3xl font-semibold md:text-4xl">
-              <span className="text-heading">Latest </span>
-              <span className="text-gradient">Research Notes</span>
+              <span className="text-heading">Latest Research Notes</span>
             </h2>
           </div>
           <div className="flex items-center gap-3">

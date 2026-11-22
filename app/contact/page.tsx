@@ -51,8 +51,7 @@ export default function ContactPage() {
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Get In Touch</p>
                 <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-heading">Contact </span>
-                  <span className="text-gradient">LorvexAI</span>
+                  <span className="text-heading">Contact LorvexAI</span>
                 </h1>
                 <p className="mt-5 max-w-2xl text-secondary/80">
                   Reach out about books, research, speaking, writing, publishing, or corrections. I read everything myself.
