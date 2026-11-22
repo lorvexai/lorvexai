@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Section from "@/components/Section";
-import CTA from "@/components/CTA";
-import { ArrowRight, Award, BookOpen, CheckCircle2, Cloud, Cpu, GraduationCap, Linkedin, ShieldCheck } from "lucide-react";
+import { ArrowRight, Award, Cloud, GraduationCap, Linkedin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About LorvexAI | Independent Research and Architecture",
@@ -17,188 +15,106 @@ export const metadata: Metadata = {
 };
 
 const credentials = [
-  { icon: GraduationCap, label: "MTech - Advanced Engineering" },
-  { icon: Cloud, label: "Google Cloud Professional Architect" },
-  { icon: Award, label: "SAFe Agile Leadership Credentials" },
-  { icon: BookOpen, label: "Author - AI for Financial Risk, Compliance and Regulatory Reporting" }
+  { icon: GraduationCap, label: "MTech" },
+  { icon: Cloud, label: "Google Cloud Professional Cloud Architect" },
+  { icon: Award, label: "SAFe Agilist" }
 ];
 
-const technicalSkills = [
-  { icon: Cpu, label: "Agentic RAG and LLM orchestration" },
-  { icon: Cloud, label: "Cloud architecture and data platforms" },
-  { icon: ShieldCheck, label: "Governance-aware AI design" },
-  { icon: BookOpen, label: "Regulatory reporting and finance technology education" }
-];
-
-const financeExpertise = [
-  "Finance technology, risk, regulatory reporting, data, automation, and enterprise technology",
-  "Controlled AI architecture, retrieval governance, evidence design, and human oversight",
-  "Educational research into finance, risk, compliance, and regulatory reporting",
-  "Independent writing, publishing, technical diagrams, templates, and reference blueprints"
-];
-
-const principles = [
-  {
-    title: "Independent Capacity",
-    body: "The work published on LorvexAI is independent, educational, and personal in nature. It does not represent any current or former employer, client, regulator, vendor, financial institution, NHS body, or affiliated organisation."
-  },
-  {
-    title: "No Confidential Information",
-    body: "This profile and site do not disclose or rely on confidential employer, client, customer, transaction, regulatory filing, supervisory, or proprietary information."
-  },
-  {
-    title: "Controlled AI Focus",
-    body: "The work focuses on how AI can be designed with governance, auditability, human oversight, and operational control in mind."
-  }
+const focus = [
+  ["Controlled AI architecture", "Retrieval governance, evidence design and human oversight built in from the start."],
+  ["Finance and regulatory technology", "Risk, regulatory reporting, data platforms and automation in large institutions."],
+  ["Teaching it clearly", "A book with tested code, and a weekly briefing on what regulators changed."]
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="section pb-6 pt-14 md:pt-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
-            <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr]">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">About LorvexAI</p>
-                <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
-                  <span className="text-heading">Independent Research and Architecture </span>
-                  <span className="text-gradient">for Controlled AI</span>
-                </h1>
-                <p className="mt-5 max-w-2xl text-secondary/80">
-                  I'm Sreedhara Reddy Kotha, and this is where I publish my own research, writing, and reference architecture on controlled AI — for finance, risk, compliance, regulatory reporting, and enterprise automation. Everything here is personal and independent: it isn't consulting work, product development, or a position taken on behalf of any employer, client, regulator, or organisation I've worked with.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link href="/books" className="btn-primary text-sm">
-                    Explore Books
-                    <ArrowRight size={16} />
-                  </Link>
-                  <Link href="/disclaimers" className="btn-outline text-sm">
-                    Independence Statement
-                  </Link>
-                </div>
-              </div>
-              <div className="flex flex-col gap-4">
-                {principles.map((item) => (
-                  <div key={item.title} className="rounded-lg border border-primary/20 bg-primary/10 p-5">
-                    <h2 className="text-sm font-semibold text-heading">{item.title}</h2>
-                    <p className="mt-2 text-sm text-secondary/70">{item.body}</p>
-                  </div>
-                ))}
-              </div>
+      <section className="section pb-0 pt-12 md:pt-16">
+        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+          <div>
+            <p className="chip">About</p>
+            <h1 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
+              <span className="text-heading">Hi, I'm Sree. I write about </span>
+              <span className="text-gradient">AI that regulated firms can trust.</span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-secondary/85">
+              I've spent more than 20 years in finance technology, risk and regulatory reporting. Most of what I write comes back
+              to one question: how do you build AI with governance, audit trails and human oversight in from the start, instead
+              of bolted on afterwards?
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-secondary/80">
+              LorvexAI is where I publish that work: a book with tested reference code, and a weekly briefing on regulation.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/books" className="btn-primary min-h-11 text-sm">
+                Explore the book
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+              <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
+                Get the weekly briefing
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      <Section
-        eyebrow="Who I am"
-        title="20+ years across finance technology, risk, regulatory reporting, data, automation, and AI"
-        description="I'm a finance technology and AI practitioner with more than two decades of experience across financial services, risk, regulatory reporting, data, automation, and enterprise technology — and this site is where I write about it."
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="card-glow p-7">
-            <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-primary/40 bg-primary/20 text-2xl font-bold text-primary">
-              SK
+          <aside className="card-glow p-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/15 text-lg font-bold text-primary" aria-hidden="true">
+                SK
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-heading">Sreedhara Reddy Kotha</p>
+                <p className="text-sm text-secondary/80">Founder, LorvexAI</p>
+              </div>
             </div>
-            <div className="mt-5">
-              <p className="text-xl font-semibold text-heading">Sreedhara Reddy Kotha</p>
-              <p className="mt-1 text-sm text-primary">Creator of LorvexAI</p>
-            </div>
-            <p className="mt-5 text-sm leading-relaxed text-secondary/75">
-              I've spent more than two decades in financial services, risk, regulatory reporting, data platforms, automation, and enterprise technology. Most of what I write here comes back to one question: how do you design AI systems with governance, auditability, human oversight, and operational control built in from the start, rather than bolted on afterward.
-            </p>
-            <p className="mt-4 rounded-lg border border-secondary/15 bg-background/35 p-3 text-xs leading-relaxed text-secondary/75">
-              I don't disclose or rely on confidential employer, client, customer, transaction, regulatory, or proprietary information here.
-            </p>
-            <div className="mt-5 space-y-2 border-t border-secondary/15 pt-4">
+            <ul className="mt-5 space-y-2.5 border-t border-secondary/15 pt-4">
               {credentials.map((c) => (
-                <div key={c.label} className="flex items-start gap-2.5">
-                  <c.icon size={13} className="mt-0.5 shrink-0 text-primary/70" />
-                  <span className="text-xs text-secondary/75">{c.label}</span>
-                </div>
+                <li key={c.label} className="flex items-center gap-2.5 text-base text-secondary/85">
+                  <c.icon size={16} className="shrink-0 text-primary" aria-hidden="true" />
+                  {c.label}
+                </li>
               ))}
-            </div>
+            </ul>
             <a
               href="https://www.linkedin.com/in/sreekotha/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary transition hover:text-heading"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading"
             >
-              <Linkedin size={15} />
+              <Linkedin size={15} aria-hidden="true" />
               Connect on LinkedIn
             </a>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <div className="glass rounded-lg border border-secondary/20 p-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-secondary/70">
-                Experience summary
-              </p>
-              <p className="text-sm leading-relaxed text-secondary/75">
-                Experience informed by two decades across global financial services, finance technology, risk operations, regulatory reporting, data platforms, and AI-enabled transformation.
-              </p>
-            </div>
-
-            <div className="glass rounded-lg border border-secondary/20 p-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-secondary/70">
-                Core technical focus
-              </p>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {technicalSkills.map((s) => (
-                  <div key={s.label} className="flex items-center gap-2.5 rounded-lg border border-primary/15 bg-primary/10 px-3 py-2.5">
-                    <s.icon size={14} className="shrink-0 text-primary" />
-                    <span className="text-sm text-secondary/80">{s.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="glass rounded-lg border border-secondary/20 p-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-secondary/70">
-                Domain focus
-              </p>
-              <ul className="space-y-2">
-                {financeExpertise.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-secondary/70">
-                    <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-primary/60" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          </aside>
         </div>
-      </Section>
+      </section>
 
-      <section className="section border-y border-secondary/10 bg-background/40 py-12">
+      <section className="section pb-0">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
-            <div className="flex h-24 w-16 shrink-0 items-center justify-center rounded-lg border border-primary/40 bg-primary/10 text-primary md:h-28 md:w-20">
-              <BookOpen size={28} />
-            </div>
-            <div>
-              <p className="mb-1 font-mono text-xs uppercase tracking-[0.14em] text-primary">Published Book</p>
-              <h2 className="text-xl font-semibold text-heading md:text-2xl">
-                AI for Financial Risk, Compliance and Regulatory Reporting
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-secondary/70">
-                Practitioner-focused educational writing on controlled AI adoption for financial risk, compliance, regulatory reporting, governance, RAG, agents, MLOps, LLMOps, and enterprise banking architecture.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Link href="/books" className="btn-outline text-sm">
-                View Books
-                <ArrowRight size={14} />
-              </Link>
-            </div>
+          <h2 className="text-3xl font-semibold text-heading">What I work on</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {focus.map(([t, d]) => (
+              <article key={t} className="card-glow p-6">
+                <h3 className="text-xl font-semibold text-heading">{t}</h3>
+                <p className="mt-2 text-base leading-relaxed text-secondary/80">{d}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <Section title="Read the books, research, and blueprints" description="">
-        <CTA />
-      </Section>
+      <section className="section">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="rounded-2xl border border-primary/25 bg-primary/10 p-6 md:p-8">
+            <h2 className="text-xl font-semibold text-heading">Independent by design</h2>
+            <p className="mt-2 max-w-3xl text-base leading-relaxed text-secondary/85">
+              This is my own work, done in my own time. It doesn't represent any employer, client or regulator, uses no
+              confidential information, and isn't consulting or professional advice.{" "}
+              <Link href="/disclaimers" className="font-semibold text-primary hover:text-heading">
+                Read the full independence statement
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

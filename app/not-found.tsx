@@ -18,9 +18,9 @@ export default function NotFound() {
             <Home size={15} aria-hidden="true" />
             Back to Home
           </Link>
-          <Link href="/blog" className="btn-outline text-sm">
+          <Link href="/books" className="btn-outline text-sm">
             <BookOpen size={15} aria-hidden="true" />
-            Read our Blog
+            Explore the book
           </Link>
           <Link href="/contact" className="btn-outline text-sm">
             <ArrowRight size={15} aria-hidden="true" />
@@ -30,8 +30,8 @@ export default function NotFound() {
 
         <div className="mt-16 grid gap-5 sm:grid-cols-3">
           {[
-            { href: "/blog",         label: "Writing",      desc: "Articles by topic" },
-            { href: "/blueprints",   label: "Blueprints",   desc: "Reference architectures" },
+            { href: "/newsletter",   label: "Newsletter",   desc: "The weekly briefing" },
+            { href: "/about",        label: "About",        desc: "Who is behind LorvexAI" },
             { href: "/books",        label: "Books",        desc: "Books and publications" }
           ].map((item) => (
             <Link

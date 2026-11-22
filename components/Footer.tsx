@@ -7,8 +7,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const logoSrc = `${basePath}/Logo.png`.replace("//", "/");
 
 const footerLinks = [
-  { href: "/blog", label: "Writing" },
-  { href: "/blueprints", label: "Reference Blueprints" },
   { href: "/books", label: "Books" },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/about", label: "About" },
@@ -22,36 +20,14 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10 bg-background/60">
-      <div className="border-b border-secondary/10 bg-gradient-to-r from-primary/10 via-transparent to-glow/10 py-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-semibold text-heading">I write about controlled AI, model risk, and financial regulation.</p>
-            <p className="mt-1 text-sm text-secondary/75">
-              Books, research notes, and reference blueprints from Sreedhara Reddy Kotha.
-            </p>
-          </div>
-          <div className="flex shrink-0 gap-3">
-            <Link href="/books" className="btn-primary text-sm">
-              Explore Books
-            </Link>
-            <Link href="/newsletter" className="btn-outline text-sm">
-              Newsletter
-            </Link>
-            <Link href="/blog" className="btn-outline text-sm">
-              Read Writing
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-6xl px-6 py-14">
+      <div className="mx-auto w-full max-w-6xl px-6 py-10">
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <div>
             <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/75">
               <strong className="text-heading">LorvexAI</strong>
               <br />
-              My personal site for research, writing, and reference architecture on controlled AI.
+              Books and a weekly briefing on controlled AI, model risk and financial regulation.
             </p>
             <div className="mt-6 flex flex-col gap-3">
               <a
@@ -95,10 +71,9 @@ export default function Footer() {
 
       <div className="border-t border-secondary/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-secondary/70">
+          <p className="text-sm text-secondary/70">
             &copy; {new Date().getFullYear()} Sreedhara Reddy Kotha. All rights reserved.
           </p>
-          <p className="text-xs text-secondary/70">Educational content only. No professional advice.</p>
         </div>
       </div>
     </footer>
