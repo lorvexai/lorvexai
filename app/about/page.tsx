@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Award, Cloud, GraduationCap, Linkedin } from "lucide-react";
+import { ArrowRight, Linkedin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About LorvexAI | Independent Research and Architecture",
@@ -13,12 +13,6 @@ export const metadata: Metadata = {
     type: "website"
   }
 };
-
-const credentials = [
-  { icon: GraduationCap, label: "MTech" },
-  { icon: Cloud, label: "Google Cloud Professional Cloud Architect" },
-  { icon: Award, label: "SAFe Agilist" }
-];
 
 const focus = [
   ["Controlled AI architecture", "Retrieval governance, evidence design and human oversight built in from the start."],
@@ -66,19 +60,11 @@ export default function AboutPage() {
                 <p className="text-sm text-secondary/80">Founder, LorvexAI</p>
               </div>
             </div>
-            <ul className="mt-5 space-y-2.5 border-t border-secondary/15 pt-4">
-              {credentials.map((c) => (
-                <li key={c.label} className="flex items-center gap-2.5 text-base text-secondary/85">
-                  <c.icon size={16} className="shrink-0 text-primary" aria-hidden="true" />
-                  {c.label}
-                </li>
-              ))}
-            </ul>
             <a
               href="https://www.linkedin.com/in/sreekotha/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading"
+              className="mt-5 inline-flex items-center gap-2 border-t border-secondary/15 pt-4 text-sm font-semibold text-primary hover:text-heading"
             >
               <Linkedin size={15} aria-hidden="true" />
               Connect on LinkedIn
