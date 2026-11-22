@@ -30,7 +30,7 @@ export default function HomePage() {
               <span className="text-heading"> and defend</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-secondary/85">
-              Research and reference architectures for banking, risk and regulatory technology.
+              A book with tested code, and a weekly briefing on regulation, for banking and risk teams.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/books" className="btn-primary min-h-11 text-sm">

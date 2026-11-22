@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${normalizedSiteUrl}/`),
   title: "LorvexAI - Controlled AI Architecture, Books and Research",
   description:
-    "Independent books, research, technical guides, and reference architectures for controlled AI systems in finance, risk, compliance, and enterprise automation.",
+    "Independent books and a weekly briefing on controlled AI systems in finance, risk, compliance, and enterprise automation.",
   keywords: [
     "Controlled AI Architecture",
     "AI Governance Education",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LorvexAI - Controlled AI Architecture, Books and Research",
     description:
-      "Independent books, research, technical guides, and reference architectures for controlled AI systems in regulated environments.",
+      "Independent books and a weekly briefing on controlled AI systems in regulated environments.",
     url: siteUrl,
     siteName: "LorvexAI",
     images: [
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LorvexAI | Controlled AI Architecture",
     description:
-      "Books, research, technical guides, and reference architectures for controlled AI systems.",
+      "Books and a weekly briefing on controlled AI systems.",
     images: [socialImageUrl]
   }
 };
