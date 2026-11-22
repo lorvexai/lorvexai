@@ -1,0 +1,149 @@
+{
+  "number": 1,
+  "slug": "2026-11-23-issue-1",
+  "date": "2026-11-23",
+  "status": "preview",
+  "title": "UK regulators treat AI as a cyber-resilience problem. Basel 3.1 is five weeks out.",
+  "summary": "The PRA, FCA and Bank of England publish joint AI cyber expectations, Basel 3.1 goes live on 1 January, and HKMA, the US agencies, the FCA and the EU all moved on AI governance.",
+  "headline": {
+    "region": "UK",
+    "title": "PRA, FCA and Bank of England publish joint effective practices on AI cyber risk",
+    "body": [
+      "On 19 November the three UK authorities published non-binding effective practices on cyber risk and resilience relating to AI. They are explicitly not a rulebook, but they show where supervisory questions will go. The document names AI-specific threats including prompt injection, model and data poisoning, jailbreaking, adversarial inputs, attacks by autonomous agents and deepfakes.",
+      "Two details matter for practitioners. First, the expected depth of oversight scales with the use case's materiality, risk, autonomy, complexity and explainability. Second, the scope reaches beyond the model itself: model endpoints and APIs, AI embedded in third-party services, and AI and model inventories all appear. The same day, the regulators opened consultation CP17/26 on cyber risk and resilience management more broadly."
+    ],
+    "why": "Model validation alone no longer answers the question. A model that passes SS1/23 validation can still sit inside a system whose retrieval layer, tool permissions and vendor dependencies have never been tested.",
+    "sources": [
+      { "label": "Bank of England: effective practices", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/effective-practices-cyber-risk-and-resilience-management-relating-to-artificial-intelligence" },
+      { "label": "CP17/26 and GC26/9", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/cyber-risk-and-resilience-management-consultation-paper" },
+      { "label": "AI Weekly summary", "url": "https://aiweekly.co/alerts/pra-fca-and-bank-of-england-issue-ai-cyber-defence-guide" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "finance-regulation",
+      "title": "Finance regulation",
+      "items": [
+        {
+          "region": "UK",
+          "title": "Basel 3.1 starts on 1 January 2027, with FRTB-IMA a year later",
+          "body": "The PRA's final rules (PS1/26, published 20 January) apply from 1 January 2027. The one carve-out is the market risk internal model approach, deferred to 1 January 2028, with existing IMA permissions kept in the interim. The Pillar 2A Phase 1 rules (PS15/26) share the same 1 January 2027 date, and Pillar 3 disclosures follow it too.",
+          "why": "Reporting and data teams have roughly five weeks. Template changes, new Pillar 2A reporting and the retained IMA templates are the places where late surprises tend to show up.",
+          "sources": [
+            { "label": "PS1/26 (Bank of England)", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/january/implementation-of-basel-3-1-final-rules-policy-statement" },
+            { "label": "PwC summary", "url": "https://www.pwc.co.uk/industries/financial-services/understanding-regulatory-developments/pra-publishes-final-basel-3-1-rules.html" },
+            { "label": "PS15/26 Pillar 2A", "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/may/pillar-2a-review-phase-1-policy-statement" }
+          ]
+        },
+        {
+          "region": "UK",
+          "title": "PRA chief says banks are trimming AI exposure; frontier AI guidance due",
+          "body": "In her first interview since taking over the PRA in July, Katharine Braddick said UK banks have started reducing AI-related exposure as concern about a sector correction grows. Reporting from the same interview says the PRA and FCA planned to publish guidance later in November on frontier AI and quantum risks, with no capital rule changes under consideration yet.",
+          "why": "Concentration to AI counterparties is now a supervisory topic as well as a model risk topic. Expect questions on client and vendor exposure, not only on your own models.",
+          "sources": [
+            { "label": "Insurance Journal (Bloomberg report)", "url": "https://www.insurancejournal.com/news/international/2026/11/10/892235.htm" }
+          ]
+        },
+        {
+          "region": "US",
+          "title": "SR 26-2 replaced SR 11-7, but generative and agentic AI are out of scope",
+          "body": "The OCC, Federal Reserve and FDIC issued revised model risk management guidance on 17 April, replacing the 2011 framework with a more principles-based approach. Generative and agentic AI models are expressly outside its scope, and the agencies said they intend to issue a request for information on model risk and banks' use of AI, including generative and agentic systems.",
+          "why": "US banks face a gap: the formal guidance does not cover the systems that are growing fastest. Firms operating in both the UK and US should expect to apply SS1/23-style controls to those systems on their own initiative.",
+          "sources": [
+            { "label": "OCC news release 2026-29", "url": "https://www.occ.treas.gov/news-issuances/news-releases/2026/nr-occ-2026-29.html" },
+            { "label": "KPMG reg alert", "url": "https://kpmg.com/us/en/articles/2026/model-risk-management-revised-interagency-guidance-reg-alert.html" }
+          ]
+        },
+        {
+          "region": "Hong Kong",
+          "title": "HKMA introduces the ART framework: accountability, resiliency, trust",
+          "body": "On 15 October the HKMA announced the ART framework under Fintech 2030, with updated supervisory guidance drawn from the second GenAI Sandbox cohort. More than 60% of the use cases in that cohort involved agentic AI. The HKMA plans further agentic trials through GenAI Sandbox++ and a discussion paper on a supervisory framework for such systems.",
+          "why": "Hong Kong is moving to agentic AI supervision earlier than most. If you build for HKMA-regulated entities, the forthcoming discussion paper is the document to watch.",
+          "sources": [
+            { "label": "HKMA press release", "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/10/20261015-3/" },
+            { "label": "Crowdfund Insider", "url": "https://www.crowdfundinsider.com/2026/10/319088-hong-kong-unveils-ai-framework-for-banks-as-agentic-applications-gain-traction/" }
+          ]
+        },
+        {
+          "region": "India",
+          "title": "RBI Governor sets out an AI playbook for banks; FREE-AI remains the reference",
+          "body": "In an August speech at FIBAC, Governor Sanjay Malhotra framed AI adoption as a choice between shaping it with intent or letting it shape you by default, and pointed back to the RBI's FREE-AI committee report. That report, published in August 2025, rests on seven principles and six pillars, with 26 recommendations covering sandboxes, governance, audit and incident reporting.",
+          "why": "For groups with Indian entities, FREE-AI's board-policy outline and AI incident reporting form are practical templates, even though they are recommendations rather than rules.",
+          "sources": [
+            { "label": "RBI Governor speech", "url": "https://www.rbi.org.in/scriptS/BS_ViewBulletin.aspx?Id=24371" },
+            { "label": "FREE-AI report (RBI)", "url": "https://rbi.org.in/scripts/PublicationReportDetails.aspx?ID=1306" },
+            { "label": "KPMG India summary", "url": "https://kpmg.com/in/en/insights/2025/08/rbi-free-ai-committee-report-on-framework-for-responsible-and-ethical-enablement-of-artificial-intelligence.html" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-regulation",
+      "title": "Global AI regulation",
+      "items": [
+        {
+          "region": "UK",
+          "title": "FCA publishes good and poor practice for AI in financial services",
+          "body": "On 19 October the FCA published examples of good practice and areas for improvement in AI adoption, alongside a speech by its chief data officer. It responds in part to the Mills Review (July 2026) and draws on AI Live Testing and the Supercharged Sandbox. The FCA stresses that firms stay accountable for customer outcomes, and notes that risk rises as the autonomy given to an AI tool increases.",
+          "why": "The Consumer Duty is the working framework for AI in retail firms. Define the customer need and target market before the AI feature, not after.",
+          "sources": [
+            { "label": "TLT briefing", "url": "https://www.tlt.com/insights-and-events/insight/fca-publishes-ai-good-practice-guide---what-regulated-firms-must-do-now" },
+            { "label": "Travers Smith briefing", "url": "https://www.traverssmith.com/knowledge/knowledge-container/uk-fca-guidance-on-ai-in-financial-services-good-practices-and-areas-for-improvement/" },
+            { "label": "Deloitte on the Mills Review", "url": "https://www.deloitte.com/uk/en/blogs/ecrs/the-future-of-ai-regulation-in-uk-financial-services-key-insights-from-the-fcas-mills-review.html" }
+          ]
+        },
+        {
+          "region": "EU",
+          "title": "AI Act high-risk obligations delayed under the Digital Omnibus",
+          "body": "The Commission proposed the Digital Omnibus on AI in November 2025 to defer the high-risk regime, which would otherwise have applied from 2 August 2026. Negotiators reached a provisional deal in May, and law firm commentary in July describes the omnibus as now in force. Check the final application dates in the adopted text before updating any programme plan, as proposal-stage dates differed from the final deal.",
+          "why": "Credit scoring and similar Annex III uses get more time, but the obligations themselves are unchanged. Teams that pause governance work will pay for it later.",
+          "sources": [
+            { "label": "Orrick update (July 2026)", "url": "https://www.orrick.com/zh-CN/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes" },
+            { "label": "Proskauer on the provisional deal", "url": "https://www.proskauer.com/insights/get-pdf/29886" },
+            { "label": "Pinsent Masons", "url": "https://www.pinsentmasons.com/out-law/news/rules-high-risk-ai-delayed-under-eu-omnibus-deal" }
+          ]
+        },
+        {
+          "region": "UK",
+          "title": "Government publishes the Financial Services AI Adoption Plan",
+          "body": "Published on 14 July, the plan reports AI adoption of around 75% among firms surveyed by the FCA and Bank of England, and sets out barriers the government wants to address.",
+          "why": "It signals that policy is pushing adoption while supervisors tighten expectations. Both pressures will land on the same teams.",
+          "sources": [
+            { "label": "GOV.UK adoption plan", "url": "https://gov.uk/government/publications/ai-adoption-plan-financial-services/financial-services-ai-adoption-plan" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-fintech",
+      "title": "Global AI and fintech technology",
+      "items": [
+        {
+          "region": "Hong Kong",
+          "title": "HKIMR report: from assistance to autonomy in AI compliance",
+          "body": "A Hong Kong research report released on 17 November looks at how AI is moving from assisting compliance staff towards acting autonomously. Press coverage of the underlying survey says 86% of surveyed institutions have adopted or plan to adopt generative AI tools for regulatory compliance, and more than 70% want to explore agentic AI for compliance over the next three to five years.",
+          "why": "Agentic compliance is moving from pilot to planning horizon. The design question is the same one regulators keep asking: where does the human gate sit, and what evidence does each step leave behind?",
+          "sources": [
+            { "label": "HKIMR release", "url": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261117-3/" },
+            { "label": "The Standard", "url": "https://www.thestandard.com.hk/innovation/article/348752/GenAI-adoption-in-HK-finance-hits-90pc-report" }
+          ]
+        },
+        {
+          "region": "Global",
+          "title": "Agentic AI is now a cyber-threat category for supervisors",
+          "body": "Reporting on the PRA chief's interview ties regulators' recent focus to Anthropic's Mythos model, which prompted watchdogs and governments to consider cyberattacks carried out by agentic AI. That worry sits behind the joint AI cyber document above.",
+          "why": "Build agent controls assuming the agent will be attacked, not only that it will err: scoped permissions, retrieval hygiene, logging, and a kill switch.",
+          "sources": [
+            { "label": "Insurance Journal (Bloomberg report)", "url": "https://www.insurancejournal.com/news/international/2026/11/10/892235.htm" }
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    "Test the system, not just the model: prompt injection, retrieval poisoning, tool permissions and third-party AI dependencies.",
+    "Extend your AI inventory to cover endpoints, embedded vendor AI and agent permissions.",
+    "Freeze the Basel 3.1 reporting template changes now. Five weeks is short.",
+    "Keep EU AI Act governance work running. The delay moves the date, not the obligation."
+  ]
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { NEWSLETTER_NAME, NEWSLETTER_URL } from "@/utils/site";
+import { formatIssueDate, getIssues } from "@/utils/newsletter";
 
 export const metadata: Metadata = {
   title: `${NEWSLETTER_NAME} | Weekly AI and Financial Regulation Briefing | LorvexAI`,
@@ -19,6 +20,7 @@ const FORMAT = [
 
 export default function NewsletterPage() {
   const external = NEWSLETTER_URL.length > 0;
+  const issues = getIssues();
   const cta = external ? (
     <a href={NEWSLETTER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
       <Mail size={15} aria-hidden="true" />
@@ -42,6 +44,32 @@ export default function NewsletterPage() {
             regulatory reporting. Written for risk leaders, regulatory reporting heads and RegTech builders.
           </p>
           <div className="mt-8">{cta}</div>
+        </div>
+      </section>
+
+      <section className="section pt-4">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <h2 className="text-2xl font-semibold text-heading">Issues</h2>
+          <div className="mt-6 grid gap-5">
+            {issues.map((i) => (
+              <Link key={i.slug} href={`/newsletter/${i.slug}`} className="card-glow group p-7">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="chip">Issue {i.number}</span>
+                  <span className="font-mono text-xs text-secondary/60">{formatIssueDate(i.date)}</span>
+                  {i.status === "preview" && (
+                    <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">
+                      Preview
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold leading-snug">{i.title}</h3>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary/75">{i.summary}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+                  Read issue <ArrowRight size={14} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
