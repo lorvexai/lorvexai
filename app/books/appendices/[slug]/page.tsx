@@ -45,7 +45,7 @@ export default function AppendixPage({ params }: { params: { slug: string } }) {
         <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-primary">{a.kicker}</p>
         <h1 className="mt-2 text-4xl font-semibold text-heading">{a.title}</h1>
         <article
-          className="prose prose-invert mt-8 max-w-none
+          className="prose mt-8 max-w-none
             prose-headings:font-semibold prose-headings:text-heading
             prose-h2:mt-10 prose-h2:text-2xl prose-h3:text-xl
             prose-p:leading-relaxed prose-p:text-secondary/80

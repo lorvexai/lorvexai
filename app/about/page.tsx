@@ -98,18 +98,6 @@ export default function AboutPage() {
           </ol>
         </div>
       </section>
-
-      <section className="section">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="max-w-3xl text-sm leading-relaxed text-secondary/75">
-            This is independent work, done in my own time. It isn't affiliated with any employer, client or regulator, and
-            uses no confidential information.{" "}
-            <Link href="/disclaimers" className="font-semibold text-primary hover:text-heading">
-              Read the full independence statement
-            </Link>
-          </p>
-        </div>
-      </section>
     </>
   );
 }

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -39,9 +38,6 @@ export default function Header() {
                 </Link>
               );
             })}
-            <div className="ml-2">
-              <ThemeToggle />
-            </div>
           </nav>
         </div>
 
@@ -62,9 +58,6 @@ export default function Header() {
               </Link>
             );
           })}
-          <div className="ml-1 shrink-0">
-            <ThemeToggle />
-          </div>
         </nav>
       </div>
     </header>
