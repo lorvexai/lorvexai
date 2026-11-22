@@ -81,14 +81,6 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="border-y border-secondary/10 py-4">
-          <p className="mx-auto max-w-6xl px-6 text-center text-sm text-secondary/80">
-            <span className="font-semibold text-heading">Maps to </span>
-            PRA SS1/23 <span className="mx-1.5 text-primary">·</span> EU AI Act{" "}
-            <span className="mx-1.5 text-primary">·</span> DORA <span className="mx-1.5 text-primary">·</span> BCBS 239{" "}
-            <span className="mx-1.5 text-primary">·</span> SM&amp;CR <span className="mx-1.5 text-primary">·</span> Consumer Duty
-          </p>
-        </div>
       </section>
 
       <section className="section py-8 md:py-10">
