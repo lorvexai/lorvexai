@@ -1,29 +1,21 @@
-# Lorvex AI Marketing Website
+# LorvexAI website (lorvexai.com)
 
-## Setup
-1. Install dependencies
-`npm install`
+Next.js (static export) site served from Cloudflare Workers, with a `/api/ask` worker for the archive Q&A.
 
-2. Run the dev server
-`npm run dev`
+## Develop
+- `npm install`
+- `npm run dev`
+- `npm run build` (builds the search index first, then exports to `out/`)
 
-3. Build for production
-`npm run build`
+## Deploy
+Pushes to `main` build and deploy. Worker config is in `wrangler.jsonc`; the worker is `worker/index.js`.
 
-## Deployment (Vercel)
-1. Create a new Vercel project and import this repository.
-2. Framework preset: Next.js.
-3. Deploy.
+## Structure
+- `app/` pages (home, blog, blueprints, books, newsletter, about, ask, contact, legal)
+- `components/` shared UI
+- `blog/` Markdown articles
+- `utils/` blog helpers and `site.ts` (newsletter and book links)
+- `public/` static assets, sitemap, `_redirects`
 
-## Connect Domain
-1. In Vercel, open Project Settings.
-2. Go to Domains.
-3. Add `lorvex.ai`.
-4. Update DNS records at your registrar to match Vercel’s provided values.
-
-## Project Structure
-- `C:\Sree\lorvex-ai\app` - Next.js App Router pages and layout
-- `C:\Sree\lorvex-ai\components` - Reusable UI components
-- `C:\Sree\lorvex-ai\blog` - Markdown content
-- `C:\Sree\lorvex-ai\utils` - Blog utilities
-- `C:\Sree\lorvex-ai\public` - Static assets
+## Newsletter signup
+Set `NEWSLETTER_URL` in `utils/site.ts` once the newsletter platform is chosen.

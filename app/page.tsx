@@ -3,6 +3,7 @@ import { getAllPosts } from "@/utils/posts";
 import RegulatoryMockup from "@/components/mockups/RegulatoryMockup";
 import TreasurySentinelMockup from "@/components/mockups/TreasurySentinelMockup";
 import FeaturedInsights from "@/components/FeaturedInsights";
+import { BOOK_KINDLE_URL, BOOK_PAPERBACK_URL } from "@/utils/site";
 import {
   ArrowRight,
   CheckCircle2,
@@ -124,8 +125,11 @@ export default function HomePage() {
                 Read Writing
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/blueprints" className="btn-outline min-h-11 text-sm font-semibold">
-                View Blueprints
+              <Link href="/books" className="btn-outline min-h-11 text-sm font-semibold">
+                The Book
+              </Link>
+              <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
+                Newsletter
               </Link>
               <Link href="/ask" className="btn-outline min-h-11 text-sm font-semibold">
                 Ask the Archive
@@ -152,6 +156,43 @@ export default function HomePage() {
             <div className="mt-4 flex items-center justify-between border-t border-secondary/15 pt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-secondary/45">
               <span>Drawn — S. R. Kotha</span>
               <span>Rev B</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="grid gap-8 rounded-lg border border-primary/25 bg-panel/70 p-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">The book</p>
+              <h2 className="mt-3 text-3xl font-semibold text-heading">
+                AI for Financial Risk, Compliance and Regulatory Reporting
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-secondary/75">
+                16 chapters, 31 AI systems and tested Python reference code, governed from day one against PRA SS1/23, the EU AI Act and DORA.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href={BOOK_PAPERBACK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
+                  Buy paperback
+                </a>
+                <a href={BOOK_KINDLE_URL} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+                  Kindle
+                </a>
+                <Link href="/books" className="btn-outline text-sm">
+                  Contents and companion code
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-lg border border-secondary/15 bg-background/35 p-6">
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Newsletter</p>
+              <p className="mt-3 text-sm leading-relaxed text-secondary/75">
+                A weekly briefing on what PRA, FCA, EBA and Fed changes mean for AI in risk and regulatory reporting.
+              </p>
+              <Link href="/newsletter" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-heading">
+                About the newsletter
+                <ArrowRight size={14} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>

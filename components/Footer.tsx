@@ -10,6 +10,7 @@ const footerLinks = [
   { href: "/blog", label: "Writing" },
   { href: "/blueprints", label: "Reference Blueprints" },
   { href: "/books", label: "Books" },
+  { href: "/newsletter", label: "Newsletter" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/disclaimers", label: "Disclaimers" },
@@ -32,6 +33,9 @@ export default function Footer() {
           <div className="flex shrink-0 gap-3">
             <Link href="/books" className="btn-primary text-sm">
               Explore Books
+            </Link>
+            <Link href="/newsletter" className="btn-outline text-sm">
+              Newsletter
             </Link>
             <Link href="/blog" className="btn-outline text-sm">
               Read Writing
