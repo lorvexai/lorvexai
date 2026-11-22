@@ -2,12 +2,12 @@ import SubscribeForm from "@/components/SubscribeForm";
 
 export default function CTA() {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-transparent to-glow/10 px-8 py-12 text-center md:px-16">
-      <h2 className="text-3xl font-semibold text-heading md:text-4xl">Stay with the weekly briefing.</h2>
-      <p className="mx-auto mt-4 max-w-xl text-lg text-secondary/80">
-        A short weekly note on what regulators changed for AI in risk, written for practitioners.
-      </p>
-      <div className="mt-8 flex flex-col items-center gap-5">
+    <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-transparent to-glow/10 px-6 py-6 md:px-8">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div className="max-w-xl">
+          <h2 className="text-2xl font-semibold text-heading">Stay with the weekly briefing.</h2>
+          <p className="mt-1 text-base text-secondary/80">What regulators changed for AI in risk, for practitioners.</p>
+        </div>
         <SubscribeForm id="cta-email" />
       </div>
     </div>

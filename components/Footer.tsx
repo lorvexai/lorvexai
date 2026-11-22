@@ -6,6 +6,7 @@ import LegalDisclaimerBanner from "@/components/LegalDisclaimerBanner";
 // Books, Newsletter and About live in the header, and the full disclaimer is linked
 // from the notice below, so the footer keeps only what the header does not.
 const legalLinks = [
+  { href: "/disclaimers", label: "Disclaimer" },
   { href: "/privacy", label: "Privacy" },
   { href: "/cookies", label: "Cookies" },
   { href: "/terms", label: "Terms" }
@@ -14,15 +15,15 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-secondary/10 bg-background/60">
-      <div className="mx-auto w-full max-w-6xl px-6 py-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-md">
+      <div className="mx-auto w-full max-w-6xl px-6 py-5">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
             <Logo />
-            <p className="mt-3 text-sm leading-relaxed text-secondary/80">
+            <p className="text-sm text-secondary/80">
               Books and a weekly briefing on controlled AI, model risk and financial regulation.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-5">
             <a
               href="https://www.linkedin.com/in/sreekotha/"
               target="_blank"
@@ -42,8 +43,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-
-        <div className="mt-6 border-t border-secondary/10 pt-5">
+        <div className="mt-3">
           <LegalDisclaimerBanner />
         </div>
       </div>

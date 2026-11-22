@@ -16,12 +16,8 @@ export default function LegalDisclaimerBanner({ full = false }: { full?: boolean
   }
   return (
     <p className="text-sm leading-relaxed text-secondary/75">
-      Educational content only. Not financial, legal, regulatory or professional advice.
-      <br />
-      Independent of any employer, client or regulator.{" "}
-      <Link href="/disclaimers" className="font-semibold text-primary hover:text-heading">
-        Read full disclaimer
-      </Link>
+      Educational content only. Not financial, legal, regulatory or professional advice. Independent of any employer, client
+      or regulator.
     </p>
   );
 }

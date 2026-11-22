@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
           <CTA />
         </div>
