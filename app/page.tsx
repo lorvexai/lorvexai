@@ -40,8 +40,7 @@ export default function HomePage() {
               Governed AI for banking, finance and risk
             </p>
             <h1 className="mt-5 max-w-3xl text-5xl font-bold leading-[1.03] md:text-6xl">
-              <span className="text-heading">AI you can </span>
-              <span className="text-gradient">govern, audit and defend.</span>
+              <span className="text-heading">AI you can govern, audit and defend.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-secondary/85">
               Practical guidance for banking, finance, risk and regulatory-reporting teams building AI systems that must be
