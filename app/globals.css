@@ -5,12 +5,12 @@
 @import "../styles/theme.css";
 
 /* ── Design tokens ─────────────────────────────────────────────
-   Light theme only: soft slate ground, teal primary, indigo accent.
+   Light theme only: soft slate ground, dark-slate text, deep teal primary, indigo accent (all text meets WCAG AA).
    Edit this block to re-theme the whole site.                  */
 :root {
   --color-background-rgb: 248 250 252;
-  --color-primary-rgb: 14 116 144;
-  --color-secondary-rgb: 51 65 85;
+  --color-primary-rgb: 14 105 130;
+  --color-secondary-rgb: 30 41 59;
   --color-surface-rgb: 255 255 255;
   --color-panel-rgb: 255 255 255;
   --color-panel-2-rgb: 241 245 249;
