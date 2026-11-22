@@ -31,19 +31,9 @@ const STATS = [
   ["8", "Regulatory frameworks"]
 ];
 
-const WHY = [
-  [
-    "Governed from day one",
-    "PRA SS1/23's four-gate deployment framework, EU AI Act human-oversight checkpoints and DORA's 70% LLM-concentration cap are load-bearing design constraints in every chapter, not a compliance appendix bolted on afterward."
-  ],
-  [
-    "Working code, not pseudocode",
-    "Every system described, 31 primary AI/ML systems and 11 agentic oversight pipelines, ships as tested Python 3.11+ in the companion repository, each carrying its own AWB Model Registry (MR) reference."
-  ],
-  [
-    "Failures included, deliberately",
-    "A £12M near-miss from an ungrounded RAG query, an £840 overnight agent API bill and a PRA s166 skilled-person review are worked through with the same rigour as the wins."
-  ]
+const FAILURES = [
+  "Failures included, deliberately",
+  "A £12M near-miss from an ungrounded RAG query, an £840 overnight agent API bill and a PRA s166 skilled-person review are worked through with the same rigour as the wins."
 ];
 
 const JOURNEY = [
@@ -186,14 +176,10 @@ export default function BooksPage() {
           <p className="mt-3 max-w-2xl text-secondary/70">
             Most AI-in-banking material stops at the proof of concept. This book starts where that ends.
           </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {WHY.map(([title, text]) => (
-              <article key={title} className="card-glow p-6">
-                <h3 className="text-lg font-semibold text-heading">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
-              </article>
-            ))}
-          </div>
+          <article className="card-glow mt-6 max-w-3xl p-6">
+            <h3 className="text-lg font-semibold text-heading">{FAILURES[0]}</h3>
+            <p className="mt-2 text-base leading-relaxed text-secondary/80">{FAILURES[1]}</p>
+          </article>
         </div>
       </section>
 

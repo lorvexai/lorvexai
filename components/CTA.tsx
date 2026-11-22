@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import SubscribeForm from "@/components/SubscribeForm";
 
 export default function CTA() {
@@ -11,10 +9,6 @@ export default function CTA() {
       </p>
       <div className="mt-8 flex flex-col items-center gap-5">
         <SubscribeForm id="cta-email" />
-        <Link href="/books" className="btn-outline min-h-11 text-sm font-semibold">
-          Explore the book
-          <ArrowRight size={16} aria-hidden="true" />
-        </Link>
       </div>
     </div>
   );
