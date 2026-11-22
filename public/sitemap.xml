@@ -32,4 +32,8 @@
   <url><loc>https://lorvexai.com/blog/production-rag-beyond-the-basics/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lorvexai.com/blog/sec-and-ai-ai-washing-predictive-analytics-conflicts-disclosure-risk/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lorvexai.com/blog/the-rise-of-agentic-ai/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lorvexai.com/books/appendices/glossary.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lorvexai.com/books/appendices/model-registry.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lorvexai.com/books/appendices/regulatory-reference.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lorvexai.com/books/appendices/tech-stack.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>
