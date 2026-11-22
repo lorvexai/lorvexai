@@ -37,7 +37,7 @@ export default function NewsletterPage() {
     <>
       <section className="section pb-8 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Newsletter</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Newsletter</p>
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-heading md:text-5xl">{NEWSLETTER_NAME}</h1>
           <p className="mt-4 max-w-2xl text-lg text-secondary/75">
             A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and
@@ -55,7 +55,7 @@ export default function NewsletterPage() {
               <Link key={i.slug} href={`/newsletter/${i.slug}`} className="card-glow group p-7">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="chip">Issue {i.number}</span>
-                  <span className="font-mono text-xs text-secondary/60">{formatIssueDate(i.date)}</span>
+                  <span className="font-mono text-xs text-secondary/75">{formatIssueDate(i.date)}</span>
                   {i.status === "preview" && (
                     <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">
                       Preview
@@ -84,7 +84,7 @@ export default function NewsletterPage() {
               </article>
             ))}
           </div>
-          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-secondary/55">
+          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-secondary/70">
             Opinion is the author&apos;s own and is labelled as such. Issues cite primary sources and are educational, not
             legal, regulatory or investment advice.
           </p>

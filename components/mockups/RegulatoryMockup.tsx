@@ -39,10 +39,10 @@ export default function RegulatoryMockup() {
       <div className="flex items-center justify-between border-b border-secondary/10 px-4 py-2.5" style={{ background: "rgba(12,25,48,0.9)" }}>
         <div className="flex gap-4">
           {["Dashboard", "Obligations", "Controls", "Evidence", "Reports"].map((t, i) => (
-            <span key={t} className={`text-xs ${i === 1 ? "border-b border-primary pb-1 text-heading" : "text-secondary/45"}`}>{t}</span>
+            <span key={t} className={`text-xs ${i === 1 ? "border-b border-primary pb-1 text-heading" : "text-secondary/70"}`}>{t}</span>
           ))}
         </div>
-        <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] text-primary">
+        <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs text-primary">
           Synthetic demo data - illustrative only
         </span>
       </div>
@@ -58,7 +58,7 @@ export default function RegulatoryMockup() {
             ].map((m) => (
               <div key={m.label} className="rounded-lg border border-secondary/10 bg-background/40 p-2.5 text-center">
                 <p className={`text-base font-bold ${m.color}`}>{m.value}</p>
-                <p className="mt-0.5 text-[9px] text-secondary/45">{m.label}</p>
+                <p className="mt-0.5 text-[9px] text-secondary/70">{m.label}</p>
               </div>
             ))}
           </div>
@@ -66,29 +66,29 @@ export default function RegulatoryMockup() {
           <div className="overflow-hidden rounded-lg border border-secondary/10">
             <div className="grid grid-cols-[1fr_1.4fr_auto_auto_auto] gap-x-3 border-b border-secondary/10 bg-background/60 px-3 py-1.5">
               {["Ref", "Candidate", "Status", "Evidence", "Risk"].map((h) => (
-                <span key={h} className="text-[9px] font-semibold uppercase tracking-wider text-secondary/35">{h}</span>
+                <span key={h} className="text-[9px] font-semibold uppercase tracking-wider text-secondary/70">{h}</span>
               ))}
             </div>
             {obligations.map((o, i) => (
               <div key={o.ref} className={`grid grid-cols-[1fr_1.4fr_auto_auto_auto] items-center gap-x-3 px-3 py-2 ${i % 2 === 0 ? "bg-background/20" : "bg-transparent"}`}>
                 <span className="font-mono text-[9px] text-primary/70">{o.ref}</span>
-                <span className="truncate text-[10px] text-secondary/75">{o.title}</span>
+                <span className="truncate text-xs text-secondary/75">{o.title}</span>
                 <span className={`rounded-full border px-1.5 py-0.5 text-[9px] font-medium ${statusStyle[o.status]}`}>{o.status}</span>
-                <span className={`text-[10px] font-medium ${evidenceStyle[o.evidence]}`}>{o.evidence}</span>
-                <span className={`text-[10px] font-semibold ${riskStyle[o.risk]}`}>{o.risk}</span>
+                <span className={`text-xs font-medium ${evidenceStyle[o.evidence]}`}>{o.evidence}</span>
+                <span className={`text-xs font-semibold ${riskStyle[o.risk]}`}>{o.risk}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div className="w-32 p-3" style={{ background: "rgba(12,25,48,0.6)" }}>
-          <p className="mb-3 text-[9px] uppercase tracking-wider text-secondary/35">Sources</p>
+          <p className="mb-3 text-[9px] uppercase tracking-wider text-secondary/70">Sources</p>
           <div className="space-y-2.5">
             {sources.map((s) => (
               <div key={s.name}>
                 <div className="mb-1 flex items-center justify-between">
-                  <span className="text-[9px] text-secondary/55">{s.name}</span>
-                  <span className="font-mono text-[9px] text-secondary/45">{s.count}</span>
+                  <span className="text-[9px] text-secondary/70">{s.name}</span>
+                  <span className="font-mono text-[9px] text-secondary/70">{s.count}</span>
                 </div>
                 <div className="h-1 w-full rounded-full bg-secondary/10">
                   <div className={`h-1 rounded-full ${s.color} opacity-70`} style={{ width: `${Math.round((s.count / 847) * 100)}%` }} />
@@ -98,7 +98,7 @@ export default function RegulatoryMockup() {
           </div>
           <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-2">
             <p className="text-[9px] font-semibold text-heading">Review Window</p>
-            <p className="mt-0.5 text-[9px] text-secondary/50">Synthetic timeline</p>
+            <p className="mt-0.5 text-[9px] text-secondary/70">Synthetic timeline</p>
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ const ENQUIRY_TYPES = [
 ];
 
 const INPUT = "w-full rounded-lg border border-secondary/20 bg-background/60 px-4 py-2.5 text-sm text-heading outline-none transition placeholder-secondary/35 focus:border-primary/60 focus:ring-1 focus:ring-primary/30";
-const LABEL = "mb-1.5 block text-xs font-medium text-secondary/65";
+const LABEL = "mb-1.5 block text-xs font-medium text-secondary/75";
 const ERR = "mt-1 text-[11px] text-red-400";
 
 export default function ContactForm() {
@@ -98,7 +98,7 @@ export default function ContactForm() {
             Thank you. LorvexAI will review your message and respond where appropriate. Consulting, advisory, client delivery, product implementation, and system development enquiries cannot be accepted.
           </p>
         </div>
-        <button type="button" onClick={() => { setData(INITIAL); setStatus("idle"); }} className="text-sm text-secondary/50 transition hover:text-heading">
+        <button type="button" onClick={() => { setData(INITIAL); setStatus("idle"); }} className="text-sm text-secondary/70 transition hover:text-heading">
           Submit another enquiry
         </button>
       </div>
@@ -120,13 +120,13 @@ export default function ContactForm() {
           {errors.email && <p className={ERR}>{errors.email}</p>}
         </div>
         <div>
-          <label htmlFor="organisation" className={LABEL}>Organisation <span className="text-secondary/35">(optional)</span></label>
+          <label htmlFor="organisation" className={LABEL}>Organisation <span className="text-secondary/70">(optional)</span></label>
           <input id="organisation" className={INPUT} type="text" placeholder="Organisation name" value={data.organisation} onChange={(e) => set("organisation", e.target.value)} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="jobTitle" className={LABEL}>Job title <span className="text-secondary/35">(optional)</span></label>
+        <label htmlFor="jobTitle" className={LABEL}>Job title <span className="text-secondary/70">(optional)</span></label>
         <input id="jobTitle" className={INPUT} type="text" placeholder="Role or function" value={data.jobTitle} onChange={(e) => set("jobTitle", e.target.value)} />
       </div>
 
@@ -160,7 +160,7 @@ export default function ContactForm() {
         </span>
       </label>
 
-      <p className="text-xs leading-relaxed text-secondary/55">
+      <p className="text-xs leading-relaxed text-secondary/70">
         We use your details to respond to your enquiry. See our <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for how we handle personal data.
       </p>
 

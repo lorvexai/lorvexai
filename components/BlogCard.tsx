@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 
 const TAG_ACCENT: Record<string, string> = {
   finance:      "border-blue-400/30 bg-blue-400/10 text-blue-300",
@@ -23,12 +23,14 @@ export default function BlogCard({
   slug,
   title,
   excerpt,
-  tags = []
+  tags = [],
+  readingTime
 }: {
   slug: string;
   title: string;
   excerpt: string;
   tags?: string[];
+  readingTime?: number;
 }) {
   const displayTags = tags.slice(0, 2);
 
@@ -39,7 +41,7 @@ export default function BlogCard({
           {displayTags.map((tag) => (
             <span
               key={tag}
-              className={`rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.15em] ${getTagAccent(tag)}`}
+              className={`rounded-full border px-2.5 py-1 text-xs font-medium uppercase tracking-[0.15em] ${getTagAccent(tag)}`}
             >
               {tag}
             </span>
@@ -55,13 +57,20 @@ export default function BlogCard({
         {excerpt}
       </p>
 
+      <div className="mt-5 flex items-center justify-between gap-3">
       <Link
         href={`/blog/${slug}`}
-        className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all hover:gap-2.5"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all hover:gap-2.5"
       >
         Read article
         <ArrowRight size={14} aria-hidden="true" />
       </Link>
+      {readingTime ? (
+        <span className="inline-flex items-center gap-1 text-xs text-secondary/70">
+          <Clock size={12} aria-hidden="true" /> {readingTime} min
+        </span>
+      ) : null}
+      </div>
     </article>
   );
 }

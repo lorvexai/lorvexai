@@ -39,7 +39,7 @@ const approaches = [
 export default function ApproachComparisonDiagram() {
   return (
     <div className="corner-ticks not-prose my-8 border border-secondary/15 bg-panel/60 p-5 md:p-7">
-      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
+      <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
         Three approaches, Fig. 01
       </p>
       <h3 className="mt-2 text-xl font-semibold text-heading md:text-2xl">
@@ -50,15 +50,15 @@ export default function ApproachComparisonDiagram() {
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         {approaches.map((a) => (
           <div key={a.label} className="flex flex-col border border-secondary/15 bg-panel2/50 p-4">
-            <span className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] ${a.accent}`}>
+            <span className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] ${a.accent}`}>
               <a.icon size={12} aria-hidden="true" />
               {a.label}
             </span>
-            <p className="mt-3 font-mono text-xs text-secondary/60">{a.tagline}</p>
+            <p className="mt-3 font-mono text-xs text-secondary/75">{a.tagline}</p>
             <div className="mt-4 space-y-2.5 border-t border-secondary/15 pt-3">
               {a.rows.map(([k, v]) => (
                 <div key={k} className="text-xs leading-relaxed">
-                  <span className="text-secondary/50">{k}: </span>
+                  <span className="text-secondary/70">{k}: </span>
                   <span className="text-secondary/85">{v}</span>
                 </div>
               ))}

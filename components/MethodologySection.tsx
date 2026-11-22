@@ -43,7 +43,7 @@ export default function MethodologySection() {
   return (
     <section className="section">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <p className="mb-3 text-xs uppercase tracking-[0.35em] text-secondary/70">
+        <p className="mb-3 text-xs uppercase tracking-[0.14em] text-secondary/70">
           Methodology
         </p>
         <h2 className="text-3xl font-semibold text-heading md:text-4xl">

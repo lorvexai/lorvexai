@@ -14,6 +14,7 @@ export type PostMeta = {
   publishedAt: string;
   excerpt: string;
   tags: string[];
+  readingTime: number;
 };
 
 function formatDate(value: unknown) {
@@ -34,7 +35,8 @@ export function getAllPosts(): PostMeta[] {
       const slug = file.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, file);
       const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
+      const words = content.split(/\s+/).filter(Boolean).length;
       return {
         slug,
         title: data.title as string,
@@ -42,6 +44,7 @@ export function getAllPosts(): PostMeta[] {
         publishedAt: String(data.date ?? ""),
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) || [],
+        readingTime: Math.max(1, Math.ceil(words / 200)),
         hidden: Boolean(data.hidden)
       };
     })
@@ -58,4 +61,32 @@ export async function getPostContent(slug: string) {
   return processed
     .toString()
     .replace(/<p>\[\[diagram:([a-z0-9-]+)\]\]<\/p>/g, '<div data-diagram="$1"></div>');
+}
+
+export type TocItem = { id: string; text: string; level: 2 | 3 };
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, "")
+    .replace(/&[a-z]+;/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// Removes the leading H1 (the page hero already shows the title), adds ids to H2/H3 and returns a TOC.
+export function prepareArticle(rawHtml: string): { html: string; toc: TocItem[] } {
+  let htmlOut = rawHtml.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/s, "");
+  const toc: TocItem[] = [];
+  const seen = new Map<string, number>();
+  htmlOut = htmlOut.replace(/<h([23])>(.*?)<\/h\1>/gs, (_m, level: string, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, "").trim();
+    let id = slugify(text) || "section";
+    const n = seen.get(id) ?? 0;
+    seen.set(id, n + 1);
+    if (n > 0) id = `${id}-${n + 1}`;
+    toc.push({ id, text, level: Number(level) as 2 | 3 });
+    return `<h${level} id="${id}">${inner}</h${level}>`;
+  });
+  return { html: htmlOut, toc };
 }

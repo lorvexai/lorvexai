@@ -13,7 +13,7 @@ export default function MockupFrame({
         <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
         <span className="h-3 w-3 rounded-full bg-emerald-400/80" />
         <div className="ml-3 flex-1 rounded-md border border-secondary/15 bg-background/60 px-3 py-1 text-center">
-          <span className="font-mono text-[10px] text-secondary/40">{title}</span>
+          <span className="font-mono text-xs text-secondary/70">{title}</span>
         </div>
       </div>
       {/* Content */}

@@ -106,14 +106,14 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className={`corner-ticks border border-secondary/15 bg-panel/75 ${compact ? "p-4" : "p-6 md:p-8"}`}>
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">Ask — Fig. 02</p>
+      <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Ask — Fig. 02</p>
       <p className="mt-2 text-sm leading-relaxed text-secondary/70">
         Answers are generated only from what I've actually written below — not general knowledge.
       </p>
 
       <div className={`mt-5 space-y-5 overflow-y-auto pr-1 ${compact ? "max-h-64" : "max-h-[28rem]"}`}>
         {turns.length === 0 && (
-          <p className="text-sm text-secondary/45">
+          <p className="text-sm text-secondary/70">
             Try: &ldquo;How should model risk tiering work for AI?&rdquo;
           </p>
         )}
@@ -130,7 +130,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
                   <Link
                     key={s.href}
                     href={s.href}
-                    className="rounded-full border border-secondary/25 bg-background/40 px-2.5 py-1 text-[10px] font-mono text-secondary/60 transition hover:border-primary/45 hover:text-primary"
+                    className="rounded-full border border-secondary/25 bg-background/40 px-2.5 py-1 text-xs font-mono text-secondary/75 transition hover:border-primary/45 hover:text-primary"
                   >
                     Source: {s.title}
                   </Link>
@@ -140,7 +140,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
           </div>
         ))}
         {status === "loading" && (
-          <p className="flex items-center gap-2 font-mono text-xs text-secondary/50">
+          <p className="flex items-center gap-2 font-mono text-xs text-secondary/70">
             <Loader2 size={12} className="motion-safe:animate-spin" aria-hidden="true" />
             searching the archive…
           </p>
@@ -157,7 +157,7 @@ export default function AskPanel({ compact = false }: { compact?: boolean }) {
           value={question}
           onChange={(event) => setQuestion(event.target.value)}
           placeholder="Ask about model risk, governance, audit..."
-          className="flex-1 bg-transparent font-mono text-sm text-heading outline-none placeholder:text-secondary/35"
+          className="flex-1 bg-transparent font-mono text-sm text-heading outline-none placeholder:text-secondary/70"
         />
         <button
           type="submit"

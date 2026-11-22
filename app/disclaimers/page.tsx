@@ -49,7 +49,7 @@ export default function DisclaimersPage() {
   return (
     <section className="section">
       <div className="mx-auto w-full max-w-4xl px-6">
-        <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Legal</p>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Legal</p>
         <h1 className="mt-3 text-4xl font-semibold text-heading md:text-5xl">Disclaimers &amp; Independence</h1>
         <div className="mt-10 space-y-8">
           {sections.map((section) => (

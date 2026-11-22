@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="section flex min-h-[70vh] items-center">
       <div className="mx-auto w-full max-w-3xl px-6 text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">404</p>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">404</p>
         <h1 className="mt-4 text-4xl font-semibold text-heading md:text-5xl">
           Page not found
         </h1>
@@ -40,7 +40,7 @@ export default function NotFound() {
               className="glass card-hover rounded-2xl border border-secondary/15 p-5 text-left"
             >
               <p className="font-semibold text-heading">{item.label}</p>
-              <p className="mt-1 text-sm text-secondary/60">{item.desc}</p>
+              <p className="mt-1 text-sm text-secondary/75">{item.desc}</p>
               <p className="mt-3 flex items-center gap-1 text-xs text-primary">
                 Visit <ArrowRight size={11} />
               </p>

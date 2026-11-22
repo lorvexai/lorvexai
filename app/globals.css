@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .section {
-  @apply relative py-16 md:py-24;
+  @apply relative py-11 md:py-16;
 }
 
 .glass {
@@ -488,4 +488,18 @@ h1, h2, h3, h4, h5 {
   right: -1px;
   border-bottom: 1.5px solid rgba(var(--shadow-glow-rgb), 0.85);
   border-right: 1.5px solid rgba(var(--shadow-glow-rgb), 0.85);
+}
+
+/* ── Accessibility ─────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary-rgb));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sr-only-focusable:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Keep body copy at 16px on small screens */
+@media (max-width: 640px) {
+  main p.text-sm, main li.text-sm, main p.text-xs, main dd.text-sm { font-size: 1rem; line-height: 1.6; }
 }

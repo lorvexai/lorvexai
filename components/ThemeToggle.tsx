@@ -27,7 +27,7 @@ export default function ThemeToggle() {
   if (!theme) return null;
 
   return (
-    <div className="inline-flex items-center gap-0.5 rounded-full border border-secondary/25 p-0.5 font-mono text-[10px] uppercase tracking-[0.12em]">
+    <div className="inline-flex items-center gap-0.5 rounded-full border border-secondary/25 p-0.5 font-mono text-xs uppercase tracking-[0.12em]">
       {(["light", "dark"] as const).map((option) => (
         <button
           key={option}
@@ -37,7 +37,7 @@ export default function ThemeToggle() {
           className={`rounded-full px-2.5 py-1 transition ${
             theme === option
               ? "bg-primary/20 text-heading"
-              : "text-secondary/55 hover:text-secondary/85"
+              : "text-secondary/70 hover:text-secondary/85"
           }`}
         >
           {option}

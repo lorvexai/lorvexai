@@ -4,7 +4,7 @@ import { ArrowRight, CalendarCheck } from "lucide-react";
 export default function CTA() {
   return (
     <div className="relative overflow-hidden rounded-lg border border-primary/30 bg-panel/70 px-8 py-12 text-center md:px-16">
-      <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">
+      <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
         Keep reading
       </p>
       <h3 className="mt-4 text-2xl font-semibold text-heading md:text-3xl lg:text-4xl">

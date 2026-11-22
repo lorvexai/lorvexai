@@ -101,7 +101,7 @@ export default function BooksPage() {
       <section className="section pb-8 pt-14 md:pt-20">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[1.4fr_0.6fr] md:items-center">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Companion repository and book</p>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Companion repository and book</p>
             <h1 className="mt-3 text-4xl font-semibold text-heading md:text-5xl">
               AI for Financial Risk, Compliance and Regulatory Reporting
             </h1>
@@ -123,8 +123,8 @@ export default function BooksPage() {
               </Ext>
               <Ext href={BOOK_KINDLE_URL}>Kindle</Ext>
               <Ext href={LEANPUB}>Leanpub (ebook)</Ext>
-              <a href="#chapters" className="btn-outline text-sm">
-                Browse chapter code
+              <a href="https://github.com/lorvexai/ai-banking-risk-platform/blob/main/chapter-06-credit-risk/README.md" target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+                Read a sample chapter
               </a>
               <a href={REPO} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
                 <Github size={14} aria-hidden="true" />
@@ -148,21 +148,40 @@ export default function BooksPage() {
           <dl className="grid grid-cols-2 gap-4 md:grid-cols-6">
             {STATS.map(([value, label]) => (
               <div key={label} className="card-glow p-4">
-                <dt className="text-xs text-secondary/60">{label}</dt>
+                <dt className="text-xs text-secondary/75">{label}</dt>
                 <dd className="mt-1 text-2xl font-semibold text-heading">{value}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-secondary/55">
+          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-secondary/70">
             Figures reflect the book&apos;s full AI Model Registry Index (Appendix D): 31 primary systems plus 11 agentic
             governance pipelines built on top of them.
           </p>
         </div>
       </section>
 
-      <section className="section" id="why">
+      <section className="section pt-0" id="what-you-get">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Why this book</p>
+          <h2 className="text-3xl font-semibold text-heading">What you get</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Production architectures", "End-to-end designs for credit, market, liquidity and operational risk, AML/KYC and reporting."],
+              ["Tested Python", "Working reference implementations in the companion repository, not pseudocode."],
+              ["Governance mapping", "PRA SS1/23, EU AI Act, DORA and Consumer Duty controls tied to each system."],
+              ["AWB case study", "One fictional bank, followed from business case to production operation."]
+            ].map(([t, d]) => (
+              <article key={t} className="card-glow p-5">
+                <h3 className="text-lg font-semibold text-heading">{t}</h3>
+                <p className="mt-2 text-base leading-relaxed text-secondary/80">{d}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0" id="why">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Why this book</p>
           <h2 className="mt-3 text-3xl font-semibold text-heading">Built for production, not for a demo day</h2>
           <p className="mt-3 max-w-2xl text-secondary/70">
             Most AI-in-banking material stops at the proof of concept. This book starts where that ends.
@@ -180,7 +199,7 @@ export default function BooksPage() {
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">The AWB case study</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">The AWB case study</p>
           <h2 className="mt-3 text-3xl font-semibold text-heading">One bank, sixteen chapters, one continuous build</h2>
           <ol className="mt-6 grid gap-4 md:grid-cols-3">
             {JOURNEY.map(([title, text, ch], i) => (
@@ -189,7 +208,7 @@ export default function BooksPage() {
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-sm font-semibold text-primary">
                     {i + 1}
                   </span>
-                  <span className="font-mono text-xs text-secondary/55">{ch}</span>
+                  <span className="font-mono text-xs text-secondary/70">{ch}</span>
                 </div>
                 <h3 className="mt-3 font-semibold text-heading">{title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-secondary/70">{text}</p>
@@ -201,7 +220,7 @@ export default function BooksPage() {
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Who it&apos;s for</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Who it&apos;s for</p>
           <h2 className="mt-3 text-3xl font-semibold text-heading">Find your entry point</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {AUDIENCE.map(([who, text, chapters]) => (
@@ -217,19 +236,19 @@ export default function BooksPage() {
 
       <section className="section" id="chapters">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Inside the book</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Inside the book</p>
           <h2 className="mt-3 text-3xl font-semibold text-heading">Sixteen chapters, five parts</h2>
           <p className="mt-3 max-w-2xl text-secondary/70">
             Each chapter maps to one or more production AI systems in the AWB model registry. Open a chapter for its summary
             and MR reference, or jump straight to the folder and core file.
           </p>
-          <p className="mt-2 max-w-2xl text-xs text-secondary/55">
+          <p className="mt-2 max-w-2xl text-xs text-secondary/70">
             Risk labels are a fictional AWB governance classification used for teaching, not a regulatory rating.
           </p>
 
           {PARTS.map((p) => (
             <div key={p.part} className="mt-10">
-              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
+              <h3 className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
                 {p.part} · {p.name}
               </h3>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary/70">{p.desc}</p>
@@ -241,7 +260,7 @@ export default function BooksPage() {
                         <span className="font-mono text-sm text-primary">{c.num}</span>
                         <span className="font-semibold text-heading">{c.title}</span>
                       </span>
-                      <span className="shrink-0 rounded-full border border-secondary/20 px-2 py-0.5 text-[10px] uppercase tracking-wide text-secondary/60">
+                      <span className="shrink-0 rounded-full border border-secondary/20 px-2 py-0.5 text-xs uppercase tracking-wide text-secondary/75">
                         {c.risk}
                       </span>
                     </summary>
@@ -279,7 +298,7 @@ export default function BooksPage() {
 
       <section className="section">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">Appendices</p>
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Appendices</p>
           <h2 className="mt-3 text-3xl font-semibold text-heading">Reference material, kept current</h2>
           <p className="mt-3 max-w-2xl text-secondary/70">
             These appendices live online so they can be updated as regulations and technology evolve between print editions.
@@ -313,14 +332,14 @@ export default function BooksPage() {
             className="h-40 w-40 rounded-lg border border-primary/25 object-cover"
           />
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-primary">The author</p>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">The author</p>
             <h2 className="mt-2 text-2xl font-semibold text-heading">Sreedhara Reddy Kotha</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-secondary/75">
               Sreedhara has spent over two decades working across global banking, financial risk and regulatory technology. He
               writes as a practitioner, focused on how AI and automation can help risk and compliance teams do their jobs
               rather than replace the judgement they bring to it.
             </p>
-            <p className="mt-3 text-xs text-secondary/55">
+            <p className="mt-3 text-xs text-secondary/70">
               The views expressed in this book are the author&apos;s own and do not represent the views of any current or former
               employer.
             </p>
@@ -348,7 +367,7 @@ export default function BooksPage() {
               <Ext href={REPO}>GitHub</Ext>
             </div>
           </div>
-          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-secondary/55">
+          <p className="mt-8 max-w-3xl text-xs leading-relaxed text-secondary/70">
             Avon and Wessex Bank plc (AWB) is entirely fictional. Nothing on this page or in the book constitutes regulatory or
             legal advice. The companion code is published under the MIT License.
           </p>

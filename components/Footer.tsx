@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-semibold text-heading">I write about controlled AI, model risk, and financial regulation.</p>
-            <p className="mt-1 text-sm text-secondary/60">
+            <p className="mt-1 text-sm text-secondary/75">
               Books, research notes, and reference blueprints from Sreedhara Reddy Kotha.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
           <div>
             <Image src={logoSrc} alt="LorvexAI" width={168} height={40} className="h-9 w-auto" />
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/65">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-secondary/75">
               <strong className="text-heading">LorvexAI</strong>
               <br />
               My personal site for research, writing, and reference architecture on controlled AI.
@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/sreekotha/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-secondary/75 transition hover:text-primary"
               >
                 <Linkedin size={15} aria-hidden="true" />
                 LinkedIn
@@ -66,7 +66,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:lorvexai@gmail.com"
-                className="inline-flex items-center gap-2 text-sm text-secondary/65 transition hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-secondary/75 transition hover:text-primary"
               >
                 <Mail size={15} aria-hidden="true" />
                 lorvexai@gmail.com
@@ -75,12 +75,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-secondary/45">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-secondary/70">
               Site links
             </p>
             <nav className="grid grid-cols-2 gap-3" aria-label="Footer navigation">
               {footerLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-secondary/65 transition hover:text-heading">
+                <Link key={link.href} href={link.href} className="text-sm text-secondary/75 transition hover:text-heading">
                   {link.label}
                 </Link>
               ))}
@@ -95,10 +95,10 @@ export default function Footer() {
 
       <div className="border-t border-secondary/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-secondary/40">
+          <p className="text-xs text-secondary/70">
             &copy; {new Date().getFullYear()} Sreedhara Reddy Kotha. All rights reserved.
           </p>
-          <p className="text-xs text-secondary/30">Educational content only. No professional advice.</p>
+          <p className="text-xs text-secondary/70">Educational content only. No professional advice.</p>
         </div>
       </div>
     </footer>

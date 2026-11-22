@@ -56,7 +56,7 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
             <span className="chip">
               {NEWSLETTER_NAME} · Issue {issue.number}
             </span>
-            <span className="font-mono text-xs text-secondary/60">{formatIssueDate(issue.date)}</span>
+            <span className="font-mono text-xs text-secondary/75">{formatIssueDate(issue.date)}</span>
             {issue.status === "preview" && (
               <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">
                 Preview: publishes {formatIssueDate(issue.date)}
@@ -81,7 +81,7 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
       <section className="pb-6">
         <div className="mx-auto w-full max-w-4xl px-6">
           <article className="card-glow p-7 md:p-9">
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">Headline · {issue.headline.region}</p>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Headline · {issue.headline.region}</p>
             <h2 className="mt-3 text-2xl font-semibold leading-snug md:text-3xl">{issue.headline.title}</h2>
             {issue.headline.body.map((p) => (
               <p key={p.slice(0, 30)} className="mt-4 leading-relaxed text-secondary/80">
@@ -123,7 +123,7 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
         <div className="mx-auto w-full max-w-4xl px-6">
           <div className="card-glow p-7">
             <h2 className="text-2xl font-semibold">Practitioner takeaways</h2>
-            <p className="mt-1 text-xs text-secondary/55">The author&apos;s own view, not regulatory advice.</p>
+            <p className="mt-1 text-xs text-secondary/70">The author&apos;s own view, not regulatory advice.</p>
             <ul className="mt-5 space-y-3">
               {issue.takeaways.map((t) => (
                 <li key={t} className="flex items-start gap-3 text-sm leading-relaxed text-secondary/85">
@@ -133,7 +133,7 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
               ))}
             </ul>
           </div>
-          <p className="mt-8 text-xs leading-relaxed text-secondary/55">
+          <p className="mt-8 text-xs leading-relaxed text-secondary/70">
             Educational content, not legal, regulatory or investment advice. Facts are drawn from the linked sources and should
             be checked against the primary documents. The weekly drafting is assisted by AI and reviewed by the author before
             publication.

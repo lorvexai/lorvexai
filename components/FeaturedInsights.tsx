@@ -109,7 +109,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
         {/* Section header */}
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-2 font-mono text-xs uppercase tracking-[0.28em] text-primary">
+            <p className="mb-2 font-mono text-xs uppercase tracking-[0.14em] text-primary">
               Featured Insights
             </p>
             <h2 className="text-3xl font-semibold md:text-4xl">
@@ -123,7 +123,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
             </span>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-secondary/65 transition hover:text-heading"
+              className="inline-flex items-center gap-1 text-sm text-secondary/75 transition hover:text-heading"
             >
               View all
               <ArrowRight size={14} aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function FeaturedInsights({ posts }: { posts: InsightPost[] }) {
                 className={
                   isActive
                     ? "min-h-11 rounded-full border border-primary/60 bg-primary/25 px-4 py-2 text-xs font-semibold text-heading shadow-glow"
-                    : "min-h-11 rounded-full border border-secondary/25 bg-background/30 px-4 py-2 text-xs text-secondary/65 transition hover:border-primary/35 hover:text-secondary/90"
+                    : "min-h-11 rounded-full border border-secondary/25 bg-background/30 px-4 py-2 text-xs text-secondary/75 transition hover:border-primary/35 hover:text-secondary/90"
                 }
               >
                 {topic}

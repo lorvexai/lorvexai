@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 
 const STEPS = [
-  { agent: "Retriever", text: "Fetched 14 passages: PRA SS1/23 §3, EBA GL/2020/06", ms: "212ms" },
-  { agent: "Mapper", text: "Drafted 6 obligation candidates with citations", ms: "1.4s" },
-  { agent: "Validator", text: "Grounding check passed. 0 unsupported claims", ms: "640ms" },
-  { agent: "Human review", text: "Awaiting approval. Evidence pack attached", ms: "gate" }
+  { stage: "1", agent: "Retrieve", text: "14 passages found in PRA SS1/23 and EBA guidelines" },
+  { stage: "2", agent: "Validate", text: "Every claim checked against its cited source" },
+  { stage: "3", agent: "Human approval", text: "Reviewer signs off. Evidence pack is attached" }
 ];
 
 export default function AgentTrace() {
@@ -17,48 +16,39 @@ export default function AgentTrace() {
       setShown(STEPS.length);
       return;
     }
-    const id = setInterval(() => setShown((s) => (s >= STEPS.length ? 1 : s + 1)), 1800);
+    const id = setInterval(() => setShown((s) => (s >= STEPS.length ? 1 : s + 1)), 2200);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="glass float-slow rounded-2xl p-5 shadow-2xl shadow-black/30" aria-label="Illustrative controlled agent trace">
-      <div className="flex items-center justify-between">
-        <div className="flex gap-1.5" aria-hidden="true">
-          <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-        </div>
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-secondary/60">controlled-run · illustrative</span>
-      </div>
-      <ol className="mt-5 space-y-3">
+    <div className="glass rounded-2xl p-6 shadow-2xl shadow-black/30" role="img" aria-label="Illustration of a controlled agent run: retrieve, validate, human approval">
+      <p className="text-sm font-semibold text-secondary/85">A controlled agent run</p>
+      <ol className="mt-5 space-y-4">
         {STEPS.map((s, i) => {
           const on = i < shown;
-          const last = i === shown - 1;
           return (
             <li
               key={s.agent}
-              className={`flex items-start gap-3 rounded-xl border p-3 transition-all duration-500 ${
-                on ? "border-primary/30 bg-primary/10 opacity-100" : "border-secondary/10 opacity-30"
+              className={`flex items-start gap-4 rounded-xl border p-4 transition-all duration-500 ${
+                on ? "border-primary/40 bg-primary/10" : "border-secondary/15 opacity-50"
               }`}
             >
               <span
-                className={`mt-1 h-2 w-2 shrink-0 rounded-full ${on ? "bg-primary" : "bg-secondary/40"} ${last ? "animate-pulse" : ""}`}
-              />
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-sm font-semibold text-heading">{s.agent}</span>
-                  <span className="font-mono text-[10px] text-secondary/60">{s.ms}</span>
-                </div>
-                <p className={`mt-0.5 text-xs leading-relaxed text-secondary/75 ${last ? "cursor-blink" : ""}`}>{s.text}</p>
+                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-bold ${
+                  on ? "bg-primary text-[color:var(--on-primary)]" : "bg-secondary/20 text-secondary"
+                }`}
+              >
+                {s.stage}
+              </span>
+              <div>
+                <p className="text-lg font-semibold text-heading">{s.agent}</p>
+                <p className="mt-0.5 text-base leading-snug text-secondary/85">{s.text}</p>
               </div>
             </li>
           );
         })}
       </ol>
-      <p className="mt-4 border-t border-secondary/10 pt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-secondary/50">
-        Every step logged · human gate before output
-      </p>
+      <p className="mt-5 text-sm text-secondary/70">Illustrative. Every step is logged before anything is released.</p>
     </div>
   );
 }

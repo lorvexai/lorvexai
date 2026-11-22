@@ -12,7 +12,7 @@ export default function AskPage() {
   return (
     <section className="section pt-14 md:pt-20">
       <div className="mx-auto w-full max-w-3xl px-6">
-        <p className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Ask</p>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Ask</p>
         <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
           <span className="text-heading">Query </span>
           <span className="text-gradient">the archive</span>

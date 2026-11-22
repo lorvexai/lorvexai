@@ -35,9 +35,13 @@ const architecturePatterns = [
 
 function BlueprintNotice() {
   return (
-    <div className="rounded-lg border border-primary/20 bg-primary/10 p-4 text-sm leading-relaxed text-secondary/75">
-      LorvexAI reference blueprints, diagrams, screenshots, and conceptual examples are educational materials only. They are not products for sale, client prototypes, consulting deliverables, production banking systems, compliance engines, regulatory reporting engines, clinical systems, medical devices, model validation systems, or regulated decision systems.
-    </div>
+    <p className="inline-flex flex-wrap items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm text-secondary/85">
+      <span className="font-semibold text-primary">Educational use only.</span>
+      Not a product or a production system.
+      <a href="/disclaimers" className="font-semibold text-primary underline-offset-2 hover:underline">
+        Full disclaimer
+      </a>
+    </p>
   );
 }
 
@@ -45,7 +49,7 @@ function MermaidBlock({ label, code }: { label: string; code: string }) {
   return (
     <div className="prose prose-invert mt-8 max-w-none">
       <div className="rounded-lg border border-secondary/20 bg-background/40 p-4">
-        <p className="mb-2 text-xs uppercase tracking-[0.22em] text-secondary/70">{label}</p>
+        <p className="mb-2 text-xs uppercase tracking-[0.14em] text-secondary/70">{label}</p>
         <pre>
           <code className="language-mermaid">{code}</code>
         </pre>
@@ -64,7 +68,7 @@ export default function BlueprintsPage() {
       <section className="section pb-10 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">Blueprints</p>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Blueprints</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">
               <span className="text-heading">How I'd architect </span>
               <span className="text-gradient">controlled AI systems</span>
@@ -80,7 +84,7 @@ export default function BlueprintsPage() {
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
               {architecturePatterns.map((b) => (
-                <span key={b} className="rounded-full border border-secondary/20 bg-background/40 px-3 py-1 text-[10px] font-medium text-secondary/55">{b}</span>
+                <span key={b} className="rounded-full border border-secondary/20 bg-background/40 px-3 py-1 text-xs font-medium text-secondary/70">{b}</span>
               ))}
             </div>
           </div>
@@ -109,7 +113,7 @@ export default function BlueprintsPage() {
                 >
                   <h3 className="text-xl font-semibold text-heading">{blueprint.name}</h3>
                   <p className="mt-3 text-sm text-secondary/80">{blueprint.summary}</p>
-                  <p className="mt-5 text-xs uppercase tracking-[0.22em] text-primary">
+                  <p className="mt-5 text-xs uppercase tracking-[0.14em] text-primary">
                     {isActive ? "Selected" : "Open Blueprint"}
                   </p>
                 </button>

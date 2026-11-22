@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts, getPostContent } from "@/utils/posts";
+import { getAllPosts, getPostContent, prepareArticle } from "@/utils/posts";
 import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
 import DiagramMounter from "@/components/DiagramMounter";
@@ -85,8 +85,8 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = allPosts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
-  const html = await getPostContent(params.slug);
-  const readingTime = estimateReadingTime(html);
+  const { html, toc } = prepareArticle(await getPostContent(params.slug));
+  const readingTime = post.readingTime ?? estimateReadingTime(html);
 
   const relatedPosts = allPosts
     .filter((c) => c.slug !== post.slug)
@@ -105,7 +105,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           {/* Back link */}
           <Link
             href="/blog"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm text-secondary/55 transition hover:text-heading"
+            className="mb-6 inline-flex items-center gap-1.5 text-sm text-secondary/70 transition hover:text-heading"
           >
             <ArrowLeft size={14} aria-hidden="true" />
             All articles
@@ -114,11 +114,11 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           {/* Tags */}
           {post.tags.length > 0 && (
             <div className="mb-4 flex flex-wrap items-center gap-1.5">
-              <Tag size={12} className="text-secondary/40" aria-hidden="true" />
+              <Tag size={12} className="text-secondary/70" aria-hidden="true" />
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.15em] ${getTagAccent(tag)}`}
+                  className={`rounded-full border px-2.5 py-1 text-xs font-medium uppercase tracking-[0.15em] ${getTagAccent(tag)}`}
                 >
                   {tag}
                 </span>
@@ -138,25 +138,25 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
           {/* Meta row */}
           <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-secondary/10 pt-5">
-            <div className="flex items-center gap-1.5 text-sm text-secondary/55">
+            <div className="flex items-center gap-1.5 text-sm text-secondary/70">
               <Calendar size={13} aria-hidden="true" />
               <span>{post.date}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-secondary/55">
+            <div className="flex items-center gap-1.5 text-sm text-secondary/70">
               <Clock size={13} aria-hidden="true" />
               <span>{readingTime} min read</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-secondary/55">
+            <div className="flex items-center gap-1.5 text-sm text-secondary/70">
               <span className="h-1 w-1 rounded-full bg-secondary/30" />
               <span>By LorvexAI</span>
             </div>
             <div className="ml-auto flex items-center gap-2">
-              <span className="text-xs text-secondary/40">Share:</span>
+              <span className="text-xs text-secondary/70">Share:</span>
               <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${normalizedSiteUrl}/blog/${params.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-secondary/20 bg-background/40 px-3 py-1.5 text-xs text-secondary/60 transition hover:border-primary/40 hover:text-primary"
+                className="inline-flex items-center gap-1.5 rounded-full border border-secondary/20 bg-background/40 px-3 py-1.5 text-xs text-secondary/75 transition hover:border-primary/40 hover:text-primary"
                 aria-label="Share on LinkedIn"
               >
                 <Linkedin size={12} aria-hidden="true" />
@@ -170,13 +170,36 @@ export default async function BlogPost({ params }: { params: { slug: string } })
       {/* Article body */}
       <section className="py-12 md:py-16">
         <div className="mx-auto w-full max-w-4xl px-6">
+          <aside className="card-glow mb-8 p-6" aria-label="At a glance">
+            <p className="text-sm font-semibold text-primary">At a glance</p>
+            <p className="mt-2 text-sm text-secondary/80">
+              {readingTime} min read · Published {post.date}
+              {toc.filter((t) => t.level === 2).length > 0 ? ` · ${toc.filter((t) => t.level === 2).length} sections` : ""}
+            </p>
+            {toc.filter((t) => t.level === 2).length >= 3 && (
+              <nav className="mt-4 border-t border-secondary/15 pt-4" aria-label="Table of contents">
+                <p className="text-sm font-semibold text-heading">In this article</p>
+                <ol className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
+                  {toc
+                    .filter((t) => t.level === 2)
+                    .map((t) => (
+                      <li key={t.id}>
+                        <a href={`#${t.id}`} className="text-secondary/80 transition hover:text-primary">
+                          {t.text}
+                        </a>
+                      </li>
+                    ))}
+                </ol>
+              </nav>
+            )}
+          </aside>
           <CopyCodeButton />
           <MermaidRenderer />
           <DiagramMounter />
           <article
             className="prose prose-invert max-w-none
               prose-headings:font-semibold prose-headings:text-heading
-              prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+              prose-h1:text-3xl prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-headings:scroll-mt-28
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
               prose-p:text-secondary/80 prose-p:leading-relaxed
               prose-a:text-primary prose-a:no-underline hover:prose-a:text-heading
@@ -198,14 +221,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           <div className="mx-auto w-full max-w-4xl px-6">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <p className="mb-1 font-mono text-xs uppercase tracking-[0.28em] text-secondary/50">
+                <p className="mb-1 font-mono text-xs uppercase tracking-[0.14em] text-secondary/70">
                   Continue Reading
                 </p>
                 <h2 className="text-xl font-semibold text-heading">Related Insights</h2>
               </div>
               <Link
                 href="/blog"
-                className="text-sm text-secondary/55 transition hover:text-heading"
+                className="text-sm text-secondary/70 transition hover:text-heading"
               >
                 View all →
               </Link>

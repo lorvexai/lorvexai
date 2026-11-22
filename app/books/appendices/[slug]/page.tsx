@@ -42,7 +42,7 @@ export default function AppendixPage({ params }: { params: { slug: string } }) {
           <ArrowLeft size={14} aria-hidden="true" />
           Back to the book
         </Link>
-        <p className="mt-6 font-mono text-xs uppercase tracking-[0.28em] text-primary">{a.kicker}</p>
+        <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-primary">{a.kicker}</p>
         <h1 className="mt-2 text-4xl font-semibold text-heading">{a.title}</h1>
         <article
           className="prose prose-invert mt-8 max-w-none
@@ -55,7 +55,7 @@ export default function AppendixPage({ params }: { params: { slug: string } }) {
             prose-code:text-primary prose-code:before:content-none prose-code:after:content-none"
           dangerouslySetInnerHTML={{ __html: a.html }}
         />
-        <p className="mt-10 text-xs text-secondary/55">
+        <p className="mt-10 text-xs text-secondary/70">
           Avon and Wessex Bank plc is fictional. This content is educational and is not legal or regulatory advice.
         </p>
       </div>

@@ -112,7 +112,7 @@ const patterns = [
 export default function WorkflowPatternGallery() {
   return (
     <div className="corner-ticks not-prose my-8 border border-secondary/15 bg-panel/60 p-5 md:p-7">
-      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
+      <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
         Five patterns, at a glance
       </p>
       <h3 className="mt-2 text-xl font-semibold text-heading md:text-2xl">
@@ -125,7 +125,7 @@ export default function WorkflowPatternGallery() {
             <p.Icon />
             <p className="mt-3 text-sm font-semibold text-heading">{p.name}</p>
             <p className="mt-1.5 text-xs leading-relaxed text-secondary/70">{p.body}</p>
-            <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.08em] text-secondary/45">{p.used}</p>
+            <p className="mt-2 font-mono text-xs uppercase tracking-[0.08em] text-secondary/70">{p.used}</p>
           </div>
         ))}
       </div>

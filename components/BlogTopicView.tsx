@@ -3,51 +3,9 @@
 import { useMemo, useState } from "react";
 import BlogCard from "@/components/BlogCard";
 import type { PostMeta } from "@/utils/posts";
+import { TOPICS, getTopic, topicAccent, type Topic } from "@/utils/topics";
 import { Search } from "lucide-react";
 
-const TOPICS = ["All", "Governance", "Audit", "Model Risk", "Regulation", "Technology", "Finance", "Healthcare", "Enterprise"] as const;
-type Topic = (typeof TOPICS)[number];
-
-const topicBySlug: Record<string, Exclude<Topic, "All">> = {
-  "ai-agents-in-banking-operations":          "Finance",
-  "ai-native-treasury-control-tower":         "Finance",
-  "ai-in-financial-risk-management":          "Finance",
-  "nhs-ai-triage-without-harm":               "Healthcare",
-  "nhs-waiting-lists-to-smart-pathways":      "Healthcare",
-  "enterprise-rag-architectures":             "Technology",
-  "end-to-end-ai-risk-platform-architecture": "Technology",
-  "the-rise-of-agentic-ai":                   "Technology",
-  "agentic-ai-design-patterns":               "Technology",
-  "ai-workflows-for-regulated-enterprises":   "Enterprise",
-  "production-rag-beyond-the-basics":         "Technology",
-  "llm-evaluation-in-production":             "Enterprise",
-  "guardrails-for-enterprise-ai":             "Enterprise",
-  "fine-tuning-vs-rag-vs-prompting":          "Technology",
-  "enterprise-llm-chat-interfaces":           "Enterprise",
-  "ai-prompt-and-workflow-templates":         "Enterprise",
-  "ai-strategy-and-governance-for-regulated-financial-institutions": "Governance",
-  "ai-audit-readiness-evidence-controls-logs-human-oversight": "Audit",
-  "model-risk-management-for-ai-pra-ss1-23-us-supervisory-guidance": "Model Risk",
-  "ecb-ai-supervision-governance-genai-prudential-risk": "Regulation",
-  "sec-and-ai-ai-washing-predictive-analytics-conflicts-disclosure-risk": "Regulation",
-  "ai-model-inventory-and-tiering-for-banks": "Model Risk",
-  "board-reporting-for-ai-risk-and-model-risk-committees": "Governance"
-};
-
-const topicAccent: Record<Exclude<Topic, "All">, string> = {
-  Governance:   "border-cyan-400/30 text-cyan-300",
-  Audit:        "border-emerald-400/30 text-emerald-300",
-  "Model Risk": "border-orange-400/30 text-orange-300",
-  Regulation:   "border-rose-400/30 text-rose-300",
-  Technology:   "border-blue-400/30 text-blue-300",
-  Finance:      "border-orange-400/30 text-orange-300",
-  Healthcare:   "border-emerald-400/30 text-emerald-300",
-  Enterprise:   "border-violet-400/30 text-violet-300"
-};
-
-function getTopic(post: PostMeta): Exclude<Topic, "All"> {
-  return topicBySlug[post.slug] ?? "Technology";
-}
 
 function toTime(dateLabel: string) {
   const ts = Date.parse(dateLabel);
@@ -108,20 +66,22 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
     <div className="space-y-8">
       {/* Search bar */}
       <div className="relative">
-        <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary/40 pointer-events-none" aria-hidden="true" />
+        <label htmlFor="article-search" className="sr-only">Search articles</label>
+        <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary/70 pointer-events-none" aria-hidden="true" />
         <input
+          id="article-search"
           type="search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search articles by title, topic, or keyword..."
-          className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-heading placeholder-secondary/40 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
+          className="w-full rounded-xl border border-secondary/20 bg-background/60 pl-10 pr-4 py-3 text-sm text-heading placeholder-secondary/65 outline-none transition focus:border-primary/60 focus:ring-1 focus:ring-primary/30"
         />
       </div>
 
       {/* Search results */}
       {searchResults !== null ? (
         <div>
-          <p className="mb-5 text-sm text-secondary/55">
+          <p className="mb-5 text-sm text-secondary/70">
             {searchResults.length === 0
               ? `No results for "${searchQuery}"`
               : `${searchResults.length} result${searchResults.length !== 1 ? "s" : ""} for "${searchQuery}"`}
@@ -129,7 +89,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
           {searchResults.length > 0 && (
             <div className="grid gap-5 md:grid-cols-2">
               {searchResults.map((post) => (
-                <BlogCard key={post.slug} slug={post.slug} title={post.title} excerpt={post.excerpt} tags={post.tags} />
+                <BlogCard key={post.slug} slug={post.slug} title={post.title} excerpt={post.excerpt} tags={post.tags} readingTime={post.readingTime} />
               ))}
             </div>
           )}
@@ -150,11 +110,11 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
               className={
                 active
                   ? "min-h-10 rounded-full border border-primary/60 bg-primary/25 px-4 py-2 text-sm font-semibold text-heading shadow-glow"
-                  : "min-h-10 rounded-full border border-secondary/25 bg-background/30 px-4 py-2 text-sm text-secondary/65 transition hover:border-primary/35 hover:text-secondary/90"
+                  : "min-h-10 rounded-full border border-secondary/25 bg-background/30 px-4 py-2 text-sm text-secondary/75 transition hover:border-primary/35 hover:text-secondary/90"
               }
             >
               {topic}
-              <span className={`ml-1.5 font-mono text-xs ${active ? "text-heading/70" : "text-secondary/40"}`}>
+              <span className={`ml-1.5 font-mono text-xs ${active ? "text-heading/70" : "text-secondary/70"}`}>
                 {count}
               </span>
             </button>
@@ -175,7 +135,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
                   <span className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] ${accent} bg-background/40`}>
                     {topic}
                   </span>
-                  <span className="text-xs text-secondary/45">
+                  <span className="text-xs text-secondary/70">
                     {topicPosts.length} article{topicPosts.length > 1 ? "s" : ""}
                   </span>
                   <div className="h-px flex-1 bg-secondary/10" />
@@ -188,6 +148,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
                       title={post.title}
                       excerpt={post.excerpt}
                       tags={post.tags}
+                      readingTime={post.readingTime}
                     />
                   ))}
                 </div>
@@ -204,6 +165,7 @@ export default function BlogTopicView({ posts }: { posts: PostMeta[] }) {
               title={post.title}
               excerpt={post.excerpt}
               tags={post.tags}
+              readingTime={post.readingTime}
             />
           ))}
         </div>
