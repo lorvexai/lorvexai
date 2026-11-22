@@ -1,15 +1,7 @@
 import Link from "next/link";
-import AgentTrace from "@/components/AgentTrace";
 import CTA from "@/components/CTA";
-import Reveal from "@/components/Reveal";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
-import { BOOK_KINDLE_URL, BOOK_PAPERBACK_URL } from "@/utils/site";
 import { ArrowRight, Mail, Scale, ScrollText, ShieldCheck, Sparkles } from "lucide-react";
-
-const MARQUEE = [
-  "PRA SS1/23", "EU AI Act", "DORA", "BCBS 239", "SM&CR", "IFRS 9", "Basel 3.1", "FRTB", "COREP / FINREP",
-  "Consumer Duty", "Model Risk", "Agentic RAG", "Human-in-the-loop", "Audit Evidence"
-];
 
 const PILLARS = [
   {
@@ -64,58 +56,28 @@ export default function HomePage() {
               <span className="mx-1.5 text-primary">·</span> 20+ years in finance technology
             </p>
           </div>
-          <AgentTrace />
+          <Link href="/books" className="group mx-auto block w-full max-w-xs">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/title_page.jpg`}
+              alt="Cover of AI for Financial Risk, Compliance and Regulatory Reporting"
+              width={300}
+              height={450}
+              className="w-full rounded-lg border border-primary/30 shadow-2xl shadow-black/40 transition duration-300 group-hover:-translate-y-1"
+            />
+            <p className="mt-4 text-center text-sm font-medium text-secondary/85">
+              Paperback, Kindle and Leanpub <span className="text-primary">→</span>
+            </p>
+          </Link>
         </div>
 
-        <div className="marquee border-y border-secondary/10 py-3" aria-hidden="true">
-          <div className="marquee-track">
-            {[...MARQUEE, ...MARQUEE].map((m, i) => (
-              <span key={`${m}-${i}`} className="whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] text-secondary/70">
-                {m}
-                <span className="ml-10 text-primary/60">◆</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section pb-0">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <Reveal>
-            <article className="card-glow p-8">
-              <div className="grid gap-8 sm:grid-cols-[1fr_auto] sm:items-center">
-                <div>
-                  <p className="chip">The book</p>
-                  <h2 className="mt-4 text-3xl font-semibold leading-tight">
-                    AI for Financial Risk, Compliance and Regulatory Reporting
-                  </h2>
-                  <p className="mt-3 max-w-xl text-base leading-relaxed text-secondary/80">
-                    One fictional bank, Avon &amp; Wessex Bank (AWB), taken from business case to production. Working Python,
-                    governance controls and architecture for credit, market, liquidity and operational risk, AML/KYC and reporting.
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <a href={BOOK_PAPERBACK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary min-h-11 text-sm">
-                      Buy paperback
-                    </a>
-                    <a href={BOOK_KINDLE_URL} target="_blank" rel="noopener noreferrer" className="btn-outline min-h-11 text-sm">
-                      Kindle
-                    </a>
-                    <Link href="/books" className="btn-outline min-h-11 text-sm">
-                      Contents &amp; code
-                    </Link>
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/title_page.jpg`}
-                  alt="Book cover"
-                  width={150}
-                  height={225}
-                  className="mx-auto hidden w-36 rounded-lg border border-primary/30 shadow-2xl shadow-black/40 sm:block"
-                />
-              </div>
-            </article>
-          </Reveal>
+        <div className="border-y border-secondary/10 py-4">
+          <p className="mx-auto max-w-6xl px-6 text-center text-sm text-secondary/80">
+            <span className="font-semibold text-heading">Maps to </span>
+            PRA SS1/23 <span className="mx-1.5 text-primary">·</span> EU AI Act{" "}
+            <span className="mx-1.5 text-primary">·</span> DORA <span className="mx-1.5 text-primary">·</span> BCBS 239{" "}
+            <span className="mx-1.5 text-primary">·</span> SM&amp;CR <span className="mx-1.5 text-primary">·</span> Consumer Duty
+          </p>
         </div>
       </section>
 
