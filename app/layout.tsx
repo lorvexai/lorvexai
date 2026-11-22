@@ -4,7 +4,6 @@ import { Inter, JetBrains_Mono, Source_Serif_4, Space_Grotesk } from "next/font/
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
-import AskLauncher from "@/components/AskLauncher";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
@@ -98,7 +97,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <MobileStickyCTA />
-        <AskLauncher />
+        {/* Ask launcher hidden until the RAG integration is finished */}
         <Footer />
       </body>
     </html>
