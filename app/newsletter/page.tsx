@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
-import { NEWSLETTER_NAME, NEWSLETTER_URL } from "@/utils/site";
+import { ArrowRight } from "lucide-react";
+import SubscribeForm from "@/components/SubscribeForm";
+import { NEWSLETTER_NAME } from "@/utils/site";
 import { formatIssueDate, getIssues } from "@/utils/newsletter";
 
 export const metadata: Metadata = {
@@ -19,19 +20,7 @@ const FORMAT = [
 ];
 
 export default function NewsletterPage() {
-  const external = NEWSLETTER_URL.length > 0;
   const issues = getIssues();
-  const cta = external ? (
-    <a href={NEWSLETTER_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
-      <Mail size={15} aria-hidden="true" />
-      Subscribe
-    </a>
-  ) : (
-    <Link href="/contact" className="btn-primary text-sm">
-      <Mail size={15} aria-hidden="true" />
-      Ask to be notified at launch
-    </Link>
-  );
 
   return (
     <>
@@ -43,7 +32,9 @@ export default function NewsletterPage() {
             A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and
             regulatory reporting. Written for risk leaders, regulatory reporting heads and RegTech builders.
           </p>
-          <div className="mt-8">{cta}</div>
+          <div className="mt-8">
+            <SubscribeForm id="newsletter-email" />
+          </div>
         </div>
       </section>
 

@@ -246,12 +246,15 @@ export default function BooksPage() {
             Risk labels are a fictional AWB governance classification used for teaching, not a regulatory rating.
           </p>
 
-          {PARTS.map((p) => (
-            <div key={p.part} className="mt-10">
-              <h3 className="font-mono text-xs uppercase tracking-[0.14em] text-primary">
-                {p.part} · {p.name}
-              </h3>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary/70">{p.desc}</p>
+          {PARTS.map((p, pi) => (
+            <details key={p.part} open={pi === 0} className="group mt-6 rounded-xl border border-secondary/15 p-5">
+              <summary className="cursor-pointer list-none">
+                <span className="font-mono text-sm font-semibold uppercase tracking-[0.12em] text-primary">
+                  {p.part} · {p.name}
+                </span>
+                <span className="ml-3 text-sm text-secondary/75">{p.chapters.length} chapters</span>
+              </summary>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-secondary/80">{p.desc}</p>
               <div className="mt-4 grid gap-3 md:grid-cols-2">
                 {p.chapters.map((c) => (
                   <details key={c.num} className="group card-glow p-4 open:border-primary/40">
@@ -291,7 +294,7 @@ export default function BooksPage() {
                   </details>
                 ))}
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </section>

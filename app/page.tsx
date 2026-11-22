@@ -1,27 +1,18 @@
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
-import { ArrowRight, Mail, Scale, ScrollText, ShieldCheck, Sparkles } from "lucide-react";
+import { PARTS } from "@/utils/book-data";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 
-const PILLARS = [
-  {
-    icon: ShieldCheck,
-    title: "Govern",
-    text: "Model inventory, tiering, validation gates and clear accountability, mapped to PRA SS1/23 and the EU AI Act."
-  },
-  {
-    icon: ScrollText,
-    title: "Audit",
-    text: "Every retrieval, prompt and decision is logged, so a reviewer can reconstruct what the system did and why."
-  },
-  {
-    icon: Scale,
-    title: "Defend",
-    text: "Human approval points and evidence packs that stand up when a regulator, auditor or board asks questions."
-  }
-];
+const FEATURED_CHAPTERS = ["03", "05", "12"];
+
+function firstSentence(text: string) {
+  const m = text.match(/^.*?[.!?](\s|$)/);
+  return (m ? m[0] : text).trim();
+}
 
 export default function HomePage() {
+  const chapters = PARTS.flatMap((p) => p.chapters).filter((c) => FEATURED_CHAPTERS.includes(c.num));
   const latest = getIssues().find((i) => i.status === "published");
 
   return (
@@ -83,13 +74,18 @@ export default function HomePage() {
 
       <section className="section pb-0">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <h2 className="max-w-2xl text-3xl font-semibold text-heading md:text-4xl">What controlled AI means here</h2>
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <h2 className="max-w-2xl text-3xl font-semibold text-heading md:text-4xl">Inside the book</h2>
+            <Link href="/books#chapters" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading">
+              All 16 chapters <ArrowRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {PILLARS.map((p) => (
-              <article key={p.title} className="card-glow p-6">
-                <p.icon size={22} className="text-primary" aria-hidden="true" />
-                <h3 className="mt-3 text-xl font-semibold text-heading">{p.title}</h3>
-                <p className="mt-2 text-base leading-relaxed text-secondary/80">{p.text}</p>
+            {chapters.map((c) => (
+              <article key={c.num} className="card-glow p-6">
+                <p className="font-mono text-sm font-semibold text-primary">Chapter {c.num}</p>
+                <h3 className="mt-2 text-xl font-semibold text-heading">{c.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-secondary/80">{firstSentence(c.summary)}</p>
               </article>
             ))}
           </div>
@@ -117,9 +113,14 @@ export default function HomePage() {
       <section className="section pb-0">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-primary/40 bg-primary/15 text-xl font-bold text-primary" aria-hidden="true">
-              SK
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/author-avatar.png`}
+              alt=""
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded-full"
+            />
             <p className="max-w-2xl text-base leading-relaxed text-secondary/85">
               <strong className="text-heading">Sreedhara Reddy Kotha</strong> has spent 20+ years in finance technology, risk
               and regulatory reporting. LorvexAI is where he publishes independent work on controlled AI.
