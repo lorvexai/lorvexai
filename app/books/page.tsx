@@ -113,9 +113,9 @@ export default function BooksPage() {
               </Ext>
               <Ext href={BOOK_KINDLE_URL}>Kindle</Ext>
               <Ext href={LEANPUB}>Leanpub (ebook)</Ext>
-              <a href="https://github.com/lorvexai/ai-banking-risk-platform/blob/main/chapter-06-credit-risk/README.md" target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
+              <Link href="/books/sample-chapter" className="btn-outline text-sm">
                 Read a sample chapter
-              </a>
+              </Link>
               <a href={REPO} target="_blank" rel="noopener noreferrer" className="btn-outline text-sm">
                 <Github size={14} aria-hidden="true" />
                 View on GitHub

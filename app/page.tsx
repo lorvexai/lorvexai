@@ -4,8 +4,6 @@ import { getIssues, formatIssueDate } from "@/utils/newsletter";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
 
-const SAMPLE_CHAPTER =
-  "https://github.com/lorvexai/ai-banking-risk-platform/blob/main/chapter-06-credit-risk/README.md";
 
 const CARDS = [
   [
@@ -117,9 +115,9 @@ export default function HomePage() {
               <Link href="/books" className="btn-primary min-h-11 text-sm">
                 Explore the book
               </Link>
-              <a href={SAMPLE_CHAPTER} target="_blank" rel="noopener noreferrer" className="btn-outline min-h-11 text-sm">
-                Read the Chapter 6 overview
-              </a>
+              <Link href="/books/sample-chapter" className="btn-outline min-h-11 text-sm">
+                Read a sample chapter
+              </Link>
             </div>
           </div>
           <ul className="space-y-3 text-base text-secondary/85">

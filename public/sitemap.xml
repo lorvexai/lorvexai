@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://lorvexai.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://lorvexai.com/books/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lorvexai.com/books/sample-chapter/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lorvexai.com/books/appendices/glossary/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://lorvexai.com/books/appendices/regulatory-reference/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://lorvexai.com/books/appendices/tech-stack/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
