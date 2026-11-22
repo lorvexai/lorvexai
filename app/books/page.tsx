@@ -27,7 +27,6 @@ const STATS = [
   ["31", "Primary AI systems"],
   ["11", "Agentic pipelines"],
   ["66K+", "Lines of Python"],
-  ["£12.1M", "Cumulative annual savings"],
   ["8", "Regulatory frameworks"]
 ];
 
@@ -135,7 +134,7 @@ export default function BooksPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <dl className="grid grid-cols-2 gap-4 md:grid-cols-6">
+          <dl className="grid grid-cols-2 gap-4 md:grid-cols-5">
             {STATS.map(([value, label]) => (
               <div key={label} className="card-glow p-4">
                 <dt className="text-xs text-secondary/75">{label}</dt>
