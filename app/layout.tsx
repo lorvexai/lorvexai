@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "LorvexAI Editorial Team" }],
   icons: {
-    icon: "/lorvex_icon.png",
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }, { url: "/lorvex_icon.png", type: "image/png" }],
     apple: "/lorvex_icon.png"
   },
   openGraph: {

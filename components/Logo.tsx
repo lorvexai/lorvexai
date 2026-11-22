@@ -1,22 +1,17 @@
-import { useId } from "react";
-
-/** Text-based logo: a simple V mark plus the LorvexAI wordmark. Readable at any size, works in light and dark themes. */
+/** Logo: an L and a V sharing one shape, a teal check and a checkpoint node, plus the LorvexAI wordmark. */
 export default function Logo({ className = "" }: { className?: string }) {
-  const id = useId();
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id={`lv-${id}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#22D3EE" />
-            <stop offset="100%" stopColor="#E1B133" />
-          </linearGradient>
-        </defs>
-        <rect width="32" height="32" rx="8" fill="#000A25" />
-        <path d="M8 9l8 15 8-15" fill="none" stroke={`url(#lv-${id})`} strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
+      <svg width="30" height="30" viewBox="14 14 170 170" aria-hidden="true" focusable="false">
+        <rect x="20" y="22" width="36" height="148" fill="#0A1535" />
+        <rect x="20" y="134" width="84" height="36" fill="#0A1535" />
+        <line x1="66" y1="56" x2="112" y2="138" stroke="#0A1535" strokeWidth="22" />
+        <line x1="112" y1="138" x2="176" y2="30" stroke="#19BDB3" strokeWidth="22" />
+        <circle cx="112" cy="140" r="21" fill="#FFFFFF" />
+        <circle cx="112" cy="140" r="14" fill="#19BDB3" />
       </svg>
       <span className="text-xl font-bold tracking-tight text-heading" style={{ fontFamily: "var(--font-space)" }}>
-        Lorvex<span className="text-primary">AI</span>
+        Lorvex<span style={{ color: "#19BDB3" }}>AI</span>
       </span>
     </span>
   );
