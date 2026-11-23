@@ -101,6 +101,8 @@ This series builds the assistant one layer at a time, using AWB as the case stud
 
 If you have a pilot that is stuck in review, check it against the five questions above. The one you cannot answer is usually where to start. For the full AWB design, see the [book](/books).
 
+> **Go deeper in the book.** This series draws on *AI for Financial Risk, Compliance and Regulatory Reporting*, which follows AWB from business case to production. Chapter 4 covers the Regulatory Knowledge Assistant in full. You can [read about the book and where to buy it](/books), [preview Chapter 3 on agents](/books/sample-chapter), or browse the [glossary](/books/appendices/glossary) and [regulatory reference](/books/appendices/regulatory-reference).
+
 ---
 
 *This is personal, independent writing. It does not represent the views of any current or former employer, and it is educational only, not professional advice.*
