@@ -407,3 +407,9 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 640px) {
   main p.text-sm, main li.text-sm, main p.text-xs, main dd.text-sm { font-size: 1rem; line-height: 1.6; }
 }
+
+/* Callout boxes in articles: no typographic quote marks */
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}

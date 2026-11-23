@@ -6,6 +6,8 @@ import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
 import DiagramMounter from "@/components/DiagramMounter";
 import BlogCard from "@/components/BlogCard";
+import SubscribeForm from "@/components/SubscribeForm";
+import { NEWSLETTER_NAME } from "@/utils/site";
 import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
 const siteUrl =
@@ -110,6 +112,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </div>
           )}
 
+          {post.series && (
+            <p className="mb-3 text-sm font-semibold text-primary">
+              {post.series}
+              {post.seriesPart && post.seriesTotal ? ` · Part ${post.seriesPart} of ${post.seriesTotal}` : ""}
+            </p>
+          )}
+
           {/* Title */}
           <h1 className="text-3xl font-semibold leading-snug text-heading md:text-4xl lg:text-5xl">
             {post.title}
@@ -196,6 +205,16 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               prose-img:rounded-2xl prose-img:border prose-img:border-secondary/15"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          <aside className="card-glow mt-12 border-primary/30 bg-primary/5 p-6 md:p-8" aria-label="Subscribe">
+            <p className="text-xl font-semibold text-heading">
+              {post.series ? "Get the next part by email" : "Get new articles by email"}
+            </p>
+            <p className="mb-4 mt-2 text-base text-secondary/80">
+              {NEWSLETTER_NAME} is a short weekly briefing on AI in financial risk and regulation. Each new article is
+              flagged there. Unsubscribe at any time.
+            </p>
+            <SubscribeForm id="article-email" />
+          </aside>
         </div>
       </section>
 

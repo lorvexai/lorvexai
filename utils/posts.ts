@@ -15,6 +15,9 @@ export type PostMeta = {
   excerpt: string;
   tags: string[];
   readingTime: number;
+  series?: string;
+  seriesPart?: number;
+  seriesTotal?: number;
 };
 
 function formatDate(value: unknown) {
@@ -45,6 +48,9 @@ export function getAllPosts(): PostMeta[] {
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) || [],
         readingTime: Math.max(1, Math.ceil(words / 200)),
+        series: data.series as string | undefined,
+        seriesPart: data.seriesPart as number | undefined,
+        seriesTotal: data.seriesTotal as number | undefined,
         hidden: Boolean(data.hidden)
       };
     })

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
+import { getAllPosts } from "@/utils/posts";
 import { NEWSLETTER_NAME } from "@/utils/site";
-import { ArrowRight, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Sparkles } from "lucide-react";
 
 
 const CARDS = [
@@ -29,6 +30,7 @@ const INSIDE = [
 
 export default function HomePage() {
   const latest = getIssues().find((i) => i.status === "published");
+  const article = getAllPosts()[0];
 
   return (
     <>
@@ -122,6 +124,54 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {article && (
+        <section className="section py-8 md:py-10">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <h2 className="text-3xl font-semibold text-heading">Latest article</h2>
+            <Link
+              href={`/articles/${article.slug}`}
+              className="card-glow group mt-6 block p-7 md:p-8"
+            >
+              {article.series && (
+                <p className="text-sm font-semibold text-primary">
+                  {article.series}
+                  {article.seriesPart && article.seriesTotal ? ` · Part ${article.seriesPart} of ${article.seriesTotal}` : ""}
+                </p>
+              )}
+              <h3 className="mt-2 text-2xl font-semibold leading-snug text-heading md:text-3xl">{article.title}</h3>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-secondary/80">{article.excerpt}</p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+                Read the article <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-lg font-semibold text-heading">Written by Sreedhara Reddy Kotha</p>
+            <p className="mt-1 max-w-2xl text-base leading-relaxed text-secondary/80">
+              Over 20 years in finance, risk and regulatory technology across global banks, now building AI and automation
+              for financial operations.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/about" className="btn-outline min-h-11 text-sm font-semibold">About the author</Link>
+            <a
+              href="https://www.linkedin.com/in/sreekotha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline min-h-11 text-sm font-semibold"
+            >
+              <Linkedin size={15} aria-hidden="true" />
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 

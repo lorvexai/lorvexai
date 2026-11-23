@@ -25,15 +25,31 @@ export default function NewsletterPage() {
   return (
     <>
       <section className="section pb-8 pt-14 md:pt-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-heading md:text-5xl">{NEWSLETTER_NAME}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-secondary/75">
-            A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and
-            regulatory reporting. Written for risk leaders, regulatory reporting heads and RegTech builders.
-          </p>
-          <div className="mt-8">
-            <SubscribeForm id="newsletter-email" />
+        <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+          <div>
+            <h1 className="max-w-3xl text-4xl font-semibold text-heading md:text-5xl">{NEWSLETTER_NAME}</h1>
+            <p className="mt-4 max-w-2xl text-lg text-secondary/75">
+              A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and
+              regulatory reporting. Written for risk leaders, regulatory reporting heads and RegTech builders.
+            </p>
+            <div className="mt-8">
+              <SubscribeForm id="newsletter-email" />
+            </div>
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-secondary/75">
+              Written by Sreedhara Reddy Kotha, author of the book behind this site, with over 20 years in finance, risk and
+              regulatory technology. <Link href="/about" className="font-semibold text-primary hover:text-heading">About the author</Link>
+            </p>
           </div>
+          {issues[0] && (
+            <Link href={`/newsletter/${issues[0].slug}`} className="card-glow group block p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Sample: Issue {issues[0].number}</p>
+              <h2 className="mt-3 text-xl font-semibold leading-snug text-heading">{issues[0].headline.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-secondary/80">{issues[0].headline.why}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+                Read the full issue <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </Link>
+          )}
         </div>
       </section>
 

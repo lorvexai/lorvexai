@@ -2,6 +2,9 @@
 title: Why most RAG demos fail in a regulated bank
 date: 2026-11-23
 excerpt: The demo impressed everyone. Then model risk, audit and compliance asked five questions it could not answer. Part 1 of a series on building a regulatory AI assistant a bank can trust.
+series: Building a regulatory AI assistant the bank can trust
+seriesPart: 1
+seriesTotal: 6
 tags:
   - RAG
   - Regulated AI
