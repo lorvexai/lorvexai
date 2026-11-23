@@ -44,8 +44,7 @@ export default function AboutPage() {
       <section className="section pb-0 pt-12 md:pt-16">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6">
           <div>
-            <p className="chip">About</p>
-            <h1 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
               <span className="text-heading">Hi, I'm Sree. I write about AI that regulated firms can trust.</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-secondary/85">

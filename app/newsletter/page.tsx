@@ -26,7 +26,6 @@ export default function NewsletterPage() {
     <>
       <section className="section pb-8 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Newsletter</p>
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-heading md:text-5xl">{NEWSLETTER_NAME}</h1>
           <p className="mt-4 max-w-2xl text-lg text-secondary/75">
             A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and

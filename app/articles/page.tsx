@@ -15,8 +15,7 @@ export default function ArticlesPage() {
   return (
     <section className="section pt-12 md:pt-16">
       <div className="mx-auto w-full max-w-6xl px-6">
-        <p className="chip">Articles</p>
-        <h1 className="mt-5 text-4xl font-bold leading-tight text-heading md:text-5xl">
+        <h1 className="text-4xl font-bold leading-tight text-heading md:text-5xl">
           AI systems a regulated bank can defend
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-secondary/85">
