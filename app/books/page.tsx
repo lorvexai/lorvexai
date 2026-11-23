@@ -27,7 +27,8 @@ const STATS = [
   ["31", "Primary AI systems"],
   ["11", "Agentic pipelines"],
   ["66K+", "Lines of Python"],
-  ["8", "Regulatory frameworks"]
+  ["8", "Regulatory frameworks"],
+  ["£12.1M", "Cumulative annual savings (AWB case study)"]
 ];
 
 const FAILURES = [
@@ -134,7 +135,7 @@ export default function BooksPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <dl className="grid grid-cols-2 gap-4 md:grid-cols-5">
+          <dl className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {STATS.map(([value, label]) => (
               <div key={label} className="card-glow p-4">
                 <dt className="text-xs text-secondary/75">{label}</dt>
@@ -144,7 +145,7 @@ export default function BooksPage() {
           </dl>
           <p className="mt-4 max-w-3xl text-xs leading-relaxed text-secondary/70">
             Figures reflect the book&apos;s full AI Model Registry Index (Appendix D): 31 primary systems plus 11 agentic
-            governance pipelines built on top of them.
+            governance pipelines built on top of them. Savings are those of the fictional AWB case study.
           </p>
         </div>
       </section>
