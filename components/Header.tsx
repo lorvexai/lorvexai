@@ -5,7 +5,6 @@ import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/books", label: "Books" },
   { href: "/articles", label: "Articles" },
   { href: "/newsletter", label: "Newsletter" },
