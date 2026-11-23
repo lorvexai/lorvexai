@@ -42,7 +42,7 @@ export default function NewsletterPage() {
           </div>
           {issues[0] && (
             <Link href={`/newsletter/${issues[0].slug}`} className="card-glow group block p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Sample: Issue {issues[0].number}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Latest issue: Issue {issues[0].number}</p>
               <h2 className="mt-3 text-xl font-semibold leading-snug text-heading">{issues[0].headline.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-secondary/80">{issues[0].headline.why}</p>
               <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
@@ -55,7 +55,7 @@ export default function NewsletterPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold text-heading">Issues</h2>
+          <h2 className="text-2xl font-semibold text-heading">All issues</h2>
           <div className="mt-6 grid gap-5">
             {issues.map((i) => (
               <Link key={i.slug} href={`/newsletter/${i.slug}`} className="card-glow group p-7">
