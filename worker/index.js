@@ -12,7 +12,17 @@ export default {
       return handleAsk(request, env);
     }
 
-    return env.ASSETS.fetch(request);
+    const res = await env.ASSETS.fetch(request);
+
+    // Generated social images are stored without a file extension; serve them as PNG so link previews work.
+    if (url.pathname.endsWith("/opengraph-image") && res.ok) {
+      const headers = new Headers(res.headers);
+      headers.set("Content-Type", "image/png");
+      headers.set("Cache-Control", "public, max-age=3600");
+      return new Response(res.body, { status: res.status, headers });
+    }
+
+    return res;
   }
 };
 

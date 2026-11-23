@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import mermaid from "mermaid";
 
 export default function MermaidRenderer({
   refreshKey
@@ -9,6 +8,10 @@ export default function MermaidRenderer({
   refreshKey?: string;
 }) {
   useEffect(() => {
+    let cancelled = false;
+    (async () => {
+    const mermaid = (await import("mermaid")).default;
+    if (cancelled) return;
     const root = getComputedStyle(document.documentElement);
     const cssVar = (name: string, fallback: string) => root.getPropertyValue(name).trim() || fallback;
     const cssVarRgb = (name: string, fallback: string) => {
@@ -90,6 +93,10 @@ export default function MermaidRenderer({
     mermaid.run({ querySelector: ".mermaid" }).catch(() => {
       // Keep the page usable even if one diagram fails to parse.
     });
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [refreshKey]);
 
   return null;

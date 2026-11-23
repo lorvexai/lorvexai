@@ -13,7 +13,6 @@ import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://lorvexai.com";
 const normalizedSiteUrl = siteUrl.replace(/\/$/, "");
-const socialImageUrl = `${normalizedSiteUrl}/og-image.png`;
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -37,21 +36,19 @@ export async function generateMetadata({
     title: `${post.title} | LorvexAI`,
     description: post.excerpt,
     alternates: { canonical: canonicalPath },
-    authors: [{ name: "LorvexAI" }],
+    authors: [{ name: "Sreedhara Reddy Kotha" }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url: `${normalizedSiteUrl}${canonicalPath}`,
       type: "article",
       publishedTime,
-      authors: ["LorvexAI"],
-      images: [{ url: socialImageUrl, width: 1200, height: 630, type: "image/png", alt: "LorvexAI" }]
+      authors: ["Sreedhara Reddy Kotha"]
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.excerpt,
-      images: [socialImageUrl]
+      description: post.excerpt
     },
     other: publishedTime ? { "article:published_time": publishedTime } : undefined
   };
@@ -71,7 +68,8 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = allPosts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
-  const { html, toc } = prepareArticle(await getPostContent(params.slug));
+  const rawHtml = await getPostContent(params.slug);
+  const { html, toc } = prepareArticle(rawHtml);
   const readingTime = post.readingTime ?? estimateReadingTime(html);
 
   const relatedPosts = allPosts
@@ -83,8 +81,26 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     .sort((a, b) => b.score - a.score || (a.publishedAt < b.publishedAt ? 1 : -1))
     .slice(0, 3);
 
+  const canonical = `${normalizedSiteUrl}/articles/${params.slug}/`;
+  const published = new Date(post.publishedAt);
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    ...(Number.isNaN(published.getTime()) ? {} : { datePublished: published.toISOString(), dateModified: published.toISOString() }),
+    author: { "@type": "Person", name: "Sreedhara Reddy Kotha", url: `${normalizedSiteUrl}/about/`, sameAs: ["https://www.linkedin.com/in/sreekotha/"] },
+    publisher: { "@type": "Organization", name: "LorvexAI", url: normalizedSiteUrl },
+    mainEntityOfPage: canonical,
+    image: `${canonical}opengraph-image`,
+    keywords: post.tags.join(", "),
+    inLanguage: "en-GB",
+    ...(post.series ? { isPartOf: { "@type": "CreativeWorkSeries", name: post.series } } : {})
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Article hero */}
       <section className="border-b border-secondary/10 bg-background/60 py-10 md:py-14">
         <div className="mx-auto w-full max-w-4xl px-6">
@@ -187,8 +203,8 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             )}
           </aside>
           <CopyCodeButton />
-          <MermaidRenderer />
-          <DiagramMounter />
+          {rawHtml.includes("language-mermaid") && <MermaidRenderer />}
+          {rawHtml.includes("data-diagram") && <DiagramMounter />}
           <article
             className="prose prose-invert max-w-none
               prose-headings:font-semibold prose-headings:text-heading
