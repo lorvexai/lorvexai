@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Guardrails for Enterprise AI
 date: 2026-04-13
 excerpt: Building input and output controls that keep AI systems safe, compliant, and within policy boundaries — for finance, banking, and NHS conceptual conceptual deployments.

@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI-Native Treasury Control Tower
 date: 2026-03-31
 excerpt: Where and how to use AI in treasury for real-time liquidity, risk, and decisioning with governance-first controls.

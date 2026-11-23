@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Agentic AI Design Patterns for Regulated Enterprises
 date: 2026-04-13
 excerpt: How to architect AI agents that plan, reason, and act across enterprise workflows — with the governance controls that regulated industries demand.

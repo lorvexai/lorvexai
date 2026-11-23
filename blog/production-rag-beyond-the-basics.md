@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Production RAG — Beyond the Basics
 date: 2026-04-13
 excerpt: Building retrieval-augmented generation systems that actually work in controlled settings — chunking strategy, reranking, governance, and hallucination control for enterprise conceptual conceptual deployments.

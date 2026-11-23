@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: End-to-End AI Risk Platform Architecture
 date: 2026-04-05
 excerpt: A reference blueprint for modern banking and finance risk platforms spanning data, AI/LLM pipelines, MLOps, governance, and decision serving.

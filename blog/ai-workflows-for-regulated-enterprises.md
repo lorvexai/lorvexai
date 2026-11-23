@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI Workflows for Regulated Enterprises
 date: 2026-04-13
 excerpt: How to design, orchestrate, and govern multi-step AI workflows across banking, healthcare, and healthcare operations — without breaking compliance.

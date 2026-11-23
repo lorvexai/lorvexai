@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: SEC and AI - AI-Washing, Predictive Analytics, Conflicts, and Disclosure Risk
 date: 2026-06-20
 excerpt: A practical look at the SEC's AI themes for financial firms, including misleading AI claims, predictive analytics, conflicts, disclosures, and governance.

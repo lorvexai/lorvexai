@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: The Rise of Agentic AI
 date: 2026-02-10
 excerpt: Agentic AI is moving beyond simple automation into autonomous systems that execute multi-step business workflows.

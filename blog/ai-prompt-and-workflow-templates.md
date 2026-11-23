@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI Prompt and Workflow Templates for Finance and Healthcare
 date: 2026-04-13
 excerpt: Reference prompt patterns and reusable workflow templates for regulated AI conceptual conceptual deployments — covering governance analysis, clinical summarisation, risk reporting, and agentic task orchestration.

@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI Model Inventory and Tiering for Banks
 date: 2026-06-20
 excerpt: A practical blueprint for cataloguing AI use cases, assigning model risk tiers, and linking governance depth to business impact.

@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Enterprise RAG Architectures
 date: 2026-03-30
 excerpt: Designing retrieval-augmented generation systems for reliability, governance, and production-aware intelligence at scale.

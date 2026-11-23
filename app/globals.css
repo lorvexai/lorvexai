@@ -302,6 +302,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .prose td {
+  color: rgb(var(--color-secondary-rgb));
   border: 1px solid var(--hairline);
   padding: 0.65rem 0.8rem;
   text-align: left;

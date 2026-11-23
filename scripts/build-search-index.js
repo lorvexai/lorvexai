@@ -39,7 +39,7 @@ function buildBlogChunks() {
     if (data.hidden) continue;
 
     const title = data.title || slug;
-    const href = `/blog/${slug}`;
+    const href = `/articles/${slug}`;
     const sections = content.split(/\n##\s+/);
 
     sections.forEach((section, index) => {

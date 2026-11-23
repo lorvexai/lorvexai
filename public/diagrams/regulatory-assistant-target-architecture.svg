@@ -1,0 +1,91 @@
+<svg width="1200" height="680" viewBox="0 0 1200 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Target architecture for a trustworthy regulatory assistant: sources, ingestion, index, agents, model gateway, guardrails, human review and an audit log, all driven by versioned configuration">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0E6982"/></marker>
+    <style>
+      .t{font:700 26px Inter,'Segoe UI',Arial,sans-serif;fill:#0F172A}
+      .s{font:500 15px Inter,'Segoe UI',Arial,sans-serif;fill:#334155}
+      .h{font:700 17px Inter,'Segoe UI',Arial,sans-serif;fill:#0F172A}
+      .b{font:500 13.5px Inter,'Segoe UI',Arial,sans-serif;fill:#334155}
+      .k{font:700 12px Inter,'Segoe UI',Arial,sans-serif;fill:#0E6982;letter-spacing:.08em}
+      .box{fill:#FFFFFF;stroke:#CBD5E1;stroke-width:1.5}
+      .swap{fill:#F1F5F9;stroke:#0E6982;stroke-width:1.5;stroke-dasharray:6 5}
+      .ln{stroke:#0E6982;stroke-width:2;fill:none}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#F8FAFC"/>
+  <text x="40" y="48" class="t">A regulatory assistant a bank can defend</text>
+  <text x="40" y="74" class="s">Every dashed box is a swappable component. The contracts between the boxes stay fixed.</text>
+
+  <!-- row 1 -->
+  <rect x="40" y="110" width="200" height="150" rx="14" class="box"/>
+  <text x="58" y="138" class="k">1  SOURCES</text>
+  <text x="58" y="164" class="h">Rule text and templates</text>
+  <text x="58" y="188" class="b">PDFs, scans, tables,</text>
+  <text x="58" y="206" class="b">reporting templates,</text>
+  <text x="58" y="224" class="b">internal policies</text>
+
+  <rect x="290" y="110" width="220" height="150" rx="14" class="box"/>
+  <text x="308" y="138" class="k">2  INGESTION</text>
+  <text x="308" y="164" class="h">Parse, version, tag</text>
+  <text x="308" y="188" class="b">Text and page images read</text>
+  <text x="308" y="206" class="b">together (multimodal)</text>
+  <text x="308" y="224" class="b">Effective dates, owner, source</text>
+
+  <rect x="560" y="110" width="220" height="150" rx="14" class="swap"/>
+  <text x="578" y="138" class="k">3  INDEX</text>
+  <text x="578" y="164" class="h">Retrieval store</text>
+  <text x="578" y="188" class="b">Any vector, keyword or</text>
+  <text x="578" y="206" class="b">hybrid store behind one</text>
+  <text x="578" y="224" class="b">search interface</text>
+
+  <rect x="830" y="110" width="330" height="150" rx="14" class="box"/>
+  <text x="848" y="138" class="k">4  AGENTS</text>
+  <text x="848" y="164" class="h">Retriever, analyst, reviewer</text>
+  <text x="848" y="188" class="b">An orchestrator routes the task,</text>
+  <text x="848" y="206" class="b">tracks state and decides when</text>
+  <text x="848" y="224" class="b">to stop or hand to a person</text>
+
+  <path d="M240 185 H288" class="ln" marker-end="url(#a)"/>
+  <path d="M510 185 H558" class="ln" marker-end="url(#a)"/>
+  <path d="M780 185 H828" class="ln" marker-end="url(#a)"/>
+
+  <!-- row 2 -->
+  <rect x="830" y="310" width="330" height="110" rx="14" class="swap"/>
+  <text x="848" y="338" class="k">5  MODEL GATEWAY</text>
+  <text x="848" y="364" class="h">Any LLM, one interface</text>
+  <text x="848" y="388" class="b">Swap or route models without</text>
+  <text x="848" y="406" class="b">changing the agents above it</text>
+  <path d="M995 260 V308" class="ln" marker-end="url(#a)"/>
+
+  <rect x="560" y="310" width="220" height="110" rx="14" class="box"/>
+  <text x="578" y="338" class="k">6  GUARDRAILS</text>
+  <text x="578" y="364" class="h">Check before release</text>
+  <text x="578" y="388" class="b">Citation present, rule in force,</text>
+  <text x="578" y="406" class="b">confidence above threshold</text>
+  <path d="M828 365 H782" class="ln" marker-end="url(#a)"/>
+
+  <rect x="290" y="310" width="220" height="110" rx="14" class="box"/>
+  <text x="308" y="338" class="k">7  HUMAN REVIEW</text>
+  <text x="308" y="364" class="h">A named approver</text>
+  <text x="308" y="388" class="b">Low confidence or high impact</text>
+  <text x="308" y="406" class="b">goes to a person first</text>
+  <path d="M558 365 H512" class="ln" marker-end="url(#a)"/>
+
+  <rect x="40" y="310" width="200" height="110" rx="14" class="box"/>
+  <text x="58" y="338" class="k">8  ANSWER</text>
+  <text x="58" y="364" class="h">With citations</text>
+  <text x="58" y="388" class="b">Source, section and</text>
+  <text x="58" y="406" class="b">rule version shown</text>
+  <path d="M288 365 H242" class="ln" marker-end="url(#a)"/>
+
+  <!-- bottom bands -->
+  <rect x="40" y="470" width="1120" height="76" rx="14" class="box"/>
+  <text x="58" y="498" class="k">AUDIT LOG</text>
+  <text x="58" y="522" class="h">Question, sources retrieved, model and settings used, guardrail result, approver, final answer</text>
+  <text x="58" y="540" class="b">Written at every step, so any answer can be replayed and explained later</text>
+
+  <rect x="40" y="566" width="1120" height="76" rx="14" class="swap"/>
+  <text x="58" y="594" class="k">VERSIONED CONFIGURATION</text>
+  <text x="58" y="618" class="h">Model, retrieval depth, chunk size, thresholds, prompts, approval rules</text>
+  <text x="58" y="636" class="b">Changed through review, tested against a fixed question set, and recorded with every answer</text>
+</svg>

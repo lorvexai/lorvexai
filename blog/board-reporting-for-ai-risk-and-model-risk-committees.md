@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Board Reporting for AI Risk and Model Risk Committees
 date: 2026-06-20
 excerpt: A practical design for AI risk reporting that helps boards and model risk committees see adoption, material risks, incidents, assurance, and remediation.

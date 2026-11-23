@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: LLM Evaluation in Production
 date: 2026-04-13
 excerpt: How to build evaluation frameworks that catch failures before they reach users — metrics, harnesses, and continuous quality monitoring for enterprise LLM conceptual conceptual deployments.

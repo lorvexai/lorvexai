@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Fine-Tuning vs RAG vs Prompting — Choosing the Right Approach
 date: 2026-04-13
 excerpt: A practical decision framework for choosing between prompt engineering, retrieval-augmented generation, and fine-tuning for enterprise AI conceptual conceptual deployments in regulated industries.

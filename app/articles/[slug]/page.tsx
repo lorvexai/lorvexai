@@ -25,7 +25,7 @@ export async function generateMetadata({
   const post = getAllPosts().find((p) => p.slug === params.slug);
   if (!post) return { title: "Article Not Found | LorvexAI" };
 
-  const canonicalPath = `/blog/${params.slug}`;
+  const canonicalPath = `/articles/${params.slug}`;
   const maybeDate = new Date(post.publishedAt);
   const publishedTime = Number.isNaN(maybeDate.getTime())
     ? undefined
@@ -55,24 +55,8 @@ export async function generateMetadata({
   };
 }
 
-const TAG_ACCENT: Record<string, string> = {
-  finance:       "border-blue-400/30 bg-blue-400/10 text-blue-300",
-  banking:       "border-blue-400/30 bg-blue-400/10 text-blue-300",
-  nhs:           "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
-  healthcare:    "border-emerald-400/30 bg-emerald-400/10 text-emerald-300",
-  enterprise:    "border-violet-400/30 bg-violet-400/10 text-violet-300",
-  architecture:  "border-violet-400/30 bg-violet-400/10 text-violet-300",
-  risk:          "border-orange-400/30 bg-orange-400/10 text-orange-300",
-  treasury:      "border-orange-400/30 bg-orange-400/10 text-orange-300",
-  default:       "border-secondary/25 bg-secondary/10 text-secondary/75"
-};
-
-function getTagAccent(tag: string): string {
-  const key = tag.toLowerCase();
-  for (const [pattern, cls] of Object.entries(TAG_ACCENT)) {
-    if (key.includes(pattern)) return cls;
-  }
-  return TAG_ACCENT.default;
+function getTagAccent(_tag: string): string {
+  return "border-primary/30 bg-primary/10 text-primary";
 }
 
 function estimateReadingTime(html: string): number {
@@ -104,7 +88,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <div className="mx-auto w-full max-w-4xl px-6">
           {/* Back link */}
           <Link
-            href="/blog"
+            href="/articles"
             className="mb-6 inline-flex items-center gap-1.5 text-sm text-secondary/70 transition hover:text-heading"
           >
             <ArrowLeft size={14} aria-hidden="true" />
@@ -148,12 +132,12 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </div>
             <div className="flex items-center gap-1.5 text-sm text-secondary/70">
               <span className="h-1 w-1 rounded-full bg-secondary/30" />
-              <span>By LorvexAI</span>
+              <span>By Sreedhara Reddy Kotha</span>
             </div>
             <div className="ml-auto flex items-center gap-2">
               <span className="text-xs text-secondary/70">Share:</span>
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${normalizedSiteUrl}/blog/${params.slug}`)}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${normalizedSiteUrl}/articles/${params.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full border border-secondary/20 bg-background/40 px-3 py-1.5 text-xs text-secondary/75 transition hover:border-primary/40 hover:text-primary"
@@ -227,7 +211,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
                 <h2 className="text-xl font-semibold text-heading">Related Insights</h2>
               </div>
               <Link
-                href="/blog"
+                href="/articles"
                 className="text-sm text-secondary/70 transition hover:text-heading"
               >
                 View all →

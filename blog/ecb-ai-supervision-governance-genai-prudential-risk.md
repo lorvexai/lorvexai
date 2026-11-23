@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: ECB AI Supervision - Governance, GenAI, and Prudential Risk
 date: 2026-06-20
 excerpt: What banks can learn from the ECB's focus on AI governance, generative AI, strategy, risk management, and supervisory control.

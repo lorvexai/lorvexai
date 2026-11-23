@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Enterprise LLM Chat Interfaces
 date: 2026-04-13
 excerpt: Building production-aware AI chat interfaces for regulated industries — authentication, audit trails, multi-model routing, session governance, and compliance-by-design.

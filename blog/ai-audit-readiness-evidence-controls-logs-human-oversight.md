@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI Audit Readiness - Evidence, Controls, Logs, and Human Oversight
 date: 2026-06-20
 excerpt: How to make AI systems easier to audit by designing evidence, control ownership, logging, and human oversight from the start.

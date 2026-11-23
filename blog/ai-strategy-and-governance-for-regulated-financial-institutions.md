@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI Strategy and Governance for Regulated Financial Institutions
 date: 2026-06-20
 excerpt: A practical, board-friendly way to think about AI strategy, governance, accountability, and control in banks and regulated financial institutions.

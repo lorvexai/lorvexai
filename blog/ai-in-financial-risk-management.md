@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: AI in Financial Risk Management
 date: 2026-03-05
 excerpt: Applying AI to risk modeling requires governance-first architectures and transparent decision workflows.

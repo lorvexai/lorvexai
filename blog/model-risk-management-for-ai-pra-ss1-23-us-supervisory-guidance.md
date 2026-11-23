@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Model Risk Management for AI - PRA SS1/23 and US Supervisory Guidance
 date: 2026-06-20
 excerpt: A practical view of how AI model risk can be governed using model inventory, tiering, validation, explainability, monitoring, and effective challenge.
