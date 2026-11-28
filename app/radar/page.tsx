@@ -72,7 +72,7 @@ export default function RadarPage() {
         ))}
         <p className="mt-12 max-w-3xl text-xs leading-relaxed text-secondary/70">
           Personal opinion and a summary of public sources. Not legal, regulatory or investment advice. Check the linked
-          documents before you act. See also the <Link href="/regulatory-calendar" className="text-primary underline underline-offset-2">regulatory calendar</Link>.
+          documents before you act. How to cite: Kotha, S. R. (2026). RegTech and AI Radar. LorvexAI. https://lorvexai.com/radar/. See also the <Link href="/regulatory-calendar" className="text-primary underline underline-offset-2">regulatory calendar</Link>.
         </p>
       </div>
     </section>

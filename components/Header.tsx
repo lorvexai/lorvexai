@@ -50,8 +50,8 @@ export default function Header() {
                 href={item.href}
                 className={
                   active
-                    ? "inline-flex min-h-11 items-center justify-center rounded-full border border-primary/45 bg-primary/20 px-2 text-sm font-semibold text-heading"
-                    : "inline-flex min-h-11 items-center justify-center rounded-full border border-secondary/35 bg-background/30 px-2 text-sm text-secondary/85"
+                    ? "inline-flex min-h-11 items-center justify-center rounded-full border border-primary/45 bg-primary/20 px-1 text-[13px] font-semibold text-heading"
+                    : "inline-flex min-h-11 items-center justify-center rounded-full border border-secondary/35 bg-background/30 px-1 text-[13px] text-secondary/85"
                 }
               >
                 {item.label}

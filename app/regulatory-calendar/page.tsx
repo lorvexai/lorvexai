@@ -59,7 +59,7 @@ export default function CalendarPage() {
         </ol>
         <p className="mt-10 max-w-3xl text-xs leading-relaxed text-secondary/70">
           Personal opinion and a summary of public sources. Not legal, regulatory or investment advice. Dates can change, so
-          confirm against the primary document. See also the{" "}
+          confirm against the primary document. How to cite: Kotha, S. R. (2026). AI and financial regulation calendar. LorvexAI. https://lorvexai.com/regulatory-calendar/. See also the{" "}
           <Link href="/radar" className="text-primary underline underline-offset-2">RegTech and AI Radar</Link>.
         </p>
       </div>
