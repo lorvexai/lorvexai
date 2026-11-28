@@ -53,7 +53,15 @@ const INSIDE = [
 
 export default function HomePage() {
   const latest = getIssues().find((i) => i.status === "published");
-  const article = getAllPosts()[0];
+  const posts = getAllPosts();
+  const article = posts[0];
+  const issueCount = getIssues().filter((i) => i.status === "published").length;
+  const PROOF: [string, string][] = [
+    ["16", "chapters in the book"],
+    ["31", "AI systems built and governed"],
+    [String(posts.length), "articles, with a six-part series"],
+    [String(issueCount), "weekly briefings published"]
+  ];
 
   return (
     <>
@@ -82,6 +90,10 @@ export default function HomePage() {
                 Read the weekly briefing
               </Link>
             </div>
+            <p className="mt-4 text-sm text-secondary/80">
+              New here?{" "}
+              <Link href="/start-here" className="font-semibold text-primary hover:text-heading">Start here</Link>
+            </p>
           </div>
           <Link href="/books" className="group mx-auto block w-full max-w-xs">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -98,6 +110,19 @@ export default function HomePage() {
           </Link>
         </div>
 
+      </section>
+
+      <section className="section py-6 md:py-8" aria-label="At a glance">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <dl className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {PROOF.map(([value, label]) => (
+              <div key={label} className="card-solid p-5">
+                <dd className="text-3xl font-semibold text-heading">{value}</dd>
+                <dt className="mt-1 text-sm text-secondary/80">{label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
       <section className="section py-8 md:py-10">
@@ -204,6 +229,27 @@ export default function HomePage() {
               <p className="mt-1 text-base text-secondary/80">Until then, read every issue on the site or follow new articles on LinkedIn.</p>
               <Link href="/newsletter" className="btn-outline mt-4 min-h-11 text-sm font-semibold">All issues</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <h2 className="text-3xl font-semibold text-heading">Free tools and references</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              ["/regulatory-calendar", "Regulatory calendar", "EU, UK and US dates for AI and financial regulation, each with a source."],
+              ["/radar", "RegTech and AI Radar", "What is live, being built and worth watching, with no vendor rankings."],
+              ["/downloads/regulatory-rag-evidence-checklist.pdf", "RAG evidence checklist", "A one-page PDF of what validators and auditors ask for."]
+            ].map(([href, title, text]) => (
+              <Link key={href} href={href} className="card-solid group block p-6">
+                <h3 className="text-lg font-semibold text-heading">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-secondary/80">{text}</p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+                  Open <ArrowRight size={14} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

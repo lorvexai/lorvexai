@@ -77,7 +77,7 @@ A good answer can come from a bad run. Build a set of scripted questions where y
 
 ## What comes next
 
-One agent is manageable. Part 4 looks at several agents working together, and how to keep a team of them from becoming a source of chaos.
+One agent is manageable. [Part 4](/articles/multi-agent-orchestration-without-chaos) looks at several agents working together, and how to keep a team of them from becoming a source of chaos.
 
 > **Go deeper in the book.** Chapter 3 on agents walks through the AWB design in detail. [Preview the sample chapter](/books/sample-chapter) or [see the book](/books).
 

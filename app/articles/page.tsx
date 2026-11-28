@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { getAllPosts } from "@/utils/posts";
 
 export const metadata: Metadata = {
-  title: "Articles | LorvexAI",
+  title: "AI Articles for Regulated Banks: RAG, Agents, Model Risk | LorvexAI",
   description:
     "Practical articles on RAG, agents and multi-agent orchestration for regulated financial services, from the author of the AWB case-study book.",
   alternates: { canonical: "/articles" }
@@ -29,6 +29,10 @@ export default function ArticlesPage() {
           <Link href="/radar" className="font-semibold text-primary hover:text-heading">RegTech and AI Radar</Link>
           {" · "}
           <Link href="/regulatory-calendar" className="font-semibold text-primary hover:text-heading">Regulatory calendar</Link>
+          {" · "}
+          <a href="/downloads/regulatory-rag-evidence-checklist.pdf" className="font-semibold text-primary hover:text-heading">RAG evidence checklist (PDF)</a>
+          {" · "}
+          <Link href="/start-here" className="font-semibold text-primary hover:text-heading">Start here</Link>
         </p>
         <ArticleList posts={posts} />
       </div>

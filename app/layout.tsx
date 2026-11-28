@@ -37,25 +37,18 @@ const serif = Source_Serif_4({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${normalizedSiteUrl}/`),
-  title: "LorvexAI - Controlled AI Architecture, Books and Research",
+  title: "LorvexAI | Governed AI for Banking, Risk and Regulatory Reporting",
   description:
-    "Independent books and a weekly briefing on controlled AI systems in finance, risk, compliance, and enterprise automation.",
-  keywords: [
-    "Controlled AI Architecture",
-    "AI Governance Education",
-    "Enterprise RAG Patterns",
-    "AI Books and Research",
-    "Finance Risk Technology"
-  ],
-  authors: [{ name: "LorvexAI Editorial Team" }],
+    "A book, practical articles and a weekly briefing on building AI that banks can govern, audit and defend: RAG, agents, model risk and regulation.",
+  authors: [{ name: "Sreedhara Reddy Kotha" }],
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }, { url: "/lorvex_icon.png", type: "image/png" }],
     apple: "/lorvex_icon.png"
   },
   openGraph: {
-    title: "LorvexAI - Controlled AI Architecture, Books and Research",
+    title: "LorvexAI | Governed AI for Banking, Risk and Regulatory Reporting",
     description:
-      "Independent books and a weekly briefing on controlled AI systems in regulated environments.",
+      "A book, practical articles and a weekly briefing on AI that banks can govern, audit and defend.",
     url: siteUrl,
     siteName: "LorvexAI",
     images: [

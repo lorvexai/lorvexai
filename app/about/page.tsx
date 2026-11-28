@@ -4,8 +4,8 @@ import { Linkedin, Mail } from "lucide-react";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About LorvexAI | Independent Research and Architecture",
-  description: "LorvexAI is an independent education, publishing, research, and AI architecture platform created by Sreedhara Reddy Kotha.",
+  title: "About Sreedhara Reddy Kotha | Finance and AI Practitioner | LorvexAI",
+  description: "Sreedhara Reddy Kotha has over 20 years in finance, risk and regulatory technology and writes LorvexAI, an independent publication on governed AI for banking.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About LorvexAI | Independent Research and Architecture",

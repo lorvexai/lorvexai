@@ -232,6 +232,31 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               prose-img:rounded-2xl prose-img:border prose-img:border-secondary/15"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          {inSeries.length > 0 && (
+            <aside className="card-glow mt-10 p-6" aria-label="Series so far">
+              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">{post.series}</p>
+              <ol className="mt-3 space-y-2">
+                {inSeries.map((p) => (
+                  <li key={p.slug} className="text-sm leading-relaxed">
+                    <span className="font-mono text-xs text-secondary/70">Part {p.seriesPart} · </span>
+                    {p.slug === post.slug ? (
+                      <span className="font-semibold text-heading">{p.title} (you are here)</span>
+                    ) : (
+                      <Link href={`/articles/${p.slug}`} className="text-primary hover:text-heading">{p.title}</Link>
+                    )}
+                  </li>
+                ))}
+              </ol>
+              {post.seriesTotal && inSeries.length < post.seriesTotal && (
+                <p className="mt-3 text-xs text-secondary/70">{post.seriesTotal - inSeries.length} more parts to come.</p>
+              )}
+            </aside>
+          )}
+
+          <p className="mt-8 text-xs leading-relaxed text-secondary/70" id="how-to-cite">
+            How to cite: Kotha, S. R. ({post.publishedAt.slice(0, 4)}). {post.title}. LorvexAI. {normalizedSiteUrl}/articles/{params.slug}/
+          </p>
+
           {seriesNav.length > 0 && (
             <nav className="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Series navigation">
               {seriesNav.map(({ dir, p }) => (
