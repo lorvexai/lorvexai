@@ -46,6 +46,15 @@ export default function NewsletterPage() {
               <SubscribeForm id="newsletter-email" />
             </div>
             <p className="mt-3 text-xs text-secondary/70">Weekly. One email. Unsubscribe at any time.</p>
+            {issues[0] && (
+              <p className="mt-2 text-sm text-secondary/80">
+                Not sure yet?{" "}
+                <Link href={`/newsletter/${issues[0].slug}`} className="font-semibold text-primary hover:text-heading">
+                  Read Issue {issues[0].number} first
+                </Link>
+                .
+              </p>
+            )}
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-secondary/75">
               Written by Sreedhara Reddy Kotha, author of the book behind this site, with over 20 years in finance, risk and
               regulatory technology. <Link href="/about" className="font-semibold text-primary hover:text-heading">About the author</Link>
@@ -87,6 +96,7 @@ export default function NewsletterPage() {
               <Link key={i.slug} href={`/newsletter/${i.slug}`} className="card-glow group p-7">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="chip">Issue {i.number}</span>
+                  <span className="sr-only"> · </span>
                   <span className="font-mono text-xs text-secondary/75">{formatIssueDate(i.date)}</span>
                   {i.status === "preview" && (
                     <span className="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">
