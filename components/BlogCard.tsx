@@ -59,7 +59,7 @@ export default function BlogCard({
 
       <div className="mt-5 flex items-center justify-between gap-3">
       <Link
-        href={`/blog/${slug}`}
+        href={`/articles/${slug}`}
         className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-all hover:gap-2.5"
       >
         Read article

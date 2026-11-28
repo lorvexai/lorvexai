@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SubscribeForm from "@/components/SubscribeForm";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
@@ -5,6 +6,29 @@ import { getAllPosts } from "@/utils/posts";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { ArrowRight, Linkedin, Mail, Sparkles } from "lucide-react";
 
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" }
+};
+
+const SITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "LorvexAI",
+      url: "https://lorvexai.com/",
+      description: "Books, articles and a weekly briefing on governed AI for banking, finance and risk."
+    },
+    {
+      "@type": "Person",
+      name: "Sreedhara Reddy Kotha",
+      url: "https://lorvexai.com/about/",
+      jobTitle: "Finance and AI consultant and author",
+      sameAs: ["https://www.linkedin.com/in/sreekotha/"]
+    }
+  ]
+};
 
 const CARDS = [
   [
@@ -34,6 +58,7 @@ export default function HomePage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSON_LD) }} />
       <section className="relative overflow-hidden">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 pb-10 pt-12 md:grid-cols-[1.1fr_0.9fr] md:items-center md:pb-14 md:pt-16">
           <div>

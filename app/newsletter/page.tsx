@@ -45,7 +45,7 @@ export default function NewsletterPage() {
             <div className="mt-7">
               <SubscribeForm id="newsletter-email" />
             </div>
-            <p className="mt-3 text-xs text-secondary/70">Weekly on Mondays. One email. Unsubscribe at any time.</p>
+            <p className="mt-3 text-xs text-secondary/70">Weekly. One email. Unsubscribe at any time.</p>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-secondary/75">
               Written by Sreedhara Reddy Kotha, author of the book behind this site, with over 20 years in finance, risk and
               regulatory technology. <Link href="/about" className="font-semibold text-primary hover:text-heading">About the author</Link>

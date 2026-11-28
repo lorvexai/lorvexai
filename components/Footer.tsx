@@ -17,7 +17,7 @@ export default function Footer() {
         </p>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-1">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm text-secondary/80 transition hover:text-heading">
+            <Link key={link.href} href={link.href} className="inline-flex min-h-11 items-center text-sm text-secondary/80 transition hover:text-heading">
               {link.label}
             </Link>
           ))}

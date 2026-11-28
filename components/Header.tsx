@@ -50,8 +50,8 @@ export default function Header() {
                 href={item.href}
                 className={
                   active
-                    ? "whitespace-nowrap rounded-full border border-primary/45 bg-primary/20 px-3 py-2 text-xs font-semibold text-heading"
-                    : "whitespace-nowrap rounded-full border border-secondary/35 bg-background/30 px-3 py-2 text-xs text-secondary/85"
+                    ? "inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-primary/45 bg-primary/20 px-4 text-sm font-semibold text-heading"
+                    : "inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-secondary/35 bg-background/30 px-4 text-sm text-secondary/85"
                 }
               >
                 {item.label}

@@ -8,3 +8,4 @@
 /industries/enterprise/* /articles/                301
 /research/*              /articles/                301
 /topics/*                /articles/                301
+/blog/*                  /articles/            301

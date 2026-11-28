@@ -55,7 +55,7 @@ Good citations are decided long before anyone asks a question.
 
 ## Steps 4 to 6: decide, write, verify
 
-**The confidence gate.** If the best evidence is weak, the right answer is no answer. AWB's assistant refuses when its confidence falls below 0.65, and the question goes to a person with the reason recorded.
+**The confidence gate.** If the best evidence is weak, the right answer is no answer. In the AWB case study, the assistant refuses when its confidence falls below 0.65, and the question goes to a person with the reason recorded. That number is an illustrative setting for a fictional bank, not a recommended standard. Calibrate your own threshold against a labelled set of real questions, and review it whenever the model or corpus changes.
 
 **Generate with citations.** The model is told to attach a page and paragraph reference to each claim, and to use only the passages it was given. The book calls this grounding, one of AWB's three core hallucination mitigations.
 
@@ -71,14 +71,14 @@ Every choice above is a setting, and each one changes what a reader sees. That i
 | Metadata filters | Which documents can be searched | Wrong dates or statuses put superseded rules back in the results |
 | De-duplication | Whether repeated text counts once | Duplicates push out other sources and inflate confidence |
 | Candidates retrieved and kept | How many passages are fetched, and how many survive reranking | Too many adds noise. AWB keeps the top five |
-| Confidence threshold | When the assistant refuses | Too low releases weak answers. Too high refuses too often. AWB uses 0.65 |
+| Confidence threshold | When the assistant refuses | Too low releases weak answers. Too high refuses too often. The AWB case study uses 0.65 (illustrative; calibrate your own) |
 | Model randomness (temperature) | How much the wording varies between runs | The same question should give the same answer, so keep it low and fixed |
 
 Change any of these and the answer can change. So they live in reviewed configuration, they are tested against a fixed set of questions, and the values in force are recorded with every answer.
 
 ## Measure it, do not assume it
 
-"It looked right" is not evidence. The book measures retrieval and answer quality with RAGAS, which scores four things: faithfulness, answer relevancy, context precision and context recall. AWB treats faithfulness as its primary guard against hallucination and sets the threshold at 0.85 or higher.
+"It looked right" is not evidence. The book measures retrieval and answer quality with [RAGAS](https://docs.ragas.io), an open-source evaluation library. The case study uses four of its measures: faithfulness, answer relevancy, context precision and context recall. RAGAS offers more metrics than these, and its definitions change between versions, so record the version you test with. AWB treats faithfulness as its primary guard against hallucination and sets an illustrative threshold of 0.85 or higher. Choose yours from your own evaluation data.
 
 The method matters more than the numbers. Keep a fixed set of real questions with known good answers. Run it before and after every change to a setting, a model or a document set. If a change makes faithfulness drop, it does not ship.
 

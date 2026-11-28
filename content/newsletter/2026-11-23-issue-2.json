@@ -12,7 +12,7 @@
       "On 19 November the three authorities published a joint consultation (PRA CP17/26, FCA GC26/9) on cyber risk and resilience management. It sets out principles-based, outcome-focused expectations covering governance, operational resilience, operational risk and third-party risk management in a cyber context. The regulators say it introduces no new rules and clarifies how firms should meet current requirements.",
       "Two non-binding effective practices documents, on AI and on quantum computing, were published alongside it. They are not open for formal consultation, but feedback is welcome. The consultation closes on Friday 26 February 2027, and final guidance is expected in the first half of 2027 as a joint supervisory statement and FCA finalised guidance."
     ],
-    "why": "This is the first time cyber, AI and quantum expectations sit in one package. Treat the draft as the benchmark your supervisors will use, and check that AI vendors and agents are inside your third-party and operational resilience inventories.",
+    "why": "This package brings cyber, AI and quantum expectations together in one place. Author's view: treat the draft as a likely benchmark for supervisory conversations, and check that AI vendors and agents are inside your third-party and operational resilience inventories.",
     "sources": [
       {
         "label": "Bank of England: CP17/26 and GC26/9",
@@ -113,6 +113,10 @@
           "body": "Regulation (EU) 2026/1744 was published on 24 July and entered into force on 27 July. Two dates arrive on 2 December 2026: the new Article 5 prohibition on AI systems that generate non-consensual intimate content or child sexual abuse material, and the end of the grace period for Article 50(2) marking of AI-generated content for systems already on the market before 2 August. Annex III high-risk obligations now apply from 2 December 2027, and Annex I product-linked obligations from 2 August 2028.",
           "why": "Credit scoring and similar Annex III systems gain a year, but the work does not stop. Keep your inventory, classification and vendor assurance moving, and check any generative systems against the 2 December marking date.",
           "sources": [
+            {
+              "label": "Regulation (EU) 2026/1744 (EUR-Lex)",
+              "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+            },
             {
               "label": "AKOS: Digital Omnibus on AI key dates",
               "url": "https://www.akos-rs.si/en/umetna-inteligenca/explore/frequently-asked-questions-and-answers/digital-omnibus-on-artificial-intelligence"
