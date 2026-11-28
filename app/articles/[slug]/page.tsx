@@ -81,6 +81,16 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     .sort((a, b) => b.score - a.score || (a.publishedAt < b.publishedAt ? 1 : -1))
     .slice(0, 3);
 
+  const inSeries = post.series
+    ? getAllPosts()
+        .filter((p) => p.series === post.series && p.seriesPart)
+        .sort((a, b) => (a.seriesPart ?? 0) - (b.seriesPart ?? 0))
+    : [];
+  const at = inSeries.findIndex((p) => p.slug === post.slug);
+  const seriesNav: { dir: "prev" | "next"; p: (typeof inSeries)[number] }[] = [];
+  if (at > 0) seriesNav.push({ dir: "prev", p: inSeries[at - 1] });
+  if (at >= 0 && at < inSeries.length - 1) seriesNav.push({ dir: "next", p: inSeries[at + 1] });
+
   const canonical = `${normalizedSiteUrl}/articles/${params.slug}/`;
   const published = new Date(post.publishedAt);
   const jsonLd: Record<string, unknown> = {
@@ -221,6 +231,23 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               prose-img:rounded-2xl prose-img:border prose-img:border-secondary/15"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          {seriesNav.length > 0 && (
+            <nav className="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Series navigation">
+              {seriesNav.map(({ dir, p }) => (
+                <Link
+                  key={p.slug}
+                  href={`/articles/${p.slug}`}
+                  className={`card-glow group block p-5 ${dir === "next" ? "sm:col-start-2 sm:text-right" : ""}`}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                    {dir === "next" ? "Next" : "Previous"} · Part {p.seriesPart}
+                  </p>
+                  <p className="mt-2 text-lg font-semibold leading-snug text-heading">{p.title}</p>
+                </Link>
+              ))}
+            </nav>
+          )}
+
           <aside className="card-glow mt-12 border-primary/30 bg-primary/5 p-6 md:p-8" aria-label="Subscribe">
             <p className="text-xl font-semibold text-heading">
               {post.series ? "Get the next part by email" : "Get new articles by email"}

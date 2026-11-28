@@ -96,7 +96,7 @@ The book covers each of these in depth, and the [glossary](/books/appendices/glo
 This series builds the assistant one layer at a time, using AWB as the case study:
 
 1. Why most RAG demos fail in a regulated bank (this article)
-2. RAG that cites its sources
+2. [RAG that cites its sources](/articles/rag-that-cites-its-sources)
 3. From chatbot to agent
 4. Multi-agent orchestration without chaos
 5. Guardrails, human sign-off and audit trails

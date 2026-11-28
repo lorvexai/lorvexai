@@ -1,0 +1,93 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a cited answer: filter to rules in force, hybrid retrieval, rerank to the top five, confidence gate that refuses below 0.65, generate with citations, verify every citation, then answer with page and paragraph references">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0E6982"/></marker>
+    <style>
+      .t{font:700 26px Inter,'Segoe UI',Arial,sans-serif;fill:#0F172A}
+      .s{font:500 15px Inter,'Segoe UI',Arial,sans-serif;fill:#334155}
+      .h{font:700 17px Inter,'Segoe UI',Arial,sans-serif;fill:#0F172A}
+      .b{font:500 13px Inter,'Segoe UI',Arial,sans-serif;fill:#334155}
+      .k{font:700 12px Inter,'Segoe UI',Arial,sans-serif;fill:#0E6982;letter-spacing:.08em}
+      .box{fill:#FFFFFF;stroke:#CBD5E1;stroke-width:1.5}
+      .gate{fill:#F1F5F9;stroke:#0E6982;stroke-width:2}
+      .ln{stroke:#0E6982;stroke-width:2;fill:none}
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#F8FAFC"/>
+  <text x="40" y="48" class="t">Anatomy of a cited answer</text>
+  <text x="40" y="74" class="s">Six steps between a question and an answer a reviewer can check. Any step can stop the answer.</text>
+
+  <rect x="40" y="100" width="1120" height="70" rx="14" class="box"/>
+  <text x="58" y="127" class="k">METADATA CARRIED BY EVERY PASSAGE</text>
+  <text x="58" y="152" class="h">Document, version, status, effective date, page, paragraph</text>
+
+  <!-- six steps -->
+  <rect x="40" y="220" width="170" height="170" rx="14" class="box"/>
+  <text x="56" y="248" class="k">1  FILTER</text>
+  <text x="56" y="274" class="h">Rules in force</text>
+  <text x="56" y="298" class="b">Keep passages that</text>
+  <text x="56" y="316" class="b">apply on the date</text>
+  <text x="56" y="334" class="b">asked. Superseded</text>
+  <text x="56" y="352" class="b">text is removed</text>
+  <text x="56" y="370" class="b">before search.</text>
+
+  <rect x="232" y="220" width="170" height="170" rx="14" class="box"/>
+  <text x="248" y="248" class="k">2  RETRIEVE</text>
+  <text x="248" y="274" class="h">Hybrid search</text>
+  <text x="248" y="298" class="b">Meaning and keyword</text>
+  <text x="248" y="316" class="b">search, fused by</text>
+  <text x="248" y="334" class="b">rank. Near-duplicates</text>
+  <text x="248" y="352" class="b">are collapsed.</text>
+
+  <rect x="424" y="220" width="170" height="170" rx="14" class="box"/>
+  <text x="440" y="248" class="k">3  RERANK</text>
+  <text x="440" y="274" class="h">Top five</text>
+  <text x="440" y="298" class="b">A precise model</text>
+  <text x="440" y="316" class="b">re-scores candidates.</text>
+  <text x="440" y="334" class="b">Only five reach the</text>
+  <text x="440" y="352" class="b">language model.</text>
+
+  <rect x="616" y="220" width="170" height="170" rx="14" class="gate"/>
+  <text x="632" y="248" class="k">4  CONFIDENCE GATE</text>
+  <text x="632" y="274" class="h">Refuse if weak</text>
+  <text x="632" y="298" class="b">Below 0.65, the</text>
+  <text x="632" y="316" class="b">assistant declines</text>
+  <text x="632" y="334" class="b">and routes the</text>
+  <text x="632" y="352" class="b">question to a person.</text>
+
+  <rect x="808" y="220" width="170" height="170" rx="14" class="box"/>
+  <text x="824" y="248" class="k">5  GENERATE</text>
+  <text x="824" y="274" class="h">Cite as it writes</text>
+  <text x="824" y="298" class="b">Each claim carries a</text>
+  <text x="824" y="316" class="b">page and paragraph</text>
+  <text x="824" y="334" class="b">reference. Low, fixed</text>
+  <text x="824" y="352" class="b">randomness.</text>
+
+  <rect x="1000" y="220" width="160" height="170" rx="14" class="gate"/>
+  <text x="1016" y="248" class="k">6  VERIFY</text>
+  <text x="1016" y="274" class="h">Check citations</text>
+  <text x="1016" y="298" class="b">Each citation must</text>
+  <text x="1016" y="316" class="b">match a retrieved</text>
+  <text x="1016" y="334" class="b">passage, or the</text>
+  <text x="1016" y="352" class="b">answer is blocked.</text>
+
+  <path d="M210 305 H230" class="ln" marker-end="url(#a)"/>
+  <path d="M402 305 H422" class="ln" marker-end="url(#a)"/>
+  <path d="M594 305 H614" class="ln" marker-end="url(#a)"/>
+  <path d="M786 305 H806" class="ln" marker-end="url(#a)"/>
+  <path d="M978 305 H998" class="ln" marker-end="url(#a)"/>
+
+  <!-- outcomes -->
+  <rect x="616" y="450" width="170" height="90" rx="14" class="box"/>
+  <text x="632" y="478" class="k">REFUSED</text>
+  <text x="632" y="502" class="h">To a person</text>
+  <text x="632" y="522" class="b">Logged with the reason</text>
+  <path d="M701 390 V448" class="ln" marker-end="url(#a)"/>
+
+  <rect x="880" y="450" width="280" height="90" rx="14" class="box"/>
+  <text x="896" y="478" class="k">ANSWERED</text>
+  <text x="896" y="502" class="h">With checkable references</text>
+  <text x="896" y="522" class="b">Source, version, page, paragraph</text>
+  <path d="M1080 390 V448" class="ln" marker-end="url(#a)"/>
+
+  <text x="40" y="580" class="s">Every step writes to the audit log, so the whole path can be replayed later.</text>
+</svg>

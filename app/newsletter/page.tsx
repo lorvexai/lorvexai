@@ -13,14 +13,19 @@ export const metadata: Metadata = {
 };
 
 const FORMAT = [
-  ["One headline development", "A supervisory statement, policy statement or consultation that matters this week."],
-  ["So what for practitioners", "What it changes for risk, model governance and regulatory reporting teams."],
-  ["One AI use case", "A pattern or tool worth knowing about, with the caveats included."],
-  ["Three to five links", "Primary sources first: PRA, Bank of England, FCA, EBA, BCBS, Fed, HKMA."]
+  ["Lead story", "The one development this week that matters most, with what it changes for you and a short list of actions."],
+  ["Finance regulation", "PRA, FCA, Bank of England, EBA, Basel Committee, FSB and US agencies: capital, resilience, AML and stablecoins."],
+  ["Global AI regulation", "EU AI Act dates, UK supervisory expectations, FSB work and US state law, in plain terms."],
+  ["AI and fintech technology", "What is live, what is being built and what is hype, with primary sources linked on every item."]
 ];
+
+const AUDIENCE = ["Chief risk officers", "Model risk teams", "Regulatory reporting heads", "RegTech builders"];
 
 export default function NewsletterPage() {
   const issues = getIssues();
+  const latest = issues[0];
+  const sourceCount = (i: (typeof issues)[number]) =>
+    i.headline.sources.length + i.sections.reduce((n, sec) => n + sec.items.reduce((m, it) => m + it.sources.length, 0), 0);
 
   return (
     <>
@@ -32,20 +37,41 @@ export default function NewsletterPage() {
               A short weekly briefing on what PRA, FCA, EBA and Federal Reserve changes mean for AI in financial risk and
               regulatory reporting. Written for risk leaders, regulatory reporting heads and RegTech builders.
             </p>
-            <div className="mt-8">
+            <ul className="mt-5 flex flex-wrap gap-2" aria-label="Who it is for">
+              {AUDIENCE.map((a) => (
+                <li key={a} className="chip">{a}</li>
+              ))}
+            </ul>
+            <div className="mt-7">
               <SubscribeForm id="newsletter-email" />
             </div>
+            <p className="mt-3 text-xs text-secondary/70">Weekly on Mondays. One email. Unsubscribe at any time.</p>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-secondary/75">
               Written by Sreedhara Reddy Kotha, author of the book behind this site, with over 20 years in finance, risk and
               regulatory technology. <Link href="/about" className="font-semibold text-primary hover:text-heading">About the author</Link>
             </p>
           </div>
-          {issues[0] && (
-            <Link href={`/newsletter/${issues[0].slug}`} className="card-glow group block p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Latest issue: Issue {issues[0].number}</p>
-              <h2 className="mt-3 text-xl font-semibold leading-snug text-heading">{issues[0].headline.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-secondary/80">{issues[0].headline.why}</p>
-              <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+          {latest && (
+            <Link href={`/newsletter/${latest.slug}`} className="card-glow group block p-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Latest: Issue {latest.number}</span>
+                <span className="font-mono text-xs text-secondary/75">{formatIssueDate(latest.date)}</span>
+              </div>
+              <h2 className="mt-3 text-xl font-semibold leading-snug text-heading">{latest.headline.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-secondary/80">{latest.summary}</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-secondary/75">Do this week</p>
+              <ul className="mt-2 grid gap-2 text-sm leading-relaxed text-secondary/80">
+                {latest.takeaways.slice(0, 2).map((t) => (
+                  <li key={t} className="flex gap-2">
+                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 font-mono text-xs text-secondary/70">
+                {latest.sections.reduce((n, sec) => n + sec.items.length, 1)} items · {sourceCount(latest)} linked sources
+              </p>
+              <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
                 Read the full issue <ArrowRight size={14} aria-hidden="true" />
               </span>
             </Link>
@@ -70,6 +96,9 @@ export default function NewsletterPage() {
                 </div>
                 <h3 className="mt-4 text-2xl font-semibold leading-snug">{i.title}</h3>
                 <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary/75">{i.summary}</p>
+                <p className="mt-3 font-mono text-xs text-secondary/70">
+                  {i.sections.reduce((n, sec) => n + sec.items.length, 1)} items · {sourceCount(i)} linked sources
+                </p>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
                   Read issue <ArrowRight size={14} aria-hidden="true" />
                 </span>
@@ -81,7 +110,7 @@ export default function NewsletterPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold text-heading">What each issue contains</h2>
+          <h2 className="text-2xl font-semibold text-heading">What is in each issue</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {FORMAT.map(([title, text]) => (
               <article key={title} className="card-glow p-6">

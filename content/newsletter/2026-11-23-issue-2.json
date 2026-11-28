@@ -1,0 +1,197 @@
+{
+  "number": 2,
+  "slug": "2026-11-23-issue-2",
+  "date": "2026-11-23",
+  "status": "published",
+  "title": "UK regulators put cyber, AI and quantum risk into one consultation. The EU AI Act's first new dates land on 2 December.",
+  "summary": "A joint PRA, FCA and Bank of England cyber consultation closes on 26 February 2027, the EU AI Act's first Omnibus dates arrive on 2 December, and US capital and customer due diligence rules both moved.",
+  "headline": {
+    "region": "UK",
+    "title": "PRA, FCA and Bank of England consult on cyber risk and resilience, with AI and quantum guidance alongside",
+    "body": [
+      "On 19 November the three authorities published a joint consultation (PRA CP17/26, FCA GC26/9) on cyber risk and resilience management. It sets out principles-based, outcome-focused expectations covering governance, operational resilience, operational risk and third-party risk management in a cyber context. The regulators say it introduces no new rules and clarifies how firms should meet current requirements.",
+      "Two non-binding effective practices documents, on AI and on quantum computing, were published alongside it. They are not open for formal consultation, but feedback is welcome. The consultation closes on Friday 26 February 2027, and final guidance is expected in the first half of 2027 as a joint supervisory statement and FCA finalised guidance."
+    ],
+    "why": "This is the first time cyber, AI and quantum expectations sit in one package. Treat the draft as the benchmark your supervisors will use, and check that AI vendors and agents are inside your third-party and operational resilience inventories.",
+    "sources": [
+      {
+        "label": "Bank of England: CP17/26 and GC26/9",
+        "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/cyber-risk-and-resilience-management-consultation-paper"
+      },
+      {
+        "label": "FCA: GC26/9",
+        "url": "https://www.fca.org.uk/publications/guidance-consultations/gc26-9-cyber-risk-resilience-management"
+      },
+      {
+        "label": "FCA press release",
+        "url": "https://www.fca.org.uk/news/press-releases/uk-financial-watchdogs-clarify-cyber-expectations-attacks-rise"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "finance-regulation",
+      "title": "Finance regulation",
+      "items": [
+        {
+          "region": "UK",
+          "title": "PRA consults on its O-SII buffer approach (CP16/26)",
+          "body": "Published on 18 November, the consultation proposes targeted amendments to the PRA's statement of policy on implementing the O-SII buffer. It covers how the PRA would communicate revised rates if it released buffers after a shock, including an indicative period during which no increase would be expected. Responses are due by 18 February 2027.",
+          "why": "If your group carries an O-SII buffer, read the draft policy edits before the deadline. They shape how much of the buffer is usable in a stress.",
+          "sources": [
+            {
+              "label": "CP16/26 (Bank of England)",
+              "url": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/november/clarifying-the-pra-approach-to-the-implementation-of-the-o-sii-buffer-consultation-paper"
+            },
+            {
+              "label": "Retail Banker International",
+              "url": "https://www.retailbankerinternational.com/?p=109287"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "title": "The final Basel III capital rule goes to the White House for review",
+          "body": "The OCC's final capital rule was received by the Office of Information and Regulatory Affairs on 13 November, and the FDIC has also submitted its rulemaking. No timeline has been given for completing the review. A Mayer Brown partner quoted by SCI expects the final rule to follow the March proposal, potentially with extra incentives for mortgage lending and more favourable treatment of lending commitments. The effective date has not been announced.",
+          "why": "The final text sets the capital baseline for US group entities. Hold capital-relief and reporting plans open until the rule is published.",
+          "sources": [
+            {
+              "label": "reginfo.gov: OCC final rule under review",
+              "url": "https://www.reginfo.gov/public/do/eoDetails?rrid=1599615"
+            },
+            {
+              "label": "ABA Banking Journal",
+              "url": "https://bankingjournal.aba.com/2026/11/proposed-bank-capital-requirements-move-closer-to-finalization/"
+            },
+            {
+              "label": "Mayer Brown",
+              "url": "https://www.mayerbrown.com/de/news/2026/11/b3e-nears-the-finish-line"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "title": "FinCEN proposes to revise the customer due diligence rule",
+          "body": "On 17 November FinCEN proposed amending 31 CFR 1010.230 so that covered institutions identify beneficial owners at a legal entity customer's first account opening, and later only when they know of facts that call the earlier information into question or when risk-based ongoing due diligence requires an update. Comments are due 60 days after Federal Register publication, which was scheduled for 19 November. FinCEN proposes that a final rule take effect 90 days after publication.",
+          "why": "Banks would stop re-collecting beneficial ownership information on existing customers, but remain accountable for due diligence outcomes. Plan the response with your financial crime team.",
+          "sources": [
+            {
+              "label": "FinCEN proposed rule (Treasury)",
+              "url": "https://home.treasury.gov/system/files/136/CDD_NPRM_11_12_2026_508FINAL.pdf"
+            },
+            {
+              "label": "Federal Register public inspection",
+              "url": "https://public-inspection.federalregister.gov/2026-23614.pdf"
+            },
+            {
+              "label": "Troutman analysis",
+              "url": "https://www.troutman.com/insights/beneficial-ownership-gets-a-refresh-fincen-recalibrates-cdd-rule/"
+            }
+          ]
+        },
+        {
+          "region": "Global",
+          "title": "Basel Committee starts assessing the outstanding Basel III standards",
+          "body": "Meeting on 18 November, the Basel Committee said it has completed jurisdictional assessments of the initial Basel III standards, the liquidity standards and the large exposures framework, and is now starting assessments of the outstanding Basel III standards. It also agreed that supervisors may allow banks to apply a 0% risk weight to claims on the Inter-American Investment Corporation.",
+          "why": "Expect your jurisdiction's Basel implementation, including UK Basel 3.1 and US capital rules, to be tested against the standards in these reviews.",
+          "sources": [
+            {
+              "label": "BCBS meeting release (BIS)",
+              "url": "https://www.bis.org/media-releases/20261118-basel-committee-discusses-risks-and-vulnerabilities-faced-global-banking-system"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-regulation",
+      "title": "Global AI regulation",
+      "items": [
+        {
+          "region": "EU",
+          "title": "AI Act: the Digital Omnibus dates start to bite on 2 December",
+          "body": "Regulation (EU) 2026/1744 was published on 24 July and entered into force on 27 July. Two dates arrive on 2 December 2026: the new Article 5 prohibition on AI systems that generate non-consensual intimate content or child sexual abuse material, and the end of the grace period for Article 50(2) marking of AI-generated content for systems already on the market before 2 August. Annex III high-risk obligations now apply from 2 December 2027, and Annex I product-linked obligations from 2 August 2028.",
+          "why": "Credit scoring and similar Annex III systems gain a year, but the work does not stop. Keep your inventory, classification and vendor assurance moving, and check any generative systems against the 2 December marking date.",
+          "sources": [
+            {
+              "label": "AKOS: Digital Omnibus on AI key dates",
+              "url": "https://www.akos-rs.si/en/umetna-inteligenca/explore/frequently-asked-questions-and-answers/digital-omnibus-on-artificial-intelligence"
+            },
+            {
+              "label": "Cuatrecasas: publication in the Official Journal",
+              "url": "https://www.cuatrecasas.com/en/portugal/intellectual-property/art/digital-omnibus-ai-has-been-published"
+            },
+            {
+              "label": "Orrick: eight compliance changes",
+              "url": "https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes"
+            }
+          ]
+        },
+        {
+          "region": "Global",
+          "title": "FSB keeps AI on its 2027 agenda, with fraud and operational resilience in view",
+          "body": "The Financial Stability Board met on 16 and 17 November. On AI, the plenary stressed ongoing monitoring and discussed possible additional work on operational resilience, the link between AI and fraud, and whether existing FSB work should be updated. It also discussed leverage in sovereign bond markets and a proposed public consultation on metrics to assess it.",
+          "why": "Expect supervisors to ask how AI affects your fraud controls and your operational resilience, not only how your models are validated.",
+          "sources": [
+            {
+              "label": "FSB: priorities for 2027",
+              "url": "https://www.fsb.org/2026/11/fsb-sets-out-its-priorities-for-2027/"
+            }
+          ]
+        },
+        {
+          "region": "US",
+          "title": "Colorado's automated decision law takes effect on 1 January 2027",
+          "body": "SB 26-189, signed on 14 May 2026, repeals and replaces the 2024 Colorado AI Act. It applies to automated decision-making technology used to materially influence consequential decisions, including in lending and insurance, and shifts the focus to notices, post-decision disclosure and consumer rights. Law-firm summaries give an effective date of 1 January 2027, with one noting it could be delayed by pending litigation.",
+          "why": "If you lend or insure consumers in Colorado, inventory the tools that materially influence those decisions and check your notice and adverse-decision processes.",
+          "sources": [
+            {
+              "label": "Holland & Knight",
+              "url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"
+            },
+            {
+              "label": "DLA Piper",
+              "url": "https://www.dlapiper.com/en-us/insights/publications/2026/05/colorado-pulls-back-on-ai-regulation"
+            },
+            {
+              "label": "Colorado Attorney General",
+              "url": "https://coag.gov/resources/ai/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-fintech",
+      "title": "Global AI and fintech technology",
+      "items": [
+        {
+          "region": "Global",
+          "title": "DBS and Kinexys by J.P. Morgan launch 24/7 tokenised deposit transfers",
+          "body": "On 16 November the two banks launched a live service letting institutional clients move US dollar tokenised deposits between the US and Singapore at any hour, including weekends. Ant International is the first client. Transfers on the Kinexys network run around the clock, though moving between ordinary J.P. Morgan deposit accounts and blockchain accounts pauses for three hours each Saturday, according to one report.",
+          "why": "Tokenised deposits remain bank liabilities, so liquidity, reporting and resolution treatment stay familiar. The operational question is cut-off times and reconciliation when settlement never closes.",
+          "sources": [
+            {
+              "label": "The Block",
+              "url": "https://theblock.co/news/business/2026-11-16-dbs-jpmorgan-launch-tokenized-deposit-transfers-440854"
+            },
+            {
+              "label": "Stablecoin Insider",
+              "url": "https://stablecoininsider.org/dbs-kinexys-tokenized-deposit-transfers/"
+            },
+            {
+              "label": "Cointelegraph",
+              "url": "https://cointelegraph.com/news/dbs-jpmorgans-kinexys-launch-tokenized-transfers"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaways": [
+    "Map your cyber, operational resilience and third-party controls to the draft statement, and decide by February whether to respond.",
+    "Read the AI effective practices alongside your model risk policy, and confirm AI vendors and agents sit inside your third-party inventory.",
+    "Check generative systems against the 2 December EU marking date, and keep Annex III classification work running.",
+    "Hold US capital and customer due diligence plans open until the final rule and the proposal's comment window resolve."
+  ]
+}
