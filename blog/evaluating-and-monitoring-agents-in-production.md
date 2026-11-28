@@ -1,7 +1,6 @@
 ---
 title: Evaluating and monitoring agents in production
-date: 2026-12-14
-hidden: true
+date: 2026-11-28
 excerpt: Passing tests at launch is the start, not the finish. Here is how to evaluate an agent, monitor it live and decide when it needs revalidating. Part 6 of a series on building a regulatory AI assistant a bank can trust.
 series: Building a regulatory AI assistant the bank can trust
 seriesPart: 6
@@ -68,6 +67,8 @@ Plan for failure before it happens. Define what counts as an incident, who can s
 - **Tracking averages.** A good average can hide a bad segment, such as one rule area where answers are weak.
 - **No owner for the dashboard.** If nobody reviews the signals, nothing changes.
 - **Ignoring vendor changes.** A silent model update is a change to your system.
+
+For the full list of signals, including drift, personal data and harmful content, see [monitoring LLM systems in production](/articles/monitoring-llm-systems-in-production).
 
 ## Where the series ends
 

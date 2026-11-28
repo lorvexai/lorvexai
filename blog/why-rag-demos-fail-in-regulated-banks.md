@@ -100,8 +100,8 @@ This series builds the assistant one layer at a time, using AWB as the case stud
 2. [RAG that cites its sources](/articles/rag-that-cites-its-sources)
 3. [From chatbot to agent, without losing control](/articles/from-chatbot-to-agent)
 4. [Multi-agent orchestration without chaos](/articles/multi-agent-orchestration-without-chaos)
-5. Guardrails, human sign-off and audit trails
-6. Evaluating and monitoring agents in production
+5. [Guardrails, human sign-off and audit trails](/articles/guardrails-sign-off-and-audit-trails)
+6. [Evaluating and monitoring agents in production](/articles/evaluating-and-monitoring-agents-in-production)
 
 If you have a pilot that is stuck in review, check it against the five questions above. The one you cannot answer is usually where to start. For the full AWB design, see the [book](/books).
 

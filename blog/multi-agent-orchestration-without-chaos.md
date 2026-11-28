@@ -66,7 +66,7 @@ When one agent fails, the system should fail small and visibly:
 
 ## Keep one trace
 
-A run with four agents produces four logs unless you plan otherwise. Give every run a single trace ID that every agent writes to. A validator should be able to open one record and see who did what, in order, with the inputs and outputs. Part 5 returns to audit trails in detail.
+A run with four agents produces four logs unless you plan otherwise. Give every run a single trace ID that every agent writes to. A validator should be able to open one record and see who did what, in order, with the inputs and outputs. [Part 5](/articles/guardrails-sign-off-and-audit-trails) returns to audit trails in detail.
 
 ## Common mistakes
 
@@ -77,7 +77,7 @@ A run with four agents produces four logs unless you plan otherwise. Give every 
 
 ## What comes next
 
-Part 5 covers guardrails, human sign-off and audit trails: the controls that sit around the whole system. Part 6 covers how to evaluate and monitor it once it is live.
+[Part 5](/articles/guardrails-sign-off-and-audit-trails) covers guardrails, human sign-off and audit trails: the controls that sit around the whole system. [Part 6](/articles/evaluating-and-monitoring-agents-in-production) covers how to evaluate and monitor it once it is live.
 
 > **Go deeper in the book.** The agentic governance pipelines in the AWB case study show these patterns at full scale. [See the book](/books) or [preview the sample chapter](/books/sample-chapter).
 

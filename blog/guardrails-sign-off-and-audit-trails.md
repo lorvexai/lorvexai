@@ -1,7 +1,6 @@
 ---
 title: Guardrails, human sign-off and audit trails
-date: 2026-12-07
-hidden: true
+date: 2026-11-28
 excerpt: The controls around an AI assistant matter as much as the model inside it. Here is how to layer guardrails, set sign-off tiers and keep an audit trail that a validator can use. Part 5 of a series on building a regulatory AI assistant a bank can trust.
 series: Building a regulatory AI assistant the bank can trust
 seriesPart: 5
@@ -68,7 +67,7 @@ The record above is also the evidence that model risk reviews ask for. The PRA's
 
 ## What comes next
 
-Part 6 closes the series with evaluation and monitoring: how you know the system still works after launch.
+[Part 6](/articles/evaluating-and-monitoring-agents-in-production) closes the series with evaluation and monitoring: how you know the system still works after launch. For a wider view of what to watch in production, see [monitoring LLM systems in production](/articles/monitoring-llm-systems-in-production).
 
 > **Go deeper in the book.** The book's governance chapters cover control design, sign-off and audit evidence for AWB. [See the book](/books).
 
