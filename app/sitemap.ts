@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/books/sample-chapter/", "monthly", 0.7],
     ["/newsletter/", "weekly", 0.8],
     ["/articles/", "weekly", 0.8],
+    ["/radar/", "monthly", 0.7],
+    ["/regulatory-calendar/", "monthly", 0.8],
     ["/about/", "monthly", 0.8],
     ["/contact/", "monthly", 0.6],
     ["/disclaimers/", "monthly", 0.4],

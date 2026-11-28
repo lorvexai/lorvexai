@@ -197,5 +197,23 @@
     "Read the AI effective practices alongside your model risk policy, and confirm AI vendors and agents sit inside your third-party inventory.",
     "Check generative systems against the 2 December EU marking date, and keep Annex III classification work running.",
     "Hold US capital and customer due diligence plans open until the final rule and the proposal's comment window resolve."
+  ],
+  "related": [
+    {
+      "label": "What SS1/23 means for LLMs and RAG systems",
+      "href": "/articles/ss1-23-and-llms-what-model-risk-teams-should-do"
+    },
+    {
+      "label": "Human-in-the-loop gates for AI agents in a bank",
+      "href": "/articles/human-in-the-loop-gates-for-ai-agents"
+    },
+    {
+      "label": "AI and financial regulation calendar",
+      "href": "/regulatory-calendar"
+    },
+    {
+      "label": "RegTech and AI Radar",
+      "href": "/radar"
+    }
   ]
 }

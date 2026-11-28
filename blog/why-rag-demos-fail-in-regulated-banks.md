@@ -98,7 +98,7 @@ This series builds the assistant one layer at a time, using AWB as the case stud
 
 1. Why most RAG demos fail in a regulated bank (this article)
 2. [RAG that cites its sources](/articles/rag-that-cites-its-sources)
-3. From chatbot to agent
+3. [From chatbot to agent, without losing control](/articles/from-chatbot-to-agent)
 4. Multi-agent orchestration without chaos
 5. Guardrails, human sign-off and audit trails
 6. Evaluating and monitoring agents in production

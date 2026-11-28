@@ -135,6 +135,22 @@ export default function BooksPage() {
 
       <section className="section pt-4">
         <div className="mx-auto w-full max-w-6xl px-6">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Who it&apos;s for</p>
+          <h2 className="mt-3 text-3xl font-semibold text-heading">Which path is yours?</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {AUDIENCE.map(([who, text, chapters]) => (
+              <article key={who} className="card-glow p-6">
+                <h3 className="font-semibold text-heading">{who}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
+                <p className="mt-3 font-mono text-xs text-primary">{chapters}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-4">
+        <div className="mx-auto w-full max-w-6xl px-6">
           <dl className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {STATS.map(([value, label]) => (
               <div key={label} className="card-glow p-4">
@@ -201,22 +217,6 @@ export default function BooksPage() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-primary">Who it&apos;s for</p>
-          <h2 className="mt-3 text-3xl font-semibold text-heading">Find your entry point</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {AUDIENCE.map(([who, text, chapters]) => (
-              <article key={who} className="card-glow p-6">
-                <h3 className="font-semibold text-heading">{who}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-secondary/75">{text}</p>
-                <p className="mt-3 font-mono text-xs text-primary">{chapters}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 

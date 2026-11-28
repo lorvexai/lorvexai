@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "About LorvexAI | Independent Research and Architecture",
@@ -41,6 +42,7 @@ const QUESTIONS = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: { "@type": "Person", name: "Sreedhara Reddy Kotha", url: "https://lorvexai.com/about/", jobTitle: "Finance and AI consultant and author", sameAs: ["https://www.linkedin.com/in/sreekotha/"] } }} />
       <section className="section pb-0 pt-12 md:pt-16">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6">
           <div>

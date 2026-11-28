@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { formatIssueDate, getIssue, getIssues, type Item } from "@/utils/newsletter";
 
@@ -47,6 +48,18 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: issue.title,
+          description: issue.summary,
+          datePublished: issue.date,
+          author: { "@type": "Person", name: "Sreedhara Reddy Kotha" },
+          publisher: { "@type": "Organization", name: "LorvexAI", url: "https://lorvexai.com/" },
+          mainEntityOfPage: `https://lorvexai.com/newsletter/${issue.slug}/`
+        }}
+      />
       <section className="section pb-6 pt-12 md:pt-16">
         <div className="mx-auto w-full max-w-4xl px-6">
           <Link href="/newsletter" className="inline-flex items-center gap-2 text-sm text-primary hover:text-heading">
@@ -133,6 +146,20 @@ export default function IssuePage({ params }: { params: { slug: string } }) {
               ))}
             </ul>
           </div>
+          {issue.related && issue.related.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-lg font-semibold text-heading">Related reading</h2>
+              <ul className="mt-3 space-y-2">
+                {issue.related.map((r) => (
+                  <li key={r.href}>
+                    <Link href={r.href} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading">
+                      {r.label} <ArrowUpRight size={13} aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <p className="mt-8 text-xs leading-relaxed text-secondary/70">
             Educational content, not legal, regulatory or investment advice. Facts are drawn from the linked sources and should
             be checked against the primary documents. The weekly drafting is assisted by AI and reviewed by the author before

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import JsonLd from "@/components/JsonLd";
 import { ArrowRight, CalendarCheck, Clock, Linkedin, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ const engagementTypes = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "ContactPage", name: "Contact LorvexAI", url: "https://lorvexai.com/contact/" }} />
       <section className="section pb-6 pt-14 md:pt-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="glass rounded-lg border border-primary/30 p-8 md:p-12">

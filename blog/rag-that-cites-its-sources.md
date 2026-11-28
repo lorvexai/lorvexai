@@ -94,7 +94,7 @@ The second answer is longer, but a reviewer can check it in a minute. The first 
 
 ## What comes next
 
-Part 3 moves from a single question and answer to an agent: where one retrieval call stops being enough, and how an assistant starts using tools safely.
+[Part 3](/articles/from-chatbot-to-agent) moves from a single question and answer to an agent: where one retrieval call stops being enough, and how an assistant starts using tools safely.
 
 > **Go deeper in the book.** Chapter 4 of *AI for Financial Risk, Compliance and Regulatory Reporting* covers the Regulatory Knowledge Assistant in full. You can [read about the book and where to buy it](/books), [preview Chapter 3 on agents](/books/sample-chapter), or browse the [glossary](/books/appendices/glossary) and [model registry](/books/appendices/model-registry).
 

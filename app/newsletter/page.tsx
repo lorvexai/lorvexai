@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { formatIssueDate, getIssues } from "@/utils/newsletter";
 
@@ -28,6 +29,7 @@ export default function NewsletterPage() {
 
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: NEWSLETTER_NAME, url: "https://lorvexai.com/newsletter/", description: "A weekly briefing on AI and financial regulation." }} />
       <section className="section pb-8 pt-14 md:pt-20">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 md:grid-cols-[1.2fr_0.8fr] md:items-start">
           <div>

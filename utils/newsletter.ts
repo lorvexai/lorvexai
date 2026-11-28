@@ -14,6 +14,7 @@ export type Issue = {
   headline: { region: string; title: string; body: string[]; why: string; sources: Source[] };
   sections: Section[];
   takeaways: string[];
+  related?: { label: string; href: string }[];
 };
 
 const dir = path.join(process.cwd(), "content", "newsletter");
