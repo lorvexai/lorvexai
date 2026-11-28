@@ -486,3 +486,6 @@ h1 { letter-spacing: -0.035em; }
   .prose img, .prose table { break-inside: avoid; }
   [class*="fixed"] { display: none !important; }
 }
+
+/* Main is only focusable as the skip-link target; it is not interactive, so no ring around the whole page. */
+#main:focus, #main:focus-visible { outline: none; }
