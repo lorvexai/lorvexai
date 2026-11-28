@@ -65,7 +65,7 @@ export default function AboutPage() {
               </Link>
               <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
                 <Mail size={15} aria-hidden="true" />
-                Get the weekly briefing
+                Read the weekly briefing
               </Link>
               <a
                 href="https://www.linkedin.com/in/sreekotha/"

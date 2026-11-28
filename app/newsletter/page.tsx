@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import SubscribeForm from "@/components/SubscribeForm";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { formatIssueDate, getIssues } from "@/utils/newsletter";
 
@@ -42,19 +41,18 @@ export default function NewsletterPage() {
                 <li key={a} className="chip">{a}</li>
               ))}
             </ul>
-            <div className="mt-7">
-              <SubscribeForm id="newsletter-email" />
-            </div>
-            <p className="mt-3 text-xs text-secondary/70">Weekly. One email. Unsubscribe at any time.</p>
-            {issues[0] && (
-              <p className="mt-2 text-sm text-secondary/80">
-                Not sure yet?{" "}
-                <Link href={`/newsletter/${issues[0].slug}`} className="font-semibold text-primary hover:text-heading">
-                  Read Issue {issues[0].number} first
-                </Link>
-                .
-              </p>
-            )}
+            <p className="mt-7 max-w-xl rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm leading-relaxed text-secondary/85">
+              Email subscriptions are opening soon. Until then, every issue is free to read on this site.
+              {issues[0] && (
+                <>
+                  {" "}
+                  <Link href={`/newsletter/${issues[0].slug}`} className="font-semibold text-primary hover:text-heading">
+                    Read Issue {issues[0].number}
+                  </Link>
+                  .
+                </>
+              )}
+            </p>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-secondary/75">
               Written by Sreedhara Reddy Kotha, author of the book behind this site, with over 20 years in finance, risk and
               regulatory technology. <Link href="/about" className="font-semibold text-primary hover:text-heading">About the author</Link>

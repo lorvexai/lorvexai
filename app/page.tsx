@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SubscribeForm from "@/components/SubscribeForm";
 import { getIssues, formatIssueDate } from "@/utils/newsletter";
 import { getAllPosts } from "@/utils/posts";
 import { NEWSLETTER_NAME } from "@/utils/site";
@@ -80,7 +79,7 @@ export default function HomePage() {
               </Link>
               <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
                 <Mail size={15} aria-hidden="true" />
-                Get the weekly briefing
+                Read the weekly briefing
               </Link>
             </div>
           </div>
@@ -201,9 +200,9 @@ export default function HomePage() {
               )}
             </div>
             <div>
-              <p className="text-lg font-semibold text-heading">Get it every week</p>
-              <p className="mb-4 mt-1 text-base text-secondary/80">Short, sourced and written for practitioners. Unsubscribe at any time.</p>
-              <SubscribeForm id="home-email" />
+              <p className="text-lg font-semibold text-heading">Email subscriptions are opening soon</p>
+              <p className="mt-1 text-base text-secondary/80">Until then, read every issue on the site or follow new articles on LinkedIn.</p>
+              <Link href="/newsletter" className="btn-outline mt-4 min-h-11 text-sm font-semibold">All issues</Link>
             </div>
           </div>
         </div>

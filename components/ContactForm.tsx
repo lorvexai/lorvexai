@@ -148,7 +148,7 @@ export default function ContactForm() {
       <label className="flex cursor-pointer gap-3 rounded-lg border border-secondary/15 bg-background/35 p-4">
         <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-primary" checked={data.acknowledgement} onChange={(e) => set("acknowledgement", e.target.checked)} />
         <span className="text-xs leading-relaxed text-secondary/70">
-          I understand that LorvexAI is a personal educational and publishing website and does not offer consulting, advisory services, client delivery, product implementation, system development, regulated advice, or professional services. <span className="text-red-400">*</span>
+          I understand that LorvexAI is a personal educational and publishing website and is not currently taking client engagements and does not provide regulated advice or professional services through this site. <span className="text-red-400">*</span>
         </span>
       </label>
       {errors.acknowledgement && <p className={ERR}>{errors.acknowledgement}</p>}
@@ -156,7 +156,7 @@ export default function ContactForm() {
       <label className="flex cursor-pointer gap-3 rounded-lg border border-secondary/15 bg-background/35 p-4">
         <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-primary" checked={data.updates} onChange={(e) => set("updates", e.target.checked)} />
         <span className="text-xs leading-relaxed text-secondary/70">
-          I agree to receive a response to my enquiry and, if selected, occasional LorvexAI updates. I can unsubscribe at any time.
+          I agree to receive a response to my enquiry by email.
         </span>
       </label>
 

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  ["Who we are", "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Contact: [INSERT CONTACT EMAIL]."],
+  ["Who we are", "LorvexAI is a personal AI education, publishing, and research website by Sreedhara Reddy Kotha. Contact: lorvexai@gmail.com."],
   ["What personal data we collect", "We may collect contact form data including name, email, organisation, job title, message, and enquiry type. We may also collect technical data such as IP address, browser/device data, and server logs if analytics, hosting, or security logging is used."],
   ["Contact form data", "Contact form submissions may include name, email, organisation, job title, message, and enquiry type. Do not submit confidential, proprietary, customer, transaction, patient, clinical, employer, client, regulatory filing, supervisory, or non-public information."],
   ["Technical data", "Analytics provider: Cloudflare Web Analytics, a cookieless service that does not build visitor profiles or track people across sites. Form handler provider: Formspree. Hosting and form providers may process technical data such as IP address, browser, device, timestamp, and usage logs."],
   ["Why we process data", "We process data to respond to books, research, writing, publishing, correction, or general enquiries, maintain site security, understand website usage where permitted, and keep appropriate records."],
   ["Legal basis", "Under UK GDPR, our legal basis may include consent, legitimate interests in responding to enquiries and operating the website, and compliance with legal obligations where applicable."],
-  ["How long we keep data", "Retention period: [INSERT RETENTION PERIOD]. We aim to keep personal data only for as long as needed for the purpose collected, unless a longer period is required by law or appropriate record-keeping obligations."],
+  ["How long we keep data", "Retention period: messages sent through the contact form are kept for up to 12 months after the enquiry is resolved, then deleted. We aim to keep personal data only for as long as needed for the purpose collected, unless a longer period is required by law or appropriate record-keeping obligations."],
   ["Who data is shared with", "Personal data may be shared with hosting, contact form, email, analytics, security, or professional service providers where needed. Current providers are Formspree (contact form) and Cloudflare (hosting and cookieless web analytics)."],
   ["International transfers", "Some third-party tools may process data outside the UK/EEA. Where relevant, appropriate safeguards should be confirmed with each provider before use."],
   ["Your rights", "You may have rights to access, correct, delete, restrict, object to processing, and request portability of your personal data. You may also withdraw consent where consent is the lawful basis."],
-  ["How to contact LorvexAI", "For privacy questions or rights requests, contact [INSERT CONTACT EMAIL]."],
+  ["How to contact LorvexAI", "For privacy questions or rights requests, contact lorvexai@gmail.com."],
   ["Date last updated", "20 June 2026"]
 ];
 

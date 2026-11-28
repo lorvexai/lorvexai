@@ -27,8 +27,8 @@ const contactMethods = [
   {
     icon: CalendarCheck,
     title: "Boundaries",
-    detail: "No consulting or delivery work",
-    sub: "Educational publishing site only",
+    detail: "Not taking client engagements",
+    sub: "Speaking, collaboration and book enquiries welcome",
     href: "#form"
   }
 ];
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   {[
                     "I read the enquiry myself",
                     "I reply where it's a good fit for the site",
-                    "I can't take on consulting, advisory, or delivery work",
+                    "I'm not currently taking client engagements",
                     "Please don't send confidential or restricted information"
                   ].map((step, i) => (
                     <li key={step} className="flex gap-3 text-sm text-secondary/70">
@@ -133,7 +133,7 @@ export default function ContactPage() {
                 </ol>
               </div>
               <p className="text-xs leading-relaxed text-secondary/70">
-                Contact form provider: [INSERT FORM HANDLER PROVIDER]. See the <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for data handling details.
+                Contact form messages are processed by Formspree. See the <Link href="/privacy" className="text-primary underline underline-offset-2">Privacy Policy</Link> for data handling details.
               </p>
             </div>
           </div>

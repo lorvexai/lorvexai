@@ -6,7 +6,6 @@ import MermaidRenderer from "@/components/MermaidRenderer";
 import CopyCodeButton from "@/components/CopyCodeButton";
 import DiagramMounter from "@/components/DiagramMounter";
 import BlogCard from "@/components/BlogCard";
-import SubscribeForm from "@/components/SubscribeForm";
 import ReadingProgress from "@/components/ReadingProgress";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
@@ -250,15 +249,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </nav>
           )}
 
-          <aside className="card-glow mt-12 border-primary/30 bg-primary/5 p-6 md:p-8" aria-label="Subscribe">
-            <p className="text-xl font-semibold text-heading">
-              {post.series ? "Get the next part by email" : "Get new articles by email"}
-            </p>
+          <aside className="card-glow mt-12 border-primary/30 bg-primary/5 p-6 md:p-8" aria-label="Weekly briefing">
+            <p className="text-xl font-semibold text-heading">Read the {NEWSLETTER_NAME}</p>
             <p className="mb-4 mt-2 text-base text-secondary/80">
-              {NEWSLETTER_NAME} is a short weekly briefing on AI in financial risk and regulation. Each new article is
-              flagged there. Unsubscribe at any time.
+              {NEWSLETTER_NAME} is a short weekly briefing on AI in financial risk and regulation. Email subscriptions are
+              opening soon; the issues are free to read on the site.
             </p>
-            <SubscribeForm id="article-email" />
+            <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">Read the briefing</Link>
           </aside>
         </div>
       </section>

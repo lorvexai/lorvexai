@@ -16,7 +16,7 @@ export default function CookiesPage() {
           <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
             <h2 className="text-xl font-semibold text-heading">Current cookie position</h2>
             <p className="mt-3 leading-relaxed text-secondary/75">
-              This site should use only strictly necessary cookies unless analytics, tracking, embedded videos, scheduling widgets, pixels, or similar non-essential tools are added. Analytics provider: [INSERT ANALYTICS PROVIDER OR "No analytics currently used"].
+              This site should use only strictly necessary cookies unless analytics, tracking, embedded videos, scheduling widgets, pixels, or similar non-essential tools are added. No analytics are currently used.
             </p>
           </article>
           <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
