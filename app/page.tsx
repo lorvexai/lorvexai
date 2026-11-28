@@ -29,32 +29,13 @@ const SITE_JSON_LD = {
   ]
 };
 
-const CARDS = [
-  [
-    "Finance and risk first",
-    "More than two decades across Basel, liquidity risk, financial controls, reconciliation, risk data and multi-jurisdiction regulatory reporting."
-  ],
-  [
-    "Applied AI delivery",
-    "Hands-on work across Python, document intelligence, RAG, agentic workflows, forecasting, anomaly detection, automation and cloud data platforms."
-  ],
-  [
-    "Designed for scrutiny",
-    "A focus on data quality, lineage, validation, human oversight, operational resilience and repeatable evidence from the outset."
-  ]
-];
-
-const INSIDE = [
-  "Production patterns for RAG, LLMs and agentic workflows",
-  "Governance mapped to PRA SS1/23, the EU AI Act and DORA",
-  "Tested reference code and a companion repository",
-  "Examples of data, controls, evidence and human review working together"
-];
-
 export default function HomePage() {
   const latest = getIssues().find((i) => i.status === "published");
   const posts = getAllPosts();
-  const article = posts[0];
+  const seriesParts = posts
+    .filter((p) => p.series && p.seriesPart)
+    .sort((x, y) => (x.seriesPart ?? 0) - (y.seriesPart ?? 0));
+  const seriesTotal = seriesParts[0]?.seriesTotal ?? seriesParts.length;
   const issueCount = getIssues().filter((i) => i.status === "published").length;
   const PROOF: [string, string][] = [
     ["16", "chapters in the book"],
@@ -77,17 +58,18 @@ export default function HomePage() {
               <span className="text-heading">AI you can govern, audit and defend.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-secondary/85">
-              Practical guidance for banking, finance, risk and regulatory-reporting teams building AI systems that must be
-              useful in the business, and credible to Risk, Audit and regulators.
+              Follow a fictional UK bank as it builds a regulatory AI assistant. Explore the architecture, controls and audit
+              evidence behind each design decision, and read a weekly briefing on the regulatory changes that matter to
+              banking teams.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/books" className="btn-primary min-h-11 text-sm">
-                Explore the book
+              <Link href={`/articles/${seriesParts[0]?.slug ?? ""}`} className="btn-primary min-h-11 text-sm">
+                Start the banking AI series
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">
+              <Link href={latest ? `/newsletter/${latest.slug}` : "/newsletter"} className="btn-outline min-h-11 text-sm font-semibold">
                 <Mail size={15} aria-hidden="true" />
-                Read the weekly briefing
+                Read the latest RegAI Brief
               </Link>
             </div>
             <p className="mt-4 text-sm text-secondary/80">
@@ -95,21 +77,20 @@ export default function HomePage() {
               <Link href="/start-here" className="font-semibold text-primary hover:text-heading">Start here</Link>
             </p>
           </div>
-          <Link href="/books" className="group mx-auto block w-full max-w-xs">
+          <Link href={`/articles/${seriesParts[1]?.slug ?? ""}`} className="group mx-auto block w-full max-w-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/title_page.jpg`}
-              alt="Cover of AI for Financial Risk, Compliance and Regulatory Reporting"
-              width={300}
-              height={450}
-              className="w-full rounded-lg border border-primary/30 shadow-2xl shadow-black/40 transition duration-300 group-hover:-translate-y-1"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/diagrams/cited-answer-pipeline.svg`}
+              alt="Diagram: the steps that turn a question into a cited, verified answer"
+              width={1200}
+              height={620}
+              className="w-full rounded-lg border border-primary/30 bg-white shadow-xl shadow-black/20 transition duration-300 group-hover:-translate-y-1"
             />
-            <p className="mt-4 text-center text-sm font-medium text-secondary/85">
-              Paperback, Kindle and Leanpub <span className="text-primary">→</span>
+            <p className="mt-3 text-center text-sm font-medium text-secondary/85">
+              From Part 2: the anatomy of a cited answer <span className="text-primary">→</span>
             </p>
           </Link>
         </div>
-
       </section>
 
       <section className="section py-6 md:py-8" aria-label="At a glance">
@@ -127,78 +108,30 @@ export default function HomePage() {
 
       <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <h2 className="max-w-3xl text-3xl font-semibold text-heading md:text-4xl">Why this work is different</h2>
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-3xl font-semibold text-heading">Building a regulatory AI assistant the bank can trust</h2>
+            <p className="text-sm font-semibold text-primary">{seriesParts.length} of {seriesTotal} parts published</p>
+          </div>
           <p className="mt-3 max-w-3xl text-lg leading-relaxed text-secondary/85">
-            AI in a regulated firm is not only a model or a prompt. It has to work with real data, real processes, clear
-            ownership and human judgement, with evidence that can withstand challenge.
+            One fictional bank, taken from a convincing RAG demo to citations, agent permissions, human review and audit
+            evidence. Read the parts in order.
           </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {CARDS.map(([t, d]) => (
-              <article key={t} className="card-glow p-6">
-                <h3 className="text-xl font-semibold text-heading">{t}</h3>
-                <p className="mt-2 text-base leading-relaxed text-secondary/80">{d}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section py-8 md:py-10">
-        <div className="mx-auto grid w-full max-w-6xl gap-8 px-6 md:grid-cols-2 md:items-start">
-          <div>
-            <p className="chip">The book</p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-heading">
-              The practitioner&apos;s guide to controlled AI in banking
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-secondary/85">
-              Using the fictional Avon &amp; Wessex Bank case study, the book brings together 16 chapters, 31 AI systems and
-              tested Python reference implementations across risk, compliance, regulatory reporting, model governance and
-              enterprise architecture.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/books" className="btn-primary min-h-11 text-sm">
-                Explore the book
-              </Link>
-              <Link href="/books/sample-chapter" className="btn-outline min-h-11 text-sm">
-                Read a sample chapter
-              </Link>
-            </div>
-          </div>
-          <ul className="space-y-3 text-base text-secondary/85">
-            <li className="font-semibold text-heading">Inside the book</li>
-            {INSIDE.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                {item}
+          <ol className="mt-6 grid gap-4 md:grid-cols-2">
+            {seriesParts.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/articles/${p.slug}`} className="card-solid group block h-full p-5">
+                  <p className="font-mono text-xs text-primary">Part {p.seriesPart}</p>
+                  <h3 className="mt-1 text-lg font-semibold leading-snug text-heading">{p.title}</h3>
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-secondary/80">{p.excerpt}</p>
+                </Link>
               </li>
             ))}
-          </ul>
+          </ol>
+          <p className="mt-4 text-sm text-secondary/80">
+            <Link href="/articles" className="font-semibold text-primary hover:text-heading">All articles</Link>
+          </p>
         </div>
       </section>
-
-      {article && (
-        <section className="section py-8 md:py-10">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <h2 className="text-3xl font-semibold text-heading">Latest article</h2>
-            <Link
-              href={`/articles/${article.slug}`}
-              className="card-glow group mt-6 block p-7 md:p-8"
-            >
-              {article.series && (
-                <p className="text-sm font-semibold text-primary">
-                  {article.series}
-                  {article.seriesPart && article.seriesTotal ? ` · Part ${article.seriesPart} of ${article.seriesTotal}` : ""}
-                </p>
-              )}
-              <h3 className="mt-2 text-2xl font-semibold leading-snug text-heading md:text-3xl">{article.title}</h3>
-              <p className="mt-3 max-w-3xl text-base leading-relaxed text-secondary/80">{article.excerpt}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
-                Read the article <ArrowRight size={14} aria-hidden="true" />
-              </span>
-            </Link>
-          </div>
-        </section>
-      )}
 
       <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
@@ -208,18 +141,16 @@ export default function HomePage() {
                 <Mail size={13} aria-hidden="true" />
                 {NEWSLETTER_NAME}
               </p>
-              <p className="mt-4 text-base leading-relaxed text-secondary/85">
-                A short, sourced weekly briefing on the regulatory and technology developments that matter for AI in financial
-                services: what changed, why it matters, and the questions worth taking to your organisation.
-              </p>
               {latest && (
                 <>
-                  <h2 className="mt-4 text-2xl font-semibold leading-snug md:text-3xl">{latest.title}</h2>
+                  <p className="mt-4 text-sm text-secondary/80">Issue {latest.number} · {formatIssueDate(latest.date)}</p>
+                  <h2 className="mt-1 text-2xl font-semibold leading-snug md:text-3xl">{latest.title}</h2>
+                  <p className="mt-3 text-base leading-relaxed text-secondary/85">{latest.summary}</p>
                   <Link
                     href={`/newsletter/${latest.slug}`}
                     className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-heading"
                   >
-                    Read Issue {latest.number}, {formatIssueDate(latest.date)} <ArrowRight size={14} aria-hidden="true" />
+                    Read this issue <ArrowRight size={14} aria-hidden="true" />
                   </Link>
                 </>
               )}
@@ -235,21 +166,55 @@ export default function HomePage() {
 
       <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <h2 className="text-3xl font-semibold text-heading">Free tools and references</h2>
+          <h2 className="text-3xl font-semibold text-heading">Practitioner resources</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
-              ["/regulatory-calendar", "Regulatory calendar", "EU, UK and US dates for AI and financial regulation, each with a source."],
-              ["/radar", "RegTech and AI Radar", "What is live, being built and worth watching, with no vendor rankings."],
-              ["/downloads/regulatory-rag-evidence-checklist.pdf", "RAG evidence checklist", "A one-page PDF of what validators and auditors ask for."]
-            ].map(([href, title, text]) => (
+              ["/downloads/regulatory-rag-evidence-checklist.pdf", "RAG evidence checklist", "A one-page PDF of what validators and auditors ask for.", "Download the evidence checklist"],
+              ["/regulatory-calendar", "Regulatory calendar", "EU, UK and US dates for AI and financial regulation, each with a source.", "Check upcoming deadlines"],
+              ["/radar", "RegTech and AI Radar", "What is live, being built and worth watching, with no vendor rankings.", "Explore the Radar"]
+            ].map(([href, title, text, action]) => (
               <Link key={href} href={href} className="card-solid group block p-6">
                 <h3 className="text-lg font-semibold text-heading">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary/80">{text}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
-                  Open <ArrowRight size={14} aria-hidden="true" />
+                  {action} <ArrowRight size={14} aria-hidden="true" />
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-6 md:grid-cols-[200px_1fr]">
+          <Link href="/books" className="mx-auto block w-40 md:w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/books/title_page.jpg`}
+              alt="Cover of AI for Financial Risk, Compliance and Regulatory Reporting"
+              width={300}
+              height={450}
+              className="w-full rounded-lg border border-primary/30 shadow-xl shadow-black/30"
+            />
+          </Link>
+          <div>
+            <p className="chip">The book</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-heading">
+              The full design, in one book
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-secondary/85">
+              The series is the short version. The book follows the fictional Avon &amp; Wessex Bank through 16 chapters and 31
+              AI systems across risk, compliance, regulatory reporting and model governance, with tested Python reference
+              code and governance mapped to PRA SS1/23, the EU AI Act and DORA.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/books/sample-chapter" className="btn-primary min-h-11 text-sm">
+                Read a sample chapter
+              </Link>
+              <Link href="/books" className="btn-outline min-h-11 text-sm">
+                Explore the book
+              </Link>
+            </div>
           </div>
         </div>
       </section>

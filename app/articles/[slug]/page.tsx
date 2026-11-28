@@ -253,35 +253,56 @@ export default async function BlogPost({ params }: { params: { slug: string } })
             </aside>
           )}
 
-          <p className="mt-8 text-xs leading-relaxed text-secondary/70" id="how-to-cite">
+
+          {(() => {
+            const next = seriesNav.find((n) => n.dir === "next");
+            const prev = seriesNav.find((n) => n.dir === "prev");
+            return (
+              <>
+                <div className="mt-12">
+                  {next ? (
+                    <Link href={`/articles/${next.p.slug}`} className="card-glow group block border-primary/30 bg-primary/5 p-6 md:p-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Next step</p>
+                      <p className="mt-2 text-xl font-semibold leading-snug text-heading">
+                        Continue to Part {next.p.seriesPart}: {next.p.title}
+                      </p>
+                      <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-heading">
+                        Read the next part &rarr;
+                      </span>
+                    </Link>
+                  ) : (
+                    <a href="/downloads/regulatory-rag-evidence-checklist.pdf" className="card-glow group block border-primary/30 bg-primary/5 p-6 md:p-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Next step</p>
+                      <p className="mt-2 text-xl font-semibold leading-snug text-heading">Download the evidence checklist</p>
+                      <p className="mt-2 text-sm text-secondary/80">
+                        A one-page PDF of what model validators and auditors ask for in a regulatory RAG system.
+                        {post.series && post.seriesTotal && inSeries.length < post.seriesTotal ? " More parts of this series are on the way." : ""}
+                      </p>
+                    </a>
+                  )}
+                </div>
+                <p className="mt-5 text-sm text-secondary/80">
+                  {prev && (
+                    <>
+                      <Link href={`/articles/${prev.p.slug}`} className="font-semibold text-primary hover:text-heading">&larr; Part {prev.p.seriesPart}: {prev.p.title}</Link>
+                      {" · "}
+                    </>
+                  )}
+                  {next && (
+                    <>
+                      <a href="/downloads/regulatory-rag-evidence-checklist.pdf" className="font-semibold text-primary hover:text-heading">Evidence checklist (PDF)</a>
+                      {" · "}
+                    </>
+                  )}
+                  <Link href="/newsletter" className="font-semibold text-primary hover:text-heading">Read the {NEWSLETTER_NAME}</Link>
+                </p>
+              </>
+            );
+          })()}
+
+          <p className="mt-10 text-xs leading-relaxed text-secondary/70" id="how-to-cite">
             How to cite: Kotha, S. R. ({post.publishedAt.slice(0, 4)}). {post.title}. LorvexAI. {normalizedSiteUrl}/articles/{params.slug}/
           </p>
-
-          {seriesNav.length > 0 && (
-            <nav className="mt-12 grid gap-4 sm:grid-cols-2" aria-label="Series navigation">
-              {seriesNav.map(({ dir, p }) => (
-                <Link
-                  key={p.slug}
-                  href={`/articles/${p.slug}`}
-                  className={`card-glow group block p-5 ${dir === "next" ? "sm:col-start-2 sm:text-right" : ""}`}
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                    {dir === "next" ? "Next" : "Previous"} · Part {p.seriesPart}
-                  </p>
-                  <p className="mt-2 text-lg font-semibold leading-snug text-heading">{p.title}</p>
-                </Link>
-              ))}
-            </nav>
-          )}
-
-          <aside className="card-glow mt-12 border-primary/30 bg-primary/5 p-6 md:p-8" aria-label="Weekly briefing">
-            <p className="text-xl font-semibold text-heading">Read the {NEWSLETTER_NAME}</p>
-            <p className="mb-4 mt-2 text-base text-secondary/80">
-              {NEWSLETTER_NAME} is a short weekly briefing on AI in financial risk and regulation. Email subscriptions are
-              opening soon; the issues are free to read on the site.
-            </p>
-            <Link href="/newsletter" className="btn-outline min-h-11 text-sm font-semibold">Read the briefing</Link>
-          </aside>
         </div>
       </section>
 
