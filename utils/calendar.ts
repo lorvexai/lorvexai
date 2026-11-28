@@ -22,9 +22,9 @@ export const CALENDAR: CalendarEntry[] = [
     source: { label: "Holland & Knight", url: "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189" }
   },
   {
-    date: "About 18 January 2027", sort: "2027-01-18", area: "US, FinCEN",
+    date: "19 January 2027", sort: "2027-01-19", area: "US, FinCEN",
     text: "Comments due on the proposed customer due diligence rule, 60 days after Federal Register publication.",
-    note: "Calculated from a scheduled publication date of 19 November 2026. Check the Federal Register notice for the exact deadline.",
+    note: "Sixty days after publication on 19 November 2026 is 18 January 2027, a US federal holiday, so the deadline is expected to be 19 January. Confirm the date in the published Federal Register notice.",
     source: { label: "Federal Register public inspection", url: "https://public-inspection.federalregister.gov/2026-23614.pdf" }
   },
   {

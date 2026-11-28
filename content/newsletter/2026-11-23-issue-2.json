@@ -3,7 +3,7 @@
   "slug": "2026-11-23-issue-2",
   "date": "2026-11-23",
   "status": "published",
-  "title": "UK regulators put cyber, AI and quantum risk into one consultation. The EU AI Act's first new dates land on 2 December.",
+  "title": "UK regulators consult on cyber resilience and publish separate AI and quantum practices. The EU AI Act's first new dates land on 2 December.",
   "summary": "A joint PRA, FCA and Bank of England cyber consultation closes on 26 February 2027, the EU AI Act's first Omnibus dates arrive on 2 December, and US capital and customer due diligence rules both moved.",
   "headline": {
     "region": "UK",
@@ -12,7 +12,7 @@
       "On 19 November the three authorities published a joint consultation (PRA CP17/26, FCA GC26/9) on cyber risk and resilience management. It sets out principles-based, outcome-focused expectations covering governance, operational resilience, operational risk and third-party risk management in a cyber context. The regulators say it introduces no new rules and clarifies how firms should meet current requirements.",
       "Two non-binding effective practices documents, on AI and on quantum computing, were published alongside it. They are not open for formal consultation, but feedback is welcome. The consultation closes on Friday 26 February 2027, and final guidance is expected in the first half of 2027 as a joint supervisory statement and FCA finalised guidance."
     ],
-    "why": "This package brings cyber, AI and quantum expectations together in one place. Author's view: treat the draft as a likely benchmark for supervisory conversations, and check that AI vendors and agents are inside your third-party and operational resilience inventories.",
+    "why": "The cyber consultation is the formal one; the AI and quantum documents are non-binding and sit outside it. Author's view: treat the draft as a likely benchmark for supervisory conversations, and check that AI vendors and agents are inside your third-party and operational resilience inventories.",
     "sources": [
       {
         "label": "Bank of England: CP17/26 and GC26/9",
@@ -56,7 +56,7 @@
           "why": "The final text sets the capital baseline for US group entities. Hold capital-relief and reporting plans open until the rule is published.",
           "sources": [
             {
-              "label": "reginfo.gov: OCC final rule under review",
+              "label": "reginfo.gov review listing (record fields may not display)",
               "url": "https://www.reginfo.gov/public/do/eoDetails?rrid=1599615"
             },
             {
@@ -73,7 +73,7 @@
           "region": "US",
           "title": "FinCEN proposes to revise the customer due diligence rule",
           "body": "On 17 November FinCEN proposed amending 31 CFR 1010.230 so that covered institutions identify beneficial owners at a legal entity customer's first account opening, and later only when they know of facts that call the earlier information into question or when risk-based ongoing due diligence requires an update. Comments are due 60 days after Federal Register publication, which was scheduled for 19 November. FinCEN proposes that a final rule take effect 90 days after publication.",
-          "why": "Banks would stop re-collecting beneficial ownership information on existing customers, but remain accountable for due diligence outcomes. Plan the response with your financial crime team.",
+          "why": "The proposal would codify relief that FinCEN already granted by exemptive order, so banks would not need to re-collect beneficial ownership information on existing customers at each new account, but they remain accountable for due diligence outcomes. Check the exact scope in the notice. Plan the response with your financial crime team.",
           "sources": [
             {
               "label": "FinCEN proposed rule (Treasury)",

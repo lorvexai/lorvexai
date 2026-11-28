@@ -41,7 +41,7 @@ export default function Header() {
           </nav>
         </div>
 
-        <nav className="hide-scrollbar mt-3 flex items-center gap-2 overflow-x-auto pb-1 lg:hidden" aria-label="Mobile navigation">
+        <nav className="mt-3 grid grid-cols-4 gap-1.5 pb-1 lg:hidden" aria-label="Mobile navigation">
           {links.map((item) => {
             const active = pathname === item.href;
             return (
@@ -50,8 +50,8 @@ export default function Header() {
                 href={item.href}
                 className={
                   active
-                    ? "inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-primary/45 bg-primary/20 px-4 text-sm font-semibold text-heading"
-                    : "inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-secondary/35 bg-background/30 px-4 text-sm text-secondary/85"
+                    ? "inline-flex min-h-11 items-center justify-center rounded-full border border-primary/45 bg-primary/20 px-2 text-sm font-semibold text-heading"
+                    : "inline-flex min-h-11 items-center justify-center rounded-full border border-secondary/35 bg-background/30 px-2 text-sm text-secondary/85"
                 }
               >
                 {item.label}

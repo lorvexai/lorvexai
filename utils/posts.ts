@@ -45,7 +45,7 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title as string,
         date: formatDate(data.date),
-        publishedAt: String(data.date ?? ""),
+        publishedAt: data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date ?? ""),
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) || [],
         readingTime: Math.max(1, Math.ceil(words / 200)),

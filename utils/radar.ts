@@ -76,6 +76,6 @@ export const RADAR: RadarItem[] = [
     title: "US bank capital rules",
     summary:
       "The final Basel III capital rule was submitted for White House review in November 2026. There is no published timeline for completing the review.",
-    sources: [{ label: "reginfo.gov", url: "https://www.reginfo.gov/public/do/eoDetails?rrid=1599615" }]
+    sources: [{ label: "reginfo.gov review listing (record fields may not display)", url: "https://www.reginfo.gov/public/do/eoDetails?rrid=1599615" }]
   }
 ];

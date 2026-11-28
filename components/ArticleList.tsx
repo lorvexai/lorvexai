@@ -21,13 +21,12 @@ export default function ArticleList({ posts }: { posts: PostMeta[] }) {
 
   return (
     <>
-      <div role="tablist" aria-label="Filter articles by topic" className="mt-8 flex flex-wrap gap-2">
+      <div role="group" aria-label="Filter articles by topic" className="mt-8 flex flex-wrap gap-2">
         {available.map((t) => (
           <button
             key={t}
             type="button"
-            role="tab"
-            aria-selected={topic === t}
+            aria-pressed={topic === t}
             onClick={() => setTopic(t)}
             className={`min-h-11 rounded-full border px-4 text-sm font-semibold transition ${
               topic === t

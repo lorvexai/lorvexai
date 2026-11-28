@@ -16,8 +16,7 @@ export default function CookiesPage() {
           <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
             <h2 className="text-xl font-semibold text-heading">Current cookie position</h2>
             <p className="mt-3 leading-relaxed text-secondary/75">
-              This site should use only strictly necessary cookies unless analytics, tracking, embedded videos, scheduling widgets, pixels, or similar non-essential tools are added. No analytics are currently used.
-            </p>
+              This site sets no advertising or tracking cookies. It uses only strictly necessary storage, plus Cloudflare Web Analytics, a cookieless service that counts visits without building visitor profiles or tracking people across sites. Because it sets no cookies, no consent banner is needed. If non-essential cookies or similar tools are added later, this page will be updated and consent will be requested first.</p>
           </article>
           <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
             <h2 className="text-xl font-semibold text-heading">Essential cookies</h2>
@@ -26,17 +25,8 @@ export default function CookiesPage() {
             </p>
           </article>
           <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
-            <h2 className="text-xl font-semibold text-heading">Optional analytics cookies</h2>
-            <p className="mt-3 leading-relaxed text-secondary/75">
-              If analytics cookies are added, non-essential scripts must not load until consent is given. The consent banner should say: We use essential cookies to make this site work. With your consent, we may also use analytics cookies to understand how the site is used. You can accept, reject, or manage your preferences.
-            </p>
-            <p className="mt-3 leading-relaxed text-secondary/75">
-              Consent controls should include: Accept optional cookies, Reject optional cookies, and Manage preferences.
-            </p>
-          </article>
-          <article className="rounded-lg border border-secondary/15 bg-background/35 p-6">
             <h2 className="text-xl font-semibold text-heading">Last updated</h2>
-            <p className="mt-3 leading-relaxed text-secondary/75">20 June 2026</p>
+            <p className="mt-3 leading-relaxed text-secondary/75">28 November 2026</p>
           </article>
         </div>
       </div>

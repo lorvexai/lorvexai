@@ -11,6 +11,26 @@ export const metadata: Metadata = {
 const LOG: { date: string; page: string; href: string; change: string }[] = [
   {
     date: "28 November 2026",
+    page: "Regulatory reference and glossary (book appendices)",
+    href: "/books",
+    change:
+      "Corrected the DORA concentration-risk entry (no percentage limit exists; the 70% figure is a fictional AWB policy), the EU AI Act Annex III classification of AML monitoring, SS1/23 dates and scope, and three capital-rule shortcuts. Replaced a named reporting portal with a general description. The printed book may still contain the earlier wording."
+  },
+  {
+    date: "28 November 2026",
+    page: "RegAI Brief, Issue 2",
+    href: "/newsletter/2026-11-23-issue-2",
+    change:
+      "Corrected the headline, which implied AI and quantum guidance sat inside the cyber consultation; they were published alongside it and are not part of the formal consultation. Clarified that the FinCEN proposal would codify existing exemptive relief, and changed the comments deadline to 19 January 2027, because 18 January is a US federal holiday."
+  },
+  {
+    date: "28 November 2026",
+    page: "Article citations and cookie policy",
+    href: "/cookies",
+    change: "Fixed missing publication years in the How to cite lines. Rewrote the cookie policy to match the privacy policy: cookieless Cloudflare Web Analytics, no tracking cookies."
+  },
+  {
+    date: "28 November 2026",
     page: "RAG that cites its sources",
     href: "/articles/rag-that-cites-its-sources",
     change:

@@ -109,14 +109,14 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-4">
       <div>
         <label htmlFor="name" className={LABEL}>Name <span className="text-red-400">*</span></label>
-        <input id="name" className={INPUT} type="text" placeholder="Jane Smith" value={data.name} onChange={(e) => set("name", e.target.value)} />
+        <input id="name" aria-required="true" className={INPUT} type="text" placeholder="Jane Smith" value={data.name} onChange={(e) => set("name", e.target.value)} />
         {errors.name && <p className={ERR}>{errors.name}</p>}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="email" className={LABEL}>Email <span className="text-red-400">*</span></label>
-          <input id="email" className={INPUT} type="email" placeholder="jane@example.com" value={data.email} onChange={(e) => set("email", e.target.value)} />
+          <input id="email" aria-required="true" className={INPUT} type="email" placeholder="jane@example.com" value={data.email} onChange={(e) => set("email", e.target.value)} />
           {errors.email && <p className={ERR}>{errors.email}</p>}
         </div>
         <div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="enquiryType" className={LABEL}>How can LorvexAI help? <span className="text-red-400">*</span></label>
-        <select id="enquiryType" className={INPUT} value={data.enquiryType} onChange={(e) => set("enquiryType", e.target.value)}>
+        <select id="enquiryType" aria-required="true" className={INPUT} value={data.enquiryType} onChange={(e) => set("enquiryType", e.target.value)}>
           <option value="">Select an enquiry type</option>
           {ENQUIRY_TYPES.map((item) => <option key={item} value={item}>{item}</option>)}
         </select>
@@ -141,12 +141,12 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className={LABEL}>Message <span className="text-red-400">*</span></label>
-        <textarea id="message" className={INPUT} rows={5} placeholder="Share a book, research, speaking, writing, publishing, correction, or general enquiry. Please do not include confidential or restricted information." value={data.message} onChange={(e) => set("message", e.target.value)} />
+        <textarea id="message" aria-required="true" className={INPUT} rows={5} placeholder="Share a book, research, speaking, writing, publishing, correction, or general enquiry. Please do not include confidential or restricted information." value={data.message} onChange={(e) => set("message", e.target.value)} />
         {errors.message && <p className={ERR}>{errors.message}</p>}
       </div>
 
       <label className="flex cursor-pointer gap-3 rounded-lg border border-secondary/15 bg-background/35 p-4">
-        <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-primary" checked={data.acknowledgement} onChange={(e) => set("acknowledgement", e.target.checked)} />
+        <input type="checkbox" aria-required="true" className="mt-1 h-4 w-4 shrink-0 accent-primary" checked={data.acknowledgement} onChange={(e) => set("acknowledgement", e.target.checked)} />
         <span className="text-xs leading-relaxed text-secondary/70">
           I understand that LorvexAI is a personal educational and publishing website and is not currently taking client engagements and does not provide regulated advice or professional services through this site. <span className="text-red-400">*</span>
         </span>
