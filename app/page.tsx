@@ -152,30 +152,6 @@ export default function HomePage() {
       )}
 
       <section className="section py-8 md:py-10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-lg font-semibold text-heading">Written by Sreedhara Reddy Kotha</p>
-            <p className="mt-1 max-w-2xl text-base leading-relaxed text-secondary/80">
-              Over 20 years in finance, risk and regulatory technology across global banks, now building AI and automation
-              for financial operations.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/about" className="btn-outline min-h-11 text-sm font-semibold">About the author</Link>
-            <a
-              href="https://www.linkedin.com/in/sreekotha/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline min-h-11 text-sm font-semibold"
-            >
-              <Linkedin size={15} aria-hidden="true" />
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section py-8 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="card-glow grid gap-8 border-primary/30 bg-primary/5 p-8 md:grid-cols-[1.3fr_0.7fr] md:items-center">
             <div>
@@ -204,6 +180,30 @@ export default function HomePage() {
               <p className="mb-4 mt-1 text-base text-secondary/80">Short, sourced and written for practitioners. Unsubscribe at any time.</p>
               <SubscribeForm id="home-email" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section py-8 md:py-10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-lg font-semibold text-heading">Written by Sreedhara Reddy Kotha</p>
+            <p className="mt-1 max-w-2xl text-base leading-relaxed text-secondary/80">
+              Over 20 years in finance, risk and regulatory technology across global banks, now building AI and automation
+              for financial operations.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/about" className="btn-outline min-h-11 text-sm font-semibold">About the author</Link>
+            <a
+              href="https://www.linkedin.com/in/sreekotha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline min-h-11 text-sm font-semibold"
+            >
+              <Linkedin size={15} aria-hidden="true" />
+              LinkedIn
+            </a>
           </div>
         </div>
       </section>
