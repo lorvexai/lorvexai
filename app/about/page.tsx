@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6">
           <div>
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-              <span className="text-heading">Hi, I'm Sree. I write about AI that regulated firms can trust.</span>
+              <span className="text-heading">Twenty years in finance technology, now making AI useful in regulated banking and credible under scrutiny.</span>
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-secondary/85">
               I'm an AI transformation leader and practitioner-author with more than 20 years of experience at the intersection
