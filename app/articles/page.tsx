@@ -25,14 +25,15 @@ export default function ArticlesPage() {
           on the AWB case study from the book.
         </p>
         <p className="mt-5 text-sm text-secondary/80">
+          <Link href="/start-here" className="font-semibold text-primary hover:text-heading">New here? Start here &rarr;</Link>
+        </p>
+        <p className="mt-2 text-sm text-secondary/80">
           Resources:{" "}
-          <Link href="/radar" className="font-semibold text-primary hover:text-heading">RegTech and AI Radar</Link>
+          <a href="/downloads/regulatory-rag-evidence-checklist.pdf" className="font-semibold text-primary hover:text-heading">RAG evidence checklist (PDF)</a>
           {" · "}
           <Link href="/regulatory-calendar" className="font-semibold text-primary hover:text-heading">Regulatory calendar</Link>
           {" · "}
-          <a href="/downloads/regulatory-rag-evidence-checklist.pdf" className="font-semibold text-primary hover:text-heading">RAG evidence checklist (PDF)</a>
-          {" · "}
-          <Link href="/start-here" className="font-semibold text-primary hover:text-heading">Start here</Link>
+          <Link href="/radar" className="font-semibold text-primary hover:text-heading">RegTech and AI Radar</Link>
         </p>
         <ArticleList posts={posts} />
       </div>
