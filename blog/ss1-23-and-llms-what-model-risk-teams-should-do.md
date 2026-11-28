@@ -19,9 +19,9 @@ SS1/23 sets out the PRA's expectations for model risk management at banks as fiv
 Two scoping points matter:
 
 - **The definition of a model is broad.** The consultation proposed a very broad definition, and the final statement kept the five principles. Language models and retrieval pipelines sit comfortably inside a broad definition.
-- **Formal scope is narrower than practical scope.** The principles initially apply to firms with approval to use internal models for regulatory capital. KPMG's reading is that they will probably become the benchmark for model governance more widely. If you are outside the formal scope, expect your auditors and supervisors to use them anyway.
+- **Formal scope is narrower than practical scope.** The principles initially apply to firms with approval to use internal models for regulatory capital. [KPMG's view](https://home.kpmg/xx/en/home/insights/2023/05/pra-model-risk-management-principles.html) is that they may become the benchmark for model governance more widely, but that is commentary, not PRA policy. If you are outside the formal scope, expect your auditors and supervisors to use them anyway.
 
-The PRA also noted that it received considerable feedback on AI and machine learning, including the challenge of models that change or recalibrate frequently. That is exactly the problem you face with an assistant whose prompts, documents and model version all move.
+The PRA's own policy statement ([PS6/23](https://www.bankofengland.co.uk/prudential-regulation/publication/2023/may/model-risk-management-principles-for-banks)) notes that it received considerable feedback on AI and machine learning, including the challenge of models that change or recalibrate frequently. That is exactly the problem you face with an assistant whose prompts, documents and model version all move.
 
 ## The five principles, applied to a RAG assistant
 
@@ -53,4 +53,10 @@ The PRA also noted that it received considerable feedback on AI and machine lear
 
 > The AWB case study in the book builds the full model inventory, tiering and validation approach for these systems, chapter by chapter. [See the book](/books).
 
-*This article is personal opinion and a summary of public sources. It is not legal, regulatory or professional advice. Read the primary text: [PRA SS1/23](https://www.bankofengland.co.uk/prudential-regulation/publication/2023/may/model-risk-management-principles-for-banks-ss).*
+## Sources
+
+- [PRA SS1/23: Model risk management principles for banks](https://www.bankofengland.co.uk/prudential-regulation/publication/2023/may/model-risk-management-principles-for-banks-ss) (primary)
+- [PRA PS6/23: policy statement](https://www.bankofengland.co.uk/prudential-regulation/publication/2023/may/model-risk-management-principles-for-banks) (primary)
+- [KPMG: PRA model risk management principles](https://home.kpmg/xx/en/home/insights/2023/05/pra-model-risk-management-principles.html) (commentary)
+
+*This article is personal opinion and a summary of public sources. It is not legal, regulatory or professional advice. Read the primary text before you act.*
