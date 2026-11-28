@@ -7,6 +7,7 @@ import CopyCodeButton from "@/components/CopyCodeButton";
 import DiagramMounter from "@/components/DiagramMounter";
 import BlogCard from "@/components/BlogCard";
 import SubscribeForm from "@/components/SubscribeForm";
+import ReadingProgress from "@/components/ReadingProgress";
 import { NEWSLETTER_NAME } from "@/utils/site";
 import { ArrowLeft, Calendar, Clock, Tag, Linkedin } from "lucide-react";
 
@@ -110,6 +111,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   return (
     <>
+      <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Article hero */}
       <section className="border-b border-secondary/10 bg-background/60 py-10 md:py-14">

@@ -10,6 +10,7 @@ tags:
   - Regulated AI
   - Architecture
   - Series
+topic: RAG
 ---
 
 # Why most RAG demos fail in a regulated bank

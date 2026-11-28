@@ -18,6 +18,7 @@ export type PostMeta = {
   series?: string;
   seriesPart?: number;
   seriesTotal?: number;
+  topic?: string;
 };
 
 function formatDate(value: unknown) {
@@ -51,6 +52,7 @@ export function getAllPosts(): PostMeta[] {
         series: data.series as string | undefined,
         seriesPart: data.seriesPart as number | undefined,
         seriesTotal: data.seriesTotal as number | undefined,
+        topic: data.topic as string | undefined,
         hidden: Boolean(data.hidden)
       };
     })

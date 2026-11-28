@@ -10,6 +10,7 @@ tags:
   - Retrieval
   - Citations
   - Series
+topic: RAG
 ---
 
 # RAG that cites its sources

@@ -8,7 +8,7 @@
    Light theme only: soft slate ground, dark-slate text, deep teal primary, teal accent (all text meets WCAG AA).
    Edit this block to re-theme the whole site.                  */
 :root {
-  --color-background-rgb: 248 250 252;
+  --color-background-rgb: 247 249 252;
   --color-primary-rgb: 14 105 130;
   --color-secondary-rgb: 30 41 59;
   --color-surface-rgb: 255 255 255;
@@ -18,15 +18,15 @@
   --color-heading-rgb: 15 23 42;
   --shadow-glow-rgb: 14, 116, 144;
   --on-primary: #FFFFFF;
-  --body-grad-1: #F8FAFC;
-  --body-grad-2: #F4F7FB;
-  --body-grad-3: #EEF2F8;
+  --body-grad-1: #F9FBFD;
+  --body-grad-2: #F5F8FC;
+  --body-grad-3: #EEF3F9;
   --grid-line-1: rgba(15, 23, 42, 0.07);
   --grid-line-2: rgba(15, 23, 42, 0.07);
   --wash-rgb: 14, 105, 130;
   --accent-rgb: 14, 105, 130;
   --accent2-rgb: 14, 105, 130;
-  --hairline: rgba(15, 23, 42, 0.12);
+  --hairline: rgba(15, 23, 42, 0.14);
   --glass-bg: rgba(255, 255, 255, 0.7);
   --mermaid-node-fill: #FFFFFF;
   --mermaid-stroke: #0E6982;
@@ -51,7 +51,9 @@ html {
 
 body {
   @apply bg-background text-secondary antialiased;
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   position: relative;
   isolation: isolate;
   background: linear-gradient(180deg, var(--body-grad-1) 0%, var(--body-grad-2) 48%, var(--body-grad-3) 100%);
@@ -81,7 +83,7 @@ body::after {
   height: 90vh;
   pointer-events: none;
   z-index: -1;
-  opacity: 0.55;
+  opacity: 0.32;
   background:
     radial-gradient(700px 380px at 12% 8%, rgba(var(--shadow-glow-rgb), 0.22), transparent 62%),
     radial-gradient(760px 420px at 85% 0%, rgba(var(--accent-rgb), 0.26), transparent 60%),
@@ -100,10 +102,11 @@ body::after {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-space), var(--font-inter), system-ui, sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 650;
+  letter-spacing: -0.025em;
   @apply text-heading;
 }
+h1 { letter-spacing: -0.035em; }
 
 .section {
   @apply relative py-11 md:py-16;
@@ -412,4 +415,61 @@ h1, h2, h3, h4, h5 {
 .prose blockquote p::before,
 .prose blockquote p::after {
   content: none;
+}
+
+
+/* ── Refresh: solid cards, article reading comfort ─────────── */
+.card-solid {
+  position: relative;
+  border-radius: 1rem;
+  background: rgb(var(--color-surface-rgb));
+  border: 1px solid var(--hairline);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card-solid:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--shadow-glow-rgb), 0.5);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05), 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+.card-glow { background: rgb(var(--color-surface-rgb)); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05); }
+.card-glow:hover { box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05), 0 18px 40px rgba(15, 23, 42, 0.1); }
+.chip { font-family: var(--font-mono), ui-monospace, monospace; font-size: .7rem; }
+
+.prose { font-size: 1.125rem; line-height: 1.75; }
+.prose :where(p, li) { max-width: 70ch; }
+.prose h2 { letter-spacing: -0.03em; }
+
+/* ── Dark theme (follows the visitor's system setting) ─────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-rgb: 10 15 28;
+    --color-primary-rgb: 45 190 220;
+    --color-secondary-rgb: 203 213 225;
+    --color-surface-rgb: 17 24 42;
+    --color-panel-rgb: 17 24 42;
+    --color-panel-2-rgb: 24 33 56;
+    --color-heading-rgb: 241 245 249;
+    --shadow-glow-rgb: 45, 190, 220;
+    --on-primary: #05202A;
+    --body-grad-1: #0A0F1C;
+    --body-grad-2: #0C1222;
+    --body-grad-3: #0E1528;
+    --grid-line-1: rgba(148, 163, 184, 0.12);
+    --grid-line-2: rgba(148, 163, 184, 0.12);
+    --hairline: rgba(148, 163, 184, 0.22);
+    --glass-bg: rgba(17, 24, 42, 0.78);
+    --mermaid-node-fill: #111A2E;
+    --mermaid-label-bg: #18213A;
+    --mermaid-cluster-bg: rgba(24, 33, 58, 0.8);
+    --mermaid-cluster-border: rgba(148, 163, 184, 0.35);
+    --blockquote-text: rgba(226, 232, 240, 0.92);
+    --code-bg: rgba(24, 33, 58, 0.9);
+    --logo-ink: #E6EEF9;
+    color-scheme: dark;
+  }
+  body::after { opacity: 0.18; }
+  .card-solid, .card-glow { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); }
+  .card-solid:hover, .card-glow:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4); }
+  .prose img { background: #FFFFFF; }
 }
