@@ -79,6 +79,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable} ${serif.variable} ${space.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Apply a saved theme before first paint so there is no flash of the wrong theme. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}`
+          }}
+        />
+      </head>
       <body className="relative pb-20 md:pb-0">
         <a href="#main" className="sr-only-focusable focus:fixed rounded-md bg-primary px-4 py-2 text-[var(--on-primary)]" style={{ left: 8, top: 8, zIndex: 100 }}>Skip to content</a>
         <Header />

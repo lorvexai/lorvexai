@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 import Logo from "@/components/Logo";
 import { usePathname } from "next/navigation";
 
@@ -23,22 +24,25 @@ export default function Header() {
             <Logo />
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
-            {links.map((item) => {
-              const active = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`min-h-10 rounded-full px-3 py-2 text-sm transition ${
-                    active ? "bg-primary/15 text-heading ring-1 ring-primary/30" : "text-secondary/80 hover:bg-secondary/10 hover:text-heading"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="flex items-center gap-2">
+            <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+              {links.map((item) => {
+                const active = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`min-h-10 rounded-full px-3 py-2 text-sm transition ${
+                      active ? "bg-primary/15 text-heading ring-1 ring-primary/30" : "text-secondary/80 hover:bg-secondary/10 hover:text-heading"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <ThemeToggle />
+          </div>
         </div>
 
         <nav className="mt-3 grid grid-cols-4 gap-1.5 pb-1 lg:hidden" aria-label="Mobile navigation">

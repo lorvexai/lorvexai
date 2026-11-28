@@ -440,9 +440,11 @@ h1 { letter-spacing: -0.035em; }
 .prose :where(p, li) { max-width: 70ch; }
 .prose h2 { letter-spacing: -0.03em; }
 
-/* ── Dark theme (follows the visitor's system setting) ─────── */
+/* ── Dark theme ────────────────────────────────────────────────
+   Follows the visitor's system setting unless they pick a theme with the
+   header toggle (stored as data-theme="light" or "dark" on <html>). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-background-rgb: 10 15 28;
     --color-primary-rgb: 45 190 220;
     --color-secondary-rgb: 203 213 225;
@@ -468,11 +470,41 @@ h1 { letter-spacing: -0.035em; }
     --logo-ink: #E6EEF9;
     color-scheme: dark;
   }
-  body::after { opacity: 0.18; }
-  .card-solid, .card-glow { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); }
-  .card-solid:hover, .card-glow:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4); }
-  .prose img { background: #FFFFFF; }
+:root:not([data-theme="light"]) body::after { opacity: 0.18; }
+  :root:not([data-theme="light"]) .card-solid, :root:not([data-theme="light"]) .card-glow { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); }
+  :root:not([data-theme="light"]) .card-solid:hover, :root:not([data-theme="light"]) .card-glow:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4); }
+  :root:not([data-theme="light"]) .prose img { background: #FFFFFF; }
 }
+:root[data-theme="dark"] {
+  --color-background-rgb: 10 15 28;
+  --color-primary-rgb: 45 190 220;
+  --color-secondary-rgb: 203 213 225;
+  --color-surface-rgb: 17 24 42;
+  --color-panel-rgb: 17 24 42;
+  --color-panel-2-rgb: 24 33 56;
+  --color-heading-rgb: 241 245 249;
+  --shadow-glow-rgb: 45, 190, 220;
+  --on-primary: #05202A;
+  --body-grad-1: #0A0F1C;
+  --body-grad-2: #0C1222;
+  --body-grad-3: #0E1528;
+  --grid-line-1: rgba(148, 163, 184, 0.12);
+  --grid-line-2: rgba(148, 163, 184, 0.12);
+  --hairline: rgba(148, 163, 184, 0.22);
+  --glass-bg: rgba(17, 24, 42, 0.78);
+  --mermaid-node-fill: #111A2E;
+  --mermaid-label-bg: #18213A;
+  --mermaid-cluster-bg: rgba(24, 33, 58, 0.8);
+  --mermaid-cluster-border: rgba(148, 163, 184, 0.35);
+  --blockquote-text: rgba(226, 232, 240, 0.92);
+  --code-bg: rgba(24, 33, 58, 0.9);
+  --logo-ink: #E6EEF9;
+  color-scheme: dark;
+}
+:root[data-theme="dark"] body::after { opacity: 0.18; }
+:root[data-theme="dark"] .card-solid, :root[data-theme="dark"] .card-glow { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25); }
+:root[data-theme="dark"] .card-solid:hover, :root[data-theme="dark"] .card-glow:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4); }
+:root[data-theme="dark"] .prose img { background: #FFFFFF; }
 
 
 /* ── Print ─────────────────────────────────────────────────── */
