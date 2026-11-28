@@ -36,13 +36,6 @@ export default function HomePage() {
     .filter((p) => p.series && p.seriesPart)
     .sort((x, y) => (x.seriesPart ?? 0) - (y.seriesPart ?? 0));
   const seriesTotal = seriesParts[0]?.seriesTotal ?? seriesParts.length;
-  const issueCount = getIssues().filter((i) => i.status === "published").length;
-  const PROOF: [string, string][] = [
-    ["16", "chapters in the book"],
-    ["31", "AI systems built and governed"],
-    [String(posts.length), "articles, with a six-part series"],
-    [String(issueCount), "weekly briefings published"]
-  ];
 
   return (
     <>
@@ -90,19 +83,6 @@ export default function HomePage() {
               From Part 2: the anatomy of a cited answer <span className="text-primary">→</span>
             </p>
           </Link>
-        </div>
-      </section>
-
-      <section className="section py-6 md:py-8" aria-label="At a glance">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <dl className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {PROOF.map(([value, label]) => (
-              <div key={label} className="card-solid p-5">
-                <dd className="text-3xl font-semibold text-heading">{value}</dd>
-                <dt className="mt-1 text-sm text-secondary/80">{label}</dt>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
